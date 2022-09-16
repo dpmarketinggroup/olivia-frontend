@@ -3,6 +3,7 @@ import Link from "next/link";
 import CloseIcon from "../components/svg/Close";
 import RightArrowIcon from "../components/svg/RightArrow";
 import WholeProcess from "../components/WholeProcess";
+import Map from "../components/Map";
 
 const Home: NextPage = () => {
   return (
@@ -19,7 +20,7 @@ const Home: NextPage = () => {
             <RightArrowIcon />
           </div>
         </div>
-        <div className=" mr-[13px]">
+        <div className=" mr-[13px] ">
         <CloseIcon />
         </div>
       </div>
@@ -43,6 +44,7 @@ const Home: NextPage = () => {
         </div>
       </section>
       <WholeProcess />
+      <Map title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava"/>
     </>
   );
 };
