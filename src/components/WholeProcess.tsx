@@ -14,7 +14,7 @@ const WholeProcess = ({
     },
     {
       icon: <RollerIcon />,
-      title: "Výstavba",
+      title: "Výstavba",git
       year: 2022,
       quarter: "4. kvartál",
     },

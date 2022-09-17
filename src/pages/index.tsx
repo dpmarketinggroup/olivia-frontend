@@ -1,11 +1,20 @@
+import { iconSizes } from "@mantine/core/lib/Stepper/Step/Step.styles";
 import type { NextPage } from "next";
 import Link from "next/link";
+<<<<<<< HEAD
 import Description2 from "../components/Description2";
 import CloseIcon from "../components/svg/Close";
 import KeyIcon from "../components/svg/Key";
+=======
+import Description from "../components/Description";
+import CloseIcon from "../components/svg/Close";
+import GlassStarIcon from "../components/svg/GlassStar";
+import MapPointIcon from "../components/svg/MapPoint";
+>>>>>>> main
 import RightArrowIcon from "../components/svg/RightArrow";
 import StarIcon from "../components/svg/Star";
 import WholeProcess from "../components/WholeProcess";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
@@ -26,6 +35,7 @@ const Home: NextPage = () => {
           <CloseIcon />
         </div>
       </div>
+<<<<<<< HEAD
       <section className="flex justify-center">
         <div className="bg-[url('/img/hero.jpg')] h-[650px] w-full max-w-[1440px] mb-[140px]">
           <div className="w-[600px] ml-[165px] pt-[185px] mb-[40px]">
@@ -45,9 +55,40 @@ const Home: NextPage = () => {
               </button>
             </Link>
           </div>
+=======
+      <section className="mb-[350px] relative flex">
+      <div className="h-[650px] w-full max-w-full absolute inset-0 -z-[99] border-black ">
+          <Image
+            objectFit="cover"
+            layout="fill"
+            alt="hero image"
+            src={"/img/hero.jpg"}
+          />
         </div>
+        <div className="flex flex-col ">
+        <div className="w-[600px] ml-[165px] pt-[185px] mb-[40px]">
+          <h1 className="font-bold  text-[56px] leading-[60px] tracking-[-1px] text-white">
+            Moderný štýl bývania v dynamickej lokalite so skvelými možnosťami
+          </h1>
+        </div>
+        <div className="flex gap-[10px] ml-[165px] ">
+          <Link href="/">
+            <button className="bg-[#89A6A2] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px]">
+              Nezáväzné stretnutie
+            </button>
+          </Link>
+          <Link href="/">
+            <button className="font-medium text-[16px] leading-[24px] tracking-[-0.1px] w-[210px] h-[50px] border border-white text-white">
+              Ponuka apartmánov
+            </button>
+          </Link>
+>>>>>>> main
+        </div>
+        </div>
+        
       </section>
       <WholeProcess />
+<<<<<<< HEAD
       <Description2
         imgPath="/img/room2.jpg"
         title="Vybavenie apartmánov"
@@ -67,6 +108,19 @@ const Home: NextPage = () => {
         ]}
         buttons={[
           { path: "/", text: "Vybavenie apartmánov" },
+=======
+      <Description
+        imgPath="/img/room.jpg"
+        title="Moderné mestské bývanie"
+        descrip="Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval za steny ich bytu. Pre ľudí, ktorí chcú mať ich obľúbené aktivity na dosah ruky. Pre ľudí, ktorí chcú svoj čas využívať efektívne. A pre ľudí, ktorí chcú mať z bývania zážitok. Olivia nie je len bývanie, je to životný štýl."
+        bulletPoints={[
+          { icon: <MapPointIcon />, text: "Skvelá dynamická lokalita" },
+          { icon: <StarIcon />, text: "Vysoký štandard vybavenia" },
+          { icon: <GlassStarIcon />, text: "Štýlové a kvalitné prevedenie" },
+        ]}
+        buttons={[
+          { path: "/", text: "O projekte" },
+>>>>>>> main
           { path: "/", text: "Nezáväzné stretnutie" },
         ]}
       />
