@@ -1,4 +1,3 @@
-import { iconSizes } from "@mantine/core/lib/Stepper/Step/Step.styles";
 import type { NextPage } from "next";
 import Link from "next/link";
 import Description from "../components/Description";
@@ -8,11 +7,8 @@ import MapPointIcon from "../components/svg/MapPoint";
 import RightArrowIcon from "../components/svg/RightArrow";
 import StarIcon from "../components/svg/Star";
 import WholeProcess from "../components/WholeProcess";
-<<<<<<< HEAD
 import Map from "../components/Map";
-=======
 import Image from "next/image";
->>>>>>> main
 
 const Home: NextPage = () => {
   return (
@@ -29,13 +25,9 @@ const Home: NextPage = () => {
             <RightArrowIcon />
           </div>
         </div>
-<<<<<<< HEAD
-        <div className=" mr-[13px] ">
-        <CloseIcon />
-=======
+
         <div className=" mr-[13px]">
           <CloseIcon />
->>>>>>> main
         </div>
       </div>
       <section className="mb-[350px] relative flex">
@@ -66,12 +58,10 @@ const Home: NextPage = () => {
           </Link>
         </div>
         </div>
-        
+
       </section>
       <WholeProcess />
-<<<<<<< HEAD
       <Map title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava"/>
-=======
       <Description
         imgPath="/img/room.jpg"
         title="Moderné mestské bývanie"
@@ -86,7 +76,6 @@ const Home: NextPage = () => {
           { path: "/", text: "Nezáväzné stretnutie" },
         ]}
       />
->>>>>>> main
     </>
   );
 };
