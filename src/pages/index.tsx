@@ -1,9 +1,18 @@
+import { iconSizes } from "@mantine/core/lib/Stepper/Step/Step.styles";
 import type { NextPage } from "next";
 import Link from "next/link";
+import Description from "../components/Description";
 import CloseIcon from "../components/svg/Close";
+import GlassStarIcon from "../components/svg/GlassStar";
+import MapPointIcon from "../components/svg/MapPoint";
 import RightArrowIcon from "../components/svg/RightArrow";
+import StarIcon from "../components/svg/Star";
 import WholeProcess from "../components/WholeProcess";
+<<<<<<< HEAD
 import Map from "../components/Map";
+=======
+import Image from "next/image";
+>>>>>>> main
 
 const Home: NextPage = () => {
   return (
@@ -20,11 +29,25 @@ const Home: NextPage = () => {
             <RightArrowIcon />
           </div>
         </div>
+<<<<<<< HEAD
         <div className=" mr-[13px] ">
         <CloseIcon />
+=======
+        <div className=" mr-[13px]">
+          <CloseIcon />
+>>>>>>> main
         </div>
       </div>
-      <section className="bg-[url('/img/hero.jpg')] h-[650px] w-full max-w-[1440px] mb-[140px]">
+      <section className="mb-[350px] relative flex">
+      <div className="h-[650px] w-full max-w-full absolute inset-0 -z-[99] border-black ">
+          <Image
+            objectFit="cover"
+            layout="fill"
+            alt="hero image"
+            src={"/img/hero.jpg"}
+          />
+        </div>
+        <div className="flex flex-col ">
         <div className="w-[600px] ml-[165px] pt-[185px] mb-[40px]">
           <h1 className="font-bold  text-[56px] leading-[60px] tracking-[-1px] text-white">
             Moderný štýl bývania v dynamickej lokalite so skvelými možnosťami
@@ -42,9 +65,28 @@ const Home: NextPage = () => {
             </button>
           </Link>
         </div>
+        </div>
+        
       </section>
       <WholeProcess />
+<<<<<<< HEAD
       <Map title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava"/>
+=======
+      <Description
+        imgPath="/img/room.jpg"
+        title="Moderné mestské bývanie"
+        descrip="Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval za steny ich bytu. Pre ľudí, ktorí chcú mať ich obľúbené aktivity na dosah ruky. Pre ľudí, ktorí chcú svoj čas využívať efektívne. A pre ľudí, ktorí chcú mať z bývania zážitok. Olivia nie je len bývanie, je to životný štýl."
+        bulletPoints={[
+          { icon: <MapPointIcon />, text: "Skvelá dynamická lokalita" },
+          { icon: <StarIcon />, text: "Vysoký štandard vybavenia" },
+          { icon: <GlassStarIcon />, text: "Štýlové a kvalitné prevedenie" },
+        ]}
+        buttons={[
+          { path: "/", text: "O projekte" },
+          { path: "/", text: "Nezáväzné stretnutie" },
+        ]}
+      />
+>>>>>>> main
     </>
   );
 };

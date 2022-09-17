@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 
-interface DescriptionCardProps {
+interface ProcessProps {
     icon: JSX.Element,
     title: string ,
     year: number,
@@ -8,7 +8,7 @@ interface DescriptionCardProps {
     isGreen?: boolean,
   }
 
-  const ProcessPart: FunctionComponent<DescriptionCardProps> = ({
+  const ProcessPart: FunctionComponent<ProcessProps> = ({
     icon,
     title,
     year,
