@@ -58,7 +58,6 @@ const Home: NextPage = () => {
           </Link>
         </div>
         </div>
-
       </section>
       <WholeProcess />
       <Map title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava"/>
