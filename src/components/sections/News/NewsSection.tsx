@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from "react";
 import Link from "next/link";
-import RightArrowIcon from "./svg/RightArrow";
+import RightArrowIcon from "../../svg/RightArrow";
 import News from "./News";
 
 interface NewsSectionProps {
@@ -24,7 +24,7 @@ const NewsSection: FunctionComponent<NewsSectionProps>
                     <p className="text-[16px] leading-6 tracking-[0.1px] text-[#676766] mb-[20px]">Najnovšie informácie
                         o projekte Olivia Residence.</p>
                     <div className="flex gap-[10px] justify-center items-center">
-                        <Link href="/">
+                        <Link href="/src/pages">
                             <a className="text-[18px] font-medium leading-[28px] text-green2">Všetky novinky</a>
                         </Link>
                         <RightArrowIcon stroke="#476761"/>

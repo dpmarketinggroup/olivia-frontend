@@ -1,18 +1,19 @@
 import type {NextPage} from "next";
 import Link from "next/link";
-import Description2 from "../components/Description2";
+import Description2 from "../components/sections/Descriptions/Description2";
 import CloseIcon from "../components/svg/Close";
 import KeyIcon from "../components/svg/Key";
-import Description from "../components/Description";
+import Description from "../components/sections/Descriptions/Description";
 import GlassStarIcon from "../components/svg/GlassStar";
 import MapPointIcon from "../components/svg/MapPoint";
 import RightArrowIcon from "../components/svg/RightArrow";
 import StarIcon from "../components/svg/Star";
-import WholeProcess from "../components/WholeProcess";
+import WholeProcess from "../components/sections/Process/WholeProcess";
 import Map from "../components/Map";
 import Image from "next/image";
-import NewsSection from "../components/NewsSection";
-import NewsSubscription from "../components/NewsSubscription";
+import NewsSection from "../components/sections/News/NewsSection";
+import NewsSubscription from "../components/sections/News/NewsSubscription";
+import SwiperGallery from "../components/sections/Swipers/SwiperGallery";
 
 const Home: NextPage = () => {
     return (
@@ -76,6 +77,7 @@ const Home: NextPage = () => {
                     {path: "/", text: "Vybavenie apartmánov"},
                 ]}
             />
+            <SwiperGallery/>
             <NewsSection news={[
                 {path: "/img/room.jpg", date: "12.09.2021", title: "Medium length title", description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"},
                 {path: "/img/room.jpg", date: "12.09.2021", title: "Medium length title", description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"},

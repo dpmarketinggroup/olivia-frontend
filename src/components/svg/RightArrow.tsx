@@ -2,11 +2,13 @@ import React, {FunctionComponent} from "react";
 
 interface RightArrowProps{
   stroke?:string
+  className?: string
 }
 
-const RightArrowIcon: FunctionComponent<RightArrowProps> = ({stroke= "white"}) => {
+const RightArrowIcon: FunctionComponent<RightArrowProps> = ({stroke= "white", className}) => {
   return (
     <svg
+        className={"cursor-pointer " + className}
       width="7"
       height="10"
       viewBox="0 0 7 10"

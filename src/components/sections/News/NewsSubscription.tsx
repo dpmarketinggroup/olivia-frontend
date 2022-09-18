@@ -1,6 +1,6 @@
 import React from "react";
 import {TextInput} from "@mantine/core";
-import PaperPlaneIcon from "./svg/PaperPlane";
+import PaperPlaneIcon from "../../svg/PaperPlane";
 import Image from "next/image";
 
 const NewsSubscription = () => {

@@ -1,8 +1,8 @@
 import React from "react";
 import ProcessPart from "./ProcessPart";
-import Check from "./svg/Check";
-import PaperIcon from "./svg/Paper";
-import RollerIcon from "./svg/Roller";
+import Check from "../../svg/Check";
+import PaperIcon from "../../svg/Paper";
+import RollerIcon from "../../svg/Roller";
 
 const WholeProcess = ({
   parts = [

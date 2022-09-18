@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import RightArrowIcon from "./svg/RightArrow";
+import RightArrowIcon from "../../svg/RightArrow";
 
 interface NewsProps{
     path: string,
@@ -25,7 +25,7 @@ const News : FunctionComponent<NewsProps> = ({
                 <h4 className="text-[16px] font-medium leading-6 tracking-[0.1px]">{title}</h4>
                 <p className="text-[14px] leading-5 text-[#676766] w-[190px]">{description}</p>
                 <div className="flex gap-[8px] items-center">
-                    <Link href='/'>
+                    <Link href='/src/pages'>
                         <a className="font-medium text-[14px] leading-5 text-green2">Viac</a>
                     </Link>
                     <RightArrowIcon stroke="#476761"/>
