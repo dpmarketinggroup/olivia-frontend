@@ -16,16 +16,24 @@ const Navbar = () => {
             </span>
             <DownArrowIcon fill={'black'}/>
           </div>
-          <span className="font-normal text-[16px] leading-6">Lokalita</span>
+          <Link href="/">
+            <a className="font-normal text-[16px] leading-6">Lokalita</a>
+          </Link>
           <div className="flex gap-[10px] items-center">
             <span className="font-normal text-[16px] leading-6 text-[#476761]">
               O projekte
             </span>
             <DownArrowIcon />
           </div>
-          <span className="font-normal text-[16px] leading-6">Retail</span>
-          <span className="font-normal text-[16px] leading-6">Novinky</span>
-          <span className="font-normal text-[16px] leading-6">Kontakt</span>
+          <Link href="/">
+            <a className="font-normal text-[16px] leading-6">Retail</a>
+          </Link>
+          <Link href="/">
+            <a className="font-normal text-[16px] leading-6">Novinky</a>
+          </Link>
+          <Link href="/">
+            <a className="font-normal text-[16px] leading-6">Kontakt</a>
+          </Link>
         </div>
       </div>
       <div className="flex gap-[45px]">

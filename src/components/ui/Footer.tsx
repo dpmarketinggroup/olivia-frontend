@@ -4,6 +4,7 @@ import Image from "next/image";
 import LogoSecondary from "../svg/LogoSecondary";
 import {TextInput} from "@mantine/core";
 import PaperPlaneIcon from "../svg/PaperPlane";
+import RectangleFooter from "../svg/RectangleFooter";
 
 
 const Footer = () => {
@@ -37,7 +38,7 @@ const Footer = () => {
                             />
                         </div>
                     </div>
-                    <div className="bg-black">
+                    <div className="bg-black relative">
                         <div className="flex gap-[210px] ml-[165px]">
                             <div className="flex flex-col gap-[26px] pt-[45px]">
                                 <LogoSecondary/>
@@ -84,6 +85,9 @@ const Footer = () => {
                                     <span className="font-medium text-[16px] leading-6 tracking-[0.1px] text-white opacity-60">info@oliviaresidence.sk</span>
                                 </div>
                             </div>
+                        </div>
+                        <div className="absolute top-0 right-0">
+                            <RectangleFooter/>
                         </div>
                     </div>
                     <div className="flex justify-between bg-[#000000] opacity-90">

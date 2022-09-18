@@ -17,20 +17,6 @@ import NewsSubscription from "../components/NewsSubscription";
 const Home: NextPage = () => {
     return (
         <>
-            <div className="flex bg-[#0E3F3B] items-center justify-center h-[40px] relative">
-                <div className="flex gap-[20px]">
-                    <p className="text-white font-medium text-[14px] leading-5 w-[160px]">
-                        Výstavba oficiálne začala.
-                    </p>
-                    <div className="flex gap-[8px] items-center">
-                        <span className="text-white font-medium text-[14px] leading-5">Viac</span>
-                        <RightArrowIcon/>
-                    </div>
-                </div>
-                <div className=" mr-[13px] absolute right-[12px] top-[12px]">
-                    <CloseIcon/>
-                </div>
-            </div>
             <section className="flex justify-center">
                 <div className="bg-[url('/img/hero.jpg')] h-[650px] w-full max-w-[1440px] mb-[140px]">
                     <div className="w-[600px] ml-[165px] pt-[185px] mb-[40px]">
