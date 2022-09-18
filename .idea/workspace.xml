@@ -2,12 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/img/envelopes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/smallMap.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/News.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NewsSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NewsSubscription.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/LogoSecondary.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/PaperPlane.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/RectangleFooter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Description.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Description2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Description2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/svg/RightArrow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/RightArrow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/svg/Star.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/Star.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,17 +46,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Project.color": "5a1b0b",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/jannahalka/web/olivia/olivia-frontend/node_modules/typescript/lib",
+    "ts.external.directory.path": "C:\\Users\\Rodinka\\Desktop\\Skola_Dansko\\Web_development\\Projects\\olivia-frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\public\img" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,6 +68,12 @@
       <updated>1663412137889</updated>
       <workItem from="1663412140067" duration="569000" />
       <workItem from="1663412720316" duration="427000" />
+      <workItem from="1663419135641" duration="1723000" />
+      <workItem from="1663420907872" duration="127000" />
+      <workItem from="1663427703336" duration="296000" />
+      <workItem from="1663428314168" duration="5666000" />
+      <workItem from="1663435799194" duration="5000" />
+      <workItem from="1663435868134" duration="10264000" />
     </task>
     <servers />
   </component>

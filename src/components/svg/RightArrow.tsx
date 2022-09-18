@@ -1,6 +1,10 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 
-const RightArrowIcon = () => {
+interface RightArrowProps{
+  stroke?:string
+}
+
+const RightArrowIcon: FunctionComponent<RightArrowProps> = ({stroke= "white"}) => {
   return (
     <svg
       width="7"
@@ -9,7 +13,7 @@ const RightArrowIcon = () => {
       fill='none'
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M1.5 1L5.5 5L1.5 9" stroke="white" stroke-width="1.5" />
+      <path d="M1.5 1L5.5 5L1.5 9" stroke={stroke} stroke-width="1.5" />
     </svg>
   );
 };
