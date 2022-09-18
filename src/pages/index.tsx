@@ -14,6 +14,7 @@ import Image from "next/image";
 import NewsSection from "../components/sections/News/NewsSection";
 import NewsSubscription from "../components/sections/News/NewsSubscription";
 import SwiperGallery from "../components/sections/Swipers/SwiperGallery";
+import SwiperPastProjects from "../components/sections/Swipers/SwiperPastProjects";
 
 const Home: NextPage = () => {
     return (
@@ -86,6 +87,7 @@ const Home: NextPage = () => {
             ]}
             />
             <NewsSubscription/>
+            <SwiperPastProjects/>
         </>
     );
 };

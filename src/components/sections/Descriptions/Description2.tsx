@@ -20,7 +20,7 @@ const Description2: FunctionComponent<Description2Props> = ({
                                                                 buttons,
                                                             }) => {
     return (
-        <div className="flex justify-center mb-[150px]">
+        <div className="flex justify-center">
             <div className="h-[1000px] w-[1440px] flex items-center justify-center bg-[#F5F5F5]">
                 <div>
                     <h3 className="mb-[95px] font-bold text-[40px] leading-[48px] tracking-[-0.5px] text-center text-primary">

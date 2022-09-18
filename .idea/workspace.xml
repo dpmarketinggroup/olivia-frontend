@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/SwiperGallery.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/LeftArrow.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/LogoBZ.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/RightArrow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/RightArrow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +44,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\News" />
+      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Process" />
+      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Descriptions" />
+      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Swipers" />
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\public\img" />
     </key>
   </component>
@@ -63,7 +66,7 @@
       <workItem from="1663427703336" duration="296000" />
       <workItem from="1663428314168" duration="5666000" />
       <workItem from="1663435799194" duration="5000" />
-      <workItem from="1663435868134" duration="16144000" />
+      <workItem from="1663435868134" duration="21527000" />
     </task>
     <servers />
   </component>

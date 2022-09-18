@@ -10,7 +10,7 @@ import LeftArrowIcon from "../../svg/LeftArrow";
 const SwiperGallery = () =>{
     return(
         <div className="text-white py-[45px] xl:py-[110px] px-[1rem] xl:px-0">
-            <div className="flex w-ful xl:max-w-[1310px] xl:ml-[165px] items-center xl:justify-between mb-[35px] xl:mb-[110px]">
+            <div className="flex w-ful xl:max-w-[1310px] xl:ml-[165px] items-center xl:justify-between mb-[35px] xl:mb-[70px]">
                 <h3 className="text-[26px] leading-[46px] xl:text-[40px] xl:leading-[40px] font-bold text-center xl:text-left mx-auto xl:mx-0 text-black">
                     Galéria
                 </h3>
@@ -31,6 +31,8 @@ const SwiperGallery = () =>{
                 slidesPerView={"auto"}
             >
                 {[
+                    "/img/room2.jpg",
+                    "/img/room2.jpg",
                     "/img/room2.jpg",
                     "/img/room2.jpg",
                     "/img/room2.jpg",
