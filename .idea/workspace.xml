@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/balcony.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/car.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/jozefMrkvicka.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/oProjekteHero.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/room3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FinancingConditions.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StepsUniCredit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Basket.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Block.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Camera.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/ElectricPanel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/EmailSign.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/House.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Kitchen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Man.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Parking.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Phone.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Sink.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/TwoArrows.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/UniCredit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/retail.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FinancingConditions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FinancingConditions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/o-projekte.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +64,7 @@
       <workItem from="1663428314168" duration="5666000" />
       <workItem from="1663435799194" duration="5000" />
       <workItem from="1663435868134" duration="22842000" />
-      <workItem from="1663597849509" duration="17780000" />
+      <workItem from="1663597849509" duration="18473000" />
     </task>
     <servers />
   </component>
