@@ -1,22 +1,23 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Navigation} from "swiper";
 import Image from "next/image";
 import RightArrowIcon from "../../svg/RightArrow";
 import "swiper/css";
 import LeftArrowIcon from "../../svg/LeftArrow";
 
 
-const SwiperGallery = () =>{
-    return(
+const SwiperGallery = () => {
+    return (
         <div className="text-white py-[45px] xl:py-[110px] px-[1rem] xl:px-0">
-            <div className="flex w-ful xl:max-w-[1310px] xl:ml-[165px] items-center xl:justify-between mb-[35px] xl:mb-[70px]">
+            <div
+                className="flex w-ful xl:max-w-[1310px] xl:ml-[165px] items-center xl:justify-between mb-[35px] xl:mb-[70px]">
                 <h3 className="text-[26px] leading-[46px] xl:text-[40px] xl:leading-[40px] font-bold text-center xl:text-left mx-auto xl:mx-0 text-black">
                     Galéria
                 </h3>
                 <div className="hidden xl:flex gap-[5px] mr-[165px]">
-                    <LeftArrowIcon className="int-prev bg-[#00000033]" />
-                    <RightArrowIcon className="int-next bg-[#00000033]" />
+                    <LeftArrowIcon className="int-prev bg-[#00000033]"/>
+                    <RightArrowIcon className="int-next bg-[#00000033]"/>
                 </div>
             </div>
             <Swiper
@@ -44,7 +45,7 @@ const SwiperGallery = () =>{
                         key={i}
                     >
                         <div className="relative h-[330px]">
-                            <Image objectFit="cover" layout={"fill"} src={url} alt="" />
+                            <Image objectFit="cover" layout={"fill"} src={url} alt=""/>
                         </div>
                     </SwiperSlide>
                 ))}

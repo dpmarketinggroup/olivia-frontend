@@ -15,6 +15,7 @@ import NewsSection from "../components/sections/News/NewsSection";
 import NewsSubscription from "../components/sections/News/NewsSubscription";
 import SwiperGallery from "../components/sections/Swipers/SwiperGallery";
 import SwiperPastProjects from "../components/sections/Swipers/SwiperPastProjects";
+import SwiperApartments from "../components/sections/Swipers/SwiperApartments";
 
 const Home: NextPage = () => {
     return (
@@ -57,6 +58,7 @@ const Home: NextPage = () => {
                     {path: "/", text: "Nezáväzné stretnutie"},
                 ]}
             />
+            <SwiperApartments/>
             <Map title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava"/>
             <Description2
                 imgPath="/img/room2.jpg"
