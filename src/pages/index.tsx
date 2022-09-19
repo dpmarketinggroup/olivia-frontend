@@ -1,16 +1,13 @@
 import type {NextPage} from "next";
 import Link from "next/link";
 import Description2 from "../components/sections/Descriptions/Description2";
-import CloseIcon from "../components/svg/Close";
 import KeyIcon from "../components/svg/Key";
 import Description from "../components/sections/Descriptions/Description";
 import GlassStarIcon from "../components/svg/GlassStar";
 import MapPointIcon from "../components/svg/MapPoint";
-import RightArrowIcon from "../components/svg/RightArrow";
 import StarIcon from "../components/svg/Star";
 import WholeProcess from "../components/sections/Process/WholeProcess";
 import Map from "../components/Map";
-import Image from "next/image";
 import NewsSection from "../components/sections/News/NewsSection";
 import NewsSubscription from "../components/sections/News/NewsSubscription";
 import SwiperGallery from "../components/sections/Swipers/SwiperGallery";

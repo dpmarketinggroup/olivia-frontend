@@ -12,7 +12,10 @@ interface DescriptionProps {
     { icon: JSX.Element; text: string },
     { icon: JSX.Element; text: string }
   ];
-  buttons: [{ path: string; text: string }, { path: string; text: string }];
+  buttons: [
+      { path: string; text: string },
+      { path: string; text: string }
+  ];
   reverseFlex?: boolean;
 }
 
@@ -30,7 +33,7 @@ const Description: FunctionComponent<DescriptionProps> = ({
         <Image objectFit="cover" layout="fill" alt="hero image" src={imgPath} />
       </div>
       <div className="flex flex-col gap-[23px]">
-        <h3 className="font-bold text-[40px] leading-[48px] tracking-[-0.5px] text-primary">
+        <h3 className="font-bold text-[40px] leading-[48px] tracking-[-0.5px] text-primary w-[445px]">
           {title}
         </h3>
         <p className="font-normal text-[16px] leading-[24px] tracking-[0.1px] text-neutral-600 w-[445px]">
