@@ -36,7 +36,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <div className="flex gap-[45px]">
+      <div className="flex gap-[27px]">
         <div className="flex items-center gap-[5px]">
           <span>SK</span>
           <DownArrowIcon fill="black"/>

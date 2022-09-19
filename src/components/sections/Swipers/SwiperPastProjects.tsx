@@ -12,7 +12,7 @@ const SwiperPastProjects = () => {
     return (
         <div className="flex justify-center">
             <div>
-                <div className="text-white py-[45px] xl:py-[110px] px-[1rem] xl:px-0">
+                <div className="text-white py-[45px] xl:py-[110px] px-[1rem] xl:px-0 mb-[130px]">
                     <div
                         className="flex gap-[400px] w-ful xl:max-w-[1310px] xl:ml-[165px] items-end xl:justify-between mb-[35px] xl:mb-[40px] mx-[165px]">
                         <h3 className="text-[26px] leading-[46px] xl:text-[32px] xl:leading-[38px] font-bold text-center xl:text-left mx-auto xl:mx-0 text-black tracking-[-0.4px]">

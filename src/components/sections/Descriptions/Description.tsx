@@ -25,7 +25,7 @@ const Description: FunctionComponent<DescriptionProps> = ({
   reverseFlex = false,
 }) => {
   return (
-    <div className={`flex gap-[110px] ${reverseFlex && "flex-row-reverse"} mx-[165px] items-center justify-center mb-[255px]`}>
+    <div className={`flex gap-[110px] ${reverseFlex && "flex-row-reverse"} mx-[165px] items-center justify-center mb-[165px]`}>
       <div className="h-[400px] w-[555px] relative">
         <Image objectFit="cover" layout="fill" alt="hero image" src={imgPath} />
       </div>
