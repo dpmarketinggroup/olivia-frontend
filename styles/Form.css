@@ -1,0 +1,18 @@
+.mantine-Checkbox-input {
+    background-color: rgba(0, 0, 0, 0.07);
+    border: none;
+}
+
+.mantine-Checkbox-input:checked {
+    background-color: #476761;
+    border: none;
+}
+
+    /*TextInput*/
+.mantine-14isq2b,
+.mantine-gqmpge,
+    /*TextArea*/
+.mantine-1bc792p{
+    background-color: rgba(0, 0, 0, 0.07);
+    border: 0;
+}

@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/img/kontaktHero.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/PhoneHero.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/kontakt.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/Form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/novinky.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/novinky.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +20,7 @@
       <list>
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -30,15 +35,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Rodinka\\Desktop\\Skola_Dansko\\Web_development\\Projects\\olivia-frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "ts.external.directory.path": "C:\\Users\\Rodinka\\Desktop\\Skola_Dansko\\Web_development\\Projects\\olivia-frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\public\img" />
@@ -65,7 +71,7 @@
       <workItem from="1663435799194" duration="5000" />
       <workItem from="1663435868134" duration="22842000" />
       <workItem from="1663597849509" duration="30517000" />
-      <workItem from="1663696935741" duration="1927000" />
+      <workItem from="1663696935741" duration="9752000" />
     </task>
     <servers />
   </component>
