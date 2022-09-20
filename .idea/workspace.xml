@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/img/bozenaNemcova.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/retailHero.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/Flat.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/FlatBold.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/FloorPlan.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FinancingConditions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FinancingConditions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/o-projekte.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/retail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/retail.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +68,7 @@
       <workItem from="1663428314168" duration="5666000" />
       <workItem from="1663435799194" duration="5000" />
       <workItem from="1663435868134" duration="22842000" />
-      <workItem from="1663597849509" duration="18473000" />
+      <workItem from="1663597849509" duration="23700000" />
     </task>
     <servers />
   </component>
