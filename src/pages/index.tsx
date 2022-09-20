@@ -50,33 +50,10 @@ const Home: NextPage = () => {
                     {icon: <StarIcon/>, text: "Vysoký štandard vybavenia"},
                     {icon: <GlassStarIcon/>, text: "Štýlové a kvalitné prevedenie"},
                 ]}
-                buttons={[
-                    {path: "/", text: "O projekte"},
-                    {path: "/", text: "Nezáväzné stretnutie"},
-                ]}
             />
             <SwiperApartments/>
             <Map title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava"/>
-            <Description2
-                imgPath="/img/room2.jpg"
-                title="Vybavenie apartmánov"
-                bulletPoints2={[
-                    {
-                        icon: <KeyIcon/>,
-                        title: "Apartmán na kľúč",
-                        text: "Bývanie v Olivia Residence je úplne bezstarostné. Ponúkame komplexne zariadené apratmány vrátane kompletne vybavenej kuchyne so spotrebičmi a sanitou. Vašou jedinou starosťou bude výber nábytku.",
-                    },
-                    {
-                        icon: <StarIcon/>,
-                        title: "Vysoký štandard vybavenia",
-                        text: "Olivia nevyniká len množstvom nadštandardného vybavenia, ale aj jeho prevedením. Materiály použité v apartmánoch zodpovedjú vysokým štandardom kvality.",
-                    },
-                ]}
-                buttons={[
-                    {path: "/", text: "Vybavenie apartmánov"},
-                    {path: "/", text: "Vybavenie apartmánov"},
-                ]}
-            />
+            <Description2 imgPath="/img/room2.jpg"/>
             <SwiperGallery/>
             <NewsSection news={[
                 {path: "/img/room.jpg", date: "12.09.2021", title: "Medium length title", description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"},

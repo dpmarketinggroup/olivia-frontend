@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/bozenaNemcova.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/retailHero.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Flat.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/FlatBold.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/FloorPlan.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/bus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/lokalitaHero.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/room4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/sportPeople.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/twoGirls.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/Bag.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/Flag.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/RingRoadArrow.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/Scooter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/SmilingHouse.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/lokalita.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/retail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/retail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StepsUniCredit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StepsUniCredit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/o-projekte.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -68,7 +80,7 @@
       <workItem from="1663428314168" duration="5666000" />
       <workItem from="1663435799194" duration="5000" />
       <workItem from="1663435868134" duration="22842000" />
-      <workItem from="1663597849509" duration="23700000" />
+      <workItem from="1663597849509" duration="30517000" />
     </task>
     <servers />
   </component>

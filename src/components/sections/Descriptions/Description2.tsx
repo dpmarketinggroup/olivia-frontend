@@ -2,30 +2,33 @@ import React, {FunctionComponent} from "react";
 import Image from "next/image";
 import BulletPoint2 from "./BulletPoint2";
 import Link from "next/link";
+import KeyIcon from "../../svg/Key";
+import StarIcon from "../../svg/Star";
 
 interface Description2Props {
     imgPath: string;
-    title: string;
-    bulletPoints2: [
+    bulletPoints2?: [
         { icon: JSX.Element; title: string; text: string },
         { icon: JSX.Element; title: string; text: string }
     ];
-    buttons: [{ path: string; text: string }, { path: string; text: string }];
+    buttons?: [{ path: string; text: string }, { path: string; text: string }];
 }
 
 const Description2: FunctionComponent<Description2Props> = ({
                                                                 imgPath,
-                                                                title,
-                                                                bulletPoints2,
-                                                                buttons,
+                                                                bulletPoints2 = [
+                                                                    { icon: <KeyIcon/> ,title: "Apartmán na kľúč", text: "Bývanie v Olivia Residence je úplne bezstarostné. Ponúkame komplexne zariadené apratmány vrátane kompletne vybavenej kuchyne so spotrebičmi a sanitou. Vašou jedinou starosťou bude výber nábytku." },
+                                                                    { icon: <StarIcon/>, title: "Vysoký štandard vybavenia", text: "Olivia nevyniká len množstvom nadštandardného vybavenia, ale aj jeho prevedením. Materiály použité v apartmánoch zodpovedjú vysokým štandardom kvality." }
+                                                                ],
+                                                                buttons = [
+                                                                    { path: "/", text: "Vybavenie apartmánov" }, { path: "/", text: "Nezáväzné stretnutie" }
+                                                                ],
                                                             }) => {
     return (
         <div className="flex justify-center">
             <div className="h-[1000px] w-[1440px] flex items-center justify-center bg-[#F5F5F5]">
                 <div>
-                    <h3 className="mb-[95px] font-bold text-[40px] leading-[48px] tracking-[-0.5px] text-center text-primary">
-                        {title}
-                    </h3>
+                    <h3 className="mb-[95px] font-bold text-[40px] leading-[48px] tracking-[-0.5px] text-center text-primary">Vybavenie apartmánov</h3>
                     <div className="flex gap-[110px] mb-[95px] justify-center">
                         <div className="h-[380px] w-[555px] relative">
                             <Image
@@ -57,7 +60,7 @@ const Description2: FunctionComponent<Description2Props> = ({
                             <Link key={k} href={b.path}>
                                 <button
                                     className={`font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[50px] w-[190px]
-                                        ${k === 0 && "text-green2 bg-white border-[#476761]"} 
+                                        ${k === 0 && "text-green2 bg-[#F5F5F5] border-[#476761]"} 
                                         ${k === 1 && "text-white bg-[#476761]"}`}>
                                     {b.text}
                                 </button>

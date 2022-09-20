@@ -42,10 +42,7 @@ const OProjekte: NextPage = () => {
                              {icon: <SinkIcon/>, text: "Vysoký štandard vybavenia"},
                              {icon: <BlockIcon/>, text: "Štýlové a kvalitné prevedenie"},
                          ]}
-                         buttons={[
-                             {path: "/", text: ""},
-                             {path: "/", text: "Nezáväzné stretnutie"},
-                         ]}
+                         twoButtons={false}
             />
             <Description imgPath="/img/balcony.jpg"
                          title="Priestranné balkóny a terasy s exterierovým slnečným tienením"
@@ -55,10 +52,7 @@ const OProjekte: NextPage = () => {
                              {icon: <ElectricPanelIcon/>, text: "Elektrické exteriérové slnečné tienenie ako štandard"},
                              {icon: <TwoArrowsIcon/>, text: "Veľko-metrážne terasy"},
                          ]}
-                         buttons={[
-                             {path: "/", text: ""},
-                             {path: "/", text: "Nezáväzné stretnutie"},
-                         ]}
+                         twoButtons={false}
                          reverseFlex={true}
             />
             <Description imgPath="/img/car.png"
@@ -69,10 +63,7 @@ const OProjekte: NextPage = () => {
                              {icon: <ParkingIcon/>, text: "Dlhodobý prenájom garážových státí"},
                              {icon: <CameraIcon/>, text: "Zabezpečené kamerovým systémom"},
                          ]}
-                         buttons={[
-                             {path: "/", text: ""},
-                             {path: "/", text: "Nezáväzné stretnutie"},
-                         ]}
+                         twoButtons={false}
             />
             <FinancingConditions/>
             <NewsSection news={[
