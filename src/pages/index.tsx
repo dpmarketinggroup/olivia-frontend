@@ -13,6 +13,7 @@ import NewsSubscription from "../components/sections/News/NewsSubscription";
 import SwiperGallery from "../components/sections/Swipers/SwiperGallery";
 import SwiperPastProjects from "../components/sections/Swipers/SwiperPastProjects";
 import SwiperApartments from "../components/sections/Swipers/SwiperApartments";
+import MapFooter from "../components/ui/MapFooter";
 
 const Home: NextPage = () => {
     return (
@@ -64,6 +65,7 @@ const Home: NextPage = () => {
             />
             <NewsSubscription/>
             <SwiperPastProjects/>
+            <MapFooter/>
         </>
     );
 };

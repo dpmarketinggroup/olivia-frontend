@@ -10,6 +10,7 @@ import FlagIcon from "../components/svg/Flag";
 import RingRoadArrowIcon from "../components/svg/RingRoadArrow";
 import Map from "../components/Map";
 import Description2 from "../components/sections/Descriptions/Description2";
+import MapFooter from "../components/ui/MapFooter";
 
 interface Descritpions{
     imgPath: string;
@@ -72,6 +73,7 @@ const Lokalita: NextPage = () => {
             ))}
             <Map title="Rožňavská 1A, Bratislava" subtitle="Lokalita, v ktorej máte všetko na dosah." centerText={true}/>
             <Description2 imgPath="/img/room4.jpg"/>
+            <MapFooter/>
         </>
     )
 }

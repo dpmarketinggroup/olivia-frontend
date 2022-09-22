@@ -18,6 +18,7 @@ import CameraIcon from "../components/svg/Camera";
 import NewsSubscription from "../components/sections/News/NewsSubscription";
 import NewsSection from "../components/sections/News/NewsSection";
 import FinancingConditions from "../components/FinancingConditions";
+import MapFooter from "../components/ui/MapFooter";
 
 
 const OProjekte: NextPage = () => {
@@ -74,6 +75,7 @@ const OProjekte: NextPage = () => {
             ]}
             />
             <NewsSubscription/>
+            <MapFooter/>
         </>
     )
 }

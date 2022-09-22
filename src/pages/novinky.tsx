@@ -2,6 +2,7 @@ import {NextPage} from "next";
 import NewsSection from "../components/sections/News/NewsSection";
 import React from "react";
 import NewsSubscription from "../components/sections/News/NewsSubscription";
+import MapFooter from "../components/ui/MapFooter";
 
 interface Messages {
     news: [
@@ -145,6 +146,7 @@ const Novinky: NextPage = () => {
                 ))}
                 <NewsSubscription/>
             </div>
+            <MapFooter/>
         </>
     )
 }

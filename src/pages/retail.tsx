@@ -8,6 +8,7 @@ import Image from "next/image";
 import PhoneIcon from "../components/svg/Phone";
 import EmailSignIcon from "../components/svg/EmailSign";
 import FlatBoldIcon from "../components/svg/FlatBold";
+import MapFooter from "../components/ui/MapFooter";
 
 
 const Retail: NextPage = () => {
@@ -60,6 +61,7 @@ const Retail: NextPage = () => {
                 </div>
             </div>
             <Map title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava"/>
+            <MapFooter/>
         </div>
     )
 }

@@ -1,12 +1,12 @@
 import {NextPage} from "next";
 import Hero from "../components/sections/Hero/Hero";
 import PhoneHeroIcon from "../components/svg/PhoneHero";
-import {TextInput} from "@mantine/core";
 import FormKontakt from "../components/sections/Form/FormKontakt";
 import Image from "next/image";
 import PhoneIcon from "../components/svg/Phone";
 import EmailSignIcon from "../components/svg/EmailSign";
 import React from "react";
+import MapFooter from "../components/ui/MapFooter";
 
 const Kontakt: NextPage = () => {
     return (
@@ -50,6 +50,7 @@ const Kontakt: NextPage = () => {
                     </div>
                 </div>
             </div>
+            <MapFooter/>
         </>
     )
 }
