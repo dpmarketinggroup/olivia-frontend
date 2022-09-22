@@ -2,25 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Table/TableRow.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Checkbox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/MapPoint2.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/MapFooter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dakujeme-za-email.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dakujeme.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/gdpr.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/stretnutie.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/výber-bytu-na-podlaží.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/modal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/News.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Table/TableRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Table/TableRow.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/kontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/kontakt.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lokalita.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lokalita.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/novinky.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/novinky.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/o-projekte.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/retail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/retail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Form.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/form.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="CSS File" />
         <option value="tsconfig.json" />
+        <option value="CSS File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -48,15 +39,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Rodinka\\Desktop\\Skola_Dansko\\Web_development\\Projects\\olivia-frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "ts.external.directory.path": "C:\\Users\\Rodinka\\Desktop\\Skola_Dansko\\Web_development\\Projects\\olivia-frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\public\img" />
@@ -86,7 +78,7 @@
       <workItem from="1663696935741" duration="9995000" />
       <workItem from="1663768491993" duration="1179000" />
       <workItem from="1663775478993" duration="1611000" />
-      <workItem from="1663777180650" duration="11089000" />
+      <workItem from="1663777180650" duration="23079000" />
     </task>
     <servers />
   </component>

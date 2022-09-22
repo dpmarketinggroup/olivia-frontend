@@ -1,7 +1,9 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, useState} from "react";
 import Link from "next/link";
 import RightArrowIcon from "../../svg/RightArrow";
 import News from "./News";
+import {Modal} from "@mantine/core";
+import Image from "next/image";
 
 interface NewsSectionProps {
     news: [

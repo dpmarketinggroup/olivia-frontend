@@ -9,7 +9,6 @@ import KitchenIcon from "../components/svg/Kitchen";
 import SinkIcon from "../components/svg/Sink";
 import BlockIcon from "../components/svg/Block";
 import BasketIcon from "../components/svg/Basket";
-import ElectricPanel from "../components/svg/ElectricPanel";
 import TwoArrowsIcon from "../components/svg/TwoArrows";
 import ElectricPanelIcon from "../components/svg/ElectricPanel";
 import ManIcon from "../components/svg/Man";
