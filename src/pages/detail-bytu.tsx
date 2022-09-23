@@ -93,52 +93,52 @@ const DetailyBytu: NextPage = () => {
                     </div>
                     <div className="mx-[165px]">
                         <div className="flex justify-between mb-[25px]">
-                            <p>Číslo apartmánu</p>
-                            <span>5.05</span>
+                            <p className="text-[#676766] font-medium text-[16px] leading-6 tracking-[0.1px]">Číslo apartmánu</p>
+                            <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">5.05</span>
                         </div>
-                        <div className="flex justify-between mb-[25px]">
-                            <p>Cena</p>
-                            <span>142 800€</span>
+                        <div className="flex justify-between mb-[25px] items-center">
+                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Cena</p>
+                            <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px]">142 800€</span>
                         </div>
                         <div className="flex justify-between mb-[70px]">
-                            <p>Dostupnosť</p>
-                            <span>voľný</span>
+                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Dostupnosť</p>
+                            <span className="font-bold text-[16px] leading-6 tracking-[0.1px] text-[#476761]">voľný</span>
                         </div>
                         <div className="flex justify-between mb-[25px]">
-                            <p>Názov</p>
-                            <span>Plocha</span>
+                            <p className="font-medium text-[14px] leading-5 tracking-[0.1px] opacity-40">Názov</p>
+                            <span className="font-medium text-[14px] leading-5 tracking-[0.1px] opacity-40">Plocha</span>
                         </div>
                         <div className="flex justify-between mb-[25px]">
-                            <p>Vstupná hala</p>
+                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Vstupná hala</p>
                             <span>5.16 m²</span>
                         </div>
                         <div className="flex justify-between mb-[25px]">
-                            <p>Kuchyňa</p>
+                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Kuchyňa</p>
                             <span>6.66 m²</span>
                         </div>
                         <div className="flex justify-between mb-[25px]">
-                            <p>Obývacia izba</p>
+                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Obývacia izba</p>
                             <span>25.30 m²</span>
                         </div>
                         <div className="flex justify-between mb-[25px]">
-                            <p>Izba</p>
+                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Izba</p>
                             <span>11.99 m²</span>
                         </div>
                         <div className="flex justify-between mb-[25px]">
-                            <p>Kúpelňa + WC</p>
+                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Kúpelňa + WC</p>
                             <span>4.45 m²</span>
                         </div>
                         <div className="flex justify-between mb-[25px]">
-                            <p>Celková výmera</p>
-                            <span>53.56 m²</span>
+                            <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková výmera</p>
+                            <span className="font-bold">53.56 m²</span>
                         </div>
                         <div className="flex justify-between mb-[25px]">
-                            <p>Balkón</p>
+                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Balkón</p>
                             <span>7.67 m²</span>
                         </div>
                         <div className="flex justify-between mb-[70px]">
-                            <p>Celková výmera + Balkón</p>
-                            <span>61.23 m²</span>
+                            <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková výmera + Balkón</p>
+                            <span className="font-bold">61.23 m²</span>
                         </div>
                         <div onClick={() => setOpened(true)}>
                             <Link href="/detail-bytu">

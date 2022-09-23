@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Bank.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/LeftArrowSwiper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/RightArrowSwiper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/News.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +74,7 @@
       <workItem from="1663775478993" duration="1611000" />
       <workItem from="1663777180650" duration="23868000" />
       <workItem from="1663881519873" duration="4443000" />
-      <workItem from="1663935056281" duration="9317000" />
+      <workItem from="1663935056281" duration="11194000" />
     </task>
     <servers />
   </component>

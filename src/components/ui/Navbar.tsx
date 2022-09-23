@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="h-[60px] mx-[40px] flex gap-[365px] items-center justify-between">
-      <div className="flex gap-[50] items-center">
+    <nav className="h-[60px] flex gap-[365px] items-center justify-between shadow-[0_0_10px_rgba(0,0,0,0.15)]">
+      <div className="flex gap-[50] items-center ml-[40px]">
         <Logo />
         <div className="flex gap-[25px] items-center">
           <div className="flex gap-[10px] items-center">
@@ -36,7 +36,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <div className="flex gap-[27px]">
+      <div className="flex gap-[27px] mr-[40px]">
         <div className="flex items-center gap-[5px]">
           <span>SK</span>
           <DownArrowIcon fill="black"/>
