@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/svg/ArrowDownNotFilled.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/Severka.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/Bank.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/LeftArrowSwiper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/RightArrowSwiper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/News.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,16 +37,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Rodinka\\Desktop\\Skola_Dansko\\Web_development\\Projects\\olivia-frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\Rodinka\\Desktop\\Skola_Dansko\\Web_development\\Projects\\olivia-frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\public\img" />
@@ -73,7 +78,8 @@
       <workItem from="1663768491993" duration="1179000" />
       <workItem from="1663775478993" duration="1611000" />
       <workItem from="1663777180650" duration="23868000" />
-      <workItem from="1663881519873" duration="4217000" />
+      <workItem from="1663881519873" duration="4443000" />
+      <workItem from="1663935056281" duration="9317000" />
     </task>
     <servers />
   </component>

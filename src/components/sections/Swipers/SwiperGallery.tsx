@@ -5,6 +5,9 @@ import Image from "next/image";
 import RightArrowIcon from "../../svg/RightArrow";
 import "swiper/css";
 import LeftArrowIcon from "../../svg/LeftArrow";
+import AaaIcon from "../../svg/LeftArrowSwiper";
+import LeftArrowSwiperIcon from "../../svg/LeftArrowSwiper";
+import RightArrowSwiperIcon from "../../svg/RightArrowSwiper";
 
 
 const SwiperGallery = () => {
@@ -16,8 +19,9 @@ const SwiperGallery = () => {
                     Galéria
                 </h3>
                 <div className="hidden xl:flex gap-[5px] mr-[165px]">
-                    <LeftArrowIcon className="int-prev bg-[#00000033]"/>
-                    <RightArrowIcon className="int-next bg-[#00000033]"/>
+                    {/*<LeftArrowIcon className="int-prev bg-[#00000033]"/>*/}
+                    <LeftArrowSwiperIcon className="int-prev"/>
+                    <RightArrowSwiperIcon className="int-next"/>
                 </div>
             </div>
             <Swiper
