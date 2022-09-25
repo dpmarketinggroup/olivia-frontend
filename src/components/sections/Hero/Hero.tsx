@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface HeroProps {
     imgName: string,
@@ -16,7 +17,15 @@ const Hero: FunctionComponent<HeroProps> = ({
                                             }) => {
     return (
         <div className="flex justify-center">
-            <div className={`bg-[url('/img/${imgName}.jpg')] h-[460px] w-full max-w-[1440px] mb-[140px]`}>
+            <div className={`h-[460px] w-full max-w-[1440px] mb-[140px]`}>
+                <div className="h-[430px] w-[1440px] max-w-[1440px] absolute -z-10">
+                    <Image
+                        objectFit="cover"
+                        layout="fill"
+                        alt="hero image"
+                        src={`/img/${imgName}.jpg`}
+                    />
+                </div>
                 <div className="w-[445px] ml-[165px] pt-[90px] mb-[20px]">
                     <div className="mb-[30px]">
                         {icon}
