@@ -41,14 +41,14 @@ const Description: FunctionComponent<DescriptionProps> = ({
                     <BulletPoint key={k} icon={b.icon} text={b.text}/>
                 ))}
                 <div className="flex gap-[12px]">
-                    {twoButtons && <Link href="/">
+                    {twoButtons && <Link href="/o-projekte">
                         <button
                             className="font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[36px] text-green2 bg-white border-[#476761] w-[120px]">O
                             projekte
                         </button>
                     </Link>
                     }
-                    <Link href="/">
+                    <Link href="/stretnutie">
                         <button
                             className="font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[36px] text-white bg-[#476761] w-[190px]">Nezáväzné
                             stretnutie

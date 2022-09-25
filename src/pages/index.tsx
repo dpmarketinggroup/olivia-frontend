@@ -26,13 +26,13 @@ const Home: NextPage = () => {
                         </h1>
                     </div>
                     <div className="flex gap-[10px] ml-[165px] ">
-                        <Link href="/">
+                        <Link href="/stretnutie">
                             <button
                                 className="bg-[#89A6A2] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px]">
                                 Nezáväzné stretnutie
                             </button>
                         </Link>
-                        <Link href="/">
+                        <Link href="/ponuka-bytov">
                             <button
                                 className="font-medium text-[16px] leading-[24px] tracking-[-0.1px] w-[210px] h-[50px] border border-white text-white">
                                 Ponuka apartmánov

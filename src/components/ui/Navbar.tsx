@@ -11,27 +11,31 @@ const Navbar = () => {
         <Logo />
         <div className="flex gap-[25px] items-center">
           <div className="flex gap-[10px] items-center">
-            <span className="font-normal text-[16px] leading-6">
+            <Link href="/ponuka-bytov">
+            <a className="font-normal text-[16px] leading-6">
               Ponuka apartmánov
-            </span>
+            </a>
+            </Link>
             <DownArrowIcon fill={'black'}/>
           </div>
-          <Link href="/">
+          <Link href="/lokalita">
             <a className="font-normal text-[16px] leading-6">Lokalita</a>
           </Link>
           <div className="flex gap-[10px] items-center">
-            <span className="font-normal text-[16px] leading-6 text-[#476761]">
+            <Link href="/o-projekte">
+            <a className="font-normal text-[16px] leading-6 text-[#476761]">
               O projekte
-            </span>
+            </a>
+            </Link>
             <DownArrowIcon />
           </div>
-          <Link href="/">
+          <Link href="/retail">
             <a className="font-normal text-[16px] leading-6">Retail</a>
           </Link>
-          <Link href="/">
+          <Link href="/novinky">
             <a className="font-normal text-[16px] leading-6">Novinky</a>
           </Link>
-          <Link href="/">
+          <Link href="/kontakt">
             <a className="font-normal text-[16px] leading-6">Kontakt</a>
           </Link>
         </div>
@@ -41,7 +45,7 @@ const Navbar = () => {
           <span>SK</span>
           <DownArrowIcon fill="black"/>
         </div>
-        <Link href='/'>
+        <Link href='/stretnutie'>
           <button className="font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px]">Nezáväzné stretnutie</button>
         </Link>
       </div>

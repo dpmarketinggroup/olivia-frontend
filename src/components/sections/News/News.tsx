@@ -35,7 +35,7 @@ const News : FunctionComponent<NewsProps> = ({
             <p className="text-[16px] leading-6 tracking-[0.1px] mb-[25px]">
                 {description}
             </p>
-            <Link href="/">
+            <Link href="/stretnutie">
                 <button className="px-[20px] py-[6px] bg-[#476761] text-white font-medium text-[16px] leading-6">
                     Nezáväzné stretnutie
                 </button>

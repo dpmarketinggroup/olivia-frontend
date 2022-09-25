@@ -48,9 +48,7 @@ const SwiperPastProjects = () => {
                             {url: "/img/room2.jpg", title: "Austria Trend Hotel Bratislava"},
                             {url: "/img/room2.jpg", title: "Fresh Market Bratislava"},
                             {url: "/img/room2.jpg", title: "Klienstké centrum Bratislava"},
-                            {url: "/img/room2.jpg", title: "Jebko"},
-                            {url: "/img/room2.jpg", title: "Pelko"},
-                            {url: "/img/room2.jpg", title: "Sebko"},
+                            {url: "/img/room2.jpg", title: "Fresh Market Bratislava"},
                         ].map((img, i) => (
                             <SwiperSlide
                                 className={`w-full xl:max-w-[255px] ${i === 0 && "xl:ml-[165px]"}`}

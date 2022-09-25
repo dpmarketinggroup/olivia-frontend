@@ -4,7 +4,6 @@ import {Navigation} from "swiper";
 import Image from "next/image";
 import RightArrowIcon from "../../svg/RightArrow";
 import "swiper/css";
-import LeftArrowIcon from "../../svg/LeftArrow";
 import Link from "next/link";
 import LeftArrowSwiperIcon from "../../svg/LeftArrowSwiper";
 import RightArrowSwiperIcon from "../../svg/RightArrowSwiper";
@@ -49,8 +48,6 @@ const SwiperApartments = () => {
                             {url: "/img/apartment1.png", title: "3 izbový apartmán"},
                             {url: "/img/apartment1.png", title: "4 izbový apartmán"},
                             {url: "/img/apartment1.png", title: "5 izbový apartmán"},
-                            {url: "/img/room2.jpg", title: "Pelko"},
-                            {url: "/img/room2.jpg", title: "Sebko"},
                         ].map((img, i) => (
                             <SwiperSlide
                                 className={`w-full xl:max-w-[230px] ${i === 0 && "xl:ml-[165px]"}`}

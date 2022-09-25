@@ -30,7 +30,7 @@ const Description2: FunctionComponent<Description2Props>
                }
            ],
            buttons = [
-               {path: "/", text: "Vybavenie apartmánov"}, {path: "/", text: "Nezáväzné stretnutie"}
+               {path: "/ponuka-bytov", text: "Vybavenie apartmánov"}, {path: "/stretnutie", text: "Nezáväzné stretnutie"}
            ],
        }) => {
     return (

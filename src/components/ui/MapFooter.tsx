@@ -16,7 +16,7 @@ const MapFooter = () => {
                                 novom bývaní.</p>
                             <p className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] text-white">Rožňavská
                                 1A, Bratislava</p>
-                            <Link href='/'>
+                            <Link href='/stretnutie'>
                                 <button
                                     className="text-[16px] font-[500] leading-[24px] tracking-[0.1px] text-white border h-[50px] w-[190px] bg-[#89A6A2] border-none">Nezáväzné
                                     stretnutie

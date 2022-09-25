@@ -27,7 +27,7 @@ const OProjekte: NextPage = () => {
                   description="Všetky podstatné informácie o Vašom novom bývaní na jednom mieste."/>
             <WholeProcess/>
             <div className="flex justify-center">
-                <Link href="/">
+                <Link href="/stretnutie">
                     <button
                         className="bg-[#476761] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] mt-[-60px] mb-[185px]">
                         Nezáväzné stretnutie

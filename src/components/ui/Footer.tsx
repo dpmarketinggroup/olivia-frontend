@@ -37,25 +37,25 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                     <a className="font-medium text-[16px] leading-6 tracking-[0.1px] text-white opacity-60">Domovská
                                         stránka</a>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/ponuka-bytov">
                                     <a className="font-medium text-[16px] leading-6 tracking-[0.1px] text-white opacity-60">Apartmány</a>
                                 </Link>
-                                <Link href='/'>
+                                <Link href='/o-projekte'>
                                     <a className="font-medium text-[16px] leading-6 tracking-[0.1px] text-white opacity-60">O
                                         projekte</a>
                                 </Link>
-                                <Link href='/'>
+                                <Link href='/lokalita'>
                                     <a className="font-medium text-[16px] leading-6 tracking-[0.1px] text-white opacity-60">Lokalita</a>
                                 </Link>
                             </div>
                             <div className="flex flex-col gap-[15px]">
-                                <Link href="/">
+                                <Link href="/novinky">
                                     <a className="font-medium text-[16px] leading-6 tracking-[0.1px] text-white opacity-60">Novinky</a>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/retail">
                                     <a className="font-medium text-[16px] leading-6 tracking-[0.1px] text-white opacity-60">Retail</a>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/kontakt">
                                     <a className="font-medium text-[16px] leading-6 tracking-[0.1px] text-white opacity-60">Kontakt</a>
                                 </Link>
                             </div>
