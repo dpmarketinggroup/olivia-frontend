@@ -1,26 +1,58 @@
-.mantine-Checkbox-input {
-    background-color: rgba(0, 0, 0, 0.07);
-    border: 2px solid white;
-}
-
-.mantine-Checkbox-input:checked {
-    background-color: #89A6A2;
-    border: none;
-}
-
-.mantine-TextInput-input {
+/*Green form*/
+.green .mantine-TextInput-input {
     background: rgba(255, 255, 255, 0.12);
     border: 0;
     height: 48px;
     color: white;
 }
 
-.mantine-Textarea-input {
+.green .mantine-Textarea-input {
     background:  rgba(255, 255, 255, 0.12);
     border: 0;
     color: white;
 }
 
-.green. a.mantine-Checkbox-input {
-
+.green .mantine-Checkbox-input {
+    background-color: rgba(0, 0, 0, 0.07);
+    border: 2px solid white;
 }
+
+.green .mantine-Checkbox-input:checked {
+    background-color: #89A6A2;
+    border: none;
+}
+/*//////////////////////////////////////////*/
+
+/*Grey form*/
+.grey .mantine-TextInput-input {
+    background: rgba(0, 0, 0, 0.07);
+    border: 0;
+    height: 48px;
+    color: white;
+}
+
+.grey .mantine-Textarea-input {
+    background: rgba(0, 0, 0, 0.07);
+    border: 0;
+    color: white;
+}
+
+.grey .mantine-Checkbox-input {
+    background-color: rgba(0, 0, 0, 0.07);
+    border: 2px solid white;
+}
+
+.grey .mantine-Checkbox-input:checked {
+    background: #476761;
+    border: none;
+}
+/*//////////////////////////////////////////*/
+
+/*Odber noviniek a Footer*/
+.mantine-TextInput-input {
+    background: rgba(255, 255, 255, 0.12);
+    border: 0;
+    height: 48px;
+    color: white;
+}
+/*//////////////////////////////////////////*/

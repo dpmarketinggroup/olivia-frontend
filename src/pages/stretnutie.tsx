@@ -25,7 +25,7 @@ const Stretnutie: NextPage = () => {
                         <div className="flex gap-[135px]">
                             <div>
                                 <div className="mb-[125px]">
-                                    <FormKontakt meeting={true} checkboxBackgroundColor="#89A6A2" inputBackgroundColor="#ffffff1f"/>
+                                    <FormKontakt meeting={true} isGreen={true}/>
                                 </div>
                             </div>
                             <div className="mt-[70px]">

@@ -20,7 +20,7 @@ const Kontakt: NextPage = () => {
                     <div className="flex gap-[135px]">
                         <div>
                             <div className="mb-[125px]">
-                                <FormKontakt checkboxBackgroundColor="#89A6A2" inputBackgroundColor="#ffffff1f"/>
+                                <FormKontakt isGreen={false}/>
                             </div>
                         </div>
                         <div>

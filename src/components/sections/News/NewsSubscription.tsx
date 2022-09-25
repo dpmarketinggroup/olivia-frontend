@@ -13,7 +13,7 @@ const NewsSubscription = () => {
                         <p className="text-[14px] leading-5 text-white w-[300px]">Najnovšie informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
                         <form onSubmit={(e) => e.preventDefault()}>
                             <TextInput
-                                className="w-[350px] text-[16px] leading-6 tracking-[0.1px] opacity-50"
+                                className="w-[350px] text-[16px] leading-6 tracking-[0.1px]"
                                 placeholder="Email" rightSection= {<button><PaperPlaneIcon/></button>}/>
                         </form>
                         <p className="text-[12px] leading-5 opacity-40 text-white w-[350px] pb-[52px]">

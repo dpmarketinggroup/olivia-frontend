@@ -2,35 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/sections/StyledComponents/Form.style.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FinancingConditions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/UniCredit/FinancingConditions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StepsUniCredit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/UniCredit/StepsUniCredit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/News.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/MapPoint.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/MapPoint.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/MapFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MapFooter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/gdpr.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/gdpr.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/kontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/kontakt.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lokalita.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lokalita.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/o-projekte.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/stretnutie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/stretnutie.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/modal.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +46,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Users\\Rodinka\\Desktop\\Skola_Dansko\\Web_development\\Projects\\olivia-frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -102,7 +83,7 @@
       <workItem from="1663777180650" duration="23868000" />
       <workItem from="1663881519873" duration="4443000" />
       <workItem from="1663935056281" duration="24872000" />
-      <workItem from="1664031560272" duration="16364000" />
+      <workItem from="1664031560272" duration="19599000" />
     </task>
     <servers />
   </component>

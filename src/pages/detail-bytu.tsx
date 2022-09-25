@@ -23,7 +23,7 @@ const DetailyBytu: NextPage = () => {
         <>
             <Modal opened={opened} size={770000} onClose={() => setOpened(false)} centered>
                 <div className="flex justify-center">
-                <FormKontakt checkboxBackgroundColor="#89A6A2" inputBackgroundColor="#ffffff1f"/>
+                <FormKontakt isGreen={false}/>
                 </div>
             </Modal>
             <div className="flex justify-center">

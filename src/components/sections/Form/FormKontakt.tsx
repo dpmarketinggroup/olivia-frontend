@@ -1,21 +1,19 @@
 import React, {FunctionComponent} from "react";
-import {Checkbox, Textarea, TextInput, CheckboxProps} from "@mantine/core";
-import {InputCus, TextareaCus, CheckboxCus} from "../StyledComponents/Form.style"
+import {Checkbox, Textarea, TextInput} from "@mantine/core";
 
 interface FormKontakt {
-    inputBackgroundColor: string
-    checkboxBackgroundColor: string
     meeting?: boolean
+    isGreen: boolean
 }
 
 const FormKontakt: FunctionComponent<FormKontakt>
     = ({
            meeting = false,
-           inputBackgroundColor,
-           checkboxBackgroundColor
+           isGreen
        }) => {
     return (
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={(e) => e.preventDefault()}
+              className={isGreen ? "green" : "grey"}>
             {
                 meeting &&
                 <div className="flex gap-[20px] items-center mb-[45px]">
@@ -43,9 +41,7 @@ const FormKontakt: FunctionComponent<FormKontakt>
                     <TextInput placeholder="Meno" radius="xs"/>
                     <TextInput placeholder="Priezvisko" radius="xs"/>
                 </div>
-                {/*<InputCus color={inputBackgroundColor}>*/}
-                    <TextInput placeholder="Email" radius="xs"/>
-                {/*</InputCus>*/}
+                <TextInput placeholder="Email" radius="xs"/>
                 <TextInput placeholder="Tel. č." radius="xs"/>
                 <Textarea placeholder="Správa"
                           radius="xs"
@@ -59,7 +55,6 @@ const FormKontakt: FunctionComponent<FormKontakt>
                         </p>
                     </>
                 } radius="xs" color="#476761"/>
-                <CheckboxCus color={checkboxBackgroundColor}>
                 <Checkbox label={
                     <>
                         <p className="text-[14px] leading-5 text-[#999999]">
@@ -67,7 +62,6 @@ const FormKontakt: FunctionComponent<FormKontakt>
                         </p>
                     </>
                 } radius="xs" color="green"/>
-                </CheckboxCus>
                 <button className={`py-[12px] ${meeting ? "bg-[#89A6A2]" : "bg-[#476761]"} text-white`}>Odoslať</button>
             </div>
         </form>
