@@ -5,12 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/kontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/kontakt.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/stretnutie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/stretnutie.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Table/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Table/Table.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +78,7 @@
       <workItem from="1663777180650" duration="23868000" />
       <workItem from="1663881519873" duration="4443000" />
       <workItem from="1663935056281" duration="24872000" />
-      <workItem from="1664031560272" duration="19599000" />
+      <workItem from="1664031560272" duration="22452000" />
     </task>
     <servers />
   </component>
