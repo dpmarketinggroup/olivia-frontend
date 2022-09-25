@@ -1,8 +1,8 @@
 import React from "react";
-import UniCreditIcon from "./svg/UniCredit";
+import UniCreditIcon from "../../svg/UniCredit";
 import Image from "next/image";
-import PhoneIcon from "./svg/Phone";
-import EmailSignIcon from "./svg/EmailSign";
+import PhoneIcon from "../../svg/Phone";
+import EmailSignIcon from "../../svg/EmailSign";
 import StepsUniCredit from "./StepsUniCredit";
 
 interface Steps {
@@ -19,8 +19,8 @@ const FinancingConditions = () => {
     ]
     return (
         <div className="flex justify-center">
-            <div>
-                <div className="relative mb-[200px] w-[1440px]">
+            <div className="w-full">
+                <div className="relative mb-[200px] flex flex-col">
                     <div className="bg-black w-full">
                         <div className="flex flex-col gap-[30px] justify-center items-center pt-[130px] pb-[270px]">
                             <h2 className="font-bold text-[40px] leading-[48px] text-[#F5F5F5] tracking-[-0.5px]">Podmienky
@@ -30,8 +30,13 @@ const FinancingConditions = () => {
                             <UniCreditIcon/>
                         </div>
                     </div>
+                    <div className="flex gap-[30px] bg-[background: #F5F5F5] absolute top-1/2 left-1/2 -translate-y-1/3 -translate-x-1/2">
+                        {steps.map((s, k) => (
+                            <StepsUniCredit key={k} step={s.step} title={s.title} offer={s.offer}/>
+                        ))}
+                    </div>
                     <div className="bg-[#F5F5F5] w-[full]">
-                        <div className="flex gap-[100px] pt-[270px] pb-[145px] mx-[165px] items-center">
+                        <div className="flex gap-[100px] pt-[270px] pb-[145px] mx-[165px] items-center justify-center">
                             <div>
                                 <h4 className="font-bold text-[18px] leading-7 mb-[10px]">Finančný poradca UniCredit
                                     Bank</h4>
@@ -64,11 +69,6 @@ const FinancingConditions = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="flex gap-[30px] bg-[background: #F5F5F5] absolute top-[460px] left-[165px]">
-                        {steps.map((s, k) => (
-                            <StepsUniCredit key={k} step={s.step} title={s.title} offer={s.offer}/>
-                        ))}
                     </div>
                 </div>
             </div>

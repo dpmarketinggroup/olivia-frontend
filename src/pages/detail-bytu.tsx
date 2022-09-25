@@ -22,7 +22,9 @@ const DetailyBytu: NextPage = () => {
     return (
         <>
             <Modal opened={opened} size={770000} onClose={() => setOpened(false)} centered>
-                <FormKontakt/>
+                <div className="flex justify-center">
+                <FormKontakt checkboxBackgroundColor="#89A6A2" inputBackgroundColor="#ffffff1f"/>
+                </div>
             </Modal>
             <div className="flex justify-center">
                 <div>
@@ -172,9 +174,9 @@ const DetailyBytu: NextPage = () => {
                     <div className="mb-[80px]">
                         <SwiperGallery/>
                     </div>
-                    <MapFooter/>
                 </div>
             </div>
+            <MapFooter/>
         </>
     )
 }

@@ -55,7 +55,9 @@ const Home: NextPage = () => {
             <SwiperApartments/>
             <Map title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava"/>
             <Description2 imgPath="/img/room2.jpg"/>
+            <div className="flex justify-center">
             <SwiperGallery/>
+            </div>
             <NewsSection news={[
                 {path: "/img/room.jpg", date: "12.09.2021", title: "Medium length title", description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"},
                 {path: "/img/room.jpg", date: "12.09.2021", title: "Medium length title", description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"},
@@ -65,8 +67,8 @@ const Home: NextPage = () => {
             />
             <NewsSubscription/>
             <SwiperPastProjects/>
-            <MapFooter/>
-        </>
+    <MapFooter/>
+    </>
     );
 };
 

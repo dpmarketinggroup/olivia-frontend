@@ -6,6 +6,8 @@ import RightArrowIcon from "../../svg/RightArrow";
 import "swiper/css";
 import LeftArrowIcon from "../../svg/LeftArrow";
 import LogoBZ from "../../svg/LogoBZ";
+import LeftArrowSwiperIcon from "../../svg/LeftArrowSwiper";
+import RightArrowSwiperIcon from "../../svg/RightArrowSwiper";
 
 
 const SwiperPastProjects = () => {
@@ -25,8 +27,8 @@ const SwiperPastProjects = () => {
                             dlhoročnými
                             skúsenosťami, ktorý má za sebou mnoho projektov situovaných po celom Slovensku.</p>
                         <div className="hidden xl:flex gap-[5px] mr-[165px] self-center">
-                            <LeftArrowIcon className="int-prev bg-[#00000033]"/>
-                            <RightArrowIcon className="int-next bg-[#00000033]"/>
+                            <LeftArrowSwiperIcon className="int-prev"/>
+                            <RightArrowSwiperIcon className="int-next"/>
                         </div>
                     </div>
                     <Swiper

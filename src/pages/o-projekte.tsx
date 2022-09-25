@@ -16,7 +16,7 @@ import ParkingIcon from "../components/svg/Parking";
 import CameraIcon from "../components/svg/Camera";
 import NewsSubscription from "../components/sections/News/NewsSubscription";
 import NewsSection from "../components/sections/News/NewsSection";
-import FinancingConditions from "../components/FinancingConditions";
+import FinancingConditions from "../components/sections/UniCredit/FinancingConditions";
 import MapFooter from "../components/ui/MapFooter";
 
 

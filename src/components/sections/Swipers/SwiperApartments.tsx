@@ -6,6 +6,8 @@ import RightArrowIcon from "../../svg/RightArrow";
 import "swiper/css";
 import LeftArrowIcon from "../../svg/LeftArrow";
 import Link from "next/link";
+import LeftArrowSwiperIcon from "../../svg/LeftArrowSwiper";
+import RightArrowSwiperIcon from "../../svg/RightArrowSwiper";
 
 const SwiperApartments = () => {
     return (
@@ -18,8 +20,8 @@ const SwiperApartments = () => {
                         </h3>
                         <div className="flex gap-[30px] items-center">
                             <div className="hidden xl:flex gap-[5px]  self-center">
-                                <LeftArrowIcon className="int-prev bg-[#00000033]"/>
-                                <RightArrowIcon className="int-next bg-[#00000033]"/>
+                                <LeftArrowSwiperIcon className="int-prev"/>
+                                <RightArrowSwiperIcon className="int-next"/>
                             </div>
                             <div className="flex gap-[10px] items-center">
                                 <Link href='/'>
@@ -54,8 +56,8 @@ const SwiperApartments = () => {
                                 className={`w-full xl:max-w-[230px] ${i === 0 && "xl:ml-[165px]"}`}
                                 key={i}
                             >
-                                <p className="text-black mb-[30px]">{img.title}</p>
-                                <div className="relative h-[145px]">
+                                <p className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] text-green2 mb-[30px]">{img.title}</p>
+                                <div className="relative h-[235px]">
                                     <Image objectFit="contain" layout={"fill"}
                                            src={img.url} alt={img.title}/>
                                 </div>

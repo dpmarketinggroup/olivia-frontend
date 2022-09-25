@@ -5,9 +5,8 @@ import Image from "next/image";
 const MapFooter = () => {
     return (
         <div className="flex justify-center">
-            <div>
-                <div className="w-[1440px]">
-                    <div className='flex gap-[125px]  bg-primary-pattern'>
+                <div className="bg-primary-pattern w-full ">
+                    <div className="flex gap-[125px] justify-center">
                         <div className="flex flex-col gap-[28px] mx-[165px] py-[150px]">
                             <h2 className="font-bold text-[40px] leading-[48px] tracking-[-0.5px] text-white w-[445px]">Dohodnite
                                 si <br/><span className="underline underline-offset-[6px]">Nezáväzné stretnutie</span> v
@@ -34,7 +33,6 @@ const MapFooter = () => {
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     )
 }

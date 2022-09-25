@@ -14,21 +14,31 @@ interface Description2Props {
     buttons?: [{ path: string; text: string }, { path: string; text: string }];
 }
 
-const Description2: FunctionComponent<Description2Props> = ({
-                                                                imgPath,
-                                                                bulletPoints2 = [
-                                                                    { icon: <KeyIcon/> ,title: "Apartmán na kľúč", text: "Bývanie v Olivia Residence je úplne bezstarostné. Ponúkame komplexne zariadené apratmány vrátane kompletne vybavenej kuchyne so spotrebičmi a sanitou. Vašou jedinou starosťou bude výber nábytku." },
-                                                                    { icon: <StarIcon/>, title: "Vysoký štandard vybavenia", text: "Olivia nevyniká len množstvom nadštandardného vybavenia, ale aj jeho prevedením. Materiály použité v apartmánoch zodpovedjú vysokým štandardom kvality." }
-                                                                ],
-                                                                buttons = [
-                                                                    { path: "/", text: "Vybavenie apartmánov" }, { path: "/", text: "Nezáväzné stretnutie" }
-                                                                ],
-                                                            }) => {
+const Description2: FunctionComponent<Description2Props>
+    = ({
+           imgPath,
+           bulletPoints2 = [
+               {
+                   icon: <KeyIcon/>,
+                   title: "Apartmán na kľúč",
+                   text: "Bývanie v Olivia Residence je úplne bezstarostné. Ponúkame komplexne zariadené apratmány vrátane kompletne vybavenej kuchyne so spotrebičmi a sanitou. Vašou jedinou starosťou bude výber nábytku."
+               },
+               {
+                   icon: <StarIcon/>,
+                   title: "Vysoký štandard vybavenia",
+                   text: "Olivia nevyniká len množstvom nadštandardného vybavenia, ale aj jeho prevedením. Materiály použité v apartmánoch zodpovedjú vysokým štandardom kvality."
+               }
+           ],
+           buttons = [
+               {path: "/", text: "Vybavenie apartmánov"}, {path: "/", text: "Nezáväzné stretnutie"}
+           ],
+       }) => {
     return (
         <div className="flex justify-center">
-            <div className="h-[1000px] w-[1440px] flex items-center justify-center bg-[#F5F5F5]">
+            <div className="h-[1000px] w-full flex items-center justify-center bg-[#F5F5F5]">
                 <div>
-                    <h3 className="mb-[95px] font-bold text-[40px] leading-[48px] tracking-[-0.5px] text-center text-primary">Vybavenie apartmánov</h3>
+                    <h3 className="mb-[95px] font-bold text-[40px] leading-[48px] tracking-[-0.5px] text-center text-primary">Vybavenie
+                        apartmánov</h3>
                     <div className="flex gap-[110px] mb-[95px] justify-center">
                         <div className="h-[380px] w-[555px] relative">
                             <Image

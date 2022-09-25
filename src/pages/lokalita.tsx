@@ -67,7 +67,7 @@ const Lokalita: NextPage = () => {
     ]
     return (
         <>
-            <Hero imgName="lokalitaHero" icon={<MapPointIcon/>} title="Lokalita" description="Dynamická lokalita so skvelými možnosťami.Rožňavská 8, Bratislava"/>
+            <Hero imgName="lokalitaHero" icon={<MapPointIcon fill="#89A6A2" height="35" width="35"/>} title="Lokalita" description="Dynamická lokalita so skvelými možnosťami.Rožňavská 8, Bratislava"/>
             {descriptions.map((d, k) =>(
                 <Description key={k} imgPath={d.imgPath} title={d.title} descrip={d.descrip} bulletPoints={d.bulletPoints} reverseFlex={d.reverseFlex} twoButtons={d.twoButtons}/>
             ))}

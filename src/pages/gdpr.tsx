@@ -3,10 +3,11 @@ import React from "react";
 
 const GDPR: NextPage = () => {
     return (
-        <div className="mx-[450px] mb-[210px]">
+        <div className="flex justify-center">
+        <div className="mx-[450px] mb-[210px] w-[540px]">
             <h1 className="text-center mb-[40px] mt-[85px] font-bold text-[40px] leading-[48px] tracking-[-0.5px]">Ochrana <br/> osobných údajov</h1>
             <h3 className="font-bold text-[20px]">Podnadpis</h3>
-            <p className="mb-[30px]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consequuntur error quasi, quia
+            <p className="mb-[30px] text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consequuntur error quasi, quia
                 rerum. Accusamus corporis debitis inventore ipsum nisi perspiciatis quae quibusdam ratione tenetur
                 voluptates. Fuga fugit, soluta.lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
                 atque cum, cumque deleniti dicta, eaque eum ex obcaecati odio pariatur possimus praesentium qui quo rem
@@ -21,7 +22,7 @@ const GDPR: NextPage = () => {
                 quos. Ab ad, cumque ducimus ea earum eos explicabo, fugiat hic nemo nesciunt numquam, qui rem soluta
                 voluptate. </p>
             <h3  className="font-bold text-[20px]">Podnadip</h3>
-            <p className="mb-[30px]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consequuntur error quasi, quia
+            <p className="mb-[30px] text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consequuntur error quasi, quia
                 rerum. Accusamus corporis debitis inventore ipsum nisi perspiciatis quae quibusdam ratione tenetur
                 voluptates. Fuga fugit, soluta.lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
                 atque cum, cumque deleniti dicta, eaque eum ex obcaecati odio pariatur possimus praesentium qui quo rem
@@ -36,7 +37,7 @@ const GDPR: NextPage = () => {
                 quos. Ab ad, cumque ducimus ea earum eos explicabo, fugiat hic nemo nesciunt numquam, qui rem soluta
                 voluptate. </p>
             <h3  className="font-bold text-[20px]">Podnadip</h3>
-            <p className="mb-[30px]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consequuntur error quasi, quia
+            <p className="mb-[30px] text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consequuntur error quasi, quia
                 rerum. Accusamus corporis debitis inventore ipsum nisi perspiciatis quae quibusdam ratione tenetur
                 voluptates. Fuga fugit, soluta.lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
                 atque cum, cumque deleniti dicta, eaque eum ex obcaecati odio pariatur possimus praesentium qui quo rem
@@ -50,6 +51,7 @@ const GDPR: NextPage = () => {
                 vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eligendi laboriosam obcaecati
                 quos. Ab ad, cumque ducimus ea earum eos explicabo, fugiat hic nemo nesciunt numquam, qui rem soluta
                 voluptate. </p>
+        </div>
         </div>
     )
 }

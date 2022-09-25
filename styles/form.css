@@ -1,18 +1,26 @@
 .mantine-Checkbox-input {
     background-color: rgba(0, 0, 0, 0.07);
-    border: none;
+    border: 2px solid white;
 }
 
 .mantine-Checkbox-input:checked {
-    background-color: #476761;
+    background-color: #89A6A2;
     border: none;
 }
 
-    /*TextInput*/
-.mantine-14isq2b,
-.mantine-gqmpge,
-    /*TextArea*/
-.mantine-1bc792p{
-    background-color: rgba(0, 0, 0, 0.07);
+.mantine-TextInput-input {
+    background: rgba(255, 255, 255, 0.12);
     border: 0;
+    height: 48px;
+    color: white;
+}
+
+.mantine-Textarea-input {
+    background:  rgba(255, 255, 255, 0.12);
+    border: 0;
+    color: white;
+}
+
+.green. a.mantine-Checkbox-input {
+
 }

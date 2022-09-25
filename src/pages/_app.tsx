@@ -7,7 +7,6 @@ import Navbar from '../components/ui/Navbar';
 import Footer from "../components/ui/Footer";
 import Banner from "../components/Banner";
 import {useRouter} from "next/router";
-import MapFooter from "../components/ui/MapFooter";
 
 function MyApp({Component, pageProps}: AppProps) {
     const router = useRouter();
@@ -18,7 +17,12 @@ function MyApp({Component, pageProps}: AppProps) {
             )}
             <Navbar/>
             <Component {...pageProps} />
-            <Footer/>
+            {
+                router.pathname === '/404' ||
+                router.pathname === '/dakujeme' ||
+                router.pathname === '/dakujeme-za-email' ?
+                    <Footer toBottom={true}/> : <Footer/>
+            }
         </MantineProvider>
     )
 }

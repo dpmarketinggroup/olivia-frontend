@@ -4,6 +4,7 @@ import Link from "next/link";
 import RightArrowIcon from "../../svg/RightArrow";
 import {Modal} from "@mantine/core";
 
+
 interface NewsProps{
     path: string,
     date: string,
@@ -20,7 +21,7 @@ const News : FunctionComponent<NewsProps> = ({
     const [opened, setOpened] = useState(false);
     return(
         <>
-        <Modal opened={opened} size="lg" onClose={() => setOpened(false)} centered>
+        <Modal opened={opened}  onClose={() => setOpened(false)} centered>
             <h2 className="font-bold text-[40px] leading-[48px] text-green2 mb-[25px]">{title}</h2>
             <div className="relative h-[340px] mb-[25px]">
                 <Image
@@ -31,9 +32,14 @@ const News : FunctionComponent<NewsProps> = ({
                 />
             </div>
             <p className="text-[14px] leading-5 text-green2 mb-[25px]">{date}</p>
-            <p className="text-[14px] leading-5 text-[#676766]">
+            <p className="text-[16px] leading-6 tracking-[0.1px] mb-[25px]">
                 {description}
             </p>
+            <Link href="/">
+                <button className="px-[20px] py-[6px] bg-[#476761] text-white font-medium text-[16px] leading-6">
+                    Nezáväzné stretnutie
+                </button>
+            </Link>
         </Modal>
         <div className="flex flex-col gap-[10px]">
             <div className="h-[155px] w-[255px] relative">

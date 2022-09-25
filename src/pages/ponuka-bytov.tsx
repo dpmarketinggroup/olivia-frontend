@@ -159,43 +159,50 @@ const PonukaBytov: NextPage = () => {
         },
     ]
     return (
-        <div className="flex justify-center">
-            <div>
-                <p className="mt-[125px] ml-[190px] mb-[35px] font-bold text-[32px] leading-[38px]">1-izbové byty</p>
-                <div className="flex justify-center bg-[#F5F5F5] mb-[100px] pb-[75px]">
-                <table className="">
-                    <thead>
-                    <tr>
-                        <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Číslo apartmánu</th>
-                        <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Poschodie</th>
-                        <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Počet izieb</th>
-                        <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Apartmán m²</th>
-                        <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Balkón | Terasa m²</th>
-                        <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Celková výmera</th>
-                        <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Cena s DPH</th>
-                        <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Dostupnosť</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {table1.map((props, index) => (
-                        <TableRow {...props} key={index}/>
-                    ))}
-                    </tbody>
-                </table>
+        <>
+            <div className="flex justify-center">
+                <div>
+                    <p className="mt-[125px] ml-[190px] mb-[35px] font-bold text-[32px] leading-[38px]">1-izbové
+                        byty</p>
+                    <div className="flex justify-center bg-[#F5F5F5] mb-[100px] pb-[75px]">
+                        <table className="">
+                            <thead>
+                            <tr>
+                                <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Číslo apartmánu
+                                </th>
+                                <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Poschodie</th>
+                                <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Počet izieb</th>
+                                <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Apartmán m²</th>
+                                <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Balkón | Terasa
+                                    m²
+                                </th>
+                                <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Celková výmera
+                                </th>
+                                <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Cena s DPH</th>
+                                <th className="w-[130px] font-medium text-[14px] leading-5 opacity-40">Dostupnosť</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {table1.map((props, index) => (
+                                <TableRow {...props} key={index}/>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
+                    <Description imgPath="/img/car.png"
+                                 title="Garážové parkovanie"
+                                 descrip="Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok."
+                                 bulletPoints={[
+                                     {icon: <ManIcon/>, text: "Prechod do Vášho bytu suchou nohou"},
+                                     {icon: <ParkingIcon/>, text: "Dlhodobý prenájom garážových státí"},
+                                     {icon: <CameraIcon/>, text: "Zabezpečené kamerovým systémom"},
+                                 ]}
+                                 twoButtons={false}
+                    />
                 </div>
-                <Description imgPath="/img/car.png"
-                             title="Garážové parkovanie"
-                             descrip="Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok."
-                             bulletPoints={[
-                                 {icon: <ManIcon/>, text: "Prechod do Vášho bytu suchou nohou"},
-                                 {icon: <ParkingIcon/>, text: "Dlhodobý prenájom garážových státí"},
-                                 {icon: <CameraIcon/>, text: "Zabezpečené kamerovým systémom"},
-                             ]}
-                             twoButtons={false}
-                />
-                <MapFooter/>
             </div>
-        </div>
+            <MapFooter/>
+        </>
     )
 }
 
