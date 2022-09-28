@@ -6,9 +6,9 @@ const MapFooter = () => {
     return (
         <div className="flex justify-center">
                 <div className="bg-primary-pattern w-full ">
-                    <div className="flex gap-[125px] justify-center">
-                        <div className="flex flex-col gap-[28px] mx-[165px] py-[150px]">
-                            <h2 className="font-bold text-[40px] leading-[48px] tracking-[-0.5px] text-white w-[445px]">Dohodnite
+                    <div className="flex xl:gap-[125px] flex-col xl:flex-row justify-center">
+                        <div className="flex flex-col gap-[28px] mx-4 xl:mx-[165px] pt-[150px] pb-[70px] xl:py-[150px]">
+                            <h2 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-white w-[445px]">Dohodnite
                                 si <br/><span className="underline underline-offset-[6px]">Nezáväzné stretnutie</span> v
                                 Predajnom mieste</h2>
                             <p className="w-[400px] text-[16px] leading-[28px] text-white">Zodpovieme všetky Vaše
@@ -23,7 +23,7 @@ const MapFooter = () => {
                                 </button>
                             </Link>
                         </div>
-                        <div className="h-[385px] w-[540px] relative top-[155px] right-[165px]">
+                        <div className="h-[300px] xl:h-[385px] xl:w-[540px] relative xl:top-[155px] right-0 xl:right-[165px]">
                             <Image
                                 objectFit="cover"
                                 layout="fill"

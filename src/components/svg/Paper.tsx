@@ -1,8 +1,13 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 
-const PaperIcon = () => {
+interface PaperIconProps{
+  classname?: string
+}
+
+const PaperIcon: FunctionComponent<PaperIconProps> = ({classname}) => {
   return (
     <svg
+        className={classname}
       width="46"
       height="42"
       viewBox="0 0 46 42"

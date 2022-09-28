@@ -7,22 +7,22 @@ import RollerIcon from "../../svg/Roller";
 const WholeProcess = ({
   parts = [
     {
-      icon: <PaperIcon />,
+      icon: <PaperIcon classname="w-[35px] h-[31px] xl:w-[46px] xl:h-[42px]"/>,
       title: "Rezervácie",
       year: 2022,
       quarter: "3. kvartál",
     },
     {
-      icon: <RollerIcon />,
+      icon: <RollerIcon classname="w-[31px] h-[38px] xl:w-[42px] xl:h-[49px]" />,
       title: "Výstavba",
       year: 2022,
       quarter: "4. kvartál",
     },
-    { icon: <Check />, title: "Kolaudácia", year: 2024, quarter: "2. kvartál" },
+    { icon: <Check classname="w-[37px] h-[37px] xl:w-[48px] xl:h-[48px]"/>, title: "Kolaudácia", year: 2024, quarter: "2. kvartál" },
   ],
 }) => {
   return (
-    <div className="mx-[190px] flex gap-[110px] items-center justify-center mb-[185px]">
+    <div className="mx-4 xl:mx-[190px] flex gap-[24px] xl:gap-[110px] items-center justify-center mb-[90px] xl:mb-[185px]">
       {parts.map((p, k) =>
         k === 0 ? (
           <ProcessPart

@@ -5,6 +5,7 @@ import Image from "next/image";
 import PhoneIcon from "../components/svg/Phone";
 import EmailSignIcon from "../components/svg/EmailSign";
 import MapPoint2Icon from "../components/svg/MapPoint2";
+import OpeningHours from "../components/OpeningHours";
 
 const Stretnutie: NextPage = () => {
     return (
@@ -63,6 +64,8 @@ const Stretnutie: NextPage = () => {
                     </div>
                 </div>
             </div>
+            <OpeningHours/>
+            <OpeningHours reverseFlex={true}/>
         </>
     )
 }

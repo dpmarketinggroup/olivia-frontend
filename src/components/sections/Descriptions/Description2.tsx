@@ -19,12 +19,12 @@ const Description2: FunctionComponent<Description2Props>
            imgPath,
            bulletPoints2 = [
                {
-                   icon: <KeyIcon/>,
+                   icon: <KeyIcon classname="w-[22px] xl:w-[30px] h-[22px] xl:h-[30px]"/>,
                    title: "Apartmán na kľúč",
                    text: "Bývanie v Olivia Residence je úplne bezstarostné. Ponúkame komplexne zariadené apratmány vrátane kompletne vybavenej kuchyne so spotrebičmi a sanitou. Vašou jedinou starosťou bude výber nábytku."
                },
                {
-                   icon: <StarIcon/>,
+                   icon: <StarIcon classname="w-[22px] xl:w-[28px] h-[20px] xl:h-[26px]"/>,
                    title: "Vysoký štandard vybavenia",
                    text: "Olivia nevyniká len množstvom nadštandardného vybavenia, ale aj jeho prevedením. Materiály použité v apartmánoch zodpovedjú vysokým štandardom kvality."
                }
@@ -35,12 +35,12 @@ const Description2: FunctionComponent<Description2Props>
        }) => {
     return (
         <div className="flex justify-center">
-            <div className="h-[1000px] w-full flex items-center justify-center bg-[#F5F5F5]">
+            <div className="xl:h-[1000px] w-full flex items-center justify-center bg-[#F5F5F5]">
                 <div>
-                    <h3 className="mb-[95px] font-bold text-[40px] leading-[48px] tracking-[-0.5px] text-center text-primary">Vybavenie
+                    <h3 className="pt-[100px] xl:pt-0 mb-[35px] xl:mb-[95px] font-bold text-[30px] xl:text-[40px] leading-[48px] tracking-[-0.5px] text-center text-primary">Vybavenie
                         apartmánov</h3>
-                    <div className="flex gap-[110px] mb-[95px] justify-center">
-                        <div className="h-[380px] w-[555px] relative">
+                    <div className="flex flex-col xl:flex-row gap-[30px] xl:gap-[110px] mb-[95px] items-center justify-center">
+                        <div className="h-[380px] w-[400px] xl:w-[555px] relative">
                             <Image
                                 objectFit="cover"
                                 layout="fill"
@@ -49,11 +49,11 @@ const Description2: FunctionComponent<Description2Props>
                             />
                         </div>
                         <div>
-                            <p className="mb-[45px] font-bold text-[24px] leading-[32px] tracking-[-0.1px]">
-                                <span className="text-green2 underline underline-offset-[6px]">Vysoký štandard</span>
+                            <p className="mb-[30px] xl:mb-[45px] font-bold text-[21px] xl:text-[24px] leading-6 xl:leading-[32px] tracking-[-0.1px]">
+                                <span className="text-green2 xl:underline xl:underline-offset-[6px]">Vysoký štandard</span>
                                 <br/> pre Váš maximálny komfort
                             </p>
-                            <div className="flex gap-[65px]">
+                            <div className="flex gap-[35px] xl:gap-[65px]">
                                 {bulletPoints2.map((b2, k) => (
                                     <BulletPoint2
                                         key={k}

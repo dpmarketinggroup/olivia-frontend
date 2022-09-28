@@ -24,11 +24,11 @@ const NewsSection: FunctionComponent<NewsSectionProps>
        }) => {
     return (
         <>
-            <div className={`mx-[165px] mb-[${mb}px]`}>
+            <div className={`mx-4 xl:mx-[165px] mb-[${mb}px]`}>
                 {withHeading &&
-                    <div className="text-center mb-[110px]">
-                        <h2 className="font-bold text-[40px] leading-[48px] tracking-[-0.5px] mb-[20px]">Novinky</h2>
-                        <p className="text-[16px] leading-6 tracking-[0.1px] text-[#676766] mb-[20px]">Najnovšie informácie
+                    <div className="text-center mb-[55px] xl:mb-[110px]">
+                        <h2 className="font-bold text-[27px] xl:text-[40px] leading-[48px] tracking-[-0.5px] mb-[10px] xl:mb-[20px]">Novinky</h2>
+                        <p className="text-[16px] leading-6 tracking-[0.1px] text-[#676766] mb-[10px] xl:mb-[20px]">Najnovšie informácie
                             o projekte Olivia Residence.</p>
                         <div className="flex gap-[10px] justify-center items-center">
                             <Link href="/novinky">
@@ -38,7 +38,7 @@ const NewsSection: FunctionComponent<NewsSectionProps>
                         </div>
                     </div>
                 }
-                <div className="flex gap-[30px] justify-center">
+                <div className="xl:flex gap-4 xl:gap-[30px] grid grid-cols-2 justify-items-center xl:justify-center">
                     {news.map((n, k) => (
                         <News key={k} path={n.path} date={n.date} title={n.title} description={n.description}/>
                     ))}

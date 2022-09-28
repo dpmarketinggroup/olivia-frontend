@@ -1,8 +1,13 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 
-const RollerIcon = () => {
+interface RollerIconProps{
+  classname?:string;
+}
+
+const RollerIcon: FunctionComponent<RollerIconProps> = ({classname}) => {
   return (
     <svg
+        className={classname}
       width="42"
       height="49"
       viewBox="0 0 42 49"

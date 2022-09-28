@@ -1,8 +1,13 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 
-const KeyIcon = () => {
+interface KeyIconProps{
+  classname?: string
+}
+
+const KeyIcon:FunctionComponent<KeyIconProps> = ({classname}) => {
   return (
     <svg
+        className={classname}
       width="30"
       height="30"
       viewBox="0 0 30 30"

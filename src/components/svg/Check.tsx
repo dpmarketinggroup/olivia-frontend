@@ -1,8 +1,13 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 
-const Check = () => {
+interface CheckProps{
+  classname?: string
+}
+
+const Check:FunctionComponent<CheckProps> = ({classname}) => {
   return (
     <svg
+        className={classname}
       width="48"
       height="48"
       viewBox="0 0 48 48"

@@ -12,9 +12,9 @@ const SwiperApartments = () => {
     return (
         <div className="flex justify-center">
             <div>
-                <div className="py-[45px] xl:py-[110px] px-[1rem] xl:px-0 mb-[75px]">
-                    <div className="flex gap-[265px] w-ful xl:max-w-[1310px] xl:ml-[165px] items-center xl:justify-between mb-[35px] xl:mb-[70px] mx-[165px]">
-                        <h3 className="text-[26px] leading-[46px] xl:text-[32px] xl:leading-[38px] font-bold text-center xl:text-left mx-auto xl:mx-0 text-black tracking-[-0.4px]">
+                <div className="xl:py-[110px] px-[1rem] xl:px-0 mb-[75px]">
+                    <div className="flex gap-[50px] xl:gap-[265px] xl:max-w-[1310px] items-center justify-center xl:justify-between mb-[35px] xl:mb-[70px] mx-4 xl:mx-[165px]">
+                        <h3 className="text-[16px] w-[150px] xl:w-auto xl:text-[26px] leading-[23px] xl:leading-[46px] xl:text-[32px] xl:leading-[38px] font-bold text-left xl:text-center xl:text-left xl:mx-0 text-black tracking-[-0.4px]">
                             Od 1 izbových až po 4 izbové apartmány
                         </h3>
                         <div className="flex gap-[30px] items-center">
@@ -24,7 +24,7 @@ const SwiperApartments = () => {
                             </div>
                             <div className="flex gap-[10px] items-center">
                                 <Link href='/'>
-                                    <a className="font-medium text-[18px] leading-7 text-[#476761]">Ponuka apartmánov</a>
+                                    <a className="font-medium text-[16px] xl:text-[18px] leading-7 text-[#476761]">Ponuka apartmánov</a>
                                 </Link>
                                 <RightArrowIcon stroke="#476761"/>
                             </div>

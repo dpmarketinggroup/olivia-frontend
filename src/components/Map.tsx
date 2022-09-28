@@ -20,10 +20,10 @@ const Map: FunctionComponent<MapProps>
         <div className='flex justify-center'>
             <div>
                 {!centerText ?
-                    (<div className="flex mx-[165px] justify-between mb-[60px] items-center">
-                        <div className="flex flex-col gap-[20px]">
-                            <h3 className="font-bold text-[40px] leading-[48px] tracking-[-0.5px]">{title}</h3>
-                            <p className="text-[#676766] font-normal text-[16px] leading-[24px] tracking-[0.1px]">{subtitle}</p>
+                    (<div className="flex gap-[25px] xl:gap-0 mx-4 xl:mx-[165px] justify-between mb-[30px] xl:mb-[60px] items-center">
+                        <div className="flex flex-col gap-[10px] xl:gap-[20px]">
+                            <h3 className="font-bold w-[200px] xl:w-auto text-[25px] xl:text-[40px] leading-[28px] xl:leading-[48px] tracking-[-0.5px]">{title}</h3>
+                            <p className="text-[#676766] font-normal text-[14px] xl:text-[16px] leading-[24px] tracking-[0.1px]">{subtitle}</p>
                         </div>
                         <Link href="/lokalita">
                             <button
@@ -38,7 +38,7 @@ const Map: FunctionComponent<MapProps>
                     )
                 }
 
-                <div className="h-[650px] w-[1440px] max-w-[1440px] relative">
+                <div className="h-[325px] xl:h-[650px] xl:w-[1440px] max-w-full relative">
                     <Image
                         objectFit="cover"
                         layout="fill"

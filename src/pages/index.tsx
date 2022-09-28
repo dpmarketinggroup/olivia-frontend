@@ -19,13 +19,13 @@ const Home: NextPage = () => {
     return (
         <>
             <section className="flex justify-center">
-                <div className="bg-[url('/img/hero.jpg')] h-[650px] w-full max-w-[1440px] mb-[140px]">
-                    <div className="w-[600px] ml-[165px] pt-[185px] mb-[40px]">
-                        <h1 className="font-bold  text-[56px] leading-[60px] tracking-[-1px] text-white">
+                <div className="bg-[url('/img/hero.jpg')] h-[650px] w-full max-w-[1440px] mb-[90px] xl:mb-[140px]">
+                    <div className="w-[350px] xl:w-[600px] ml-4 xl:ml-[165px]  pt-[185px] mb-[40px]">
+                        <h1 className="font-bold text-[34px] xl:text-[56px] leading-[40px] xl:leading-[60px] tracking-[-1px] text-white">
                             Moderný štýl bývania v dynamickej lokalite so skvelými možnosťami
                         </h1>
                     </div>
-                    <div className="flex gap-[10px] ml-[165px] ">
+                    <div className="flex gap-[10px] ml-4 xl:ml-[165px] mr-4 xl:mr-0">
                         <Link href="/stretnutie">
                             <button
                                 className="bg-[#89A6A2] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px]">

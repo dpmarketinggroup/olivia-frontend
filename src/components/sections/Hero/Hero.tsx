@@ -17,7 +17,7 @@ const Hero: FunctionComponent<HeroProps> = ({
                                             }) => {
     return (
         <div className="flex justify-center">
-            <div className={`h-[460px] w-full max-w-[1440px] mb-[140px]`}>
+            <div className="h-[460px] w-full max-w-[1440px] mb-[140px]">
                 <div className="h-[430px] w-[1440px] max-w-[1440px] absolute -z-10">
                     <Image
                         objectFit="cover"

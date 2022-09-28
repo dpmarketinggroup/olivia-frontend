@@ -48,6 +48,28 @@
 }
 /*//////////////////////////////////////////*/
 
+/*//////////////////////////////////////////*/
+
+/*Building filter*/
+.building .mantine-Slider-bar {
+    background: white;
+}
+
+.building .mantine-Slider-thumb {
+    border: 8px solid white;
+}
+
+.building .mantine-Checkbox-input {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.building .mantine-Checkbox-input:checked {
+    background-color: white;
+    border: none;
+}
+/*//////////////////////////////////////////*/
+
 /*Odber noviniek a Footer*/
 .mantine-TextInput-input {
     background: rgba(255, 255, 255, 0.12);

@@ -10,9 +10,9 @@ const BulletPoint : FunctionComponent<BulletPointProps> = ({
     text
 }) =>{
     return(
-        <div className="flex gap-[20px] items-center">
+        <div className="flex gap-[15px] xl:gap-[20px] items-center">
             {icon}
-            <p className="font-bold text-[16px] leading-[24px] tracking-[0.1px] text-neutral-600 w-[400px]">{text}</p>
+            <p className="font-bold text-[14px] xl:text-[16px] leading-[20px] xl:leading-[24px] tracking-[0.1px] text-neutral-600 w-[340px] xl:w-[400px]">{text}</p>
         </div>
     )
 }
