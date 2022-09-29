@@ -24,7 +24,7 @@ const NewsSection: FunctionComponent<NewsSectionProps>
        }) => {
     return (
         <>
-            <div className={`mx-4 xl:mx-[165px] mb-[${mb}px]`}>
+            <div className={`mx-4 xl:mx-[165px] mb-[90px] xl:mb-[${mb}px]`}>
                 {withHeading &&
                     <div className="text-center mb-[55px] xl:mb-[110px]">
                         <h2 className="font-bold text-[27px] xl:text-[40px] leading-[48px] tracking-[-0.5px] mb-[10px] xl:mb-[20px]">Novinky</h2>

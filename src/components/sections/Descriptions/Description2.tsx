@@ -65,7 +65,7 @@ const Description2: FunctionComponent<Description2Props>
                             </div>
                         </div>
                     </div>
-                    <div className="flex gap-[12px] justify-center">
+                    <div className="flex gap-[12px] justify-center pb-[100px] xl:pb-0">
                         {buttons.map((b, k) => (
                             <Link key={k} href={b.path}>
                                 <button

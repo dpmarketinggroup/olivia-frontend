@@ -2,48 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/interaktivnaBudova.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OpeningHours.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Table/ColumnFilter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Table/FilteringTable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Table/GlobalFilter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Table/columns.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/BasketCrossed.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/react-table-config.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/react.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/table.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint2.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/News.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Process/ProcessPart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Process/ProcessPart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Table/Table.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/Basket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/Basket.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/Check.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/Check.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/Key.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/Key.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/LogoBZ.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/LogoBZ.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/Paper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/Paper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/Roller.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/Roller.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/Star.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/Star.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/TwoArrows.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/TwoArrows.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/MapFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MapFooter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/stretnutie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/stretnutie.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/form.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +87,8 @@
       <workItem from="1664276106572" duration="1207000" />
       <workItem from="1664277343583" duration="4559000" />
       <workItem from="1664293538319" duration="7952000" />
-      <workItem from="1664313043215" duration="38216000" />
+      <workItem from="1664313043215" duration="38583000" />
+      <workItem from="1664456029496" duration="2831000" />
     </task>
     <servers />
   </component>

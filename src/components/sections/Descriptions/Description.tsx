@@ -26,7 +26,7 @@ const Description: FunctionComponent<DescriptionProps> = ({
                                                           }) => {
     return (
         <div
-            className={`flex flex-col xl:flex-row gap-[35px] xl:gap-[110px] ${reverseFlex && "flex-row-reverse"} mx-4 xl:mx-[165px] items-center justify-center mb-[80px] xl:mb-[165px]`}>
+            className={`flex flex-col xl:flex-row gap-[45px] xl:gap-[110px] ${reverseFlex && "flex-row-reverse"} mx-4 xl:mx-[165px] items-center justify-center mb-[120px] xl:mb-[165px]`}>
             <div className="h-[245px] xl:h-[400px] w-[400px] xl:w-[555px] relative">
                 <Image objectFit="cover" layout="fill" alt="hero image" src={imgPath}/>
             </div>

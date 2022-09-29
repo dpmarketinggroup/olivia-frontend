@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const NewsSubscription = () => {
     return (
-        <div className='flex justify-center mb-[300px] xl:mb-[150px]'>
+        <div className='flex justify-center mb-[100px] xl:mb-[150px]'>
             <div>
                 <div className="mx-[165px] bg-black w-[384px] xl:w-[1110px] relative">
                     <div className="flex flex-col gap-[22px] ml-[15px] xl:ml-[72px]">
