@@ -142,9 +142,14 @@ const Novinky: NextPage = () => {
         <>
             <div className="mt-[125px]">
                 {messages.map((m, k) =>(
-                    <NewsSection key={k} news={m.news} mb={m.mb} withHeading={m.withHeading}/>
+                    <div key={k} className={`${k === 0 && "mt-[-80px] xl:mt-0"} mb-[-60px] xl:mb-0`}>
+                    <NewsSection  news={m.news} mb={m.mb} withHeading={m.withHeading}/>
+                    </div>
                 ))}
-                <NewsSubscription/>
+
+            </div>
+            <div className="mt-[150px]">
+            <NewsSubscription/>
             </div>
             <MapFooter/>
         </>

@@ -2,7 +2,7 @@ import React from "react";
 import {NextPage} from "next";
 import Hero from "../components/sections/Hero/Hero";
 import FlatIcon from "../components/svg/Flat";
-import Map from "../components/Map";
+import Map from "../components/sections/Maps/Map";
 import FloorPlanIcon from "../components/svg/FloorPlan";
 import Image from "next/image";
 import PhoneIcon from "../components/svg/Phone";
@@ -16,9 +16,9 @@ const Retail: NextPage = () => {
         <div>
             <Hero imgName="retailHero" icon={<FlatIcon/>} title="Retail" description="Lukratívna lokalita pre život aj biznis"/>
             <div className="flex justify-center">
-                <div className="mb-[165px]">
-                    <div className="flex gap-[60px]">
-                        <div className="flex gap-[50px] w-[700px] bg-[#F5F5F5] py-[90px] pl-[135px]">
+                <div className="mb-[120px] xl:mb-[165px]">
+                    <div className="flex flex-col xl:flex-row gap-[30px] xl:gap-[60px]">
+                        <div className="flex gap-[50px] w-[400px] xl:w-[700px] bg-[#F5F5F5] py-[90px] px-4 xl:pl-[135px] xl:pr-0">
                             <div className= "w-[190px]">
                                 <FlatBoldIcon/>
                                 <h4 className="font-medium text-[16px] leading-6 tracking-[0.1px] mt-[22px] mb-[8px]">Prenájom obchodného priestoru</h4>
@@ -30,7 +30,7 @@ const Retail: NextPage = () => {
                                 <p className="text-[14px] leading-5 text-[#676766]">Pre prvých pár záujemcov ponúkame jedinečnú možnosť <strong>návrhu obchodného priestoru na mieru</strong> podľa Vašich potrieb.</p>
                             </div>
                         </div>
-                        <div>
+                        <div className="ml-4 xl:ml-0">
                             <p className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#676766] w-[335px] mb-[23px]">V prípade záujmu o prenájom obchodného priestoru ma neváhajte kontaktovať</p>
                             <div className="flex gap-[20px] items-center mb-[20px]">
                                 <div className="h-[60px] w-[60px] relative">

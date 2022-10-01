@@ -38,7 +38,7 @@ const NewsSection: FunctionComponent<NewsSectionProps>
                         </div>
                     </div>
                 }
-                <div className="xl:flex gap-4 xl:gap-[30px] grid grid-cols-2 justify-items-center xl:justify-center">
+                <div className="xl:flex gap-[30px] grid grid-cols-2 justify-items-center xl:justify-center">
                     {news.map((n, k) => (
                         <News key={k} path={n.path} date={n.date} title={n.title} description={n.description}/>
                     ))}

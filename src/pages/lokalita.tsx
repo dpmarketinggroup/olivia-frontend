@@ -8,7 +8,7 @@ import SmilingHouseIcon from "../components/svg/SmilingHouse";
 import ScooterIcon from "../components/svg/Scooter";
 import FlagIcon from "../components/svg/Flag";
 import RingRoadArrowIcon from "../components/svg/RingRoadArrow";
-import Map from "../components/Map";
+import Map from "../components/sections/Maps/Map";
 import Description2 from "../components/sections/Descriptions/Description2";
 import MapFooter from "../components/ui/MapFooter";
 

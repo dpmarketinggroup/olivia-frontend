@@ -25,7 +25,7 @@ const Map: FunctionComponent<MapProps>
                             <h3 className="font-bold w-[200px] xl:w-auto text-[25px] xl:text-[40px] leading-[28px] xl:leading-[48px] tracking-[-0.5px]">{title}</h3>
                             <p className="text-[#676766] font-normal text-[14px] xl:text-[16px] leading-[24px] tracking-[0.1px]">{subtitle}</p>
                         </div>
-                        <Link href="/lokalita">
+                        <Link href="/src/pages/lokalita">
                             <button
                                 className="w-[145px] h-[36px] border border-[#476761] text-[16px] text-[#476761] font-medium leading-6 tracking-[0.1px] self-end">{buttonText}</button>
                         </Link>

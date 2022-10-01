@@ -29,48 +29,44 @@ const DetailyBytu: NextPage = () => {
             <div className="flex justify-center">
                 <div>
                     <div className="flex justify-center my-[70px]">
-                        <div className="mx-[165px]">
+                        <div className="mx-4 xl:mx-[165px]">
                             <div className="flex flex-col gap-[30px] items-center mb-[50px]">
-                                <FloorPlanIcon/>
-                                <h1 className="font-bold text-[40px] leading-[48px] tracking-[-0.5px]">Výber apartmánu
-                                    na
-                                    podlaží</h1>
+                                <FloorPlanIcon classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
+                                <h1 className="font-bold text-[32px] xl:text-[40px] w-[250px] xl:w-auto leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Detail apartmánu</h1>
                             </div>
-                            <div className="flex justify-between">
-                                <div
-                                    className="flex gap-[13px] items-center px-[29px] py-[16px] bg-[#F5F5F5] rounded-[33px] mr-[155px]">
+                            <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between">
+                                <div className="flex gap-[8px] xl:gap-[13px] items-center px-[20px] xl:px-[29px] py-[7px] xl:py-[16px] bg-[#F5F5F5] rounded-[15px] xl:rounded-[33px] xl:mr-[155px]">
                                     <span
-                                        className="font-bold text-[18px] leading-[28px] text-[#476761]">7. podlažie</span>
+                                        className="font-bold text-[16px] xl:text-[18px] leading-[28px] text-[#476761]">7. podlažie</span>
                                     <ArrowDownNotFilled/>
                                 </div>
-                                <div
-                                    className="flex gap-[15px] items-center py-[20px] px-[25px] bg-[#F5F5F5] rounded-[33px] mr-[285px]">
-                                <span
-                                    className="font-medium text-[14px] leading-5 text-[#00000033]">Výber podlažia</span>
+                                <div className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[20px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[270px]">
+                                    <span
+                                        className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Výber podlažia</span>
                                     <RightArrowIcon stroke="#00000033"/>
                                     <span
-                                        className="font-medium text-[14px] leading-5 text-[#00000033]">Výber apartmánu</span>
+                                        className="font-medium text-[12px] xl:text-[14px] leading-5  text-[#00000033]">Výber apartmánu</span>
                                     <RightArrowIcon stroke="#00000033"/>
-                                    <span
-                                        className="font-medium text-[14px] leading-5 text-[#476761]">Detail apartmánu</span>
+                                    <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761]">Detail apartmánu</span>
                                 </div>
-                                <SeverkaIcon/>
+                                <div className="hidden xl:inline-block">
+                                    <SeverkaIcon/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="mx-[165px]">
-                        <h3 className="mb-[25px] font-bold text-[24px] leading-[32px] tracking-[-0.1px]">Apartmán č.
-                            5.05</h3>
-                        <div className="flex gap-[40px] mb-[70px] justify-center">
-                            <div className="border-2 w-[780px] h-[460px]"></div>
-                            <div className="flex flex-col gap-[40px]">
+                    <div className="mx-4 xl:mx-[165px]">
+                        <h3 className="mb-[25px] font-bold text-[20px] xl:text-[24px] leading-[32px] tracking-[-0.1px] text-center">Apartmán č. 5.05</h3>
+                        <div className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center justify-center">
+                            <div className="border-2 w-[290px] xl:w-[780px] h-[126px] xl:h-[460px]"></div>
+                            <div className="flex flex-col gap-[20px] xl:gap-[40px]">
                                 <div className="border-2 w-[290px] h-[126px]"></div>
                                 <div className="border-2 w-[290px] h-[126px]"></div>
                                 <div className="border-2 w-[290px] h-[126px]"></div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex gap-[75px] ml-[165px] mb-[85px]">
+                    <div className="flex flex-col xl:flex-row gap-[20px] xl:gap-[75px] items-center ml-4 xl:ml-[165px] mb-[85px]">
                         <div className="flex gap-[15px] items-center">
                             <BankIcon/>
                             <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">Financovanie</span>
@@ -93,7 +89,7 @@ const DetailyBytu: NextPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mx-[165px]">
+                    <div className="mx-auto xl:mx-[165px] w-[350px] xl:w-auto">
                         <div className="flex justify-between mb-[25px]">
                             <p className="text-[#676766] font-medium text-[16px] leading-6 tracking-[0.1px]">Číslo apartmánu</p>
                             <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">5.05</span>
@@ -144,15 +140,13 @@ const DetailyBytu: NextPage = () => {
                         </div>
                         <div onClick={() => setOpened(true)}>
                             <Link href="/detail-bytu">
-                                <button className="px-[440px] py-[12px] bg-[#476761] text-white mb-[160px]">Mám záujem o
-                                    apartmán č. 5.05
-                                </button>
+                                <button className="px-[60px] xl:px-[440px] py-[12px] bg-[#476761] text-white mb-[110px] xl:mb-[160px]">Mám záujem o apartmán č. 5.05</button>
                             </Link>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-[30px] items-center mb-[190px]">
-                        <FloorPlanIcon/>
-                        <h1 className="font-bold text-[40px] leading-[48px] tracking-[-0.5px]">Pôdorys apartmánu na
+                    <div className="flex flex-col gap-[30px] items-center mb-[120px] xl:mb-[190px]">
+                        <FloorPlanIcon classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
+                        <h1 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] w-[250px] xl:w-auto text-center xl:text-left">Pôdorys apartmánu na
                             stiahnutie</h1>
                         <Link href="/">
                             <button
@@ -161,6 +155,7 @@ const DetailyBytu: NextPage = () => {
                             </button>
                         </Link>
                     </div>
+                    <div className="mb-[-80px] xl:mb-0">
                     <Description imgPath="/img/car.png"
                                  title="Garážové parkovanie"
                                  descrip="Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok."
@@ -171,6 +166,7 @@ const DetailyBytu: NextPage = () => {
                                  ]}
                                  twoButtons={false}
                     />
+                    </div>
                     <div className="mb-[80px]">
                         <SwiperGallery/>
                     </div>

@@ -12,7 +12,7 @@ interface FooterProps {
 
 const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
     return (
-        <div className={`${toBottom && "absolute bottom-0 left-0 right-0"}`}>
+        <div className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"}`}>
             <div>
                 <div className="relative bg-black">
                     <div className="w-full flex flex-col xl:flex-row xl:gap-[205px] justify-center mx-4 xl:ml-0 xl:mr-[165px]">
@@ -31,7 +31,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 na tlačidlo potvrdzujete, že súhlasíte s našimi podmienkami spracovania
                                 <span className="underline underline-offset-[3px]"> osobných údajov.</span></p>
                         </div>
-                        <div className="flex flex-row gap-[30px] xl:gap-[100px] items-start xl:pt-[80px] pb-[40px] xl:pb-0">
+                        <div className="flex flex-row gap-[30px] xl:gap-[100px] items-start xl:pt-[80px] pb-[20px] xl:pb-0">
                             <div className="flex flex-col gap-[15px]">
                                 <Link href='/'>
                                     <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60">Domovská
@@ -73,7 +73,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                             </div>
                         </div>
                     </div>
-                    <div className="hidden xl:absolute xl:top-0 xl:right-0">
+                    <div className="hidden xl:inline-block xl:absolute xl:top-0 xl:right-0">
                         <RectangleFooter/>
                     </div>
                 </div>

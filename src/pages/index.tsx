@@ -7,7 +7,7 @@ import GlassStarIcon from "../components/svg/GlassStar";
 import MapPointIcon from "../components/svg/MapPoint";
 import StarIcon from "../components/svg/Star";
 import WholeProcess from "../components/sections/Process/WholeProcess";
-import Map from "../components/Map";
+import Map from "../components/sections/Maps/Map";
 import NewsSection from "../components/sections/News/NewsSection";
 import NewsSubscription from "../components/sections/News/NewsSubscription";
 import SwiperGallery from "../components/sections/Swipers/SwiperGallery";

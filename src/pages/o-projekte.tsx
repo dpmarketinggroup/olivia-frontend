@@ -29,7 +29,7 @@ const OProjekte: NextPage = () => {
             <div className="flex justify-center">
                 <Link href="/stretnutie">
                     <button
-                        className="bg-[#476761] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] mt-[-60px] mb-[185px]">
+                        className="bg-[#476761] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] mt-[-60px] mb-[90px] xl:mb-[185px]">
                         Nezáväzné stretnutie
                     </button>
                 </Link>
@@ -48,9 +48,9 @@ const OProjekte: NextPage = () => {
                          title="Priestranné balkóny a terasy s exterierovým slnečným tienením"
                          descrip="Veľko-metrážne balkóny a terasy s exterierovými slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy."
                          bulletPoints={[
-                             {icon: <BasketIcon/>, text: "Balkón ako štandard pre každý byt"},
+                             {icon: <BasketIcon width="28" height="29"/>, text: "Balkón ako štandard pre každý byt"},
                              {icon: <ElectricPanelIcon/>, text: "Elektrické exteriérové slnečné tienenie ako štandard"},
-                             {icon: <TwoArrowsIcon/>, text: "Veľko-metrážne terasy"},
+                             {icon: <TwoArrowsIcon width="24" height="28px"/>, text: "Veľko-metrážne terasy"},
                          ]}
                          twoButtons={false}
                          reverseFlex={true}

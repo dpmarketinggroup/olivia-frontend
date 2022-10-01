@@ -17,7 +17,7 @@ const Hero: FunctionComponent<HeroProps> = ({
                                             }) => {
     return (
         <div className="flex justify-center">
-            <div className="h-[460px] w-full max-w-[1440px] mb-[140px]">
+            <div className="h-[460px] w-full max-w-[1440px] mb-[60px] xl:mb-[140px]">
                 <div className="h-[430px] w-[1440px] max-w-[1440px] absolute -z-10">
                     <Image
                         objectFit="cover"
@@ -26,20 +26,20 @@ const Hero: FunctionComponent<HeroProps> = ({
                         src={`/img/${imgName}.jpg`}
                     />
                 </div>
-                <div className="w-[445px] ml-[165px] pt-[90px] mb-[20px]">
+                <div className="w-[445px] ml-4 xl:ml-[165px] pt-[90px] mb-[20px]">
                     <div className="mb-[30px]">
                         {icon}
                     </div>
                     <h1 className="font-bold  text-[56px] leading-[60px] tracking-[-1px] text-white mb-[20px]">
                         {title}
                     </h1>
-                    <p className="text-[18px] leading-7 text-white mb-[40px]">
+                    <p className="text-[18px] leading-7 text-white mb-[40px] w-[300px]">
                         {description}
                     </p>
                 </div>
                 <Link href="/stretnutie">
                     <button
-                        className="bg-[#89A6A2] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] ml-[165px]">
+                        className="bg-[#89A6A2] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] ml-4 xl:ml-[165px]">
                         Nezáväzné stretnutie
                     </button>
                 </Link>

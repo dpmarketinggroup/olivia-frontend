@@ -2,14 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/img/map3d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/Maps/Map3d.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Maps/Map.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OpeningHours.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OpeningHours.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/UniCredit/FinancingConditions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/UniCredit/FinancingConditions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/UniCredit/StepsUniCredit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/UniCredit/StepsUniCredit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/svg/Basket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/Basket.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/svg/FloorPlan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/FloorPlan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/svg/MapPoint2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/MapPoint2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/svg/TwoArrows.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/TwoArrows.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/svg/UniCredit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/UniCredit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dakujeme-za-email.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dakujeme-za-email.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/gdpr.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/gdpr.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/kontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/kontakt.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/lokalita.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lokalita.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/novinky.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/novinky.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/o-projekte.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/retail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/retail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/stretnutie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/stretnutie.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/form.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,10 +76,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\public\img" />
+      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Maps" />
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components" />
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\StyledComponents" />
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Form" />
-      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\UniCredit" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -88,7 +111,8 @@
       <workItem from="1664277343583" duration="4559000" />
       <workItem from="1664293538319" duration="7952000" />
       <workItem from="1664313043215" duration="38583000" />
-      <workItem from="1664456029496" duration="2831000" />
+      <workItem from="1664456029496" duration="28886000" />
+      <workItem from="1664552756521" duration="9378000" />
     </task>
     <servers />
   </component>
