@@ -5,3 +5,15 @@
     padding-right: 30px;
     padding-bottom: 80px;
 }
+
+@media (min-width: 380px) {
+    .mantine-Modal-modal {
+        width: auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .mantine-Modal-modal {
+        width: 50%;
+    }
+}

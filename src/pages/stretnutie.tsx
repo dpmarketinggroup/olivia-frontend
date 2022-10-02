@@ -18,6 +18,7 @@ const Stretnutie: NextPage = () => {
                         <h1 className="font-bold text-[32px] xl:text-[40px] leading-[48px] tracking-[-0.5px] text-white w-[380px] xl:w-[600px] text-center mb-[55px] xl:mb-[120px] mt-[40px]">Nezáväzné
                             stretnutie v Predajnom mieste</h1>
                     </div>
+                    <div className="hidden xl:inline-block absolute top-[25%] left-[15%] w-[1090px] h-[2px] bg-white opacity-30"></div>
                     <div className="">
                         <p className="mb-[70px] xl:mb-[40px] text-[18px] leading-7 text-white w-[350px] xl:w-auto mx-auto xl:mx-0">Vyplňte formulár a zvoľte si
                             preferovaný dátum a

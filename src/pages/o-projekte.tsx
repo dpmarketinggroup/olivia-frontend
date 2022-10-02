@@ -25,7 +25,9 @@ const OProjekte: NextPage = () => {
         <>
             <Hero imgName={"oProjekteHero"} icon={<HouseIcon/>} title={"O projekte"}
                   description="Všetky podstatné informácie o Vašom novom bývaní na jednom mieste."/>
+            <div id="harmonogram">
             <WholeProcess/>
+            </div>
             <div className="flex justify-center">
                 <Link href="/stretnutie">
                     <button
@@ -55,6 +57,7 @@ const OProjekte: NextPage = () => {
                          twoButtons={false}
                          reverseFlex={true}
             />
+            <div id="garazove-parkovanie">
             <Description imgPath="/img/car.png"
                          title="Garážové parkovanie"
                          descrip="Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok."
@@ -65,7 +68,10 @@ const OProjekte: NextPage = () => {
                          ]}
                          twoButtons={false}
             />
+            </div>
+            <div id="financovanie">
             <FinancingConditions/>
+            </div>
             <NewsSection news={[
                 {path: "/img/room.jpg", date: "12.09.2021", title: "Medium length title", description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"},
                 {path: "/img/room.jpg", date: "12.09.2021", title: "Medium length title", description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"},

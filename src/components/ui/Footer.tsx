@@ -4,6 +4,8 @@ import LogoSecondary from "../svg/LogoSecondary";
 import {TextInput} from "@mantine/core";
 import PaperPlaneIcon from "../svg/PaperPlane";
 import RectangleFooter from "../svg/RectangleFooter";
+import BrandlyLogoIcon from "../svg/brandlyLogo";
+import DpLogoIcon from "../svg/dpLogo";
 
 
 interface FooterProps {
@@ -77,9 +79,16 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                         <RectangleFooter/>
                     </div>
                 </div>
-                <div className="flex gap-[50px] xl:gap-[650px] bg-[#000000] justify-center opacity-90">
+                <div className="flex gap-[50px] xl:gap-[130px] bg-[#000000] justify-center opacity-90">
                     <p className="pl-4 xl:pl-[165px] text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">© 2022 Olivia Residence.
                         Všetky práva vyhradené.</p>
+                    <div className="hidden xl:flex gap-[10px] items-center">
+                        <p className="text-white text-[12px] leading-5">Branding and Webdesign by</p>
+                        <BrandlyLogoIcon/>
+                        <span className="text-white">|</span>
+                        <p className="text-white text-[12px] leading-5">Developed by</p>
+                        <DpLogoIcon/>
+                    </div>
                     <p className="pr-4 xl:pr-[165px] text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">Ochrana osobných údajov</p>
                 </div>
             </div>

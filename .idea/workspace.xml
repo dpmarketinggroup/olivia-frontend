@@ -2,37 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/map3d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Maps/Map3d.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/ButtonBuildingNumFilter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/ButtonBuldingVybavaFilter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/brandlyLogo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/svg/dpLogo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/dropdown.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Maps/Map.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OpeningHours.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OpeningHours.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/UniCredit/FinancingConditions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/UniCredit/FinancingConditions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/UniCredit/StepsUniCredit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/UniCredit/StepsUniCredit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/Basket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/Basket.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/FloorPlan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/FloorPlan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/MapPoint2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/MapPoint2.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/TwoArrows.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/TwoArrows.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/UniCredit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/UniCredit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Banner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Banner.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/dakujeme-za-email.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dakujeme-za-email.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/gdpr.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/gdpr.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/kontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/kontakt.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lokalita.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lokalita.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/novinky.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/novinky.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/o-projekte.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/retail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/retail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/stretnutie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/stretnutie.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/modal.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="CSS File" />
         <option value="TypeScript File" />
+        <option value="CSS File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -63,7 +48,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rodinka/Desktop/Skola_Dansko/Web_development/Tutorialy/HTML&amp;CSS/Mine-finished-exercises/08-Omnifood&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rodinka/Desktop/Skola_Dansko/Web_development/Tutorialy/React/dad_jokes_exercise&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -113,6 +98,9 @@
       <workItem from="1664313043215" duration="38583000" />
       <workItem from="1664456029496" duration="28886000" />
       <workItem from="1664552756521" duration="9378000" />
+      <workItem from="1664626315474" duration="20692000" />
+      <workItem from="1664718236260" duration="10453000" />
+      <workItem from="1664729892371" duration="2903000" />
     </task>
     <servers />
   </component>

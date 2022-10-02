@@ -1,0 +1,61 @@
+/*navbar*/
+.drop-span {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a{
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+/*//////////////////////////////////////////////////////*/
+
+/*language*/
+.languages .mantine-Input-input,
+.languages .mantine-Input-input::placeholder {
+    color: black;
+    font-size: 16px;
+}
+/*//////////////////////////////////////////////////////*/
+
+/*floor number*/
+.floor-num .mantine-Input-input,
+.floor-num .mantine-Input-input::placeholder {
+    background-color: #F5F5F5;
+    min-width: 130px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #476761;
+}
+
+.floor-num .mantine-Select-item{
+    font-weight: bold;
+    font-size: 14px;
+    color: #476761;
+}
+
+/*@media (min-width: 640px) {*/
+/*    .floor-num .mantine-Input-input::placeholder {*/
+/*        font-size: 16px;*/
+/*    }*/
+/*}*/
+/*//////////////////////////////////////////////////////*/
+

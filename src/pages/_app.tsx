@@ -2,6 +2,7 @@ import '../../styles/globals.css'
 import '../../styles/form.css'
 import '../../styles/modal.css'
 import '../../styles/table.css'
+import '../../styles/dropdown.css'
 import type {AppProps} from 'next/app'
 import {MantineProvider} from "@mantine/core";
 import Navbar from '../components/ui/Navbar';
