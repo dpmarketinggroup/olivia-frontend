@@ -10,6 +10,7 @@ import EmailSignIcon from "../components/svg/EmailSign";
 import FlatBoldIcon from "../components/svg/FlatBold";
 import MapFooter from "../components/ui/MapFooter";
 import Head from "next/head";
+import Link from "next/link";
 
 
 const Retail: NextPage = () => {
@@ -23,7 +24,7 @@ const Retail: NextPage = () => {
             <div className="flex justify-center">
                 <div className="mb-[120px] xl:mb-[165px]">
                     <div className="flex flex-col xl:flex-row gap-[30px] xl:gap-[60px]">
-                        <div className="flex gap-[50px] w-[400px] xl:w-[700px] bg-[#F5F5F5] py-[90px] px-4 xl:pl-[135px] xl:pr-0">
+                        <div className="flex flex-col xl:flex-row items-center xl:items-start gap-[50px] w-[400px] xl:w-[700px] bg-[#F5F5F5] py-[90px] px-4 xl:pl-[135px] xl:pr-0">
                             <div className= "w-[190px]">
                                 <FlatBoldIcon/>
                                 <h4 className="font-medium text-[16px] leading-6 tracking-[0.1px] mt-[22px] mb-[8px]">Prenájom obchodného priestoru</h4>
@@ -54,11 +55,15 @@ const Retail: NextPage = () => {
                             <div>
                                 <div className="flex gap-[20px] items-center">
                                     <PhoneIcon/>
-                                    <span className="font-bold text-[18px] leading-7">+421 911 000 000</span>
+                                    <Link href={'tel:+421911000000'}>
+                                        <a className="font-bold text-[18px] leading-7">+421 911 000 000</a>
+                                    </Link>
                                 </div>
                                 <div className="flex gap-[20px] items-center">
                                     <EmailSignIcon/>
-                                    <span className="font-bold text-[18px] leading-7">info@oliviaresidence.sk</span>
+                                    <Link href={'mailto:info@oliviaresidence.sk'}>
+                                        <a className="font-bold text-[18px] leading-7">info@oliviaresidence.sk</a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

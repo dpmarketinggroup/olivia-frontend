@@ -29,7 +29,7 @@ const Description: FunctionComponent<DescriptionProps> = ({
             <div className="h-[245px] xl:h-[400px] w-[400px] xl:w-[555px] relative">
                 <Image objectFit="cover" layout="fill" alt="hero image" src={imgPath}/>
             </div>
-            <div className="flex flex-col gap-[15px] xl:gap-[23px] mx-4 xl:mx-0 items-center xl:items-start">
+            <div className="flex flex-col gap-[15px] xl:gap-[23px] mx-4 xl:mx-0 xl:items-start">
                 <h3 className="font-bold text-[28px] xl:text-[40px] leading-[28px] xl:leading-[48px] tracking-[-0.5px] text-primary w-[384px] xl:w-[445px]">
                     {title}
                 </h3>

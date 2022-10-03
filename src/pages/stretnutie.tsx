@@ -57,8 +57,9 @@ const Stretnutie: NextPage = () => {
                                 <div className="mb-[90px] xl:mb-[20px]">
                                     <div className="flex gap-[20px] items-center">
                                         <PhoneIcon/>
-                                        <span
-                                            className="font-bold text-[18px] leading-7 text-white">+421 911 000 000</span>
+                                        <Link href={'tel:+421911000000'}>
+                                            <a className="font-bold text-[18px] leading-7 text-white">+421 911 000 000</a>
+                                        </Link>
                                     </div>
                                     <div className="flex gap-[20px] items-center">
                                         <EmailSignIcon/>

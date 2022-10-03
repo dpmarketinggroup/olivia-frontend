@@ -17,7 +17,7 @@ const ButtonBuildingNumFilter:FunctionComponent<ButtonBuildingFilter> = ({num}) 
     return (
         <>
             <button onClick={changeColor}
-                className={`w-[70px] px-[25px] py-[15px] border-2 border-white ${isClicked ? "bg-white opacity-50" : "bg-transparent text-white"} font-bold text-[14px] leading-5`}>{num} <br/> izb
+                className={`w-[70px] px-[25px] py-[15px] border-2 border-white ${isClicked ? "bg-white text-[#0E3F3B]" : "bg-transparent text-white"} font-bold text-[14px] leading-5`}>{num} <br/> izb
             </button>
         </>
     )

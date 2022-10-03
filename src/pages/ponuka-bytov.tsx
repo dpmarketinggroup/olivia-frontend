@@ -18,7 +18,7 @@ import BasketCrossedIcon from "../components/svg/BasketCrossed";
 import ButtonBuildingNumFilter from "../components/sections/ButtonBuildingNumFilter";
 import ButtonBuildingVybavaFilter from "../components/sections/ButtonBuldingVybavaFilter";
 import Head from "next/head";
-
+import Dom from '../components/Dom'
 interface Table {
     apartmentNum: string
     floorNum: string
@@ -60,7 +60,7 @@ const PonukaBytov: NextPage = () => {
                 <title>Ponuka bytov | Olivia Residence</title>
             </Head>
             <div className="flex justify-center building">
-                <div>
+                <div className="w-full xl:w-auto">
                     {/*<p className="mt-[125px] ml-[190px] mb-[35px] font-bold text-[32px] leading-[38px]">1-izbové*/}
                     {/*    byty</p>*/}
                     {/*<div className="flex justify-center bg-[#F5F5F5] mb-[100px] pb-[75px]">*/}
@@ -127,17 +127,12 @@ const PonukaBytov: NextPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="h-[1105px] w-[1440px] max-w-[1440px] relative">
-                        <Image
-                            objectFit="cover"
-                            layout="fill"
-                            alt="hero image"
-                            src={"/img/interaktivnaBudova.png"}
-                        />
+                    <div className="mb-[-150px]">
+                        <Dom/>
                     </div>
                     <div className="bg-primary-pattern w-full">
-                        <div className="mx-[165px]">
-                            <div className="flex justify-between pt-[90px] mb-[40px]">
+                        <div className="mx-4 xl:mx-[165px]">
+                            <div className="flex flex-col xl:flex-row gap-[25px] xl:gap-0 justify-between pt-[90px] mb-[40px]">
                                 <div>
                                     <p className="mb-[10px] text-[14px] leading-5 text-white">Cena €</p>
                                     <RangeSlider
@@ -163,13 +158,13 @@ const PonukaBytov: NextPage = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="flex justify-between mb-[70px]">
-                                <div className="flex gap-[20px]">
+                            <div className="flex flex-col xl:flex-row justify-between mb-[35px] xl:mb-[70px]">
+                                <div className="flex xl:gap-[20px] mb-[25px] xl:mb-0">
                                     {buttonsRooms.map((p, i) =>(
                                         <ButtonBuildingNumFilter key={i} num={p.num}/>
                                     ))}
                                 </div>
-                                <div className="flex gap-[20px] items-end">
+                                <div className="flex xl:gap-[20px] items-end">
                                     {/*<div>*/}
                                     {/*    <p className="text-[14px] leading-5 text-white mb-[10px]">Výbava:</p>*/}
                                     {/*    <button className="border-2 border-white bg-transparent h-[40px] px-[15px]">*/}
@@ -205,8 +200,8 @@ const PonukaBytov: NextPage = () => {
                                     })}
                                 </div>
                             </div>
-                            <div className="flex justify-between items-center pb-[90px]">
-                                <div className="flex gap-[30px]">
+                            <div className="flex flex-col xl:flex-row justify-between xl:items-center pb-[90px]">
+                                <div className="flex flex-col xl:flex-row gap-[30px] mb-[55px]">
                                     <Checkbox label={
                                         <>
                                             <p className="font-medium text-[14px] leading-5 text-white">nezobrazovať

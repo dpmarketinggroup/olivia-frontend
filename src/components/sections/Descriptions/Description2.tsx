@@ -39,7 +39,7 @@ const Description2: FunctionComponent<Description2Props>
                 <div>
                     <h3 className="pt-[100px] xl:pt-0 mb-[35px] xl:mb-[95px] font-bold text-[30px] xl:text-[40px] leading-[48px] tracking-[-0.5px] text-center text-primary">Vybavenie
                         apartmánov</h3>
-                    <div className="flex flex-col xl:flex-row gap-[30px] xl:gap-[110px] mb-[95px] items-center justify-center">
+                    <div className="flex flex-col xl:flex-row gap-[30px] xl:gap-[110px] mb-[40px] xl:mb-[95px] items-center justify-center">
                         <div className="h-[380px] w-[400px] xl:w-[555px] relative">
                             <Image
                                 objectFit="cover"
@@ -49,11 +49,11 @@ const Description2: FunctionComponent<Description2Props>
                             />
                         </div>
                         <div>
-                            <p className="mb-[30px] xl:mb-[45px] font-bold text-[21px] xl:text-[24px] leading-6 xl:leading-[32px] tracking-[-0.1px]">
+                            <p className="mb-[30px] xl:mb-[45px] font-bold text-[22px] xl:text-[24px] leading-6 xl:leading-[32px] tracking-[-0.1px]">
                                 <span className="text-green2 xl:underline xl:underline-offset-[6px]">Vysoký štandard</span>
                                 <br/> pre Váš maximálny komfort
                             </p>
-                            <div className="flex gap-[35px] xl:gap-[65px]">
+                            <div className="flex flex-col xl:flex-row gap-[35px] xl:gap-[65px]">
                                 {bulletPoints2.map((b2, k) => (
                                     <BulletPoint2
                                         key={k}
@@ -65,7 +65,7 @@ const Description2: FunctionComponent<Description2Props>
                             </div>
                         </div>
                     </div>
-                    <div className="flex gap-[12px] justify-center pb-[100px] xl:pb-0">
+                    <div className="flex flex-col xl:flex-row gap-[12px] items-center xl:items-start justify-center pb-[100px] xl:pb-0">
                         {buttons.map((b, k) => (
                             <Link key={k} href={b.path}>
                                 <button

@@ -43,9 +43,9 @@ const SwiperApartments = () => {
                     >
                         {[
                             {url: "/img/apartment1.png", title: "1 izbový apartmán"},
-                            {url: "/img/apartment1.png", title: "1.5 izbový apartmán"},
-                            {url: "/img/apartment1.png", title: "2 izbový apartmán"},
-                            {url: "/img/apartment1.png", title: "3 izbový apartmán"},
+                            {url: "/img/apartment2.png", title: "1.5 izbový apartmán"},
+                            {url: "/img/apartment3.png", title: "2 izbový apartmán"},
+                            {url: "/img/apartment4.png", title: "3 izbový apartmán"},
                             {url: "/img/apartment1.png", title: "4 izbový apartmán"},
                             {url: "/img/apartment1.png", title: "5 izbový apartmán"},
                         ].map((img, i) => (

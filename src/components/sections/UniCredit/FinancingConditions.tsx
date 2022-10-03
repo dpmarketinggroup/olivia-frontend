@@ -4,6 +4,7 @@ import Image from "next/image";
 import PhoneIcon from "../../svg/Phone";
 import EmailSignIcon from "../../svg/EmailSign";
 import StepsUniCredit from "./StepsUniCredit";
+import Link from "next/link";
 
 interface Steps {
     step: string
@@ -57,11 +58,15 @@ const FinancingConditions = () => {
                             <div>
                                 <div className="flex gap-[20px]">
                                     <PhoneIcon/>
-                                    <span className="font-bold text-[18px] leading-7">+421 000 000</span>
+                                    <Link href={'tel:+421911000000'}>
+                                        <a className="font-bold text-[18px] leading-7">+421 000 000</a>
+                                    </Link>
                                 </div>
                                 <div className="flex gap-[20px]">
                                     <EmailSignIcon/>
-                                    <span className="font-bold text-[18px] leading-7">info@oliviaresidence.sk</span>
+                                    <Link href={'mailto:info@oliviaresidence.sk'}>
+                                    <a className="font-bold text-[18px] leading-7">info@oliviaresidence.sk</a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
