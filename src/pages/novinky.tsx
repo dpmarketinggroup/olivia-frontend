@@ -3,6 +3,7 @@ import NewsSection from "../components/sections/News/NewsSection";
 import React from "react";
 import NewsSubscription from "../components/sections/News/NewsSubscription";
 import MapFooter from "../components/ui/MapFooter";
+import Head from "next/head";
 
 interface Messages {
     news: [
@@ -140,6 +141,9 @@ const Novinky: NextPage = () => {
     ]
     return (
         <>
+            <Head>
+                <title>Novinky | Olivia Residence</title>
+            </Head>
             <div className="mt-[125px]">
                 {messages.map((m, k) =>(
                     <div key={k} className={`${k === 0 && "mt-[-80px] xl:mt-0"} mb-[-60px] xl:mb-0`}>

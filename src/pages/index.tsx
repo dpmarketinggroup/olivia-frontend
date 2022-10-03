@@ -14,10 +14,14 @@ import SwiperGallery from "../components/sections/Swipers/SwiperGallery";
 import SwiperPastProjects from "../components/sections/Swipers/SwiperPastProjects";
 import SwiperApartments from "../components/sections/Swipers/SwiperApartments";
 import MapFooter from "../components/ui/MapFooter";
+import Head from "next/head";
 
 const Home: NextPage = () => {
     return (
         <>
+            <Head>
+                <title>Moderné mestské bývanie | Olivia Residence</title>
+            </Head>
             <section className="flex justify-center">
                 <div className="bg-[url('/img/hero.jpg')] h-[650px] w-full max-w-[1440px] mb-[90px] xl:mb-[140px]">
                     <div className="w-[350px] xl:w-[600px] ml-4 xl:ml-[165px]  pt-[185px] mb-[40px]">

@@ -8,11 +8,15 @@ import ArrowDownNotFilled from "../components/svg/ArrowDownNotFilled";
 import Link from "next/link";
 import DownArrowIcon from "../components/svg/DownArrow";
 import {Select} from "@mantine/core";
+import Head from "next/head";
 
 
 const VyberBytuNaPodlazi: NextPage = () => {
     return (
         <>
+            <Head>
+                <title>Výber bytu na podlaží | Olivia Residence</title>
+            </Head>
             <div className="flex justify-center">
                 <div>
                     <div className="flex justify-center my-[70px]">

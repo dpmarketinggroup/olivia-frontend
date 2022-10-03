@@ -12,7 +12,7 @@ const Navbar = () => {
     const [scrollLocked, setScrollLocked] = useScrollLock();
 
     return (
-        <nav className="xl:h-[60px] flex items-center justify-between shadow-[0_0_10px_rgba(0,0,0,0.15)]">
+        <nav className="fixed xl:static top-0 w-full xl:w-auto bg-white z-10 xl:h-[60px] flex items-center justify-between shadow-[0_0_10px_rgba(0,0,0,0.15)]">
             <div className="xl:flex gap-[50] items-center mx-4 xl:ml-[40px] xl:mr-0 h-full w-full">
                 <div className={`flex justify-between ${!opened ? "mb-[20px]" : "mb-[35px]"} mt-[20px] xl:mb-0 xl:mt-0`}>
                     <Link href="/" >
@@ -26,7 +26,7 @@ const Navbar = () => {
                     }}/>
                     </div>
                 </div>
-                <div onClick={() => {setOpened(false); setScrollLocked((c) => !c)}} className={`${!opened && "hidden"} xl:flex flex flex-col xl:flex-row gap-[25px] items-center h-[calc(100vh-60px)] xl:w-auto`}>
+                <div onClick={() => {setOpened(false); setScrollLocked((c) => false)}} className={`${!opened && "hidden"} xl:flex flex flex-col xl:flex-row gap-[25px] items-center h-[calc(100vh-60px)] xl:w-auto`}>
                     <div className="flex gap-[10px] items-center">
                         <div className="dropdown">
                             <Link href="/ponuka-bytov">
@@ -92,7 +92,7 @@ const Navbar = () => {
                 <div className="flex items-center gap-[5px]">
                     <div className="languages">
                         <Select
-                            className="w-[50px]"
+                            className="hidden w-[50px]"
                             data={languages}
                             placeholder="SK"
                             variant="unstyled"

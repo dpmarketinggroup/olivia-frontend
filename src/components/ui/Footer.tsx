@@ -31,7 +31,9 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                             </form>
                             <p className="text-[12px] leading-[20px] opacity-40 text-white w-[350px] pb-[25px]">Kliknutím
                                 na tlačidlo potvrdzujete, že súhlasíte s našimi podmienkami spracovania
-                                <span className="underline underline-offset-[3px]"> osobných údajov.</span></p>
+                                <Link href="/gdpr">
+                                    <a className="underline underline-offset-[3px]"> osobných údajov.</a>
+                                </Link></p>
                         </div>
                         <div className="flex flex-row gap-[30px] xl:gap-[100px] items-start xl:pt-[80px] pb-[20px] xl:pb-0">
                             <div className="flex flex-col gap-[15px]">
@@ -70,8 +72,9 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                     className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60">831 04 Bratislava</span>
                                 <span
                                     className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60">+421 911 000 000</span>
-                                <span
-                                    className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60">info@oliviaresidence.sk</span>
+                                <Link href={'mailto:info@oliviaresidence.sk'}>
+                                    <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60">info@oliviaresidence.sk</a>
+                                </Link>
                             </div>
                         </div>
                     </div>

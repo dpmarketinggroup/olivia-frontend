@@ -39,12 +39,12 @@ const SwiperPastProjects = () => {
                         slidesPerView={"auto"}
                     >
                         {[
-                            {url: "/img/room2.jpg", title: "Tatracentrum Bratislava"},
-                            {url: "/img/room2.jpg", title: "Koloseo Bratislava"},
-                            {url: "/img/room2.jpg", title: "Austria Trend Hotel Bratislava"},
-                            {url: "/img/room2.jpg", title: "Fresh Market Bratislava"},
-                            {url: "/img/room2.jpg", title: "Klienstké centrum Bratislava"},
-                            {url: "/img/room2.jpg", title: "Fresh Market Bratislava"},
+                            {url: "/img/tatracentrum.jpg", title: "Tatracentrum Bratislava"},
+                            {url: "/img/koloseo.jpg", title: "Koloseo Bratislava"},
+                            {url: "/img/austria.jpg", title: "Austria Trend Hotel Bratislava"},
+                            {url: "/img/fresh.jpg", title: "Fresh Market Bratislava"},
+                            {url: "/img/klientske.jpg", title: "Klienstké centrum Bratislava"},
+                            {url: "/img/storeland.jpg", title: "Storeland Lamač"},
                         ].map((img, i) => (
                             <SwiperSlide
                                 className={`w-full max-w-[185px] xl:max-w-[255px] ${i === 0 && "xl:ml-[165px]"}`}

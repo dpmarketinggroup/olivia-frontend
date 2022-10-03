@@ -1,9 +1,7 @@
+/*Form modal*/
 .mantine-Modal-modal {
     width: 50%;
-    padding-top: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 80px;
+    padding: 20px 30px 80px;
 }
 
 @media (min-width: 380px) {
@@ -17,3 +15,24 @@
         width: 50%;
     }
 }
+/*///////////////////////////////////*/
+
+/*Gallery modal*/
+.gallery-modal .mantine-Modal-modal {
+    width: 50%;
+    padding: 20px 30px 80px;
+    background-color: transparent;
+}
+
+@media (min-width: 380px) {
+    .gallery-modal .mantine-Modal-modal {
+        width: auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery-modal .mantine-Modal-modal {
+        width: 50%;
+    }
+}
+/*////////////////////////////*/

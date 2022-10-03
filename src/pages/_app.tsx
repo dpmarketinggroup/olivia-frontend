@@ -10,6 +10,7 @@ import Navbar from '../components/ui/Navbar';
 import Footer from "../components/ui/Footer";
 import Banner from "../components/Banner";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 function MyApp({Component, pageProps}: AppProps) {
     const router = useRouter();

@@ -12,6 +12,11 @@
     color: white;
 }
 
+.green .mantine-TextInput-input:focus,
+.green .mantine-Textarea-input:focus{
+    border-bottom: 2px solid black;
+}
+
 .green .mantine-Checkbox-input {
     background-color: rgba(0, 0, 0, 0.07);
     border: 2px solid white;
@@ -38,6 +43,11 @@
     border: 0;
     height: 48px;
     color: black;
+}
+
+.grey .mantine-TextInput-input:focus,
+.grey .mantine-Textarea-input:focus{
+    border-bottom: 2px solid black;
 }
 
 .grey .mantine-Textarea-input {
@@ -85,5 +95,10 @@
     border: 0;
     height: 48px;
     color: white;
+}
+
+.mantine-TextInput-input:focus{
+    background: rgba(255, 255, 255, 0.24);
+    border-bottom: 2px solid white;
 }
 /*//////////////////////////////////////////*/

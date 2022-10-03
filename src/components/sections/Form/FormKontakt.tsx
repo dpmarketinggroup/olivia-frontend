@@ -38,15 +38,17 @@ const FormKontakt: FunctionComponent<FormKontakt>
             }
             <div className="flex flex-col gap-[15px] w-[384px] xl:w-[645px]">
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-[16px] w-full">
-                    <TextInput placeholder="Meno" radius="xs"/>
-                    <TextInput placeholder="Priezvisko" radius="xs"/>
+                    <TextInput placeholder="Meno" radius="xs" required={true} withAsterisk/>
+                    <TextInput placeholder="Priezvisko" radius="xs" required={true} withAsterisk/>
                 </div>
-                <TextInput placeholder="Email" radius="xs"/>
+                <TextInput placeholder="Email" radius="xs" required={true} withAsterisk/>
                 <TextInput placeholder="Tel. č." radius="xs"/>
                 <Textarea placeholder="Správa"
                           radius="xs"
                           minRows={6}
                           maxRows={6}
+                          required={true}
+                          withAsterisk
                 />
                 <Checkbox label={
                     <>

@@ -17,6 +17,7 @@ import BasketIcon from "../components/svg/Basket";
 import BasketCrossedIcon from "../components/svg/BasketCrossed";
 import ButtonBuildingNumFilter from "../components/sections/ButtonBuildingNumFilter";
 import ButtonBuildingVybavaFilter from "../components/sections/ButtonBuldingVybavaFilter";
+import Head from "next/head";
 
 interface Table {
     apartmentNum: string
@@ -55,6 +56,9 @@ const PonukaBytov: NextPage = () => {
 
     return (
         <>
+            <Head>
+                <title>Ponuka bytov | Olivia Residence</title>
+            </Head>
             <div className="flex justify-center building">
                 <div>
                     {/*<p className="mt-[125px] ml-[190px] mb-[35px] font-bold text-[32px] leading-[38px]">1-izbové*/}

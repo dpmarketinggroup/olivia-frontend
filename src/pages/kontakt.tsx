@@ -7,11 +7,16 @@ import PhoneIcon from "../components/svg/Phone";
 import EmailSignIcon from "../components/svg/EmailSign";
 import React from "react";
 import MapFooter from "../components/ui/MapFooter";
+import Head from "next/head";
+import Link from "next/link";
 
 
 const Kontakt: NextPage = () => {
     return (
         <>
+            <Head>
+                <title>Kontakt | Olivia Residence</title>
+            </Head>
             <Hero imgName="kontaktHero" icon={<PhoneHeroIcon/>} title="Kontakt"/>
             <div className="flex justify-center">
                 <div className="mx-4 xl:mx-[165px]">
@@ -45,7 +50,9 @@ const Kontakt: NextPage = () => {
                                 </div>
                                 <div className="flex gap-[20px] items-center">
                                     <EmailSignIcon/>
-                                    <span className="font-bold text-[18px] leading-7">info@oliviaresidence.sk</span>
+                                    <Link href={'mailto:info@oliviaresidence.sk'}>
+                                        <a className="font-bold text-[18px] leading-7">info@oliviaresidence.sk</a>
+                                    </Link>
                                 </div>
                             </div>
                             <p className="hidden xl:inline-block font-medium text-[16px] leading-6 tracking-[0.1px] text-[#676766] w-[335px]">V

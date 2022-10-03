@@ -9,10 +9,15 @@ import PhoneIcon from "../components/svg/Phone";
 import EmailSignIcon from "../components/svg/EmailSign";
 import FlatBoldIcon from "../components/svg/FlatBold";
 import MapFooter from "../components/ui/MapFooter";
+import Head from "next/head";
 
 
 const Retail: NextPage = () => {
     return (
+        <>
+            <Head>
+                <title>Retail | Olivia Residence</title>
+            </Head>
         <div>
             <Hero imgName="retailHero" icon={<FlatIcon/>} title="Retail" description="Lukratívna lokalita pre život aj biznis"/>
             <div className="flex justify-center">
@@ -63,6 +68,7 @@ const Retail: NextPage = () => {
             <Map title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava"/>
             <MapFooter/>
         </div>
+            </>
     )
 }
 

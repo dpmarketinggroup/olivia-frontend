@@ -1,8 +1,13 @@
 import {NextPage} from "next";
 import React from "react";
+import Head from "next/head";
 
 const GDPR: NextPage = () => {
     return (
+        <>
+            <Head>
+                <title>GDPR | Olivia Residence</title>
+            </Head>
         <div className="flex justify-center">
         <div className="mx-4 xl:mx-[450px] mb-[210px] w-[540px]">
             <h1 className="text-center mb-[40px] mt-[85px] font-bold text-[40px] leading-[48px] tracking-[-0.5px]">Ochrana <br/> osobných údajov</h1>
@@ -53,6 +58,7 @@ const GDPR: NextPage = () => {
                 voluptate. </p>
         </div>
         </div>
+            </>
     )
 }
 
