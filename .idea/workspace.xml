@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/sections/ButtonBuildingNumFilter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/ButtonBuldingVybavaFilter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/brandlyLogo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/dpLogo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/dropdown.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/interactivBuilding.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Banner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Banner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/interaktivnaBudova.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/o-projekte.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/stretnutie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/stretnutie.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/modal.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +18,8 @@
       <list>
         <option value="tsconfig.json" />
         <option value="TypeScript File" />
-        <option value="CSS File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -100,7 +89,7 @@
       <workItem from="1664552756521" duration="9378000" />
       <workItem from="1664626315474" duration="20692000" />
       <workItem from="1664718236260" duration="10453000" />
-      <workItem from="1664729892371" duration="2903000" />
+      <workItem from="1664729892371" duration="15462000" />
     </task>
     <servers />
   </component>
