@@ -11,7 +11,7 @@ const Articles = ({withHeading = true}: NewsSectionProps) => {
     const [opened, setOpened] = useState(false);
     return (
         <>
-            <div className={`px-[1rem] xl:px-0 xl:mx-[165px] mb-[90px]`}>
+            <div className={`px-[1rem] xl:px-0 mb-[90px]`}>
                 {withHeading &&
                     <div className="text-center mb-[55px] xl:mb-[110px]">
                         <h2 className="font-bold text-[27px] xl:text-[40px] leading-[48px] mb-[10px] xl:mb-[20px]">Novinky</h2>
@@ -25,7 +25,7 @@ const Articles = ({withHeading = true}: NewsSectionProps) => {
                         </div>
                     </div>
                 }
-                <div className="flex flex-col xl:flex-row gap-[30px] items-center xl:items-start xl:justify-center">
+                <div className="flex flex-col xl:flex-row gap-[30px] w-full items-center xl:items-start xl:justify-center xl:max-w-[1200px] xl:mx-auto">
                     {[
                         {
                             path: "/img/room.jpg",
@@ -52,7 +52,7 @@ const Articles = ({withHeading = true}: NewsSectionProps) => {
                             description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"
                         },
                     ].map(({title, description, date, path}, i) => (
-                        <div key={i}>
+                        <div key={i} className={'w-full'}>
                             <Modal opened={opened} onClose={() => setOpened(false)} centered closeOnClickOutside={true}>
                                 <h2 className="font-bold text-[40px] leading-[48px] text-green2 mb-[25px]">{title}</h2>
                                 <div className="relative h-[340px] mb-[25px]">
@@ -75,7 +75,7 @@ const Articles = ({withHeading = true}: NewsSectionProps) => {
                                 </Link>
                             </Modal>
                             <div className="flex flex-col gap-[10px] w-full">
-                                <div className="h-[135px] xl:h-[155px] xl:w-[255px] relative">
+                                <div className="h-[135px] xl:h-[155px] relative">
                                     <Image objectFit="cover" layout="fill" alt="hero image" src={path}/>
                                 </div>
                                 <span className="text-[14px] leading-5 text-green2">{date}</span>

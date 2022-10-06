@@ -13,7 +13,7 @@ const Button = ({variant, href, className, children}: ButtonProps) => {
     const getClass = () => {
         switch (variant) {
             case "unstyled":
-                return className;
+                return '';
             case "filled":
                 return 'h-[40px] px-[20px] bg-green2 text-white font-medium'
             case "outlined":
@@ -23,7 +23,7 @@ const Button = ({variant, href, className, children}: ButtonProps) => {
 
     return (
         <Link href={href || '/'}>
-            <button className={getClass()}>{children}</button>
+            <button className={`${getClass()} ${className}`}>{children}</button>
         </Link>
     );
 };
