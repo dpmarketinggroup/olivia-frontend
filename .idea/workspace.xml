@@ -2,15 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/map.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Banner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Banner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/BulletPoint2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Interactive/HouseAndFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Interactive/HouseAndFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Maps/Map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Maps/Map.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/News.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperGallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/UniCredit/FinancingConditions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/UniCredit/FinancingConditions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/UniCredit/StepsUniCredit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/UniCredit/StepsUniCredit.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/MapFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MapFooter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/lokalita.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lokalita.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/o-projekte.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/dropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/dropdown.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +71,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Interactive" />
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Interactive\flat" />
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Interactive\floors" />
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Buttons" />
-      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

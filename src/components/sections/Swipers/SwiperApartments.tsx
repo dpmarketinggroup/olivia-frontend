@@ -1,20 +1,19 @@
-import React from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper";
 import Image from "next/image";
 import RightArrowIcon from "../../svg/RightArrow";
-import "swiper/css";
 import Link from "next/link";
 import LeftArrowSwiperIcon from "../../svg/LeftArrowSwiper";
 import RightArrowSwiperIcon from "../../svg/RightArrowSwiper";
+import React from "react";
 
 const SwiperApartments = () => {
     return (
         <div className="flex justify-center">
             <div>
-                <div className="xl:py-[110px] px-[1rem] xl:px-0 mb-[150px] xl:mb-[75px]">
-                    <div className="flex gap-[50px] xl:gap-[265px] xl:max-w-[1310px] items-center justify-center xl:justify-between mb-[35px] xl:mb-[70px] mx-4 xl:mx-[165px]">
-                        <h3 className="text-[16px] w-[150px] xl:w-auto xl:text-[26px] leading-[23px] xl:leading-[46px] xl:text-[32px] xl:leading-[38px] font-bold text-left xl:text-center xl:text-left xl:mx-0 text-black tracking-[-0.4px]">
+                <div className="xl:py-[110px] px-[1rem] xl:px-0 my-[50px] xl:mb-[75px]">
+                    <div className="flex gap-[50px] xl:gap-[265px] xl:max-w-[1310px] items-center justify-center xl:justify-between mb-[35px] xl:mb-[70px] xl:mx-[165px]">
+                        <h3 className="text-[16px] xl:w-auto xl:text-[26px] leading-[23px] xl:leading-[46px] xl:text-[32px] xl:leading-[38px] font-bold text-left xl:text-center xl:text-left xl:mx-0 text-black">
                             Od 1 izbových až po 4 izbové apartmány
                         </h3>
                         <div className="flex gap-[30px] items-center self-end xl:self-auto">
@@ -47,15 +46,13 @@ const SwiperApartments = () => {
                             {url: "/img/3.png", title: "2 izbový apartmán"},
                             {url: "/img/4.png", title: "3 izbový apartmán"},
                             {url: "/img/4.png", title: "3 izbový apartmán"},
-                        ].map((img, i) => (
+                        ].map(({url, title}, i) => (
                             <SwiperSlide
-                                className={`w-full xl:max-w-[230px] ${i === 0 && "xl:ml-[165px]"}`}
+                                className={`w-full xl:max-w-[540px] ${i === 0 && "xl:ml-[165px]"}`}
                                 key={i}
                             >
-                                <p className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] text-green2 mb-[30px]">{img.title}</p>
-                                <div className="relative h-[180px]">
-                                    <Image objectFit="contain" layout={"fill"}
-                                           src={img.url} alt={img.title}/>
+                                <div className="relative h-[200px]">
+                                    <Image objectFit="contain" layout={"fill"} src={url} alt={title}/>
                                 </div>
                             </SwiperSlide>
                         ))}

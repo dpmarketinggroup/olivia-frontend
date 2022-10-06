@@ -13,7 +13,7 @@ const Navbar = () => {
 
     return (
         <nav className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] w-full">
-            <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] lg:shadow-none fixed top-0 w-full max-w-[1920px] mx-auto  z-50 xl:h-[60px] flex items-center justify-between">
+            <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] mt-[40px] lg:shadow-none fixed top-0 w-full max-w-[1920px] mx-auto  z-50 xl:h-[60px] flex items-center justify-between">
             <div className="xl:flex gap-[50] items-center mx-4 xl:ml-[40px] xl:mr-0 h-full w-full">
                 <div className={`flex justify-between ${!opened ? "mb-[20px]" : "mb-[35px]"} mt-[20px] xl:mb-0 xl:mt-0`}>
                     <Link href="/" >
@@ -27,7 +27,7 @@ const Navbar = () => {
                     }}/>
                     </div>
                 </div>
-                <div onClick={() => {setOpened(false); setScrollLocked((c) => false)}} className={`${!opened && "hidden"} border flex xl:flex flex-col xl:flex-row gap-[25px] justify-center items-center h-[calc(100vh-60px)] xl:h-auto xl:w-auto`}>
+                <div onClick={() => {setOpened(false); setScrollLocked((c) => false)}} className={`${!opened && "hidden"} flex xl:flex flex-col xl:flex-row gap-[25px] justify-center items-center h-[calc(100vh-60px)] xl:h-auto xl:w-auto`}>
                     <div className={'flex flex-col xl:flex-row gap-[35px] xl:gap-[25px] text-[20px] xl:text-[16px]'}>
                         <div className="flex gap-[10px] items-center">
                             <div className="dropdown">

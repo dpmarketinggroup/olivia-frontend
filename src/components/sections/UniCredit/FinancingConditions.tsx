@@ -19,24 +19,24 @@ const FinancingConditions = () => {
         {step: "3. krok", title: "Kúpna zmluva", offer: "80% z ceny bytu"},
     ]
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center" id="financovanie">
             <div className="w-full">
                 <div className="relative mb-[100px] xl:mb-[200px] flex flex-col">
-                    <div className="bg-black w-full">
+                    <div className="bg-black w-full px-[1rem] xl:px-0">
                         <div className="flex flex-col gap-[30px] justify-center items-center pt-[130px] pb-[350px] xl:pb-[270px]">
-                            <h2 className="font-bold text-[32px] xl:text-[40px] leading-[48px] text-[#F5F5F5] tracking-[-0.5px]">Podmienky financovania</h2>
+                            <h2 className="font-bold text-[32px] xl:text-[40px] leading-[48px] text-[#F5F5F5] text-center xl:text-left">Podmienky financovania</h2>
                             <span
                                 className="text-[16px] leading-6 tracking-[0.1px] text-[#89A6A2]">Financujúca banka</span>
-                            <UniCreditIcon classname="h-[44px] xl:-h-[65] w-[328px] xl:-w-[492px]"/>
+                            <UniCreditIcon classname="w-full h-[44px] xl:-h-[65] xl:-w-[492px]"/>
                         </div>
                     </div>
-                    <div className="flex flex-col xl:flex-row gap-[30px] bg-[background: #F5F5F5] absolute top-1/2 left-1/2 -translate-y-[53%] xl:-translate-y-1/3 -translate-x-1/2">
+                    <div className="flex flex-col xl:flex-row gap-[30px] bg-[background: #F5F5F5] -translate-y-[50%] xl:-translate-y-1/3">
                         {steps.map((s, k) => (
                             <StepsUniCredit key={k} step={s.step} title={s.title} offer={s.offer}/>
                         ))}
                     </div>
-                    <div className="bg-[#F5F5F5] w-[full]">
-                        <div className="flex flex-col xl:flex-row gap-[50px] xl:gap-[100px] pt-[350px] xl:pt-[270px] pb-[145px] mx-[165px] items-center justify-center">
+                    <div className=" w-[full] -mt-[250px]">
+                        <div className="flex flex-col xl:flex-row gap-[50px] xl:gap-[100px] xl:pt-[270px] xl:pb-[145px] pb-[50px] xl:mx-[165px] items-center justify-center">
                             <div className="hidden xl:inline-block">
                                 <h4 className="font-bold text-[18px] leading-7 mb-[10px]">Finančný poradca UniCredit Bank</h4>
                                 <p className="text-[14px] leading-[20px] text-[#999999] w-[350px]">Neváhajte ma kontaktovať. Predstavím Vám detailný model financovania a zodpoviem všetky Vaše otázky.</p>

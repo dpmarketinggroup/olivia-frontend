@@ -16,7 +16,7 @@ const Hero: FunctionComponent<HeroProps> = ({
                                                 description
                                             }) => {
     return (
-        <div className="flex justify-center mt-[35px]">
+        <div className="flex justify-center mt-[75px]">
             <div className="h-[460px] w-full xl:max-w-[1920px] mb-[60px] xl:mb-[140px] border relative">
                 <div className="h-full w-full absolute -z-10">
                     <Image

@@ -3,6 +3,7 @@ import '../../styles/form.css'
 import '../../styles/modal.css'
 import '../../styles/table.css'
 import '../../styles/dropdown.css'
+import "swiper/css";
 import '../../styles/interactive.css'
 import type {AppProps} from 'next/app'
 import {MantineProvider} from "@mantine/core";

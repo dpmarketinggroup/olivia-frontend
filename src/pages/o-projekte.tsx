@@ -2,7 +2,7 @@ import Hero from "../components/sections/Hero/Hero";
 import HouseIcon from "../components/svg/House";
 import WholeProcess from "../components/sections/Process/WholeProcess";
 import Link from "next/link";
-import Description from "../components/sections/Descriptions/Description";
+import Description, {DescriptionProps} from "../components/sections/Descriptions/Description";
 import KitchenIcon from "../components/svg/Kitchen";
 import SinkIcon from "../components/svg/Sink";
 import BlockIcon from "../components/svg/Block";
@@ -18,26 +18,12 @@ import FinancingConditions from "../components/sections/UniCredit/FinancingCondi
 import MapFooter from "../components/ui/MapFooter";
 import Head from "next/head";
 
-
-interface Descriptions {
-    imgPath: string;
-    title: string;
-    descrip: string;
-    bulletPoints: [
-        { icon: JSX.Element; text: string },
-        { icon: JSX.Element; text: string },
-        { icon: JSX.Element; text: string }
-    ];
-    twoButtons?: boolean
-    reverseFlex?: boolean;
-}
-
 const OProjekte = () => {
-    const descriptions: Descriptions[] = [
+    const descriptions: DescriptionProps[] = [
         {
             imgPath: "/img/room3.jpg",
             title: "Vysoký štandard vrátane komplentej kuchyne a sanity",
-            descrip: "Kompletne zariadené byty vo vysokom štandarde a kvalitnom prevedení, aby ste si ušetrili starosti a čas a mohli si naplno užívať svoj nový domov.",
+            description: "Kompletne zariadené byty vo vysokom štandarde a kvalitnom prevedení, aby ste si ušetrili starosti a čas a mohli si naplno užívať svoj nový domov.",
             bulletPoints: [
                 {icon: <KitchenIcon/>, text: "Skvelá dynamická lokalita"},
                 {icon: <SinkIcon/>, text: "Vysoký štandard vybavenia"},
@@ -48,7 +34,7 @@ const OProjekte = () => {
         {
             imgPath: "/img/balcony.jpg",
             title: "Priestranné balkóny a terasy s exterierovým slnečným tienením",
-            descrip: "Veľko-metrážne balkóny a terasy s exterierovými slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
+            description: "Veľko-metrážne balkóny a terasy s exterierovými slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
             bulletPoints: [
                 {icon: <BasketIcon width="28" height="29"/>, text: "Balkón ako štandard pre každý byt"},
                 {icon: <ElectricPanelIcon/>, text: "Elektrické exteriérové slnečné tienenie ako štandard"},
@@ -60,7 +46,7 @@ const OProjekte = () => {
         {
             imgPath: "/img/car.png",
             title: "Garážové parkovanie",
-            descrip: "Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok.",
+            description: "Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok.",
             bulletPoints: [
                 {icon: <ManIcon/>, text: "Prechod do Vášho bytu suchou nohou"},
                 {icon: <ParkingIcon/>, text: "Dlhodobý prenájom garážových státí"},
@@ -77,28 +63,24 @@ const OProjekte = () => {
             <Hero imgName={"oProjekteHero"} icon={<HouseIcon/>} title={"O projekte"}
                   description="Všetky podstatné informácie o Vašom novom bývaní na jednom mieste."/>
             <WholeProcess/>
-            <Link href="/stretnutie">
-                <button
-                    className="mx-auto hover:bg-primary bg-[#476761] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] mt-[-60px] mb-[90px] xl:mb-[185px]">
-                    Nezáväzné stretnutie
-                </button>
-            </Link>
-            {descriptions.map((p, i) => {
+            <div className={'px-[1rem] xl:px-0'}>
+                <Link href="/stretnutie">
+                    <button
+                        className="mx-auto hover:bg-primary bg-[#476761] w-full xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] mb-[90px] xl:mb-[185px]">
+                        Nezáväzné stretnutie
+                    </button>
+                </Link>
+            </div>
+            {descriptions.map((props, i) => {
                 if (i === 2) {
                     return <div key={i} id="garazove-parkovanie">
-                        <Description imgPath={p.imgPath} title={p.title} descrip={p.descrip}
-                                     bulletPoints={p.bulletPoints} twoButtons={p.twoButtons}
-                                     reverseFlex={p.reverseFlex}/>
+                        <Description {...props}/>
                     </div>
                 } else {
-                    return <Description key={i} imgPath={p.imgPath} title={p.title} descrip={p.descrip}
-                                        bulletPoints={p.bulletPoints} twoButtons={p.twoButtons}
-                                        reverseFlex={p.reverseFlex}/>
+                    return <Description key={i} {...props}/>
                 }
             })}
-            <div id="financovanie">
-                <FinancingConditions/>
-            </div>
+            <FinancingConditions/>
             <NewsSection news={[
                 {
                     path: "/img/room.jpg",
