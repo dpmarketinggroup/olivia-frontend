@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { FloorPlan, ArrowDownNotFilledIcon, RightArrow, Severka} from "@components/icons/";
+import {FloorPlan, ArrowDownNotFilledIcon, RightArrow, Severka} from "@components/icons/";
 import {Timeline, MapFooter, Negotiation, Articles, Subscription, Description, CustomSwiper} from "@components/common";
 import Head from "next/head";
 import Image from "next/image";
 import HouseAndFilter from "@components/sections/Interactive/HouseAndFilter";
 import {Select} from "@mantine/core";
-import {CommonDescription} from "@components/common/Description/Description";
+import {ApartmentEquipmentDescription, CommonDescription} from "@components/common/Description/Description";
+import {Button} from "@components/ui";
+import {SwiperSlide} from "swiper/react";
 // TODO: Oliver -> Na mobile ide trocha posuvat horizontalne co by nemalo pozri co to sposobuje a oprav
 const Home = () => {
     return (
@@ -40,7 +42,7 @@ const Home = () => {
                 </div>
             </section>
             <Timeline/>
-            <CommonDescription />
+            <CommonDescription/>
             <div className="flex justify-center my-[70px]">
                 <div className="m xl:mx-[165px]">
                     <div className="flex flex-col gap-[30px] items-center mb-[50px]">
@@ -87,8 +89,37 @@ const Home = () => {
             </div>
             <HouseAndFilter/>
             <Negotiation title={"Lokalita v centre diania"} subtitle={"Rožňavská 1A, Bratislava"}/>
-            <Description src="/img/room2.jpg"><p>kokot</p></Description>
-            {/*<CustomSwiper swiperSlides={} title={}/>*/}
+            <div className={'flex flex-col'}>
+                <h2 className={'text-[#0E3F3B] font-bold text-[40px] text-center'}>Vybavenie apartmánov</h2>
+                <ApartmentEquipmentDescription/>
+                <div className={'mx-auto flex flex-col xl:flex-row gap-[15px] w-full xl:w-auto px-[1rem] xl:px-0'}>
+                    <Button variant={'outlined'}>
+                        Vybavenie apartmánov
+                    </Button>
+                    <Button variant={'filled'}>
+                        Nezáväzné stretnutie
+                    </Button>
+                </div>
+            </div>
+            <CustomSwiper images={[
+                "/img/interier/1.jpg",
+                "/img/interier/2.jpg",
+                "/img/interier/3.jpg",
+                "/img/interier/4.jpg",
+                "/img/interier/5.jpg",
+                "/img/interier/6.jpg",
+                "/img/interier/7.jpg",
+                "/img/interier/8.jpg",
+                "/img/interier/9.jpg",
+                "/img/interier/10.jpg",
+                "/img/interier/11.jpg",
+                "/img/interier/12.jpg",
+                "/img/interier/13.jpg",
+                "/img/interier/14.jpg",
+                "/img/interier/15.jpg",
+                "/img/interier/16.jpg",
+                "/img/interier/17.jpg",
+            ]} title={'Galéria'}/>
             <Articles/>
             <Subscription/>
             <MapFooter/>

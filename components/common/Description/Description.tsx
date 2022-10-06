@@ -1,16 +1,18 @@
 import React from "react";
 import Image from "next/image";
-import {GlassStar, MapPoint, Star} from "@components/icons";
+import {GlassStar, Key, MapPoint, Star} from "@components/icons";
 import {Button} from "@components/ui";
 
 export interface DescriptionProps {
     src: string;
-    children: React.ReactNode
+    children: React.ReactNode,
+    className?: string
 }
 
-const Description = ({children, src}: DescriptionProps) => {
+const Description = ({children, src, className}: DescriptionProps) => {
     return (
-        <div className={`flex flex-col xl:flex-row justify-between items-center justify-center w-full xl:max-w-[1200px] mx-auto xl:gap-[110px]`}>
+        <div
+            className={`flex flex-col xl:flex-row justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className}`}>
             <div className={'shrink-0'}>
                 <Image objectFit="cover" width={555} height={400} alt="hero image" src={src}/>
             </div>
@@ -46,7 +48,7 @@ export const CommonDescription = () => {
                     </div>
                 ))}
             </div>
-            <div className={'flex gap-[10px]'}>
+            <div className={'flex flex-col xl:flex-row gap-[10px]'}>
                 <Button variant={'outlined'}>
                     O projekte
                 </Button>
@@ -55,4 +57,39 @@ export const CommonDescription = () => {
                 </Button>
             </div>
         </Description>)
+}
+
+export const ApartmentEquipmentDescription = () => {
+    return (
+        <Description className={'my-[50px] xl:my-[95px]'} src={'/img/room2.jpg'}>
+            <div>
+
+            </div>
+            <h3 className={'font-bold text-[24px] leading-[32px] text-black xl:max-w-[300px] mb-[40px] text-center xl:text-left'}><span className={'text-green2 underline'}>Vysoký štandard </span>
+                pre Váš maximálny komfort</h3>
+            <div className={'flex flex-col gap-[25px] xl:grid xl:grid-cols-2 xl:gap-[65px]'}>
+                {[
+                    {
+                        icon: <Key/>,
+                        title: 'Apartmán na kľúč',
+                        description: <p className={'text-[#676766] text-center xl:text-left'}>Bývanie v Olivia Residence je úplne bezstarostné. Ponúkame <span className={'font-bold'}>komplexne zariadené
+                            apratmány vrátane kompletne vybavenej kuchyne so spotrebičmi a sanitou.</span> Vašou jedinou
+                            starosťou bude výber nábytku.</p>
+                    },
+                    {
+                        icon: <Star/>,
+                        title: 'Vysoký štandard vybavenia',
+                        description: <p className={'text-[#676766] text-center xl:text-left'}>Olivia nevyniká len množstvom nadštandardného vybavenia, ale aj jeho prevedením.
+                            Materiály použité v apartmánoch zodpovedjú vysokým štandardom kvality.</p>
+                    }
+                ].map(({description, title, icon}, i) => (
+                    <div className={'flex flex-col items-center xl:items-start'} key={i}>
+                        {icon}
+                        <h4 className={'my-[15px] font-bold'}>{title}</h4>
+                        {description}
+                    </div>
+                ))}
+            </div>
+        </Description>
+    )
 }

@@ -15,7 +15,7 @@ const RightArrowIcon: FunctionComponent<RightArrowProps> = ({stroke= "white", cl
       fill='none'
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M1.5 1L5.5 5L1.5 9" stroke={stroke} stroke-width="1.5" />
+      <path d="M1.5 1L5.5 5L1.5 9" stroke={stroke} strokeWidth="1.5" />
     </svg>
   );
 };
