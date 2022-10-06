@@ -21,7 +21,7 @@ const News : FunctionComponent<NewsProps> = ({
     const [opened, setOpened] = useState(false);
     return(
         <>
-        <Modal opened={opened}  onClose={() => setOpened(false)} centered>
+        <Modal opened={opened}  onClose={() => setOpened(false)} centered closeOnClickOutside={true}>
             <h2 className="font-bold text-[40px] leading-[48px] text-green2 mb-[25px]">{title}</h2>
             <div className="relative h-[340px] mb-[25px]">
                 <Image

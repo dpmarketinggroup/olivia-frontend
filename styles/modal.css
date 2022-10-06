@@ -1,6 +1,18 @@
 /*Form modal*/
-.mantine-Modal-modal {
+.mantine-Modal-root{
+    top: 200px;
+    left: 400px;
+    right: -500px;
+}
+
+.mantine-Modal-inner{
     width: 50%;
+    position: relative;
+    padding: 0;
+}
+
+.mantine-Modal-modal{
+    width: 100%;
     padding: 20px 30px 80px;
 }
 
@@ -12,7 +24,7 @@
 
 @media (min-width: 900px) {
     .mantine-Modal-modal {
-        width: 50%;
+        width: 100%;
     }
 }
 /*///////////////////////////////////*/
