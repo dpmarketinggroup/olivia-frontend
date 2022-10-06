@@ -22,7 +22,7 @@ const WholeProcess = ({
   ],
 }) => {
   return (
-    <div className="mx-4 xl:mx-auto flex gap-[24px] xl:gap-[110px] items-center justify-center mb-[90px] xl:mb-[185px] relative xl:w-[1440px]">
+    <div id="harmonogram" className="mx-4 xl:mx-auto flex gap-[24px] xl:gap-[110px] items-center justify-center mb-[90px] xl:mb-[185px] relative">
       {parts.map((p, k) =>
         k === 0 ? (
           <ProcessPart

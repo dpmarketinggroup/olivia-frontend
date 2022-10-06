@@ -7,7 +7,7 @@ const NewsSubscription = () => {
     return (
         <div className='flex justify-center mb-[100px] xl:mb-[150px]'>
             <div>
-                <div className="mx-[165px] bg-black w-[384px] xl:w-[1110px] relative">
+                <div className="xl:mx-[165px] bg-black w-[384px] xl:w-[1110px] relative">
                     <div className="flex flex-col gap-[22px] ml-[15px] xl:ml-[72px]">
                         <h3 className="font-bold text-[32px] leading-[38px] tracking-[-0.4px] text-[#89A6A2] pt-[52px]">Odber noviniek</h3>
                         <p className="text-[14px] leading-5 text-white w-[300px]">Najnovšie informácie o projekte Olivia Residence priamo do Vašej schránky.</p>

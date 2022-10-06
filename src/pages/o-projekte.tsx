@@ -1,9 +1,7 @@
-import {NextPage} from "next";
 import Hero from "../components/sections/Hero/Hero";
 import HouseIcon from "../components/svg/House";
 import WholeProcess from "../components/sections/Process/WholeProcess";
 import Link from "next/link";
-import React from "react";
 import Description from "../components/sections/Descriptions/Description";
 import KitchenIcon from "../components/svg/Kitchen";
 import SinkIcon from "../components/svg/Sink";
@@ -19,11 +17,6 @@ import NewsSection from "../components/sections/News/NewsSection";
 import FinancingConditions from "../components/sections/UniCredit/FinancingConditions";
 import MapFooter from "../components/ui/MapFooter";
 import Head from "next/head";
-import BagIcon from "../components/svg/Bag";
-import SmilingHouseIcon from "../components/svg/SmilingHouse";
-import ScooterIcon from "../components/svg/Scooter";
-import FlagIcon from "../components/svg/Flag";
-import RingRoadArrowIcon from "../components/svg/RingRoadArrow";
 
 
 interface Descriptions {
@@ -39,7 +32,7 @@ interface Descriptions {
     reverseFlex?: boolean;
 }
 
-const OProjekte: NextPage = () => {
+const OProjekte = () => {
     const descriptions: Descriptions[] = [
         {
             imgPath: "/img/room3.jpg",
@@ -77,34 +70,30 @@ const OProjekte: NextPage = () => {
         },
     ]
     return (
-        <>
+        <div className={'flex flex-col'}>
             <Head>
                 <title>O projekte | Olivia Residence</title>
             </Head>
             <Hero imgName={"oProjekteHero"} icon={<HouseIcon/>} title={"O projekte"}
                   description="Všetky podstatné informácie o Vašom novom bývaní na jednom mieste."/>
-            <div id="harmonogram">
-                <WholeProcess/>
-            </div>
-            <div className="flex justify-center">
-                <Link href="/stretnutie">
-                    <button
-                        className="hover:bg-primary bg-[#476761] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] mt-[-60px] mb-[90px] xl:mb-[185px]">
-                        Nezáväzné stretnutie
-                    </button>
-                </Link>
-            </div>
-            {descriptions.map((p, i) =>{
-                if (i=== 2) {
+            <WholeProcess/>
+            <Link href="/stretnutie">
+                <button
+                    className="mx-auto hover:bg-primary bg-[#476761] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] mt-[-60px] mb-[90px] xl:mb-[185px]">
+                    Nezáväzné stretnutie
+                </button>
+            </Link>
+            {descriptions.map((p, i) => {
+                if (i === 2) {
                     return <div key={i} id="garazove-parkovanie">
                         <Description imgPath={p.imgPath} title={p.title} descrip={p.descrip}
                                      bulletPoints={p.bulletPoints} twoButtons={p.twoButtons}
                                      reverseFlex={p.reverseFlex}/>
                     </div>
-                }else{
+                } else {
                     return <Description key={i} imgPath={p.imgPath} title={p.title} descrip={p.descrip}
-                                 bulletPoints={p.bulletPoints} twoButtons={p.twoButtons}
-                                 reverseFlex={p.reverseFlex}/>
+                                        bulletPoints={p.bulletPoints} twoButtons={p.twoButtons}
+                                        reverseFlex={p.reverseFlex}/>
                 }
             })}
             <div id="financovanie">
@@ -139,7 +128,7 @@ const OProjekte: NextPage = () => {
             />
             <NewsSubscription/>
             <MapFooter/>
-        </>
+        </div>
     )
 }
 

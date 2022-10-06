@@ -2,48 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Buttons/ButtonBuildingVybavaFilter2.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Buttons/ButtonBuildingVybavaFilter3.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Interactive/flat/PopUp.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Interactive/flat/Robot.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Interactive/floors/Floor8.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Interactive/floors/Floor8Extension.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/apartment1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/apartment2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/apartment3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/apartment4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Banner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Banner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dom.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Interactive/flat/Dom.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OpeningHours.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OpeningHours.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/ButtonBuildingNumFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Buttons/ButtonBuildingNumFilter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/ButtonBuldingVybavaFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Buttons/ButtonBuldingVybavaFilter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Maps/Map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Maps/Map.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/News.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/svg/BasketCrossed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/BasketCrossed.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/MapFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MapFooter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/o-projekte.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/stretnutie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/stretnutie.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/interactivBuilding.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/interactive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/dropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/dropdown.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,19 +39,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rodinka/Desktop/Skola_Dansko/Web_development/Projects/olivia_lp&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Rodinka\\Desktop\\Skola_Dansko\\Web_development\\Projects\\olivia-frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Rodinka/Desktop/Skola_Dansko/Web_development/Projects/olivia_lp",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/jannahalka/web/olivia/olivia-frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Interactive" />

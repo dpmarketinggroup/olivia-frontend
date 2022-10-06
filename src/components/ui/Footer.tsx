@@ -8,7 +8,6 @@ import BrandlyLogoIcon from "../svg/brandlyLogo";
 import DpLogoIcon from "../svg/dpLogo";
 import {useMediaQuery} from "@mantine/hooks";
 
-
 interface FooterProps {
     toBottom?: boolean
 }
@@ -17,10 +16,10 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
     const sm = useMediaQuery('(max-width: 640px)');
     const lg = useMediaQuery('(max-width: 1279px)');
     return (
-        <div className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"}`}>
+        <div className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"} w-full`}>
             <div>
-                <div className="relative bg-black">
-                    <div className="w-full flex flex-col xl:flex-row xl:gap-[205px] items-center xl:items-start justify-center mx-4 xl:ml-0 xl:mr-[165px]">
+                <div className="relative bg-black w-full ">
+                    <div className="flex flex-col xl:flex-row xl:gap-[205px] items-center xl:items-start justify-center mx-4 xl:ml-0 xl:mr-[165px]">
                         <div className="flex flex-col xl:items-start gap-[26px] pt-[45px] ml-[-50px]">
                             <LogoSecondary/>
                             <p className="text-[14px] leading-[20px] text-white opacity-60 w-[330px]">Najnovšie
@@ -55,15 +54,15 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                             <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Lokalita</a>
                                         </Link>
                                     </div>
-                                    <div className="hidden md:flex flex-col gap-[15px]">
+                                    <div className="hidden md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">
                                         <Link href="/novinky">
-                                            <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Novinky</a>
+                                            <a>Novinky</a>
                                         </Link>
                                         <Link href="/retail">
-                                            <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Retail</a>
+                                            <a>Retail</a>
                                         </Link>
                                         <Link href="/kontakt">
-                                            <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Kontakt</a>
+                                            <a>Kontakt</a>
                                         </Link>
                                     </div>
                                     <div className="flex flex-col gap-[15px] items-start xl:items-end">

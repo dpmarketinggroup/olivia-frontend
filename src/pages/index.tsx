@@ -32,7 +32,7 @@ const Home: NextPage = () => {
             </Head>
             <section className="flex justify-center">
                 <div className="h-[650px] w-full max-w-[1920px] mb-[90px] xl:mb-[140px] relative">
-                    <div className="absolute w-full max-w-[1920px] h-[650px] border -z-20">
+                    <div className="absolute w-full xl:max-w-[1920px] h-[650px] border -z-20">
                     <Image objectFit="cover" layout="fill" alt="hero image" src={'/img/hero.jpg'}/>
                     </div>
                     <div className="w-[350px] xl:w-[600px] ml-4 xl:ml-[165px]  pt-[185px] mb-[40px]">
@@ -78,6 +78,7 @@ const Home: NextPage = () => {
                             <Select
                                 className="w-[120px] floor-num"
                                 data={[
+                                    "3. podlažie",
                                     "4. podlažie","5. podlažie", "7. podlažie","8. podlažie","9. podlažie","10. podlažie","11. podlažie","12. podlažie",
                                 ]}
                                 placeholder="7. podlažie"
