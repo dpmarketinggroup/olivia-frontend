@@ -19,7 +19,7 @@ const Map: FunctionComponent<MapProps>
        }) => {
     return (
         <div className='flex justify-center'>
-            <div className="xl:w-full">
+            <div className="w-full">
                 {!centerText ?
                     (
                         <div
@@ -41,7 +41,7 @@ const Map: FunctionComponent<MapProps>
                     )
                 }
 
-                <div className="h-[325px] xl:h-[650px] xl:w-[1920px] max-w-full relative mx-0 xl:mx-auto">
+                <div className="h-[325px] xl:h-[650px] w-full xl:max-w-[1920px] relative mx-0 xl:mx-auto">
                     <Image
                         objectFit="cover"
                         layout="fill"

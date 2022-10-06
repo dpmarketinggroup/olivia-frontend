@@ -27,11 +27,11 @@ const NewsSection: FunctionComponent<NewsSectionProps>
     const matches = useMediaQuery('(max-width: 900px)');
     return (
         <>
-            <div className={`mx-4 xl:mx-[165px] mb-[90px] xl:mb-[${mb}px]`}>
+            <div className={`px-[1rem] xl:px-0 xl:mx-[165px] mb-[90px] xl:mb-[${mb}px]`}>
                 {withHeading &&
                     <div className="text-center mb-[55px] xl:mb-[110px]">
-                        <h2 className="font-bold text-[27px] xl:text-[40px] leading-[48px] tracking-[-0.5px] mb-[10px] xl:mb-[20px]">Novinky</h2>
-                        <p className="text-[16px] leading-6 tracking-[0.1px] text-[#676766] mb-[10px] xl:mb-[20px]">Najnovšie informácie
+                        <h2 className="font-bold text-[27px] xl:text-[40px] leading-[48px] mb-[10px] xl:mb-[20px]">Novinky</h2>
+                        <p className="text-[16px] leading-6 text-[#676766] mb-[10px] xl:mb-[20px]">Najnovšie informácie
                             o projekte Olivia Residence.</p>
                         <div className="flex gap-[10px] justify-center items-center">
                             <Link href="/novinky">
