@@ -29,7 +29,7 @@ const CustomSwiper = ({images, title, href }: SwiperProps) => {
                 </div>
             </div>
             <Swiper
-                className={'w-full xl:w-auto'}
+                className={'w-full'}
                 direction={"horizontal"}
                 modules={[Navigation]}
                 navigation={{
@@ -38,11 +38,11 @@ const CustomSwiper = ({images, title, href }: SwiperProps) => {
                     prevEl: ".int-prev",
                 }}
                 spaceBetween={30}
-                slidesPerView={matches ? "auto" : 1}
+                slidesPerView={'auto'}
             >
                 {images.map((src, i) => (
                     <SwiperSlide
-                        className={`w-full xl:max-w-fit ${i === 0 && 'xl:ml-[19%]'}`}
+                        className={`xl:w-full xl:max-w-fit ${i === 0 && 'xl:ml-[19%]'}`}
                         key={i}
                     >
                         <Image alt={'Swiper image'} src={src} width={540} height={330}/>
