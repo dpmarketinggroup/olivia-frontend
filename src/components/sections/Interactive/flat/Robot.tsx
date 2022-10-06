@@ -18,13 +18,8 @@ const Robot = () => {
     const divRetail = useRef<HTMLDivElement | null>(null)
     return (
         <>
-            <g id="Retail_highlight" data-name="Retail highlight"  onMouseEnter={() => {
-                divRetail.current?.classList.remove('none')
-                divRetail.current?.classList.add('block')
-            }} onMouseLeave={ () =>(
-                divRetail.current?.classList.add('none')
-            )}>
-                <Link href='/vyber-bytu-na-podlazi'>
+            <g id="Retail_highlight" data-name="Retail highlight">
+                <Link href='/retail'>
                 <polygon
                     className="cls-5"
                     points="908.59 913.22 907.61 856.71 531.91 853.42 531.91 913.35 559.18 913.45 559.18 914.12 559.18 1015.17 580.39 1015.17 580.39 1041.37 908.62 1042.88 908.62 913.22 908.59 913.22"
@@ -368,11 +363,6 @@ const Robot = () => {
             </foreignObject>
             <foreignObject className="node" x="950" y="700" width="250" height="250px">
                 <div className="none" ref={div3}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
-                </div>
-            </foreignObject>
-            <foreignObject className="node" x="950" y="800" width="250" height="250px">
-                <div className="none" ref={divRetail}>
                     <PopUp top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>

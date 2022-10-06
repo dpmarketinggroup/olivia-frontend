@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, useState} from "react";
 import {Checkbox, Textarea, TextInput} from "@mantine/core";
 import Link from "next/link";
 
@@ -12,6 +12,9 @@ const FormKontakt: FunctionComponent<FormKontakt>
            meeting = false,
            isGreen
        }) => {
+    const [isClicked1, setClicked1] = useState(false);
+    const [isClicked2, setClicked2] = useState(false);
+
     return (
         <form onSubmit={(e) => e.preventDefault()}
               className={isGreen ? "green" : "grey"}>
@@ -19,22 +22,26 @@ const FormKontakt: FunctionComponent<FormKontakt>
                 meeting &&
                 <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] xl:items-center mb-[45px]">
                     <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">Mám záujem o:</span>
-                    <Checkbox label={
-                        <>
+                        <Checkbox disabled={isClicked2 && true}
+                                  onClick={() => setClicked1(!isClicked1)}
+                                  label={
+                            <>
                     <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
                         byty
                     </span>
-                        </>
-                    } radius="xl"
-                    />
-                    <Checkbox label={
-                        <>
+                            </>
+                        } radius="xl"
+                        />
+                        <Checkbox disabled={isClicked1 && true}
+                                  onClick={() => setClicked2(!isClicked2)}
+                                  label={
+                            <>
                     <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
                         obchodné priestory
                     </span>
-                        </>
-                    } radius="xl"
-                    />
+                            </>
+                        } radius="xl"
+                        />
                 </div>
             }
             <div className="flex flex-col gap-[15px] w-[384px] xl:w-[645px]">
@@ -53,11 +60,9 @@ const FormKontakt: FunctionComponent<FormKontakt>
                 />
                 <Checkbox label={
                     <>
-                        <Link href="/gdpr">
-                            <a className="text-[14px] leading-5 text-[#999999]">Súhlasím so spracovaním <span
-                                className="underline">osobných údajov</span>
-                            </a>
-                        </Link>
+                            <p className="text-[14px] leading-5 text-[#999999]">Súhlasím so spracovaním <Link href="/gdpr"><a
+                                className="underline">osobných údajov</a></Link>
+                            </p>
                     </>
                 } radius="xs" color="#476761"/>
                 <Checkbox className="mb-[20px] xl:mb-0" label={

@@ -11,9 +11,10 @@ import RightArrowSwiperIcon from "../../svg/RightArrowSwiper";
 
 interface SwiperGalleryProps{
     isModal?:boolean
+    ml?:boolean
 }
 
-const SwiperGallery:FunctionComponent<SwiperGalleryProps> = ({isModal=false}) => {
+const SwiperGallery:FunctionComponent<SwiperGalleryProps> = ({isModal=false, ml=true}) => {
     return (
         <div className="text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 w-[1440px]">
             <div
@@ -57,7 +58,7 @@ const SwiperGallery:FunctionComponent<SwiperGalleryProps> = ({isModal=false}) =>
                     "/img/interier/17.jpg",
                 ].map((url, i) => (
                     <SwiperSlide
-                        className={`w-full xl:max-w-[540px] ${i === 0 && "xl:ml-[165px]"}`}
+                        className={`w-full xl:max-w-[540px] ${(i === 0) && ml && "xl:ml-[165px]"} ${(i > 0) && !ml && "xl:ml-[10px]"}`}
                         key={i}
                     >
                         <div className="relative h-[330px]">

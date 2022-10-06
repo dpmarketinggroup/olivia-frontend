@@ -35,7 +35,7 @@ const DetailyBytu: NextPage = () => {
             </Modal>
             <Modal className="gallery-modal" opened={opened2} size={770000} onClose={() => setOpened2(false)} centered>
                 <div className="flex justify-center">
-                    <SwiperGallery isModal={true}/>
+                    <SwiperGallery isModal={true} ml={false}/>
                 </div>
             </Modal>
             <div className="flex justify-center">

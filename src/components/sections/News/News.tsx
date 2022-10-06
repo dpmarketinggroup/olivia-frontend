@@ -21,27 +21,26 @@ const News: FunctionComponent<NewsProps> = ({
     const [opened, setOpened] = useState(false);
     return (
         <>
-            <Modal opened={opened} onClose={() => setOpened(false)} centered>
-                <h2 className="font-bold text-[40px] leading-[48px] text-green2 mb-[25px]">{title}</h2>
-                <div className="relative h-[340px] mb-[25px]">
-                    <Image
-                        src={path}
-                        alt={`${title} image`}
-                        layout={"fill"}
-                        objectFit={"cover"}
-                    />
-                </div>
-                <p className="text-[14px] leading-5 text-green2 mb-[25px]">{date}</p>
-                <p className="text-[16px] leading-6 tracking-[0.1px] mb-[25px]">
-                    {description}
-                </p>
-                <Link href="/stretnutie">
-                    <button
-                        className="hover:bg-primary px-[20px] py-[6px] bg-[#476761] text-white font-medium text-[16px] leading-6">
-                        Nezáväzné stretnutie
-                    </button>
-                </Link>
-            </Modal>
+        <Modal opened={opened}  onClose={() => setOpened(false)} centered closeOnClickOutside={true}>
+            <h2 className="font-bold text-[40px] leading-[48px] text-green2 mb-[25px]">{title}</h2>
+            <div className="relative h-[340px] mb-[25px]">
+                <Image
+                    src={path}
+                    alt={`${title} image`}
+                    layout={"fill"}
+                    objectFit={"cover"}
+                />
+            </div>
+            <p className="text-[14px] leading-5 text-green2 mb-[25px]">{date}</p>
+            <p className="text-[16px] leading-6 tracking-[0.1px] mb-[25px]">
+                {description}
+            </p>
+            <Link href="/stretnutie">
+                <button className="hover:bg-primary px-[20px] py-[6px] bg-[#476761] text-white font-medium text-[16px] leading-6">
+                    Nezáväzné stretnutie
+                </button>
+            </Link>
+        </Modal>
             <div className="flex flex-col gap-[10px] w-full">
                 <div className="h-[135px] xl:h-[155px] xl:w-[255px] relative">
                     <Image objectFit="cover" layout="fill" alt="hero image" src={path}/>
