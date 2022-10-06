@@ -20,7 +20,7 @@ const Subscription = () => {
                     </p>
                 </div>
                 {/*Nerob to cez absolute position ale buď cez flex alebo grid*/}
-                <div className="h-[300px] xl:h-[455px] relative xl:w-[640px] bottom-0 max-w-[1440px] mx-auto xl:left-[250px] xl:top-[-390px] mt-[50px]">
+                <div className="h-[300px] xl:h-[455px] relative xl:w-[640px] bottom-0 max-w-[1440px] mx-auto xl:left-[250px] xl:top-[-390px] mt-[50px] xl:mt-0">
                     <Image
                         objectFit="cover"
                         layout="fill"
