@@ -6,6 +6,7 @@ import PaperPlaneIcon from "../svg/PaperPlane";
 import RectangleFooter from "../svg/RectangleFooter";
 import BrandlyLogoIcon from "../svg/brandlyLogo";
 import DpLogoIcon from "../svg/dpLogo";
+import {useMediaQuery} from "@mantine/hooks";
 
 
 interface FooterProps {
@@ -13,12 +14,14 @@ interface FooterProps {
 }
 
 const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
+    const sm = useMediaQuery('(max-width: 640px)');
+    const lg = useMediaQuery('(max-width: 1279px)');
     return (
         <div className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"}`}>
             <div>
                 <div className="relative bg-black">
-                    <div className="w-full flex flex-col xl:flex-row xl:gap-[205px] justify-center mx-4 xl:ml-0 xl:mr-[165px]">
-                        <div className=" flex flex-col gap-[26px] pt-[45px]">
+                    <div className="w-full flex flex-col xl:flex-row xl:gap-[205px] items-center xl:items-start justify-center mx-4 xl:ml-0 xl:mr-[165px]">
+                        <div className="flex flex-col xl:items-start gap-[26px] pt-[45px] ml-[-50px]">
                             <LogoSecondary/>
                             <p className="text-[14px] leading-[20px] text-white opacity-60 w-[330px]">Najnovšie
                                 informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
@@ -34,49 +37,95 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 <Link href="/gdpr">
                                     <a className="underline underline-offset-[3px]"> osobných údajov.</a>
                                 </Link></p>
-                        </div>
-                        <div className="flex flex-row gap-[30px] xl:gap-[100px] items-start xl:pt-[80px] pb-[20px] xl:pb-0">
-                            <div className="flex flex-col gap-[15px]">
-                                <Link href='/'>
-                                    <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Domovská
-                                        stránka</a>
-                                </Link>
-                                <Link href="/ponuka-bytov">
-                                    <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Apartmány</a>
-                                </Link>
-                                <Link href='/o-projekte'>
-                                    <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">O
-                                        projekte</a>
-                                </Link>
-                                <Link href='/lokalita'>
-                                    <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Lokalita</a>
-                                </Link>
-                            </div>
-                            <div className="flex flex-col gap-[15px]">
-                                <Link href="/novinky">
-                                    <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Novinky</a>
-                                </Link>
-                                <Link href="/retail">
-                                    <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Retail</a>
-                                </Link>
-                                <Link href="/kontakt">
-                                    <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Kontakt</a>
-                                </Link>
-                            </div>
-                            <div className="flex flex-col gap-[15px] items-end">
+                            {(lg) &&
+                                <div className="flex flex-row gap-[22px] xl:gap-[100px] self-start items-start xl:pt-[80px] pb-[20px] xl:pb-0">
+                                    <div className="hidden  md:flex flex-col gap-[15px]">
+                                        <Link href='/'>
+                                            <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Domovská
+                                                stránka</a>
+                                        </Link>
+                                        <Link href="/ponuka-bytov">
+                                            <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Apartmány</a>
+                                        </Link>
+                                        <Link href='/o-projekte'>
+                                            <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">O
+                                                projekte</a>
+                                        </Link>
+                                        <Link href='/lokalita'>
+                                            <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Lokalita</a>
+                                        </Link>
+                                    </div>
+                                    <div className="hidden md:flex flex-col gap-[15px]">
+                                        <Link href="/novinky">
+                                            <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Novinky</a>
+                                        </Link>
+                                        <Link href="/retail">
+                                            <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Retail</a>
+                                        </Link>
+                                        <Link href="/kontakt">
+                                            <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Kontakt</a>
+                                        </Link>
+                                    </div>
+                                    <div className="flex flex-col gap-[15px] items-start xl:items-end">
                                 <span
                                     className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Predajné miesto</span>
-                                <span
-                                    className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Rožňavská 1A</span>
-                                <span
-                                    className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">831 04 Bratislava</span>
-                                <span
-                                    className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">+421 911 000 000</span>
-                                <Link href={'mailto:info@oliviaresidence.sk'}>
-                                    <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">info@oliviaresidence.sk</a>
-                                </Link>
-                            </div>
+                                        <span
+                                            className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Rožňavská 1A</span>
+                                        <span
+                                            className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">831 04 Bratislava</span>
+                                        <span
+                                            className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">+421 911 000 000</span>
+                                        <Link href={'mailto:info@oliviaresidence.sk'}>
+                                            <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">info@oliviaresidence.sk</a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            }
                         </div>
+                        {!lg &&
+                            <div className="flex flex-row gap-[22px] xl:gap-[100px] self-start items-start xl:pt-[80px] pb-[20px] xl:pb-0">
+                                <div className="hidden md:flex flex-col gap-[15px]">
+                                    <Link href='/'>
+                                        <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Domovská
+                                            stránka</a>
+                                    </Link>
+                                    <Link href="/ponuka-bytov">
+                                        <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Apartmány</a>
+                                    </Link>
+                                    <Link href='/o-projekte'>
+                                        <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">O
+                                            projekte</a>
+                                    </Link>
+                                    <Link href='/lokalita'>
+                                        <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Lokalita</a>
+                                    </Link>
+                                </div>
+                                <div className="hidden md:flex flex-col gap-[15px]">
+                                    <Link href="/novinky">
+                                        <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Novinky</a>
+                                    </Link>
+                                    <Link href="/retail">
+                                        <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Retail</a>
+                                    </Link>
+                                    <Link href="/kontakt">
+                                        <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Kontakt</a>
+                                    </Link>
+                                </div>
+                                <div className="flex flex-col gap-[15px] items-start xl:items-end">
+                                <span
+                                    className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Predajné miesto</span>
+                                    <span
+                                        className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">Rožňavská 1A</span>
+                                    <span
+                                        className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">831 04 Bratislava</span>
+                                    <span
+                                        className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">+421 911 000 000</span>
+                                    <Link href={'mailto:info@oliviaresidence.sk'}>
+                                        <a className="font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 tracking-[0.1px] text-white opacity-60 hover:opacity-100">info@oliviaresidence.sk</a>
+                                    </Link>
+                                </div>
+                            </div>
+                        }
                     </div>
                     <div className="hidden xl:inline-block xl:absolute xl:top-0 xl:right-0">
                         <RectangleFooter/>

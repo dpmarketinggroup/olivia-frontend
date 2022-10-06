@@ -42,14 +42,14 @@ const Description: FunctionComponent<DescriptionProps> = ({
                 <div className="flex gap-[12px] mt-[20px] xl:mt-0">
                     {twoButtons && <Link href="/o-projekte">
                         <button
-                            className="font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[36px] text-green2 bg-white border-[#476761] w-[120px]">O
+                            className="hover:text-white hover:bg-[#476761] font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[36px] text-green2 bg-white border-[#476761] w-[120px]">O
                             projekte
                         </button>
                     </Link>
                     }
                     <Link href="/stretnutie">
                         <button
-                            className="font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[36px] text-white bg-[#476761] w-[190px]">Nezáväzné
+                            className="hover:bg-primary font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[36px] text-white bg-[#476761] w-[190px]">Nezáväzné
                             stretnutie
                         </button>
                     </Link>

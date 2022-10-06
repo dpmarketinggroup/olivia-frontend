@@ -22,7 +22,7 @@ const WholeProcess = ({
   ],
 }) => {
   return (
-    <div className="mx-4 xl:mx-[190px] flex gap-[24px] xl:gap-[110px] items-center justify-center mb-[90px] xl:mb-[185px] relative">
+    <div className="mx-4 xl:mx-auto flex gap-[24px] xl:gap-[110px] items-center justify-center mb-[90px] xl:mb-[185px] relative xl:w-[1440px]">
       {parts.map((p, k) =>
         k === 0 ? (
           <ProcessPart
@@ -43,8 +43,8 @@ const WholeProcess = ({
           />
         )
       )}
-      <div className="hidden xl:inline-block absolute top-1/2 left-[31%] w-[50px] h-[2px] bg-black opacity-20"></div>
-      <div className="hidden xl:inline-block absolute top-1/2 left-[65%] w-[50px] h-[2px] bg-black opacity-20"></div>
+      <div className="hidden xl:inline-block absolute top-1/2 left-[35%] w-[50px] h-[2px] bg-black opacity-20"></div>
+      <div className="hidden xl:inline-block absolute top-1/2 left-[61%] w-[50px] h-[2px] bg-black opacity-20"></div>
     </div>
   );
 };

@@ -36,7 +36,7 @@ const News : FunctionComponent<NewsProps> = ({
                 {description}
             </p>
             <Link href="/stretnutie">
-                <button className="px-[20px] py-[6px] bg-[#476761] text-white font-medium text-[16px] leading-6">
+                <button className="hover:bg-primary px-[20px] py-[6px] bg-[#476761] text-white font-medium text-[16px] leading-6">
                     Nezáväzné stretnutie
                 </button>
             </Link>
@@ -50,7 +50,7 @@ const News : FunctionComponent<NewsProps> = ({
                 <p className="text-[14px] leading-5 text-[#676766] w-[200px] xl:w-[190px]">{description}</p>
                 <div className="flex gap-[8px] items-center">
                     <Link href='#'>
-                        <a className="font-medium text-[14px] leading-5 text-green2" onClick={() => setOpened(true)}>Viac</a>
+                        <a className="hover:border-b-2 hover:border-[#476761] border-b-2 border-white font-medium text-[14px] leading-5 text-green2" onClick={() => setOpened(true)}>Viac</a>
                     </Link>
                     <RightArrowIcon stroke="#476761"/>
                 </div>

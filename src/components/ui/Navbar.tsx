@@ -12,7 +12,8 @@ const Navbar = () => {
     const [scrollLocked, setScrollLocked] = useScrollLock();
 
     return (
-        <nav className="fixed xl:static top-0 w-full xl:w-auto bg-white z-10 xl:h-[60px] flex items-center justify-between shadow-[0_0_10px_rgba(0,0,0,0.15)]">
+        <nav className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)]">
+            <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] lg:shadow-none fixed xl:static top-0 w-full xl:w-auto max-w-[1920px] mx-auto  z-50 xl:h-[60px] flex items-center justify-between">
             <div className="xl:flex gap-[50] items-center mx-4 xl:ml-[40px] xl:mr-0 h-full w-full">
                 <div className={`flex justify-between ${!opened ? "mb-[20px]" : "mb-[35px]"} mt-[20px] xl:mb-0 xl:mt-0`}>
                     <Link href="/" >
@@ -105,10 +106,11 @@ const Navbar = () => {
                 </div>
                 <Link href='/stretnutie'>
                     <button
-                        className="font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]">Nezáväzné
+                        className="hover:bg-[#0E3F3B] font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]">Nezáväzné
                         stretnutie
                     </button>
                 </Link>
+            </div>
             </div>
         </nav>
     );

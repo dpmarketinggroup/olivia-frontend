@@ -185,7 +185,7 @@ const DetailyBytu: NextPage = () => {
                         </div>
                         <div onClick={() => setOpened(true)}>
                             <Link href="/detail-bytu">
-                                <button className="px-[60px] xl:px-[440px] py-[12px] bg-[#476761] text-white mb-[110px] xl:mb-[160px]">Mám záujem o apartmán č. 5.05</button>
+                                <button className="hover:bg-primary px-[60px] xl:px-[440px] py-[12px] bg-[#476761] text-white mb-[110px] xl:mb-[160px]">Mám záujem o apartmán č. 5.05</button>
                             </Link>
                         </div>
                     </div>
@@ -195,7 +195,7 @@ const DetailyBytu: NextPage = () => {
                             stiahnutie</h1>
                         <Link href="/">
                             <button
-                                className="bg-[#476761] text-white px-[20px] py-[6px] font-medium text-[16px] leading-6">Stiahnuť
+                                className="hover:bg-primary bg-[#476761] text-white px-[20px] py-[6px] font-medium text-[16px] leading-6">Stiahnuť
                                 pôdorys
                             </button>
                         </Link>

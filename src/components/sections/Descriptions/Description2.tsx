@@ -70,8 +70,8 @@ const Description2: FunctionComponent<Description2Props>
                             <Link key={k} href={b.path}>
                                 <button
                                     className={`font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[50px] w-[190px]
-                                        ${k === 0 && "text-green2 bg-[#F5F5F5] border-[#476761]"} 
-                                        ${k === 1 && "text-white bg-[#476761]"}`}>
+                                        ${k === 0 && "hover:text-white hover:bg-[#476761] hover:border-[#476761] text-green2 bg-[#F5F5F5] border-[#476761]"} 
+                                        ${k === 1 && "hover:bg-primary text-white bg-[#476761]"}`}>
                                     {b.text}
                                 </button>
                             </Link>
