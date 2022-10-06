@@ -122,6 +122,7 @@ const Home = () => {
             ]} title={'Galéria'}/>
             <Articles/>
             <Subscription/>
+            {/*<CustomSwiper images={['/img/austria.jpg', '/img/fresh.jpg', '/img/klientske.jpg', '/img/koloseo.jpg', '/img/store']} title={'Developer BZ Group'}/>*/}
             <MapFooter/>
         </>
     );
