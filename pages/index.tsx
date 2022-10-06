@@ -6,7 +6,7 @@ import Image from "next/image";
 import HouseAndFilter from "@components/sections/Interactive/HouseAndFilter";
 import {Select} from "@mantine/core";
 import {CommonDescription} from "@components/common/Description/Description";
-
+// TODO: Oliver -> Na mobile ide trocha posuvat horizontalne co by nemalo pozri co to sposobuje a oprav
 const Home = () => {
     return (
         <>

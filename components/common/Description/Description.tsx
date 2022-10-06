@@ -10,7 +10,7 @@ export interface DescriptionProps {
 
 const Description = ({children, src}: DescriptionProps) => {
     return (
-        <div className={`flex justify-between items-center justify-center w-full xl:max-w-[1200px] mx-auto xl:gap-[110px]`}>
+        <div className={`flex flex-col xl:flex-row justify-between items-center justify-center w-full xl:max-w-[1200px] mx-auto xl:gap-[110px]`}>
             <div className={'shrink-0'}>
                 <Image objectFit="cover" width={555} height={400} alt="hero image" src={src}/>
             </div>
