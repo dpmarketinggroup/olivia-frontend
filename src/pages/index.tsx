@@ -105,7 +105,9 @@ const Home: NextPage = () => {
                     </div>
                 </div>
             </div>
-            <HouseAndFilter/>
+            <div className="building">
+                <HouseAndFilter/>
+            </div>
             <SwiperApartments/>
             <Map title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava"/>
             <Description2 imgPath="/img/room2.jpg"/>

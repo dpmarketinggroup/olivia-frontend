@@ -13,12 +13,11 @@ interface FooterProps {
 
 const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
     return (
-        <div className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"} w-full`}>
+        <div className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"} w-full `}>
             <div>
-                <div className="relative bg-black w-full px-[1rem]">
-                    <div
-                        className="flex flex-col xl:flex-row xl:gap-[205px] items-center xl:items-start justify-center">
-                        <div className="flex flex-col items-center xl:items-start gap-[26px] pt-[45px] w-full">
+                <div className="relative bg-black w-full px-[1rem] xl:px-[165px]">
+                    <div className="flex flex-col xl:flex-row xl:gap-[205px] items-center xl:items-start justify-between mx-auto xl:max-w-[1920px]">
+                        <div className="flex flex-col items-center justify-center xl:items-start gap-[26px] pt-[45px] w-full">
                             <LogoSecondary/>
                             <p className="text-[14px] leading-[20px] text-white opacity-60 w-full xl:max-w-[330px]">Najnovšie
                                 informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
@@ -39,9 +38,9 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 </Link></p>
                         </div>
                         <div
-                            className="flex flex-col gap-[15px] items-center xl:flex-row xl:gap-[100px] self-start items-start xl:pt-[80px] pb-[20px] xl:pb-0 w-full text-center xl:text-left">
+                            className="flex flex-col gap-[15px] items-center xl:flex-row xl:gap-[100px] justify-end  items-start xl:pt-[80px] pb-[20px] xl:pb-0 w-full text-center xl:text-left">
                             <div
-                                className="flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
+                                className="hidden md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
                                 <Link href='/'>
                                     <a className="">Domovská
                                         stránka</a>
@@ -58,7 +57,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 </Link>
                             </div>
                             <div
-                                className="flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
+                                className="hidden  md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
                                 <Link href="/novinky">
                                     <a>Novinky</a>
                                 </Link>

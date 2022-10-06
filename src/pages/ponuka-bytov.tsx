@@ -76,7 +76,7 @@ const PonukaBytov = () => {
                     <HouseAndFilter/>
                     <Description imgPath="/img/car.png"
                                  title="Garážové parkovanie"
-                                 descrip="Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok."
+                                 description="Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok."
                                  bulletPoints={[
                                      {icon: <ManIcon/>, text: "Prechod do Vášho bytu suchou nohou"},
                                      {icon: <ParkingIcon/>, text: "Dlhodobý prenájom garážových státí"},

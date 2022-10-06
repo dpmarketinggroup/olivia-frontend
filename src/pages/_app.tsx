@@ -19,7 +19,7 @@ function MyApp({Component, pageProps}: AppProps) {
             {router.pathname === '/' && (
                 <Banner/>
             )}
-            <Navbar/>
+            <Navbar mainPage={router.pathname === '/' && true}/>
             <Component {...pageProps} />
             {
                 router.pathname === '/404' ||

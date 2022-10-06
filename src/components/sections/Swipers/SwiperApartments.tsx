@@ -17,7 +17,7 @@ const SwiperApartments = () => {
                             Od 1 izbových až po 4 izbové apartmány
                         </h3>
                         <div className="flex gap-[30px] items-center self-end xl:self-auto">
-                            <div className="hidden xl:flex gap-[5px]">
+                            <div className="flex gap-[5px]">
                                 <LeftArrowSwiperIcon className="int-prev"/>
                                 <RightArrowSwiperIcon className="int-next"/>
                             </div>

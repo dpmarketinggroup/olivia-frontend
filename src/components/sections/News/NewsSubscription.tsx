@@ -19,7 +19,7 @@ const NewsSubscription = () => {
                             <span className=" underline underline-offset-[6px]"> osobných údajov.</span>
                         </p>
                     </div>
-                    <div className="h-[300px] xl:h-[430px] relative xl:w-[630px] -bottom-[3rem] max-w-[1440px] mx-auto xl:left-[500px] xl:top-[-60px]">
+                    <div className="h-[300px] xl:h-[430px] relative xl:w-[630px] bottom-0 max-w-[1440px] mx-auto xl:left-[500px] xl:top-[-60px]">
                         <Image
                             objectFit="cover"
                             layout="fill"
