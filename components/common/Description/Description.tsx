@@ -24,7 +24,7 @@ const Description = ({children, src, className}: DescriptionProps) => {
 };
 
 export default Description;
-//TODO: Me -> Implementovať
+
 export const CommonDescription = () => {
     return (
         <Description src={'/img/room.jpg'}>

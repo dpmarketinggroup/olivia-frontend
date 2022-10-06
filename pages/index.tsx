@@ -1,13 +1,13 @@
 import Link from "next/link";
 import {FloorPlan, ArrowDownNotFilledIcon, RightArrow, Severka} from "@components/icons/";
-import {Timeline, MapFooter, Negotiation, Articles, Subscription, Description, CustomSwiper} from "@components/common";
+import {Timeline, MapFooter, Negotiation, Articles, Subscription} from "@components/common";
+import {CustomSwiper} from "@components/swiper";
 import Head from "next/head";
 import Image from "next/image";
 import HouseAndFilter from "@components/sections/Interactive/HouseAndFilter";
 import {Select} from "@mantine/core";
 import {ApartmentEquipmentDescription, CommonDescription} from "@components/common/Description/Description";
 import {Button} from "@components/ui";
-import {SwiperSlide} from "swiper/react";
 // TODO: Oliver -> Na mobile ide trocha posuvat horizontalne co by nemalo pozri co to sposobuje a oprav
 const Home = () => {
     return (
