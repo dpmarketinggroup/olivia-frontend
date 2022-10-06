@@ -1,22 +1,21 @@
-import React, {useState} from "react";
-
 import {Checkbox, RangeSlider} from "@mantine/core";
 
 import Dom from './flat/Dom'
 import Link from "next/link";
 
-interface ButtonsRoomsProps {
-    num: string
-}
+// interface ButtonsRoomsProps {
+//     num: string
+// }
 
 const HouseAndFilter = () => {
-    const buttonsRooms: ButtonsRoomsProps[] = [
-        {num: "1"},
-        {num: "1.5"},
-        {num: "2"},
-        {num: "3"},
-        {num: "4"},
-    ]
+    // const buttonsRooms: ButtonsRoomsProps[] = [
+    //     {num: "1"},
+    //     {num: "1.5"},
+    //     {num: "2"},
+    //     {num: "3"},
+    //     {num: "4"},
+    // ]
+    //TODO: Oliver -> Na desktop ukazujú šípky červeno, uprav abz bol desktop ako v dizajne, zatiaľ nerob buttons
     return (
         <>
             <div className="building xl:mx-[-30px] xl:mb-[-80px] xl:mt-[-70px] md:mx-[-25px] md:mb-[-105px] lg:mx-[-20px] lg:mb-[-130px] xl:mr-[-15px] xl:ml-[-15px] xl:mb-[-160px] xl:max-w-[1920px] 2xl:mb-[-195px] xl3">

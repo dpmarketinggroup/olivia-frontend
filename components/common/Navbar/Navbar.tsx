@@ -55,19 +55,19 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                                     </div>
                                 </div>
                             </div>
-                            <Link href="/pages/lokalita">
+                            <Link href="/lokalita">
                                 <a>Lokalita</a>
                             </Link>
                             <div>
                                 <div className="dropdown">
-                                    <Link href="/pages/o-projekte">
+                                    <Link href="/o-projekte">
                                         <a>O projekte</a>
                                     </Link>
                                     <div className="dropdown-content">
-                                        <Link href="/pages/o-projekte#harmonogram">
+                                        <Link href="/o-projekte#harmonogram">
                                             <a className="pt-[20px] pb-[10px] px-[20px]">Harmonogram</a>
                                         </Link>
-                                        <Link href="/pages/o-projekte#financovanie">
+                                        <Link href="/o-projekte#financovanie">
                                             <a className="pt-0 pb-[20px] px-[20px] text-[#476761]">Financovanie</a>
                                         </Link>
                                     </div>
@@ -77,13 +77,13 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                                 </div>
 
                             </div>
-                            <Link href="/pages/retail">
+                            <Link href="/retail">
                                 <a>Retail</a>
                             </Link>
-                            <Link href="/pages/novinky">
+                            <Link href="/novinky">
                                 <a>Novinky</a>
                             </Link>
-                            <Link href="/pages/kontakt">
+                            <Link href="/kontakt">
                                 <a>Kontakt</a>
                             </Link>
                         </div>

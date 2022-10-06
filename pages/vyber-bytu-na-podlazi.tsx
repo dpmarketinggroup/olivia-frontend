@@ -5,7 +5,6 @@ import {Select} from "@mantine/core";
 import Head from "next/head";
 import Floor8 from "@components/sections/Interactive/floors/Floor8";
 
-
 const VyberBytuNaPodlazi = () => {
     return (
         <>

@@ -1,7 +1,8 @@
 import {TextInput} from "@mantine/core";
 import {PaperPlane} from "@components/icons";
 import Image from "next/image";
-//TODO: Me -> Fix desktop
+
+//TODO: Oliver -> Oprav desktop, dávaj si pozor na mobil aby nebol rozhádzaný
 const Subscription = () => {
     return (
         <div className='flex justify-center xl:mb-[150px] bg-black xl:bg-transparent'>
@@ -19,6 +20,7 @@ const Subscription = () => {
                         <span className=" underline underline-offset-[6px]"> osobných údajov.</span>
                     </p>
                 </div>
+                {/*Nerob to cez absolute position ale buď cez flex alebo grid*/}
                 <div className="h-[300px] xl:h-[430px] relative xl:w-[630px] bottom-0 max-w-[1440px] mx-auto xl:left-[500px] xl:top-[-60px]">
                     <Image
                         objectFit="cover"

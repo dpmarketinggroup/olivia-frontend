@@ -12,9 +12,11 @@ const Form
            meeting = false,
            isGreen
        }: FormProps) => {
+
     const [isClicked1, setClicked1] = useState(false);
     const [isClicked2, setClicked2] = useState(false);
 
+    // TODO: Me -> Opravit desktop plus mobil
     return (
         <form onSubmit={(e) => e.preventDefault()}
               className={isGreen ? "green" : "grey"}>

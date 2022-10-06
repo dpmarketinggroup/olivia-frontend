@@ -20,3 +20,9 @@ const Description= ({children, src}: DescriptionProps) => {
 };
 
 export default Description;
+//TODO: Me -> Implementovať
+export const CommonDescription = () => {
+  return (<Description src={'dddd'}>
+      p
+  </Description>)
+}

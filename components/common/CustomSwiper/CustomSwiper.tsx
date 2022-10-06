@@ -8,6 +8,7 @@ interface SwiperProps {
     title: string;
     href?: string;
 }
+//TODO: Me -> Implementovať swiper na desktop a mobil
 const CustomSwiper = ({swiperSlides, title, href }: SwiperProps) => {
     return (
         <div className={`text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 w-[1440px]`}>
