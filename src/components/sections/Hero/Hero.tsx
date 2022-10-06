@@ -39,7 +39,7 @@ const Hero: FunctionComponent<HeroProps> = ({
                 </div>
                 <Link href="/stretnutie">
                     <button
-                        className="bg-[#89A6A2] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] ml-4 xl:ml-[165px]">
+                        className="hover:bg-primary bg-[#89A6A2] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] ml-4 xl:ml-[165px]">
                         Nezáväzné stretnutie
                     </button>
                 </Link>

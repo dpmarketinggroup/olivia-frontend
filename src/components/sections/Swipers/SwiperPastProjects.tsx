@@ -20,9 +20,9 @@ const SwiperPastProjects = () => {
                         </h3>
                         <LogoBZ classname="w-[110px] xl:w-[169px] h-[42px] xl:h-[63px]"/>
                     </div>
-                    <div className="flex gap-[555px] justify-center ml-4 xl:ml-[165px] mb-[40px]">
-                        <p className="text-[#676766] w-[384px] xl:w-[530px] text-[16px] xl:text-[18px] leading-7 ">Sme skúsení tím ľudí s dlhoročnými skúsenosťami, ktorý má za sebou mnoho projektov situovaných po celom Slovensku.</p>
-                        <div className="hidden xl:flex gap-[5px] mr-[165px] self-center">
+                    <div className="flex gap-[50px] xl:gap-[555px] justify-center ml-[150px] xl:ml-[165px] mb-[40px]">
+                        <p className="text-[#676766] w-[250px] xl:w-[530px] text-[16px] xl:text-[18px] leading-7 ">Sme skúsení tím ľudí s dlhoročnými skúsenosťami, ktorý má za sebou mnoho projektov situovaných po celom Slovensku.</p>
+                        <div className="flex gap-[5px] mr-[165px] self-start ">
                             <LeftArrowSwiperIcon className="int-prev"/>
                             <RightArrowSwiperIcon className="int-next"/>
                         </div>
@@ -39,12 +39,12 @@ const SwiperPastProjects = () => {
                         slidesPerView={"auto"}
                     >
                         {[
-                            {url: "/img/room2.jpg", title: "Tatracentrum Bratislava"},
-                            {url: "/img/room2.jpg", title: "Koloseo Bratislava"},
-                            {url: "/img/room2.jpg", title: "Austria Trend Hotel Bratislava"},
-                            {url: "/img/room2.jpg", title: "Fresh Market Bratislava"},
-                            {url: "/img/room2.jpg", title: "Klienstké centrum Bratislava"},
-                            {url: "/img/room2.jpg", title: "Fresh Market Bratislava"},
+                            {url: "/img/tatracentrum.jpg", title: "Tatracentrum Bratislava"},
+                            {url: "/img/koloseo.jpg", title: "Koloseo Bratislava"},
+                            {url: "/img/austria.jpg", title: "Austria Trend Hotel Bratislava"},
+                            {url: "/img/fresh.jpg", title: "Fresh Market Bratislava"},
+                            {url: "/img/klientske.jpg", title: "Klienstké centrum Bratislava"},
+                            {url: "/img/storeland.jpg", title: "Storeland Lamač"},
                         ].map((img, i) => (
                             <SwiperSlide
                                 className={`w-full max-w-[185px] xl:max-w-[255px] ${i === 0 && "xl:ml-[165px]"}`}

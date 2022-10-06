@@ -4,6 +4,7 @@ import RightArrowIcon from "../../svg/RightArrow";
 import News from "./News";
 import {Modal} from "@mantine/core";
 import Image from "next/image";
+import {useMediaQuery} from "@mantine/hooks";
 
 interface NewsSectionProps {
     news: [
@@ -22,6 +23,8 @@ const NewsSection: FunctionComponent<NewsSectionProps>
             withHeading= true,
             mb = 150
        }) => {
+
+    const matches = useMediaQuery('(max-width: 900px)');
     return (
         <>
             <div className={`mx-4 xl:mx-[165px] mb-[90px] xl:mb-[${mb}px]`}>
@@ -38,10 +41,15 @@ const NewsSection: FunctionComponent<NewsSectionProps>
                         </div>
                     </div>
                 }
-                <div className="xl:flex gap-[30px] grid grid-cols-2 justify-items-center xl:justify-center">
-                    {news.map((n, k) => (
-                        <News key={k} path={n.path} date={n.date} title={n.title} description={n.description}/>
-                    ))}
+                <div className="flex flex-col xl:flex-row gap-[30px] items-center xl:items-start xl:justify-center">
+                    {news.map((n, k) => {
+                        if (matches && k < 3) {
+                            return <News key={k} path={n.path} date={n.date} title={n.title} description={n.description}/>
+                        }if (!matches){
+                            return <News key={k} path={n.path} date={n.date} title={n.title} description={n.description}/>
+                        }
+
+                    })}
                 </div>
             </div>
         </>

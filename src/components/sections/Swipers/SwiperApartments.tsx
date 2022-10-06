@@ -24,7 +24,7 @@ const SwiperApartments = () => {
                             </div>
                             <div className="flex gap-[10px] items-center">
                                 <Link href='/'>
-                                    <a className="font-medium text-[16px] xl:text-[18px] leading-7 text-[#476761]">Ponuka apartmánov</a>
+                                    <a className="hover:border-[#476761] border-b-2 border-white font-medium text-[16px] xl:text-[18px] leading-7 text-[#476761]">Ponuka apartmánov</a>
                                 </Link>
                                 <RightArrowIcon stroke="#476761"/>
                             </div>
@@ -42,12 +42,11 @@ const SwiperApartments = () => {
                         slidesPerView={"auto"}
                     >
                         {[
-                            {url: "/img/apartment1.png", title: "1 izbový apartmán"},
-                            {url: "/img/apartment1.png", title: "1.5 izbový apartmán"},
-                            {url: "/img/apartment1.png", title: "2 izbový apartmán"},
-                            {url: "/img/apartment1.png", title: "3 izbový apartmán"},
-                            {url: "/img/apartment1.png", title: "4 izbový apartmán"},
-                            {url: "/img/apartment1.png", title: "5 izbový apartmán"},
+                            {url: "/img/1.png", title: "1 izbový apartmán"},
+                            {url: "/img/2.png", title: "1.5 izbový apartmán"},
+                            {url: "/img/3.png", title: "2 izbový apartmán"},
+                            {url: "/img/4.png", title: "3 izbový apartmán"},
+                            {url: "/img/4.png", title: "3 izbový apartmán"},
                         ].map((img, i) => (
                             <SwiperSlide
                                 className={`w-full xl:max-w-[230px] ${i === 0 && "xl:ml-[165px]"}`}

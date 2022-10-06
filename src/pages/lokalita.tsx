@@ -11,8 +11,10 @@ import RingRoadArrowIcon from "../components/svg/RingRoadArrow";
 import Map from "../components/sections/Maps/Map";
 import Description2 from "../components/sections/Descriptions/Description2";
 import MapFooter from "../components/ui/MapFooter";
+import Head from "next/head";
+import React from "react";
 
-interface Descritpions{
+interface Descriptions{
     imgPath: string;
     title: string;
     descrip: string;
@@ -26,7 +28,7 @@ interface Descritpions{
 }
 
 const Lokalita: NextPage = () => {
-    const descriptions: Descritpions[] = [
+    const descriptions: Descriptions[] = [
         {
             imgPath: "/img/twoGirls.png",
             title: "Občianska vybavenosť",
@@ -67,6 +69,9 @@ const Lokalita: NextPage = () => {
     ]
     return (
         <>
+            <Head>
+                <title>Lokalita | Olivia Residence</title>
+            </Head>
             <Hero imgName="lokalitaHero" icon={<MapPointIcon fill="#89A6A2" height="35" width="35"/>} title="Lokalita" description="Dynamická lokalita so skvelými možnosťami.Rožňavská 8, Bratislava"/>
             {descriptions.map((d, k) =>(
                 <Description key={k} imgPath={d.imgPath} title={d.title} descrip={d.descrip} bulletPoints={d.bulletPoints} reverseFlex={d.reverseFlex} twoButtons={d.twoButtons}/>

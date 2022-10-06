@@ -15,14 +15,27 @@ import MapFooter from "../components/ui/MapFooter";
 import SwiperGallery from "../components/sections/Swipers/SwiperGallery";
 import {Modal, Select} from "@mantine/core";
 import FormKontakt from "../components/sections/Form/FormKontakt";
+import Head from "next/head";
+import Image from "next/image";
+import SwiperPastProjects from "../components/sections/Swipers/SwiperPastProjects";
 
 const DetailyBytu: NextPage = () => {
     const [opened, setOpened] = useState(false);
+    const [opened2, setOpened2] = useState(false);
+
     return (
         <>
+            <Head>
+                <title>Detail bytu | Olivia Residence</title>
+            </Head>
             <Modal opened={opened} size={770000} onClose={() => setOpened(false)} centered>
                 <div className="flex justify-center">
                 <FormKontakt isGreen={false}/>
+                </div>
+            </Modal>
+            <Modal className="gallery-modal" opened={opened2} size={770000} onClose={() => setOpened2(false)} centered>
+                <div className="flex justify-center">
+                    <SwiperGallery isModal={true}/>
                 </div>
             </Modal>
             <div className="flex justify-center">
@@ -66,13 +79,35 @@ const DetailyBytu: NextPage = () => {
                         </div>
                     </div>
                     <div className="mx-4 xl:mx-[165px]">
-                        <h3 className="mb-[25px] font-bold text-[20px] xl:text-[24px] leading-[32px] tracking-[-0.1px] text-center">Apartmán č. 5.05</h3>
-                        <div className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center justify-center">
-                            <div className="border-2 w-[290px] xl:w-[780px] h-[126px] xl:h-[460px]"></div>
+                        <h3 className="mb-[25px] font-bold text-[20px] xl:text-[24px] leading-[32px] tracking-[-0.1px] text-center xl:text-left">Apartmán č. 5.05</h3>
+                        <div onClick={() => setOpened2(true)} className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center xl:items-start justify-center">
+                            <div className="w-[290px] xl:w-[780px] h-[126px] xl:h-[460px] xl:flex justify-center">
+                                <div className="mx-auto xl:mx-0 h-[126px] xl:h-[380px] w-[100px] xl:w-[300px] relative">
+                                <Image
+                                    objectFit="fill"
+                                    layout="fill"
+                                    alt="hero image"
+                                    src="/img/apartment1.png"
+                                />
+                                </div>
+                            </div>
                             <div className="flex flex-col gap-[20px] xl:gap-[40px]">
-                                <div className="border-2 w-[290px] h-[126px]"></div>
-                                <div className="border-2 w-[290px] h-[126px]"></div>
-                                <div className="border-2 w-[290px] h-[126px]"></div>
+                                <div className="w-[290px] h-[126px] relative">
+                                        <Image
+                                            objectFit="fill"
+                                            layout="fill"
+                                            alt="hero image"
+                                            src="/img/room2.jpg"
+                                        />
+                                </div>
+                                <div className="w-[290px] h-[126px] relative">
+                                    <Image
+                                        objectFit="fill"
+                                        layout="fill"
+                                        alt="hero image"
+                                        src="/img/room.jpg"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -81,7 +116,7 @@ const DetailyBytu: NextPage = () => {
                             <BankIcon/>
                             <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">Financovanie</span>
                             <div className="flex gap-[8px] items-center">
-                                <Link href='/'>
+                                <Link href='/o-projekte#financovanie'>
                                     <a className="font-medium text-[14px] leading-5 text-green2">Viac</a>
                                 </Link>
                                 <RightArrowIcon stroke="#476761"/>
@@ -150,7 +185,7 @@ const DetailyBytu: NextPage = () => {
                         </div>
                         <div onClick={() => setOpened(true)}>
                             <Link href="/detail-bytu">
-                                <button className="px-[60px] xl:px-[440px] py-[12px] bg-[#476761] text-white mb-[110px] xl:mb-[160px]">Mám záujem o apartmán č. 5.05</button>
+                                <button className="hover:bg-primary px-[60px] xl:px-[440px] py-[12px] bg-[#476761] text-white mb-[110px] xl:mb-[160px]">Mám záujem o apartmán č. 5.05</button>
                             </Link>
                         </div>
                     </div>
@@ -160,7 +195,7 @@ const DetailyBytu: NextPage = () => {
                             stiahnutie</h1>
                         <Link href="/">
                             <button
-                                className="bg-[#476761] text-white px-[20px] py-[6px] font-medium text-[16px] leading-6">Stiahnuť
+                                className="hover:bg-primary bg-[#476761] text-white px-[20px] py-[6px] font-medium text-[16px] leading-6">Stiahnuť
                                 pôdorys
                             </button>
                         </Link>

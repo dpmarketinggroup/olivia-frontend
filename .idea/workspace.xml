@@ -2,22 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92af789-550b-4547-a722-f8ea34b6b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/sections/ButtonBuildingNumFilter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/ButtonBuldingVybavaFilter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/brandlyLogo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/svg/dpLogo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/dropdown.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/Buttons/ButtonBuildingVybavaFilter2.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/Buttons/ButtonBuildingVybavaFilter3.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/Interactive/flat/PopUp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/Interactive/flat/Robot.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/Interactive/floors/Floor8.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/Interactive/floors/Floor8Extension.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/apartment1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/apartment2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/apartment3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/apartment4.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Banner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Banner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dom.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Interactive/flat/Dom.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OpeningHours.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OpeningHours.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/ButtonBuildingNumFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Buttons/ButtonBuildingNumFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/ButtonBuldingVybavaFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Buttons/ButtonBuldingVybavaFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Descriptions/Description2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Form/FormKontakt.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Hero/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Maps/Map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Maps/Map.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/News.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/News/NewsSubscription.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Process/WholeProcess.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperApartments.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Swipers/SwiperPastProjects.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/svg/BasketCrossed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/svg/BasketCrossed.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/MapFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MapFooter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail-bytu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/o-projekte.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/o-projekte.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ponuka-bytov.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/stretnutie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/stretnutie.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/vyber-bytu-na-podlazi.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/modal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/interactivBuilding.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/interactive.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +54,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="SCSS File" />
+        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -48,8 +75,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rodinka/Desktop/Skola_Dansko/Web_development/Tutorialy/React/dad_jokes_exercise&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rodinka/Desktop/Skola_Dansko/Web_development/Projects/olivia_lp&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -60,11 +87,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\public\img" />
-      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Maps" />
-      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components" />
-      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\StyledComponents" />
-      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Form" />
+      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Interactive" />
+      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Interactive\flat" />
+      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Interactive\floors" />
+      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections\Buttons" />
+      <recent name="C:\Users\Rodinka\Desktop\Skola_Dansko\Web_development\Projects\olivia-frontend\src\components\sections" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -100,7 +127,10 @@
       <workItem from="1664552756521" duration="9378000" />
       <workItem from="1664626315474" duration="20692000" />
       <workItem from="1664718236260" duration="10453000" />
-      <workItem from="1664729892371" duration="2903000" />
+      <workItem from="1664729892371" duration="42976000" />
+      <workItem from="1664833407094" duration="850000" />
+      <workItem from="1664835771905" duration="12363000" />
+      <workItem from="1664907251547" duration="51513000" />
     </task>
     <servers />
   </component>

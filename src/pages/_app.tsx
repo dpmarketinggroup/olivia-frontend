@@ -3,12 +3,14 @@ import '../../styles/form.css'
 import '../../styles/modal.css'
 import '../../styles/table.css'
 import '../../styles/dropdown.css'
+import '../../styles/interactive.css'
 import type {AppProps} from 'next/app'
 import {MantineProvider} from "@mantine/core";
 import Navbar from '../components/ui/Navbar';
 import Footer from "../components/ui/Footer";
 import Banner from "../components/Banner";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 function MyApp({Component, pageProps}: AppProps) {
     const router = useRouter();

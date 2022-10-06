@@ -29,7 +29,7 @@ const Description: FunctionComponent<DescriptionProps> = ({
             <div className="h-[245px] xl:h-[400px] w-[400px] xl:w-[555px] relative">
                 <Image objectFit="cover" layout="fill" alt="hero image" src={imgPath}/>
             </div>
-            <div className="flex flex-col gap-[15px] xl:gap-[23px] mx-4 xl:mx-0 items-center xl:items-start">
+            <div className="flex flex-col gap-[15px] xl:gap-[23px] mx-4 xl:mx-0 xl:items-start">
                 <h3 className="font-bold text-[28px] xl:text-[40px] leading-[28px] xl:leading-[48px] tracking-[-0.5px] text-primary w-[384px] xl:w-[445px]">
                     {title}
                 </h3>
@@ -42,14 +42,14 @@ const Description: FunctionComponent<DescriptionProps> = ({
                 <div className="flex gap-[12px] mt-[20px] xl:mt-0">
                     {twoButtons && <Link href="/o-projekte">
                         <button
-                            className="font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[36px] text-green2 bg-white border-[#476761] w-[120px]">O
+                            className="hover:text-white hover:bg-[#476761] font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[36px] text-green2 bg-white border-[#476761] w-[120px]">O
                             projekte
                         </button>
                     </Link>
                     }
                     <Link href="/stretnutie">
                         <button
-                            className="font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[36px] text-white bg-[#476761] w-[190px]">Nezáväzné
+                            className="hover:bg-primary font-medium text-[16px] leading-[24px] tracking-[0.1px] border h-[36px] text-white bg-[#476761] w-[190px]">Nezáväzné
                             stretnutie
                         </button>
                     </Link>

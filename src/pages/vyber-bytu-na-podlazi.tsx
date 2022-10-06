@@ -8,11 +8,16 @@ import ArrowDownNotFilled from "../components/svg/ArrowDownNotFilled";
 import Link from "next/link";
 import DownArrowIcon from "../components/svg/DownArrow";
 import {Select} from "@mantine/core";
+import Head from "next/head";
+import Floor8 from "../components/sections/Interactive/floors/Floor8";
 
 
 const VyberBytuNaPodlazi: NextPage = () => {
     return (
         <>
+            <Head>
+                <title>Výber bytu na podlaží | Olivia Residence</title>
+            </Head>
             <div className="flex justify-center">
                 <div>
                     <div className="flex justify-center my-[70px]">
@@ -74,16 +79,17 @@ const VyberBytuNaPodlazi: NextPage = () => {
                                 <div className="flex justify-center pb-[60px]">
                                     <Link href="/">
                                         <button
-                                            className="font-medium text-[16px] leading-6 tracking-[0.1px] text-white px-[20px] py-[6px] bg-[#476761]">
+                                            className="hover:bg-primary font-medium text-[16px] leading-6 tracking-[0.1px] text-white px-[20px] py-[6px] bg-[#476761]">
                                             Detail bytu
                                         </button>
                                     </Link>
                                 </div>
                             </div>
                         </div>
-                        <div className=" border-2 w-[400px] xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
-
+                        <div className="w-[400px] xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
+                            <Floor8/>
                         </div>
+
                     </div>
                 </div>
             </div>

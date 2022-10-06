@@ -38,9 +38,9 @@ const OpeningHours: FunctionComponent<OpeningHoursProps> = ({reverseFlex = false
                                 </div>
                             </div>
                         </div>
-                        <Link href="/">
+                        <Link href="https://goo.gl/maps/CVbzvKFDCXY9aeaK6">
                             <button
-                                className="font-medium text-[16px] leading-6 tracking-[0.1px] text-white py-[12px] px-[45px] bg-[#476761] ml-[165px] mb-[55px] xl:mb-[75px]">Navigovať
+                                className="hover:bg-primary font-medium text-[16px] leading-6 tracking-[0.1px] text-white py-[12px] px-[45px] bg-[#476761] ml-[165px] mb-[55px] xl:mb-[75px]">Navigovať
                             </button>
                         </Link>
                     </div>

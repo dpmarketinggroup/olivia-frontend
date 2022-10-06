@@ -18,65 +18,123 @@ import NewsSubscription from "../components/sections/News/NewsSubscription";
 import NewsSection from "../components/sections/News/NewsSection";
 import FinancingConditions from "../components/sections/UniCredit/FinancingConditions";
 import MapFooter from "../components/ui/MapFooter";
+import Head from "next/head";
+import BagIcon from "../components/svg/Bag";
+import SmilingHouseIcon from "../components/svg/SmilingHouse";
+import ScooterIcon from "../components/svg/Scooter";
+import FlagIcon from "../components/svg/Flag";
+import RingRoadArrowIcon from "../components/svg/RingRoadArrow";
 
+
+interface Descriptions {
+    imgPath: string;
+    title: string;
+    descrip: string;
+    bulletPoints: [
+        { icon: JSX.Element; text: string },
+        { icon: JSX.Element; text: string },
+        { icon: JSX.Element; text: string }
+    ];
+    twoButtons?: boolean
+    reverseFlex?: boolean;
+}
 
 const OProjekte: NextPage = () => {
+    const descriptions: Descriptions[] = [
+        {
+            imgPath: "/img/room3.jpg",
+            title: "Vysoký štandard vrátane komplentej kuchyne a sanity",
+            descrip: "Kompletne zariadené byty vo vysokom štandarde a kvalitnom prevedení, aby ste si ušetrili starosti a čas a mohli si naplno užívať svoj nový domov.",
+            bulletPoints: [
+                {icon: <KitchenIcon/>, text: "Skvelá dynamická lokalita"},
+                {icon: <SinkIcon/>, text: "Vysoký štandard vybavenia"},
+                {icon: <BlockIcon/>, text: "Štýlové a kvalitné prevedenie"},
+            ],
+            twoButtons: false
+        },
+        {
+            imgPath: "/img/balcony.jpg",
+            title: "Priestranné balkóny a terasy s exterierovým slnečným tienením",
+            descrip: "Veľko-metrážne balkóny a terasy s exterierovými slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
+            bulletPoints: [
+                {icon: <BasketIcon width="28" height="29"/>, text: "Balkón ako štandard pre každý byt"},
+                {icon: <ElectricPanelIcon/>, text: "Elektrické exteriérové slnečné tienenie ako štandard"},
+                {icon: <TwoArrowsIcon width="24" height="28px"/>, text: "Veľko-metrážne terasy"},
+            ],
+            twoButtons: false,
+            reverseFlex: true,
+        },
+        {
+            imgPath: "/img/car.png",
+            title: "Garážové parkovanie",
+            descrip: "Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok.",
+            bulletPoints: [
+                {icon: <ManIcon/>, text: "Prechod do Vášho bytu suchou nohou"},
+                {icon: <ParkingIcon/>, text: "Dlhodobý prenájom garážových státí"},
+                {icon: <CameraIcon/>, text: "Zabezpečené kamerovým systémom"},
+            ],
+            twoButtons: false,
+        },
+    ]
     return (
         <>
+            <Head>
+                <title>O projekte | Olivia Residence</title>
+            </Head>
             <Hero imgName={"oProjekteHero"} icon={<HouseIcon/>} title={"O projekte"}
                   description="Všetky podstatné informácie o Vašom novom bývaní na jednom mieste."/>
             <div id="harmonogram">
-            <WholeProcess/>
+                <WholeProcess/>
             </div>
             <div className="flex justify-center">
                 <Link href="/stretnutie">
                     <button
-                        className="bg-[#476761] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] mt-[-60px] mb-[90px] xl:mb-[185px]">
+                        className="hover:bg-primary bg-[#476761] w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px] mt-[-60px] mb-[90px] xl:mb-[185px]">
                         Nezáväzné stretnutie
                     </button>
                 </Link>
             </div>
-            <Description imgPath="/img/room3.jpg"
-                         title="Vysoký štandard vrátane komplentej kuchyne a sanity"
-                         descrip="Kompletne zariadené byty vo vysokom štandarde a kvalitnom prevedení, aby ste si ušetrili starosti a čas a mohli si naplno užívať svoj nový domov."
-                         bulletPoints={[
-                             {icon: <KitchenIcon/>, text: "Skvelá dynamická lokalita"},
-                             {icon: <SinkIcon/>, text: "Vysoký štandard vybavenia"},
-                             {icon: <BlockIcon/>, text: "Štýlové a kvalitné prevedenie"},
-                         ]}
-                         twoButtons={false}
-            />
-            <Description imgPath="/img/balcony.jpg"
-                         title="Priestranné balkóny a terasy s exterierovým slnečným tienením"
-                         descrip="Veľko-metrážne balkóny a terasy s exterierovými slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy."
-                         bulletPoints={[
-                             {icon: <BasketIcon width="28" height="29"/>, text: "Balkón ako štandard pre každý byt"},
-                             {icon: <ElectricPanelIcon/>, text: "Elektrické exteriérové slnečné tienenie ako štandard"},
-                             {icon: <TwoArrowsIcon width="24" height="28px"/>, text: "Veľko-metrážne terasy"},
-                         ]}
-                         twoButtons={false}
-                         reverseFlex={true}
-            />
-            <div id="garazove-parkovanie">
-            <Description imgPath="/img/car.png"
-                         title="Garážové parkovanie"
-                         descrip="Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok."
-                         bulletPoints={[
-                             {icon: <ManIcon/>, text: "Prechod do Vášho bytu suchou nohou"},
-                             {icon: <ParkingIcon/>, text: "Dlhodobý prenájom garážových státí"},
-                             {icon: <CameraIcon/>, text: "Zabezpečené kamerovým systémom"},
-                         ]}
-                         twoButtons={false}
-            />
-            </div>
+            {descriptions.map((p, i) =>{
+                if (i=== 2) {
+                    return <div key={i} id="garazove-parkovanie">
+                        <Description imgPath={p.imgPath} title={p.title} descrip={p.descrip}
+                                     bulletPoints={p.bulletPoints} twoButtons={p.twoButtons}
+                                     reverseFlex={p.reverseFlex}/>
+                    </div>
+                }else{
+                    return <Description key={i} imgPath={p.imgPath} title={p.title} descrip={p.descrip}
+                                 bulletPoints={p.bulletPoints} twoButtons={p.twoButtons}
+                                 reverseFlex={p.reverseFlex}/>
+                }
+            })}
             <div id="financovanie">
-            <FinancingConditions/>
+                <FinancingConditions/>
             </div>
             <NewsSection news={[
-                {path: "/img/room.jpg", date: "12.09.2021", title: "Medium length title", description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"},
-                {path: "/img/room.jpg", date: "12.09.2021", title: "Medium length title", description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"},
-                {path: "/img/room.jpg", date: "12.09.2021", title: "Medium length title", description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"},
-                {path: "/img/room.jpg", date: "12.09.2021", title: "Medium length title", description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"},
+                {
+                    path: "/img/room.jpg",
+                    date: "12.09.2021",
+                    title: "Medium length title",
+                    description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"
+                },
+                {
+                    path: "/img/room.jpg",
+                    date: "12.09.2021",
+                    title: "Medium length title",
+                    description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"
+                },
+                {
+                    path: "/img/room.jpg",
+                    date: "12.09.2021",
+                    title: "Medium length title",
+                    description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"
+                },
+                {
+                    path: "/img/room.jpg",
+                    date: "12.09.2021",
+                    title: "Medium length title",
+                    description: "Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean"
+                },
             ]}
             />
             <NewsSubscription/>

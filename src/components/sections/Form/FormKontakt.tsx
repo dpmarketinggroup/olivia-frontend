@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from "react";
 import {Checkbox, Textarea, TextInput} from "@mantine/core";
+import Link from "next/link";
 
 interface FormKontakt {
     meeting?: boolean
@@ -38,21 +39,25 @@ const FormKontakt: FunctionComponent<FormKontakt>
             }
             <div className="flex flex-col gap-[15px] w-[384px] xl:w-[645px]">
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-[16px] w-full">
-                    <TextInput placeholder="Meno" radius="xs"/>
-                    <TextInput placeholder="Priezvisko" radius="xs"/>
+                    <TextInput placeholder="Meno" radius="xs" required={true} withAsterisk/>
+                    <TextInput placeholder="Priezvisko" radius="xs" required={true} withAsterisk/>
                 </div>
-                <TextInput placeholder="Email" radius="xs"/>
+                <TextInput placeholder="Email" radius="xs" required={true} withAsterisk/>
                 <TextInput placeholder="Tel. č." radius="xs"/>
                 <Textarea placeholder="Správa"
                           radius="xs"
                           minRows={6}
                           maxRows={6}
+                          required={true}
+                          withAsterisk
                 />
                 <Checkbox label={
                     <>
-                        <p className="text-[14px] leading-5 text-[#999999]">Súhlasím so spracovaním <span
-                            className="underline">osobných údajov</span>
-                        </p>
+                        <Link href="/gdpr">
+                            <a className="text-[14px] leading-5 text-[#999999]">Súhlasím so spracovaním <span
+                                className="underline">osobných údajov</span>
+                            </a>
+                        </Link>
                     </>
                 } radius="xs" color="#476761"/>
                 <Checkbox className="mb-[20px] xl:mb-0" label={
@@ -62,7 +67,7 @@ const FormKontakt: FunctionComponent<FormKontakt>
                         </p>
                     </>
                 } radius="xs" color="green"/>
-                <button className={`py-[12px] ${meeting ? "bg-[#89A6A2]" : "bg-[#476761]"} text-white`}>Odoslať</button>
+                <button className={`py-[12px] ${meeting ? " bg-[#89A6A2] hover:bg-[#476761]" : "bg-[#476761] hover:bg-primary"} text-white`}>Odoslať</button>
             </div>
         </form>
     )
