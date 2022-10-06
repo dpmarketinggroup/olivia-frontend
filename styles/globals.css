@@ -8,4 +8,7 @@
   body {
     font-family: 'Jost', sans-serif;
   }
+  section {
+    @apply w-full px-[1rem] xl:px-0 max-w-[1920px] mx-auto;
+  }
 }

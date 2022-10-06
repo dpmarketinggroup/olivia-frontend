@@ -1,18 +1,20 @@
 import React from "react";
 import Image from "next/image";
+import {GlassStar, MapPoint, Star} from "@components/icons";
+import {Button} from "@components/ui";
 
 export interface DescriptionProps {
     src: string;
     children: React.ReactNode
 }
 
-const Description= ({children, src}: DescriptionProps) => {
+const Description = ({children, src}: DescriptionProps) => {
     return (
-        <div className={`flex flex-col xl:flex-row gap-[45px] xl:gap-[110px] xl:mx-[165px] items-center justify-center mb-[120px] xl:mb-[165px] `}>
-            <div className="h-[300px] xl:h-[400px] w-full xl:w-[555px] relative">
-                <Image objectFit="cover" layout="fill" alt="hero image" src={src}/>
+        <div className={`flex justify-between items-center justify-center w-full xl:max-w-[1200px] mx-auto xl:gap-[110px]`}>
+            <div className={'shrink-0'}>
+                <Image objectFit="cover" width={555} height={400} alt="hero image" src={src}/>
             </div>
-            <div className="flex flex-col gap-[15px] xl:gap-[23px] xl:items-start w-full px-[1rem] xl:px-0">
+            <div className="flex flex-col">
                 {children}
             </div>
         </div>
@@ -22,7 +24,35 @@ const Description= ({children, src}: DescriptionProps) => {
 export default Description;
 //TODO: Me -> Implementovať
 export const CommonDescription = () => {
-  return (<Description src={'dddd'}>
-      p
-  </Description>)
+    return (
+        <Description src={'/img/room.jpg'}>
+            <h3 className={'font-bold text-[40px] leading-[48px] text-[#0E3F3B] xl:max-w-[310px]'}>Moderné
+                mestské bývanie</h3>
+            <p className={'text-black/60 mt-[20px]'}>
+                Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval za steny ich bytu. Pre ľudí, ktorí chcú
+                mať ich obľúbené aktivity na dosah ruky. Pre ľudí, ktorí chcú svoj čas využívať efektívne.
+                A pre ľudí, ktorí chcú mať z bývania zážitok.
+                Olivia nie je len bývanie, je to životný štýl.
+            </p>
+            <div className={'my-[25px] flex flex-col gap-[10px]'}>
+                {[
+                    {icon: <MapPoint size={25}/>, label: 'Skvelá dynamická lokalita'},
+                    {icon: <Star/>, label: 'Vysoký štandard vybavenia'},
+                    {icon: <GlassStar/>, label: 'Štýlové a kvalitné prevedenie'},
+                ].map(({icon, label}, i) => (
+                    <div className={'flex gap-[12px] items-center font-bold text-black/60'} key={i}>
+                        {icon}
+                        <h5>{label}</h5>
+                    </div>
+                ))}
+            </div>
+            <div className={'flex gap-[10px]'}>
+                <Button variant={'outlined'}>
+                    O projekte
+                </Button>
+                <Button variant={'filled'}>
+                    Nezáväzné stretnutie
+                </Button>
+            </div>
+        </Description>)
 }

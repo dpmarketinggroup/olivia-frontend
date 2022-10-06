@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import HouseAndFilter from "@components/sections/Interactive/HouseAndFilter";
 import {Select} from "@mantine/core";
+import {CommonDescription} from "@components/common/Description/Description";
 
 const Home = () => {
     return (
@@ -39,11 +40,7 @@ const Home = () => {
                 </div>
             </section>
             <Timeline/>
-            <Description
-                src="/img/room.jpg"
-            >
-                <p>kokot</p>
-            </Description>
+            <CommonDescription />
             <div className="flex justify-center my-[70px]">
                 <div className="m xl:mx-[165px]">
                     <div className="flex flex-col gap-[30px] items-center mb-[50px]">
