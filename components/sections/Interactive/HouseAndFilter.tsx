@@ -15,7 +15,6 @@ const HouseAndFilter = () => {
     //     {num: "3"},
     //     {num: "4"},
     // ]
-    //TODO: Oliver -> Na desktop ukazujú šípky červeno, uprav abz bol desktop ako v dizajne, zatiaľ nerob buttons
     return (
         <>
             <div className="xl:mx-[-30px] xl:mb-[-80px] xl:mt-[-70px] md:mx-[-25px] md:mb-[-105px] lg:mx-[-20px] lg:mb-[-130px] xl:mr-[-15px] xl:ml-[-15px] xl:mb-[-160px] xl:max-w-[1920px] 2xl:mb-[-195px] xl3">
