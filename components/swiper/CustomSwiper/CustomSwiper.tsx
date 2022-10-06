@@ -2,16 +2,12 @@ import {SwiperSlide, Swiper} from "swiper/react";
 import {LeftArrow, RightArrow} from "@components/icons";
 import {Navigation} from "swiper";
 import Image from "next/image";
-import {useMediaQuery} from "@mantine/hooks";
 
 interface SwiperProps {
     images: string[],
     title: string;
-    href?: string;
 }
-//TODO: Me -> Implementovať swiper na desktop a mobil
-const CustomSwiper = ({images, title, href }: SwiperProps) => {
-    const matches = useMediaQuery('(min-width: 1280px)')
+const CustomSwiper = ({images, title }: SwiperProps) => {
     return (
         <div className={`text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col`}>
             <div
