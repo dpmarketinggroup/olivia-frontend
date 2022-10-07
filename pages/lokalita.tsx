@@ -3,7 +3,6 @@ import {MapPoint} from "@components/icons";
 import Head from "next/head";
 
 const Lokalita = () => {
-    //TODO: Oliver -> Mobil rozjebany
     //TODO: Me -> Pridat descriptions
     return (
         <>
