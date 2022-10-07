@@ -8,7 +8,7 @@ import {
     ArrowDownNotFilledIcon,
     FloorPlan
 } from "@components/icons";
-import {Description, Form, CustomSwiper, MapFooter} from "@components/common";
+import {Description, Form, MapFooter} from "@components/common";
 import {Modal, Select} from "@mantine/core";
 import Head from "next/head";
 import Image from "next/image";

@@ -16,13 +16,12 @@ const Form
     const [isClicked1, setClicked1] = useState(false);
     const [isClicked2, setClicked2] = useState(false);
 
-    // TODO: Me -> Opravit desktop plus mobil
     return (
-        <form onSubmit={(e) => e.preventDefault()}
-              className={isGreen ? "green" : "grey"}>
+        <form onSubmit={(e) => e.preventDefault()} className={isGreen ? "green" : "grey"}>
+            <div className="mx-4">
             {
                 meeting &&
-                <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] xl:items-center mb-[45px]">
+                <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] items-center mb-[45px]">
                     <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">Mám záujem o:</span>
                     <Checkbox disabled={isClicked2 && true}
                               onClick={() => setClicked1(!isClicked1)}
@@ -46,7 +45,7 @@ const Form
                     />
                 </div>
             }
-            <div className="flex flex-col gap-[15px] w-[384px] xl:w-[645px]">
+            <div className="flex flex-col gap-[15px] w-full xl:w-[645px]">
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-[16px] w-full">
                     <TextInput placeholder="Meno" radius="xs" required={true} withAsterisk/>
                     <TextInput placeholder="Priezvisko" radius="xs" required={true} withAsterisk/>
@@ -78,6 +77,7 @@ const Form
                 <button
                     className={`py-[12px] ${meeting ? " bg-[#89A6A2] hover:bg-[#476761]" : "bg-[#476761] hover:bg-primary"} text-white`}>Odoslať
                 </button>
+            </div>
             </div>
         </form>
     )
