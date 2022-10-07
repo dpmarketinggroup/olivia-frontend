@@ -19,7 +19,7 @@ const Robot = () => {
     return (
         <>
             <g id="Retail_highlight" data-name="Retail highlight">
-                <Link href='/pages/retail'>
+                <Link href='/retail'>
                 <polygon
                     className="cls-5"
                     points="908.59 913.22 907.61 856.71 531.91 853.42 531.91 913.35 559.18 913.45 559.18 914.12 559.18 1015.17 580.39 1015.17 580.39 1041.37 908.62 1042.88 908.62 913.22 908.59 913.22"
@@ -40,7 +40,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div3.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/3'>
                 <path
                     className="cls-5"
                     d="M517.33,677.92V626L893,629.29v52Z"
@@ -63,7 +63,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div4.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/4'>
                 <path
                     className="cls-5"
                     d="M517.33,624.5V572.57L893,576.86v51Z"
@@ -86,7 +86,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div5.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/5'>
                 <path
                     className="cls-5"
                     d="M517.33,571.5V518.57L893,521.86v54Z"
@@ -109,7 +109,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div6.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/6'>
                 <path
                     className="cls-5"
                     d="M517.33,517.78V465.86L893,469.15v52Z"
@@ -132,7 +132,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div7.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/7'>
                 <path
                     className="cls-5"
                     d="M517.33,464.75v-54L893,415.25v53Z"
@@ -155,7 +155,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div8.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/8'>
                 <path
                     className="cls-5"
                     d="M517.33,410.09v-54l375.71,5v53.51Z"
@@ -178,7 +178,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div9.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/9'>
                 <path
                     className="cls-5"
                     d="M517.33,355.5v-54L893,307v53Z"
@@ -200,7 +200,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div10.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/10'>
                 <path
                     className="cls-5"
                     d="M517.33,300.56v-52L893,254.06v52Z"
@@ -223,7 +223,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div11.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/11'>
                 <path
                     className="cls-5"
                     d="M517.33,247.75v-53L893,201.25v52Z"
@@ -245,7 +245,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div12.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/12'>
                 <path
                     className="cls-5"
                     d="M517.33,193.53v-53L893,147v53Z"
@@ -267,7 +267,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div13.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/13'>
                 <path
                     className="cls-5"
                     d="M517.33,140V87L893,93.48v53Z"
@@ -289,7 +289,7 @@ const Robot = () => {
             }} onMouseLeave={ () =>(
                 div14.current?.classList.add('none')
             )}>
-                <Link href='/pages/vyber-bytu-na-podlazi'>
+                <Link href='/podlazie/14'>
                     <path
                         className="cls-5"
                         d="M517.33,85.51v-53L893,39V92Z"
