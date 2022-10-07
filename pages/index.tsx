@@ -8,21 +8,14 @@ import Image from "next/image";
 import {Select} from "@mantine/core";
 import {ApartmentEquipmentDescription, CommonDescription} from "@components/common/Description/Description";
 import {Button} from "@components/ui";
-import {useApartment} from "../lib/hooks/useApartment";
-import {useStore} from "../lib/store/useStore";
-import {useEffect} from "react";
 
 const Home = () => {
-    useApartment('04.01', 'Poschodie 3')
-    const val = useStore(state => state.selectedApartment)
-    console.log(val)
     return (
         <>
             <Head>
-                <title>Moderné mestské bývanie | Olivia Residence</title>
+                <title>Modern=é mestské bývanie | Olivia Residence</title>
             </Head>
             <section className="flex justify-center pt-[115px]">
-                <button>Click</button>
                 <div className="h-[650px] w-full max-w-[1920px] xl:mb-[140px] relative">
                     <div className="absolute w-full xl:max-w-[1920px] h-[650px] -z-20">
                         <Image objectFit="cover" layout="fill" alt="hero image" src={'/img/hero.jpg'}/>
