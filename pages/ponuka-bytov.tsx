@@ -1,8 +1,9 @@
-import {Description, MapFooter, BuildingFilter} from "@components/common";
+import {Description, MapFooter} from "@components/common";
+import {BuildingFilter} from "@components/filter";
 import {Man, Parking, Camera, FloorPlan, ArrowDownNotFilledIcon, RightArrow, Severka} from "@components/icons";
 import {Select} from "@mantine/core";
 import Head from "next/head";
-import Link from "next/link";;
+import Link from "next/link";
 
 const PonukaBytov = () => {
     return (

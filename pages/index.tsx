@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {FloorPlan, ArrowDownNotFilledIcon, RightArrow, Severka} from "@components/icons/";
-import {Timeline, MapFooter, Negotiation, Articles, Subscription, BuildingFilter} from "@components/common";
+import {Timeline, MapFooter, Negotiation, Articles, Subscription} from "@components/common";
+import {BuildingFilter} from "@components/filter";
 import {ApartmentSwiper, CustomSwiper, DeveloperSwiper} from "@components/swiper";
 import Head from "next/head";
 import Image from "next/image";
