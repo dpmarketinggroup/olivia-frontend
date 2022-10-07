@@ -1,7 +1,4 @@
-import React, {FunctionComponent} from "react";
-import Link from "next/link";
 import Floor8Extension from "./Floor8Extension";
-
 
 const Floor8 = () => {
     return (

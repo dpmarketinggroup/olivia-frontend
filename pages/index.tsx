@@ -8,6 +8,7 @@ import HouseAndFilter from "@components/sections/Interactive/HouseAndFilter";
 import {Select} from "@mantine/core";
 import {ApartmentEquipmentDescription, CommonDescription} from "@components/common/Description/Description";
 import {Button} from "@components/ui";
+import useFloorApartments from "../lib/hooks/useFloorApartments";
 
 const Home = () => {
     return (
