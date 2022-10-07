@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import {Button} from "@components/ui";
 
 interface NegotiationProps {
     title: string;
@@ -20,15 +21,14 @@ const Negotiation = ({
                 {!centerText ?
                     (
                         <div
-                            className="flex gap-[25px] xl:gap-[435px] mx-4 xl:mx-[165px] justify-center mb-[30px] xl:mb-[60px] items-center">
+                            className="flex flex-col xl:flex-row gap-[25px] xl:gap-[435px] mx-4 xl:mx-[165px] justify-center mb-[30px] xl:mb-[60px] xl:items-end">
                             <div className="flex flex-col gap-[10px] xl:gap-[20px]">
-                                <h3 className="font-bold w-[200px] xl:w-auto text-[25px] xl:text-[40px] leading-[28px] xl:leading-[48px] tracking-[-0.5px]">{title}</h3>
+                                <h3 className="font-bold xl:w-auto text-[25px] xl:text-[40px] leading-[28px] xl:leading-[48px] tracking-[-0.5px]">{title}</h3>
                                 <p className="text-[#676766] font-normal text-[14px] xl:text-[16px] leading-[24px] tracking-[0.1px]">{subtitle}</p>
                             </div>
-                            <Link href="/pages/lokalita">
-                                <button
-                                    className="hover:text-white hover:bg-[#476761] hover:border-[#476761] w-[145px] h-[36px] border border-[#476761] text-[16px] text-[#476761] font-medium leading-6 tracking-[0.1px] self-end">{buttonText}</button>
-                            </Link>
+                            <Button variant={'outlined'} href={'/lokalita'}>
+                                {buttonText}
+                            </Button>
                         </div>
                     ) : (
                         <div className="text-center">
