@@ -6,6 +6,8 @@ import Head from "next/head";
 import Floor8 from "@components/floors/Floor8/Floor8";
 
 const VyberBytuNaPodlazi = () => {
+
+    // const pullDataFromClikedApartment
     return (
         <>
             <Head>
@@ -82,7 +84,6 @@ const VyberBytuNaPodlazi = () => {
                         <div className="w-[400px] xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
                             <Floor8/>
                         </div>
-
                     </div>
                 </div>
             </div>

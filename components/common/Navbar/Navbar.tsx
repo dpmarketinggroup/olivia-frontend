@@ -41,11 +41,11 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                             className={'flex flex-col xl:flex-row gap-[35px] xl:gap-[25px] text-[20px] xl:text-[16px]'}>
                             <div className="flex gap-[10px] items-center">
                                 <div className="dropdown">
-                                    <Link href="/pages/ponuka-bytov">
+                                    <Link href="/ponuka-bytov">
                                         <a className="drop-span">Ponuka apartmánov</a>
                                     </Link>
                                     <div className="dropdown-content">
-                                        <Link href="/pages/o-projekte#garazove-parkovanie">
+                                        <Link href="/o-projekte#garazove-parkovanie">
                                             <a className="w-[180px] pt-[20px] pb-[20px] px-[10px] text-center">Garážové
                                                 parkovanie</a>
                                         </Link>
