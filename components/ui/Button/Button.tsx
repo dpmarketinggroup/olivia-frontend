@@ -7,7 +7,6 @@ interface ButtonProps {
     href?: string;
     children: React.ReactNode;
 }
-//TODO: Oliver -> Hovery urobit pre kazdy variant (okrem unstyled)
 const Button = ({variant, href, className, children}: ButtonProps) => {
 
     const getClass = () => {
@@ -15,9 +14,9 @@ const Button = ({variant, href, className, children}: ButtonProps) => {
             case "unstyled":
                 return '';
             case "filled":
-                return 'h-[40px] px-[20px] bg-green2 text-white font-medium'
+                return 'h-[40px] px-[20px] bg-green2 text-white font-medium hover:bg-primary'
             case "outlined":
-                return 'h-[40px] border border-green2 text-green2 h-[40px] px-[20px] font-medium'
+                return 'h-[40px] border border-green2 text-green2 h-[40px] px-[20px] font-medium hover:border-green2 hover:bg-green2 hover:text-white'
         }
     }
 
