@@ -10,12 +10,14 @@ import {ApartmentEquipmentDescription, CommonDescription} from "@components/comm
 import {Button} from "@components/ui";
 
 const Home = () => {
+
     return (
         <>
             <Head>
                 <title>Moderné mestské bývanie | Olivia Residence</title>
             </Head>
             <section className="flex justify-center pt-[115px]">
+                <button></button>
                 <div className="h-[650px] w-full max-w-[1920px] xl:mb-[140px] relative">
                     <div className="absolute w-full xl:max-w-[1920px] h-[650px] -z-20">
                         <Image objectFit="cover" layout="fill" alt="hero image" src={'/img/hero.jpg'}/>

@@ -17,7 +17,7 @@ const FilterButton = ({variant, icon, onClick, children}: FilterButtonProps) => 
     }
     return (
         <button onClick={onClick} className={`${getClass()} border-2 border-white text-white`}>
-            <div className={`${variant === 'square' && 'max-w-[20px]'}`}>{children}</div>
+            <div className={`${variant === 'square' && 'max-w-[20px]'} flex items-center gap-[10px]`}>{variant === 'rectangle' && icon}{children}</div>
         </button>
     );
 };

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Dom from './Dom'
 import {Table} from "@components/table";
 import FilterButton from "@components/ui/FilterButton/FilterButton";
+import {Basket} from "@components/icons";
 
 const Building = () => {
     return (
@@ -66,7 +67,7 @@ const Building = () => {
                             <FilterButton variant={'square'}>
                                 1 izb
                             </FilterButton>
-                            <FilterButton variant={'rectangle'}>
+                            <FilterButton icon={<Basket/>} variant={'rectangle'}>
                                 s terasou
                             </FilterButton>
                         </div>
