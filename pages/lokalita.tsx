@@ -10,7 +10,7 @@ const Lokalita = () => {
             <Head>
                 <title>Lokalita | Olivia Residence</title>
             </Head>
-            <Hero imgName="lokalitaHero" icon={<MapPoint fill="#89A6A2" size={35}/>} title="Lokalita"
+            <Hero imgName="lokalitaHero" icon={<MapPoint fill="#89A6A2" size={45}/>} title="Lokalita"
                   description="Dynamická lokalita so skvelými možnosťami.Rožňavská 8, Bratislava"/>
             {/*{descriptions.map((props, k) =>(*/}
             {/*    <Description key={k} {...props}/>*/}
