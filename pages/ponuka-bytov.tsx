@@ -56,7 +56,7 @@ const PonukaBytov = () => {
                         </div>
                     </div>
                     <BuildingFilter/>
-                    <Description src="/img/car.png">Kokot</Description>
+                    <Description src="/img/car.png">test</Description>
                 </div>
             </div>
             <MapFooter/>

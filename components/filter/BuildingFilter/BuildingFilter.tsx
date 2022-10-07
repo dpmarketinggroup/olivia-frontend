@@ -2,6 +2,7 @@ import React from 'react';
 import {Checkbox, RangeSlider} from "@mantine/core";
 import Link from "next/link";
 import Dom from './Dom'
+import {Table} from "@components/table";
 
 const Building = () => {
     return (
@@ -66,6 +67,7 @@ const Building = () => {
                     </div>
                 </div>
             </div>
+            <Table/>
         </>
     );
 };
