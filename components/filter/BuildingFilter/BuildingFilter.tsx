@@ -67,7 +67,9 @@ const Building = () => {
                     </div>
                 </div>
             </div>
-            <Table/>
+            <Table rows={[
+                {floor: '2', apartmentNumber: '2.03', id: 1, numberOfRooms: 2, availability: 'voľný', price: 121605, totalArea: 52.47, additionalRoom: 52}
+            ]} title={'1-izbové byty'}/>
         </>
     );
 };
