@@ -1,6 +1,7 @@
 import React from 'react';
 import {Checkbox, RangeSlider} from "@mantine/core";
 import Link from "next/link";
+import Dom from './Dom'
 
 const Building = () => {
     return (

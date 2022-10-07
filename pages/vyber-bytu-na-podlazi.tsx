@@ -3,7 +3,7 @@ import {FloorPlan, RightArrow, Severka, ArrowDownNotFilledIcon} from "@component
 import Link from "next/link";
 import {Select} from "@mantine/core";
 import Head from "next/head";
-import Floor8 from "@components/sections/Interactive/floors/Floor8";
+import Floor8 from "@components/floors/Floor8/Floor8";
 
 const VyberBytuNaPodlazi = () => {
     return (
