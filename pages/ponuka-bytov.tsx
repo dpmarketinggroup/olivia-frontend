@@ -1,9 +1,8 @@
-import {Description, MapFooter} from "@components/common";
+import {Description, MapFooter, BuildingFilter} from "@components/common";
 import {Man, Parking, Camera, FloorPlan, ArrowDownNotFilledIcon, RightArrow, Severka} from "@components/icons";
 import {Select} from "@mantine/core";
 import Head from "next/head";
-import Link from "next/link";
-import HouseAndFilter from "@components/sections/Interactive/HouseAndFilter";
+import Link from "next/link";;
 
 const PonukaBytov = () => {
     return (
@@ -55,7 +54,7 @@ const PonukaBytov = () => {
                             </div>
                         </div>
                     </div>
-                    <HouseAndFilter/>
+                    <BuildingFilter/>
                     <Description src="/img/car.png">Kokot</Description>
                 </div>
             </div>
