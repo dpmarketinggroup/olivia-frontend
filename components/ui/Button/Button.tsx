@@ -7,7 +7,7 @@ interface ButtonProps {
     href?: string;
     children: React.ReactNode;
 }
-
+//TODO: Oliver -> Hovery urobit pre kazdy variant (okrem unstyled)
 const Button = ({variant, href, className, children}: ButtonProps) => {
 
     const getClass = () => {
