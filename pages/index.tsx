@@ -1,13 +1,14 @@
 import Link from "next/link";
 import {FloorPlan, ArrowDownNotFilledIcon, RightArrow, Severka} from "@components/icons/";
 import {Timeline, MapFooter, Negotiation, Articles, Subscription} from "@components/common";
-import {ApartmentSwiper, CustomSwiper} from "@components/swiper";
+import {ApartmentSwiper, CustomSwiper, DeveloperSwiper} from "@components/swiper";
 import Head from "next/head";
 import Image from "next/image";
 import HouseAndFilter from "@components/sections/Interactive/HouseAndFilter";
 import {Select} from "@mantine/core";
 import {ApartmentEquipmentDescription, CommonDescription} from "@components/common/Description/Description";
 import {Button} from "@components/ui";
+
 const Home = () => {
     return (
         <>
@@ -88,7 +89,6 @@ const Home = () => {
             </div>
             <HouseAndFilter/>
             <ApartmentSwiper/>
-            {/*TODO: Me -> add swiper */}
             <Negotiation title={"Lokalita v centre diania"} subtitle={"Rožňavská 1A, Bratislava"}/>
             <div className={'flex flex-col mt-[150px]'}>
                 <h2 className={'text-[#0E3F3B] font-bold text-[40px] text-center'}>Vybavenie apartmánov</h2>
@@ -105,7 +105,7 @@ const Home = () => {
             <CustomSwiper/>
             <Articles/>
             <Subscription/>
-            {/*TODO: Me -> add swiper */}
+            <DeveloperSwiper/>
             <MapFooter/>
         </>
     );
