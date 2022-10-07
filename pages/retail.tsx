@@ -5,7 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 const Retail = () => {
-    //TODO: Me -> check mobile + containers
+    //TODO: Me -> fix mobile
     return (
         <>
             <Head>
