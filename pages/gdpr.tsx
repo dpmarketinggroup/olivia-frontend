@@ -7,7 +7,7 @@ const GDPR = () => {
                 <title>GDPR | Olivia Residence</title>
             </Head>
         <div className="flex justify-center">
-        <div className="mx-4 xl:mx-[450px] mb-[210px] w-[540px]">
+        <div className="mx-4 xl:mx-[450px] mb-[210px] xl:w-[540px]">
             <h1 className="text-center mb-[40px] mt-[85px] font-bold text-[40px] leading-[48px] tracking-[-0.5px]">Ochrana <br/> osobných údajov</h1>
             <h3 className="font-bold text-[20px]">Pod nadpis</h3>
             <p className="mb-[30px] text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consequuntur error quasi, quia
