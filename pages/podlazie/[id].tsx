@@ -5,10 +5,50 @@ import {Select} from "@mantine/core";
 import Link from "next/link";
 import Floor8 from "../../components/floors/Floor8";
 import {MapFooter} from "@components/common";
+import {useStore} from "../../lib/store/useStore";
 
 const FloorDetail = () => {
     const router = useRouter()
+    const fetch = useStore(state => state.setSelectedApartment)
+    const apartment = useStore(state => state.selectedApartment)
 
+    function renderDetail() {
+        if (!apartment || !apartment.data) {
+            return <p className="pb-[420px] w-[300px] mx-auto text-[18px] font-bold text-center">Kliknutím na interaktívnu mapu zobrazíte informácie o byte</p>
+        }
+        const {cislo_bytu, dostupnost, celkova_rozloha, pocet_izieb} = apartment.data[0].attributes
+        return (
+            <>
+                <div className="grid grid-cols-2 gap-y-[30px] mb-[40px]">
+                    <span className="pl-[70px] font-bold text-[16px] leading-6 tracking-[0.1px]">3 - izbový apartmán</span>
+                    <span className="pr-[70px] font-bold text-[16px] leading-6 tracking-[0.1px] text-right">č. {cislo_bytu}</span>
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Dostupnosť</span>
+                    <div className="pr-[70px] text-[14px] font-medium leading-5 text-white ml-[75px] w-[53px]">
+                        <span className="px-[10px] py-[5px] bg-[#476761]">{dostupnost}</span>
+                    </div>
+                    {pocet_izieb && (
+                        <>
+                            <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Počet izieb</span>
+                            <span className="pr-[70px] text-right font-bold text-[14px] leading-5">{pocet_izieb}</span>
+                        </>
+                    )}
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Apartmán m²</span>
+                    <span className="pr-[70px] text-right font-bold text-[14px] leading-5">{celkova_rozloha} m²</span>
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Balkón | Terasa m²</span>
+                    <span className="pr-[70px] text-right font-bold text-[14px] leading-5">73.27 m²</span>
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Celková výmera</span>
+                    <span className="pr-[70px] text-right font-bold text-[14px] leading-5">{celkova_rozloha} m²</span>
+                </div>
+                <div className="flex justify-center pb-[60px]">
+                    <button
+                        onClick={() => fetch('08.01', Number(router.query.id))}
+                        className="hover:bg-primary font-medium text-[16px] leading-6 tracking-[0.1px] text-white px-[20px] py-[6px] bg-[#476761]">
+                        Detail bytu
+                    </button>
+                </div>
+            </>
+        )
+    }
     return (
         <>
             <Head>
@@ -53,41 +93,16 @@ const FloorDetail = () => {
                             </div>
                         </div>
                     </div>
+                    <button onClick={() => fetch('08.01', Number(router.query.id))}>ff</button>
                     <div className="flex flex-col xl:flex-row flex-col-reverse xl:gap-[32px] items-center xl:items-start xl:ml-[165px]">
                         <div className="bg-[#F5F5F5] max-h-[520px] w-[400px]">
                             <div className="pt-[50px]">
-                                <p className="pb-[420px] w-[300px] mx-auto text-[18px] font-bold text-center">Kliknutím na interaktívnu mapu zobrazíte informácie o byte</p>
-
-                                {/*<div className="grid grid-cols-2 gap-y-[30px] mb-[40px]">*/}
-                                {/*    <span className="pl-[70px] font-bold text-[16px] leading-6 tracking-[0.1px]">3 - izbový apartmán</span>*/}
-                                {/*    <span className="pr-[70px] font-bold text-[16px] leading-6 tracking-[0.1px] text-right">č. 9.10</span>*/}
-                                {/*    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Dostupnosť</span>*/}
-                                {/*    <div className="pr-[70px] text-[14px] font-medium leading-5 text-white ml-[75px] w-[53px]">*/}
-                                {/*        <span className="px-[10px] py-[5px] bg-[#476761]">voľný</span>*/}
-                                {/*    </div>*/}
-                                {/*    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Počet izieb</span>*/}
-                                {/*    <span className="pr-[70px] text-right font-bold text-[14px] leading-5">3</span>*/}
-                                {/*    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Apartmán m²</span>*/}
-                                {/*    <span className="pr-[70px] text-right font-bold text-[14px] leading-5">73.27 m²</span>*/}
-                                {/*    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Balkón | Terasa m²</span>*/}
-                                {/*    <span className="pr-[70px] text-right font-bold text-[14px] leading-5">73.27 m²</span>*/}
-                                {/*    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Celková výmera</span>*/}
-                                {/*    <span className="pr-[70px] text-right font-bold text-[14px] leading-5">73.27 m²</span>*/}
-                                {/*</div>*/}
-                                {/*<div className="flex justify-center pb-[60px]">*/}
-                                {/*    <Link href="/pages">*/}
-                                {/*        <button*/}
-                                {/*            className="hover:bg-primary font-medium text-[16px] leading-6 tracking-[0.1px] text-white px-[20px] py-[6px] bg-[#476761]">*/}
-                                {/*            Detail bytu*/}
-                                {/*        </button>*/}
-                                {/*    </Link>*/}
-                                {/*</div>*/}
+                                {renderDetail()}
                             </div>
                         </div>
                         <div className="w-[400px] xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
                             <Floor8/>
                         </div>
-
                     </div>
                 </div>
             </div>
