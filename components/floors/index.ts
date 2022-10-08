@@ -1,1 +1,1 @@
-export {default as Floor8} from './Floor8'
+export {default as Floor8} from './Floor7'

@@ -5,6 +5,8 @@ import Dom from './Dom'
 import {Table} from "@components/table";
 import FilterButton from "@components/ui/FilterButton/FilterButton";
 import {Basket} from "@components/icons";
+import BasketCrossedIcon from "@components/icons/BasketCrossed";
+import TwoArrowsIcon from "@components/icons/TwoArrows";
 
 const Building = () => {
     return (
@@ -62,13 +64,36 @@ const Building = () => {
                             }}/>
                         </div>
                     </div>
-                    <div className={'flex mt-[50px]'}>
-                        <div>
+                    <div className="flex gap-[215px] items-end mt-[50px]">
+                        <div className="flex gap-[20px]">
                             <FilterButton variant={'square'}>
                                 1 izb
                             </FilterButton>
-                            <FilterButton icon={<Basket/>} variant={'rectangle'}>
+                            <FilterButton variant={'square'}>
+                                1.5 izb
+                            </FilterButton>
+                            <FilterButton variant={'square'}>
+                                2 izb
+                            </FilterButton>
+                            <FilterButton variant={'square'}>
+                                3 izb
+                            </FilterButton>
+                            <FilterButton variant={'square'}>
+                                4 izb
+                            </FilterButton>
+                        </div>
+                        <div className="flex gap-[20px] items-end">
+                            <div className="flex flex-col">
+                             <span className="text-white">Výbava:</span>
+                            <FilterButton icon={<TwoArrowsIcon width={'22'} height={'22'} fill={'white'}/>} variant={'rectangle'}>
                                 s terasou
+                            </FilterButton>
+                            </div>
+                            <FilterButton icon={<Basket width={'22'} height={'22'} fill={'white'}/>} variant={'rectangle'}>
+                                s balkónom
+                            </FilterButton>
+                            <FilterButton icon={<BasketCrossedIcon/>} variant={'rectangle'}>
+                                bez balkónu
                             </FilterButton>
                         </div>
                     </div>
