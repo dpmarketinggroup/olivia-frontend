@@ -88,6 +88,98 @@ const ApartmentDetail = () => {
                                 />
                             </div>
                             <div
+<<<<<<< HEAD
+                                className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between">
+                                <div
+                                    className="flex gap-[8px] xl:gap-[13px] items-center px-[20px] xl:px-[29px] py-[7px] xl:py-[16px] bg-[#F5F5F5] rounded-[15px] xl:rounded-[33px] xl:mr-[155px]">
+                                    <Select
+                                        className="w-[120px] floor-num"
+                                        data={[
+                                            "4. podlažie", "5. podlažie", "7. podlažie", "8. podlažie", "9. podlažie", "10. podlažie", "11. podlažie", "12. podlažie",
+                                        ]}
+                                        placeholder="7. podlažie"
+                                        variant="unstyled"
+                                        rightSection={<ArrowDownNotFilledIcon/>}
+                                        rightSectionWidth={-70}
+                                        styles={{rightSection: {pointerEvents: 'none'}}}
+                                        transitionDuration={80}
+                                    />
+                                </div>
+                                <div
+                                    className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[20px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[270px]">
+                                    <Link href="/ponuka-bytov">
+                                        <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Výber
+                                            podlažia</a>
+                                    </Link>
+                                    <RightArrow stroke="#00000033"/>
+                                    <Link href="/vyber-bytu-na-podlazi">
+                                        <a className="font-medium text-[12px] xl:text-[14px] leading-5  text-[#00000033]">Výber
+                                            apartmánu</a>
+                                    </Link>
+                                    <RightArrow stroke="#00000033"/>
+                                    <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761]">Detail apartmánu</span>
+                                </div>
+                                <div className="hidden xl:inline-block">
+                                    <Severka/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mx-4 xl:mx-[165px]">
+                        <h3 className="mb-[25px] font-bold text-[20px] xl:text-[24px] leading-[32px] tracking-[-0.1px] text-center xl:text-left">Apartmán
+                            č. {cislo_bytu}</h3>
+                        <div onClick={() => setOpened2(true)}
+                             className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center xl:items-start justify-center">
+                            <div className="w-[290px] xl:w-[780px] h-[126px] xl:h-[460px] xl:flex justify-center">
+                                {/*<div className="mx-auto xl:mx-0 h-[126px] xl:h-[380px] w-[100px] xl:w-[300px] relative">*/}
+                                {/*    <Image*/}
+                                {/*        objectFit="fill"*/}
+                                {/*        layout="fill"*/}
+                                {/*        alt="hero image"*/}
+                                {/*        src="/img/apartment1.png"*/}
+                                {/*    />*/}
+                                {/*</div>*/}
+                            </div>
+                            <div className="flex flex-col gap-[20px] xl:gap-[40px]">
+                                <div className="w-[290px] h-[126px] relative">
+                                    <Image
+                                        objectFit="fill"
+                                        layout="fill"
+                                        alt="hero image"
+                                        src="/img/room2.jpg"
+                                    />
+                                </div>
+                                <div className="w-[290px] h-[126px] relative">
+                                    <Image
+                                        objectFit="fill"
+                                        layout="fill"
+                                        alt="hero image"
+                                        src="/img/room.jpg"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className="flex flex-col xl:flex-row gap-[20px] xl:gap-[75px] items-center ml-4 xl:ml-[165px] mb-[85px]">
+                        <div className="flex gap-[15px] items-center">
+                            <Bank/>
+                            <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">Financovanie</span>
+                            <div className="flex gap-[8px] items-center">
+                                <Link href='/o-projekte#financovanie'>
+                                    <a className="font-medium text-[14px] leading-5 text-green2">Viac</a>
+                                </Link>
+                                <RightArrow stroke="#476761"/>
+                            </div>
+                        </div>
+                        <div className="flex gap-[15px] items-center">
+                            <Star/>
+                            <span
+                                className="font-bold text-[16px] leading-6 tracking-[0.1px]">Nadštandardné vybavenie</span>
+                            <div className="flex gap-[8px] items-center">
+                                <Link href='/'>
+                                    <a className="font-medium text-[14px] leading-5 text-green2">Viac</a>
+=======
                                 className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[20px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[270px]">
                                 <Link href="/pages/ponuka-bytov">
                                     <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Výber
@@ -97,6 +189,7 @@ const ApartmentDetail = () => {
                                 <Link href="/pages/vyber-bytu-na-podlazi">
                                     <a className="font-medium text-[12px] xl:text-[14px] leading-5  text-[#00000033]">Výber
                                         apartmánu</a>
+>>>>>>> a9eb831d1ecdd0501b7ea3d468f41c81fa41f19a
                                 </Link>
                                 <RightArrow stroke="#00000033"/>
                                 <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761]">Detail apartmánu</span>
