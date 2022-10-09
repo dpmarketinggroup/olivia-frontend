@@ -6,7 +6,19 @@ import Link from "next/link";
 import {MapFooter} from "@components/common";
 import {useStore} from "../../lib/store/useStore";
 import {Button} from "@components/ui";
-import {Floor7} from "@components/floors";
+import {
+    Floor10,
+    Floor11,
+    Floor12,
+    Floor13,
+    Floor14,
+    Floor3,
+    Floor4,
+    Floor5,
+    Floor6,
+    Floor7,
+    Floor8
+} from "@components/floors";
 
 const FloorDetail = () => {
     const router = useRouter()
@@ -126,7 +138,7 @@ const FloorDetail = () => {
                             </div>
                         </div>
                         <div className="w-[400px] xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
-                            <Floor7/>
+                            <Floor12/>
                         </div>
                     </div>
                 </div>

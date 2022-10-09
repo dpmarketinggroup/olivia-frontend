@@ -52,6 +52,7 @@ g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
 /*/////////////////////////////////////////////////////////////////*/
 
 /*Floor*/
+/*from 3 to 14 (Floor3.tsx - Floor14.tsx)*/
 .st0 {
     fill: #ECECEC;
 }
@@ -169,5 +170,240 @@ g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
     enable-background: new;
 }
 
+/*floor 13 (Floor13.tsx)*/
+.floor13 .st0 {
+    fill: #ECECEC;
+}
+
+.floor13 .st1 {
+    fill: #FFFFFF;
+}
+
+.floor13 .st2 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 0.24;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.floor13 .st3 {
+    stroke: #000000;
+    stroke-width: 0.24;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.floor13 .st4 {
+    fill: none;
+    stroke: #6FC6D8;
+    stroke-width: 0.24;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.floor13 .st5 {
+    fill: none;
+    stroke: #989898;
+    stroke-width: 0.24;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.floor13 .st6 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 0.24;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+}
+
+.floor13 .st7 {
+    enable-background: new;
+}
+
+.floor13 .st8 {
+    fill: #89A5A1;
+}
+
+.floor13 .st9 {
+    fill: #476761;
+}
+
+.floor13 .st10 {
+    fill: #0D3F3B;
+}
+
+.floor13 .st11 {
+    fill: url(#SVGID_1_);
+}
+
+.floor13 .st12 {
+    fill: #3C3C3B;
+}
+
+.floor13 .st13 {
+    fill: #575756;
+}
+
+.floor13 .st14 {
+    fill: #6F6F6E;
+}
+
+.floor13 .st15 {
+    fill: #868686;
+}
+
+.floor13 .st16 {
+    fill: #9C9B9B;
+}
+
+.floor13 .st17 {
+    fill: #B1B1B1;
+}
+
+.floor13 .st18 {
+    fill: #C6C6C5;
+}
+
+.floor13 .st19 {
+    fill: #D9D9D9;
+}
+
+.floor13 .st20 {
+    opacity: 0.7;
+    fill: #476761;
+}
+
+.st20:hover {
+    opacity: 0;
+}
+
+.floor13 .st21 {
+    fill: #F5F5F5;
+}
+
+
 /*/////////////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////////////*/
+
+.floor14 .st0 {
+    fill: #ECECEC;
+}
+
+.floor14 .st1 {
+    fill: none;
+    stroke: #1A161A;
+    stroke-width: 0.24;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.floor14 .st2 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 0.24;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.floor14 .st3 {
+    fill: none;
+    stroke: #989898;
+    stroke-width: 0.24;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.floor14 .st4 {
+    fill: none;
+    stroke: #1A161A;
+    stroke-width: 0.24;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+}
+
+.floor14 .st5 {
+    fill: #1A161A;
+    stroke: #1A161A;
+    stroke-width: 0.24;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.floor14 .st6 {
+    fill: #1A161A;
+}
+
+.floor14 .st7 {
+    enable-background: new;
+}
+
+.floor14 .st8 {
+    fill: #89A5A1;
+}
+
+.floor14 .st9 {
+    fill: #476761;
+}
+
+.floor14 .st10 {
+    fill: #0D3F3B;
+}
+
+.floor14 .st11 {
+    fill: url(#SVGID_1_);
+}
+
+.floor14 .st12 {
+    fill: #3C3C3B;
+}
+
+.floor14 .st13 {
+    fill: #575756;
+}
+
+.floor14 .st14 {
+    fill: #6F6F6E;
+}
+
+.floor14 .st15 {
+    fill: #868686;
+}
+
+.floor14 .st16 {
+    fill: #9C9B9B;
+}
+
+.floor14 .st17 {
+    fill: #B1B1B1;
+}
+
+.floor14 .st18 {
+    fill: #C6C6C5;
+}
+
+.floor14 .st19 {
+    fill: #D9D9D9;
+}
+
+.floor14 .st20 {
+    opacity: 0.7;
+    fill: #476761;
+}
+
+.floor14 .st20:hover {
+    opacity: 0;
+}
+
+.floor14 .st21 {
+    fill: #F5F5F5;
+}
