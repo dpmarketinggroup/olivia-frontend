@@ -9,6 +9,7 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import {useStore} from "../../lib/store/useStore";
 import {Button} from "@components/ui";
+import {CarDescription} from "@components/common/Description/Description";
 
 const ApartmentDetail = () => {
     const [opened, setOpened] = useState(false);
@@ -23,7 +24,8 @@ const ApartmentDetail = () => {
         if (router.query.id) getApartment(Number(router.query.id));
     }, [router.query])
 
-    if (!apartment) return <div className={'h-screen'}>No apartment found</div>
+    if (!apartment || !apartment.data) return <div className={'h-screen'}>No apartment found</div>
+
     const {
         cena,
         dostupnost,
@@ -278,7 +280,7 @@ const ApartmentDetail = () => {
                                 <div className="flex justify-between mb-[70px]">
                                     <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková výmera +
                                         Balkón</p>
-                                    <span className="font-bold">{celkova_rozloha + balkon_rozloha} m²</span>
+                                    <span className="font-bold">{(celkova_rozloha - balkon_rozloha - terasa_rozloha).toFixed(2)} m²</span>
                                 </div>
                             </>
                         )}
@@ -294,9 +296,7 @@ const ApartmentDetail = () => {
                             Stiahnuť pôdorys
                         </Button>
                     </div>
-                    <Description src="/img/car.png">
-                        <p>test</p>
-                    </Description>
+                    <CarDescription/>
                     <CustomSwiper/>
                 </div>
             </div>
