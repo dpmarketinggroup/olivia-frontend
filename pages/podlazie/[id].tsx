@@ -29,7 +29,7 @@ const FloorDetail = () => {
     console.log('apartments')
 
     function currentApartmentRenderSvg () {
-        switch(apartment.id) {
+        switch(router.query.id) {
             case "3": {
                 return <Floor3/>
             }
@@ -67,7 +67,7 @@ const FloorDetail = () => {
                 return <Floor14/>
             }
             default: {
-                return alert('Apartment not found')
+                return <Floor10/>
             }
         }
     }
@@ -185,8 +185,8 @@ const FloorDetail = () => {
                             </div>
                         </div>
                         <div className="w-[400px] xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
-                            <Floor12/>
-                            {/*{currentApartmentRenderSvg()}*/}
+
+                            {currentApartmentRenderSvg()}
                         </div>
                     </div>
                 </div>

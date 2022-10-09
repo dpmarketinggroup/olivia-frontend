@@ -30,7 +30,7 @@ export const useStore = create<State & Actions>((set, _) => ({
     },
     getApartment: async (apartmentId) => {
         try {
-            const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts/${apartmentId}`)
+            const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts/${apartmentId}?populate=*`)
             set({selectedApartment: res.data})
         } catch (e) {
             console.log(e)

@@ -1,11 +1,15 @@
 import React from 'react';
+import {useStore} from "../../../lib/store/useStore";
+import {useRouter} from "next/router";
 
 const Floor3Extension = () => {
+    const fetch = useStore(state => state.setSelectedApartment)
+    const router = useRouter()
     return (
         <>
             <g id="_x30_4.12">
                 <g id="_x31_4.12_1_">
-                    <polygon className="st19"
+                    <polygon className="st19" onClick={() => fetch('04.12', Number(router.query.id))}
                              points="640.4,60.7 624,60.7 616.9,60.7 566.2,60.7 566.2,165.4 535.4,165.4 535.4,216.9 598,216.9     598,178.4 624,178.4 624,136.1 640.4,136.1   "/>
                 </g>
             </g>
