@@ -27,7 +27,7 @@ const PonukaBytov = () => {
                                     <Select
                                         className="w-[120px] floor-num"
                                         data={[
-                                            "4. podlažie", "5. podlažie", "7. podlažie", "8. podlažie", "9. podlažie", "10. podlažie", "11. podlažie", "12. podlažie",
+                                            "4. podlažie", "5. podlažie", "6. podlažie", "7. podlažie", "8. podlažie", "9. podlažie", "10. podlažie", "11. podlažie", "12. podlažie", "13. podlažie", "14. podlažie",
                                         ]}
                                         placeholder="7. podlažie"
                                         variant="unstyled"

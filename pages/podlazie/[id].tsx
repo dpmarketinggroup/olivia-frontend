@@ -17,7 +17,8 @@ import {
     Floor5,
     Floor6,
     Floor7,
-    Floor8
+    Floor8,
+    Floor9
 } from "@components/floors";
 
 const FloorDetail = () => {
@@ -25,9 +26,56 @@ const FloorDetail = () => {
     const fetch = useStore(state => state.setSelectedApartment)
     const apartment = useStore(state => state.selectedApartment)
     console.log(apartment)
+    console.log('apartments')
+
+    function currentApartmentRenderSvg () {
+        switch(apartment.id) {
+            case "3": {
+                return <Floor3/>
+            }
+            case "4": {
+                return <Floor4/>
+            }
+            case "5": {
+                return <Floor5/>
+            }
+            case "6": {
+                return <Floor6/>
+            }
+            case "7": {
+                return <Floor7/>
+            }
+            case "8": {
+                return <Floor8/>
+            }
+            case "9": {
+                return <Floor9/>
+            }
+            case "10": {
+                return <Floor10/>
+            }
+            case "11": {
+                return <Floor11/>
+            }
+            case "12": {
+                return <Floor12/>
+            }
+            case "13": {
+                return <Floor13/>
+            }
+            case "14": {
+                return <Floor14/>
+            }
+            default: {
+                return alert('Apartment not found')
+            }
+        }
+    }
+
 
     function renderDetail() {
         if (!apartment || !apartment.data) {
+            console.log("first if")
             return <p className="pb-[420px] w-[300px] mx-auto text-[18px] font-bold text-center">Kliknutím na
                 interaktívnu mapu zobrazíte informácie o byte</p>
         }
@@ -139,6 +187,7 @@ const FloorDetail = () => {
                         </div>
                         <div className="w-[400px] xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
                             <Floor12/>
+                            {/*{currentApartmentRenderSvg()}*/}
                         </div>
                     </div>
                 </div>
