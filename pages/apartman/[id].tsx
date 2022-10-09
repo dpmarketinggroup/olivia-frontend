@@ -88,7 +88,6 @@ const ApartmentDetail = () => {
                                 />
                             </div>
                             <div
-<<<<<<< HEAD
                                 className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between">
                                 <div
                                     className="flex gap-[8px] xl:gap-[13px] items-center px-[20px] xl:px-[29px] py-[7px] xl:py-[16px] bg-[#F5F5F5] rounded-[15px] xl:rounded-[33px] xl:mr-[155px]">
@@ -179,17 +178,6 @@ const ApartmentDetail = () => {
                             <div className="flex gap-[8px] items-center">
                                 <Link href='/'>
                                     <a className="font-medium text-[14px] leading-5 text-green2">Viac</a>
-=======
-                                className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[20px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[270px]">
-                                <Link href="/pages/ponuka-bytov">
-                                    <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Výber
-                                        podlažia</a>
-                                </Link>
-                                <RightArrow stroke="#00000033"/>
-                                <Link href="/pages/vyber-bytu-na-podlazi">
-                                    <a className="font-medium text-[12px] xl:text-[14px] leading-5  text-[#00000033]">Výber
-                                        apartmánu</a>
->>>>>>> a9eb831d1ecdd0501b7ea3d468f41c81fa41f19a
                                 </Link>
                                 <RightArrow stroke="#00000033"/>
                                 <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761]">Detail apartmánu</span>
