@@ -74,8 +74,8 @@ const FloorDetail = () => {
 
 
     function renderDetail() {
-        if (!apartment || !apartment.data) {
-            console.log("first if")
+
+        if (!apartment || !apartment.length) {
             return <p className="pb-[420px] w-[300px] mx-auto text-[18px] font-bold text-center">Kliknutím na
                 interaktívnu mapu zobrazíte informácie o byte</p>
         }
@@ -86,8 +86,8 @@ const FloorDetail = () => {
             pocet_izieb,
             balkon_rozloha,
             terasa_rozloha
-        } = apartment.data[0].attributes || null
-        const {id} = apartment.data[0]
+        } = apartment[0].attributes || null
+        const {id} = apartment[0]
         return (
             <div className={'flex flex-col'}>
                 <div className="grid grid-cols-2 gap-y-[30px] mb-[40px]">
@@ -177,7 +177,6 @@ const FloorDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <button onClick={() => fetch('08.01', Number(router.query.id))}>fetch</button>
                     <div
                         className="flex flex-col xl:flex-row flex-col-reverse xl:gap-[32px] items-center xl:items-start xl:ml-[165px]">
                         <div className="bg-[#F5F5F5] max-h-[520px] w-[400px]">

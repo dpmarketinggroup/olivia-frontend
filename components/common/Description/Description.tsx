@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import {GlassStar, Key, MapPoint, Star} from "@components/icons";
+import {Camera, GlassStar, Key, Man, MapPoint, Parking, Star} from "@components/icons";
 import {Button} from "@components/ui";
 
 export interface DescriptionProps {
@@ -28,7 +28,8 @@ export default Description;
 export const CommonDescription = () => {
     return (
         <Description src={'/img/room.jpg'}>
-            <h3 className={'font-bold text-[40px] leading-[48px] text-[#0E3F3B] xl:max-w-[310px]'}>Moderné mestské bývanie</h3>
+            <h3 className={'font-bold text-[40px] leading-[48px] text-[#0E3F3B] xl:max-w-[310px]'}>Moderné mestské
+                bývanie</h3>
             <p className={'text-black/60 mt-[20px]'}>
                 Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval za steny ich bytu. Pre ľudí, ktorí chcú
                 mať ich obľúbené aktivity na dosah ruky. Pre ľudí, ktorí chcú svoj čas využívať efektívne.
@@ -64,21 +65,24 @@ export const ApartmentEquipmentDescription = () => {
             <div>
 
             </div>
-            <h3 className={'font-bold text-[24px] leading-[32px] text-black xl:max-w-[300px] mb-[40px] text-center xl:text-left'}><span className={'text-green2 underline'}>Vysoký štandard </span>
+            <h3 className={'font-bold text-[24px] leading-[32px] text-black xl:max-w-[300px] mb-[40px] text-center xl:text-left'}>
+                <span className={'text-green2 underline'}>Vysoký štandard </span>
                 pre Váš maximálny komfort</h3>
             <div className={'flex flex-col gap-[25px] xl:grid xl:grid-cols-2 xl:gap-[65px]'}>
                 {[
                     {
                         icon: <Key/>,
                         title: 'Apartmán na kľúč',
-                        description: <p className={'text-[#676766] text-center xl:text-left'}>Bývanie v Olivia Residence je úplne bezstarostné. Ponúkame <span className={'font-bold'}>komplexne zariadené
+                        description: <p className={'text-[#676766] text-center xl:text-left'}>Bývanie v Olivia Residence
+                            je úplne bezstarostné. Ponúkame <span className={'font-bold'}>komplexne zariadené
                             apratmány vrátane kompletne vybavenej kuchyne so spotrebičmi a sanitou.</span> Vašou jedinou
                             starosťou bude výber nábytku.</p>
                     },
                     {
                         icon: <Star/>,
                         title: 'Vysoký štandard vybavenia',
-                        description: <p className={'text-[#676766] text-center xl:text-left'}>Olivia nevyniká len množstvom nadštandardného vybavenia, ale aj jeho prevedením.
+                        description: <p className={'text-[#676766] text-center xl:text-left'}>Olivia nevyniká len
+                            množstvom nadštandardného vybavenia, ale aj jeho prevedením.
                             Materiály použité v apartmánoch zodpovedjú vysokým štandardom kvality.</p>
                     }
                 ].map(({description, title, icon}, i) => (
@@ -89,6 +93,31 @@ export const ApartmentEquipmentDescription = () => {
                     </div>
                 ))}
             </div>
+        </Description>
+    )
+}
+
+export const CarDescription = () => {
+    return (
+        <Description src={"/img/car.png"}>
+            <h3 className={'text-[40px] leading-[48px] text-green2 font-bold'}>Garážové parkovanie</h3>
+            <p className={'text-black/60 my-[20px]'}>Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a
+                bezproblémový zážitok.</p>
+            <div className={'flex flex-col gap-[15px] mb-[30px]'}>
+                {
+                    [
+                        {icon: <Man/>, label: 'Prechod do Vášho bytu suchou nohou'},
+                        {icon: <Parking/>, label: 'Dlhodobý prenájom garážových státí'},
+                        {icon: <Camera/>, label: 'Zabezpečené kamerovým systémom'}
+                    ].map(({label, icon}, i) => (
+                        <div className={'flex gap-[10px]'} key={i}>
+                            {icon}
+                            <h5>{label}</h5>
+                        </div>
+                    ))
+                }
+            </div>
+            <Button className={'w-[190px]'} variant={'filled'}>Nezáväzné stretnutie</Button>
         </Description>
     )
 }
