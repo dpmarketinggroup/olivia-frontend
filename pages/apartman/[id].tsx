@@ -31,7 +31,19 @@ const ApartmentDetail = () => {
         kupelna_wc_rozloha,
         cislo_bytu,
         celkova_rozloha,
-        balkon_rozloha
+        balkon_rozloha,
+        obyvacia_izba_rozloha,
+        izba_rozloha,
+        izba2_rozloha,
+        izba3_rozloha,
+        izba4_rozloha,
+        predsien_rozloha,
+        chodba_rozloha,
+        pracovna_rozloha,
+        spaci_kut_rozloha,
+        kupelna_rozloha,
+        wc_rozloha,
+        terasa_rozloha
     } = apartment.data.attributes
     return (
         <>
@@ -169,28 +181,88 @@ const ApartmentDetail = () => {
                             <span
                                 className="font-medium text-[14px] leading-5 tracking-[0.1px] opacity-40">Plocha</span>
                         </div>
-                        <div className="flex justify-between mb-[25px]">
-                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Vstupná hala</p>
-                            <span>5.16 m²</span>
-                        </div>
                         {kuchynska_miestnostv2_rozloha && (
                             <div className="flex justify-between mb-[25px]">
                                 <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Kuchyňa</p>
                                 <span>{kuchynska_miestnostv2_rozloha} m²</span>
                             </div>
                         )}
-                        <div className="flex justify-between mb-[25px]">
-                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Obývacia izba</p>
-                            <span>25.30 m²</span>
-                        </div>
-                        <div className="flex justify-between mb-[25px]">
-                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Izba</p>
-                            <span>11.99 m²</span>
-                        </div>
+                        {predsien_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Predsieň</p>
+                                <span>{predsien_rozloha} m²</span>
+                            </div>
+                        )}
+                        {obyvacia_izba_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Obývacia izba</p>
+                                <span>{obyvacia_izba_rozloha} m²</span>
+                            </div>
+                        )}
+                        {chodba_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Chodba</p>
+                                <span>{chodba_rozloha} m²</span>
+                            </div>
+                        )}
+                        {pracovna_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Pracovňa</p>
+                                <span>{pracovna_rozloha} m²</span>
+                            </div>
+                        )}
+                        {spaci_kut_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Spací kút</p>
+                                <span>{spaci_kut_rozloha} m²</span>
+                            </div>
+                        )}
+                        {izba4_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Šatník</p>
+                                <span>{izba4_rozloha} m²</span>
+                            </div>
+                        )}
+                        {izba_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Izba č.1</p>
+                                <span>{izba_rozloha} m²</span>
+                            </div>
+                        )}
+                        {izba2_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Izba č.2</p>
+                                <span>{izba2_rozloha} m²</span>
+                            </div>
+                        )}
+                        {izba3_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Izba č.3</p>
+                                <span>{izba3_rozloha} m²</span>
+                            </div>
+                        )}
+                        {kupelna_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Kúpeľňa</p>
+                                <span>{kupelna_rozloha} m²</span>
+                            </div>
+                        )}
+                        {wc_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">WC</p>
+                                <span>{wc_rozloha} m²</span>
+                            </div>
+                        )}
                         {kupelna_wc_rozloha && (
                             <div className="flex justify-between mb-[25px]">
                                 <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Kúpelňa + WC</p>
                                 <span>{kupelna_wc_rozloha} m²</span>
+                            </div>
+                        )}
+                        {terasa_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Terasa</p>
+                                <span>{terasa_rozloha} m²</span>
                             </div>
                         )}
                         <div className="flex justify-between mb-[25px]">
@@ -213,7 +285,7 @@ const ApartmentDetail = () => {
                         <Button onClick={() => setOpened(true)} variant={'filled'} height={50} className={'w-full'}> Mám
                             záujem o apartmán č. {cislo_bytu}</Button>
                     </div>
-                    <div className="flex flex-col gap-[30px] items-center mb-[120px] xl:mb-[190px]">
+                    <div className="flex flex-col gap-[30px] items-center mb-[120px] xl:mb-[190px] xl:mt-[160px]">
                         <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
                         <h1 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] w-[250px] xl:w-auto text-center xl:text-left">Pôdorys
                             apartmánu na
