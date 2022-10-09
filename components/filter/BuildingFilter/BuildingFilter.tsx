@@ -105,7 +105,7 @@ const Building = () => {
                                               variant={'rectangle'}>
                                     s balkónom
                                 </FilterButton>
-                                <FilterButton icon={<BasketCrossedIcon/>} variant={'rectangle'}>
+                                <FilterButton clicked={clicked.withoutBalcony} onClick={() => setClicked({...clicked, withoutBalcony: !clicked.withoutBalcony})} icon={<BasketCrossedIcon/>} variant={'rectangle'}>
                                     bez balkónu
                                 </FilterButton>
                             </div>
