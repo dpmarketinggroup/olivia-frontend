@@ -26,7 +26,6 @@ const FloorDetail = () => {
     const fetch = useStore(state => state.setSelectedApartment)
     const apartment = useStore(state => state.selectedApartment)
     console.log(apartment)
-    console.log('apartments')
 
     function currentApartmentRenderSvg () {
         switch(router.query.id) {
@@ -185,7 +184,6 @@ const FloorDetail = () => {
                             </div>
                         </div>
                         <div className="w-[400px] xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
-
                             {currentApartmentRenderSvg()}
                         </div>
                     </div>

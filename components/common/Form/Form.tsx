@@ -62,7 +62,7 @@ const Form
                 <Checkbox label={
                     <>
                         <p className="text-[14px] leading-5 text-[#999999]">Súhlasím so spracovaním <Link
-                            href="/pages/gdpr"><a
+                            href="/gdpr"><a
                             className="underline">osobných údajov</a></Link>
                         </p>
                     </>
