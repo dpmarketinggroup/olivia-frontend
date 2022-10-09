@@ -6,23 +6,25 @@ interface ButtonProps {
     className?: string;
     href?: string;
     children: React.ReactNode;
+    height?: number;
+    onClick?: () => void;
 }
-const Button = ({variant, href, className, children}: ButtonProps) => {
+const Button = ({variant, href, className, children, height = 40, onClick}: ButtonProps) => {
 
     const getClass = () => {
         switch (variant) {
             case "unstyled":
                 return '';
             case "filled":
-                return 'h-[40px] px-[20px] bg-green2 text-white font-medium hover:bg-primary'
+                return 'px-[20px] bg-green2 text-white font-medium hover:bg-primary'
             case "outlined":
-                return 'h-[40px] border border-green2 text-green2 h-[40px] px-[20px] font-medium hover:border-green2 hover:bg-green2 hover:text-white'
+                return 'border border-green2 text-green2 h-[40px] px-[20px] font-medium hover:border-green2 hover:bg-green2 hover:text-white'
         }
     }
 
     return (
         <Link href={href || '/'}>
-            <button className={`${getClass()} ${className}`}>{children}</button>
+            <button onClick={onClick} style={{height}} className={`${getClass()} ${className}`}>{children}</button>
         </Link>
     );
 };

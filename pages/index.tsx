@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <>
             <Head>
-                <title>Modern=é mestské bývanie | Olivia Residence</title>
+                <title>Moderné mestské bývanie | Olivia Residence</title>
             </Head>
             <section className="flex justify-center pt-[115px]">
                 <div className="h-[650px] w-full max-w-[1920px] xl:mb-[140px] relative">

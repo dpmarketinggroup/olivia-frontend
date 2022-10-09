@@ -5,11 +5,34 @@ import {ArrowDownNotFilledIcon, Bank, FloorPlan, RightArrow, Severka, Star} from
 import Link from "next/link";
 import Image from "next/image";
 import {CustomSwiper} from "@components/swiper";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {useRouter} from "next/router";
+import {useStore} from "../../lib/store/useStore";
+import {Button} from "@components/ui";
 
 const ApartmentDetail = () => {
     const [opened, setOpened] = useState(false);
     const [opened2, setOpened2] = useState(false);
+
+    const router = useRouter()
+
+    const getApartment = useStore(state => state.getApartment)
+    const apartment = useStore(state => state.selectedApartment)
+
+    useEffect(() => {
+        if (router.query.id) getApartment(Number(router.query.id));
+    }, [router.query])
+
+    if (!apartment) return <div className={'h-screen'}>No apartment found</div>
+    const {
+        cena,
+        dostupnost,
+        kuchynska_miestnostv2_rozloha,
+        kupelna_wc_rozloha,
+        cislo_bytu,
+        celkova_rozloha,
+        balkon_rozloha
+    } = apartment.data.attributes
     return (
         <>
             <Head>
@@ -69,18 +92,18 @@ const ApartmentDetail = () => {
                     </div>
                     <div className="mx-4 xl:mx-[165px]">
                         <h3 className="mb-[25px] font-bold text-[20px] xl:text-[24px] leading-[32px] tracking-[-0.1px] text-center xl:text-left">Apartmán
-                            č. 5.05</h3>
+                            č. {cislo_bytu}</h3>
                         <div onClick={() => setOpened2(true)}
                              className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center xl:items-start justify-center">
                             <div className="w-[290px] xl:w-[780px] h-[126px] xl:h-[460px] xl:flex justify-center">
-                                <div className="mx-auto xl:mx-0 h-[126px] xl:h-[380px] w-[100px] xl:w-[300px] relative">
-                                    <Image
-                                        objectFit="fill"
-                                        layout="fill"
-                                        alt="hero image"
-                                        src="/img/apartment1.png"
-                                    />
-                                </div>
+                                {/*<div className="mx-auto xl:mx-0 h-[126px] xl:h-[380px] w-[100px] xl:w-[300px] relative">*/}
+                                {/*    <Image*/}
+                                {/*        objectFit="fill"*/}
+                                {/*        layout="fill"*/}
+                                {/*        alt="hero image"*/}
+                                {/*        src="/img/apartment1.png"*/}
+                                {/*    />*/}
+                                {/*</div>*/}
                             </div>
                             <div className="flex flex-col gap-[20px] xl:gap-[40px]">
                                 <div className="w-[290px] h-[126px] relative">
@@ -130,16 +153,16 @@ const ApartmentDetail = () => {
                         <div className="flex justify-between mb-[25px]">
                             <p className="text-[#676766] font-medium text-[16px] leading-6 tracking-[0.1px]">Číslo
                                 apartmánu</p>
-                            <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">5.05</span>
+                            <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">{cislo_bytu}</span>
                         </div>
                         <div className="flex justify-between mb-[25px] items-center">
                             <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Cena</p>
-                            <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px]">142 800€</span>
+                            <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px]">{cena} €</span>
                         </div>
                         <div className="flex justify-between mb-[70px]">
                             <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Dostupnosť</p>
                             <span
-                                className="font-bold text-[16px] leading-6 tracking-[0.1px] text-[#476761]">voľný</span>
+                                className="font-bold text-[16px] leading-6 tracking-[0.1px] text-[#476761]">{dostupnost}</span>
                         </div>
                         <div className="flex justify-between mb-[25px]">
                             <p className="font-medium text-[14px] leading-5 tracking-[0.1px] opacity-40">Názov</p>
@@ -150,10 +173,12 @@ const ApartmentDetail = () => {
                             <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Vstupná hala</p>
                             <span>5.16 m²</span>
                         </div>
-                        <div className="flex justify-between mb-[25px]">
-                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Kuchyňa</p>
-                            <span>6.66 m²</span>
-                        </div>
+                        {kuchynska_miestnostv2_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Kuchyňa</p>
+                                <span>{kuchynska_miestnostv2_rozloha} m²</span>
+                            </div>
+                        )}
                         <div className="flex justify-between mb-[25px]">
                             <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Obývacia izba</p>
                             <span>25.30 m²</span>
@@ -162,47 +187,45 @@ const ApartmentDetail = () => {
                             <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Izba</p>
                             <span>11.99 m²</span>
                         </div>
-                        <div className="flex justify-between mb-[25px]">
-                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Kúpelňa + WC</p>
-                            <span>4.45 m²</span>
-                        </div>
+                        {kupelna_wc_rozloha && (
+                            <div className="flex justify-between mb-[25px]">
+                                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Kúpelňa + WC</p>
+                                <span>{kupelna_wc_rozloha} m²</span>
+                            </div>
+                        )}
                         <div className="flex justify-between mb-[25px]">
                             <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková výmera</p>
-                            <span className="font-bold">53.56 m²</span>
+                            <span className="font-bold">{celkova_rozloha} m²</span>
                         </div>
-                        <div className="flex justify-between mb-[25px]">
-                            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Balkón</p>
-                            <span>7.67 m²</span>
-                        </div>
-                        <div className="flex justify-between mb-[70px]">
-                            <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková výmera + Balkón</p>
-                            <span className="font-bold">61.23 m²</span>
-                        </div>
-                        <div onClick={() => setOpened(true)}>
-                            <Link href="/pages/detail-bytu">
-                                <button
-                                    className="hover:bg-primary px-[60px] xl:px-[440px] py-[12px] bg-[#476761] text-white mb-[110px] xl:mb-[160px]">Mám
-                                    záujem o apartmán č. 5.05
-                                </button>
-                            </Link>
-                        </div>
+                        {balkon_rozloha && (
+                            <>
+                                <div className="flex justify-between mb-[25px]">
+                                    <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Balkón</p>
+                                    <span>7.67 m²</span>
+                                </div>
+                                <div className="flex justify-between mb-[70px]">
+                                    <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková výmera +
+                                        Balkón</p>
+                                    <span className="font-bold">{celkova_rozloha + balkon_rozloha} m²</span>
+                                </div>
+                            </>
+                        )}
+                        <Button onClick={() => setOpened(true)} variant={'filled'} height={50} className={'w-full'}> Mám
+                            záujem o apartmán č. {cislo_bytu}</Button>
                     </div>
                     <div className="flex flex-col gap-[30px] items-center mb-[120px] xl:mb-[190px]">
                         <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
                         <h1 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] w-[250px] xl:w-auto text-center xl:text-left">Pôdorys
                             apartmánu na
                             stiahnutie</h1>
-                        <Link href="/pages">
-                            <button
-                                className="hover:bg-primary bg-[#476761] text-white px-[20px] py-[6px] font-medium text-[16px] leading-6">Stiahnuť
-                                pôdorys
-                            </button>
-                        </Link>
+                        <Button variant={'filled'} href={'/'}>
+                            Stiahnuť pôdorys
+                        </Button>
                     </div>
                     <Description src="/img/car.png">
                         <p>test</p>
                     </Description>
-                    <CustomSwiper />
+                    <CustomSwiper/>
                 </div>
             </div>
             <MapFooter/>

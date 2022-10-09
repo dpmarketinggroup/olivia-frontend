@@ -28,8 +28,7 @@ export default Description;
 export const CommonDescription = () => {
     return (
         <Description src={'/img/room.jpg'}>
-            <h3 className={'font-bold text-[40px] leading-[48px] text-[#0E3F3B] xl:max-w-[310px]'}>Moderné
-                mestské bývanie</h3>
+            <h3 className={'font-bold text-[40px] leading-[48px] text-[#0E3F3B] xl:max-w-[310px]'}>Moderné mestské bývanie</h3>
             <p className={'text-black/60 mt-[20px]'}>
                 Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval za steny ich bytu. Pre ľudí, ktorí chcú
                 mať ich obľúbené aktivity na dosah ruky. Pre ľudí, ktorí chcú svoj čas využívať efektívne.
