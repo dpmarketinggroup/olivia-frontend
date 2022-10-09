@@ -1,7 +1,7 @@
 import React from 'react';
 import {Checkbox, RangeSlider} from "@mantine/core";
 import Link from "next/link";
-import Dom from './Dom'
+import House from './House'
 import {Table} from "@components/table";
 import FilterButton from "@components/ui/FilterButton/FilterButton";
 import {Basket} from "@components/icons";
@@ -13,7 +13,7 @@ const Building = () => {
         <>
             <div
                 className="xl:mx-[-30px] xl:mb-[-80px] xl:mt-[-70px] md:mx-[-25px] md:mb-[-105px] lg:mx-[-20px] lg:mb-[-130px] xl:mr-[-15px] xl:ml-[-15px] xl:mb-[-160px] xl:max-w-[1920px] 2xl:mb-[-195px] xl3">
-                <Dom/>
+                <House/>
             </div>
             <div className="building bg-primary-pattern w-full mb-[80px]">
                 <div className={'w-full max-w-[1200px] mx-auto py-[90px]'}>

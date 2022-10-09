@@ -13,12 +13,13 @@ const Kontakt = () => {
             </Head>
             <Hero imgName="kontaktHero" icon={<PhoneHero/>} title="Kontakt"/>
             <div className="flex justify-center">
-                <div className="mx-4 xl:mx-[165px]">
-                    <p className="font-medium text-[16px] leading-6 tracking-[0.1px] mb-[20px]">V prípade otázok nás
-                        neváhajte kontaktovať</p>
+                <div className="xl:mx-[165px] w-full">
+                    <p className="font-medium text-[16px] leading-6 tracking-[0.1px] mb-[20px] text-center xl:text-start">V prípade otázok nás neváhajte kontaktovať</p>
                     <div className="flex flex-col xl:flex-row gap-[40px] xl:gap-[135px]">
-                        <Form isGreen={true}/>
-                        <div>
+                        <div className="xl:mb-[125px]">
+                        <Form isGreen={false}/>
+                        </div>
+                        <div className="mx-auto xl:mx-0">
                             <div className="flex gap-[20px] items-center mb-[20px]">
                                 <Image
                                     objectFit="cover"
@@ -46,8 +47,7 @@ const Kontakt = () => {
                                     </Link>
                                 </div>
                             </div>
-                            <p className="hidden xl:inline-block font-medium text-[#676766] w-full xl:max-w-[335px]">V
-                                prípade záujmu o prenájom obchodného priestoru ma neváhajte kontaktovať</p>
+                            <p className="hidden xl:inline-block font-medium text-[#676766] w-full xl:max-w-[335px]">V prípade záujmu o prenájom obchodného priestoru ma neváhajte kontaktovať</p>
                         </div>
                     </div>
                 </div>

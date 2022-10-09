@@ -18,10 +18,10 @@ const OProjekte = () => {
             <Hero imgName={"oProjekteHero"} icon={<House/>} title={"O projekte"}
                   description="Všetky podstatné informácie o Vašom novom bývaní na jednom mieste."/>
             <Timeline/>
-            <div className={'px-[1rem] xl:px-0'}>
-                <Link href="/pages/stretnutie">
+            <div className={'px-[1rem] xl:px-0 xl:mx-auto'}>
+                <Link href="/stretnutie">
                     <button
-                        className="mx-auto hover:bg-primary bg-[#476761] w-full xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] mb-[90px] xl:mb-[185px]">
+                        className="hover:bg-primary bg-[#476761] w-full xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] mb-[90px] xl:mb-[185px]">
                         Nezáväzné stretnutie
                     </button>
                 </Link>
@@ -42,8 +42,7 @@ const OProjekte = () => {
                                 <UniCredit classname="w-full h-[44px] xl:-h-[65] xl:-w-[492px]"/>
                             </div>
                         </div>
-                        <div
-                            className="flex flex-col xl:flex-row gap-[30px] bg-[background: #F5F5F5] -translate-y-[50%] xl:-translate-y-1/3">
+                        <div className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-1/2">
                             {[
                                 {step: "1. krok", title: "Rezervačná zmluva", offer: "1 500 €"},
                                 {step: "2. krok", title: "Zmluva o budúcej zmluve", offer: "20% z ceny bytu"},
@@ -77,26 +76,25 @@ const OProjekte = () => {
                                             objectFit="cover"
                                             layout="fill"
                                             alt="Jozef Mrkvička"
-                                            src="/img/jozefMrkvicka.png"
+                                            src="/img/jozefOndercok.png"
                                         />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px] ">Jozef
-                                            Mrkvička</p>
+                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px] ">Jozef Onderčo</p>
                                         <span className="text-[14px] leading-5">Fin. poradca | UniCredit Bank</span>
                                     </div>
                                 </div>
                                 <div>
                                     <div className="flex gap-[20px]">
                                         <Phone/>
-                                        <Link href={'tel:+421911000000'}>
-                                            <a className="font-bold text-[18px] leading-7">+421 000 000</a>
+                                        <Link href={'tel:+421918501835'}>
+                                            <a className="font-bold text-[18px] leading-7">+421 918 501 835</a>
                                         </Link>
                                     </div>
                                     <div className="flex gap-[20px]">
                                         <EmailSign/>
-                                        <Link href={'mailto:info@oliviaresidence.sk'}>
-                                            <a className="font-bold text-[18px] leading-7">info@oliviaresidence.sk</a>
+                                        <Link href={'mailto:jozef.onderco@unicreditgroup.sk'}>
+                                            <a className="font-bold text-[18px] leading-7">jozef.onderco@unicreditgroup.sk</a>
                                         </Link>
                                     </div>
                                 </div>
