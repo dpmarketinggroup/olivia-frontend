@@ -86,12 +86,12 @@ const ApartmentDetail = () => {
                                 </div>
                                 <div
                                     className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[20px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[270px]">
-                                    <Link href="/pages/ponuka-bytov">
+                                    <Link href="/ponuka-bytov">
                                         <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Výber
                                             podlažia</a>
                                     </Link>
                                     <RightArrow stroke="#00000033"/>
-                                    <Link href="/pages/vyber-bytu-na-podlazi">
+                                    <Link href="/vyber-bytu-na-podlazi">
                                         <a className="font-medium text-[12px] xl:text-[14px] leading-5  text-[#00000033]">Výber
                                             apartmánu</a>
                                     </Link>
@@ -145,7 +145,7 @@ const ApartmentDetail = () => {
                             <Bank/>
                             <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">Financovanie</span>
                             <div className="flex gap-[8px] items-center">
-                                <Link href='/pages/o-projekte#financovanie'>
+                                <Link href='/o-projekte#financovanie'>
                                     <a className="font-medium text-[14px] leading-5 text-green2">Viac</a>
                                 </Link>
                                 <RightArrow stroke="#476761"/>
@@ -156,7 +156,7 @@ const ApartmentDetail = () => {
                             <span
                                 className="font-bold text-[16px] leading-6 tracking-[0.1px]">Nadštandardné vybavenie</span>
                             <div className="flex gap-[8px] items-center">
-                                <Link href='/pages'>
+                                <Link href='/'>
                                     <a className="font-medium text-[14px] leading-5 text-green2">Viac</a>
                                 </Link>
                                 <RightArrow stroke="#476761"/>
