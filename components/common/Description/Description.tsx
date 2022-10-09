@@ -5,16 +5,16 @@ import {Button} from "@components/ui";
 
 export interface DescriptionProps {
     src: string;
-    children: React.ReactNode,
-    className?: string
+    children: React.ReactNode;
+    className?: string;
+    reverse?:boolean
 }
 
-const Description = ({children, src, className}: DescriptionProps) => {
+const Description = ({children, src, className, reverse}: DescriptionProps) => {
     return (
-        <div
-            className={`flex flex-col xl:flex-row justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className}`}>
+        <div className={`flex flex-col ${reverse ? 'xl:flex-row-reverse': 'xl:flex-row'} justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className} mb-[125px]`}>
             <div className={'shrink-0'}>
-                <Image objectFit="cover" width={555} height={400} alt="hero image" src={src}/>
+                <Image objectFit="cover" width={555} height={400} alt="description image" src={src}/>
             </div>
             <div className="flex flex-col">
                 {children}
@@ -110,6 +110,44 @@ export const CarDescription = () => {
                         {icon: <Parking/>, label: 'Dlhodobý prenájom garážových státí'},
                         {icon: <Camera/>, label: 'Zabezpečené kamerovým systémom'}
                     ].map(({label, icon}, i) => (
+                        <div className={'flex gap-[10px]'} key={i}>
+                            {icon}
+                            <h5>{label}</h5>
+                        </div>
+                    ))
+                }
+            </div>
+            <Button className={'w-[190px]'} variant={'filled'}>Nezáväzné stretnutie</Button>
+        </Description>
+    )
+}
+
+interface CustomDescriptionProps{
+    src:string;
+    title:string;
+    description:string;
+    bulletPoints:[
+        {icon:JSX.Element, label: string},
+        {icon:JSX.Element, label: string},
+        {icon:JSX.Element, label: string},
+    ]
+    reverse?:boolean
+}
+
+export const CustomDescription = ({
+    src,
+    title,
+    description,
+    bulletPoints,
+    reverse = false,
+                                  }:CustomDescriptionProps) => {
+    return (
+        <Description src={`/img/${src}`} reverse={reverse}>
+            <h3 className={'text-[40px] leading-[48px] text-green2 font-bold'}>{title}</h3>
+            <p className={'text-black/60 my-[20px]'}>{description}</p>
+            <div className={'flex flex-col gap-[15px] mb-[30px]'}>
+                {
+                    bulletPoints.map(({label, icon}, i) => (
                         <div className={'flex gap-[10px]'} key={i}>
                             {icon}
                             <h5>{label}</h5>

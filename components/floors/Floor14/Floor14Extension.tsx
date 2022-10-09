@@ -13,27 +13,27 @@ const Floor14Extension = () => {
             </g>
             <g id="_x31_5.05">
                 <polygon className="st20" points="727.7,345.6 807.8,345.6 807.8,359.4 955.9,359.7 955.9,496.7 727.1,496.4  "
-                         onClick={() => fetch('14.05', Number(router.query.id))}
+                         onClick={() => fetch('15.05', Number(router.query.id))}
                 />
             </g>
             <g id="_x31_5.04">
                 <polygon className="st20" points="597.6,345.6 724,345.6 724,496.4 597.2,496.4  "
-                         onClick={() => fetch('14.04', Number(router.query.id))}
+                         onClick={() => fetch('15.04', Number(router.query.id))}
                 />
             </g>
             <g id="_x31_5.03">
                 <polygon className="st20" points="467.7,345.6 594.1,345.6 594.1,496.4 467.3,496.4  "
-                         onClick={() => fetch('14.03', Number(router.query.id))}
+                         onClick={() => fetch('15.03', Number(router.query.id))}
                 />
             </g>
             <g id="_x31_5.02">
                 <polygon className="st20" points="465.1,344.9 422.5,344.9 422.5,360.6 235.8,360.6 235.8,496.4 464.1,496.4  "
-                         onClick={() => fetch('14.02', Number(router.query.id))}
+                         onClick={() => fetch('15.02', Number(router.query.id))}
                 />
             </g>
             <g id="_x31_5.01">
                 <polygon className="st20" points="388.7,199.6 235.8,199.6 235.8,357.6 386.9,357.6 388.7,347.8 388.7,200.6  "
-                         onClick={() => fetch('14.01', Number(router.query.id))}
+                         onClick={() => fetch('15.01', Number(router.query.id))}
                 />
             </g>
         </>

@@ -153,13 +153,13 @@ g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
 }
 
 .st19 {
-    opacity: 0.7;
+    opacity: 0;
     fill: #476761;
     enable-background: new;
 }
 
 .st19:hover {
-    opacity: 0;
+    opacity: 0.7;
 }
 
 .st20 {
@@ -275,12 +275,13 @@ g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
 }
 
 .floor13 .st20 {
-    opacity: 0.7;
+    cursor: pointer;
+    opacity: 0;
     fill: #476761;
 }
 
 .st20:hover {
-    opacity: 0;
+    opacity: 0.7;
 }
 
 .floor13 .st21 {
@@ -396,12 +397,12 @@ g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
 }
 
 .floor14 .st20 {
-    opacity: 0.7;
+    opacity: 0;
     fill: #476761;
 }
 
 .floor14 .st20:hover {
-    opacity: 0;
+    opacity: 0.7;
 }
 
 .floor14 .st21 {

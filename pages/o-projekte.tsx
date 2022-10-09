@@ -8,8 +8,52 @@ import {
 } from "@components/icons";
 import Head from "next/head";
 import Image from "next/image";
+import {CarDescription, CustomDescription} from "@components/common/Description/Description";
+import KitchenIcon from "@components/icons/Kitchen";
+import SinkIcon from "@components/icons/Sink";
+import GlassStarIcon from "@components/icons/GlassStar";
+import BasketIcon from "@components/icons/Basket";
+import ElectricPanelIcon from "@components/icons/ElectricPanel";
+import TwoArrowsIcon from "@components/icons/TwoArrows";
+
+interface CustomDescriptionProps{
+    src:string;
+    title:string;
+    description:string;
+    bulletPoints:[
+        {icon:JSX.Element, label: string},
+        {icon:JSX.Element, label: string},
+        {icon:JSX.Element, label: string},
+    ]
+    reverse?:boolean
+}
 
 const OProjekte = () => {
+
+    const customDescriptionList : CustomDescriptionProps[] = [
+        {
+            src: "room3.jpg",
+            title: "Vysoký štandard vrátane komplentej kuchyne a sanity",
+            description:"Veľko-metrážne balkóny a terasy s exterierovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
+            bulletPoints:[
+                {icon: <KitchenIcon/>, label: "Kuchynská linka so spotrebičmi ako štandard"},
+                {icon: <SinkIcon/>, label: "Sanita vo vysokej kvalite"},
+                {icon: <GlassStarIcon/>, label: "Kvalitné materiály podlahy a obkladov"},
+            ]
+        },
+        {
+            src:"balcony.jpg",
+            title: "Priestranné balkóny a terasy s exterierovým slnečným tienením",
+            description: "Veľko-metrážne balkóny a terasy s exterierovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
+            bulletPoints:[
+                {icon: <BasketIcon/>, label: "Balkón ako štandard pre každý byt"},
+                {icon: <ElectricPanelIcon/>, label: "Elektrické exteriérové slnečné tienenie ako štandard"},
+                {icon: <TwoArrowsIcon/>, label: "Veľko-metrážne terasy"},
+            ],
+            reverse: true
+        }
+    ]
+
     return (
         <div className={'flex flex-col'}>
             <Head>
@@ -26,9 +70,10 @@ const OProjekte = () => {
                     </button>
                 </Link>
             </div>
-            <Description src={'/img/room3.jpg'}>
-                <p>kkt</p>
-            </Description>
+            {customDescriptionList.map((props, index) =>(
+                <CustomDescription key={index} {...props}/>
+            ))}
+            <CarDescription/>
             <div className="flex justify-center" id="financovanie">
                 <div className="w-full">
                     <div className="relative mb-[100px] xl:mb-[200px] flex flex-col">

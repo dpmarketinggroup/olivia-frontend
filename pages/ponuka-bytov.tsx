@@ -4,6 +4,7 @@ import {Man, Parking, Camera, FloorPlan, ArrowDownNotFilledIcon, RightArrow, Sev
 import {Select} from "@mantine/core";
 import Head from "next/head";
 import Link from "next/link";
+import {CarDescription} from "@components/common/Description/Description";
 
 const PonukaBytov = () => {
     return (
@@ -56,7 +57,7 @@ const PonukaBytov = () => {
                         </div>
                     </div>
                     <BuildingFilter/>
-                    <Description src="/img/car.png">test</Description>
+                    <CarDescription/>
                 </div>
             </div>
             <MapFooter/>
