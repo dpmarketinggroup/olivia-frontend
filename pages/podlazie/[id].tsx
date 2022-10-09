@@ -27,8 +27,8 @@ const FloorDetail = () => {
     const apartment = useStore(state => state.selectedApartment)
     console.log(apartment)
 
-    function currentApartmentRenderSvg () {
-        switch(router.query.id) {
+    function currentApartmentRenderSvg() {
+        switch (router.query.id) {
             case "3": {
                 return <Floor3/>
             }
@@ -71,6 +71,34 @@ const FloorDetail = () => {
         }
     }
 
+    function renderBalcony() {
+        const {
+            balkon_rozloha,
+            terasa_rozloha
+        } = apartment[0].attributes || null
+
+        if (balkon_rozloha && terasa_rozloha) {
+            return (
+                <>
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Terasa m²</span>
+                    <span
+                        className="pr-[70px] text-right font-bold text-[14px] leading-5">{terasa_rozloha} m²</span>
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Balkon m²</span>
+                    <span
+                        className="pr-[70px] text-right font-bold text-[14px] leading-5">{balkon_rozloha} m²</span>
+                </>
+            )
+        }
+        if (balkon_rozloha || terasa_rozloha) {
+            return (
+                <>
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Balkón | Terasa m²</span>
+                    <span
+                        className="pr-[70px] text-right font-bold text-[14px] leading-5">{balkon_rozloha || terasa_rozloha} m²</span>
+                </>
+            )
+        }
+    }
 
     function renderDetail() {
 
@@ -109,16 +137,10 @@ const FloorDetail = () => {
                     )}
                     <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Apartmán m²</span>
                     <span className="pr-[70px] text-right font-bold text-[14px] leading-5">{celkova_rozloha} m²</span>
-                    {balkon_rozloha || terasa_rozloha && (
-                        <>
-                            <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Balkón | Terasa m²</span>
-                            <span
-                                className="pr-[70px] text-right font-bold text-[14px] leading-5">{balkon_rozloha || terasa_rozloha} m²</span>
-                        </>
-                    )}
+                    {renderBalcony()}
                     <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Celková výmera</span>
                     <span
-                        className="pr-[70px] text-right font-bold text-[14px] leading-5">{celkova_rozloha + balkon_rozloha + terasa_rozloha} m²</span>
+                        className="pr-[70px] text-right font-bold text-[14px] leading-5">{(celkova_rozloha + balkon_rozloha + terasa_rozloha).toFixed(2)} m²</span>
                 </div>
                 <Button className={'mx-auto'} variant={'filled'} href={`/apartman/${id}`}>
                     Detail bytu
