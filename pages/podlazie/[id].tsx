@@ -3,10 +3,10 @@ import Head from "next/head";
 import {ArrowDownNotFilledIcon, FloorPlan, RightArrow, Severka} from "@components/icons";
 import {Select} from "@mantine/core";
 import Link from "next/link";
-import {Floor8} from "@components/floors/";
 import {MapFooter} from "@components/common";
 import {useStore} from "../../lib/store/useStore";
 import {Button} from "@components/ui";
+import {Floor7} from "@components/floors";
 
 const FloorDetail = () => {
     const router = useRouter()
@@ -126,7 +126,7 @@ const FloorDetail = () => {
                             </div>
                         </div>
                         <div className="w-[400px] xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
-                            <Floor8/>
+                            <Floor7/>
                         </div>
                     </div>
                 </div>

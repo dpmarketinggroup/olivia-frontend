@@ -1,6 +1,6 @@
-import Floor8Extension from "./Floor8Extension";
+import Floor7Extension from "./Floor7Extension";
 
-const Floor8 = () => {
+const Floor7 = () => {
     return (
         <>
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -10001,10 +10001,10 @@ const Floor8 = () => {
                             d="M621.5,103.5c0.5-0.9,1.3-1.8,2.6-2.5l2-1.1c0.9-0.5,1.5-0.9,1.8-1.3c0.6-0.6,0.8-1.2,0.8-1.9c0-0.8-0.3-1.5-0.8-2    s-1.2-0.7-2-0.7c-1.3,0-2.1,0.5-2.6,1.4c-0.3,0.5-0.4,1.2-0.4,2.1h-1.9c0-1.3,0.3-2.3,0.7-3.1c0.8-1.4,2.2-2.1,4.2-2.1    c1.7,0,2.9,0.5,3.7,1.4c0.8,0.9,1.2,1.9,1.2,3c0,1.2-0.4,2.2-1.2,3c-0.5,0.5-1.3,1.1-2.6,1.7l-1.4,0.8c-0.7,0.4-1.2,0.7-1.6,1    c-0.7,0.6-1.1,1.2-1.3,2h7.9v1.7h-10C620.8,105.5,621,104.5,621.5,103.5z"/>
                     </g>
                 </g>
-                <Floor8Extension/>
+                <Floor7Extension/>
             </svg>
         </>
     )
 }
 
-export default Floor8;
+export default Floor7;
