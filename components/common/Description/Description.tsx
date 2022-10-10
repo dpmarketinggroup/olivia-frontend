@@ -8,9 +8,10 @@ export interface DescriptionProps {
     children: React.ReactNode;
     className?: string;
     reverse?:boolean
+    heading?:boolean
 }
 
-const Description = ({children, src, className, reverse}: DescriptionProps) => {
+const Description = ({children, src, className, reverse, heading}: DescriptionProps) => {
     return (
         <div className={`flex flex-col ${reverse ? 'xl:flex-row-reverse': 'xl:flex-row'} justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className} mb-[125px]`}>
             <div className={'shrink-0'}>
@@ -61,11 +62,8 @@ export const CommonDescription = () => {
 
 export const ApartmentEquipmentDescription = () => {
     return (
-        <Description className={'my-[50px] xl:my-[95px]'} src={'/img/room2.jpg'}>
-            <div>
-
-            </div>
-            <h3 className={'font-bold text-[24px] leading-[32px] text-black xl:max-w-[300px] mb-[40px] text-center xl:text-left'}>
+        <Description className={'my-[50px] xl:my-[95px]'} src={'/img/room2.jpg'} >
+            <h3 className={'font-bold text-[24px] leading-[32px] text-black xl:max-w-[300px] mb-[40px] text-center xl:text-left mt-[30px] xl:mt-0'}>
                 <span className={'text-green2 underline'}>Vysoký štandard </span>
                 pre Váš maximálny komfort</h3>
             <div className={'flex flex-col gap-[25px] xl:grid xl:grid-cols-2 xl:gap-[65px]'}>
@@ -148,7 +146,7 @@ export const CustomDescription = ({
             <div className={'flex flex-col gap-[15px] mb-[30px]'}>
                 {
                     bulletPoints.map(({label, icon}, i) => (
-                        <div className={'flex gap-[10px]'} key={i}>
+                        <div className={'flex gap-[10px] text-[14px]'} key={i}>
                             {icon}
                             <h5>{label}</h5>
                         </div>

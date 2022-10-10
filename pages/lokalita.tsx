@@ -19,7 +19,9 @@ import TrainIcon from "@components/icons/Train";
 import WeightIcon from "@components/icons/Weight";
 import TennisIcon from "@components/icons/Tennis";
 import FootballIcon from "@components/icons/Football";
-import {CustomDescription} from "@components/common/Description/Description";
+import {ApartmentEquipmentDescription, CustomDescription} from "@components/common/Description/Description";
+import {Button} from "@components/ui";
+import React from "react";
 
 type Bulletpoint = {
     icon:JSX.Element, label: string
@@ -83,6 +85,16 @@ const Lokalita = () => {
             ))}
             <Negotiation title="Rožňavská 1A, Bratislava" subtitle="Lokalita, v ktorej máte všetko na dosah."
                          centerText={true}/>
+            <h2 className={'text-center mt-[175px] font-bold text-[40px] leading-[48px] tracking-[-0.5] text-[#0E3F3B]'}>Vybavenie apartmánov</h2>
+            <ApartmentEquipmentDescription/>
+            <div className={'flex flex-col xl:flex-row gap-[10px] justify-center mt-[-50px] mb-[175px] mx-4 '}>
+                <Button variant={'outlined'}>
+                    Vybavenie apartmánov
+                </Button>
+                <Button variant={'filled'}>
+                    Nezáväzné stretnutie
+                </Button>
+            </div>
             <MapFooter/>
         </>
     )

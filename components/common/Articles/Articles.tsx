@@ -12,7 +12,7 @@ const Articles = ({withHeading = true, classname}: NewsSectionProps) => {
     const [opened, setOpened] = useState(false);
     return (
         <>
-            <div className={`px-[1rem] xl:px-0 ${classname} pt-[75px]`}>
+            <div className={`px-[1rem] ${classname}`}>
                 {withHeading &&
                     <div className="text-center mb-[55px] xl:mb-[110px]">
                         <h2 className="font-bold text-[27px] xl:text-[40px] leading-[48px] mb-[10px] xl:mb-[20px]">Novinky</h2>

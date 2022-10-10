@@ -22,7 +22,7 @@ const MapFooter = () => {
                                 </button>
                             </Link>
                         </div>
-                        <div className="xl:my-auto">
+                        <div className="mb-[-10px] xl:my-auto mx-auto xl:mx-0">
                             <Image
                                 quality={100}
                                 objectFit="cover"

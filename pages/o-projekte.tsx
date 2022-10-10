@@ -76,8 +76,8 @@ const OProjekte = () => {
             <CarDescription/>
             <div className="flex justify-center" id="financovanie">
                 <div className="w-full">
-                    <div className="relative mb-[100px] xl:mb-[200px] flex flex-col">
-                        <div className="bg-black w-full px-[1rem] xl:px-0">
+                    <div className="relative mb-[100px] xl:mb-0 flex flex-col">
+                        <div className="bg-black w-full px-[1rem] xl:px-0 h-[300px] xl:h-[600px]">
                             <div
                                 className="flex flex-col gap-[30px] justify-center items-center pt-[130px] pb-[350px] xl:pb-[270px]">
                                 <h2 className="font-bold text-[32px] xl:text-[40px] leading-[48px] text-[#F5F5F5] text-center xl:text-left">Podmienky
@@ -94,7 +94,7 @@ const OProjekte = () => {
                                 {step: "3. krok", title: "Kúpna zmluva", offer: "80% z ceny bytu"},
                             ].map(({step, title, offer}, index) => (
                                 <div key={index}
-                                     className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white mx-[1rem] xl:mx-0">
+                                     className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white mx-[1rem] xl:mx-0 w-[350px]">
                                     <span
                                         className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#C6C6C6]">{step}</span>
                                     <h4 className="font-bold text-[18px] leading-7 ">{title}</h4>
@@ -105,7 +105,7 @@ const OProjekte = () => {
                                 </div>
                             ))}
                         </div>
-                        <div className=" w-[full] -mt-[250px]">
+                        <div className=" w-[full] -mt-[270px] bg-[#F5F5F5] h-[300px] xl:h-[600px]">
                             <div
                                 className="flex flex-col xl:flex-row gap-[50px] xl:gap-[100px] xl:pt-[270px] xl:pb-[145px] pb-[50px] xl:mx-[165px] items-center justify-center">
                                 <div className="hidden xl:inline-block">

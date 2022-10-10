@@ -24,7 +24,7 @@ const Button = ({variant, href, className, children, height = 40, onClick}: Butt
 
     return (
         <Link href={href || '/'}>
-            <button onClick={onClick} style={{height}} className={`${getClass()} ${className}`}>{children}</button>
+            <button onClick={onClick} style={{height}} className={`${className} ${getClass()} `}>{children}</button>
         </Link>
     );
 };
