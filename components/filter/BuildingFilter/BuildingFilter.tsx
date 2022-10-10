@@ -8,6 +8,7 @@ import axios, {AxiosResponse} from "axios";
 import {value} from "dom7";
 
 const Building = () => {
+    const [apartments, setApartments] = useState([]);
     const [price, setPrice] = useState<[number, number]>([70, 380]);
     const [floor, setFloor] = useState<[number, number]>([3, 14]);
     const [area, setArea] = useState<[number, number]>([34, 130]);
@@ -50,9 +51,7 @@ const Building = () => {
         if (isReservatedChecked) query += `filters[dostupnost][$ne]=rezervovaný`
 
         const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts${query}`)
-        console.log(`https://floating-scrubland-57360.herokuapp.com/api/byts${query}`)
-        console.log(res.data)
-
+        setApartments(res.data.data)
     }
 
     return (
