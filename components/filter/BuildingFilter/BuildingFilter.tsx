@@ -249,7 +249,7 @@ const Building = () => {
                             </div>
                         </div>
                         <button onClick={handleClick}
-                                className={'mt-auto bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[25px] xl:mt-0'}>Hľadať
+                                className={'bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[25px] xl:mt-auto'}>Hľadať
                         </button>
                     </div>
                 </div>
@@ -286,10 +286,10 @@ const Building = () => {
                 ) : ''}
                 {oneAndHalfRooms?.length ? (
                     <div>
-                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[95px]'}>1.5-izbové byty</h3>
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>1.5-izbové byty</h3>
                         <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
                             {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
-                                <h5 className={`w-[130px] ${index === 6 && 'text-right'}`} key={index}>{value}</h5>
+                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`} key={index}>{value}</h5>
                             ))}
                         </div>
                         {
@@ -314,11 +314,11 @@ const Building = () => {
                 ) : ''}
                 {twoRooms?.length ? (
                     <div>
-                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[95px]'}>2-izbové
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>2-izbové
                             byty</h3>
                         <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
                             {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
-                                <h5 className={`w-[130px] ${index === 6 && 'text-right'}`} key={index}>{value}</h5>
+                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`} key={index}>{value}</h5>
                             ))}
                         </div>
                         {
@@ -343,11 +343,11 @@ const Building = () => {
                 ) : ''}
                 {threeRooms?.length ? (
                     <div>
-                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[95px]'}>3-izbové
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>3-izbové
                             byty</h3>
                         <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
                             {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
-                                <h5 className={`w-[130px] ${index === 6 && 'text-right'}`} key={index}>{value}</h5>
+                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`} key={index}>{value}</h5>
                             ))}
                         </div>
                         {
@@ -372,11 +372,11 @@ const Building = () => {
                 ) : ''}
                 {fourRooms?.length ? (
                     <div>
-                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[95px]'}>4-izbové
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>4-izbové
                             byty</h3>
                         <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
                             {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
-                                <h5 className={`w-[130px] ${index === 6 && 'text-right'}`} key={index}>{value}</h5>
+                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`} key={index}>{value}</h5>
                             ))}
                         </div>
                         {
@@ -395,7 +395,6 @@ const Building = () => {
                                 ]}/>
                             ))
                         }
-
                     </div>
 
                 ) : ''}
