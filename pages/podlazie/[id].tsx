@@ -154,23 +154,21 @@ const FloorDetail = () => {
             <Head>
                 <title>Výber bytu na podlaží | Olivia Residence</title>
             </Head>
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-[60px]">
                 <div>
-                    <div className="flex justify-center my-[70px]">
-                        <div className="mx-4 xl:mx-[165px]">
+                    <div className="my-[70px]">
+                        <div className="mx-4 xl:mx-auto w-full xl:max-w-[1200px]">
                             <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                                 <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
-                                <h1 className="font-bold text-[32px] w-[250px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber
-                                    apartmánu na podlaží</h1>
+                                <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber apartmánu na podlaží</h1>
                             </div>
-                            <div
-                                className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between">
+                            <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
                                 <div
                                     className="flex gap-[8px] xl:gap-[13px] items-center px-[20px] xl:px-[29px] py-[7px] xl:py-[16px] bg-[#F5F5F5] rounded-[15px] xl:rounded-[33px] xl:mr-[155px]">
                                     <Select
                                         className="w-[120px] floor-num"
                                         data={[
-                                            "4. podlažie", "5. podlažie", "7. podlažie", "8. podlažie", "9. podlažie", "10. podlažie", "11. podlažie", "12. podlažie",
+                                            "4. podlažie", "5. podlažie", "7. podlažie", "8. podlažie", "9. podlažie", "10. podlažie", "11. podlažie", "12. podlažie", "13. podlažie", "14. podlažie",
                                         ]}
                                         placeholder="7. podlažie"
                                         variant="unstyled"
@@ -181,7 +179,7 @@ const FloorDetail = () => {
                                     />
                                 </div>
                                 <div
-                                    className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[270px]">
+                                    className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[285px] xl:w-[450px] xl:justify-center">
                                     <Link href="/ponuka-bytov">
                                         <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Výber
                                             podlažia</a>
@@ -198,14 +196,13 @@ const FloorDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <div
-                        className="flex flex-col xl:flex-row flex-col-reverse xl:gap-[32px] items-center xl:items-start xl:ml-[165px]">
-                        <div className="bg-[#F5F5F5] max-h-[520px] w-[400px]">
+                    <div className="flex flex-col xl:flex-row flex-col-reverse xl:justify-between items-center xl:items-start xl:max-w-[1200px] xl:mx-auto">
+                        <div className="bg-[#F5F5F5] max-h-[520px] w-full xl:w-[400px]">
                             <div className="py-[60px]">
                                 {renderDetail()}
                             </div>
                         </div>
-                        <div className="w-[400px] xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
+                        <div className="w-full xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
                             {currentApartmentRenderSvg()}
                         </div>
                     </div>
