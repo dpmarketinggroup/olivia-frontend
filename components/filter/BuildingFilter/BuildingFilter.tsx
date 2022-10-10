@@ -11,6 +11,7 @@ const Building = () => {
     const [price, setPrice] = useState<[number, number]>([70, 380]);
     const [floor, setFloor] = useState<[number, number]>([3, 14]);
     const [area, setArea] = useState<[number, number]>([34, 130]);
+
     const [isSoldChecked, setIsSoldChecked] = useState(false);
     const [isReservatedChecked, setIsReservatedChecked] = useState(false);
 
@@ -29,23 +30,28 @@ const Building = () => {
 
     async function handleClick() {
         const clickedButtons: { [x: string]: true; }[] = [];
-        let query = `?filters[cena][$gte]=${price[0]}&filters[cena][$lte]=${price[1]}&filters[celkova_rozloha][$gte]=${area[0]}&filters[celkova_rozloha][$lte]=${area[1]}&filters[poschodie][$gte]=${floor[0]}&filters[poschodie][$lte]=${floor[1]}`
+        let query = `?filters[cena][$gte]=${price[0]*1000}&filters[cena][$lte]=${price[1]*1000}&filters[celkova_rozloha][$gte]=${area[0]}&filters[celkova_rozloha][$lte]=${area[1]}&filters[poschodie][$gte]=${floor[0]}&filters[poschodie][$lte]=${floor[1]}&pagination[pageSize]=100`
         Object.entries(clicked).forEach(([key, value]) => {
             if (value)  clickedButtons.push({[key]: value})
         })
         if (clickedButtons.length) {
             clickedButtons.forEach((button) => {
-                if (button.room1Clicked) query += `filters[pocet_izieb][$eq]=jedno-izbový`
-                if (button.room2Clicked) query += `filters[pocet_izieb][$eq]=dvoj-izbový`
-                if (button.room15Clicked) query += `filters[pocet_izieb][$eq]=jeden a pol-izbový`
-                if (button.room3Clicked) query += `filters[pocet_izieb][$eq]=troj-izbový`
-                if (button.room4Clicked) query += `filters[pocet_izieb][$eq]=štvor-izbový`
-                if (button.withTerrace) query += `filters[terasa_rozloha][$notNull]=true`
-                if (button.withoutBalcony) query += `filters[balkon_rozloha][$null]=true`
-                if (button.withBalcony) query += `filters[balkon_rozloha][$notNull]=true`
+                if (button.room1Clicked) query += `&filters[pocet_izieb][$eq]=jedno-izbový`
+                if (button.room2Clicked) query += `&filters[pocet_izieb][$eq]=dvoj-izbový`
+                if (button.room15Clicked) query += `&filters[pocet_izieb][$eq]=jeden a pol-izbový`
+                if (button.room3Clicked) query += `&filters[pocet_izieb][$eq]=troj-izbový`
+                if (button.room4Clicked) query += `&filters[pocet_izieb][$eq]=štvor-izbový`
+                if (button.withTerrace) query += `&filters[terasa_rozloha][$notNull]=true`
+                if (button.withoutBalcony) query += `&filters[balkon_rozloha][$null]=true`
+                if (button.withBalcony) query += `&filters[balkon_rozloha][$notNull]=true`
             })
         }
-        console.log(query, area, price, floor)
+        if (isSoldChecked) query += `filters[dostupnost][$ne]=predaný`
+        if (isReservatedChecked) query += `filters[dostupnost][$ne]=rezervovaný`
+
+        const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts${query}`)
+        console.log(`https://floating-scrubland-57360.herokuapp.com/api/byts${query}`)
+        console.log(res.data)
 
     }
 
@@ -146,7 +152,7 @@ const Building = () => {
                                 </FilterButton>
                             </div>
                             <div className={'flex gap-[30px]'}>
-                                <Checkbox label={'nezobrazovať predané'} size={'md'} sx={{
+                                <Checkbox label={'nezobrazovať predané'} size={'md'} checked={isSoldChecked} onChange={(e) => setIsSoldChecked(e.currentTarget.checked)} sx={{
                                     '.mantine-Checkbox-label': {
                                         color: 'white'
                                     },
@@ -167,7 +173,7 @@ const Building = () => {
                                         color: '#0E3F3B'
                                     }
                                 }}/>
-                                <Checkbox label={'nezobrazovať rezervované'}  size={'md'} sx={{
+                                <Checkbox label={'nezobrazovať rezervované'} checked={isReservatedChecked} onChange={(e) => setIsReservatedChecked(e.currentTarget.checked)}  size={'md'} sx={{
                                     '.mantine-Checkbox-label': {
                                         color: 'white'
                                     },
