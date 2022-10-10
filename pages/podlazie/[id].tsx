@@ -154,10 +154,10 @@ const FloorDetail = () => {
             <Head>
                 <title>Výber bytu na podlaží | Olivia Residence</title>
             </Head>
-            <div className="flex justify-center mt-[60px]">
+            <div className="mx-auto mt-[60px]">
                 <div>
                     <div className="my-[70px]">
-                        <div className="mx-4 xl:mx-auto w-full xl:max-w-[1200px]">
+                        <div className="xl:mx-auto w-full xl:max-w-[1200px]">
                             <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                                 <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
                                 <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber apartmánu na podlaží</h1>
@@ -179,7 +179,7 @@ const FloorDetail = () => {
                                     />
                                 </div>
                                 <div
-                                    className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[285px] xl:w-[450px] xl:justify-center">
+                                    className="flex gap-[10px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[285px] xl:w-[450px] xl:justify-center">
                                     <Link href="/ponuka-bytov">
                                         <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Výber
                                             podlažia</a>
@@ -202,7 +202,7 @@ const FloorDetail = () => {
                                 {renderDetail()}
                             </div>
                         </div>
-                        <div className="w-full xl:w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
+                        <div className="w-full max-w-[450px] xl:w-full xl:max-w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
                             {currentApartmentRenderSvg()}
                         </div>
                     </div>
