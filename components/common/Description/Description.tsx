@@ -122,15 +122,15 @@ export const CarDescription = () => {
     )
 }
 
+type Bulletpoint = {
+    icon:JSX.Element, label: string
+}
+
 interface CustomDescriptionProps{
     src:string;
     title:string;
     description:string;
-    bulletPoints:[
-        {icon:JSX.Element, label: string},
-        {icon:JSX.Element, label: string},
-        {icon:JSX.Element, label: string},
-    ]
+    bulletPoints:Bulletpoint[],
     reverse?:boolean
 }
 
