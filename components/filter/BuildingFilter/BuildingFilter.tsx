@@ -1,12 +1,10 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Checkbox, RangeSlider} from "@mantine/core";
-import Link from "next/link";
 import House from './House'
 import {Table} from "@components/table";
-import FilterButton from "@components/ui/FilterButton/FilterButton";
-import {Basket} from "@components/icons";
-import BasketCrossedIcon from "@components/icons/BasketCrossed";
-import TwoArrowsIcon from "@components/icons/TwoArrows";
+import {FilterButton} from "@components/ui/";
+import {BasketCrossed, TwoArrows, Basket} from "@components/icons";
+import axios, {AxiosResponse} from "axios";
 
 const Building = () => {
     const [clicked, setClicked] = useState({
@@ -19,6 +17,27 @@ const Building = () => {
         withBalcony: false,
         withoutBalcony: false
     });
+
+
+
+    async function handleClick() {
+        const clickedButtons: { [x: string]: true; }[] = [];
+        let query = ''
+        Object.entries(clicked).forEach(([key, value]) => {
+            if (value)  clickedButtons.push({[key]: value})
+        })
+        if (clickedButtons.length) {
+            clickedButtons.forEach((button, i) => {
+                if (button.room1Clicked) query += `${i === 0 ? '?' : '&'}filters[pocet_izieb][$eq]=jedno-izbový`
+                if (button.room2Clicked) query += `${i === 0 ? '?' : '&'}filters[pocet_izieb][$eq]=dvoj-izbový`
+                if (button.room15Clicked) query += `${i === 0 ? '?' : '&'}filters[pocet_izieb][$eq]=jeden a pol-izbový`
+                if (button.room3Clicked) query += `${i === 0 ? '?' : '&'}filters[pocet_izieb][$eq]=troj-izbový`
+                if (button.room4Clicked) query += `${i === 0 ? '?' : '&'}filters[pocet_izieb][$eq]=štvor-izbový`
+            })
+        }
+
+    }
+
     return (
         <>
             <div
@@ -96,7 +115,7 @@ const Building = () => {
                             <div className="flex gap-[20px] items-end">
                                 <div className="flex flex-col">
                                     <span className="text-white">Výbava:</span>
-                                    <FilterButton clicked={clicked.withTerrace} onClick={() => setClicked({...clicked, withTerrace: !clicked.withTerrace})} icon={<TwoArrowsIcon width={'22'} height={'22'} fill={clicked.withTerrace ? '#0E3F3B' : 'white'}/>}
+                                    <FilterButton clicked={clicked.withTerrace} onClick={() => setClicked({...clicked, withTerrace: !clicked.withTerrace})} icon={<TwoArrows width={'22'} height={'22'} fill={clicked.withTerrace ? '#0E3F3B' : 'white'}/>}
                                                   variant={'rectangle'}>
                                         s terasou
                                     </FilterButton>
@@ -105,7 +124,7 @@ const Building = () => {
                                               variant={'rectangle'}>
                                     s balkónom
                                 </FilterButton>
-                                <FilterButton clicked={clicked.withoutBalcony} onClick={() => setClicked({...clicked, withoutBalcony: !clicked.withoutBalcony})} icon={<BasketCrossedIcon/>} variant={'rectangle'}>
+                                <FilterButton clicked={clicked.withoutBalcony} onClick={() => setClicked({...clicked, withoutBalcony: !clicked.withoutBalcony})} icon={<BasketCrossed/>} variant={'rectangle'}>
                                     bez balkónu
                                 </FilterButton>
                             </div>
@@ -154,9 +173,8 @@ const Building = () => {
                                 }}/>
                             </div>
                         </div>
-                        <button className={'mt-auto bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold'}>Hľadať</button>
+                        <button onClick={handleClick} className={'mt-auto bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold'}>Hľadať</button>
                     </div>
-
                 </div>
             </div>
             <Table rows={[
