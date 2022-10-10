@@ -11,13 +11,14 @@ type Response = {
     id: number;
     attributes: {
         balkon_rozloha?: number;
+        terasa_rozloha?: number;
         celkova_rozloha: number;
         cena: string;
         chodba_rozloha?: number;
         chodba_rozloha2?: number;
         cislo_bytu: string;
         dostupnost: 'voľný' | 'rezervovaný' | 'predaný';
-        pocet_izieb: string;
+        pocet_izieb: 'jedno-izbový' | 'jeden a pol-izbový'| 'dvoj-izbový' | 'troj-izbový' | 'štvor-izbový';
         poschodie: number;
     }
 }
@@ -85,9 +86,9 @@ const Building = () => {
                 className="xl:mx-[-30px] xl:mb-[-80px] xl:mt-[-70px] md:mx-[-25px] md:mb-[-105px] lg:mx-[-20px] lg:mb-[-130px] xl:mr-[-15px] xl:ml-[-15px] xl:mb-[-160px] xl:max-w-[1920px] 2xl:mb-[-195px] xl3">
                 <House/>
             </div>
-            <div className="building bg-primary-pattern w-full mb-[80px]">
-                <div className={'w-full max-w-[1200px] mx-auto py-[90px]'}>
-                    <div className={'grid grid-cols-3 gap-[50px]'}>
+            <div className="building bg-primary-pattern w-full mb-[80px] px-[1rem] xl:px-0">
+                <div className={'w-full xl:max-w-[1200px] mx-auto py-[45px] xl:py-[90px]'}>
+                    <div className={'flex flex-col xl:grid grid-cols-3 gap-[50px]'}>
                         <div className={'text-white'}>
                             <h5 className={'mb-[20px] text-[14px] leading-[20px]'}>Cena € <span
                                 className={'font-bold pl-[1rem]'}>{price[0]}k - {price[1]}k</span></h5>
@@ -137,9 +138,9 @@ const Building = () => {
                             }}/>
                         </div>
                     </div>
-                    <div className={'flex justify-between'}>
+                    <div className={'flex flex-col xl:flex-row justify-between'}>
                         <div className="flex flex-col gap-[30px] mt-[50px]">
-                            <div className="flex gap-[20px]">
+                            <div className="flex justify-between xl:justify-start gap-[5px] xl:gap-[20px]">
                                 <FilterButton clicked={clicked.room1Clicked} onClick={() => setClicked({
                                     ...clicked,
                                     room1Clicked: !clicked.room1Clicked
@@ -171,7 +172,7 @@ const Building = () => {
                                     4 izb
                                 </FilterButton>
                             </div>
-                            <div className="flex gap-[20px] items-end">
+                            <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] xl:items-end">
                                 <div className="flex flex-col">
                                     <span className="text-white">Výbava:</span>
                                     <FilterButton clicked={clicked.withTerrace} onClick={() => setClicked({
@@ -248,16 +249,21 @@ const Building = () => {
                             </div>
                         </div>
                         <button onClick={handleClick}
-                                className={'mt-auto bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold'}>Hľadať
+                                className={'mt-auto bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[25px] xl:mt-0'}>Hľadať
                         </button>
                     </div>
                 </div>
             </div>
-            <div className={'flex flex-col xl:gap-[120px]'}>
+            <div className={'flex flex-col xl:gap-[120px] px-[1rem] xl:px-0'}>
                 {oneRooms?.length ? (
                     <div>
-                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[95px]'}>1-izbové
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>1-izbové
                             byty</h3>
+                        <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
+                            {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
+                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`} key={index}>{value}</h5>
+                            ))}
+                        </div>
                         {
                             oneRooms?.map(({attributes, id}) => (
                                 <Table key={id} rows={[
@@ -269,7 +275,35 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: 52
+                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0
+                                    }
+                                ]}/>
+                            ))
+                        }
+
+                    </div>
+
+                ) : ''}
+                {oneAndHalfRooms?.length ? (
+                    <div>
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[95px]'}>1.5-izbové byty</h3>
+                        <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
+                            {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
+                                <h5 className={`w-[130px] ${index === 6 && 'text-right'}`} key={index}>{value}</h5>
+                            ))}
+                        </div>
+                        {
+                            oneAndHalfRooms?.map(({attributes, id}) => (
+                                <Table key={id} rows={[
+                                    {
+                                        floor: attributes.poschodie,
+                                        apartmentNumber: attributes.cislo_bytu,
+                                        id,
+                                        numberOfRooms: 2,
+                                        availability: attributes.dostupnost,
+                                        price: attributes.cena,
+                                        totalArea: attributes.celkova_rozloha,
+                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0
                                     }
                                 ]}/>
                             ))
@@ -282,6 +316,11 @@ const Building = () => {
                     <div>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[95px]'}>2-izbové
                             byty</h3>
+                        <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
+                            {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
+                                <h5 className={`w-[130px] ${index === 6 && 'text-right'}`} key={index}>{value}</h5>
+                            ))}
+                        </div>
                         {
                             twoRooms?.map(({attributes, id}) => (
                                 <Table key={id} rows={[
@@ -293,7 +332,65 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: 52
+                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0
+                                    }
+                                ]}/>
+                            ))
+                        }
+
+                    </div>
+
+                ) : ''}
+                {threeRooms?.length ? (
+                    <div>
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[95px]'}>3-izbové
+                            byty</h3>
+                        <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
+                            {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
+                                <h5 className={`w-[130px] ${index === 6 && 'text-right'}`} key={index}>{value}</h5>
+                            ))}
+                        </div>
+                        {
+                            threeRooms?.map(({attributes, id}) => (
+                                <Table key={id} rows={[
+                                    {
+                                        floor: attributes.poschodie,
+                                        apartmentNumber: attributes.cislo_bytu,
+                                        id,
+                                        numberOfRooms: 2,
+                                        availability: attributes.dostupnost,
+                                        price: attributes.cena,
+                                        totalArea: attributes.celkova_rozloha,
+                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0
+                                    }
+                                ]}/>
+                            ))
+                        }
+
+                    </div>
+
+                ) : ''}
+                {fourRooms?.length ? (
+                    <div>
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[95px]'}>4-izbové
+                            byty</h3>
+                        <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
+                            {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
+                                <h5 className={`w-[130px] ${index === 6 && 'text-right'}`} key={index}>{value}</h5>
+                            ))}
+                        </div>
+                        {
+                            fourRooms?.map(({attributes, id}) => (
+                                <Table key={id} rows={[
+                                    {
+                                        floor: attributes.poschodie,
+                                        apartmentNumber: attributes.cislo_bytu,
+                                        id,
+                                        numberOfRooms: 2,
+                                        availability: attributes.dostupnost,
+                                        price: attributes.cena,
+                                        totalArea: attributes.celkova_rozloha,
+                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0
                                     }
                                 ]}/>
                             ))
@@ -303,22 +400,6 @@ const Building = () => {
 
                 ) : ''}
             </div>
-            {/*{apartments.length > 0 ? apartments.map(({attributes, id}, index) => {*/}
-            {/*    return (*/}
-            {/*        <Table key={id} rows={[*/}
-            {/*            {*/}
-            {/*                floor: '2',*/}
-            {/*                apartmentNumber: '2.03',*/}
-            {/*                id: 1,*/}
-            {/*                numberOfRooms: 2,*/}
-            {/*                availability: 'voľný',*/}
-            {/*                price: 121605,*/}
-            {/*                totalArea: 52.47,*/}
-            {/*                additionalRoom: 52*/}
-            {/*            }*/}
-            {/*        ]} title={'1-izbové byty'}/>*/}
-            {/*    )*/}
-            {/*}) : <div>Loading</div>}*/}
         </>
     );
 };

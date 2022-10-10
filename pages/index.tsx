@@ -53,22 +53,6 @@ const Home = () => {
                     <div
                         className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between">
                         <div
-                            className="flex gap-[8px] xl:gap-[13px] items-center px-[20px] xl:px-[29px] py-[7px] xl:py-[16px] bg-[#F5F5F5] rounded-[15px] xl:rounded-[33px] xl:mr-[155px] z-10">
-                            <Select
-                                className="w-[120px] floor-num"
-                                data={[
-                                    "3. podlažie",
-                                    "4. podlažie", "5. podlažie", "7. podlažie", "8. podlažie", "9. podlažie", "10. podlažie", "11. podlažie", "12. podlažie",
-                                ]}
-                                placeholder="7. podlažie"
-                                variant={'unstyled'}
-                                rightSection={<ArrowDownNotFilledIcon/>}
-                                rightSectionWidth={-70}
-                                styles={{rightSection: {pointerEvents: 'none'}}}
-                                transitionDuration={80}
-                            />
-                        </div>
-                        <div
                             className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[270px] z-10">
                             <Link href="/ponuka-bytov">
                                 <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761] text-center xl:text-left">Výber
