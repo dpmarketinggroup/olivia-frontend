@@ -103,7 +103,7 @@ const Home = () => {
                 </div>
             </div>
             <CustomSwiper/>
-            <Articles/>
+            <Articles classname={'mb-[90px] xl:pt-[120px]'}/>
             <Subscription/>
             <DeveloperSwiper/>
             <MapFooter/>

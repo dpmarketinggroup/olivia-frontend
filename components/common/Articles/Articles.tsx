@@ -4,14 +4,15 @@ import {Modal} from "@mantine/core";
 import Image from "next/image";
 import {useState} from "react";
 interface NewsSectionProps {
+    classname:string
     withHeading?: boolean
 }
 
-const Articles = ({withHeading = true}: NewsSectionProps) => {
+const Articles = ({withHeading = true, classname}: NewsSectionProps) => {
     const [opened, setOpened] = useState(false);
     return (
         <>
-            <div className={`px-[1rem] xl:px-0 mb-[90px] pt-[75px] xl:pt-[120px]`}>
+            <div className={`px-[1rem] xl:px-0 ${classname} pt-[75px]`}>
                 {withHeading &&
                     <div className="text-center mb-[55px] xl:mb-[110px]">
                         <h2 className="font-bold text-[27px] xl:text-[40px] leading-[48px] mb-[10px] xl:mb-[20px]">Novinky</h2>
