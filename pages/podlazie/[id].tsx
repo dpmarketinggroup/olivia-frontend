@@ -156,7 +156,7 @@ const FloorDetail = () => {
             </Head>
             <div className="mx-auto mt-[60px]">
                 <div>
-                    <div className="my-[70px]">
+                    <div className="my-[100px]">
                         <div className="xl:mx-auto w-full xl:max-w-[1200px]">
                             <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                                 <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
