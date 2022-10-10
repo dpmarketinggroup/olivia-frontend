@@ -21,7 +21,7 @@ const Negotiation = ({
                 {!centerText ?
                     (
                         <div
-                            className="flex flex-col xl:flex-row gap-[25px] xl:gap-[435px] mx-4 xl:mx-[165px] justify-center mb-[30px] xl:mb-[60px] xl:items-end">
+                            className="flex flex-col xl:flex-row gap-[25px] xl:gap-[540px] mx-4 xl:mx-[165px] justify-center mb-[30px] xl:mb-[60px] xl:items-end">
                             <div className="flex flex-col gap-[10px] xl:gap-[20px]">
                                 <h3 className="font-bold xl:w-auto text-[25px] xl:text-[40px] leading-[28px] xl:leading-[48px] tracking-[-0.5px]">{title}</h3>
                                 <p className="text-[#676766] font-normal text-[14px] xl:text-[16px] leading-[24px] tracking-[0.1px]">{subtitle}</p>
