@@ -5,8 +5,15 @@ import {Table} from "@components/table";
 import {FilterButton} from "@components/ui/";
 import {BasketCrossed, TwoArrows, Basket} from "@components/icons";
 import axios, {AxiosResponse} from "axios";
+import {value} from "dom7";
 
 const Building = () => {
+    const [price, setPrice] = useState<[number, number]>([70, 380]);
+    const [floor, setFloor] = useState<[number, number]>([3, 14]);
+    const [area, setArea] = useState<[number, number]>([34, 130]);
+    const [isSoldChecked, setIsSoldChecked] = useState(false);
+    const [isReservatedChecked, setIsReservatedChecked] = useState(false);
+
     const [clicked, setClicked] = useState({
         room1Clicked: false,
         room15Clicked: false,
@@ -22,19 +29,23 @@ const Building = () => {
 
     async function handleClick() {
         const clickedButtons: { [x: string]: true; }[] = [];
-        let query = ''
+        let query = `?filters[cena][$gte]=${price[0]}&filters[cena][$lte]=${price[1]}&filters[celkova_rozloha][$gte]=${area[0]}&filters[celkova_rozloha][$lte]=${area[1]}&filters[poschodie][$gte]=${floor[0]}&filters[poschodie][$lte]=${floor[1]}`
         Object.entries(clicked).forEach(([key, value]) => {
             if (value)  clickedButtons.push({[key]: value})
         })
         if (clickedButtons.length) {
-            clickedButtons.forEach((button, i) => {
-                if (button.room1Clicked) query += `${i === 0 ? '?' : '&'}filters[pocet_izieb][$eq]=jedno-izbový`
-                if (button.room2Clicked) query += `${i === 0 ? '?' : '&'}filters[pocet_izieb][$eq]=dvoj-izbový`
-                if (button.room15Clicked) query += `${i === 0 ? '?' : '&'}filters[pocet_izieb][$eq]=jeden a pol-izbový`
-                if (button.room3Clicked) query += `${i === 0 ? '?' : '&'}filters[pocet_izieb][$eq]=troj-izbový`
-                if (button.room4Clicked) query += `${i === 0 ? '?' : '&'}filters[pocet_izieb][$eq]=štvor-izbový`
+            clickedButtons.forEach((button) => {
+                if (button.room1Clicked) query += `filters[pocet_izieb][$eq]=jedno-izbový`
+                if (button.room2Clicked) query += `filters[pocet_izieb][$eq]=dvoj-izbový`
+                if (button.room15Clicked) query += `filters[pocet_izieb][$eq]=jeden a pol-izbový`
+                if (button.room3Clicked) query += `filters[pocet_izieb][$eq]=troj-izbový`
+                if (button.room4Clicked) query += `filters[pocet_izieb][$eq]=štvor-izbový`
+                if (button.withTerrace) query += `filters[terasa_rozloha][$notNull]=true`
+                if (button.withoutBalcony) query += `filters[balkon_rozloha][$null]=true`
+                if (button.withBalcony) query += `filters[balkon_rozloha][$notNull]=true`
             })
         }
+        console.log(query, area, price, floor)
 
     }
 
@@ -49,8 +60,8 @@ const Building = () => {
                     <div className={'grid grid-cols-3 gap-[50px]'}>
                         <div className={'text-white'}>
                             <h5 className={'mb-[20px] text-[14px] leading-[20px]'}>Cena € <span
-                                className={'font-bold pl-[1rem]'}>70k - 380k</span></h5>
-                            <RangeSlider min={70} step={10} max={380} size={2} sx={{
+                                className={'font-bold pl-[1rem]'}>{price[0]}k - {price[1]}k</span></h5>
+                            <RangeSlider onChange={value => setPrice(value)} value={price} min={70} step={10} max={380} size={2} sx={{
                                 '.mantine-Slider-thumb': {
                                     color: 'white',
                                     border: 'none',
@@ -64,8 +75,8 @@ const Building = () => {
                         </div>
                         <div className={'text-white'}>
                             <h5 className={'mb-[20px] text-[14px] leading-[20px]'}>Poschodie <span
-                                className={'font-bold pl-[1rem]'}>3-14</span></h5>
-                            <RangeSlider size={2} min={3} minRange={2} max={14} sx={{
+                                className={'font-bold pl-[1rem]'}>{floor[0]}-{floor[1]}</span></h5>
+                            <RangeSlider size={2} onChange={value => setFloor(value)} value={floor} min={3} minRange={2} max={14} sx={{
                                 '.mantine-Slider-thumb': {
                                     color: 'white',
                                     border: 'none',
@@ -79,8 +90,8 @@ const Building = () => {
                         </div>
                         <div className={'text-white'}>
                             <h5 className={'mb-[20px] text-[14px] leading-[20px]'}>Rozloha <span
-                                className={'font-bold pl-[1rem]'}>34 - 130 m²</span></h5>
-                            <RangeSlider min={34} step={5} max={130} size={2} sx={{
+                                className={'font-bold pl-[1rem]'}>{area[0]} - {area[1]} m²</span></h5>
+                            <RangeSlider onChange={value => setArea(value)} value={area} min={34} step={5} max={130} size={2} sx={{
                                 '.mantine-Slider-thumb': {
                                     color: 'white',
                                     border: 'none',
@@ -120,11 +131,17 @@ const Building = () => {
                                         s terasou
                                     </FilterButton>
                                 </div>
-                                <FilterButton clicked={clicked.withBalcony} onClick={() => setClicked({...clicked, withBalcony: !clicked.withBalcony})} icon={<Basket width={'22'} height={'22'} fill={clicked.withBalcony ? '#0E3F3B' : 'white'}/>}
+                                <FilterButton clicked={clicked.withBalcony} onClick={() => {
+                                    if (clicked.withoutBalcony) clicked.withoutBalcony = false;
+                                    setClicked({...clicked, withBalcony: !clicked.withBalcony})
+                                }} icon={<Basket width={'22'} height={'22'} fill={clicked.withBalcony ? '#0E3F3B' : 'white'}/>}
                                               variant={'rectangle'}>
                                     s balkónom
                                 </FilterButton>
-                                <FilterButton clicked={clicked.withoutBalcony} onClick={() => setClicked({...clicked, withoutBalcony: !clicked.withoutBalcony})} icon={<BasketCrossed/>} variant={'rectangle'}>
+                                <FilterButton clicked={clicked.withoutBalcony} onClick={() => {
+                                        if (clicked.withBalcony) clicked.withBalcony = false;
+                                        setClicked({...clicked, withoutBalcony: !clicked.withoutBalcony})
+                                }} icon={<BasketCrossed fill={clicked.withoutBalcony ? '#0E3F3B' : 'white'}/>} variant={'rectangle'}>
                                     bez balkónu
                                 </FilterButton>
                             </div>
@@ -150,7 +167,7 @@ const Building = () => {
                                         color: '#0E3F3B'
                                     }
                                 }}/>
-                                <Checkbox label={'nezobrazovať predané'} size={'md'} sx={{
+                                <Checkbox label={'nezobrazovať rezervované'}  onChange={event => } size={'md'} sx={{
                                     '.mantine-Checkbox-label': {
                                         color: 'white'
                                     },
