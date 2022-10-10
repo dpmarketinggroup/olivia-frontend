@@ -16,7 +16,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
         <div className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"} w-full `}>
             <div>
                 <div className="relative bg-black w-full px-[1rem] xl:px-[165px]">
-                    <div className="flex flex-col xl:flex-row xl:gap-[205px] items-center xl:items-start justify-between mx-auto xl:max-w-[1920px]">
+                    <div className="flex flex-col xl:flex-row xl:gap-[205px] items-center xl:items-start justify-between mx-auto xl:max-w-[1200px]">
                         <div className="flex flex-col items-center justify-center xl:items-start gap-[26px] pt-[45px] w-full">
                             <LogoSecondary/>
                             <p className="text-[14px] leading-[20px] text-white opacity-60 w-full xl:max-w-[330px]">Najnovšie
