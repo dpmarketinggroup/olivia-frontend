@@ -18,7 +18,7 @@ const Articles = ({withHeading = true}: NewsSectionProps) => {
                         <p className="text-[16px] leading-6 text-[#676766] mb-[10px] xl:mb-[20px]">Najnovšie informácie
                             o projekte Olivia Residence.</p>
                         <div className="flex gap-[10px] justify-center items-center">
-                            <Link href="/pages/novinky">
+                            <Link href="/novinky">
                                 <a className="text-[18px] font-medium leading-[28px] text-green2">Všetky novinky</a>
                             </Link>
                             <RightArrow stroke="#476761"/>
@@ -67,7 +67,7 @@ const Articles = ({withHeading = true}: NewsSectionProps) => {
                                 <p className="text-[16px] leading-6 tracking-[0.1px] mb-[25px]">
                                     {description}
                                 </p>
-                                <Link href="/pages/stretnutie">
+                                <Link href="/stretnutie">
                                     <button
                                         className="hover:bg-primary px-[20px] py-[6px] bg-[#476761] text-white font-medium text-[16px] leading-6">
                                         Nezáväzné stretnutie

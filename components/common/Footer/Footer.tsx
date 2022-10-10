@@ -33,7 +33,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                             </form>
                             <p className="text-[12px] leading-[20px] opacity-40 text-white xl:max-w-[350px] pb-[25px]">Kliknutím
                                 na tlačidlo potvrdzujete, že súhlasíte s našimi podmienkami spracovania
-                                <Link href="/pages/gdpr">
+                                <Link href="/gdpr">
                                     <a className="underline underline-offset-[3px]"> osobných údajov.</a>
                                 </Link></p>
                         </div>
@@ -41,30 +41,30 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                             className="flex flex-col gap-[15px] items-center xl:flex-row xl:gap-[100px] justify-end  items-start xl:pt-[80px] pb-[20px] xl:pb-0 w-full text-center xl:text-left">
                             <div
                                 className="hidden md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
-                                <Link href='/pages'>
+                                <Link href='/'>
                                     <a className="">Domovská
                                         stránka</a>
                                 </Link>
-                                <Link href="/pages/ponuka-bytov">
+                                <Link href="/ponuka-bytov">
                                     <a>Apartmány</a>
                                 </Link>
-                                <Link href='/pages/o-projekte'>
+                                <Link href='/o-projekte'>
                                     <a>O
                                         projekte</a>
                                 </Link>
-                                <Link href='/pages/lokalita'>
+                                <Link href='/lokalita'>
                                     <a>Lokalita</a>
                                 </Link>
                             </div>
                             <div
                                 className="hidden  md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
-                                <Link href="/pages/novinky">
+                                <Link href="/novinky">
                                     <a>Novinky</a>
                                 </Link>
-                                <Link href="/pages/retail">
+                                <Link href="/retail">
                                     <a>Retail</a>
                                 </Link>
-                                <Link href="/pages/kontakt">
+                                <Link href="/kontakt">
                                     <a>Kontakt</a>
                                 </Link>
                             </div>
@@ -95,7 +95,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                         <p className="text-white text-[12px] leading-5">Developed by</p>
                         <DpLogoIcon/>
                     </div>
-                    <Link href="/pages/gdpr">
+                    <Link href="/gdpr">
                         <a className="pr-4 xl:pr-[165px] text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">Ochrana
                             osobných údajov</a>
                     </Link>

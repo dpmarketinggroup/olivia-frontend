@@ -16,7 +16,7 @@ const OpeningBanner = () => {
                                 Výstavba oficiálne začala.
                             </p>
                             <div className="flex gap-[8px] items-center">
-                                <Link href="/pages">
+                                <Link href="/">
                                     <a className="text-white font-medium text-[14px] leading-5 underline underline-offset-[5px]">Viac</a>
                                 </Link>
                                 <RightArrowIcon/>

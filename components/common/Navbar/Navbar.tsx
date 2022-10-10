@@ -21,7 +21,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                 <div className="xl:flex gap-[50] items-center mx-4 xl:ml-[40px] xl:mr-0 h-full w-full">
                     <div
                         className={`flex justify-between ${!opened ? "mb-[20px]" : "mb-[35px]"} mt-[20px] xl:mb-0 xl:mt-0`}>
-                        <Link href="/pages">
+                        <Link href="/">
                             <a><Logo/></a>
                         </Link>
                         <div className="xl:hidden">
@@ -104,7 +104,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                             />
                         </div>
                     </div>
-                    <Link href='/pages/stretnutie'>
+                    <Link href='/stretnutie'>
                         <button
                             className="hover:bg-[#0E3F3B] font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]">Nezáväzné
                             stretnutie
