@@ -167,7 +167,7 @@ const Building = () => {
                                         color: '#0E3F3B'
                                     }
                                 }}/>
-                                <Checkbox label={'nezobrazovať rezervované'}  onChange={event => } size={'md'} sx={{
+                                <Checkbox label={'nezobrazovať rezervované'}  size={'md'} sx={{
                                     '.mantine-Checkbox-label': {
                                         color: 'white'
                                     },
