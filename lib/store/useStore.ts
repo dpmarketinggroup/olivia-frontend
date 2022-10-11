@@ -19,7 +19,7 @@ export const useStore = create<State & Actions>((set, _) => ({
     ...initialState,
     setSelectedApartment: async (apartmentId, floor) => {
         try {
-            const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts?filters[poschodie][$eq]=Poschodie ${floor}&filters[cislo_bytu][$eq]=${apartmentId}`)
+            const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts?filters[poschodie][$eq]=${floor}&filters[cislo_bytu][$eq]=${apartmentId}`)
             set({selectedApartment: res.data.data})
         } catch (e) {
             console.log(e)
