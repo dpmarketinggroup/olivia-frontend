@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, {HTMLAttributeAnchorTarget} from "react";
 
 interface ButtonProps {
     variant: 'unstyled' | 'outlined' | 'filled';
@@ -8,8 +8,9 @@ interface ButtonProps {
     children: React.ReactNode;
     height?: number;
     onClick?: () => void;
+    target?: HTMLAttributeAnchorTarget
 }
-const Button = ({variant, href, className, children, height = 40, onClick}: ButtonProps) => {
+const Button = ({variant, href, className, children, height = 40, onClick, target}: ButtonProps) => {
 
     const getClass = () => {
         switch (variant) {
@@ -23,7 +24,7 @@ const Button = ({variant, href, className, children, height = 40, onClick}: Butt
     }
 
     return (
-        <Link href={href || '/'}>
+        <Link href={href || '/'} target={target}>
             <button onClick={onClick} style={{height}} className={`${className} ${getClass()} `}>{children}</button>
         </Link>
     );

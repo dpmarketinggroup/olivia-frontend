@@ -1,11 +1,12 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Checkbox, RangeSlider} from "@mantine/core";
 import House from './House'
 import {Table} from "@components/table";
 import {FilterButton} from "@components/ui/";
 import {BasketCrossed, TwoArrows, Basket} from "@components/icons";
-import axios, {AxiosResponse} from "axios";
-import {value} from "dom7";
+import axios from "axios";
+import {useRouter} from "next/router";
+import Link from "next/link";
 
 export type Response = {
     id: number;
@@ -18,13 +19,13 @@ export type Response = {
         chodba_rozloha2?: number;
         cislo_bytu: string;
         dostupnost: 'voľný' | 'rezervovaný' | 'predaný';
-        pocet_izieb: 'jedno-izbový' | 'jeden a pol-izbový'| 'dvoj-izbový' | 'troj-izbový' | 'štvor-izbový';
+        pocet_izieb: 'jedno-izbový' | 'jeden a pol-izbový' | 'dvoj-izbový' | 'troj-izbový' | 'štvor-izbový';
         poschodie: number;
     }
 }
 
 const Building = () => {
-    // const [apartments, setApartments] = useState<Response[]>([]);
+    const router = useRouter();
     const [oneRooms, setOneRooms] = useState<Response[]>();
     const [twoRooms, setTwoRooms] = useState<Response[]>();
     const [oneAndHalfRooms, setOneAndHalfRooms] = useState<Response[]>();
@@ -49,6 +50,19 @@ const Building = () => {
         withoutBalcony: false
     });
 
+    useEffect(() => {
+        async function fetch() {
+            const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts?pagination[pageSize]=200`)
+            if (router.pathname === '/ponuka-bytov') {
+                setOneRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'jedno-izbový'))
+                setTwoRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'dvoj-izbový'))
+                setOneAndHalfRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'jeden a pol-izbový'))
+                setThreeRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'troj-izbový'))
+                setFourRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'štvor-izbový'))
+            }
+        }
+        fetch()
+    }, []);
 
     async function handleClick() {
         const clickedButtons: { [x: string]: true; }[] = [];
@@ -197,7 +211,8 @@ const Building = () => {
                                         }
                                     }}/>
                                     <Checkbox label={'nezobrazovať rezervované'} checked={isReservatedChecked}
-                                              onChange={(e) => setIsReservatedChecked(e.currentTarget.checked)} size={'md'}
+                                              onChange={(e) => setIsReservatedChecked(e.currentTarget.checked)}
+                                              size={'md'}
                                               sx={{
                                                   '.mantine-Checkbox-label': {
                                                       color: 'white'
@@ -225,7 +240,8 @@ const Building = () => {
                                 <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] xl:items-end">
                                     <div className="flex flex-col">
                                         <span className="text-white">Výbava:</span>
-                                        <FilterButton className={'justify-center xl:justify-start'} clicked={clicked.withTerrace} onClick={() => setClicked({
+                                        <FilterButton className={'justify-center xl:justify-start'}
+                                                      clicked={clicked.withTerrace} onClick={() => setClicked({
                                             ...clicked,
                                             withTerrace: !clicked.withTerrace
                                         })} icon={<TwoArrows width={'22'} height={'22'}
@@ -234,7 +250,8 @@ const Building = () => {
                                             s terasou
                                         </FilterButton>
                                     </div>
-                                    <FilterButton className={'justify-center xl:justify-start'} clicked={clicked.withBalcony} onClick={() => {
+                                    <FilterButton className={'justify-center xl:justify-start'}
+                                                  clicked={clicked.withBalcony} onClick={() => {
                                         if (clicked.withoutBalcony) clicked.withoutBalcony = false;
                                         setClicked({...clicked, withBalcony: !clicked.withBalcony})
                                     }} icon={<Basket width={'22'} height={'22'}
@@ -242,7 +259,8 @@ const Building = () => {
                                                   variant={'rectangle'}>
                                         s balkónom
                                     </FilterButton>
-                                    <FilterButton className={'justify-center xl:justify-start'} clicked={clicked.withoutBalcony} onClick={() => {
+                                    <FilterButton className={'justify-center xl:justify-start'}
+                                                  clicked={clicked.withoutBalcony} onClick={() => {
                                         if (clicked.withBalcony) clicked.withBalcony = false;
                                         setClicked({...clicked, withoutBalcony: !clicked.withoutBalcony})
                                     }} icon={<BasketCrossed fill={clicked.withoutBalcony ? '#0E3F3B' : 'white'}/>}
@@ -250,23 +268,27 @@ const Building = () => {
                                         bez balkónu
                                     </FilterButton>
                                 </div>
-                                <button onClick={handleClick}
-                                        className={'bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]'}>Hľadať
-                                </button>
+                                <Link href={`${router.pathname}#results`}>
+                                    <button onClick={handleClick}
+                                            className={'bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]'}>Hľadať
+                                    </button>
+                                </Link>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <div className={'flex flex-col xl:gap-[120px] px-[1rem] xl:px-0'}>
+            <div className={'flex flex-col xl:gap-[120px] px-[1rem] xl:px-0 xl:min-h-[1px]'} id={'results'}>
                 {oneRooms?.length ? (
                     <div>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>1-izbové
                             byty</h3>
-                        <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
+                        <div
+                            className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
                             {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
-                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`} key={index}>{value}</h5>
+                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
+                                    key={index}>{value}</h5>
                             ))}
                         </div>
                         {
@@ -276,7 +298,7 @@ const Building = () => {
                                         floor: attributes.poschodie,
                                         apartmentNumber: attributes.cislo_bytu,
                                         id,
-                                        numberOfRooms: 2,
+                                        numberOfRooms: 1,
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
@@ -291,10 +313,13 @@ const Building = () => {
                 ) : ''}
                 {oneAndHalfRooms?.length ? (
                     <div>
-                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>1.5-izbové byty</h3>
-                        <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>1.5-izbové
+                            byty</h3>
+                        <div
+                            className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
                             {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
-                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`} key={index}>{value}</h5>
+                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
+                                    key={index}>{value}</h5>
                             ))}
                         </div>
                         {
@@ -304,7 +329,7 @@ const Building = () => {
                                         floor: attributes.poschodie,
                                         apartmentNumber: attributes.cislo_bytu,
                                         id,
-                                        numberOfRooms: 2,
+                                        numberOfRooms: 1.5,
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
@@ -321,9 +346,11 @@ const Building = () => {
                     <div>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>2-izbové
                             byty</h3>
-                        <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
+                        <div
+                            className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
                             {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
-                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`} key={index}>{value}</h5>
+                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
+                                    key={index}>{value}</h5>
                             ))}
                         </div>
                         {
@@ -350,9 +377,11 @@ const Building = () => {
                     <div>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>3-izbové
                             byty</h3>
-                        <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
+                        <div
+                            className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
                             {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
-                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`} key={index}>{value}</h5>
+                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
+                                    key={index}>{value}</h5>
                             ))}
                         </div>
                         {
@@ -362,7 +391,7 @@ const Building = () => {
                                         floor: attributes.poschodie,
                                         apartmentNumber: attributes.cislo_bytu,
                                         id,
-                                        numberOfRooms: 2,
+                                        numberOfRooms: 3,
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
@@ -379,9 +408,11 @@ const Building = () => {
                     <div>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>4-izbové
                             byty</h3>
-                        <div className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
+                        <div
+                            className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
                             {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
-                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`} key={index}>{value}</h5>
+                                <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
+                                    key={index}>{value}</h5>
                             ))}
                         </div>
                         {
@@ -391,7 +422,7 @@ const Building = () => {
                                         floor: attributes.poschodie,
                                         apartmentNumber: attributes.cislo_bytu,
                                         id,
-                                        numberOfRooms: 2,
+                                        numberOfRooms: 4,
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,

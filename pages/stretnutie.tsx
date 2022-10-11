@@ -68,7 +68,7 @@ const Stretnutie = () => {
                     </div>
                 </div>
             </div>
-            <div className='xl:flex bg-[#F5F5F5] w-full xl:max-w-[1920px]'>
+            <div className='xl:flex bg-[#F5F5F5] w-full'>
                 <div className={'xl:mx-auto'}>
                     <div className={`flex flex-col xl:flex-row  xl:gap-[85px]`}>
                         <div>

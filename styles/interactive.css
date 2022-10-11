@@ -408,6 +408,9 @@ g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
 .floor14 .st21 {
     fill: #F5F5F5;
 }
+#background_gradient {
+    display: none;
+}
 
 
 /*/////////////////////////////////////////////////////////////////*/

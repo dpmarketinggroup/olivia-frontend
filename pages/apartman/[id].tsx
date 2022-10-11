@@ -48,7 +48,8 @@ const ApartmentDetail = () => {
         terasa_rozloha,
         primarna_foto,
         dodatocna_foto1,
-        dodatocna_foto2
+        dodatocna_foto2,
+        podorys
     } = apartment.data.attributes
     console.log()
     return (
@@ -290,7 +291,7 @@ const ApartmentDetail = () => {
                     <h1 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] w-[250px] xl:w-auto text-center xl:text-left">Pôdorys
                         apartmánu na
                         stiahnutie</h1>
-                    <Button variant={'filled'} href={'/'}>
+                    <Button variant={'filled'} href={podorys.data.attributes.url} target={'_blank'}>
                         Stiahnuť pôdorys
                     </Button>
                 </div>
