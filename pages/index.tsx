@@ -55,7 +55,7 @@ const Home = () => {
                     <div
                         className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between">
                         <div
-                            className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[270px] z-10">
+                            className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] z-10">
                             <Link href="/ponuka-bytov">
                                 <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761] text-center xl:text-left">Výber
                                     podlažia</a>
@@ -67,7 +67,7 @@ const Home = () => {
                             <span
                                 className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033] text-center xl:text-left">Detail apartmánu</span>
                         </div>
-                        <div className="hidden xl:inline-block">
+                        <div className="hidden xl:inline-block relative left-[285px]">
                             <Severka/>
                         </div>
                     </div>

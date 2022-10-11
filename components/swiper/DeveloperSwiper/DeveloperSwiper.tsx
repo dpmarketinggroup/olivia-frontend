@@ -53,7 +53,7 @@ const DeveloperSwiper = () => {
                         className={`xl:w-full xl:max-w-fit ${i === 0 && 'xl:ml-[19%]'}`}
                         key={i}
                     >
-                        <div className={'relative w-full xl:w-[255px] h-[145px]'}>
+                        <div className={'relative w-full xl:w-[255px] h-[145px] grayscale-[100%] hover:grayscale-0'}>
                             <Image alt={'Swiper image'} src={src} layout={'fill'} objectFit={'cover'}/>
                         </div>
                         <h5 className={'text-green2 font-medium mt-[10px]'}>{label}</h5>
