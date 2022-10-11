@@ -1,5 +1,5 @@
 import Head from "next/head";
-import {Modal, Select} from "@mantine/core";
+import {Checkbox, Modal, Select, Textarea, TextInput} from "@mantine/core";
 import {Description, Form, MapFooter} from "@components/common";
 import {ArrowDownNotFilledIcon, Bank, FloorPlan, RightArrow, Severka, Star} from "@components/icons";
 import Link from "next/link";
@@ -57,8 +57,88 @@ const ApartmentDetail = () => {
             <Head>
                 <title>Detail bytu | Olivia Residence</title>
             </Head>
-            <Modal opened={opened} onClose={() => setOpened(false)} centered>
-                <Form isGreen={false}/>
+            <Modal sx={{
+                '.mantine-Modal-modal': {
+                    width: '100%',
+                    maxWidth: '770px',
+                    paddingBottom: '80px'
+                }
+            }} opened={opened} onClose={() => setOpened(false)} centered>
+                <h3 className={'text-[32px] leading-[38px] text-center font-bold text-primary'}>Mám záujem o byt
+                    č. {cislo_bytu}</h3>
+                <form className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>
+                    <div className={'grid grid-cols-2 gap-[15px] mt-[40px]'}>
+                        <CustomInput placeholder={'Meno'}/>
+                        <CustomInput placeholder={'Priezvisko'}/>
+                    </div>
+                    <CustomInput placeholder={'Tel. č.'}/>
+                    <CustomInput placeholder={'E-mailová adresa'}/>
+                    <Textarea placeholder={'Vaša správa ...'} sx={{
+                        '.mantine-Textarea-input': {
+                            border: 0,
+                            backgroundColor: 'rgba(0, 0, 0, 0.07)',
+                            borderRadius: 0,
+                            height: '145px'
+                        },
+                        '.mantine-Checkbox-input': {
+                        }
+                    }}/>
+                    <Checkbox label={'Súhlasím so spracovaním ososbných údajov'}
+                              size={'md'}
+                              sx={{
+                                  '.mantine-Checkbox-label': {
+                                      color: '#999999',
+                                      fontFamily: 'Jost, sans-serif',
+                                      fontSize: '14px',
+                                      lineHeight: '20px',
+                                  },
+                                  '.mantine-Checkbox-input': {
+                                      backgroundColor: 'transparent',
+                                      border: '1.5px solid #0E3F3BCC',
+                                      opacity: 0.8,
+                                      borderRadius: 0,
+                                      display: 'flex',
+                                      alignItems: 'center'
+                                  },
+                                  '.mantine-Checkbox-input:checked': {
+                                      backgroundColor: '#476761',
+                                      opacity: 1,
+                                      border: 0
+                                  },
+                                  '.mantine-Checkbox-icon': {
+                                      color: 'white'
+                                  }
+                              }}/>
+                    <Checkbox label={'Súhlasím so spracovaním ososbných údajov'}
+                              size={'md'}
+                              sx={{
+                                  '.mantine-Checkbox-label': {
+                                      color: '#999999',
+                                      fontFamily: 'Jost, sans-serif',
+                                      fontSize: '14px',
+                                      lineHeight: '20px',
+                                  },
+                                  '.mantine-Checkbox-input': {
+                                      backgroundColor: 'transparent',
+                                      border: '1.5px solid #0E3F3BCC',
+                                      opacity: 0.8,
+                                      borderRadius: 0,
+                                      display: 'flex',
+                                      alignItems: 'center'
+                                  },
+                                  '.mantine-Checkbox-input:checked': {
+                                      backgroundColor: '#476761',
+                                      opacity: 1,
+                                      border: 0
+                                  },
+                                  '.mantine-Checkbox-icon': {
+                                      color: 'white'
+                                  }
+                              }}/>
+                    <button className={'bg-[#476761] h-[50px] text-white'}>
+                        Odoslať
+                    </button>
+                </form>
             </Modal>
             <Modal className="gallery-modal" opened={opened2} size={770000} onClose={() => setOpened2(false)} centered>
                 {/*<CustomSwiper title={} swiperSlides={}/>*/}
@@ -68,9 +148,11 @@ const ApartmentDetail = () => {
                     <div className="xl:mx-auto w-full xl:max-w-[1200px]">
                         <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                             <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
-                            <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber apartmánu na podlaží</h1>
+                            <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber
+                                apartmánu na podlaží</h1>
                         </div>
-                        <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
+                        <div
+                            className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
                             <div
                                 className="flex gap-[8px] xl:gap-[13px] items-center px-[20px] xl:px-[29px] py-[7px] xl:py-[16px] bg-[#F5F5F5] rounded-[15px] xl:rounded-[33px] xl:mr-[155px]">
                                 <Select
@@ -283,8 +365,8 @@ const ApartmentDetail = () => {
                             </div>
                         </>
                     )}
-                    <Button onClick={() => setOpened(true)} variant={'filled'} height={50} className={'w-full'}> Mám
-                        záujem o apartmán č. {cislo_bytu}</Button>
+                    <button onClick={() => setOpened(true)} className={'w-full h-[50px] bg-primary text-white'}> Mám
+                        záujem o apartmán č. {cislo_bytu}</button>
                 </div>
                 <div className="flex flex-col gap-[30px] items-center mb-[120px] xl:mb-[190px] xl:mt-[160px]">
                     <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
@@ -302,5 +384,23 @@ const ApartmentDetail = () => {
         </>
     );
 };
+
+interface CustomInputProps {
+    placeholder: string;
+}
+
+export const CustomInput = (props: CustomInputProps) => {
+    return (
+        <TextInput sx={{
+            '.mantine-TextInput-input': {
+                border: 0,
+                backgroundColor: 'rgba(0, 0, 0, 0.07)',
+                borderRadius: 0,
+                height: '50px',
+                paddingLeft: '15px'
+            },
+        }} {...props} />
+    )
+}
 
 export default ApartmentDetail;

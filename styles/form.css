@@ -73,15 +73,15 @@
 
 
 /*Odber noviniek a Footer*/
-.mantine-TextInput-input {
-    background: rgba(255, 255, 255, 0.12);
-    border: 0;
-    height: 48px;
-    color: white;
-}
+/*.mantine-TextInput-input {*/
+/*    background: rgba(255, 255, 255, 0.12);*/
+/*    border: 0;*/
+/*    height: 48px;*/
+/*    color: white;*/
+/*}*/
 
-.mantine-TextInput-input:focus{
-    background: rgba(255, 255, 255, 0.24);
-    border-bottom: 2px solid white;
-}
+/*.mantine-TextInput-input:focus{*/
+/*    background: rgba(255, 255, 255, 0.24);*/
+/*    border-bottom: 2px solid white;*/
+/*}*/
 
