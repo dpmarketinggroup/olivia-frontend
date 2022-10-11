@@ -15,7 +15,7 @@ const Home = () => {
             <Head>
                 <title>Moderné mestské bývanie | Olivia Residence</title>
             </Head>
-            <section className="flex justify-center pt-[115px]">
+            <div className="flex justify-center pt-[115px]">
                 <div className="h-[650px] w-full max-w-[1920px] xl:mb-[140px] relative">
                     <div className="absolute w-full xl:max-w-[1920px] h-[650px] -z-20">
                         <Image objectFit="cover" layout="fill" alt="hero image" src={'/img/hero.jpg'}/>
@@ -40,7 +40,7 @@ const Home = () => {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </div>
             <Timeline/>
             <CommonDescription/>
             <div className="flex justify-center my-[70px]">
