@@ -6,7 +6,7 @@ import "swiper/css";
 import '../styles/interactive.css'
 import type {AppProps} from 'next/app'
 import {MantineProvider} from "@mantine/core";
-import {Navbar, OpeningBanner, Footer} from '@components/common'
+import {Navbar, Footer} from '@components/common'
 import {useRouter} from "next/router";
 
 function MyApp({Component, pageProps}: AppProps) {
