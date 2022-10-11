@@ -348,63 +348,63 @@ const HouseExtension = () => {
             </g>
             <foreignObject className="node" x="950" y="100" width="250" height="250px">
                 <div className="none" ref={div14}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'14. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="150" width="250" height="250px">
                 <div className="none" ref={div13}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'13. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="200" width="250" height="250px">
                 <div className="none" ref={div12}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'12. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="250" width="250" height="250px">
                 <div className="none" ref={div11}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'11. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             {/*5*/}
             <foreignObject className="node" x="950" y="300" width="250" height="250px">
                 <div className="none" ref={div10}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'10. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="350" width="250" height="250px">
                 <div className="none" ref={div9}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'09. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="430" width="250" height="250px">
                 <div className="none" ref={div8}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'08. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="470" width="250" height="250px">
                 <div className="none" ref={div7}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'07. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="530" width="250" height="250px">
                 <div className="none" ref={div6}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'06. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="570" width="250" height="250px">
                 <div className="none" ref={div5}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'05. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="630" width="250" height="250px">
                 <div className="none" ref={div4}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'04. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="700" width="250" height="250px">
                 <div className="none" ref={div3}>
-                    <PopUp top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp title={'03. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
         </>
