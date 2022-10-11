@@ -38,7 +38,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 </Link></p>
                         </div>
                         <div
-                            className="flex flex-col gap-[15px] items-center xl:flex-row xl:gap-[100px] justify-end  items-start xl:pt-[80px] pb-[20px] xl:pb-0 w-full text-center xl:text-left">
+                            className="flex flex-col gap-[15px] md:items-center xl:flex-row xl:gap-[100px] justify-end xl:pt-[80px] pb-[20px] xl:pb-0 w-full text-center xl:text-left">
                             <div
                                 className="hidden md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
                                 <Link href='/'>
@@ -69,7 +69,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 </Link>
                             </div>
                             <div
-                                className=" flex items-center flex-col gap-[15px] items-start xl:items-end text-center xl:text-left font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
+                                className=" flex md:items-center flex-col gap-[15px] items-start xl:items-end text-center xl:text-left font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
                                 <h5>Predajné miesto</h5>
                                 <h5>Rožňavská 1A</h5>
                                 <h5>831 04 Bratislava</h5>
