@@ -17,7 +17,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
             <div>
                 <div className="relative bg-black w-full px-[1rem] xl:px-[165px]">
                     <div className="flex flex-col xl:flex-row xl:gap-[205px] items-center xl:items-start justify-between mx-auto xl:max-w-[1200px]">
-                        <div className="flex flex-col items-center justify-center xl:items-start gap-[26px] pt-[45px] w-full">
+                        <div className="flex flex-col justify-center gap-[26px] pt-[45px] w-full">
                             <LogoSecondary/>
                             <p className="text-[14px] leading-[20px] text-white opacity-60 w-full xl:max-w-[330px]">Najnovšie
                                 informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
@@ -38,7 +38,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 </Link></p>
                         </div>
                         <div
-                            className="flex flex-col gap-[15px] md:items-center xl:flex-row xl:gap-[100px] justify-end xl:pt-[80px] pb-[20px] xl:pb-0 w-full text-center xl:text-left">
+                            className="flex flex-col gap-[15px] xl:flex-row xl:gap-[100px] justify-end xl:pt-[80px] pb-[20px] xl:pb-0 w-full text-center xl:text-left">
                             <div
                                 className="hidden md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
                                 <Link href='/'>
@@ -69,7 +69,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 </Link>
                             </div>
                             <div
-                                className=" flex md:items-center flex-col gap-[15px] items-start xl:items-end text-center xl:text-left font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
+                                className=" flex flex-col gap-[15px] items-start xl:items-end text-center xl:text-left font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
                                 <h5>Predajné miesto</h5>
                                 <h5>Rožňavská 1A</h5>
                                 <h5>831 04 Bratislava</h5>

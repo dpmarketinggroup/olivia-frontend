@@ -28,7 +28,7 @@ const Form
                               label={
                                   <>
                     <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
-                        byty
+                        apartmán
                     </span>
                                   </>
                               } radius="xl"
