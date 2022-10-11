@@ -107,9 +107,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                             <Link href="/retail">
                                 <a>Retail</a>
                             </Link>
-                            <Link href="/novinky">
-                                <a>Novinky</a>
-                            </Link>
+                            {/*<Link href="/novinky">*/}
+                            {/*    <a>Novinky</a>*/}
+                            {/*</Link>*/}
                             <Link href="/kontakt">
                                 <a>Kontakt</a>
                             </Link>

@@ -58,9 +58,9 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                             </div>
                             <div
                                 className="hidden  md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
-                                <Link href="/novinky">
-                                    <a>Novinky</a>
-                                </Link>
+                                {/*<Link href="/novinky">*/}
+                                {/*    <a>Novinky</a>*/}
+                                {/*</Link>*/}
                                 <Link href="/retail">
                                     <a>Retail</a>
                                 </Link>
