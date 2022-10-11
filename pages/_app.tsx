@@ -13,9 +13,9 @@ function MyApp({Component, pageProps}: AppProps) {
     const router = useRouter();
     return (
         <MantineProvider>
-            {router.pathname === '/' && (
-                <OpeningBanner/>
-            )}
+            {/*{router.pathname === '/' && (*/}
+            {/*    <OpeningBanner/>*/}
+            {/*)}*/}
             <Navbar mainPage={router.pathname === '/' && true}/>
             <Component {...pageProps} />
             {

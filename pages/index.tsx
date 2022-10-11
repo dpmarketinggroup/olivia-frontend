@@ -20,24 +20,26 @@ const Home = () => {
                     <div className="absolute w-full xl:max-w-[1920px] h-[650px] -z-20">
                         <Image objectFit="cover" layout="fill" alt="hero image" src={'/img/hero.jpg'}/>
                     </div>
-                    <div className="w-[300px] xl:w-[600px] ml-4 xl:ml-[165px] pt-[185px] mb-[40px]">
-                        <h1 className="font-bold text-[34px] xl:text-[56px] leading-[40px] xl:leading-[60px] tracking-[-1px] text-white">
-                            Moderný štýl bývania v dynamickej lokalite so skvelými možnosťami
-                        </h1>
-                    </div>
-                    <div className="flex flex-col xl:flex-row gap-[10px] ml-4 xl:ml-[165px] mr-4 xl:mr-0">
-                        <Link href="/stretnutie">
-                            <button
-                                className="w-full hover:bg-[#0E3F3B] bg-[#89A6A2] xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px]">
-                                Nezáväzné stretnutie
-                            </button>
-                        </Link>
-                        <Link href="/ponuka-bytov">
-                            <button
-                                className="w-full hover:bg-[#476761] hover:border-[#476761] font-medium text-[16px] leading-[24px] tracking-[-0.1px] xl:w-[210px] h-[50px] border border-white text-white">
-                                Ponuka apartmánov
-                            </button>
-                        </Link>
+                    <div className="w-full xl:max-w-[1200px] xl:mx-auto">
+                        <div className="w-[300px] xl:w-[600px] pt-[185px] mb-[40px] mx-4 xl:mx-0">
+                            <h1 className="font-bold text-[34px] xl:text-[56px] leading-[40px] xl:leading-[60px] tracking-[-1px] text-white">
+                                Moderný štýl bývania v dynamickej lokalite so skvelými možnosťami
+                            </h1>
+                        </div>
+                        <div className="flex flex-col xl:flex-row gap-[10px] mx-4 xl:mx-0">
+                            <Link href="/stretnutie">
+                                <button
+                                    className="w-full hover:bg-[#0E3F3B] bg-[#89A6A2] xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px]">
+                                    Nezáväzné stretnutie
+                                </button>
+                            </Link>
+                            <Link href="/ponuka-bytov">
+                                <button
+                                    className="w-full hover:bg-[#476761] hover:border-[#476761] font-medium text-[16px] leading-[24px] tracking-[-0.1px] xl:w-[210px] h-[50px] border border-white text-white">
+                                    Ponuka apartmánov
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,7 +77,8 @@ const Home = () => {
             <ApartmentSwiper/>
             <Negotiation title={"Lokalita v centre diania"} subtitle={"Rožňavská 1A, Bratislava"}/>
             <div className={'flex flex-col mt-[150px]'}>
-                <h2 className={'text-[#0E3F3B] font-bold text-[40px] leading-[48px] mx-4 xl:mx-0 xl:text-center'}>Vybavenie apartmánov</h2>
+                <h2 className={'text-[#0E3F3B] font-bold text-[40px] leading-[48px] mx-4 xl:mx-0 xl:text-center'}>Vybavenie
+                    apartmánov</h2>
                 <ApartmentEquipmentDescription/>
                 <div className={'mx-auto flex flex-col xl:flex-row gap-[15px] w-full xl:w-auto px-[1rem] xl:px-0'}>
                     <Button variant={'outlined'}>

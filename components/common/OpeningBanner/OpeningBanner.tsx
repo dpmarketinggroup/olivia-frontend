@@ -30,6 +30,11 @@ const OpeningBanner = () => {
                     </div>
                 </div>
             }
+            {!isOpen &&
+                <div className="mt-[-100px]">
+
+                </div>
+            }
         </>
     )
 }
