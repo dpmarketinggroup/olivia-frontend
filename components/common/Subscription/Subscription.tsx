@@ -1,6 +1,7 @@
 import {TextInput} from "@mantine/core";
 import {PaperPlane} from "@components/icons";
 import Image from "next/image";
+import Link from "next/link";
 
 const Subscription = () => {
     return (
@@ -16,7 +17,9 @@ const Subscription = () => {
                     </form>
                     <p className="text-[12px] leading-5 opacity-40 text-white xl:pb-[52px]">
                         Kliknutím na tlačidlo potvrdzujete, že súhlasíte s našimi podmienkami spracovania
-                        <span className=" underline underline-offset-[6px]"> osobných údajov.</span>
+                        <Link href='/gdpr'>
+                            <a className=" underline underline-offset-[6px]"> osobných údajov.</a>
+                        </Link>
                     </p>
                 </div>
                 {/*Nerob to cez absolute position ale buď cez flex alebo grid*/}
