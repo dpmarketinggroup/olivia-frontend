@@ -1,19 +1,26 @@
 import Head from "next/head";
 import {Checkbox, Modal, Select, Textarea, TextInput} from "@mantine/core";
-import {Description, Form, MapFooter} from "@components/common";
+import { MapFooter} from "@components/common";
 import {ArrowDownNotFilledIcon, Bank, FloorPlan, RightArrow, Severka, Star} from "@components/icons";
 import Link from "next/link";
 import Image from "next/image";
 import {CustomSwiper} from "@components/swiper";
-import {useEffect, useState} from "react";
+import {ChangeEvent, SyntheticEvent, useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import {useStore} from "../../lib/store/useStore";
 import {Button} from "@components/ui";
 import {CarDescription} from "@components/common/Description/Description";
+import axios from "axios";
 
 const ApartmentDetail = () => {
     const [opened, setOpened] = useState(false);
     const [opened2, setOpened2] = useState(false);
+
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
 
     const router = useRouter()
 
@@ -51,7 +58,22 @@ const ApartmentDetail = () => {
         dodatocna_foto2,
         podorys
     } = apartment.data.attributes
-    console.log()
+
+    async function handleSubmit(e: SyntheticEvent) {
+        e.preventDefault()
+        if (!name || !surname || !email || !message || !phone) return;
+        await axios.post('/api/enquiry', {
+            body: JSON.stringify({
+                name,
+                surname,
+                email,
+                message,
+                phone,
+                cislo_bytu
+            })
+        })
+    }
+
     return (
         <>
             <Head>
@@ -66,14 +88,14 @@ const ApartmentDetail = () => {
             }} opened={opened} onClose={() => setOpened(false)} centered>
                 <h3 className={'text-[32px] leading-[38px] text-center font-bold text-primary'}>Mám záujem o byt
                     č. {cislo_bytu}</h3>
-                <form className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>
-                    <div className={'grid grid-cols-2 gap-[15px] mt-[40px]'}>
-                        <CustomInput placeholder={'Meno'}/>
-                        <CustomInput placeholder={'Priezvisko'}/>
+                <form onSubmit={handleSubmit} className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>
+                    <div className={'flex flex-col xl:grid grid-cols-2 gap-[15px] mt-[40px]'}>
+                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} name={'name'} placeholder={'Meno'}/>
+                        <CustomInput value={surname} onChange={(e) => setSurname(e.target.value)} name={'surname'} placeholder={'Priezvisko'}/>
                     </div>
-                    <CustomInput placeholder={'Tel. č.'}/>
-                    <CustomInput placeholder={'E-mailová adresa'}/>
-                    <Textarea placeholder={'Vaša správa ...'} sx={{
+                    <CustomInput value={phone} onChange={(e) => setPhone(e.target.value)} name={'phone'} placeholder={'Tel. č.'}/>
+                    <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} name={'email'} placeholder={'E-mailová adresa'}/>
+                    <Textarea value={message} onChange={(e) => setMessage(e.target.value)} name={'message'} placeholder={'Vaša správa ...'} sx={{
                         '.mantine-Textarea-input': {
                             border: 0,
                             backgroundColor: 'rgba(0, 0, 0, 0.07)',
@@ -83,7 +105,7 @@ const ApartmentDetail = () => {
                         '.mantine-Checkbox-input': {
                         }
                     }}/>
-                    <Checkbox label={'Súhlasím so spracovaním ososbných údajov'}
+                    <Checkbox label={'Súhlasím so spracovaním osobných údajov'}
                               size={'md'}
                               sx={{
                                   '.mantine-Checkbox-label': {
@@ -109,7 +131,7 @@ const ApartmentDetail = () => {
                                       color: 'white'
                                   }
                               }}/>
-                    <Checkbox label={'Súhlasím so spracovaním ososbných údajov'}
+                    <Checkbox label={'Chcem aby ste mi zasielali novinky o projekte'}
                               size={'md'}
                               sx={{
                                   '.mantine-Checkbox-label': {
@@ -387,6 +409,9 @@ const ApartmentDetail = () => {
 
 interface CustomInputProps {
     placeholder: string;
+    name: string;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    value?: string
 }
 
 export const CustomInput = (props: CustomInputProps) => {

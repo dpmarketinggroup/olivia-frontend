@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import {Button} from "@components/ui";
 
@@ -17,7 +16,7 @@ const Negotiation = ({
                      }: NegotiationProps) => {
     return (
         <div className='flex justify-center'>
-            <div className="w-full">
+            <div className="w-full flex flex-col">
                 {!centerText ?
                     (
                         <div
@@ -38,11 +37,14 @@ const Negotiation = ({
                     )
                 }
 
-                <div className="h-[325px] xl:h-[650px] w-full xl:max-w-[1920px] relative mx-0 xl:mx-auto">
+                <div className="w-full xl:max-w-[1440px] relative mx-0 xl:mx-auto overflow-scroll xl:overflow-visible">
                     <Image
                         objectFit="cover"
-                        layout="fill"
+                        objectPosition={'center'}
                         alt="hero image"
+                        layout={'fixed'}
+                        height={650}
+                        width={1440}
                         src={"/img/map.jpg"}
                     />
                 </div>
