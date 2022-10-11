@@ -139,118 +139,123 @@ const Building = () => {
                         </div>
                     </div>
                     <div className={'flex flex-col xl:flex-row justify-between'}>
-                        <div className="flex flex-col gap-[30px] mt-[50px]">
-                            <div className="flex justify-between xl:justify-start gap-[5px] xl:gap-[20px]">
-                                <FilterButton clicked={clicked.room1Clicked} onClick={() => setClicked({
-                                    ...clicked,
-                                    room1Clicked: !clicked.room1Clicked
-                                })} variant={'square'}>
-                                    1 izb
-                                </FilterButton>
-                                <FilterButton clicked={clicked.room15Clicked} onClick={() => setClicked({
-                                    ...clicked,
-                                    room15Clicked: !clicked.room15Clicked
-                                })} variant={'square'}>
-                                    1.5 izb
-                                </FilterButton>
-                                <FilterButton clicked={clicked.room2Clicked} onClick={() => setClicked({
-                                    ...clicked,
-                                    room2Clicked: !clicked.room2Clicked
-                                })} variant={'square'}>
-                                    2 izb
-                                </FilterButton>
-                                <FilterButton clicked={clicked.room3Clicked} onClick={() => setClicked({
-                                    ...clicked,
-                                    room3Clicked: !clicked.room3Clicked
-                                })} variant={'square'}>
-                                    3 izb
-                                </FilterButton>
-                                <FilterButton clicked={clicked.room4Clicked} onClick={() => setClicked({
-                                    ...clicked,
-                                    room4Clicked: !clicked.room4Clicked
-                                })} variant={'square'}>
-                                    4 izb
-                                </FilterButton>
-                            </div>
-                            <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] xl:items-end">
-                                <div className="flex flex-col">
-                                    <span className="text-white">Výbava:</span>
-                                    <FilterButton clicked={clicked.withTerrace} onClick={() => setClicked({
+                        <div className="flex xl:flex-row flex-col xl:justify-between gap-[30px] mt-[50px] w-full">
+                            <div className={'flex flex-col xl:gap-[30px]'}>
+                                <div className="flex justify-between xl:justify-start gap-[5px] xl:gap-[20px]">
+                                    <FilterButton clicked={clicked.room1Clicked} onClick={() => setClicked({
                                         ...clicked,
-                                        withTerrace: !clicked.withTerrace
-                                    })} icon={<TwoArrows width={'22'} height={'22'}
-                                                         fill={clicked.withTerrace ? '#0E3F3B' : 'white'}/>}
-                                                  variant={'rectangle'}>
-                                        s terasou
+                                        room1Clicked: !clicked.room1Clicked
+                                    })} variant={'square'}>
+                                        1 izb
+                                    </FilterButton>
+                                    <FilterButton clicked={clicked.room15Clicked} onClick={() => setClicked({
+                                        ...clicked,
+                                        room15Clicked: !clicked.room15Clicked
+                                    })} variant={'square'}>
+                                        1.5 izb
+                                    </FilterButton>
+                                    <FilterButton clicked={clicked.room2Clicked} onClick={() => setClicked({
+                                        ...clicked,
+                                        room2Clicked: !clicked.room2Clicked
+                                    })} variant={'square'}>
+                                        2 izb
+                                    </FilterButton>
+                                    <FilterButton clicked={clicked.room3Clicked} onClick={() => setClicked({
+                                        ...clicked,
+                                        room3Clicked: !clicked.room3Clicked
+                                    })} variant={'square'}>
+                                        3 izb
+                                    </FilterButton>
+                                    <FilterButton clicked={clicked.room4Clicked} onClick={() => setClicked({
+                                        ...clicked,
+                                        room4Clicked: !clicked.room4Clicked
+                                    })} variant={'square'}>
+                                        4 izb
                                     </FilterButton>
                                 </div>
-                                <FilterButton clicked={clicked.withBalcony} onClick={() => {
-                                    if (clicked.withoutBalcony) clicked.withoutBalcony = false;
-                                    setClicked({...clicked, withBalcony: !clicked.withBalcony})
-                                }} icon={<Basket width={'22'} height={'22'}
-                                                 fill={clicked.withBalcony ? '#0E3F3B' : 'white'}/>}
-                                              variant={'rectangle'}>
-                                    s balkónom
-                                </FilterButton>
-                                <FilterButton clicked={clicked.withoutBalcony} onClick={() => {
-                                    if (clicked.withBalcony) clicked.withBalcony = false;
-                                    setClicked({...clicked, withoutBalcony: !clicked.withoutBalcony})
-                                }} icon={<BasketCrossed fill={clicked.withoutBalcony ? '#0E3F3B' : 'white'}/>}
-                                              variant={'rectangle'}>
-                                    bez balkónu
-                                </FilterButton>
+                                <div className={'flex gap-[30px] mt-[30px] xl:mt-0'}>
+                                    <Checkbox label={'nezobrazovať predané'} size={'md'} checked={isSoldChecked}
+                                              onChange={(e) => setIsSoldChecked(e.currentTarget.checked)} sx={{
+                                        '.mantine-Checkbox-label': {
+                                            color: 'white'
+                                        },
+                                        '.mantine-Checkbox-input': {
+                                            backgroundColor: 'transparent',
+                                            border: '1.5px solid #fff',
+                                            opacity: 0.3,
+                                            borderRadius: 0,
+                                            display: 'flex',
+                                            alignItems: 'center'
+                                        },
+                                        '.mantine-Checkbox-input:checked': {
+                                            backgroundColor: 'white',
+                                            opacity: 1,
+                                            border: 0
+                                        },
+                                        '.mantine-Checkbox-icon': {
+                                            color: '#0E3F3B'
+                                        }
+                                    }}/>
+                                    <Checkbox label={'nezobrazovať rezervované'} checked={isReservatedChecked}
+                                              onChange={(e) => setIsReservatedChecked(e.currentTarget.checked)} size={'md'}
+                                              sx={{
+                                                  '.mantine-Checkbox-label': {
+                                                      color: 'white'
+                                                  },
+                                                  '.mantine-Checkbox-input': {
+                                                      backgroundColor: 'transparent',
+                                                      border: '1.5px solid #fff',
+                                                      opacity: 0.3,
+                                                      borderRadius: 0,
+                                                      display: 'flex',
+                                                      alignItems: 'center'
+                                                  },
+                                                  '.mantine-Checkbox-input:checked': {
+                                                      backgroundColor: 'white',
+                                                      opacity: 1,
+                                                      border: 0
+                                                  },
+                                                  '.mantine-Checkbox-icon': {
+                                                      color: '#0E3F3B'
+                                                  }
+                                              }}/>
+                                </div>
                             </div>
-                            <div className={'flex gap-[30px]'}>
-                                <Checkbox label={'nezobrazovať predané'} size={'md'} checked={isSoldChecked}
-                                          onChange={(e) => setIsSoldChecked(e.currentTarget.checked)} sx={{
-                                    '.mantine-Checkbox-label': {
-                                        color: 'white'
-                                    },
-                                    '.mantine-Checkbox-input': {
-                                        backgroundColor: 'transparent',
-                                        border: '1.5px solid #fff',
-                                        opacity: 0.3,
-                                        borderRadius: 0,
-                                        display: 'flex',
-                                        alignItems: 'center'
-                                    },
-                                    '.mantine-Checkbox-input:checked': {
-                                        backgroundColor: 'white',
-                                        opacity: 1,
-                                        border: 0
-                                    },
-                                    '.mantine-Checkbox-icon': {
-                                        color: '#0E3F3B'
-                                    }
-                                }}/>
-                                <Checkbox label={'nezobrazovať rezervované'} checked={isReservatedChecked}
-                                          onChange={(e) => setIsReservatedChecked(e.currentTarget.checked)} size={'md'}
-                                          sx={{
-                                              '.mantine-Checkbox-label': {
-                                                  color: 'white'
-                                              },
-                                              '.mantine-Checkbox-input': {
-                                                  backgroundColor: 'transparent',
-                                                  border: '1.5px solid #fff',
-                                                  opacity: 0.3,
-                                                  borderRadius: 0,
-                                                  display: 'flex',
-                                                  alignItems: 'center'
-                                              },
-                                              '.mantine-Checkbox-input:checked': {
-                                                  backgroundColor: 'white',
-                                                  opacity: 1,
-                                                  border: 0
-                                              },
-                                              '.mantine-Checkbox-icon': {
-                                                  color: '#0E3F3B'
-                                              }
-                                          }}/>
+                            <div className={'xl:flex flex-col xl:items-end'}>
+                                <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] xl:items-end">
+                                    <div className="flex flex-col">
+                                        <span className="text-white">Výbava:</span>
+                                        <FilterButton className={'justify-center xl:justify-start'} clicked={clicked.withTerrace} onClick={() => setClicked({
+                                            ...clicked,
+                                            withTerrace: !clicked.withTerrace
+                                        })} icon={<TwoArrows width={'22'} height={'22'}
+                                                             fill={clicked.withTerrace ? '#0E3F3B' : 'white'}/>}
+                                                      variant={'rectangle'}>
+                                            s terasou
+                                        </FilterButton>
+                                    </div>
+                                    <FilterButton className={'justify-center xl:justify-start'} clicked={clicked.withBalcony} onClick={() => {
+                                        if (clicked.withoutBalcony) clicked.withoutBalcony = false;
+                                        setClicked({...clicked, withBalcony: !clicked.withBalcony})
+                                    }} icon={<Basket width={'22'} height={'22'}
+                                                     fill={clicked.withBalcony ? '#0E3F3B' : 'white'}/>}
+                                                  variant={'rectangle'}>
+                                        s balkónom
+                                    </FilterButton>
+                                    <FilterButton className={'justify-center xl:justify-start'} clicked={clicked.withoutBalcony} onClick={() => {
+                                        if (clicked.withBalcony) clicked.withBalcony = false;
+                                        setClicked({...clicked, withoutBalcony: !clicked.withoutBalcony})
+                                    }} icon={<BasketCrossed fill={clicked.withoutBalcony ? '#0E3F3B' : 'white'}/>}
+                                                  variant={'rectangle'}>
+                                        bez balkónu
+                                    </FilterButton>
+                                </div>
+                                <button onClick={handleClick}
+                                        className={'bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]'}>Hľadať
+                                </button>
                             </div>
                         </div>
-                        <button onClick={handleClick}
-                                className={'bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[25px] xl:mt-auto'}>Hľadať
-                        </button>
+
                     </div>
                 </div>
             </div>

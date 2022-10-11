@@ -5,10 +5,11 @@ interface FilterButtonProps {
     icon?: JSX.Element;
     onClick?: () => void;
     children?: React.ReactNode,
-    clicked?: boolean
+    clicked?: boolean,
+    className?: string
 }
 
-const FilterButton = ({variant, icon, onClick, children, clicked = false}: FilterButtonProps) => {
+const FilterButton = ({variant, icon, onClick, children, clicked = false, className}: FilterButtonProps) => {
     function getClass() {
         switch (variant) {
             case "rectangle":
@@ -19,7 +20,7 @@ const FilterButton = ({variant, icon, onClick, children, clicked = false}: Filte
     }
     return (
         <button onClick={onClick} className={`${getClass()} ${clicked ? 'bg-white text-[#0E3F3B]' : 'border-white text-white'} border-2`}>
-            <div className={`${variant === 'square' && 'max-w-[20px]'} flex items-center gap-[10px]`}>{variant === 'rectangle' && icon}{children}</div>
+            <div className={`${variant === 'square' && 'max-w-[20px]'} ${className} flex items-center gap-[10px]`}>{variant === 'rectangle' && icon}{children}</div>
         </button>
     );
 };
