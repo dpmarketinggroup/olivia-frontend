@@ -33,15 +33,15 @@ const PopUp: FunctionComponent<PopUpProps>
                     </div>
                     <div className="flex">
                         <p className="w-[140px] text-[12px] leading-5 text-[#999999]">2 - izbové apartmány</p>
-                        <span className="text-[14px] font-medium leading-5 text-[#476761]">5</span>
+                        <span className="text-[14px] font-medium leading-5 text-[#476761]">{room2}</span>
                     </div>
                     <div className="flex">
                         <p className="w-[140px] text-[12px] leading-5 text-[#999999]">3 - izbové apartmány</p>
-                        <span className="text-[14px] font-medium leading-5 text-[#476761]">8</span>
+                        <span className="text-[14px] font-medium leading-5 text-[#476761]">{room3}</span>
                     </div>
                     <div className="flex">
                         <p className="w-[140px] text-[12px] leading-5 text-[#999999]">4 - izbové apartmány</p>
-                        <span className="text-[14px] font-medium leading-5 text-[#476761]">2</span>
+                        <span className="text-[14px] font-medium leading-5 text-[#476761]">{room4}</span>
                     </div>
                 </div>
             </div>

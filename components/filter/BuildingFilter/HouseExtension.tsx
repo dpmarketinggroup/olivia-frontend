@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import PopUp from "./PopUp";
 import Link from "next/link";
 import {useRouter} from "next/router";
@@ -12,9 +12,22 @@ type Floor = {
     fourRooms: number
 }
 
-
 const HouseExtension = () => {
     const [firstFloor, setFirstFloor] = useState<Floor>();
+    const [secondFloor, setSecondFloor] = useState<Floor>();
+    const [thirdFloor, setThirdFloor] = useState<Floor>();
+    const [fourthFloor, setFourthFloor] = useState<Floor>();
+    const [fifthFloor, setFifthFloor] = useState<Floor>();
+    const [sixthFloor, setSixthFloor] = useState<Floor>();
+    const [seventhFloor, setSeventhFloor] = useState<Floor>();
+    const [eighthFloor, setEighthFloor] = useState<Floor>();
+    const [ninthFloor, setNinthFloor] = useState<Floor>();
+    const [tenthFloor, setTenthFloor] = useState<Floor>();
+    const [eleventhFloor, setEleventhFloor] = useState<Floor>();
+    const [twelthFloor, setTwelthFloor] = useState<Floor>();
+
+
+
     const div14 = useRef<HTMLDivElement | null>(null)
     const div13 = useRef<HTMLDivElement | null>(null)
     const div12 = useRef<HTMLDivElement | null>(null)
@@ -31,27 +44,35 @@ const HouseExtension = () => {
     const router = useRouter()
     const fetch = useStore(state => state.setSelectedApartment)
 
-    async function getRooms(floor: number): Floor {
-        const response = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts?filter[poschodie][$eq]=${floor}`)
-        // console.log(response)
-        const data = {
-            oneRooms: await response.data.data.filter((val: any) => val.attributes.pocet_izieb === 'jedno-izbový').length,
-            fourRooms: await response.data.data.filter((val: any) => val.attributes.pocet_izieb === 'štvor-izbový').length,
-            threeRooms: await response.data.data.filter((val: any) => val.attributes.pocet_izieb === 'troj-izbový').length,
-            twoRooms: await response.data.data.filter((val: any) => val.attributes.pocet_izieb === 'dvoj-izbový').length,
+    async function getRooms(floor: number): Promise<Floor | undefined> {
+        const response = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts?filters[poschodie][$eq]=${floor}`)
+
+        return {
+            oneRooms: response.data.data.filter((val: any) => val.attributes.pocet_izieb === 'jedno-izbový').length,
+            fourRooms: response.data.data.filter((val: any) => val.attributes.pocet_izieb === 'štvor-izbový').length,
+            threeRooms: response.data.data.filter((val: any) => val.attributes.pocet_izieb === 'troj-izbový').length,
+            twoRooms: response.data.data.filter((val: any) => val.attributes.pocet_izieb === 'dvoj-izbový').length,
         }
-        return data;
+
     }
 
     useEffect(() => {
         async function fetch() {
-            setFirstFloor(
-                getRooms(3)
-            )
+            setFirstFloor(await getRooms(3))
+            setSecondFloor(await getRooms(4))
+            setThirdFloor(await getRooms(5))
+            setFourthFloor(await getRooms(6))
+            setFifthFloor(await getRooms(7))
+            setSixthFloor(await getRooms(8))
+            setSeventhFloor(await getRooms(9))
+            setEighthFloor(await getRooms(10))
+            setNinthFloor(await getRooms(11))
+            setTenthFloor(await getRooms(12))
+            setEleventhFloor(await getRooms(13))
+            setTwelthFloor(await getRooms(14))
         }
 
         fetch()
-        console.log(firstFloor)
     }, []);
 
 
@@ -395,63 +416,63 @@ const HouseExtension = () => {
             </g>
             <foreignObject className="node" x="950" y="100" width="250" height="250px">
                 <div className="none" ref={div14}>
-                    <PopUp title={'14. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room1={twelthFloor?.oneRooms} room2={twelthFloor?.twoRooms} room3={twelthFloor?.threeRooms} room4={twelthFloor?.fourRooms} title={'14. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="150" width="250" height="250px">
                 <div className="none" ref={div13}>
-                    <PopUp title={'13. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room1={eleventhFloor?.oneRooms} room2={eleventhFloor?.twoRooms} room3={eleventhFloor?.threeRooms} room4={eleventhFloor?.fourRooms} title={'13. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="200" width="250" height="250px">
                 <div className="none" ref={div12}>
-                    <PopUp title={'12. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room1={tenthFloor?.oneRooms} room2={tenthFloor?.twoRooms} room3={tenthFloor?.threeRooms} room4={tenthFloor?.fourRooms} title={'12. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="250" width="250" height="250px">
                 <div className="none" ref={div11}>
-                    <PopUp title={'11. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room1={ninthFloor?.oneRooms} room2={ninthFloor?.twoRooms} room3={ninthFloor?.threeRooms} room4={ninthFloor?.fourRooms} title={'11. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             {/*5*/}
             <foreignObject className="node" x="950" y="300" width="250" height="250px">
                 <div className="none" ref={div10}>
-                    <PopUp title={'10. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room1={eighthFloor?.oneRooms} room2={eighthFloor?.twoRooms} room3={eighthFloor?.threeRooms} room4={eighthFloor?.fourRooms} title={'10. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="350" width="250" height="250px">
                 <div className="none" ref={div9}>
-                    <PopUp title={'09. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room1={seventhFloor?.oneRooms} room2={seventhFloor?.twoRooms} room3={seventhFloor?.threeRooms} room4={seventhFloor?.fourRooms} title={'09. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="430" width="250" height="250px">
                 <div className="none" ref={div8}>
-                    <PopUp title={'08. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room1={sixthFloor?.oneRooms} room2={sixthFloor?.twoRooms} room3={sixthFloor?.threeRooms} room4={sixthFloor?.fourRooms} title={'08. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="470" width="250" height="250px">
                 <div className="none" ref={div7}>
-                    <PopUp title={'07. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room1={fifthFloor?.oneRooms} room2={fifthFloor?.twoRooms} room3={fifthFloor?.threeRooms} room4={fifthFloor?.fourRooms} title={'07. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="530" width="250" height="250px">
                 <div className="none" ref={div6}>
-                    <PopUp title={'06. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room1={fourthFloor?.oneRooms} room2={fourthFloor?.twoRooms} room3={fourthFloor?.threeRooms} room4={fourthFloor?.fourRooms} title={'06. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="570" width="250" height="250px">
                 <div className="none" ref={div5}>
-                    <PopUp title={'05. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room1={thirdFloor?.oneRooms} room2={thirdFloor?.twoRooms} room3={thirdFloor?.threeRooms} room4={thirdFloor?.fourRooms} title={'05. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="630" width="250" height="250px">
                 <div className="none" ref={div4}>
-                    <PopUp title={'04. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room1={secondFloor?.oneRooms} room2={secondFloor?.twoRooms} room3={secondFloor?.threeRooms} room4={secondFloor?.fourRooms} title={'04. podlažie'} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="700" width="250" height="250px">
                 <div className="none" ref={div3}>
-                    <PopUp room1={firstFloor?.oneRooms} title={'03. podlažie'} top={'600px'} left={'950px'}
+                    <PopUp room1={firstFloor?.oneRooms} room2={firstFloor?.twoRooms} room3={firstFloor?.threeRooms} room4={firstFloor?.fourRooms} title={'03. podlažie'} top={'600px'} left={'950px'}
                            display={'block'}/>
                 </div>
             </foreignObject>
