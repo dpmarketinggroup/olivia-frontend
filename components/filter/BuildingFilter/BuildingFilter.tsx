@@ -7,7 +7,7 @@ import {BasketCrossed, TwoArrows, Basket} from "@components/icons";
 import axios, {AxiosResponse} from "axios";
 import {value} from "dom7";
 
-type Response = {
+export type Response = {
     id: number;
     attributes: {
         balkon_rozloha?: number;
