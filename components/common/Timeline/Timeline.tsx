@@ -5,7 +5,7 @@ import RollerIcon from "../../icons/Roller";
 const Timeline = ({}) => {
     return (
         <div id="harmonogram"
-             className="xl:mx-auto flex flex-col xl:flex-row gap-[50px] xl:gap-[110px] items-center justify-center my-[60px] xl:mt-0 xl:mb-[135px] relative">
+             className="xl:mx-auto flex flex-col xl:flex-row gap-[50px] xl:gap-[30px] items-center justify-center my-[60px] xl:mt-0 xl:mb-[135px] relative">
             {[
                 {
                     icon: <PaperIcon classname="w-[35px] h-[38px] xl:w-[46px] xl:h-[49px]"/>,
@@ -26,6 +26,7 @@ const Timeline = ({}) => {
                     quarter: "2. kvartál"
                 },
             ].map(({quarter, title, year, icon}, index) =>
+                <>
                 <div key={index} className={`flex flex-col gap-[13px] xl:gap-[50px] items-center justify-center`}>
                     <div>
                         {icon}
@@ -38,12 +39,13 @@ const Timeline = ({}) => {
                             className="font-normal text-[14px] xl:text-[16px] leading-[24px] tracking-[-0.1px]">{quarter}</span>
                     </div>
                 </div>
+                    {
+                        index < 2 &&
+                        <div className="hidden xl:inline-block w-[50px] h-[2px] bg-black opacity-20"></div>
+                    }
+                </>
             )
             }
-            {/*<div*/}
-            {/*    className="hidden xl:inline-block absolute top-1/2 left-[35%] w-[50px] h-[2px] bg-black opacity-20"></div>*/}
-            {/*<div*/}
-            {/*    className="hidden xl:inline-block absolute top-1/2 left-[61%] w-[50px] h-[2px] bg-black opacity-20"></div>*/}
         </div>
     );
 };

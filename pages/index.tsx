@@ -15,7 +15,7 @@ const Home = () => {
             <Head>
                 <title>Moderné mestské bývanie | Olivia Residence</title>
             </Head>
-            <div className="flex justify-center pt-[115px]">
+            <div className="flex justify-center pt-[100px]">
                 <div className="h-[650px] w-full max-w-[1920px] xl:mb-[140px] relative">
                     <div className="absolute w-full xl:max-w-[1920px] h-[650px] -z-20">
                         <Image objectFit="cover" layout="fill" alt="hero image" src={'/img/hero.jpg'}/>
@@ -67,9 +67,9 @@ const Home = () => {
                             <span
                                 className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033] text-center xl:text-left">Detail apartmánu</span>
                         </div>
-                        <div className="hidden xl:inline-block relative left-[285px]">
-                            <Severka/>
-                        </div>
+                        {/*<div className="hidden xl:inline-block relative left-[285px]">*/}
+                        {/*    <Severka/>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
             </div>

@@ -36,9 +36,9 @@ const PonukaBytov = () => {
                                     <span
                                         className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033] text-center xl:text-left">Detail apartmánu</span>
                                 </div>
-                                <div className="hidden xl:inline-block relative left-[285px]">
-                                    <Severka/>
-                                </div>
+                                {/*<div className="hidden xl:inline-block relative left-[285px]">*/}
+                                {/*    <Severka/>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                     </div>
