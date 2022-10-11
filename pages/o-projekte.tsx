@@ -165,7 +165,7 @@ const OProjekte = () => {
                     </div>
                 </div>
             </div>
-            <Articles classname={'mb-[90px] xl:pt-[120px]'}/>
+            {/*<Articles classname={'mb-[90px] xl:pt-[120px]'}/>*/}
             <Subscription/>
             <MapFooter/>
         </div>
