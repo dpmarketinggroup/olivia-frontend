@@ -29,15 +29,15 @@ const Kontakt = () => {
                                     src="/img/bozenaNemcova.png"
                                 />
                                 <div className={'leading-6'}>
-                                    <p className="font-bold">Božena Nemcová</p>
+                                    <p className="font-bold">JUDr. Ivan Jurik</p>
                                     <span className="text-[14px]">Sales Assistant</span>
                                 </div>
                             </div>
                             <div className="mb-[100px] xl:mb-[20px]">
                                 <div className="flex gap-[20px] items-center">
                                     <Phone/>
-                                    <Link href={'tel:+421911000000'}>
-                                        <a className="font-bold text-[18px] leading-7">+421 911 000 000</a>
+                                    <Link href={'tel:+421901923324'}>
+                                        <a className="font-bold text-[18px] leading-7">+421 901 923 324</a>
                                     </Link>
                                 </div>
                                 <div className="flex gap-[20px] items-center">

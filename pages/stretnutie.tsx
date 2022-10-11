@@ -42,23 +42,21 @@ const Stretnutie = () => {
                                         />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px] text-white">Božena
-                                            Nemcová</p>
+                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px] text-white">JUDr. Ivan Jurik</p>
                                         <span className="text-[14px] leading-5 text-white">Sales Assistant</span>
                                     </div>
                                 </div>
                                 <div className="mb-[90px] xl:mb-[20px]">
                                     <div className="flex gap-[20px] items-center">
                                         <Phone/>
-                                        <Link href={'tel:+421911000000'}>
-                                            <a className="font-bold text-[18px] leading-7 text-white">+421 911 000
-                                                000</a>
+                                        <Link href={'tel:+421901923324'}>
+                                            <a className="font-bold text-[18px] leading-7 text-white">+421 901 923 324</a>
                                         </Link>
                                     </div>
                                     <div className="flex gap-[20px] items-center">
                                         <EmailSign/>
-                                        <Link href={'mailto:info@oliviaresidence.sk'}>
-                                            <a className="font-bold text-[18px] leading-7 text-white">info@oliviaresidence.sk</a>
+                                        <Link href={'mailto:predaj@oliviaresidenc.sk'}>
+                                            <a className="font-bold text-[18px] leading-7 text-white">predaj@oliviaresidenc.sk</a>
                                         </Link>
                                     </div>
                                 </div>
