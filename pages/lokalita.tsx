@@ -85,7 +85,7 @@ const Lokalita = () => {
             ))}
             <Negotiation title="Rožňavská 1A, Bratislava" subtitle="Lokalita, v ktorej máte všetko na dosah."
                          centerText={true}/>
-            <h2 className={'text-center mt-[175px] font-bold text-[40px] leading-[48px] tracking-[-0.5] text-[#0E3F3B]'}>Vybavenie apartmánov</h2>
+            <h2 className={'mt-[175px] font-bold text-[40px] leading-[48px] tracking-[-0.5] text-[#0E3F3B] mx-4 xl:mx-0'}>Vybavenie apartmánov</h2>
             <ApartmentEquipmentDescription/>
             <div className={'flex flex-col xl:flex-row gap-[10px] justify-center mt-[-50px] mb-[175px] mx-4 '}>
                 <Button variant={'outlined'}>
