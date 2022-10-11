@@ -159,6 +159,7 @@ g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
 }
 
 .st19:hover {
+    cursor: pointer;
     opacity: 0.7;
 }
 
@@ -281,6 +282,7 @@ g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
 }
 
 .st20:hover {
+    cursor: pointer;
     opacity: 0.7;
 }
 
@@ -288,10 +290,7 @@ g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
     fill: #F5F5F5;
 }
 
-
-/*/////////////////////////////////////////////////////////////////*/
-/*/////////////////////////////////////////////////////////////////*/
-
+/*floor 14 (Floor14.tsx)*/
 .floor14 .st0 {
     fill: #ECECEC;
 }
@@ -402,9 +401,15 @@ g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
 }
 
 .floor14 .st20:hover {
+    cursor: pointer;
     opacity: 0.7;
 }
 
 .floor14 .st21 {
     fill: #F5F5F5;
 }
+
+
+/*/////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////*/
+

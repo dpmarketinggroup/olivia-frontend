@@ -31,9 +31,9 @@ const Negotiation = ({
                             </Button>
                         </div>
                     ) : (
-                        <div className="text-center">
+                        <div className="xl:text-center">
                             <h3 className="font-bold text-[32px] leading-[38px] tracking-[-0.4px] text-green2 mb-[20px] mx-4">{title}</h3>
-                            <p className="text-[16px] leading-6 tracking-[0.1px] text-[#676766] mb-[60px]">{subtitle}</p>
+                            <p className="text-[16px] leading-6 tracking-[0.1px] text-[#676766] mb-[60px] mx-4 xl:mx-0">{subtitle}</p>
                         </div>
                     )
                 }

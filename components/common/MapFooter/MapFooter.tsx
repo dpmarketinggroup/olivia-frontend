@@ -13,7 +13,7 @@ const MapFooter = () => {
                             <p className="leading-[28px] text-white">Zodpovieme všetky Vaše
                                 otázky, prevedieme Vás procesom kúpy a poskytneme Vám všetky potrebné informácie o Vašom
                                 novom bývaní.</p>
-                            <p className="font-bold text-[24px] leading-[32px] text-white xl:w-auto">Rožňavská
+                            <p className="font-bold text-[24px] leading-[32px] text-white xl:w-auto self-start">Rožňavská
                                 1A, Bratislava</p>
                             <Link href='/stretnutie'>
                                 <button

@@ -75,7 +75,7 @@ const Home = () => {
             <ApartmentSwiper/>
             <Negotiation title={"Lokalita v centre diania"} subtitle={"Rožňavská 1A, Bratislava"}/>
             <div className={'flex flex-col mt-[150px]'}>
-                <h2 className={'text-[#0E3F3B] font-bold text-[40px] text-center'}>Vybavenie apartmánov</h2>
+                <h2 className={'text-[#0E3F3B] font-bold text-[40px] leading-[48px] mx-4 xl:mx-0 xl:text-center'}>Vybavenie apartmánov</h2>
                 <ApartmentEquipmentDescription/>
                 <div className={'mx-auto flex flex-col xl:flex-row gap-[15px] w-full xl:w-auto px-[1rem] xl:px-0'}>
                     <Button variant={'outlined'}>
