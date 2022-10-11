@@ -5,10 +5,10 @@ interface PopUpProps {
     left:string
     display?:string
     title: string
-    room1?: string
-    room2?: string
-    room3?: string
-    room4?: string
+    room1?: number
+    room2?: number
+    room3?: number
+    room4?: number
 }
 
 const PopUp: FunctionComponent<PopUpProps>
@@ -29,7 +29,7 @@ const PopUp: FunctionComponent<PopUpProps>
                     <p className="mb-[15px] ml-[35px] font-bold text-[18px] leading-7 text-[#476761]">{title}</p>
                     <div className="flex">
                         <p className="w-[140px] text-[12px] leading-5 text-[#999999]">1 - izbové apartmány</p>
-                        <span className="text-[14px] font-medium leading-5 text-[#476761]">10</span>
+                        <span className="text-[14px] font-medium leading-5 text-[#476761]">{room1}</span>
                     </div>
                     <div className="flex">
                         <p className="w-[140px] text-[12px] leading-5 text-[#999999]">2 - izbové apartmány</p>
