@@ -4,7 +4,7 @@ import {
     House,
     UniCredit,
     Phone,
-    EmailSign
+    EmailSign, RectangleLightIcon, RectangleDarkIcon
 } from "@components/icons";
 import Head from "next/head";
 import Image from "next/image";
@@ -15,6 +15,7 @@ import GlassStarIcon from "@components/icons/GlassStar";
 import BasketIcon from "@components/icons/Basket";
 import ElectricPanelIcon from "@components/icons/ElectricPanel";
 import TwoArrowsIcon from "@components/icons/TwoArrows";
+import React from "react";
 
 interface CustomDescriptionProps{
     src:string;
@@ -60,7 +61,9 @@ const OProjekte = () => {
                 <title>O projekte | Olivia Residence</title>
             </Head>
             <Hero imgName={"oProjekteHero"} icon={<House/>} title={"O projekte"}
-                  description="Všetky podstatné informácie o Vašom novom bývaní na jednom mieste."/>
+                  description="Všetky podstatné informácie o Vašom novom bývaní na jednom mieste."
+                withRectangles={true}
+            />
             <Timeline/>
             <div className={'px-[1rem] xl:px-0 xl:mx-auto'}>
                 <Link href="/stretnutie">
@@ -73,7 +76,7 @@ const OProjekte = () => {
             {customDescriptionList.map((props, index) =>(
                 <CustomDescription key={index} {...props}/>
             ))}
-            <CarDescription/>
+            <CarDescription oProjekte={true}/>
             <div className="flex justify-center" id="financovanie">
                 <div className="w-full">
                     <div className="relative mb-[100px] xl:mb-0 flex flex-col">

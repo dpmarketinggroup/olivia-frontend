@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {FloorPlan, ArrowDownNotFilledIcon, RightArrow, Severka} from "@components/icons/";
+import {FloorPlan, ArrowDownNotFilledIcon, RightArrow, Severka, RectangleMediumIcon, RectangleDarkIcon, RectangleLightIcon} from "@components/icons/";
 import {Timeline, MapFooter, Negotiation, Articles, Subscription} from "@components/common";
 import {BuildingFilter} from "@components/filter";
 import {ApartmentSwiper, CustomSwiper, DeveloperSwiper} from "@components/swiper";
@@ -10,6 +10,7 @@ import {ApartmentEquipmentDescription, CommonDescription} from "@components/comm
 import {Button} from "@components/ui";
 import DownArrowIcon from "@components/icons/DownArrow";
 import React, {useState} from "react";
+
 
 const Home = () => {
     const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false)
@@ -43,6 +44,15 @@ const Home = () => {
                                 </button>
                             </Link>
                         </div>
+                    </div>
+                    <div className='hidden xl:block absolute bottom-[-60px] left-0'>
+                        <RectangleDarkIcon/>
+                    </div>
+                    <div className='hidden xl:block  absolute bottom-[-60px] left-[60px]'>
+                        <RectangleMediumIcon/>
+                    </div>
+                    <div className='hidden xl:block absolute bottom-[-120px] left-0'>
+                        <RectangleLightIcon/>
                     </div>
                 </div>
             </div>

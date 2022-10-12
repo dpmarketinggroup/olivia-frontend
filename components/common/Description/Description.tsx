@@ -1,6 +1,16 @@
 import React from "react";
 import Image from "next/image";
-import {Camera, GlassStar, Key, Man, MapPoint, Parking, Star} from "@components/icons";
+import {
+    Camera,
+    GlassStar,
+    Key,
+    Man,
+    MapPoint,
+    Parking,
+    RectangleDarkIcon, RectangleLightIcon,
+    RectangleMediumIcon,
+    Star
+} from "@components/icons";
 import {Button} from "@components/ui";
 
 export interface DescriptionProps {
@@ -13,7 +23,7 @@ export interface DescriptionProps {
 
 const Description = ({children, src, className, reverse, heading}: DescriptionProps) => {
     return (
-        <div className={`flex flex-col ${reverse ? 'xl:flex-row-reverse': 'xl:flex-row'} justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className} mb-[125px]`}>
+        <div className={`relative flex flex-col ${reverse ? 'xl:flex-row-reverse': 'xl:flex-row'} justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className} mb-[125px]`}>
             <div className={'shrink-0 mb-[25px] xl:mb-0'}>
                 <Image objectFit="cover" width={555} height={400} alt="description image" src={src}/>
             </div>
@@ -57,6 +67,12 @@ export const CommonDescription = () => {
                     Nezáväzné stretnutie
                 </Button>
             </div>
+            <div className='hidden xl:block absolute right-[-100px] top-[30px]'>
+                <RectangleMediumIcon/>
+            </div>
+            <div className='hidden xl:block absolute left-[555px] bottom-[-53px]'>
+                <RectangleLightIcon/>
+            </div>
         </Description>)
 }
 
@@ -91,11 +107,30 @@ export const ApartmentEquipmentDescription = () => {
                     </div>
                 ))}
             </div>
+            <div className='hidden xl:block absolute bottom-[-54px] left-[150px]'>
+                <RectangleLightIcon/>
+            </div>
+            <div className='hidden xl:block absolute bottom-[-220px] left-[-60px]'>
+                <RectangleDarkIcon/>
+            </div>
+            <div className='hidden xl:block absolute top-[-80px] right-[50px]'>
+                <RectangleMediumIcon/>
+            </div>
+            <div className='hidden xl:block absolute bottom-[-260px] right-[-120px]'>
+                <RectangleDarkIcon/>
+            </div>
+            <div className='hidden xl:block absolute bottom-[-202px] right-[-60px]'>
+                <RectangleMediumIcon/>
+            </div>
         </Description>
     )
 }
 
-export const CarDescription = () => {
+interface CarDescriptionProps{
+    oProjekte?:boolean
+}
+
+export const CarDescription = ({oProjekte = false}:CarDescriptionProps) => {
     return (
         <Description src={"/img/car.png"}>
             <h3 className={'text-[40px] leading-[48px] text-green2 font-bold'}>Garážové parkovanie</h3>
@@ -116,6 +151,39 @@ export const CarDescription = () => {
                 }
             </div>
             <Button className={'w-[190px]'} variant={'filled'}>Nezáväzné stretnutie</Button>
+            <div className={`hidden xl:block absolute bottom-[80px] left-[480px] -z-30`}>
+                <RectangleDarkIcon/>
+            </div>
+            <div className={`hidden xl:block absolute bottom-0 left-[-80px]`}>
+                <RectangleDarkIcon/>
+            </div>
+            <div className={`hidden xl:block absolute bottom-[350px] left-[50px]`}>
+                <RectangleDarkIcon/>
+            </div>
+            <div className={`hidden xl:block absolute bottom-[350px] left-[110px]`}>
+                <RectangleMediumIcon/>
+            </div>
+            <div className={`hidden xl:block absolute bottom-[290px] left-[50px]`}>
+                <RectangleLightIcon/>
+            </div>
+            <div className={`hidden xl:block absolute bottom-[410px] left-[-10px]`}>
+                <RectangleLightIcon/>
+            </div>
+            <div className={`hidden xl:block absolute bottom-[290px] left-[170px] -z-30`}>
+                <RectangleMediumIcon/>
+            </div>
+            <div className={`hidden xl:block absolute bottom-[340px] left-[460px]`}>
+                <RectangleLightIcon/>
+            </div>
+            <div className={`${oProjekte ? "hidden xl:block" : "hidden"} absolute bottom-[1475px] left-[-60px]`}>
+                <RectangleLightIcon/>
+            </div>
+            <div className={`${oProjekte ? "hidden xl:block" : "hidden"}  absolute bottom-[1050px] left-[1100px]`}>
+                <RectangleDarkIcon/>
+            </div>
+            <div className={`${oProjekte ? "hidden xl:block" : "hidden"} absolute bottom-[990px] left-[1040px]`}>
+                <RectangleLightIcon/>
+            </div>
         </Description>
     )
 }

@@ -1,18 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
+import {RectangleDarkIcon, RectangleLightIcon, RectangleMediumIcon} from "@components/icons";
+import React from "react";
+import RectangleLight from "@components/icons/RectangleLight";
 
 interface HeroProps {
     imgName: string,
     icon: JSX.Element,
     title: string,
     description?: string,
+    withRectangles?:boolean
 }
 
 const Hero = ({
                   imgName,
                   icon,
                   title,
-                  description
+                  description,
+                    withRectangles = false,
               }: HeroProps) => {
     return (
         <div className="flex justify-center mt-[60px]">
@@ -25,7 +30,7 @@ const Hero = ({
                         src={`/img/${imgName}.jpg`}
                     />
                 </div>
-                <div className="xl:w-[445px] mx-4 xl:ml-[165px] xl:mr-0 pt-[90px] mb-[20px]">
+                <div className="relative xl:w-[445px] mx-4 xl:ml-[165px] xl:mr-0 pt-[90px] mb-[20px]">
                     <div className="mb-[30px] flex justify-center xl:block">
                         {icon}
                     </div>
@@ -41,6 +46,15 @@ const Hero = ({
                             Nezáväzné stretnutie
                         </button>
                     </Link>
+                    <div className={`${withRectangles ? "hidden xl:block" : "hidden"} absolute bottom-[-135px] left-[-165px]`}>
+                        <RectangleDarkIcon/>
+                    </div>
+                    <div className={`${withRectangles ? "hidden xl:block" : "hidden"} absolute bottom-[-135px] left-[-105px]`}>
+                        <RectangleMediumIcon/>
+                    </div>
+                    <div className={`${withRectangles ? "hidden xl:block" : "hidden"} absolute bottom-[-195px] left-[-165px]`}>
+                        <RectangleLightIcon/>
+                    </div>
                 </div>
             </div>
         </div>

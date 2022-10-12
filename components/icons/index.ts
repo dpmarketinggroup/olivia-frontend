@@ -51,3 +51,7 @@ export {default as TrainIcon} from './Train'
 export {default as WeightIcon} from './Weight'
 export {default as TennisIcon} from './Tennis'
 export {default as FootballIcon} from './Football'
+export {default as RectangleDarkIcon} from './RectangleDark'
+export {default as RectangleMediumIcon} from './RectangleMedium'
+export {default as RectangleLightIcon} from './RectangleLight'
+
