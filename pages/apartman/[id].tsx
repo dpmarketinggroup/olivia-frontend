@@ -69,7 +69,7 @@ const ApartmentDetail = () => {
                 email,
                 message,
                 phone,
-                cislo_bytu
+                apartment: cislo_bytu
             })
         })
     }

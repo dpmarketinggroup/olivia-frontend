@@ -1,10 +1,31 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import nodemailer from "nodemailer";
 
+interface Data {
+    name: string;
+    surname: string;
+    phone: string;
+    email: string;
+    message: string;
+    apartment?: string;
+}
+
 export default async function(req: NextApiRequest, res: NextApiResponse) {
-    const {phone, email, name, vin} = JSON.parse(req.body.body)
+    const {email, surname, name, phone, message, apartment} = JSON.parse(req.body.body) as Data;
+    console.log(req.body.body)
     if (req.method === "POST") {
         // Process a POST request
+        res.send({
+            status: 200,
+            body: {
+                name,
+                surname,
+                phone,
+                message,
+                email,
+                apartment
+            }
+        })
     }
     // let transporter = nodemailer.createTransport({
     //     port: 465,
@@ -31,9 +52,4 @@ export default async function(req: NextApiRequest, res: NextApiResponse) {
     //               <h5><span style="text-decoration: underline">VIN:</span> ${vin}</h5>
     //           </div>`
     // })
-
-    res.json({
-        message: 'Ok',
-        status: 200
-    })
 }

@@ -18,6 +18,13 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
     const [isOpenBanner, setIsOpenBanner] = useState(true);
     const [scrollLocked, setScrollLocked] = useScrollLock();
 
+    function handleClick() {
+        setIsOpenBanner(false)
+        setTimeout(() => {
+            setIsOpenBanner(true)
+        }, 10000)
+    }
+
     return (
         <>
             {
@@ -36,7 +43,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                             </div>
                         </div>
                         <div className="xl:mr-[13px] absolute right-[1rem] xl:right-[12px] top-[10px] md:top-[1px]">
-                            <button onClick={() => setIsOpenBanner(false)}>
+                            <button onClick={handleClick}>
                                 <CloseIcon/>
                             </button>
                         </div>
