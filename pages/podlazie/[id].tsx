@@ -20,12 +20,16 @@ import {
     Floor8,
     Floor9
 } from "@components/floors";
+import React, {useState} from "react";
 
 const FloorDetail = () => {
     const router = useRouter()
     const fetch = useStore(state => state.setSelectedApartment)
     const apartment = useStore(state => state.selectedApartment)
     console.log(apartment)
+
+    const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false)
+
 
     function currentApartmentRenderSvg() {
         switch (router.query.id) {
@@ -160,26 +164,57 @@ const FloorDetail = () => {
                         <div className="xl:mx-auto w-full xl:max-w-[1200px]">
                             <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                                 <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
-                                <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber apartmánu na podlaží</h1>
+                                <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber
+                                    apartmánu na podlaží</h1>
                             </div>
                             <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
-                                <div
-                                    className="flex gap-[8px] xl:gap-[13px] items-center px-[20px] xl:px-[29px] py-[7px] xl:py-[16px] bg-[#F5F5F5] rounded-[15px] xl:rounded-[33px] xl:mr-[155px]">
-                                    <Select
-                                        className="w-[120px] floor-num"
-                                        data={[
-                                            "4. podlažie", "5. podlažie", "7. podlažie", "8. podlažie", "9. podlažie", "10. podlažie", "11. podlažie", "12. podlažie", "13. podlažie", "14. podlažie",
-                                        ]}
-                                        placeholder={`${router.query.id}. podlažie`}
-                                        variant="unstyled"
-                                        rightSection={<ArrowDownNotFilledIcon/>}
-                                        rightSectionWidth={-70}
-                                        styles={{rightSection: {pointerEvents: 'none'}}}
-                                        transitionDuration={80}
-                                    />
+                                <div className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer"
+                                    onClick={() => setIsFloorDropDownCLicked((prevState) => !prevState)}>
+                                    <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">{router.query.id}. podlažie</span>
+                                    <div className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"}`}>
+                                        <div
+                                            className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
+                                            <Link href={'/podlazie/4'}>
+                                                <a className="py-[7px]">4. podlažie</a>
+                                            </Link>
+                                            <Link href={'/podlazie/5'}>
+                                                <a className="py-[7px]">5. podlažie</a>
+                                            </Link>
+                                            <Link href={'/podlazie/6'}>
+                                                <a className="py-[7px]">6. podlažie</a>
+                                            </Link>
+                                            <Link href={'/podlazie/7'}>
+                                                <a className="py-[7px]">7. podlažie</a>
+                                            </Link>
+                                            <Link href={'/podlazie/8'}>
+                                                <a className="py-[7px]">8. podlažie</a>
+                                            </Link>
+                                            <Link href={'/podlazie/9'}>
+                                                <a className="py-[7px]">9. podlažie</a>
+                                            </Link>
+                                            <Link href={'/podlazie/10'}>
+                                                <a className="py-[7px]">10. podlažie</a>
+                                            </Link>
+                                            <Link href={'/podlazie/11'}>
+                                                <a className="py-[7px]">11. podlažie</a>
+                                            </Link>
+                                            <Link href={'/podlazie/12'}>
+                                                <a className="py-[7px]">12. podlažie</a>
+                                            </Link>
+                                            <Link href={'/podlazie/13'}>
+                                                <a className="py-[7px]">13. podlažie</a>
+                                            </Link>
+                                            <Link href={'/podlazie/14'}>
+                                                <a className="py-[7px]">14. podlažie</a>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <div className="ml-[10px] inline-block">
+                                        <ArrowDownNotFilledIcon/>
+                                    </div>
                                 </div>
                                 <div
-                                    className="flex gap-[10px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[285px] xl:w-[450px] xl:justify-center">
+                                    className="flex gap-[10px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[130px] xl:w-[450px] xl:justify-center">
                                     <Link href="/ponuka-bytov">
                                         <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Výber
                                             podlažia</a>
@@ -196,13 +231,15 @@ const FloorDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col xl:flex-row flex-col-reverse xl:justify-between items-center xl:items-start xl:max-w-[1200px] xl:mx-auto">
+                    <div
+                        className="flex flex-col xl:flex-row flex-col-reverse xl:justify-between items-center xl:items-start xl:max-w-[1200px] xl:mx-auto">
                         <div className="bg-[#F5F5F5] max-h-[520px] w-full xl:w-[400px]">
                             <div className="py-[60px]">
                                 {renderDetail()}
                             </div>
                         </div>
-                        <div className="w-full max-w-[450px] xl:w-full xl:max-w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
+                        <div
+                            className="w-full max-w-[450px] xl:w-full xl:max-w-[690px] h-[265px] xl:h-[555px] xl:mb-[125px]">
                             {currentApartmentRenderSvg()}
                         </div>
                     </div>
