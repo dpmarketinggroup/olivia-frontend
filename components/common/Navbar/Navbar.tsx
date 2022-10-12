@@ -1,4 +1,4 @@
-import {FunctionComponent, useEffect, useState} from "react";
+import {FunctionComponent, useEffect, useState, MouseEvent} from "react";
 import Logo from "../../icons/Logo";
 import DownArrowIcon from "../../icons/DownArrow";
 import Link from "next/link";
@@ -6,59 +6,64 @@ import {Burger, Select} from '@mantine/core';
 import {useScrollLock} from "@mantine/hooks";
 import RightArrowIcon from "@components/icons/RightArrow";
 import CloseIcon from "@components/icons/Close";
-import {useCookies} from "react-cookie";
+import Cookies from 'js-cookie'
 
 interface NavbarProps {
     mainPage?: boolean
 }
 
-
+const USER_CONSENT_COOKIE_KEY = 'cookie_consent_is_true'
+const USER_CONSENT_COOKIE_EXPIRE_DATE = 3
 
 const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
-    const [cookies, setCookie, removeCookie] = useCookies(['banner']);
     const languages = ["SK", "EN"];
 
     const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
-    const [isOpenBanner, setIsOpenBanner] = useState(true);
+    const [cookieConsentIsTrue, setCookieConsentIsTrue] = useState(true)
     const [scrollLocked, setScrollLocked] = useScrollLock();
 
-    function handleClick() {
-        setCookie('banner', {isOpenBanner: false})
-        setTimeout(() => {
-            setCookie('banner', {isOpenBanner: true})
-        }, 5000)
-    }
-
     useEffect(() => {
-        setIsOpenBanner(cookies.banner.isOpenBanner)
-    }, [cookies.banner])
+        const consentIsTrue = Cookies.get(USER_CONSENT_COOKIE_KEY) === 'true'
+        setCookieConsentIsTrue(consentIsTrue)
+    }, [])
+
+    const onClick = (e: MouseEvent<HTMLElement>) => {
+        e.preventDefault()
+        if (!cookieConsentIsTrue) {
+            Cookies.set(USER_CONSENT_COOKIE_KEY, 'true', {
+                expires: USER_CONSENT_COOKIE_EXPIRE_DATE,
+            })
+            setCookieConsentIsTrue(true)
+        }
+    }
 
     return (
         <>
             {
-                (mainPage && isOpenBanner) &&
-                <div className="flex bg-[#0E3F3B] items-center w-full justify-center fixed h-[40px] xl:mt-0 z-[99]">
-                    <div className="w-full max-w-[1920px] px-[1rem] xl:px-0 relative">
-                        <div className="flex flex-col md:flex-row md:gap-[20px] ml-[23%] md:ml-[35%] xl:ml-0">
-                            <p className="text-white font-medium text-[14px] leading-5 w-[160px] xl:ml-[40%]">
-                                Výstavba oficiálne začala.
-                            </p>
-                            <div className="flex gap-[8px] items-center">
-                                <Link href="/">
-                                    <a className="text-white font-medium text-[14px] leading-5 underline underline-offset-[5px]">Viac</a>
-                                </Link>
-                                <RightArrowIcon/>
+                (mainPage && !cookieConsentIsTrue) && (
+                    <div className="flex bg-[#0E3F3B] items-center w-full justify-center fixed h-[40px] xl:mt-0 z-[99]">
+                        <div className="w-full max-w-[1920px] px-[1rem] xl:px-0 relative">
+                            <div className="flex flex-col md:flex-row md:gap-[20px] ml-[23%] md:ml-[35%] xl:ml-0">
+                                <p className="text-white font-medium text-[14px] leading-5 w-[160px] xl:ml-[40%]">
+                                    Výstavba oficiálne začala.
+                                </p>
+                                <div className="flex gap-[8px] items-center">
+                                    <Link href="/">
+                                        <a className="text-white font-medium text-[14px] leading-5 underline underline-offset-[5px]">Viac</a>
+                                    </Link>
+                                    <RightArrowIcon/>
+                                </div>
+                            </div>
+                            <div className="xl:mr-[13px] absolute right-[1rem] xl:right-[12px] top-[10px] md:top-[1px]">
+                                <button onClick={onClick}>
+                                    <CloseIcon/>
+                                </button>
                             </div>
                         </div>
-                        <div className="xl:mr-[13px] absolute right-[1rem] xl:right-[12px] top-[10px] md:top-[1px]">
-                            <button onClick={handleClick}>
-                                <CloseIcon/>
-                            </button>
-                        </div>
                     </div>
-                </div>
+                )
             }
-        <nav className={`bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] ${(mainPage && isOpenBanner) && "mt-[40px]"} xl:h-[60px] w-full fixed top-0 z-50`}>
+        <nav className={`bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] ${(mainPage && !cookieConsentIsTrue) && "mt-[40px]"} xl:h-[60px] w-full fixed top-0 z-50`}>
             <div className={`lg:shadow-none w-full max-w-[1920px] mx-auto xl:h-[60px] flex items-center justify-between`}>
                 <div className="xl:flex gap-[50] items-center mx-4 xl:ml-[40px] xl:mr-0 h-full w-full">
                     <div
