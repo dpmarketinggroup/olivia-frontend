@@ -57,9 +57,9 @@ const Home = () => {
                     </div>
                     <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:justify-between xl:mr-[180px]">
                         <div className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute xl:right-[210px] cursor-pointer"
-                            onClick={() => setIsFloorDropDownCLicked((prevState) => !prevState)}
-                        >
-                                <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">7. podlažie</span>
+                            onClick={() => setIsFloorDropDownCLicked((prevState) => !prevState)}>
+                            <span
+                                className="drop-span font-bold text-[18px] leading-7 text-[#476761]">7. podlažie</span>
                             <div className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"}`}>
                                 <div
                                     className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">

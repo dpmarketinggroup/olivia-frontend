@@ -5,7 +5,7 @@ import {ArrowDownNotFilledIcon, Bank, FloorPlan, RightArrow, Severka, Star} from
 import Link from "next/link";
 import Image from "next/image";
 import {CustomSwiper} from "@components/swiper";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import {useStore} from "../../lib/store/useStore";
 import {Button} from "@components/ui";
@@ -14,6 +14,7 @@ import {CarDescription} from "@components/common/Description/Description";
 const ApartmentDetail = () => {
     const [opened, setOpened] = useState(false);
     const [opened2, setOpened2] = useState(false);
+    const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false)
 
     const router = useRouter()
 
@@ -151,22 +152,51 @@ const ApartmentDetail = () => {
                             <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber
                                 apartmánu na podlaží</h1>
                         </div>
-                        <div
-                            className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
-                            <div
-                                className="flex gap-[8px] xl:gap-[13px] items-center px-[20px] xl:px-[29px] py-[7px] xl:py-[16px] bg-[#F5F5F5] rounded-[15px] xl:rounded-[33px] xl:mr-[155px]">
-                                <Select
-                                    className="w-[120px] floor-num"
-                                    data={[
-                                        "4. podlažie", "5. podlažie", "7. podlažie", "8. podlažie", "9. podlažie", "10. podlažie", "11. podlažie", "12. podlažie", "13. podlažie", "14. podlažie",
-                                    ]}
-                                    placeholder="7. podlažie"
-                                    variant="unstyled"
-                                    rightSection={<ArrowDownNotFilledIcon/>}
-                                    rightSectionWidth={-70}
-                                    styles={{rightSection: {pointerEvents: 'none'}}}
-                                    transitionDuration={80}
-                                />
+                        <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
+                            <div className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer"
+                                 onClick={() => setIsFloorDropDownCLicked((prevState) => !prevState)}>
+                                <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">{apartment.data.attributes.poschodie}. podlažie</span>
+                                <div className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"}`}>
+                                    <div
+                                        className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
+                                        <Link href={'/podlazie/4'}>
+                                            <a className="py-[7px]">4. podlažie</a>
+                                        </Link>
+                                        <Link href={'/podlazie/5'}>
+                                            <a className="py-[7px]">5. podlažie</a>
+                                        </Link>
+                                        <Link href={'/podlazie/6'}>
+                                            <a className="py-[7px]">6. podlažie</a>
+                                        </Link>
+                                        <Link href={'/podlazie/7'}>
+                                            <a className="py-[7px]">7. podlažie</a>
+                                        </Link>
+                                        <Link href={'/podlazie/8'}>
+                                            <a className="py-[7px]">8. podlažie</a>
+                                        </Link>
+                                        <Link href={'/podlazie/9'}>
+                                            <a className="py-[7px]">9. podlažie</a>
+                                        </Link>
+                                        <Link href={'/podlazie/10'}>
+                                            <a className="py-[7px]">10. podlažie</a>
+                                        </Link>
+                                        <Link href={'/podlazie/11'}>
+                                            <a className="py-[7px]">11. podlažie</a>
+                                        </Link>
+                                        <Link href={'/podlazie/12'}>
+                                            <a className="py-[7px]">12. podlažie</a>
+                                        </Link>
+                                        <Link href={'/podlazie/13'}>
+                                            <a className="py-[7px]">13. podlažie</a>
+                                        </Link>
+                                        <Link href={'/podlazie/14'}>
+                                            <a className="py-[7px]">14. podlažie</a>
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div className="ml-[10px] inline-block">
+                                    <ArrowDownNotFilledIcon/>
+                                </div>
                             </div>
                             <div
                                 className="flex gap-[10px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[285px] xl:w-[450px] xl:justify-center">
