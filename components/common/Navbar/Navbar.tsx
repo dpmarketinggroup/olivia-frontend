@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useState} from "react";
+import {FunctionComponent, useEffect, useState} from "react";
 import Logo from "../../icons/Logo";
 import DownArrowIcon from "../../icons/DownArrow";
 import Link from "next/link";
@@ -6,23 +6,36 @@ import {Burger, Select} from '@mantine/core';
 import {useScrollLock} from "@mantine/hooks";
 import RightArrowIcon from "@components/icons/RightArrow";
 import CloseIcon from "@components/icons/Close";
+import {useCookies} from "react-cookie";
 
 interface NavbarProps {
     mainPage?: boolean
 }
 
+
+
 const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
+    const [cookies, setCookie, removeCookie] = useCookies(['banner']);
     const languages = ["SK", "EN"];
 
     const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
     const [isOpenBanner, setIsOpenBanner] = useState(true);
     const [scrollLocked, setScrollLocked] = useScrollLock();
 
+    // useEffect(() => {
+    //     setCookie('banner', {isOpenBanner})
+    //     console.log(cookies.banner.isOpenBanner)
+    // })
+
+    useEffect(() => {
+        setIsOpenBanner(cookies.banner.isOpenBanner)
+    }, [cookies.banner])
+
     function handleClick() {
-        setIsOpenBanner(false)
+        setCookie('banner', {isOpenBanner: false})
         setTimeout(() => {
-            setIsOpenBanner(true)
-        }, 10000)
+            setCookie('banner', {isOpenBanner: true})
+        }, 5000)
     }
 
     return (
