@@ -23,7 +23,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
     const [scrollLocked, setScrollLocked] = useScrollLock();
 
     useEffect(() => {
-        setCookie('banner', {isOpenBanner: false})
+        setCookie('banner', {isOpenBanner: true})
+    }, [])
+
+    useEffect(() => {
         setIsOpenBanner(cookies.banner.isOpenBanner)
     }, [cookies.banner])
 
