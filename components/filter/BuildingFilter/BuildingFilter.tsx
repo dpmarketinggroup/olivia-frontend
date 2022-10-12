@@ -21,6 +21,13 @@ export type Response = {
         dostupnost: 'voľný' | 'rezervovaný' | 'predaný';
         pocet_izieb: 'jedno-izbový' | 'jeden a pol-izbový' | 'dvoj-izbový' | 'troj-izbový' | 'štvor-izbový';
         poschodie: number;
+        primarna_foto: {
+            data: {
+                attributes: {
+                    url: string
+                }
+            }
+        }
     }
 }
 
@@ -66,7 +73,7 @@ const Building = () => {
 
     async function handleClick() {
         const clickedButtons: { [x: string]: true; }[] = [];
-        let query = `?filters[cena][$gte]=${price[0] * 1000}&filters[cena][$lte]=${price[1] * 1000}&filters[celkova_rozloha][$gte]=${area[0]}&filters[celkova_rozloha][$lte]=${area[1]}&filters[poschodie][$gte]=${floor[0]}&filters[poschodie][$lte]=${floor[1]}&pagination[pageSize]=100`
+        let query = `?filters[cena][$gte]=${price[0] * 1000}&filters[cena][$lte]=${price[1] * 1000}&filters[celkova_rozloha][$gte]=${area[0]}&filters[celkova_rozloha][$lte]=${area[1]}&filters[poschodie][$gte]=${floor[0]}&filters[poschodie][$lte]=${floor[1]}&pagination[pageSize]=100&populate=*`
         Object.entries(clicked).forEach(([key, value]) => {
             if (value) clickedButtons.push({[key]: value})
         })
@@ -302,7 +309,8 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0
+                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0,
+                                        img: attributes.primarna_foto.data.attributes.url
                                     }
                                 ]}/>
                             ))
@@ -333,7 +341,8 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0
+                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0,
+                                        img: attributes.primarna_foto.data.attributes.url
                                     }
                                 ]}/>
                             ))
@@ -364,7 +373,8 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0
+                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0,
+                                        img: attributes.primarna_foto.data.attributes.url
                                     }
                                 ]}/>
                             ))
@@ -395,7 +405,8 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0
+                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0,
+                                        img: attributes.primarna_foto.data.attributes.url
                                     }
                                 ]}/>
                             ))
@@ -426,7 +437,8 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0
+                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0,
+                                        img: attributes.primarna_foto.data.attributes.url
                                     }
                                 ]}/>
                             ))
