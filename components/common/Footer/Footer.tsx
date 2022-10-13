@@ -13,7 +13,7 @@ interface FooterProps {
 
 const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
     return (
-        <div className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"} w-full `}>
+        <div className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"} w-full green`}>
             <div>
                 <div className="relative bg-black w-full px-[1rem] xl:px-[165px]">
                     <div className="flex flex-col xl:flex-row xl:gap-[205px] items-center xl:items-start justify-between mx-auto xl:max-w-[1200px]">

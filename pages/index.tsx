@@ -58,7 +58,7 @@ const Home = () => {
             </div>
             <Timeline/>
             <CommonDescription/>
-            <div className="flex justify-center my-[70px]">
+            <div className="flex justify-center my-[70px] xl:mt-[200px]">
                 <div className="m xl:mx-[165px]">
                     <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                         <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>

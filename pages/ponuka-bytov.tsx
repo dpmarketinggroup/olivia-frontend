@@ -90,7 +90,9 @@ const PonukaBytov = () => {
                         </div>
                     </div>
                     <BuildingFilter/>
+                    <div className={'xl:mt-[200px]'}>
                     <CarDescription/>
+                    </div>
                 </div>
             </div>
             <MapFooter/>

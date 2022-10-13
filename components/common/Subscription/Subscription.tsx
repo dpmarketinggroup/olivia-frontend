@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Subscription = () => {
     return (
-        <div className='flex justify-center xl:mb-[150px] bg-black xl:bg-transparent xl:h-[340px]'>
+        <div className='flex justify-center xl:mb-[80px] bg-black xl:bg-transparent xl:h-[340px] green'>
             <div className="xl:mx-[165px] xl:bg-black w-full xl:max-w-[1200px] relative px-[1rem] xl:px-0">
                 <div className="flex flex-col gap-[22px] xl:ml-[72px] xl:w-[350px]">
                     <h3 className="font-bold text-[32px] leading-[38px] text-[#89A6A2] pt-[52px]">Odber noviniek</h3>
@@ -13,7 +13,13 @@ const Subscription = () => {
                     <form onSubmit={(e) => e.preventDefault()}>
                         <TextInput
                             className="text-[16px] leading-6"
-                            placeholder="Email" rightSection= {<button><PaperPlane/></button>}/>
+                            placeholder="Email"
+                            // sx={{
+                            //     background:  rgba(255, 255, 255, 0.12),
+                            //     border: 0,
+                            //     color: white;
+                            // }}
+                            rightSection= {<button><PaperPlane/></button>}/>
                     </form>
                     <p className="text-[12px] leading-5 opacity-40 text-white xl:pb-[52px]">
                         Kliknutím na tlačidlo potvrdzujete, že súhlasíte s našimi podmienkami spracovania

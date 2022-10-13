@@ -76,7 +76,9 @@ const OProjekte = () => {
             {customDescriptionList.map((props, index) => (
                 <CustomDescription key={index} {...props}/>
             ))}
+            <div id={'garazove-parkovanie'}>
             <CarDescription oProjekte={true}/>
+            </div>
             <div className="flex justify-center" id="financovanie">
                 <div className="w-full">
                     <div className="relative mb-[100px] xl:mb-0 flex flex-col">
@@ -91,17 +93,15 @@ const OProjekte = () => {
                             </div>
                         </div>
                         <div className="mx-auto">
-                            <div
-                                className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-1/2">
+                            <div className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-1/2">
                                 {[
                                     {step: "1. krok", title: "Rezervačná zmluva", offer: "1 500 €"},
                                     {step: "2. krok", title: "Zmluva o budúcej zmluve", offer: "20% z ceny bytu"},
                                     {step: "3. krok", title: "Kúpna zmluva", offer: "80% z ceny bytu"},
                                 ].map(({step, title, offer}, index) => (
                                     <div key={index}
-                                         className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white mx-[1rem] xl:mx-0 w-[350px] xl:mb-[30px]">
-                                    <span
-                                        className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#C6C6C6]">{step}</span>
+                                         className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px] xl:mb-[30px]">
+                                    <span className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#C6C6C6]">{step}</span>
                                         <h4 className="font-bold text-[18px] leading-7 ">{title}</h4>
                                         <span
                                             className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">{offer}</span>
@@ -117,7 +117,7 @@ const OProjekte = () => {
                                     {step: "2. krok", title: "Zmluva o budúcej zmluve", offer: "20% z ceny bytu"},
                                 ].map(({step, title, offer}, index) => (
                                     <div key={index}
-                                         className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white mx-[1rem] xl:mx-0 w-[350px]">
+                                         className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px]">
                                     <span
                                         className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#C6C6C6]">{step}</span>
                                         <h4 className="font-bold text-[18px] leading-7 ">{title}</h4>
@@ -129,7 +129,7 @@ const OProjekte = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className=" w-[full] -mt-[565px] bg-[#F5F5F5] h-[700px] xl:h-[750px] border-primary">
+                        <div className=" w-[full] mt-[-960px] xl:mt-[-565px] bg-[#F5F5F5] h-[970px] xl:h-[750px] border-primary">
                             <div
                                 className="flex flex-col xl:flex-row gap-[50px] xl:gap-[100px] xl:pt-[550px] pb-[50px] xl:mx-[165px] items-center justify-center">
                                 <div className="hidden xl:inline-block">
@@ -139,7 +139,7 @@ const OProjekte = () => {
                                         kontaktovať. Predstavím Vám detailný model financovania a zodpoviem všetky Vaše
                                         otázky.</p>
                                 </div>
-                                <div className="flex gap-[20px] items-center mt-[450px]">
+                                <div className="flex gap-[20px] items-center mt-[740px] xl:mt-0">
                                     <div className="h-[60px] w-[60px] relative">
                                         <Image
                                             objectFit="cover"
@@ -174,7 +174,9 @@ const OProjekte = () => {
                 </div>
             </div>
             {/*<Articles classname={'mb-[90px] xl:pt-[120px]'}/>*/}
+            <div className={'xl:mt-[200px] xl:mb-[150px]'}>
             <Subscription/>
+            </div>
             <MapFooter/>
         </div>
     )

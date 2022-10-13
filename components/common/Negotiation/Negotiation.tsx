@@ -41,7 +41,7 @@ const Negotiation = ({
                     )
                 }
 
-                <div className="w-full xl:max-w-[1440px] relative mx-0 xl:mx-auto overflow-scroll xl:overflow-visible">
+                <div className="w-full xl:max-w-[1440px] relative mx-0 xl:mx-auto overflow-scroll xl:overflow-visible xl:mb-[-8px]">
                     <Image
                         objectFit="cover"
                         objectPosition={'center'}
@@ -51,13 +51,13 @@ const Negotiation = ({
                         width={1440}
                         src={"/img/map.jpg"}
                     />
-                    <div className='hidden xl:block absolute bottom-[-60px] left-0'>
+                    <div className='hidden xl:block absolute bottom-[-52px] left-0'>
                         <RectangleDarkIcon/>
                     </div>
-                    <div className='hidden xl:block  absolute bottom-[-60px] left-[60px]'>
+                    <div className='hidden xl:block  absolute bottom-[-52px] left-[60px]'>
                         <RectangleMediumIcon/>
                     </div>
-                    <div className='hidden xl:block absolute bottom-[-120px] left-0'>
+                    <div className='hidden xl:block absolute bottom-[-112px] left-0'>
                         <RectangleLightIcon/>
                     </div>
                     <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[2330px] left-[1100px] -z-30`}>
