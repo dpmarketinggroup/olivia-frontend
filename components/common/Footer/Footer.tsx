@@ -24,7 +24,16 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                             <form className={'w-full'} onSubmit={(e) => e.preventDefault()}>
                                 <TextInput
                                     sx={{
-                                        width: '100%'
+                                        width: '100%',
+                                        '.mantine-TextInput-input': {
+                                            color: 'white',
+                                            backgroundColor: 'rgba(255, 255, 255, 0.12)',
+                                            border: 0,
+                                            height: '50px',
+                                            '&::placeholder': {
+                                                color: 'rgba(255, 255, 255, 0.5)'
+                                            }
+                                        }
                                     }}
                                     className="xl:w-[350px] text-[16px] leading-6"
                                     placeholder="Email" rightSection={<button><PaperPlaneIcon/></button>}

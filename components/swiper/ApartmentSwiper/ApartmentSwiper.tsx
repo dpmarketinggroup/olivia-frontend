@@ -54,7 +54,7 @@ const ApartmentSwiper = () => {
                             className={`xl:w-full xl:max-w-fit ${i === 0 && 'xl:ml-[9%] 2xl:ml-[19%]'}`}
                             key={i}
                         >
-                            <h5 className={'text-green2 font-bold text-[24px] leading-[32px] mb-[25px] text-center xl:text-left'}>{label}</h5>
+                            <h5 className={'text-green2 font-bold text-[24px] leading-[32px] mb-[25px]'}>{label}</h5>
                             <Image objectFit={'contain'} alt={'Swiper image'} src={src} width={300} height={200}/>
                         </SwiperSlide>
                     ))}
