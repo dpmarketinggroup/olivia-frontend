@@ -2,7 +2,16 @@ import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import {Form} from "@components/common/";
-import {Phone, EmailSign, MapPoint2} from "@components/icons";
+import {
+    Phone,
+    EmailSign,
+    MapPoint2,
+    RectangleLightIcon,
+    RectangleDarkIcon,
+    RectangleMediumIcon
+} from "@components/icons";
+import React from "react";
+import RectangleMedium from "@components/icons/RectangleMedium";
 
 const Stretnutie = () => {
     return (
@@ -120,7 +129,7 @@ const Stretnutie = () => {
                 </div>
             </div>
             <div className='flex justify-center mx-4 xl:mx-0'>
-                <div className="flex flex-col xl:flex-row gap-[30px] xl:gap-[240px] items-center">
+                <div className="relative  flex flex-col xl:flex-row gap-[30px] xl:gap-[240px] items-center">
                     <div className="flex justify-center mt-[200px] xl:my-[115px]">
                         <Image
                             quality={100}
@@ -139,6 +148,27 @@ const Stretnutie = () => {
                             <MapPoint2 width="16" height="20" fill="000000"/>
                             <p className="font-medium text-[18px] leading-7">Fresh Market | Prízemie</p>
                         </div>
+                    </div>
+                    <div className={`hidden xl:block absolute top-0 left-[-180px]`}>
+                        <RectangleDarkIcon/>
+                    </div>
+                    <div className={`hidden xl:block absolute top-0 left-[-120px]`}>
+                        <RectangleMediumIcon/>
+                    </div>
+                    <div className={`hidden xl:block absolute top-[60px] left-[-180px]`}>
+                        <RectangleLightIcon/>
+                    </div>
+                    <div className={`hidden xl:block absolute top-[500px] left-[-120px]`}>
+                        <RectangleLightIcon/>
+                    </div>
+                    <div className={`hidden xl:block absolute top-[60px] right-[-120px]`}>
+                        <RectangleLightIcon/>
+                    </div>
+                    <div className={`hidden xl:block absolute top-[120px] right-[-60px]`}>
+                        <RectangleDarkIcon/>
+                    </div>
+                    <div className={`hidden xl:block absolute bottom-0 right-0`}>
+                        <RectangleDarkIcon/>
                     </div>
                 </div>
             </div>

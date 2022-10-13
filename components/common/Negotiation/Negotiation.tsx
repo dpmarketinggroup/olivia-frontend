@@ -1,18 +1,22 @@
 import Image from "next/image";
 import {Button} from "@components/ui";
+import {RectangleDarkIcon, RectangleLightIcon, RectangleMediumIcon} from "@components/icons";
+import React from "react";
 
 interface NegotiationProps {
     title: string;
     subtitle: string;
     buttonText?: string;
-    centerText?: boolean
+    centerText?: boolean;
+    lokalita?:boolean
 }
 
 const Negotiation = ({
                          title,
                          subtitle,
                          buttonText = "Viac o lokalite",
-                         centerText = false
+                         centerText = false,
+                        lokalita = false
                      }: NegotiationProps) => {
     return (
         <div className='flex justify-center'>
@@ -47,6 +51,45 @@ const Negotiation = ({
                         width={1440}
                         src={"/img/map.jpg"}
                     />
+                    <div className='hidden xl:block absolute bottom-[-60px] left-0'>
+                        <RectangleDarkIcon/>
+                    </div>
+                    <div className='hidden xl:block  absolute bottom-[-60px] left-[60px]'>
+                        <RectangleMediumIcon/>
+                    </div>
+                    <div className='hidden xl:block absolute bottom-[-120px] left-0'>
+                        <RectangleLightIcon/>
+                    </div>
+                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[2330px] left-[1100px] -z-30`}>
+                        <RectangleDarkIcon/>
+                    </div>
+                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[2050px] left-[500px]`}>
+                        <RectangleDarkIcon/>
+                    </div>
+                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1990px] left-[560px]`}>
+                        <RectangleLightIcon/>
+                    </div>
+                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1850px] left-[40px]`}>
+                        <RectangleLightIcon/>
+                    </div>
+                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1450px] left-[1300px]`}>
+                        <RectangleDarkIcon/>
+                    </div>
+                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1390px] left-[1240px]`}>
+                        <RectangleLightIcon/>
+                    </div>
+                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1320px] left-[50px]`}>
+                        <RectangleLightIcon/>
+                    </div>
+                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1230px] left-[1120px] -z-30`}>
+                        <RectangleMediumIcon/>
+                    </div>
+                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1170px] left-[1060px] -z-30`}>
+                        <RectangleLightIcon/>
+                    </div>
+                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[950px] left-[800px] -z-30`}>
+                        <RectangleDarkIcon/>
+                    </div>
                 </div>
             </div>
         </div>

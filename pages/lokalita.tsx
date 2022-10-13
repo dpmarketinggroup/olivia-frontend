@@ -79,7 +79,7 @@ const Lokalita = () => {
                 <CustomDescription key={k} {...props} />
             ))}
             <Negotiation title="Rožňavská 1A, Bratislava" subtitle="Lokalita, v ktorej máte všetko na dosah."
-                         centerText={true}/>
+                         centerText={true} lokalita={true}/>
             <h2 className={'mt-[175px] font-bold text-[40px] leading-[48px] tracking-[-0.5] text-[#0E3F3B] mx-4 xl:mx-0 xl:text-center'}>Vybavenie
                 apartmánov</h2>
             <ApartmentEquipmentDescription/>
