@@ -17,36 +17,36 @@ import ElectricPanelIcon from "@components/icons/ElectricPanel";
 import TwoArrowsIcon from "@components/icons/TwoArrows";
 import React from "react";
 
-interface CustomDescriptionProps{
-    src:string;
-    title:string;
-    description:string;
-    bulletPoints:[
-        {icon:JSX.Element, label: string},
-        {icon:JSX.Element, label: string},
-        {icon:JSX.Element, label: string},
+interface CustomDescriptionProps {
+    src: string;
+    title: string;
+    description: string;
+    bulletPoints: [
+        { icon: JSX.Element, label: string },
+        { icon: JSX.Element, label: string },
+        { icon: JSX.Element, label: string },
     ]
-    reverse?:boolean
+    reverse?: boolean
 }
 
 const OProjekte = () => {
 
-    const customDescriptionList : CustomDescriptionProps[] = [
+    const customDescriptionList: CustomDescriptionProps[] = [
         {
             src: "room3.jpg",
             title: "Vysoký štandard vrátane komplentej kuchyne a sanity",
-            description:"Veľko-metrážne balkóny a terasy s exterierovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
-            bulletPoints:[
+            description: "Veľko-metrážne balkóny a terasy s exterierovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
+            bulletPoints: [
                 {icon: <KitchenIcon/>, label: "Kuchynská linka so spotrebičmi ako štandard"},
                 {icon: <SinkIcon/>, label: "Sanita vo vysokej kvalite"},
                 {icon: <GlassStarIcon/>, label: "Kvalitné materiály podlahy a obkladov"},
             ]
         },
         {
-            src:"balcony.jpg",
+            src: "balcony.jpg",
             title: "Priestranné balkóny a terasy s exterierovým slnečným tienením",
             description: "Veľko-metrážne balkóny a terasy s exterierovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
-            bulletPoints:[
+            bulletPoints: [
                 {icon: <BasketIcon/>, label: "Balkón ako štandard pre každý byt"},
                 {icon: <ElectricPanelIcon/>, label: "Elektrické exteriérové slnečné tienenie ako štandard"},
                 {icon: <TwoArrowsIcon/>, label: "Veľko-metrážne terasy"},
@@ -62,7 +62,7 @@ const OProjekte = () => {
             </Head>
             <Hero imgName={"oProjekteHero"} icon={<House/>} title={"O projekte"}
                   description="Všetky podstatné informácie o Vašom novom bývaní na jednom mieste."
-                withRectangles={true}
+                  withRectangles={true}
             />
             <Timeline/>
             <div className={'px-[1rem] xl:px-0 xl:mx-auto'}>
@@ -73,14 +73,14 @@ const OProjekte = () => {
                     </button>
                 </Link>
             </div>
-            {customDescriptionList.map((props, index) =>(
+            {customDescriptionList.map((props, index) => (
                 <CustomDescription key={index} {...props}/>
             ))}
             <CarDescription oProjekte={true}/>
             <div className="flex justify-center" id="financovanie">
                 <div className="w-full">
                     <div className="relative mb-[100px] xl:mb-0 flex flex-col">
-                        <div className="bg-black w-full px-[1rem] xl:px-0 h-[300px] xl:h-[600px]">
+                        <div className="bg-black w-full px-[1rem] xl:px-0 h-[750px] xl:h-[600px]">
                             <div
                                 className="flex flex-col gap-[30px] justify-center items-center pt-[130px] pb-[350px] xl:pb-[270px]">
                                 <h2 className="font-bold text-[32px] xl:text-[40px] leading-[48px] text-[#F5F5F5] text-center xl:text-left">Podmienky
@@ -90,42 +90,46 @@ const OProjekte = () => {
                                 <UniCredit classname="w-full h-[44px] xl:-h-[65] xl:-w-[492px]"/>
                             </div>
                         </div>
-                        <div className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-1/2">
-                            {[
-                                {step: "1. krok", title: "Rezervačná zmluva", offer: "1 500 €"},
-                                {step: "2. krok", title: "Zmluva o budúcej zmluve", offer: "20% z ceny bytu"},
-                                {step: "3. krok", title: "Kúpna zmluva", offer: "80% z ceny bytu"},
-                            ].map(({step, title, offer}, index) => (
-                                <div key={index}
-                                     className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white mx-[1rem] xl:mx-0 w-[350px] xl:mb-[30px]">
+                        <div className="mx-auto">
+                            <div
+                                className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-1/2">
+                                {[
+                                    {step: "1. krok", title: "Rezervačná zmluva", offer: "1 500 €"},
+                                    {step: "2. krok", title: "Zmluva o budúcej zmluve", offer: "20% z ceny bytu"},
+                                    {step: "3. krok", title: "Kúpna zmluva", offer: "80% z ceny bytu"},
+                                ].map(({step, title, offer}, index) => (
+                                    <div key={index}
+                                         className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white mx-[1rem] xl:mx-0 w-[350px] xl:mb-[30px]">
                                     <span
                                         className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#C6C6C6]">{step}</span>
-                                    <h4 className="font-bold text-[18px] leading-7 ">{title}</h4>
-                                    <span
-                                        className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">{offer}</span>
-                                    <p className="hidden xl:inline-block w-[220px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">Zostaňte
-                                        informovaný. Najnovšie informácie o projekte Karpatská Smart Residence.</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-1/2">
-                            {[
-                                {step: "1. krok", title: "Rezervačná zmluva", offer: "1 500 €"},
-                                {step: "2. krok", title: "Zmluva o budúcej zmluve", offer: "20% z ceny bytu"},
-                            ].map(({step, title, offer}, index) => (
-                                <div key={index}
-                                     className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white mx-[1rem] xl:mx-0 w-[350px]">
+                                        <h4 className="font-bold text-[18px] leading-7 ">{title}</h4>
+                                        <span
+                                            className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">{offer}</span>
+                                        <p className="hidden xl:inline-block w-[220px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">Zostaňte
+                                            informovaný. Najnovšie informácie o projekte Karpatská Smart Residence.</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div
+                                className="flex flex-col xl:flex-row gap-[30px]  bg-[background: #F5F5F5] -translate-y-[70%] xl:-translate-y-1/2">
+                                {[
+                                    {step: "1. krok", title: "Rezervačná zmluva", offer: "1 500 €"},
+                                    {step: "2. krok", title: "Zmluva o budúcej zmluve", offer: "20% z ceny bytu"},
+                                ].map(({step, title, offer}, index) => (
+                                    <div key={index}
+                                         className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white mx-[1rem] xl:mx-0 w-[350px]">
                                     <span
                                         className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#C6C6C6]">{step}</span>
-                                    <h4 className="font-bold text-[18px] leading-7 ">{title}</h4>
-                                    <span
-                                        className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">{offer}</span>
-                                    <p className="hidden xl:inline-block w-[220px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">Zostaňte
-                                        informovaný. Najnovšie informácie o projekte Karpatská Smart Residence.</p>
-                                </div>
-                            ))}
+                                        <h4 className="font-bold text-[18px] leading-7 ">{title}</h4>
+                                        <span
+                                            className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">{offer}</span>
+                                        <p className="hidden xl:inline-block w-[220px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">Zostaňte
+                                            informovaný. Najnovšie informácie o projekte Karpatská Smart Residence.</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        <div className=" w-[full] -mt-[565px] bg-[#F5F5F5] h-[300px] xl:h-[750px] border-primary">
+                        <div className=" w-[full] -mt-[565px] bg-[#F5F5F5] h-[700px] xl:h-[750px] border-primary">
                             <div
                                 className="flex flex-col xl:flex-row gap-[50px] xl:gap-[100px] xl:pt-[550px] pb-[50px] xl:mx-[165px] items-center justify-center">
                                 <div className="hidden xl:inline-block">
@@ -135,7 +139,7 @@ const OProjekte = () => {
                                         kontaktovať. Predstavím Vám detailný model financovania a zodpoviem všetky Vaše
                                         otázky.</p>
                                 </div>
-                                <div className="flex gap-[20px] items-center">
+                                <div className="flex gap-[20px] items-center mt-[450px]">
                                     <div className="h-[60px] w-[60px] relative">
                                         <Image
                                             objectFit="cover"
@@ -145,7 +149,8 @@ const OProjekte = () => {
                                         />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px] ">Jozef Onderčo</p>
+                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px] ">Jozef
+                                            Onderčo</p>
                                         <span className="text-[14px] leading-5">Fin. poradca | UniCredit Bank</span>
                                     </div>
                                 </div>

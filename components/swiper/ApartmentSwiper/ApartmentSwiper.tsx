@@ -51,7 +51,7 @@ const ApartmentSwiper = () => {
                         label: '4 izbový apartmán'
                     }].map(({src, label}, i) => (
                         <SwiperSlide
-                            className={`xl:w-full xl:max-w-fit ${i === 0 && 'xl:ml-[19%]'}`}
+                            className={`xl:w-full xl:max-w-fit ${i === 0 && 'xl:ml-[9%] 2xl:ml-[19%]'}`}
                             key={i}
                         >
                             <h5 className={'text-green2 font-bold text-[24px] leading-[32px] mb-[25px] text-center xl:text-left'}>{label}</h5>
