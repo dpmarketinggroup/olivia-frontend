@@ -59,7 +59,8 @@ const Building = () => {
 
     useEffect(() => {
         async function fetch() {
-            const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts?pagination[pageSize]=200`)
+            const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts?pagination[pageSize]=200&populate=*`)
+            console.log(res.data.data);
             if (router.pathname === '/ponuka-bytov') {
                 setOneRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'jedno-izbový'))
                 setTwoRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'dvoj-izbový'))
