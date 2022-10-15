@@ -36,8 +36,6 @@ const Retail = () => {
                                 </div>
                             </div>
                             <div className="mx-auto xl:ml-0">
-                                <p className="hidden xl:block font-medium text-[16px] leading-6 tracking-[0.1px] text-[#676766] w-[335px] mb-[23px]">V
-                                    prípade záujmu o prenájom obchodného priestoru ma neváhajte kontaktovať</p>
                                 <div className="flex gap-[20px] items-center mb-[20px]">
                                     <div className="h-[60px] w-[60px] relative">
                                         <Image
@@ -48,16 +46,15 @@ const Retail = () => {
                                         />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Božena
-                                            Nemcová</p>
+                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">JUDr. Ivan Jurík</p>
                                         <span className="text-[14px] leading-5">Sales Assistant</span>
                                     </div>
                                 </div>
-                                <div>
+                                <div className={'xl:mb-[23px]'}>
                                     <div className="flex gap-[20px] items-center">
                                         <Phone/>
-                                        <Link href={'tel:+421911000000'}>
-                                            <a className="font-bold text-[18px] leading-7">+421 911 000 000</a>
+                                        <Link href={'tel:+421901923324'}>
+                                            <a className="font-bold text-[18px] leading-7">+421 901 923 324</a>
                                         </Link>
                                     </div>
                                     <div className="flex gap-[20px] items-center">
@@ -67,6 +64,8 @@ const Retail = () => {
                                         </Link>
                                     </div>
                                 </div>
+                                <p className="hidden xl:block font-medium text-[16px] leading-6 tracking-[0.1px] text-[#676766] w-[335px] mb-[23px]">V
+                                    prípade záujmu o prenájom obchodného priestoru ma neváhajte kontaktovať</p>
                             </div>
                         </div>
                     </div>

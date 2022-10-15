@@ -52,7 +52,7 @@ const CustomSwiper = () => {
                     "/img/interier/17.jpg",
                 ].map((src, i) => (
                     <SwiperSlide
-                        className={`xl:w-full xl:max-w-fit ${i === 0 && 'xl:ml-[19%]'}`}
+                        className={`xl:w-full xl:max-w-fit ${i === 0 && 'xl:ml-[9%] 2xl:ml-[19%]'}`}
                         key={i}
                     >
                         <Image alt={'Swiper image'} src={src} width={540} height={330}/>

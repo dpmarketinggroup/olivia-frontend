@@ -49,32 +49,32 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                         <div
                             className="flex flex-col gap-[15px] xl:flex-row xl:gap-[100px] justify-end xl:pt-[80px] pb-[20px] xl:pb-0 w-full text-center xl:text-left">
                             <div
-                                className="hidden md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
+                                className="hidden md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white">
                                 <Link href='/'>
-                                    <a className="">Domovská
+                                    <a className="opacity-60 hover:opacity-100">Domovská
                                         stránka</a>
                                 </Link>
                                 <Link href="/ponuka-bytov">
-                                    <a>Apartmány</a>
+                                    <a className="opacity-60 hover:opacity-100">Apartmány</a>
                                 </Link>
                                 <Link href='/o-projekte'>
-                                    <a>O
+                                    <a className="opacity-60 hover:opacity-100">O
                                         projekte</a>
                                 </Link>
                                 <Link href='/lokalita'>
-                                    <a>Lokalita</a>
+                                    <a className="opacity-60 hover:opacity-100">Lokalita</a>
                                 </Link>
                             </div>
                             <div
-                                className="hidden  md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
+                                className="hidden  md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white">
                                 {/*<Link href="/novinky">*/}
                                 {/*    <a>Novinky</a>*/}
                                 {/*</Link>*/}
                                 <Link href="/retail">
-                                    <a>Retail</a>
+                                    <a className="opacity-60 hover:opacity-100">Retail</a>
                                 </Link>
                                 <Link href="/kontakt">
-                                    <a>Kontakt</a>
+                                    <a className="opacity-60 hover:opacity-100">Kontakt</a>
                                 </Link>
                             </div>
                             <div
@@ -82,9 +82,11 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 <h5>Predajné miesto</h5>
                                 <h5>Rožňavská 1A</h5>
                                 <h5>831 04 Bratislava</h5>
-                                <h5>+421 911 000 000</h5>
+                                <Link href={'tel:+421901923324'}>
+                                    <a>+421 901 923 324</a>
+                                </Link>
                                 <Link href={'mailto:info@oliviaresidence.sk'}>
-                                    <a>info@oliviaresidence.sk</a>
+                                    <a className="hover:text-white">info@oliviaresidence.sk</a>
                                 </Link>
                             </div>
                         </div>

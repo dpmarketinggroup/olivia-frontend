@@ -167,8 +167,8 @@ const FloorDetail = () => {
                                 <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber
                                     apartmánu na podlaží</h1>
                             </div>
-                            <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
-                                <div className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer"
+                            <div className="relative flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
+                                <div className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer self-start xl:self-auto mx-4"
                                     onClick={() => setIsFloorDropDownCLicked((prevState) => !prevState)}>
                                     <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">{router.query.id}. podlažie</span>
                                     <div className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"}`}>
@@ -225,7 +225,7 @@ const FloorDetail = () => {
                                     <RightArrow stroke="#476761"/>
                                     <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Detail apartmánu</span>
                                 </div>
-                                <div className="hidden xl:inline-block">
+                                <div className="absolute bottom-0 left-[300px] xl:static inline-block">
                                     <Severka/>
                                 </div>
                             </div>

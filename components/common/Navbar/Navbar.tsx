@@ -64,7 +64,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                 )
             }
         <nav className={`bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] ${(mainPage && !cookieConsentIsTrue) && "mt-[40px]"} xl:h-[60px] w-full fixed top-0 z-50`}>
-            <div className={`lg:shadow-none w-full max-w-[1920px] mx-auto xl:h-[60px] flex items-center justify-between`}>
+            <div className={`relative lg:shadow-none w-full max-w-[1920px] mx-auto xl:h-[60px] flex items-center justify-between`}>
                 <div className="xl:flex gap-[50] items-center mx-4 xl:ml-[40px] xl:mr-0 h-full w-full">
                     <div
                         className={`flex justify-between ${!isOpenMobileNav ? "mb-[20px]" : "mb-[35px]"} mt-[20px] xl:mb-0 xl:mt-0`}>
@@ -76,7 +76,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                                     onClick={() => {
                                         setIsOpenMobileNav((o) => !o);
                                         setScrollLocked((c) => !c);
-                                    }}/>
+                                    }} className={'mr-[-25px]'}/>
                         </div>
                     </div>
                     <div onClick={() => {
@@ -136,8 +136,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                         </div>
                     </div>
                 </div>
-                <div className="hidden xl:flex gap-[27px] mr-[40px]">
-                    <div className="flex items-center gap-[5px]">
+                <div className="flex gap-[27px] mr-[40px]">
+                    <div className="hidden flex items-center gap-[5px]">
                         <div className="languages">
                             <Select
                                 className="hidden w-[50px]"
@@ -153,7 +153,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                     </div>
                     <Link href='/stretnutie'>
                         <button
-                            className="hover:bg-[#0E3F3B] font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]">Nezáväzné
+                            className={`hover:bg-[#0E3F3B] font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]
+                             ${isOpenMobileNav ? "block absolute bottom-[100px] left-[70px] md:left-[290px]" : "hidden xl:block"}`}>Nezáväzné
                             stretnutie
                         </button>
                     </Link>

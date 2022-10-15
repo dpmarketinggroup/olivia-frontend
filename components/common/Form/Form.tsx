@@ -1,7 +1,8 @@
 import {SyntheticEvent, useState} from "react";
-import {Checkbox, Textarea, TextInput} from "@mantine/core";
+import {Checkbox, Textarea, TextInput, Input} from "@mantine/core";
 import Link from "next/link";
 import axios from "axios";
+
 
 interface FormProps {
     meeting?: boolean
@@ -69,14 +70,14 @@ const Form
                 <div className="flex flex-col gap-[15px] w-full xl:w-[645px]">
                     <div className="grid grid-cols-1 xl:grid-cols-2 gap-[16px] w-full">
                         <TextInput value={name} onChange={(e) => setName(e.target.value)} placeholder="Meno" radius="xs"
-                                   required={true} withAsterisk/>
+                                   required={true} withAsterisk label={" "}/>
                         <TextInput value={surname} onChange={(e) => setSurname(e.target.value)} placeholder="Priezvisko"
-                                   radius="xs" required={true} withAsterisk/>
+                                   radius="xs" required={true} withAsterisk label={" "}/>
                     </div>
                     <TextInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" radius="xs"
-                               required={true} withAsterisk/>
+                               required={true} withAsterisk label={" "}/>
                     <TextInput value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Tel. č."
-                               radius="xs"/>
+                               radius="xs" withAsterisk label={" "}/>
                     <Textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Správa"
                               radius="xs"
                               minRows={6}

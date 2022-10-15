@@ -130,7 +130,7 @@ const Stretnutie = () => {
             </div>
             <div className='flex justify-center mx-4 xl:mx-0'>
                 <div className="relative  flex flex-col xl:flex-row gap-[30px] xl:gap-[240px] items-center">
-                    <div className="flex justify-center mt-[200px] xl:my-[115px]">
+                    <div className="flex justify-center mt-[100px] xl:my-[115px]">
                         <Image
                             quality={100}
                             objectFit="cover"
@@ -144,7 +144,7 @@ const Stretnutie = () => {
                         <span
                             className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">Tu sa nachádzame</span>
                         <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">Rožňavská 1A, Bratislava</span>
-                        <div className="flex gap-[12px] items-center mb-[200px] xl:mb-0">
+                        <div className="flex gap-[12px] items-center mb-[100px] xl:mb-0">
                             <MapPoint2 width="16" height="20" fill="000000"/>
                             <p className="font-medium text-[18px] leading-7">Fresh Market | Prízemie</p>
                         </div>
