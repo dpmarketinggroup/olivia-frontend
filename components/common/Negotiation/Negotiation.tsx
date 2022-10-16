@@ -43,14 +43,12 @@ const Negotiation = ({
                     )
                 }
                 <div
-                    className={`w-full xl:max-w-[1920px] relative xl:mx-auto overflow-scroll snap-x xl:snap-none xl:overflow-hidden xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
+                    className={`w-full xl:max-w-[1920px] h-[400px] xl:h-[800px] relative xl:mx-auto xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
                     <Image
                         objectPosition={'center'}
                         objectFit="cover"
                         alt="hero image"
-                        layout={'fixed'}
-                        height={matchesTablet ? 850 : 600}
-                        width={1920}
+                        layout={'fill'}
                         src={"/img/map.jpg"}
                     />
                     <div className='hidden xl:block absolute bottom-[-52px] left-0'>
