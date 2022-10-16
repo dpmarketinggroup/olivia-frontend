@@ -110,6 +110,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                         <a className="pr-4 xl:pr-[165px] text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">Ochrana
                             osobných údajov</a>
                     </Link>
+
                 </div>
             </div>
         </div>
