@@ -12,6 +12,9 @@ module.exports = {
       },
       backgroundImage: {
         'primary-pattern': "linear-gradient(90deg, #476761 3.72%, #89A6A2 96.46%)"
+      },
+      screens: {
+        'desktop': '1920px'
       }
     },
   },

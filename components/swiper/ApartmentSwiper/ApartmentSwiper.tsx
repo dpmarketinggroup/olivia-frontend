@@ -49,7 +49,7 @@ const ApartmentSwiper = () => {
                     }
                     ].map(({src, label}, i) => (
                         <SwiperSlide
-                            className={`xl:w-full xl:max-w-fit ${i === 0 && 'xl:ml-[9%] 2xl:ml-[19%]'}`}
+                            className={`xl:w-full xl:max-w-fit ${i === 0 && 'xl:ml-[15%] desktop:ml-[19%]'}`}
                             key={i}
                         >
                             <h5 className={'text-green2 font-bold text-[24px] leading-[32px] mb-[25px]'}>{label}</h5>
