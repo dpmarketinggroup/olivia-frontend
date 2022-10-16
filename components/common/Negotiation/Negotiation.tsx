@@ -43,10 +43,9 @@ const Negotiation = ({
                     )
                 }
 
-                <div className={`w-full xl:max-w-[1920px] relative mx-0 xl:mx-auto overflow-scroll xl:overflow-visible xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
+                <div className={`w-full xl:max-w-[1920px] relative xl:mx-auto overflow-scroll snap-x xl:overflow-visible xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
                     <Image
                         objectFit="cover"
-                        objectPosition={'center'}
                         alt="hero image"
                         layout={'fixed'}
                         height={650}
