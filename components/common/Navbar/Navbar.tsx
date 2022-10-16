@@ -40,21 +40,21 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
     return (
         <>
             {
-                (mainPage && !cookieConsentIsTrue) && (
-                    <div className="flex bg-[#0E3F3B] items-center w-full justify-center fixed h-[40px] xl:mt-0 z-[99]">
+                 (mainPage && !cookieConsentIsTrue) && (
+                    <div className="flex bg-[#0E3F3B] items-center w-full justify-center fixed md:h-[40px] xl:mt-0 z-[99]">
                         <div className="w-full max-w-[1920px] px-[1rem] xl:px-0 relative">
-                            <div className="flex flex-col md:flex-row md:gap-[20px] ml-[23%] md:ml-[35%] xl:ml-0">
+                            <div className="flex flex-col md:flex-row md:gap-[20px] ml-[23%] md:ml-[35%] xl:ml-0 pt-[3px] xl:pt-0">
                                 <p className="text-white font-medium text-[14px] leading-5 w-[160px] xl:ml-[40%]">
                                     Výstavba oficiálne začala.
                                 </p>
                                 <div className="flex gap-[8px] items-center">
                                     <Link href="/">
-                                        <a className="text-white font-medium text-[14px] leading-5 underline underline-offset-[5px]">Viac</a>
+                                        <a className="text-white font-medium text-[14px] leading-5 underline underline-offset-[5px] pb-[5px] xl:pb-0 ml-[55px] md:ml-0">Viac</a>
                                     </Link>
                                     <RightArrowIcon/>
                                 </div>
                             </div>
-                            <div className="xl:mr-[13px] absolute right-[1rem] xl:right-[12px] top-[10px] md:top-[1px]">
+                            <div className="xl:mr-[13px] absolute right-[1rem] xl:right-[12px] top-[13px] md:top-[1px]">
                                 <button onClick={onClick}>
                                     <CloseIcon/>
                                 </button>
