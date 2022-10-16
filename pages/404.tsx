@@ -19,6 +19,7 @@ function Custom404() {
                         <a className="font-medium text-[18px] leading-7 text-[#476761]">Späť</a>
                     </Link>
                 </div>
+
             </div>
         </>
     )
