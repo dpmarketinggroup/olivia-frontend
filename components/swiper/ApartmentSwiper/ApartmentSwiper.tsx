@@ -46,7 +46,7 @@ const ApartmentSwiper = () => {
                     }, {src: '/img/3.png', label: '3 izbový apartmán'}, {
                         src: '/img/4.png',
                         label: '4 izbový apartmán'
-                    }, {src: '/img/4.png', label: '4 izbový apartmán'}
+                    }
                     ].map(({src, label}, i) => (
                         <SwiperSlide
                             className={`xl:w-full xl:max-w-fit ${i === 0 && 'xl:ml-[9%] 2xl:ml-[19%]'}`}

@@ -242,8 +242,8 @@ const ApartmentDetail = () => {
                     <h3 className="mb-[25px] font-bold text-[20px] xl:text-[24px] leading-[32px] tracking-[-0.1px] text-center xl:text-left">Apartmán
                         č. {cislo_bytu}</h3>
                     <div onClick={() => setOpened2(true)}
-                         className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center xl:items-start justify-center border">
-                        <div className={'xl:border border-black mb-[-50px] xl:mb-0'}>
+                         className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center xl:items-start justify-center">
+                        <div className={'border border-b-0 xl:border-b-[1px] border-black mb-[-50px] xl:mb-0'}>
                         <Image
                             objectFit="cover"
                             width={primarna_foto.data.attributes.width}
@@ -252,8 +252,8 @@ const ApartmentDetail = () => {
                             src={primarna_foto.data.attributes.url}
                         />
                         </div>
-                        <div className="flex flex-col w-1/3 shrink-0 justify-between h-[510px]">
-                            <div className="w-full h-[300px] xl:h-[250px] relative xl:border border-black">
+                        <div className="flex flex-col w-[100%] xl:w-1/3 shrink-0 justify-between h-[510px]">
+                            <div className="w-full h-[300px] xl:h-[250px] relative border border-black">
                                 <Image
                                     objectFit="contain"
                                     layout="fill"
@@ -261,7 +261,7 @@ const ApartmentDetail = () => {
                                     src={dodatocna_foto1.data.attributes.url}
                                 />
                             </div>
-                            <div className="w-full h-[300px] xl:h-[250px] relative xl:border border-black">
+                            <div className="w-full h-[300px] xl:h-[250px] relative border border-t-0 xl:border-t-[1px] border-black">
                                 <Image
                                     objectFit="contain"
                                     layout="fill"

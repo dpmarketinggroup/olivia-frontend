@@ -85,7 +85,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                     }}
                          className={`${!isOpenMobileNav && "hidden"} flex xl:flex flex-col xl:flex-row gap-[25px] justify-center items-center h-[calc(100vh-60px)] xl:h-auto xl:w-auto`}>
                         <div
-                            className={'flex flex-col xl:flex-row gap-[35px] xl:gap-[25px] text-[20px] xl:text-[16px]'}>
+                            className={'flex flex-col xl:flex-row gap-[35px] xl:gap-[25px] text-[20px] xl:text-[16px] mt-[-320px] xl:mt-0'}>
                             <div className="flex gap-[10px] items-center">
                                 <div className="dropdown">
                                     <Link href="/ponuka-bytov">
@@ -154,7 +154,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                     <Link href='/stretnutie'>
                         <button
                             className={`hover:bg-[#0E3F3B] font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]
-                             ${isOpenMobileNav ? "block absolute bottom-[100px] left-[70px] md:left-[290px]" : "hidden xl:block"}`}>Nezáväzné
+                             ${isOpenMobileNav ? "block absolute bottom-[280px] left-[75px] md:left-[290px]" : "hidden xl:block"}`}>Nezáväzné
                             stretnutie
                         </button>
                     </Link>
