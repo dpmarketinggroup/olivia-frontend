@@ -2,6 +2,7 @@ import Image from "next/image";
 import {Button} from "@components/ui";
 import {RectangleDarkIcon, RectangleLightIcon, RectangleMediumIcon} from "@components/icons";
 import React from "react";
+import {useMediaQuery} from "@mantine/hooks";
 
 interface NegotiationProps {
     title: string;
@@ -18,6 +19,7 @@ const Negotiation = ({
                          centerText = false,
                         lokalita = false
                      }: NegotiationProps) => {
+    const matches = useMediaQuery('(min-width: 1920px)');
     return (
         <div className='flex justify-center'>
             <div className="w-full flex flex-col">
@@ -41,14 +43,14 @@ const Negotiation = ({
                     )
                 }
 
-                <div className="w-full xl:max-w-[1920px] relative mx-0 xl:mx-auto overflow-scroll xl:overflow-visible xl:mb-[-8px]">
+                <div className={`w-full xl:max-w-[1920px] relative mx-0 xl:mx-auto overflow-scroll xl:overflow-visible xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
                     <Image
                         objectFit="cover"
                         objectPosition={'center'}
                         alt="hero image"
                         layout={'fixed'}
                         height={650}
-                        width={1440}
+                        width={1920}
                         src={"/img/map.jpg"}
                     />
                     <div className='hidden xl:block absolute bottom-[-52px] left-0'>
