@@ -70,20 +70,23 @@ const Form
                 <div className="flex flex-col gap-[15px] w-full xl:w-[645px]">
                     <div className="grid grid-cols-1 xl:grid-cols-2 gap-[16px] w-full">
                         <TextInput value={name} onChange={(e) => setName(e.target.value)} placeholder="Meno" radius="xs"
-                                   required={true} withAsterisk label={<><span className={isGreen ? "text-white" : "text-black"}>Meno</span></>}/>
+                                   required={true} withAsterisk
+                                   label={<><span className={isGreen ? "text-white" : "text-black"}>Meno</span></>}/>
                         <TextInput value={surname} onChange={(e) => setSurname(e.target.value)} placeholder="Priezvisko"
-                                   radius="xs" required={true} withAsterisk label={<><span className={isGreen ? "text-white" : "text-black"}>Priezvisko</span></>}/>
+                                   radius="xs" required={true} withAsterisk label={<><span
+                            className={isGreen ? "text-white" : "text-black"}>Priezvisko</span></>}/>
                     </div>
                     <TextInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" radius="xs"
-                               required={true} withAsterisk label={<><span className={isGreen ? "text-white" : "text-black"}>Email</span></>}/>
-                    <TextInput value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Tel. č."
+                               required={true} withAsterisk
+                               label={<><span className={isGreen ? "text-white" : "text-black"}>Email</span></>}/>
+                    <TextInput value={phone} label={<><span className={isGreen ? "text-white" : "text-black"}>Tel. č.</span></>} onChange={(e) => setPhone(e.target.value)} placeholder="Tel. č."
                                radius="xs"/>
-                    <Textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Správa"
+                    <Textarea
+                        label={<><span className={isGreen ? "text-white" : "text-black"}>Správa</span></>}
+                        value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Správa"
                               radius="xs"
                               minRows={6}
                               maxRows={6}
-                              required={true}
-                              withAsterisk
                     />
                     <Checkbox label={
                         <>
