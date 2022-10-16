@@ -30,7 +30,7 @@ const Hero = ({
                         src={`/img/${imgName}.jpg`}
                     />
                 </div>
-                <div className="relative xl:w-[445px] mx-4 xl:ml-[165px] xl:mr-0 pt-[90px] mb-[20px]">
+                <div className="relative xl:w-full xl:max-w-[1400px] xl:mx-auto mx-4 pt-[90px] mb-[20px]">
                     <div className="mb-[30px] flex justify-center xl:block">
                         {icon}
                     </div>

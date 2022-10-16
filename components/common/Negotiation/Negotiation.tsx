@@ -1,7 +1,6 @@
 import Image from "next/image";
 import {Button} from "@components/ui";
 import {RectangleDarkIcon, RectangleLightIcon, RectangleMediumIcon} from "@components/icons";
-import React from "react";
 import {useMediaQuery} from "@mantine/hooks";
 
 interface NegotiationProps {
@@ -9,7 +8,7 @@ interface NegotiationProps {
     subtitle: string;
     buttonText?: string;
     centerText?: boolean;
-    lokalita?:boolean
+    lokalita?: boolean
 }
 
 const Negotiation = ({
@@ -17,7 +16,7 @@ const Negotiation = ({
                          subtitle,
                          buttonText = "Viac o lokalite",
                          centerText = false,
-                        lokalita = false
+                         lokalita = false
                      }: NegotiationProps) => {
     const matches = useMediaQuery('(min-width: 1920px)');
     return (
@@ -42,8 +41,8 @@ const Negotiation = ({
                         </div>
                     )
                 }
-
-                <div className={`w-full xl:max-w-[1920px] relative xl:mx-auto overflow-scroll snap-x xl:overflow-visible xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
+                <div
+                    className={`w-full xl:max-w-[1920px] relative xl:mx-auto overflow-scroll snap-x xl:overflow-visible xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
                     <Image
                         objectFit="cover"
                         alt="hero image"
@@ -61,7 +60,8 @@ const Negotiation = ({
                     <div className='hidden xl:block absolute bottom-[-112px] left-0'>
                         <RectangleLightIcon/>
                     </div>
-                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[2330px] left-[1100px] -z-30`}>
+                    <div
+                        className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[2330px] left-[1100px] -z-30`}>
                         <RectangleDarkIcon/>
                     </div>
                     <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[2050px] left-[500px]`}>
@@ -73,22 +73,27 @@ const Negotiation = ({
                     <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1850px] left-[40px]`}>
                         <RectangleLightIcon/>
                     </div>
-                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1450px] left-[1300px]`}>
+                    <div
+                        className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1450px] left-[1300px]`}>
                         <RectangleDarkIcon/>
                     </div>
-                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1390px] left-[1240px]`}>
+                    <div
+                        className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1390px] left-[1240px]`}>
                         <RectangleLightIcon/>
                     </div>
                     <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1320px] left-[50px]`}>
                         <RectangleLightIcon/>
                     </div>
-                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1230px] left-[1120px] -z-30`}>
+                    <div
+                        className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1230px] left-[1120px] -z-30`}>
                         <RectangleMediumIcon/>
                     </div>
-                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1170px] left-[1060px] -z-30`}>
+                    <div
+                        className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1170px] left-[1060px] -z-30`}>
                         <RectangleLightIcon/>
                     </div>
-                    <div className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[950px] left-[800px] -z-30`}>
+                    <div
+                        className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[950px] left-[800px] -z-30`}>
                         <RectangleDarkIcon/>
                     </div>
                 </div>

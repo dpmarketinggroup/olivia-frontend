@@ -5,10 +5,8 @@ import {BuildingFilter} from "@components/filter";
 import {ApartmentSwiper, CustomSwiper, DeveloperSwiper} from "@components/swiper";
 import Head from "next/head";
 import Image from "next/image";
-import {Select} from "@mantine/core";
 import {ApartmentEquipmentDescription, CommonDescription} from "@components/common/Description/Description";
 import {Button} from "@components/ui";
-import DownArrowIcon from "@components/icons/DownArrow";
 import React, {useState} from "react";
 
 
@@ -24,7 +22,7 @@ const Home = () => {
                     <div className="absolute w-full xl:max-w-[1920px] h-[650px] -z-20">
                         <Image objectFit="cover" layout="fill" alt="hero image" src={'/img/hero.jpg'}/>
                     </div>
-                    <div className="w-full xl:max-w-[1200px] xl:mx-auto">
+                    <div className="w-full xl:max-w-[1400px] xl:mx-auto">
                         <div className="w-[300px] xl:w-[600px] pt-[185px] mb-[40px] mx-4 xl:mx-0">
                             <h1 className="font-bold text-[34px] xl:text-[56px] leading-[40px] xl:leading-[60px] tracking-[-1px] text-white">
                                 Moderný štýl bývania v dynamickej lokalite so skvelými možnosťami
