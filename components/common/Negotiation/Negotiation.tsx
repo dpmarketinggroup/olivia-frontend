@@ -19,6 +19,7 @@ const Negotiation = ({
                          lokalita = false
                      }: NegotiationProps) => {
     const matches = useMediaQuery('(min-width: 1920px)');
+    const matchesTablet = useMediaQuery('(min-width: 1280px)')
     return (
         <div className='flex justify-center'>
             <div className="w-full flex flex-col">
@@ -44,10 +45,11 @@ const Negotiation = ({
                 <div
                     className={`w-full xl:max-w-[1920px] relative xl:mx-auto overflow-scroll snap-x xl:snap-none xl:overflow-hidden xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
                     <Image
+                        objectPosition={'center'}
                         objectFit="cover"
                         alt="hero image"
                         layout={'fixed'}
-                        height={650}
+                        height={matchesTablet ? 850 : 600}
                         width={1920}
                         src={"/img/map.jpg"}
                     />
