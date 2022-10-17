@@ -26,7 +26,7 @@ const Kontakt = () => {
                                     width={60}
                                     height={60}
                                     alt="Jozef Mrkvička"
-                                    src="/img/bozenaNemcova.png"
+                                    src="/img/Oval.png"
                                     loading={'eager'}
                                 />
                                 <div className={'leading-6'}>
@@ -48,8 +48,10 @@ const Kontakt = () => {
                                     </Link>
                                 </div>
                             </div>
-                            <p className="hidden xl:inline-block font-medium text-[#676766] w-full xl:max-w-[335px]">V
-                                prípade záujmu o prenájom obchodného priestoru ma neváhajte kontaktovať</p>
+                            <p className="hidden xl:inline-block text-[#999999] w-full xl:max-w-[335px]">
+                                V prípade otázok sa na mňa neváhajte obrátiť.
+                                Rada Vám poradím a zodpoviem Vaše otázky.
+                            </p>
                         </div>
                     </div>
                 </div>

@@ -15,3 +15,23 @@
     @apply w-full px-[1rem] xl:px-0 max-w-[1920px] mx-auto;
   }
 }
+
+.green.PhoneInput input {
+  color: white;
+  font-size: 16px;
+  background-color: rgba(255,255,255,0.12);
+}
+
+.PhoneInput input {
+  color: black;
+  font-size: 16px;
+  background-color: rgba(0,0,0,0.07);
+}
+.PhoneInputInput {
+  height: 50px;
+  padding: 0 15px;
+}
+
+.PhoneInputInput:focus-visible {
+  outline: none;
+}

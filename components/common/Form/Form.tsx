@@ -2,7 +2,9 @@ import {SyntheticEvent, useState} from "react";
 import {Checkbox, Textarea, TextInput, Input} from "@mantine/core";
 import Link from "next/link";
 import axios from "axios";
-
+import PhoneInput from "react-phone-number-input";
+import 'react-phone-number-input/style.css'
+import {E164Number} from "libphonenumber-js";
 
 interface FormProps {
     meeting?: boolean
@@ -21,21 +23,32 @@ const Form
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
+    const [phone, setPhone] = useState<E164Number>();
     const [message, setMessage] = useState('');
+
+    function getApartment() {
+        if (!isClicked1 && !isClicked2) return;
+        if (isClicked1) return "apartmán"
+        if (isClicked2) return "obchodné priestory"
+    }
 
     async function handleSubmit(e: SyntheticEvent) {
         e.preventDefault();
         if (!name || !surname || !email || !phone || !message) return;
-        await axios.post('/api/enquiry', {
-            body: JSON.stringify({
-                name,
-                surname,
-                email,
-                phone,
-                message
+        try {
+            await axios.post('/api/enquiry', {
+                body: JSON.stringify({
+                    name,
+                    surname,
+                    email,
+                    phone,
+                    message,
+                    apartment: getApartment(),
+                })
             })
-        })
+        } catch (e) {
+           console.error(e);
+        }
     }
 
     return (
@@ -79,8 +92,21 @@ const Form
                     <TextInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" radius="xs"
                                required={true} withAsterisk
                                label={<><span className={isGreen ? "text-white" : "text-black"}>Email</span></>}/>
-                    <TextInput value={phone} label={<><span className={isGreen ? "text-white" : "text-black"}>Tel. č.</span></>} onChange={(e) => setPhone(e.target.value)} placeholder="Tel. č."
-                               radius="xs"/>
+                    <div className={'flex flex-col'}>
+                        <h5 className={isGreen ? "text-white" : "text-black"}>Tel. č.</h5>
+                        <PhoneInput
+                            style={{
+                                height: '50px'
+                            }}
+                            international={false}
+                            countries={["SK"]}
+                            value={phone}
+                            defaultCountry={"SK"}
+                            className={`placeholder:text-black ${isGreen && 'green'}`}
+                            onChange={(val) => setPhone(val)}
+                            placeholder={"Telefónne číslo"}
+                        />
+                    </div>
                     <Textarea
                         label={<><span className={isGreen ? "text-white" : "text-black"}>Správa</span></>}
                         value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Správa"

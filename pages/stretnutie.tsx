@@ -11,7 +11,6 @@ import {
     RectangleMediumIcon
 } from "@components/icons";
 import React from "react";
-import RectangleMedium from "@components/icons/RectangleMedium";
 
 const Stretnutie = () => {
     return (
@@ -47,7 +46,7 @@ const Stretnutie = () => {
                                             objectFit="cover"
                                             layout="fill"
                                             alt="Jozef Mrkvicka"
-                                            src="/img/bozenaNemcova.png"
+                                            src="/img/Oval.png"
                                             loading={'eager'}
                                         />
                                     </div>
@@ -65,14 +64,15 @@ const Stretnutie = () => {
                                     </div>
                                     <div className="flex gap-[20px] items-center">
                                         <EmailSign/>
-                                        <Link href={'mailto:predaj@oliviaresidenc.sk'}>
-                                            <a className="font-bold text-[18px] leading-7 text-white">predaj@oliviaresidenc.sk</a>
+                                        <Link href={'mailto:info@oliviaresidenc.sk'}>
+                                            <a className="font-bold text-[18px] leading-7 text-white">info@oliviaresidenc.sk</a>
                                         </Link>
                                     </div>
                                 </div>
-                                <p className="hidden xl:inline-block font-medium text-[14px] leading-5 tracking-[0.1px] w-[305px] text-white pb-[40px] xl:pb-0">V
-                                    prípade otázok sa na mňa neváhajte obrátiť.
-                                    Rada Vám poradím a zodpoviem Vaše otázky.</p>
+                                <p className="hidden xl:inline-block font-medium text-[14px] leading-5 tracking-[0.1px] w-[305px] text-white pb-[40px] xl:pb-0">
+                                    V prípade otázok sa na mňa neváhajte obrátiť.
+                                    Rada Vám poradím a zodpoviem Vaše otázky.
+                                </p>
                             </div>
                         </div>
                     </div>
