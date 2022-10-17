@@ -3,6 +3,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper";
 import Image from "next/image";
 import RightArrowIcon from "@components/icons/RightArrow";
+import Link from "next/link";
 
 const ApartmentSwiper = () => {
     return (
@@ -23,7 +24,9 @@ const ApartmentSwiper = () => {
                             </div>
                         </div>
                         <div className={'flex gap-[10px] items-center'}>
-                            <h5 className={'text-[18px] leading-[28px] text-green2'}>Ponuka apartmánov</h5>
+                            <Link href={'/ponuka-bytov'}>
+                                <a className={'border-b border-white text-[18px] leading-[28px] text-green2 hover:border-b hover:border-primary'}>Ponuka apartmánov</a>
+                            </Link>
                             <RightArrowIcon stroke={'#476761'}/>
                         </div>
                     </div>
