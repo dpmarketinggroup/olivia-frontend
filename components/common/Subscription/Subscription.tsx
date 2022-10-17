@@ -35,6 +35,7 @@ const Subscription = () => {
                         layout="fill"
                         alt="hero image"
                         src={"/img/envelopes.png"}
+                        loading={'eager'}
                     />
                 </div>
             </div>

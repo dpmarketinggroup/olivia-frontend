@@ -286,7 +286,7 @@ const Building = () => {
                     </div>
                 </div>
             </div>
-            <div className={'flex flex-col xl:gap-[120px] px-[1rem] xl:px-0 xl:min-h-[1px]'} id={'results'}>
+            <div id={'results'} className={`flex flex-col xl:gap-[120px] px-[1rem] xl:px-0 xl:min-h-[1px] bg-[#F5F5F5] mt-[-80px] ${oneRooms?.length && "pt-[80px]"}`}>
                 {oneRooms?.length ? (
                     <div>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>1-izbové

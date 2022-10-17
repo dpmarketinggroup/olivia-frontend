@@ -41,7 +41,7 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
                         {availability}
                     </div>
                 </div>
-                <div className={'absolute w-[190px] h-[180px] hidden group-hover:flex items-center flex-col z-[3] top-[90%] left-[39%]'}>
+                <div className={'absolute w-[200px] h-[180px] hidden group-hover:flex items-center flex-col z-[3] top-[90%] left-[39%]'}>
                     <div style={{
                         width:0,
                         height: 0,
@@ -50,7 +50,7 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
                         borderColor: 'transparent transparent #fff transparent'
                     }}></div>
                     <div className={'bg-white'}>
-                        <Image alt={apartmentNumber} src={img} width={190} height={130}/>
+                        <Image alt={apartmentNumber} src={img} width={200} height={140}/>
                     </div>
                 </div>
             </div>

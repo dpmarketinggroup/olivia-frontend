@@ -154,7 +154,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                     <Link href='/stretnutie'>
                         <button
                             className={`hover:bg-[#0E3F3B] font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]
-                             ${isOpenMobileNav ? "block absolute bottom-[280px] left-[75px] md:left-[290px]" : "hidden xl:block"}`}>Nezáväzné
+                             ${isOpenMobileNav ? "block absolute bottom-[280px] left-[75px] md:left-[290px]" : "hidden xl:block"}`} onClick={() => setIsOpenMobileNav(false)}>Nezáväzné
                             stretnutie
                         </button>
                     </Link>

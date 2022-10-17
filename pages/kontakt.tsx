@@ -27,6 +27,7 @@ const Kontakt = () => {
                                     height={60}
                                     alt="Jozef Mrkvička"
                                     src="/img/bozenaNemcova.png"
+                                    loading={'eager'}
                                 />
                                 <div className={'leading-6'}>
                                     <p className="font-bold">JUDr. Ivan Jurik</p>

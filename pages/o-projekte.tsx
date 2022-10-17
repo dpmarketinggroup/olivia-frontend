@@ -81,7 +81,7 @@ const OProjekte = () => {
             </div>
             <div className="flex justify-center" id="financovanie">
                 <div className="w-full">
-                    <div className="relative mb-[100px] xl:mb-0 flex flex-col">
+                    <div className="relative xl:mb-[100px] xl:mb-0 flex flex-col">
                         <div className="bg-black w-full px-[1rem] xl:px-0 h-[750px] xl:h-[600px]">
                             <div
                                 className="flex flex-col gap-[30px] justify-center items-center pt-[130px] pb-[350px] xl:pb-[270px]">
@@ -146,6 +146,7 @@ const OProjekte = () => {
                                             layout="fill"
                                             alt="Jozef Mrkvička"
                                             src="/img/jozefOndercok.png"
+                                            loading={'eager'}
                                         />
                                     </div>
                                     <div>

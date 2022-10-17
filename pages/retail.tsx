@@ -43,6 +43,7 @@ const Retail = () => {
                                             layout="fill"
                                             alt="Jozef Mrkvička"
                                             src="/img/bozenaNemcova.png"
+                                            loading={'eager'}
                                         />
                                     </div>
                                     <div>
@@ -70,7 +71,7 @@ const Retail = () => {
                         </div>
                     </div>
                 </div>
-                <Negotiation title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava"/>
+                <Negotiation title="Lokalita v centre diania" subtitle="Rožňavská 1A, Bratislava" retail={true}/>
                 <MapFooter/>
             </div>
         </>

@@ -62,6 +62,7 @@ const Articles = ({withHeading = true, classname}: NewsSectionProps) => {
                                         alt={`${title} image`}
                                         layout={"fill"}
                                         objectFit={"cover"}
+                                        loading={'eager'}
                                     />
                                 </div>
                                 <p className="text-[14px] leading-5 text-green2 mb-[25px]">{date}</p>
@@ -77,7 +78,7 @@ const Articles = ({withHeading = true, classname}: NewsSectionProps) => {
                             </Modal>
                             <div className="flex flex-col gap-[10px] w-full">
                                 <div className="h-[135px] xl:h-[155px] relative">
-                                    <Image objectFit="cover" layout="fill" alt="hero image" src={path}/>
+                                    <Image objectFit="cover" layout="fill" alt="hero image" src={path} loading={'eager'}/>
                                 </div>
                                 <span className="text-[14px] leading-5 text-green2">{date}</span>
                                 <h4 className="text-[16px] font-medium leading-6 ">{title}</h4>
