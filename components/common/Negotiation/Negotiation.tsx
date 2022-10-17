@@ -8,7 +8,8 @@ interface NegotiationProps {
     subtitle: string;
     buttonText?: string;
     centerText?: boolean;
-    lokalita?: boolean
+    lokalita?: boolean;
+    retail?:boolean
 }
 
 const Negotiation = ({
@@ -16,7 +17,8 @@ const Negotiation = ({
                          subtitle,
                          buttonText = "Viac o lokalite",
                          centerText = false,
-                         lokalita = false
+                         lokalita = false,
+                        retail = false
                      }: NegotiationProps) => {
     const matches = useMediaQuery('(min-width: 1920px)');
     const matchesTablet = useMediaQuery('(min-width: 1280px)')
@@ -50,14 +52,15 @@ const Negotiation = ({
                         alt="hero image"
                         layout={'fill'}
                         src={"/img/map.jpg"}
+                        loading={'eager'}
                     />
-                    <div className='hidden xl:block absolute bottom-[-52px] left-0'>
+                    <div className={`${retail ? "hidden" : "hidden xl:block"} absolute bottom-[-52px] left-0`}>
                         <RectangleDarkIcon/>
                     </div>
-                    <div className='hidden xl:block  absolute bottom-[-52px] left-[60px]'>
+                    <div className={`${retail ? "hidden" : "hidden xl:block"} absolute bottom-[-52px] left-[60px]`}>
                         <RectangleMediumIcon/>
                     </div>
-                    <div className='hidden xl:block absolute bottom-[-112px] left-0'>
+                    <div className={`${retail ? "hidden" : "hidden xl:block"} absolute bottom-[-112px] left-0`}>
                         <RectangleLightIcon/>
                     </div>
                     <div

@@ -28,6 +28,7 @@ const Hero = ({
                         layout="fill"
                         alt="hero image"
                         src={`/img/${imgName}.jpg`}
+                        loading={'eager'}
                     />
                 </div>
                 <div className="relative xl:w-full xl:max-w-[1400px] xl:mx-auto mx-4 pt-[90px] mb-[20px]">

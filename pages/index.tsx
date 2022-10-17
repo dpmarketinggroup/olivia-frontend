@@ -20,7 +20,7 @@ const Home = () => {
             <div className="flex justify-center pt-[50px]">
                 <div className="h-[650px] w-full max-w-[1920px] xl:mb-[140px] relative">
                     <div className="absolute w-full xl:max-w-[1920px] h-[650px] -z-20">
-                        <Image objectFit="cover" layout="fill" alt="hero image" src={'/img/hero.jpg'}/>
+                        <Image objectFit="cover" layout="fill" alt="hero image" src={'/img/hero.jpg'} loading={'eager'}/>
                     </div>
                     <div className="w-full xl:max-w-[1400px] xl:mx-auto">
                         <div className="w-[300px] xl:w-[600px] pt-[185px] mb-[40px] mx-4 xl:mx-0">

@@ -30,6 +30,7 @@ const MapFooter = () => {
                                 height={385}
                                 alt="Mapa"
                                 src={"/map.jpg"}
+                                loading={'eager'}
                             />
                         </div>
                     </div>

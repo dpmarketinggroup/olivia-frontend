@@ -26,7 +26,7 @@ const Description = ({children, src, className, reverse, heading}: DescriptionPr
     return (
         <div className={`relative flex flex-col ${reverse ? 'xl:flex-row-reverse': 'xl:flex-row'} justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className} mb-[125px]`}>
             <div className={'shrink-0 mb-[25px] xl:mb-0'}>
-                <Image objectFit="cover" width={555} height={400} alt="description image" src={src}/>
+                <Image objectFit="cover" width={555} height={400} alt="description image" src={src} loading={'eager'}/>
             </div>
             <div className="flex flex-col">
                 {children}

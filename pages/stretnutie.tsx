@@ -48,6 +48,7 @@ const Stretnutie = () => {
                                             layout="fill"
                                             alt="Jozef Mrkvicka"
                                             src="/img/bozenaNemcova.png"
+                                            loading={'eager'}
                                         />
                                     </div>
                                     <div>
@@ -123,6 +124,7 @@ const Stretnutie = () => {
                                 height={385}
                                 alt="Mapa"
                                 src={"/img/smallMap.jpg"}
+                                loading={'eager'}
                             />
                         </div>
                     </div>

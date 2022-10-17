@@ -80,89 +80,89 @@ const ApartmentDetail = () => {
             <Head>
                 <title>Detail bytu | Olivia Residence</title>
             </Head>
-            <Modal sx={{
-                '.mantine-Modal-modal': {
-                    width: '100%',
-                    maxWidth: '770px',
-                    paddingBottom: '80px'
-                }
-            }} opened={opened} onClose={() => setOpened(false)} centered>
-                <h3 className={'text-[32px] leading-[38px] text-center font-bold text-primary'}>Mám záujem o byt
-                    č. {cislo_bytu}</h3>
-                <form onSubmit={handleSubmit} className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>
-                    <div className={'flex flex-col xl:grid grid-cols-2 gap-[15px] mt-[40px]'}>
-                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} name={'name'} placeholder={'Meno'}/>
-                        <CustomInput value={surname} onChange={(e) => setSurname(e.target.value)} name={'surname'} placeholder={'Priezvisko'}/>
-                    </div>
-                    <CustomInput value={phone} onChange={(e) => setPhone(e.target.value)} name={'phone'} placeholder={'Tel. č.'}/>
-                    <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} name={'email'} placeholder={'E-mailová adresa'}/>
-                    <Textarea value={message} onChange={(e) => setMessage(e.target.value)} name={'message'} placeholder={'Vaša správa ...'} sx={{
-                        '.mantine-Textarea-input': {
-                            border: 0,
-                            backgroundColor: 'rgba(0, 0, 0, 0.07)',
-                            borderRadius: 0,
-                            height: '145px'
-                        },
-                        '.mantine-Checkbox-input': {
-                        }
-                    }}/>
-                    <Checkbox label={'Súhlasím so spracovaním osobných údajov'}
-                              size={'md'}
-                              sx={{
-                                  '.mantine-Checkbox-label': {
-                                      color: '#999999',
-                                      fontFamily: 'Jost, sans-serif',
-                                      fontSize: '14px',
-                                      lineHeight: '20px',
-                                  },
-                                  '.mantine-Checkbox-input': {
-                                      backgroundColor: 'transparent',
-                                      border: '1.5px solid #0E3F3BCC',
-                                      opacity: 0.8,
-                                      borderRadius: 0,
-                                      display: 'flex',
-                                      alignItems: 'center'
-                                  },
-                                  '.mantine-Checkbox-input:checked': {
-                                      backgroundColor: '#476761',
-                                      opacity: 1,
-                                      border: 0
-                                  },
-                                  '.mantine-Checkbox-icon': {
-                                      color: 'white'
-                                  }
-                              }}/>
-                    <Checkbox label={'Chcem aby ste mi zasielali novinky o projekte'}
-                              size={'md'}
-                              sx={{
-                                  '.mantine-Checkbox-label': {
-                                      color: '#999999',
-                                      fontFamily: 'Jost, sans-serif',
-                                      fontSize: '14px',
-                                      lineHeight: '20px',
-                                  },
-                                  '.mantine-Checkbox-input': {
-                                      backgroundColor: 'transparent',
-                                      border: '1.5px solid #0E3F3BCC',
-                                      opacity: 0.8,
-                                      borderRadius: 0,
-                                      display: 'flex',
-                                      alignItems: 'center'
-                                  },
-                                  '.mantine-Checkbox-input:checked': {
-                                      backgroundColor: '#476761',
-                                      opacity: 1,
-                                      border: 0
-                                  },
-                                  '.mantine-Checkbox-icon': {
-                                      color: 'white'
-                                  }
-                              }}/>
-                    <button className={'bg-[#476761] h-[50px] text-white'}>
-                        Odoslať
-                    </button>
-                </form>
-            </Modal>
+            {/*<Modal sx={{*/}
+            {/*    '.mantine-Modal-modal': {*/}
+            {/*        width: '100%',*/}
+            {/*        maxWidth: '770px',*/}
+            {/*        paddingBottom: '80px'*/}
+            {/*    }*/}
+            {/*    }} opened={opened} onClose={() => setOpened(false)} centered>*/}
+            {/*    <h3 className={'text-[32px] leading-[38px] text-center font-bold text-primary'}>Mám záujem o byt*/}
+            {/*        č. {cislo_bytu}</h3>*/}
+            {/*    <form onSubmit={handleSubmit} className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>*/}
+            {/*        <div className={'flex flex-col xl:grid grid-cols-2 gap-[15px] mt-[40px]'}>*/}
+            {/*            <CustomInput value={name} onChange={(e) => setName(e.target.value)} name={'name'} placeholder={'Meno'}/>*/}
+            {/*            <CustomInput value={surname} onChange={(e) => setSurname(e.target.value)} name={'surname'} placeholder={'Priezvisko'}/>*/}
+            {/*        </div>*/}
+            {/*        <CustomInput value={phone} onChange={(e) => setPhone(e.target.value)} name={'phone'} placeholder={'Tel. č.'}/>*/}
+            {/*        <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} name={'email'} placeholder={'E-mailová adresa'}/>*/}
+            {/*        <Textarea value={message} onChange={(e) => setMessage(e.target.value)} name={'message'} placeholder={'Vaša správa ...'} sx={{*/}
+            {/*            '.mantine-Textarea-input': {*/}
+            {/*                border: 0,*/}
+            {/*                backgroundColor: 'rgba(0, 0, 0, 0.07)',*/}
+            {/*                borderRadius: 0,*/}
+            {/*                height: '145px'*/}
+            {/*            },*/}
+            {/*            '.mantine-Checkbox-input': {*/}
+            {/*            }*/}
+            {/*        }}/>*/}
+            {/*        <Checkbox label={'Súhlasím so spracovaním osobných údajov'}*/}
+            {/*                  size={'md'}*/}
+            {/*                  sx={{*/}
+            {/*                      '.mantine-Checkbox-label': {*/}
+            {/*                          color: '#999999',*/}
+            {/*                          fontFamily: 'Jost, sans-serif',*/}
+            {/*                          fontSize: '14px',*/}
+            {/*                          lineHeight: '20px',*/}
+            {/*                      },*/}
+            {/*                      '.mantine-Checkbox-input': {*/}
+            {/*                          backgroundColor: 'transparent',*/}
+            {/*                          border: '1.5px solid #0E3F3BCC',*/}
+            {/*                          opacity: 0.8,*/}
+            {/*                          borderRadius: 0,*/}
+            {/*                          display: 'flex',*/}
+            {/*                          alignItems: 'center'*/}
+            {/*                      },*/}
+            {/*                      '.mantine-Checkbox-input:checked': {*/}
+            {/*                          backgroundColor: '#476761',*/}
+            {/*                          opacity: 1,*/}
+            {/*                          border: 0*/}
+            {/*                      },*/}
+            {/*                      '.mantine-Checkbox-icon': {*/}
+            {/*                          color: 'white'*/}
+            {/*                      }*/}
+            {/*                  }}/>*/}
+            {/*        <Checkbox label={'Chcem aby ste mi zasielali novinky o projekte'}*/}
+            {/*                  size={'md'}*/}
+            {/*                  sx={{*/}
+            {/*                      '.mantine-Checkbox-label': {*/}
+            {/*                          color: '#999999',*/}
+            {/*                          fontFamily: 'Jost, sans-serif',*/}
+            {/*                          fontSize: '14px',*/}
+            {/*                          lineHeight: '20px',*/}
+            {/*                      },*/}
+            {/*                      '.mantine-Checkbox-input': {*/}
+            {/*                          backgroundColor: 'transparent',*/}
+            {/*                          border: '1.5px solid #0E3F3BCC',*/}
+            {/*                          opacity: 0.8,*/}
+            {/*                          borderRadius: 0,*/}
+            {/*                          display: 'flex',*/}
+            {/*                          alignItems: 'center'*/}
+            {/*                      },*/}
+            {/*                      '.mantine-Checkbox-input:checked': {*/}
+            {/*                          backgroundColor: '#476761',*/}
+            {/*                          opacity: 1,*/}
+            {/*                          border: 0*/}
+            {/*                      },*/}
+            {/*                      '.mantine-Checkbox-icon': {*/}
+            {/*                          color: 'white'*/}
+            {/*                      }*/}
+            {/*                  }}/>*/}
+            {/*        <button className={'bg-[#476761] h-[50px] text-white'}>*/}
+            {/*            Odoslať*/}
+            {/*        </button>*/}
+            {/*    </form>*/}
+            {/*</Modal>*/}
             <Modal className="gallery-modal" opened={opened2} size={770000} onClose={() => setOpened2(false)} centered>
                 {/*<CustomSwiper title={} swiperSlides={}/>*/}
             </Modal>
@@ -171,8 +171,7 @@ const ApartmentDetail = () => {
                     <div className="xl:mx-auto w-full xl:max-w-[1200px]">
                         <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                             <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
-                            <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber
-                                apartmánu na podlaží</h1>
+                            <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Detail apartmánu</h1>
                         </div>
                         <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
                             <div className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer"
@@ -250,6 +249,7 @@ const ApartmentDetail = () => {
                             height={primarna_foto.data.attributes.height}
                             alt="hero image"
                             src={primarna_foto.data.attributes.url}
+                            loading={'eager'}
                         />
                         </div>
                         <div className="flex flex-col w-[100%] xl:w-1/3 shrink-0 justify-between h-[510px]">
@@ -259,6 +259,7 @@ const ApartmentDetail = () => {
                                     layout="fill"
                                     alt="hero image"
                                     src={dodatocna_foto1.data.attributes.url}
+                                    loading={'eager'}
                                 />
                             </div>
                             <div className="w-full h-[300px] xl:h-[250px] relative border border-t-0 xl:border-t-[1px] border-black">
@@ -268,6 +269,7 @@ const ApartmentDetail = () => {
                                     objectPosition={'center'}
                                     alt="hero image"
                                     src={dodatocna_foto2.data.attributes.url}
+                                    loading={'eager'}
                                 />
                             </div>
                         </div>
