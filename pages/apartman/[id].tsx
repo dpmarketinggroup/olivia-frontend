@@ -1,6 +1,6 @@
 import Head from "next/head";
 import {Checkbox, Modal, Select, Textarea, TextInput} from "@mantine/core";
-import { MapFooter} from "@components/common";
+import {MapFooter} from "@components/common";
 import {ArrowDownNotFilledIcon, Bank, FloorPlan, RightArrow, Severka, Star} from "@components/icons";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,6 +11,7 @@ import {useStore} from "../../lib/store/useStore";
 import {Button} from "@components/ui";
 import {CarDescription} from "@components/common/Description/Description";
 import axios from "axios";
+import {Swiper, SwiperSlide} from "swiper/react";
 
 const ApartmentDetail = () => {
     const [opened, setOpened] = useState(false);
@@ -163,20 +164,34 @@ const ApartmentDetail = () => {
             {/*        </button>*/}
             {/*    </form>*/}
             {/*</Modal>*/}
-            <Modal className="gallery-modal" opened={opened2} size={770000} onClose={() => setOpened2(false)} centered>
-                {/*<CustomSwiper title={} swiperSlides={}/>*/}
+            <Modal className="gallery-modal" opened={opened2} sx={{
+
+            }} onClose={() => setOpened2(false)} centered>
+                <Swiper
+                    spaceBetween={50}
+                    slidesPerView={1}
+                >
+                    <SwiperSlide>Slide 1</SwiperSlide>
+                    <SwiperSlide>Slide 2</SwiperSlide>
+                    <SwiperSlide>Slide 3</SwiperSlide>
+                    <SwiperSlide>Slide 4</SwiperSlide>
+                </Swiper>
             </Modal>
             <div className="flex flex-col justify-center w-full xl:max-w-[1200px] mx-auto">
                 <div className="my-[100px]">
                     <div className="xl:mx-auto w-full xl:max-w-[1200px]">
                         <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                             <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
-                            <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Detail apartmánu</h1>
+                            <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Detail
+                                apartmánu</h1>
                         </div>
-                        <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
-                            <div className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer"
-                                 onClick={() => setIsFloorDropDownCLicked((prevState) => !prevState)}>
-                                <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">{apartment.data.attributes.poschodie}. podlažie</span>
+                        <div
+                            className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
+                            <div
+                                className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer"
+                                onClick={() => setIsFloorDropDownCLicked((prevState) => !prevState)}>
+                                <span
+                                    className="drop-span font-bold text-[18px] leading-7 text-[#476761]">{apartment.data.attributes.poschodie}. podlažie</span>
                                 <div className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"}`}>
                                     <div
                                         className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
@@ -243,14 +258,14 @@ const ApartmentDetail = () => {
                     <div onClick={() => setOpened2(true)}
                          className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center xl:items-start justify-center">
                         <div className={'border border-b-0 xl:border-b-[1px] border-black mb-[-50px] xl:mb-0'}>
-                        <Image
-                            objectFit="cover"
-                            width={primarna_foto.data.attributes.width}
-                            height={primarna_foto.data.attributes.height}
-                            alt="hero image"
-                            src={primarna_foto.data.attributes.url}
-                            loading={'eager'}
-                        />
+                            <Image
+                                objectFit="cover"
+                                width={primarna_foto.data.attributes.width}
+                                height={primarna_foto.data.attributes.height}
+                                alt="hero image"
+                                src={primarna_foto.data.attributes.url}
+                                loading={'eager'}
+                            />
                         </div>
                         <div className="flex flex-col w-[100%] xl:w-1/3 shrink-0 justify-between h-[510px]">
                             <div className="w-full h-[300px] xl:h-[250px] relative border border-black">
@@ -262,7 +277,8 @@ const ApartmentDetail = () => {
                                     loading={'eager'}
                                 />
                             </div>
-                            <div className="w-full h-[300px] xl:h-[250px] relative border border-t-0 xl:border-t-[1px] border-black">
+                            <div
+                                className="w-full h-[300px] xl:h-[250px] relative border border-t-0 xl:border-t-[1px] border-black">
                                 <Image
                                     objectFit="contain"
                                     layout="fill"
