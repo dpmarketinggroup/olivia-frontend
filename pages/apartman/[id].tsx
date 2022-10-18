@@ -1,5 +1,5 @@
 import Head from "next/head";
-import {Checkbox, Modal, Select, Textarea, TextInput} from "@mantine/core";
+import {Checkbox, Modal, Textarea, TextInput} from "@mantine/core";
 import {MapFooter} from "@components/common";
 import {ArrowDownNotFilledIcon, Bank, FloorPlan, RightArrow, Severka, Star} from "@components/icons";
 import Link from "next/link";
@@ -74,6 +74,7 @@ const ApartmentDetail = () => {
                 apartment: cislo_bytu
             })
         })
+        await router.push('/dakujeme')
     }
 
     return (
@@ -81,89 +82,89 @@ const ApartmentDetail = () => {
             <Head>
                 <title>Detail bytu | Olivia Residence</title>
             </Head>
-            {/*<Modal sx={{*/}
-            {/*    '.mantine-Modal-modal': {*/}
-            {/*        width: '100%',*/}
-            {/*        maxWidth: '770px',*/}
-            {/*        paddingBottom: '80px'*/}
-            {/*    }*/}
-            {/*    }} opened={opened} onClose={() => setOpened(false)} centered>*/}
-            {/*    <h3 className={'text-[32px] leading-[38px] text-center font-bold text-primary'}>Mám záujem o byt*/}
-            {/*        č. {cislo_bytu}</h3>*/}
-            {/*    <form onSubmit={handleSubmit} className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>*/}
-            {/*        <div className={'flex flex-col xl:grid grid-cols-2 gap-[15px] mt-[40px]'}>*/}
-            {/*            <CustomInput value={name} onChange={(e) => setName(e.target.value)} name={'name'} placeholder={'Meno'}/>*/}
-            {/*            <CustomInput value={surname} onChange={(e) => setSurname(e.target.value)} name={'surname'} placeholder={'Priezvisko'}/>*/}
-            {/*        </div>*/}
-            {/*        <CustomInput value={phone} onChange={(e) => setPhone(e.target.value)} name={'phone'} placeholder={'Tel. č.'}/>*/}
-            {/*        <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} name={'email'} placeholder={'E-mailová adresa'}/>*/}
-            {/*        <Textarea value={message} onChange={(e) => setMessage(e.target.value)} name={'message'} placeholder={'Vaša správa ...'} sx={{*/}
-            {/*            '.mantine-Textarea-input': {*/}
-            {/*                border: 0,*/}
-            {/*                backgroundColor: 'rgba(0, 0, 0, 0.07)',*/}
-            {/*                borderRadius: 0,*/}
-            {/*                height: '145px'*/}
-            {/*            },*/}
-            {/*            '.mantine-Checkbox-input': {*/}
-            {/*            }*/}
-            {/*        }}/>*/}
-            {/*        <Checkbox label={'Súhlasím so spracovaním osobných údajov'}*/}
-            {/*                  size={'md'}*/}
-            {/*                  sx={{*/}
-            {/*                      '.mantine-Checkbox-label': {*/}
-            {/*                          color: '#999999',*/}
-            {/*                          fontFamily: 'Jost, sans-serif',*/}
-            {/*                          fontSize: '14px',*/}
-            {/*                          lineHeight: '20px',*/}
-            {/*                      },*/}
-            {/*                      '.mantine-Checkbox-input': {*/}
-            {/*                          backgroundColor: 'transparent',*/}
-            {/*                          border: '1.5px solid #0E3F3BCC',*/}
-            {/*                          opacity: 0.8,*/}
-            {/*                          borderRadius: 0,*/}
-            {/*                          display: 'flex',*/}
-            {/*                          alignItems: 'center'*/}
-            {/*                      },*/}
-            {/*                      '.mantine-Checkbox-input:checked': {*/}
-            {/*                          backgroundColor: '#476761',*/}
-            {/*                          opacity: 1,*/}
-            {/*                          border: 0*/}
-            {/*                      },*/}
-            {/*                      '.mantine-Checkbox-icon': {*/}
-            {/*                          color: 'white'*/}
-            {/*                      }*/}
-            {/*                  }}/>*/}
-            {/*        <Checkbox label={'Chcem aby ste mi zasielali novinky o projekte'}*/}
-            {/*                  size={'md'}*/}
-            {/*                  sx={{*/}
-            {/*                      '.mantine-Checkbox-label': {*/}
-            {/*                          color: '#999999',*/}
-            {/*                          fontFamily: 'Jost, sans-serif',*/}
-            {/*                          fontSize: '14px',*/}
-            {/*                          lineHeight: '20px',*/}
-            {/*                      },*/}
-            {/*                      '.mantine-Checkbox-input': {*/}
-            {/*                          backgroundColor: 'transparent',*/}
-            {/*                          border: '1.5px solid #0E3F3BCC',*/}
-            {/*                          opacity: 0.8,*/}
-            {/*                          borderRadius: 0,*/}
-            {/*                          display: 'flex',*/}
-            {/*                          alignItems: 'center'*/}
-            {/*                      },*/}
-            {/*                      '.mantine-Checkbox-input:checked': {*/}
-            {/*                          backgroundColor: '#476761',*/}
-            {/*                          opacity: 1,*/}
-            {/*                          border: 0*/}
-            {/*                      },*/}
-            {/*                      '.mantine-Checkbox-icon': {*/}
-            {/*                          color: 'white'*/}
-            {/*                      }*/}
-            {/*                  }}/>*/}
-            {/*        <button className={'bg-[#476761] h-[50px] text-white'}>*/}
-            {/*            Odoslať*/}
-            {/*        </button>*/}
-            {/*    </form>*/}
-            {/*</Modal>*/}
+            <Modal sx={{
+                '.mantine-Modal-modal': {
+                    width: '100%',
+                    maxWidth: '770px',
+                    paddingBottom: '80px'
+                }
+                }} opened={opened} onClose={() => setOpened(false)} centered>
+                <h3 className={'text-[32px] leading-[38px] text-center font-bold text-primary'}>Mám záujem o byt
+                    č. {cislo_bytu}</h3>
+                <form onSubmit={handleSubmit} className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>
+                    <div className={'flex flex-col xl:grid grid-cols-2 gap-[15px] mt-[40px]'}>
+                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} name={'name'} placeholder={'Meno'}/>
+                        <CustomInput value={surname} onChange={(e) => setSurname(e.target.value)} name={'surname'} placeholder={'Priezvisko'}/>
+                    </div>
+                    <CustomInput value={phone} onChange={(e) => setPhone(e.target.value)} name={'phone'} placeholder={'Tel. č.'}/>
+                    <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} name={'email'} placeholder={'E-mailová adresa'}/>
+                    <Textarea value={message} onChange={(e) => setMessage(e.target.value)} name={'message'} placeholder={'Vaša správa ...'} sx={{
+                        '.mantine-Textarea-input': {
+                            border: 0,
+                            backgroundColor: 'rgba(0, 0, 0, 0.07)',
+                            borderRadius: 0,
+                            height: '145px'
+                        },
+                        '.mantine-Checkbox-input': {
+                        }
+                    }}/>
+                    <Checkbox label={'Súhlasím so spracovaním osobných údajov'}
+                              size={'md'}
+                              sx={{
+                                  '.mantine-Checkbox-label': {
+                                      color: '#999999',
+                                      fontFamily: 'Jost, sans-serif',
+                                      fontSize: '14px',
+                                      lineHeight: '20px',
+                                  },
+                                  '.mantine-Checkbox-input': {
+                                      backgroundColor: 'transparent',
+                                      border: '1.5px solid #0E3F3BCC',
+                                      opacity: 0.8,
+                                      borderRadius: 0,
+                                      display: 'flex',
+                                      alignItems: 'center'
+                                  },
+                                  '.mantine-Checkbox-input:checked': {
+                                      backgroundColor: '#476761',
+                                      opacity: 1,
+                                      border: 0
+                                  },
+                                  '.mantine-Checkbox-icon': {
+                                      color: 'white'
+                                  }
+                              }}/>
+                    <Checkbox label={'Chcem aby ste mi zasielali novinky o projekte'}
+                              size={'md'}
+                              sx={{
+                                  '.mantine-Checkbox-label': {
+                                      color: '#999999',
+                                      fontFamily: 'Jost, sans-serif',
+                                      fontSize: '14px',
+                                      lineHeight: '20px',
+                                  },
+                                  '.mantine-Checkbox-input': {
+                                      backgroundColor: 'transparent',
+                                      border: '1.5px solid #0E3F3BCC',
+                                      opacity: 0.8,
+                                      borderRadius: 0,
+                                      display: 'flex',
+                                      alignItems: 'center'
+                                  },
+                                  '.mantine-Checkbox-input:checked': {
+                                      backgroundColor: '#476761',
+                                      opacity: 1,
+                                      border: 0
+                                  },
+                                  '.mantine-Checkbox-icon': {
+                                      color: 'white'
+                                  }
+                              }}/>
+                    <button className={'bg-[#476761] h-[50px] text-white'}>
+                        Odoslať
+                    </button>
+                </form>
+            </Modal>
             <Modal className="gallery-modal" opened={opened2} sx={{
 
             }} onClose={() => setOpened2(false)} centered>
@@ -323,7 +324,7 @@ const ApartmentDetail = () => {
                     </div>
                     <div className="flex justify-between mb-[25px] items-center">
                         <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Cena</p>
-                        <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px]">{cena} €</span>
+                        <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px]">{cena ? `${cena} €` : '-'}</span>
                     </div>
                     <div className="flex justify-between mb-[70px]">
                         <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Dostupnosť</p>
