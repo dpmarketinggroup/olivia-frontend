@@ -5,6 +5,7 @@ import axios from "axios";
 import PhoneInput from "react-phone-number-input";
 import 'react-phone-number-input/style.css'
 import {E164Number} from "libphonenumber-js";
+import {useRouter} from "next/router";
 
 interface FormProps {
     meeting?: boolean
@@ -16,7 +17,7 @@ const Form
            meeting = false,
            isGreen
        }: FormProps) => {
-
+    const router = useRouter();
     const [isClicked1, setClicked1] = useState(false);
     const [isClicked2, setClicked2] = useState(false);
 
@@ -49,6 +50,7 @@ const Form
         } catch (e) {
            console.error(e);
         }
+        await router.push('/dakujeme')
     }
 
     return (
