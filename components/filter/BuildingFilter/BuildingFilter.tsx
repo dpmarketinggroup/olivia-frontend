@@ -41,7 +41,7 @@ const Building = () => {
 
     const [price, setPrice] = useState<[number, number]>([70, 380]);
     const [floor, setFloor] = useState<[number, number]>([3, 14]);
-    const [area, setArea] = useState<[number, number]>([34, 130]);
+    const [area, setArea] = useState<[number, number]>([20, 130]);
 
     const [isSoldChecked, setIsSoldChecked] = useState(false);
     const [isReservatedChecked, setIsReservatedChecked] = useState(false);
@@ -60,12 +60,13 @@ const Building = () => {
     useEffect(() => {
         async function fetch() {
             const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts?pagination[pageSize]=200&populate=*`)
+
             if (router.pathname === '/ponuka-bytov') {
-                setOneRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'jedno-izbový'))
-                setTwoRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'dvoj-izbový'))
-                setOneAndHalfRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'jeden a pol-izbový'))
-                setThreeRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'troj-izbový'))
-                setFourRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'štvor-izbový'))
+                setOneRooms(res.data.data.filter((val: any) => val.attributes?.pocet_izieb === 'jedno-izbový'))
+                setTwoRooms(res.data.data.filter((val: any) => val.attributes?.pocet_izieb === 'dvoj-izbový'))
+                setOneAndHalfRooms(res.data.data.filter((val: any) => val.attributes?.pocet_izieb === 'jeden a pol-izbový'))
+                setThreeRooms(res.data.data.filter((val: any) => val.attributes?.pocet_izieb === 'troj-izbový'))
+                setFourRooms(res.data.data.filter((val: any) => val.attributes?.pocet_izieb === 'štvor-izbový'))
             }
         }
         fetch()
@@ -73,7 +74,7 @@ const Building = () => {
 
     async function handleClick() {
         const clickedButtons: { [x: string]: true; }[] = [];
-        let query = `?filters[cena][$gte]=${price[0] * 1000}&filters[cena][$lte]=${price[1] * 1000}&filters[celkova_rozloha][$gte]=${area[0]}&filters[celkova_rozloha][$lte]=${area[1]}&filters[poschodie][$gte]=${floor[0]}&filters[poschodie][$lte]=${floor[1]}&pagination[pageSize]=100&populate=*`
+        let query = `?filters[cena][$gte]=${price[0] * 1000}&filters[cena][$lte]=${price[1] * 1000}&filters[celkova_rozloha][$gte]=${area[0]}&filters[celkova_rozloha][$lte]=${area[1]}&filters[poschodie][$gte]=${floor[0]}&filters[poschodie][$lte]=${floor[1]}&pagination[pageSize]=200&populate=*`
         Object.entries(clicked).forEach(([key, value]) => {
             if (value) clickedButtons.push({[key]: value})
         })
@@ -91,14 +92,18 @@ const Building = () => {
         }
         if (isSoldChecked) query += `filters[dostupnost][$ne]=predaný`
         if (isReservatedChecked) query += `filters[dostupnost][$ne]=rezervovaný`
+        let response;
 
         const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts${query}`)
+        const res2 = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts?filters[cena][$null]=true&populate=*`)
 
-        setOneRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'jedno-izbový'))
-        setTwoRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'dvoj-izbový'))
-        setOneAndHalfRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'jeden a pol-izbový'))
-        setThreeRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'troj-izbový'))
-        setFourRooms(res.data.data.filter((val: any) => val.attributes.pocet_izieb === 'štvor-izbový'))
+        response = [...res.data.data, ...res2.data.data]
+
+        setOneRooms(response.filter((val: any) => val.attributes.pocet_izieb === 'jedno-izbový'))
+        setTwoRooms(response.filter((val: any) => val.attributes.pocet_izieb === 'dvoj-izbový'))
+        setOneAndHalfRooms(response.filter((val: any) => val.attributes.pocet_izieb === 'jeden a pol-izbový'))
+        setThreeRooms(response.filter((val: any) => val.attributes.pocet_izieb === 'troj-izbový'))
+        setFourRooms(response.filter((val: any) => val.attributes.pocet_izieb === 'štvor-izbový'))
     }
 
     return (
@@ -145,7 +150,7 @@ const Building = () => {
                         <div className={'text-white'}>
                             <h5 className={'mb-[20px] text-[14px] leading-[20px]'}>Rozloha <span
                                 className={'font-bold pl-[1rem]'}>{area[0]} - {area[1]} m²</span></h5>
-                            <RangeSlider onChange={value => setArea(value)} value={area} min={34} step={5} max={130}
+                            <RangeSlider onChange={value => setArea(value)} value={area} min={20} step={5} max={130}
                                          size={2} sx={{
                                 '.mantine-Slider-thumb': {
                                     color: 'white',

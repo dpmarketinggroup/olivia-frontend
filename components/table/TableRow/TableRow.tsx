@@ -14,7 +14,6 @@ export interface TableRowProps {
 }
 
 const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalArea, floor, additionalRoom, id, img}: TableRowProps) => {
-    console.log(img)
     return (
         <Link href={`/apartman/${id}`}>
             <div className={'group cursor-pointer w-full flex items-center justify-between py-[20px] hover:bg-[#0E3F3B33] xl:relative'}>
@@ -34,7 +33,7 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
                     {additionalRoom}
                 </div>
                 <div className={'xl:w-[130px] hidden xl:flex'}>
-                    {price} €
+                    {price ? `${price} €` : '-'}
                 </div>
                 <div className={'xl:w-[130px]'}>
                     <div className={'bg-[#476761] w-[55px] h-[30px] flex items-center justify-center font-medium text-white text-[14px] leading-[20px] ml-auto'}>
