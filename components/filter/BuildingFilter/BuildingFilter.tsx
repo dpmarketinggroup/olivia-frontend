@@ -43,7 +43,7 @@ const Building = () => {
     const [floor, setFloor] = useState<[number, number]>([3, 14]);
     const [area, setArea] = useState<[number, number]>([20, 130]);
 
-    const [isSoldChecked, setIsSoldChecked] = useState(false);
+    const [isSoldChecked, setIsSoldChecked] = useState(true);
     const [isReservatedChecked, setIsReservatedChecked] = useState(false);
 
     const [clicked, setClicked] = useState({
