@@ -1,9 +1,8 @@
 import {Form, Hero, MapFooter} from "@components/common";
-import {Phone, EmailSign, PhoneHero} from "@components/icons";
+import { EmailSign, PhoneHero} from "@components/icons";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
-
 
 const Kontakt = () => {
     return (

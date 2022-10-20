@@ -8,10 +8,13 @@ import Image from "next/image";
 import {ApartmentEquipmentDescription, CommonDescription} from "@components/common/Description/Description";
 import {Button} from "@components/ui";
 import React, {useState} from "react";
+import {getAvailability} from "../lib/helpers";
+import {useAvailability} from "../lib/hooks/useAvailability";
 
 
 const Home = () => {
     const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false)
+
     return (
         <>
             <Head>
