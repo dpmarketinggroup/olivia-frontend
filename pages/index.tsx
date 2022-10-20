@@ -8,9 +8,6 @@ import Image from "next/image";
 import {ApartmentEquipmentDescription, CommonDescription} from "@components/common/Description/Description";
 import {Button} from "@components/ui";
 import React, {useState} from "react";
-import {getAvailability} from "../lib/helpers";
-import {useAvailability} from "../lib/hooks/useAvailability";
-
 
 const Home = () => {
     const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false)
@@ -20,7 +17,7 @@ const Home = () => {
             <Head>
                 <title>Moderné mestské bývanie | Olivia Residence</title>
             </Head>
-            <div className="flex justify-center pt-[50px]">
+            <div className="flex justify-center pt-[50px] xl:overflow-hidden">
                 <div className="h-[650px] w-full max-w-[1920px] xl:mb-[140px] relative">
                     <div className="absolute w-full xl:max-w-[1920px] h-[650px] -z-20">
                         <Image objectFit="cover" layout="fill" alt="hero image" src={'/img/hero.jpg'} loading={'eager'}/>
