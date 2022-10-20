@@ -94,7 +94,7 @@ export const ApartmentEquipmentDescription = () => {
                         title: 'Apartmán na kľúč',
                         description: <p className={'text-[#676766]'}>Bývanie v Olivia Residence
                             je úplne bezstarostné. Ponúkame <span className={'font-bold'}>komplexne zariadené
-                            apratmány vrátane kompletne vybavenej kuchyne so spotrebičmi a sanitou.</span> Vašou jedinou
+                            apartmány vrátane kompletne vybavenej kuchyne so spotrebičmi a sanitou.</span> Vašou jedinou
                             starosťou bude výber nábytku.</p>
                     },
                     {
@@ -102,7 +102,7 @@ export const ApartmentEquipmentDescription = () => {
                         title: 'Vysoký štandard vybavenia',
                         description: <p className={'text-[#676766]'}>Olivia nevyniká len
                             množstvom nadštandardného vybavenia, ale aj jeho prevedením.
-                            Materiály použité v apartmánoch zodpovedjú vysokým štandardom kvality.</p>
+                            Materiály použité v apartmánoch zodpovedajú vysokým štandardom kvality.</p>
                     }
                 ].map(({description, title, icon}, i) => (
                     <div className={'flex flex-col'} key={i}>

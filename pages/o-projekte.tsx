@@ -33,8 +33,8 @@ const OProjekte = () => {
     const customDescriptionList: CustomDescriptionProps[] = [
         {
             src: "room3.jpg",
-            title: "Vysoký štandard vrátane komplentej kuchyne a sanity",
-            description: "Veľko-metrážne balkóny a terasy s exterierovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
+            title: "Vysoký štandard vrátane kompletnej kuchyne a sanity",
+            description: "Veľko-metrážne balkóny a terasy s exteriérovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
             bulletPoints: [
                 {icon: <KitchenIcon/>, label: "Kuchynská linka so spotrebičmi ako štandard"},
                 {icon: <SinkIcon/>, label: "Sanita vo vysokej kvalite"},
@@ -43,8 +43,8 @@ const OProjekte = () => {
         },
         {
             src: "balcony.jpg",
-            title: "Priestranné balkóny a terasy s exterierovým slnečným tienením",
-            description: "Veľko-metrážne balkóny a terasy s exterierovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
+            title: "Priestranné balkóny a terasy s exteriérovým slnečným tienením",
+            description: "Veľko-metrážne balkóny a terasy s exteriérovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
             bulletPoints: [
                 {icon: <BasketIcon/>, label: "Balkón ako štandard pre každý byt"},
                 {icon: <ElectricPanelIcon/>, label: "Elektrické exteriérové slnečné tienenie ako štandard"},
