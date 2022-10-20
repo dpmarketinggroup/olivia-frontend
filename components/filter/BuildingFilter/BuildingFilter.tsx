@@ -120,6 +120,15 @@ const Building = () => {
             })
         }
 
+        if (isSoldChecked && isReservatedChecked) {
+            query += `&filters[$and][0][dostupnost][$ne]=rezervovaný&filters[$and][1][dostupnost][$ne]=predaný`
+            query2 += `&filters[$and][0][dostupnost][$ne]=rezervovaný&filters[$and][1][dostupnost][$ne]=predaný`
+
+        } else {
+            query.replace('&filters[$and][0][dostupnost][$ne]=rezervovaný&filters[$and][1][dostupnost][$ne]=predaný', '')
+            query2.replace('&filters[$and][0][dostupnost][$ne]=rezervovaný&filters[$and][1][dostupnost][$ne]=predaný', '')
+        }
+
         if (isSoldChecked) {
             query += `&filters[dostupnost][$ne]=predaný`
             query2 += `&filters[dostupnost][$ne]=predaný`
@@ -134,7 +143,6 @@ const Building = () => {
             query.replace('&filters[dostupnost][$ne]=rezervovaný', '')
             query2.replace('&filters[dostupnost][$ne]=rezervovaný', '')
         }
-
         let response;
         try {
             setLoading(true)
