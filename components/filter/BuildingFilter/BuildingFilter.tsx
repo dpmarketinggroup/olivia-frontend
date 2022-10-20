@@ -85,15 +85,38 @@ const Building = () => {
         if (clickedButtons.length) {
             clickedButtons.forEach((button) => {
                 if (button.room1Clicked) {
-
+                    query += `&filters[pocet_izieb][$eq]=jedno-izbový`
+                    query2 += `&filters[pocet_izieb][$eq]=jedno-izbový`
                 }
-                if (button.room2Clicked) query += `&filters[pocet_izieb][$eq]=dvoj-izbový`
-                if (button.room15Clicked) query += `&filters[pocet_izieb][$eq]=jeden a pol-izbový`
-                if (button.room3Clicked) query += `&filters[pocet_izieb][$eq]=troj-izbový`
-                if (button.room4Clicked) query += `&filters[pocet_izieb][$eq]=štvor-izbový`
-                if (button.withTerrace) query += `&filters[terasa_rozloha][$notNull]=true`
-                if (button.withoutBalcony) query += `&filters[balkon_rozloha][$null]=true`
-                if (button.withBalcony) query += `&filters[balkon_rozloha][$notNull]=true`
+                if (button.room2Clicked) {
+                    query += `&filters[pocet_izieb][$eq]=dvoj-izbový`
+                    query2 += `&filters[pocet_izieb][$eq]=dvoj-izbový`
+                }
+                if (button.room15Clicked) {
+                    query += `&filters[pocet_izieb][$eq]=jeden a pol-izbový`
+                    query2 += `&filters[pocet_izieb][$eq]=jeden a pol-izbový`
+                }
+                if (button.room3Clicked) {
+                    query += `&filters[pocet_izieb][$eq]=troj-izbový`
+                    query2 += `&filters[pocet_izieb][$eq]=troj-izbový`
+                }
+
+                if (button.room4Clicked) {
+                    query += `&filters[pocet_izieb][$eq]=štvor-izbový`
+                    query2 += `&filters[pocet_izieb][$eq]=štvor-izbový`
+                }
+                if (button.withTerrace) {
+                    query += `&filters[terasa_rozloha][$notNull]=true`
+                    query2 += `&filters[terasa_rozloha][$notNull]=true`
+                }
+                if (button.withoutBalcony) {
+                    query += `&filters[balkon_rozloha][$null]=true`
+                    query2 += `&filters[balkon_rozloha][$null]=true`
+                }
+                if (button.withBalcony) {
+                    query += `&filters[balkon_rozloha][$notNull]=true`
+                    query2 += `&filters[balkon_rozloha][$notNull]=true`
+                }
             })
         }
 
@@ -104,7 +127,14 @@ const Building = () => {
             query.replace('&filters[dostupnost][$ne]=predaný', '')
             query2.replace('&filters[dostupnost][$ne]=predaný', '')
         }
-        if (isReservatedChecked) query += `&filters[dostupnost][$ne]=rezervovaný`
+        if (isReservatedChecked) {
+            query += `&filters[dostupnost][$ne]=rezervovaný`
+            query2 += `&filters[dostupnost][$ne]=rezervovaný`
+        } else {
+            query.replace('&filters[dostupnost][$ne]=rezervovaný', '')
+            query2.replace('&filters[dostupnost][$ne]=rezervovaný', '')
+        }
+
         let response;
         try {
             setLoading(true)

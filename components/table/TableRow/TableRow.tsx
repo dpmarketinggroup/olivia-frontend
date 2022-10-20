@@ -46,7 +46,7 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
                     {price ? `${price} €` : '-'}
                 </div>
                 <div className={'xl:w-[130px]'}>
-                    <div className={`${getColor()} w-[55px] h-[30px] flex items-center justify-center font-medium text-white text-[14px] leading-[20px] ml-auto`}>
+                    <div className={`${getColor()} w-min px-[10px] h-[30px] flex items-center justify-center font-medium text-white text-[14px] leading-[20px] ml-auto`}>
                         {availability}
                     </div>
                 </div>
