@@ -1,10 +1,9 @@
 import Link from "next/link";
-import {MapFooter, Articles, Subscription, Timeline, Hero, Description} from "@components/common";
+import {MapFooter, Subscription, Timeline, Hero} from "@components/common";
 import {
     House,
     UniCredit,
-    Phone,
-    EmailSign, RectangleLightIcon, RectangleDarkIcon
+    EmailSign
 } from "@components/icons";
 import Head from "next/head";
 import Image from "next/image";
@@ -77,7 +76,7 @@ const OProjekte = () => {
                 <CustomDescription key={index} {...props}/>
             ))}
             <div id={'garazove-parkovanie'}>
-            <CarDescription oProjekte={true}/>
+                <CarDescription oProjekte={true}/>
             </div>
             <div className="flex justify-center" id="financovanie">
                 <div className="w-full">
@@ -93,7 +92,8 @@ const OProjekte = () => {
                             </div>
                         </div>
                         <div className="mx-auto">
-                            <div className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-1/2">
+                            <div
+                                className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-1/2">
                                 {[
                                     {step: "1. krok", title: "Rezervačná zmluva", offer: "1 500 €"},
                                     {step: "2. krok", title: "Zmluva o budúcej zmluve", offer: "20% z ceny bytu"},
@@ -101,7 +101,8 @@ const OProjekte = () => {
                                 ].map(({step, title, offer}, index) => (
                                     <div key={index}
                                          className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px] xl:mb-[30px]">
-                                    <span className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#C6C6C6]">{step}</span>
+                                        <span
+                                            className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#C6C6C6]">{step}</span>
                                         <h4 className="font-bold text-[18px] leading-7 ">{title}</h4>
                                         <span
                                             className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">{offer}</span>
@@ -129,7 +130,8 @@ const OProjekte = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className=" w-[full] mt-[-960px] xl:mt-[-565px] bg-[#F5F5F5] h-[970px] xl:h-[750px] border-primary">
+                        <div
+                            className=" w-[full] mt-[-960px] xl:mt-[-565px] bg-[#F5F5F5] h-[970px] xl:h-[750px] border-primary">
                             <div
                                 className="flex flex-col xl:flex-row gap-[50px] xl:gap-[100px] xl:pt-[550px] pb-[50px] xl:mx-[165px] items-center justify-center">
                                 <div className="hidden xl:inline-block">
@@ -155,28 +157,19 @@ const OProjekte = () => {
                                         <span className="text-[14px] leading-5">Fin. poradca | UniCredit Bank</span>
                                     </div>
                                 </div>
-                                <div>
-                                    <div className="flex gap-[20px]">
-                                        <Phone/>
-                                        <Link href={'tel:+421918501835'}>
-                                            <a className="font-bold text-[18px] leading-7">+421 918 501 835</a>
-                                        </Link>
-                                    </div>
-                                    <div className="flex gap-[20px]">
-                                        <EmailSign/>
-                                        <Link href={'mailto:jozef.onderco@unicreditgroup.sk'}>
-                                            <a className="font-bold text-[18px] leading-7">jozef.onderco@unicreditgroup.sk</a>
-                                        </Link>
-                                    </div>
+                                <div className="flex items-center gap-[20px]">
+                                    <EmailSign/>
+                                    <Link href={'mailto:jozef.onderco@unicreditgroup.sk'}>
+                                        <a className="font-bold text-[18px] leading-7">jozef.onderco@unicreditgroup.sk</a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {/*<Articles classname={'mb-[90px] xl:pt-[120px]'}/>*/}
             <div className={'xl:mt-[100px] xl:mb-[100px]'}>
-            <Subscription/>
+                <Subscription/>
             </div>
             <MapFooter/>
         </div>
