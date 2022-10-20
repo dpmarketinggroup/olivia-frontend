@@ -124,7 +124,7 @@ const FloorDetail = () => {
                 <div className="grid grid-cols-2 gap-y-[30px] mb-[40px]">
                     {pocet_izieb ? (
                         <>
-                            <span className="pl-[70px] font-bold text-[16px] leading-6 tracking-[0.1px]">3 - izbový apartmán</span>
+                            <span className="pl-[70px] font-bold text-[16px] leading-6 tracking-[0.1px]">{pocet_izieb} apartmán</span>
                         </>
                     ) : <span></span>}
                     <span
