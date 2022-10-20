@@ -152,6 +152,14 @@ const Building = () => {
         }
         setLoading(false)
     }
+    function getAdditionalRoom(attributes: any): number {
+        if (!attributes.balkon_rozloha && !attributes.terasa_rozloha) return 0;
+        if (attributes.balkon_rozloha && attributes.terasa_rozloha) return attributes.balkon_rozloha + attributes.terasa_rozloha;
+        if (attributes.balkon_rozloha) return attributes.balkon_rozloha;
+        if (attributes.terasa_rozloha) return attributes.terasa_rozloha;
+        return 2;
+    }
+
     return (
         <>
             <div
@@ -361,7 +369,7 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0,
+                                        additionalRoom: Number(getAdditionalRoom(attributes).toFixed(2)),
                                         img: attributes.primarna_foto.data.attributes.url
                                     }
                                 ]}/>
@@ -393,7 +401,7 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0,
+                                        additionalRoom: Number(getAdditionalRoom(attributes).toFixed(2)),
                                         img: attributes.primarna_foto.data.attributes.url
                                     }
                                 ]}/>
@@ -425,7 +433,7 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0,
+                                        additionalRoom: Number(getAdditionalRoom(attributes).toFixed(2)),
                                         img: attributes.primarna_foto.data.attributes.url
                                     }
                                 ]}/>
@@ -457,7 +465,7 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0,
+                                        additionalRoom: Number(getAdditionalRoom(attributes).toFixed(2)),
                                         img: attributes.primarna_foto.data.attributes.url
                                     }
                                 ]}/>
@@ -489,7 +497,7 @@ const Building = () => {
                                         availability: attributes.dostupnost,
                                         price: attributes.cena,
                                         totalArea: attributes.celkova_rozloha,
-                                        additionalRoom: (attributes.balkon_rozloha || attributes.terasa_rozloha) || 0,
+                                        additionalRoom: Number(getAdditionalRoom(attributes).toFixed(2)),
                                         img: attributes.primarna_foto.data.attributes.url
                                     }
                                 ]}/>
