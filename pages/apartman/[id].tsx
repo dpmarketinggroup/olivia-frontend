@@ -76,6 +76,16 @@ const ApartmentDetail = () => {
         })
         await router.push('/dakujeme')
     }
+    function getAvailabilityTextColor(availability: 'voľný' | 'rezervovaný' | 'predaný') {
+        switch (availability) {
+            case "predaný":
+                return 'text-[#EE4C36]'
+            case "rezervovaný":
+                return 'text-[#E4B80B]'
+            case "voľný":
+                return 'text-[#476761]'
+        }
+    }
 
     return (
         <>
@@ -329,7 +339,7 @@ const ApartmentDetail = () => {
                     <div className="flex justify-between mb-[70px]">
                         <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Dostupnosť</p>
                         <span
-                            className="font-bold text-[16px] leading-6 tracking-[0.1px] text-[#476761]">{dostupnost}</span>
+                            className={`font-bold text-[16px] leading-6 tracking-[0.1px] ${getAvailabilityTextColor(dostupnost)}`}>{dostupnost}</span>
                     </div>
                     <div className="flex justify-between mb-[25px]">
                         <p className="font-medium text-[14px] leading-5 tracking-[0.1px] opacity-40">Názov</p>
