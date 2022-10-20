@@ -176,16 +176,14 @@ const ApartmentDetail = () => {
                 </form>
             </Modal>
             <Modal className="gallery-modal" opened={opened2} sx={{
-
             }} onClose={() => setOpened2(false)} centered>
                 <Swiper
                     spaceBetween={50}
                     slidesPerView={1}
                 >
-                    <SwiperSlide>Slide 1</SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
+                    <SwiperSlide><Image objectFit={'cover'} src={primarna_foto.data.attributes.url} width={900} height={900}/></SwiperSlide>
+                    <SwiperSlide><Image objectFit={'cover'} src={dodatocna_foto1.data.attributes.url} width={900} height={900}/></SwiperSlide>
+                    <SwiperSlide><Image objectFit={'cover'} src={dodatocna_foto2.data.attributes.url} width={900} height={900}/></SwiperSlide>
                 </Swiper>
             </Modal>
             <div className="flex flex-col justify-center w-full xl:max-w-[1200px] mx-auto">
