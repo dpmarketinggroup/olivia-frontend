@@ -1,11 +1,12 @@
 import React, {FunctionComponent} from "react";
 
 interface PopUpProps {
-    top:string
-    left:string
-    display?:string
+    top: string
+    left: string
+    display?: string
     title: string
     room1?: number
+    room15?: number,
     room2?: number
     room3?: number
     room4?: number
@@ -21,6 +22,7 @@ const PopUp: FunctionComponent<PopUpProps>
            room2,
            room3,
            room4,
+           room15
        }) => {
     return (
         <>
@@ -30,6 +32,10 @@ const PopUp: FunctionComponent<PopUpProps>
                     <div className="flex">
                         <p className="w-[140px] text-[12px] leading-5 text-[#999999]">1 - izbové apartmány</p>
                         <span className="text-[14px] font-medium leading-5 text-[#476761]">{room1}</span>
+                    </div>
+                    <div className="flex">
+                        <p className="w-[140px] text-[12px] leading-5 text-[#999999]">1.5 - izbové apartmány</p>
+                        <span className="text-[14px] font-medium leading-5 text-[#476761]">{room15}</span>
                     </div>
                     <div className="flex">
                         <p className="w-[140px] text-[12px] leading-5 text-[#999999]">2 - izbové apartmány</p>
