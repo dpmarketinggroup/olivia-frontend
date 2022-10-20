@@ -50,7 +50,7 @@ const DeveloperSwiper = () => {
                     {src: "/img/tatracentrum.jpg", label: 'Tatracentrum Bratislava'},
                 ].map(({src, label}, i) => (
                     <SwiperSlide
-                        className={`xl:w-full xl:max-w-fit ${i === 0 && 'xl:ml-[9%] 2xl:ml-[19%]'}`}
+                        className={`xl:w-full xl:max-w-fit ${i === 0 && 'swiper-ml'}`}
                         key={i}
                     >
                         <div className={'relative w-full xl:w-[255px] h-[195px] xl:h-[145px] xl:grayscale-[100%] xl:hover:grayscale-0'}>

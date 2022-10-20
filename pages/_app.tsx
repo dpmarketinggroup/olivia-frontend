@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import '../styles/form.css'
-import '../styles/modal.css'
+import '../styles/swiper.css'
 import '../styles/dropdown.css'
 import "swiper/css";
 import '../styles/interactive.css'
