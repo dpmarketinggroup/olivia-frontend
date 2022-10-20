@@ -14,6 +14,16 @@ export interface TableRowProps {
 }
 
 const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalArea, floor, additionalRoom, id, img}: TableRowProps) => {
+    function getColor() {
+        switch (availability) {
+            case "voľný":
+                return 'bg-[#476761]';
+            case "predaný":
+                return 'bg-[#EE4C36]';
+            case "rezervovaný":
+                return 'bg-[#E4B80B]'
+        }
+    }
     return (
         <Link href={`/apartman/${id}`}>
             <div className={'group cursor-pointer w-full flex items-center justify-between py-[20px] hover:bg-[#0E3F3B33] xl:relative'}>
@@ -36,11 +46,11 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
                     {price ? `${price} €` : '-'}
                 </div>
                 <div className={'xl:w-[130px]'}>
-                    <div className={'bg-[#476761] w-[55px] h-[30px] flex items-center justify-center font-medium text-white text-[14px] leading-[20px] ml-auto'}>
+                    <div className={`${getColor()} w-[55px] h-[30px] flex items-center justify-center font-medium text-white text-[14px] leading-[20px] ml-auto`}>
                         {availability}
                     </div>
                 </div>
-                <div className={'absolute w-[200px] h-[180px] hidden group-hover:flex items-center flex-col z-[3] top-[90%] left-[39%]'}>
+                <div className={`absolute w-[200px] h-[180px] hidden group-hover:flex items-center flex-col z-[3] top-[90%] left-[39%]`}>
                     <div style={{
                         width:0,
                         height: 0,

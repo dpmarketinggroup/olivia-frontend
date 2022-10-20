@@ -97,7 +97,13 @@ const Building = () => {
             })
         }
 
-        if (isSoldChecked) query += `&filters[dostupnost][$ne]=predaný`
+        if (isSoldChecked) {
+            query += `&filters[dostupnost][$ne]=predaný`
+            query2 += `&filters[dostupnost][$ne]=predaný`
+        } else {
+            query.replace('&filters[dostupnost][$ne]=predaný', '')
+            query2.replace('&filters[dostupnost][$ne]=predaný', '')
+        }
         if (isReservatedChecked) query += `&filters[dostupnost][$ne]=rezervovaný`
         let response;
         try {
@@ -116,8 +122,6 @@ const Building = () => {
         }
         setLoading(false)
     }
-
-    console.log(loading)
     return (
         <>
             <div
