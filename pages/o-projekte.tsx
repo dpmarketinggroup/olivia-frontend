@@ -72,6 +72,7 @@ const OProjekte = () => {
                     </button>
                 </Link>
             </div>
+            <a href="" className={'opacity-0 mb-[50px] border-2'} id={'vybavenie'}></a>
             {customDescriptionList.map((props, index) => (
                 <CustomDescription key={index} {...props}/>
             ))}
@@ -92,46 +93,35 @@ const OProjekte = () => {
                             </div>
                         </div>
                         <div className="mx-auto">
-                            <div
-                                className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-1/2">
+                            <div className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-[110%] xl:-translate-y-1/2 h-[290px]">
                                 {[
-                                    {step: "1. krok", title: "Rezervačná zmluva", offer: "1 500 €"},
-                                    {step: "2. krok", title: "Zmluva o budúcej zmluve", offer: "20% z ceny bytu"},
-                                    {step: "3. krok", title: "Kúpna zmluva", offer: "80% z ceny bytu"},
-                                ].map(({step, title, offer}, index) => (
+                                    {offer: "01.", description:"Podpis Rezervačnej zmluvy a zaplatenie rezervačného poplatku 5000€, ktorý bude vrátený po podpise Zmluvy o budúcej kúpnej zmluve."},
+                                    {offer: "02.", description:"Podpis Zmluvy o budúcej kúpnej zmluve a zaplatenie 20% kúpnej ceny."},
+                                ].map(({offer, description}, index) => (
                                     <div key={index}
-                                         className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px] xl:mb-[30px]">
-                                        <span
-                                            className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#C6C6C6]">{step}</span>
-                                        <h4 className="font-bold text-[18px] leading-7 ">{title}</h4>
+                                         className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center justify-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px] xl:mb-[30px]">
                                         <span
                                             className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">{offer}</span>
-                                        <p className="hidden xl:inline-block w-[220px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">Zostaňte
-                                            informovaný. Najnovšie informácie o projekte Karpatská Smart Residence.</p>
+                                        <p className="w-[290px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">{description}</p>
                                     </div>
                                 ))}
                             </div>
                             <div
-                                className="flex flex-col xl:flex-row gap-[30px]  bg-[background: #F5F5F5] -translate-y-[70%] xl:-translate-y-1/2">
+                                className="flex flex-col xl:flex-row gap-[30px]  bg-[background: #F5F5F5] -translate-y-[60%] xl:-translate-y-1/2 h-[260px]">
                                 {[
-                                    {step: "1. krok", title: "Rezervačná zmluva", offer: "1 500 €"},
-                                    {step: "2. krok", title: "Zmluva o budúcej zmluve", offer: "20% z ceny bytu"},
-                                ].map(({step, title, offer}, index) => (
+                                    {offer: "03.", description:"Podpis kúpnej zmluvy po vydaní kolaudačného rozhodnutia a zaplatenie zvyšnej časti kúpnej ceny."},
+                                    {offer: "04.", description:"Odovzdanie Vášho nového rezidenčného apartmánu."},
+                                ].map(({offer, description: description}, index) => (
                                     <div key={index}
-                                         className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px]">
-                                    <span
-                                        className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#C6C6C6]">{step}</span>
-                                        <h4 className="font-bold text-[18px] leading-7 ">{title}</h4>
+                                         className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center justify-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px]">
                                         <span
                                             className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">{offer}</span>
-                                        <p className="hidden xl:inline-block w-[220px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">Zostaňte
-                                            informovaný. Najnovšie informácie o projekte Karpatská Smart Residence.</p>
+                                        <p className="w-[290px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">{description}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        <div
-                            className=" w-[full] mt-[-960px] xl:mt-[-565px] bg-[#F5F5F5] h-[970px] xl:h-[750px] border-primary">
+                        <div className=" w-[full] mt-[-750px] xl:mt-[-565px] bg-[#F5F5F5] h-[970px] xl:h-[750px] border-primary">
                             <div
                                 className="flex flex-col xl:flex-row gap-[50px] xl:gap-[100px] xl:pt-[550px] pb-[50px] xl:mx-[165px] items-center justify-center">
                                 <div className="hidden xl:inline-block">
