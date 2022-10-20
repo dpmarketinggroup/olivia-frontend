@@ -424,27 +424,27 @@ const ApartmentDetail = () => {
                             <span>{kupelna_wc_rozloha} m²</span>
                         </div>
                     )}
+                    <div className="flex justify-between mb-[25px]">
+                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková výmera</p>
+                        <span className="font-bold">{celkova_rozloha} m²</span>
+                    </div>
                     {terasa_rozloha && (
                         <div className="flex justify-between mb-[25px]">
                             <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Terasa</p>
                             <span>{terasa_rozloha} m²</span>
                         </div>
                     )}
-                    <div className="flex justify-between mb-[25px]">
-                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková výmera</p>
-                        <span className="font-bold">{celkova_rozloha} m²</span>
-                    </div>
                     {balkon_rozloha && (
                         <>
                             <div className="flex justify-between mb-[25px]">
                                 <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Balkón</p>
-                                <span>7.67 m²</span>
+                                <span>{balkon_rozloha} m²</span>
                             </div>
                             <div className="flex justify-between mb-[70px]">
-                                <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková výmera +
-                                    Balkón</p>
+                                <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková výmera {balkon_rozloha && '+ Balkón'} {terasa_rozloha && '+ Terasa'}
+                                    </p>
                                 <span
-                                    className="font-bold">{(celkova_rozloha - balkon_rozloha - terasa_rozloha).toFixed(2)} m²</span>
+                                    className="font-bold">{(celkova_rozloha + balkon_rozloha + terasa_rozloha).toFixed(2)} m²</span>
                             </div>
                         </>
                     )}

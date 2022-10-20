@@ -30,7 +30,7 @@ const Form
     function getApartment() {
         if (!isClicked1 && !isClicked2) return;
         if (isClicked1) return "apartmán"
-        if (isClicked2) return "obchodné priestory"
+        if (isClicked2) return "obchodný priestor"
     }
 
     async function handleSubmit(e: SyntheticEvent) {
@@ -75,7 +75,7 @@ const Form
                                   label={
                                       <>
                     <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
-                        obchodné priestory
+                        obchodný priestor
                     </span>
                                       </>
                                   } radius="xl"
