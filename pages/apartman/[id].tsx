@@ -309,7 +309,7 @@ const ApartmentDetail = () => {
                         <span
                             className="font-bold text-[16px] leading-6 tracking-[0.1px]">Nadštandardné vybavenie</span>
                         <div className="flex gap-[8px] items-center">
-                            <Link href='/pages'>
+                            <Link href={'/o-projekte#vybavenie'}>
                                 <a className="font-medium text-[14px] leading-5 text-green2">Viac</a>
                             </Link>
                             <RightArrow stroke="#476761"/>

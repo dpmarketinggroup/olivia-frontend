@@ -137,12 +137,17 @@ const Home = () => {
                     apartmánov</h2>
                 <ApartmentEquipmentDescription/>
                 <div className={'mx-auto flex flex-col xl:flex-row gap-[15px] w-full xl:w-auto px-[1rem] xl:px-0 mt-[-60px] xl:mt-0'}>
-                    <Button variant={'outlined'}>
-                        Vybavenie apartmánov
-                    </Button>
-                    <Button variant={'filled'}>
-                        Nezáväzné stretnutie
-                    </Button>
+                    <Link href={'/o-projekte#vybavenie'}>
+                        <Button variant={'outlined'}>
+                            Vybavenie apartmánov
+                        </Button>
+                    </Link>
+                    <Link href={'/stretnutie'}>
+                        <Button variant={'filled'}>
+                            Nezáväzné stretnutie
+                        </Button>
+                    </Link>
+
                 </div>
             </div>
             <CustomSwiper/>
