@@ -160,6 +160,7 @@ const Building = () => {
         }
         setLoading(false)
     }
+
     function getAdditionalRoom(attributes: any): number {
         if (!attributes.balkon_rozloha && !attributes.terasa_rozloha) return 0;
         if (attributes.balkon_rozloha && attributes.terasa_rozloha) return attributes.balkon_rozloha + attributes.terasa_rozloha;
@@ -171,7 +172,7 @@ const Building = () => {
     return (
         <>
             <div
-                className="w-full xl:mx-[-30px] md:mx-[-25px] lg:mx-[-20px] xl:mr-[-15px] xl:ml-[-15px] xl:max-w-[1920px] 2xl:mr-[-10px] xl3">
+                className="w-full xl:max-w-[1920px] xl3">
                 <House/>
             </div>
             <div className="building bg-primary-pattern w-full mb-[80px] px-[1rem] xl:px-0">
@@ -354,7 +355,7 @@ const Building = () => {
                 </div>
             </div>
             <div id={'results'}
-                 className={`flex flex-col xl:gap-[120px] px-[1rem] xl:px-0 xl:min-h-[1px] bg-[#F5F5F5] mt-[-80px] ${oneRooms?.length && "pt-[80px]"}`}>
+                 className={`flex flex-col xl:gap-[120px] px-[1rem] xl:px-0 xl:min-h-[1px] bg-[#F5F5F5] mt-[-80px] xl:py-[100px]`}>
                 {oneRooms?.length ? (
                     <div>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>1-izbové
