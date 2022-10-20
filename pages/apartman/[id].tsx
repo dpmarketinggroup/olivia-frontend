@@ -12,6 +12,7 @@ import {Button} from "@components/ui";
 import {CarDescription} from "@components/common/Description/Description";
 import axios from "axios";
 import {Swiper, SwiperSlide} from "swiper/react";
+import {width} from "dom7";
 
 const ApartmentDetail = () => {
     const [opened, setOpened] = useState(false);
@@ -175,15 +176,32 @@ const ApartmentDetail = () => {
                     </button>
                 </form>
             </Modal>
-            <Modal className="gallery-modal" opened={opened2} sx={{
-            }} onClose={() => setOpened2(false)} centered>
+            <Modal className="gallery-modal"  sx={{
+                '.mantine-Modal-modal': {
+                    width: '800px'
+                }
+            }} opened={opened2} onClose={() => setOpened2(false)} centered>
                 <Swiper
                     spaceBetween={50}
                     slidesPerView={1}
                 >
-                    <SwiperSlide><Image objectFit={'cover'} src={primarna_foto.data.attributes.url} width={900} height={900}/></SwiperSlide>
-                    <SwiperSlide><Image objectFit={'cover'} src={dodatocna_foto1.data.attributes.url} width={900} height={900}/></SwiperSlide>
-                    <SwiperSlide><Image objectFit={'cover'} src={dodatocna_foto2.data.attributes.url} width={900} height={900}/></SwiperSlide>
+                        <SwiperSlide>
+                            <div className={'w-full max-w-[1000px] h-[700px]'}>
+                                <Image layout={'fill'} objectFit={'cover'} src={primarna_foto.data.attributes.url}/>
+                            </div>
+                        </SwiperSlide>
+                    <SwiperSlide>
+                        <div className={'w-full max-w-[1000px] h-[700px]'}>
+                            <Image layout={'fill'} objectFit={'cover'} src={dodatocna_foto1.data.attributes.url}/>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className={'w-full max-w-[1000px] h-[700px]'}>
+                            <Image layout={'fill'} objectFit={'cover'} src={dodatocna_foto2.data.attributes.url}/>
+                        </div>
+                    </SwiperSlide>
+                    {/*<SwiperSlide><Image objectFit={'cover'} src={dodatocna_foto1.data.attributes.url} width={900} height={900}/></SwiperSlide>*/}
+                    {/*<SwiperSlide><Image objectFit={'cover'} src={dodatocna_foto2.data.attributes.url} width={900} height={900}/></SwiperSlide>*/}
                 </Swiper>
             </Modal>
             <div className="flex flex-col justify-center w-full xl:max-w-[1200px] mx-auto">

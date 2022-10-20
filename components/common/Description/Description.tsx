@@ -137,61 +137,64 @@ interface CarDescriptionProps{
 
 export const CarDescription = ({oProjekte = false}:CarDescriptionProps) => {
     return (
-        <Description src={"/img/car.png"}>
-            <h3 className={'text-[40px] leading-[48px] text-green2 font-bold'}>Garážové parkovanie</h3>
-            <p className={'text-black/60 my-[20px]'}>Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a
-                bezproblémový zážitok.</p>
-            <div className={'flex flex-col gap-[15px] mb-[30px]'}>
-                {
-                    [
-                        {icon: <Man/>, label: 'Prechod do Vášho bytu suchou nohou'},
-                        {icon: <Parking/>, label: 'Dlhodobý prenájom garážových státí'},
-                        {icon: <Camera/>, label: 'Zabezpečené kamerovým systémom'}
-                    ].map(({label, icon}, i) => (
-                        <div className={'flex gap-[10px]'} key={i}>
-                            {icon}
-                            <h5>{label}</h5>
-                        </div>
-                    ))
-                }
-            </div>
-            <Link href={'/stretnutie'}>
-                <Button className={'w-[190px]'} variant={'filled'}>Nezáväzné stretnutie</Button>
-            </Link>
-            <div className={`hidden xl:block absolute bottom-[80px] left-[480px] -z-30`}>
-                <RectangleDarkIcon/>
-            </div>
-            <div className={`hidden xl:block absolute bottom-0 left-[-80px]`}>
-                <RectangleDarkIcon/>
-            </div>
-            <div className={`hidden xl:block absolute bottom-[350px] left-[50px]`}>
-                <RectangleDarkIcon/>
-            </div>
-            <div className={`hidden xl:block absolute bottom-[350px] left-[110px]`}>
-                <RectangleMediumIcon/>
-            </div>
-            <div className={`hidden xl:block absolute bottom-[290px] left-[50px]`}>
-                <RectangleLightIcon/>
-            </div>
-            <div className={`hidden xl:block absolute bottom-[410px] left-[-10px]`}>
-                <RectangleLightIcon/>
-            </div>
-            <div className={`hidden xl:block absolute bottom-[290px] left-[170px] -z-30`}>
-                <RectangleMediumIcon/>
-            </div>
-            <div className={`hidden xl:block absolute bottom-[340px] left-[460px]`}>
-                <RectangleLightIcon/>
-            </div>
-            <div className={`${oProjekte ? "hidden xl:block" : "hidden"} absolute bottom-[1475px] left-[-60px]`}>
-                <RectangleLightIcon/>
-            </div>
-            <div className={`${oProjekte ? "hidden xl:block" : "hidden"}  absolute bottom-[1050px] left-[1100px]`}>
-                <RectangleDarkIcon/>
-            </div>
-            <div className={`${oProjekte ? "hidden xl:block" : "hidden"} absolute bottom-[990px] left-[1040px]`}>
-                <RectangleLightIcon/>
-            </div>
-        </Description>
+        <>
+            <a className={'xl:relative bottom-[100px]'} id={'garazove-parkovanie'}></a>
+            <Description src={"/img/car.png"}>
+                <h3 className={'text-[40px] leading-[48px] text-green2 font-bold'}>Garážové parkovanie</h3>
+                <p className={'text-black/60 my-[20px]'}>Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a
+                    bezproblémový zážitok.</p>
+                <div className={'flex flex-col gap-[15px] mb-[30px]'}>
+                    {
+                        [
+                            {icon: <Man/>, label: 'Prechod do Vášho bytu suchou nohou'},
+                            {icon: <Parking/>, label: 'Dlhodobý prenájom garážových státí'},
+                            {icon: <Camera/>, label: 'Zabezpečené kamerovým systémom'}
+                        ].map(({label, icon}, i) => (
+                            <div className={'flex gap-[10px]'} key={i}>
+                                {icon}
+                                <h5>{label}</h5>
+                            </div>
+                        ))
+                    }
+                </div>
+                <Link href={'/stretnutie'}>
+                    <Button className={'w-[190px]'} variant={'filled'}>Nezáväzné stretnutie</Button>
+                </Link>
+                <div className={`hidden xl:block absolute bottom-[80px] left-[480px] -z-30`}>
+                    <RectangleDarkIcon/>
+                </div>
+                <div className={`hidden xl:block absolute bottom-0 left-[-80px]`}>
+                    <RectangleDarkIcon/>
+                </div>
+                <div className={`hidden xl:block absolute bottom-[350px] left-[50px]`}>
+                    <RectangleDarkIcon/>
+                </div>
+                <div className={`hidden xl:block absolute bottom-[350px] left-[110px]`}>
+                    <RectangleMediumIcon/>
+                </div>
+                <div className={`hidden xl:block absolute bottom-[290px] left-[50px]`}>
+                    <RectangleLightIcon/>
+                </div>
+                <div className={`hidden xl:block absolute bottom-[410px] left-[-10px]`}>
+                    <RectangleLightIcon/>
+                </div>
+                <div className={`hidden xl:block absolute bottom-[290px] left-[170px] -z-30`}>
+                    <RectangleMediumIcon/>
+                </div>
+                <div className={`hidden xl:block absolute bottom-[340px] left-[460px]`}>
+                    <RectangleLightIcon/>
+                </div>
+                <div className={`${oProjekte ? "hidden xl:block" : "hidden"} absolute bottom-[1475px] left-[-60px]`}>
+                    <RectangleLightIcon/>
+                </div>
+                <div className={`${oProjekte ? "hidden xl:block" : "hidden"}  absolute bottom-[1050px] left-[1100px]`}>
+                    <RectangleDarkIcon/>
+                </div>
+                <div className={`${oProjekte ? "hidden xl:block" : "hidden"} absolute bottom-[990px] left-[1040px]`}>
+                    <RectangleLightIcon/>
+                </div>
+            </Description>
+        </>
     )
 }
 

@@ -81,7 +81,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                     </div>
                     <div onClick={() => {
                         setIsOpenMobileNav(false);
-                        setScrollLocked((c) => false)
+                        setScrollLocked(() => false)
                     }}
                          className={`${!isOpenMobileNav && "hidden"} flex xl:flex flex-col xl:flex-row gap-[25px] justify-center items-center h-[calc(100vh-60px)] xl:h-auto xl:w-auto`}>
                         <div
@@ -92,7 +92,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                                         <a className="drop-span">Ponuka apartmánov</a>
                                     </Link>
                                     <div className="dropdown-content">
-                                        <Link href="/o-projekte#garazove-parkovanie">
+                                        <Link href="/ponuka-bytov#garazove-parkovanie">
                                             <a className="w-[180px] pt-[20px] pb-[20px] px-[10px] text-center">Garážové
                                                 parkovanie</a>
                                         </Link>
