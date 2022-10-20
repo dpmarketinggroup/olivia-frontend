@@ -1,10 +1,9 @@
 import Link from "next/link";
-import {MapFooter, Articles, Subscription, Timeline, Hero, Description} from "@components/common";
+import {MapFooter, Subscription, Timeline, Hero} from "@components/common";
 import {
     House,
     UniCredit,
-    Phone,
-    EmailSign, RectangleLightIcon, RectangleDarkIcon
+    EmailSign
 } from "@components/icons";
 import Head from "next/head";
 import Image from "next/image";
@@ -78,7 +77,7 @@ const OProjekte = () => {
                 <CustomDescription key={index} {...props}/>
             ))}
             <div id={'garazove-parkovanie'}>
-            <CarDescription oProjekte={true}/>
+                <CarDescription oProjekte={true}/>
             </div>
             <div className="flex justify-center" id="financovanie">
                 <div className="w-full">
@@ -148,28 +147,19 @@ const OProjekte = () => {
                                         <span className="text-[14px] leading-5">Fin. poradca | UniCredit Bank</span>
                                     </div>
                                 </div>
-                                <div>
-                                    <div className="flex gap-[20px]">
-                                        <Phone/>
-                                        <Link href={'tel:+421918501835'}>
-                                            <a className="font-bold text-[18px] leading-7">+421 918 501 835</a>
-                                        </Link>
-                                    </div>
-                                    <div className="flex gap-[20px]">
-                                        <EmailSign/>
-                                        <Link href={'mailto:jozef.onderco@unicreditgroup.sk'}>
-                                            <a className="font-bold text-[18px] leading-7">jozef.onderco@unicreditgroup.sk</a>
-                                        </Link>
-                                    </div>
+                                <div className="flex items-center gap-[20px]">
+                                    <EmailSign/>
+                                    <Link href={'mailto:jozef.onderco@unicreditgroup.sk'}>
+                                        <a className="font-bold text-[18px] leading-7">jozef.onderco@unicreditgroup.sk</a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {/*<Articles classname={'mb-[90px] xl:pt-[120px]'}/>*/}
             <div className={'xl:mt-[100px] xl:mb-[100px]'}>
-            <Subscription/>
+                <Subscription/>
             </div>
             <MapFooter/>
         </div>

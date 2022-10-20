@@ -22,15 +22,17 @@ const Retail = () => {
                                     <FlatBold/>
                                     <h4 className="font-medium text-[18px] xl:text-[16px] leading-6 tracking-[0.1px] mt-[22px] mb-[8px]">Prenájom
                                         obchodného priestoru</h4>
-                                    <p className="text-[16px] xl:text-[14px] leading-5 text-[#676766] text-center xl:text-start">Prenajmite si <strong>obchodný
-                                        priestor v dynamickej lokalite </strong>, kde Váš biznis určite nesplynie s
+                                    <p className="text-[16px] xl:text-[14px] leading-5 text-[#676766] text-center xl:text-start">Prenajmite
+                                        si <strong>obchodný
+                                            priestor v dynamickej lokalite </strong>, kde Váš biznis určite nesplynie s
                                         konkurenciou.</p>
                                 </div>
                                 <div className={'flex xl:block flex-col items-center xl:max-w-[190px]'}>
                                     <FloorPlan/>
                                     <h4 className="font-medium text-[18px] xl:text-[16px] leading-6 tracking-[0.1px]  mt-[22px] mb-[8px]">Pôdorys
                                         na mieru</h4>
-                                    <p className="text-[16px] xl:text-[14px] leading-5 text-[#676766] text-center xl:text-start">Pre prvých pár záujemcov
+                                    <p className="text-[16px] xl:text-[14px] leading-5 text-[#676766] text-center xl:text-start">Pre
+                                        prvých pár záujemcov
                                         ponúkame jedinečnú možnosť <strong>návrhu obchodného priestoru na
                                             mieru</strong> podľa Vašich potrieb.</p>
                                 </div>
@@ -42,28 +44,21 @@ const Retail = () => {
                                             objectFit="cover"
                                             layout="fill"
                                             alt="Jozef Mrkvička"
-                                            src="/img/bozenaNemcova.png"
+                                            src="/img/Oval.png"
                                             loading={'eager'}
                                         />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">JUDr. Ivan Jurík</p>
+                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">JUDr. Ivan
+                                            Jurík</p>
                                         <span className="text-[14px] leading-5">Sales Assistant</span>
                                     </div>
                                 </div>
-                                <div className={'xl:mb-[23px]'}>
-                                    <div className="flex gap-[20px] items-center">
-                                        <Phone/>
-                                        <Link href={'tel:+421901923324'}>
-                                            <a className="font-bold text-[18px] leading-7">+421 901 923 324</a>
-                                        </Link>
-                                    </div>
-                                    <div className="flex gap-[20px] items-center">
-                                        <EmailSign/>
-                                        <Link href={'mailto:info@oliviaresidence.sk'}>
-                                            <a className="font-bold text-[18px] leading-7">info@oliviaresidence.sk</a>
-                                        </Link>
-                                    </div>
+                                <div className="flex gap-[20px] items-center xl:mb-[23px]">
+                                    <EmailSign/>
+                                    <Link href={'mailto:info@oliviaresidence.sk'}>
+                                        <a className="font-bold text-[18px] leading-7">info@oliviaresidence.sk</a>
+                                    </Link>
                                 </div>
                                 <p className="hidden xl:block font-medium text-[16px] leading-6 tracking-[0.1px] text-[#676766] w-[335px] mb-[23px]">V
                                     prípade záujmu o prenájom obchodného priestoru ma neváhajte kontaktovať</p>

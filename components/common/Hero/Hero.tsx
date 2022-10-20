@@ -47,14 +47,14 @@ const Hero = ({
                             Nezáväzné stretnutie
                         </button>
                     </Link>
-                    <div className={`${withRectangles ? "hidden xl:block" : "hidden"} absolute bottom-[-135px] left-[-165px]`}>
-                        <RectangleDarkIcon/>
-                    </div>
-                    <div className={`${withRectangles ? "hidden xl:block" : "hidden"} absolute bottom-[-135px] left-[-105px]`}>
-                        <RectangleMediumIcon/>
-                    </div>
-                    <div className={`${withRectangles ? "hidden xl:block" : "hidden"} absolute bottom-[-195px] left-[-165px]`}>
-                        <RectangleLightIcon/>
+                    <div className={`${withRectangles ? "hidden xl:block" : "hidden"} absolute -bottom-[224px] -left-[260px]`}>
+                        <div className={'flex'}>
+                            <RectangleDarkIcon/>
+                            <RectangleMediumIcon/>
+                        </div>
+                        <div>
+                            <RectangleLightIcon/>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,6 @@
 import {useRouter} from "next/router";
 import Head from "next/head";
 import {ArrowDownNotFilledIcon, FloorPlan, RightArrow, Severka} from "@components/icons";
-import {Select} from "@mantine/core";
 import Link from "next/link";
 import {MapFooter} from "@components/common";
 import {useStore} from "../../lib/store/useStore";
@@ -104,8 +103,32 @@ const FloorDetail = () => {
         }
     }
 
+    function getApartmentNumber(pocet_izieb: string): number {
+        switch (pocet_izieb) {
+            case "jedno-izbový":
+                return 1;
+            case "jeden a pol-izbový":
+                return 1.5;
+            case "dvoj-izbový":
+                return 2;
+            case "troj-izbový":
+                return 3;
+            case "štvor-izbový":
+                return 3;
+        }
+        return 0;
+    }
+    function getAvailabilityBgColor(availability: 'voľný' | 'rezervovaný' | 'predaný') {
+        switch (availability) {
+            case "voľný":
+                return "bg-[#476761]"
+            case "rezervovaný":
+                return "bg-[#E4B80B]"
+            case "predaný":
+                return "bg-[#EE4C36]"
+        }
+    }
     function renderDetail() {
-
         if (!apartment || !apartment.length) {
             return <p className="pb-[420px] w-[300px] mx-auto text-[18px] font-bold text-center">Kliknutím na
                 interaktívnu mapu zobrazíte informácie o byte</p>
@@ -119,24 +142,26 @@ const FloorDetail = () => {
             terasa_rozloha
         } = apartment[0].attributes || null
         const {id} = apartment[0]
+
         return (
             <div className={'flex flex-col'}>
                 <div className="grid grid-cols-2 gap-y-[30px] mb-[40px]">
                     {pocet_izieb ? (
                         <>
-                            <span className="pl-[70px] font-bold text-[16px] leading-6 tracking-[0.1px]">{pocet_izieb} apartmán</span>
+                            <span
+                                className="pl-[70px] font-bold text-[16px] leading-6 tracking-[0.1px]">{getApartmentNumber(pocet_izieb)}-izbový apartmán</span>
                         </>
                     ) : <span></span>}
                     <span
                         className="pr-[70px] font-bold text-[16px] leading-6 tracking-[0.1px] text-right">č. {cislo_bytu}</span>
                     <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Dostupnosť</span>
                     <div className="pr-[70px] text-[14px] font-medium leading-5 text-white ml-[75px] w-[53px]">
-                        <span className="px-[10px] py-[5px] bg-[#476761]">{dostupnost}</span>
+                        <span className={`px-[10px] py-[5px] ${getAvailabilityBgColor(dostupnost)}`}>{dostupnost}</span>
                     </div>
                     {pocet_izieb && (
                         <>
                             <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Počet izieb</span>
-                            <span className="pr-[70px] text-right font-bold text-[14px] leading-5">{pocet_izieb}</span>
+                            <span className="pr-[70px] text-right font-bold text-[14px] leading-5">{getApartmentNumber(pocet_izieb)}</span>
                         </>
                     )}
                     <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Apartmán m²</span>
@@ -167,10 +192,13 @@ const FloorDetail = () => {
                                 <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber
                                     apartmánu na podlaží</h1>
                             </div>
-                            <div className="relative flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
-                                <div className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer self-start xl:self-auto mx-4"
+                            <div
+                                className="relative flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
+                                <div
+                                    className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer self-start xl:self-auto mx-4"
                                     onClick={() => setIsFloorDropDownCLicked((prevState) => !prevState)}>
-                                    <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">{router.query.id}. podlažie</span>
+                                    <span
+                                        className="drop-span font-bold text-[18px] leading-7 text-[#476761]">{router.query.id}. podlažie</span>
                                     <div className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"}`}>
                                         <div
                                             className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">

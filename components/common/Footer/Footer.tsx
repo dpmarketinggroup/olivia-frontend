@@ -82,9 +82,6 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 <h5>Predajné miesto</h5>
                                 <h5>Rožňavská 1A</h5>
                                 <h5>831 04 Bratislava</h5>
-                                <Link href={'tel:+421901923324'}>
-                                    <a>+421 901 923 324</a>
-                                </Link>
                                 <Link href={'mailto:info@oliviaresidence.sk'}>
                                     <a className="hover:text-white">info@oliviaresidence.sk</a>
                                 </Link>

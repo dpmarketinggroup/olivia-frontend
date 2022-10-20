@@ -51,23 +51,16 @@ const Stretnutie = () => {
                                         />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px] text-white">JUDr. Ivan Jurik</p>
+                                        <p className="font-bold text-[16px] leading-6 tracking-[0.1px] text-white">JUDr.
+                                            Ivan Jurík</p>
                                         <span className="text-[14px] leading-5 text-white">Sales Assistant</span>
                                     </div>
                                 </div>
-                                <div className="mb-[90px] xl:mb-[20px]">
-                                    <div className="flex gap-[20px] items-center">
-                                        <Phone/>
-                                        <Link href={'tel:+421901923324'}>
-                                            <a className="font-bold text-[18px] leading-7 text-white">+421 901 923 324</a>
-                                        </Link>
-                                    </div>
-                                    <div className="flex gap-[20px] items-center">
-                                        <EmailSign/>
-                                        <Link href={'mailto:info@oliviaresidenc.sk'}>
-                                            <a className="font-bold text-[18px] leading-7 text-white">info@oliviaresidenc.sk</a>
-                                        </Link>
-                                    </div>
+                                <div className="flex gap-[20px] items-center mb-[100px] xl:mb-[20px]">
+                                    <EmailSign/>
+                                    <Link href={'mailto:info@oliviaresidenc.sk'}>
+                                        <a className="font-bold text-[18px] leading-7 text-white">info@oliviaresidenc.sk</a>
+                                    </Link>
                                 </div>
                                 <p className="hidden xl:inline-block font-medium text-[14px] leading-5 tracking-[0.1px] w-[305px] text-white pb-[40px] xl:pb-0">
                                     V prípade otázok sa na mňa neváhajte obrátiť.

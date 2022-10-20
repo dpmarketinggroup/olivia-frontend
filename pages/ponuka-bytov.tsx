@@ -1,7 +1,6 @@
-import {Description, MapFooter} from "@components/common";
+import { MapFooter} from "@components/common";
 import {BuildingFilter} from "@components/filter";
-import {Man, Parking, Camera, FloorPlan, ArrowDownNotFilledIcon, RightArrow, Severka} from "@components/icons";
-import {Select} from "@mantine/core";
+import {FloorPlan, ArrowDownNotFilledIcon, RightArrow} from "@components/icons";
 import Head from "next/head";
 import Link from "next/link";
 import {CarDescription} from "@components/common/Description/Description";
@@ -16,7 +15,7 @@ const PonukaBytov = () => {
             </Head>
             <div className="flex justify-center building mt-[50px] xl:mt-[70px]">
                 <div className="w-full xl:w-full">
-                    <div className="flex justify-center my-[70px]">
+                    <div className="flex justify-center my-[70px] xl:mb-0">
                         <div className="m xl:mx-[165px]">
                             <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                                 <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>

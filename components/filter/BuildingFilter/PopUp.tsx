@@ -26,8 +26,8 @@ const PopUp: FunctionComponent<PopUpProps>
        }) => {
     return (
         <>
-            <div style={{top, left}} className={`w-[250px] bg-white shadow-[0_0_60px_rgba(0,0,0,0.1)] z-20`}>
-                <div className="flex flex-col gap-[15px] pl-[45px] pb-[35px] pt-[30px]">
+            <div style={{top, left}} className={`border bg-white shadow-[0_0_60px_rgba(0,0,0,0.1)] z-99 h-full`}>
+                <div className="flex flex-col gap-[15px] pl-[45px] my-[15px]">
                     <p className="mb-[15px] ml-[35px] font-bold text-[18px] leading-7 text-[#476761]">{title}</p>
                     <div className="flex">
                         <p className="w-[140px] text-[12px] leading-5 text-[#999999]">1 - izbové apartmány</p>
