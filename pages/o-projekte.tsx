@@ -63,6 +63,7 @@ const OProjekte = () => {
                   description="Všetky podstatné informácie o Vašom novom bývaní na jednom mieste."
                   withRectangles={true}
             />
+            <a className={'opacity-0 mb-[60px]'} id={'harmonogram'}></a>
             <Timeline/>
             <div className={'px-[1rem] xl:px-0 xl:mx-auto'}>
                 <Link href="/stretnutie">
@@ -76,9 +77,8 @@ const OProjekte = () => {
             {customDescriptionList.map((props, index) => (
                 <CustomDescription key={index} {...props}/>
             ))}
-            <div id={'garazove-parkovanie'}>
-                <CarDescription oProjekte={true}/>
-            </div>
+            <a className={'opacity-0 mb-[50px]'} id={'garazove-parkovanie'}></a>
+            <CarDescription oProjekte={true}/>
             <div className="flex justify-center" id="financovanie">
                 <div className="w-full">
                     <div className="relative xl:mb-[100px] xl:mb-0 flex flex-col">

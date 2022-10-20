@@ -4,7 +4,7 @@ import RollerIcon from "../../icons/Roller";
 
 const Timeline = ({}) => {
     return (
-        <div id="harmonogram"
+        <div
              className="xl:mx-auto flex flex-col xl:flex-row gap-[50px] xl:gap-[30px] items-center justify-center my-[60px] xl:mt-0 xl:mb-[135px] relative">
             {[
                 {
