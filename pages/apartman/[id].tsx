@@ -12,12 +12,13 @@ import {Button} from "@components/ui";
 import {CarDescription} from "@components/common/Description/Description";
 import axios from "axios";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {width} from "dom7";
+import {GrNext, GrPrevious} from "react-icons/gr";
 
 const ApartmentDetail = () => {
     const [opened, setOpened] = useState(false);
     const [opened2, setOpened2] = useState(false);
     const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false)
+    const [url, setUrl] = useState("");
 
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
@@ -64,7 +65,7 @@ const ApartmentDetail = () => {
 
     async function handleSubmit(e: SyntheticEvent) {
         e.preventDefault()
-        if (!name || !surname || !email || !message || !phone) return;
+        if (!name || !surname || !email || !message) return;
         await axios.post('/api/enquiry', {
             body: JSON.stringify({
                 name,
@@ -77,6 +78,7 @@ const ApartmentDetail = () => {
         })
         await router.push('/dakujeme')
     }
+
     function getAvailabilityTextColor(availability: 'voľný' | 'rezervovaný' | 'predaný') {
         switch (availability) {
             case "predaný":
@@ -99,25 +101,30 @@ const ApartmentDetail = () => {
                     maxWidth: '770px',
                     paddingBottom: '80px'
                 }
-                }} opened={opened} onClose={() => setOpened(false)} centered>
+            }} opened={opened} onClose={() => setOpened(false)} centered>
                 <h3 className={'text-[32px] leading-[38px] text-center font-bold text-primary'}>Mám záujem o byt
                     č. {cislo_bytu}</h3>
-                <form onSubmit={handleSubmit} className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>
+                <form onSubmit={handleSubmit}
+                      className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>
                     <div className={'flex flex-col xl:grid grid-cols-2 gap-[15px] mt-[40px]'}>
-                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} name={'name'} placeholder={'Meno'}/>
-                        <CustomInput value={surname} onChange={(e) => setSurname(e.target.value)} name={'surname'} placeholder={'Priezvisko'}/>
+                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} name={'name'}
+                                     placeholder={'Meno'}/>
+                        <CustomInput value={surname} onChange={(e) => setSurname(e.target.value)} name={'surname'}
+                                     placeholder={'Priezvisko'}/>
                     </div>
-                    <CustomInput value={phone} onChange={(e) => setPhone(e.target.value)} name={'phone'} placeholder={'Tel. č.'}/>
-                    <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} name={'email'} placeholder={'E-mailová adresa'}/>
-                    <Textarea value={message} onChange={(e) => setMessage(e.target.value)} name={'message'} placeholder={'Vaša správa ...'} sx={{
+                    <CustomInput value={phone} onChange={(e) => setPhone(e.target.value)} name={'phone'}
+                                 placeholder={'Tel. č.'}/>
+                    <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} name={'email'}
+                                 placeholder={'E-mailová adresa'}/>
+                    <Textarea value={message} onChange={(e) => setMessage(e.target.value)} name={'message'}
+                              placeholder={'Vaša správa ...'} sx={{
                         '.mantine-Textarea-input': {
                             border: 0,
                             backgroundColor: 'rgba(0, 0, 0, 0.07)',
                             borderRadius: 0,
                             height: '145px'
                         },
-                        '.mantine-Checkbox-input': {
-                        }
+                        '.mantine-Checkbox-input': {}
                     }}/>
                     <Checkbox label={'Súhlasím so spracovaním osobných údajov'}
                               size={'md'}
@@ -176,33 +183,14 @@ const ApartmentDetail = () => {
                     </button>
                 </form>
             </Modal>
-            <Modal className="gallery-modal"  sx={{
+            <Modal className="gallery-modal" sx={{
                 '.mantine-Modal-modal': {
                     width: '1500px'
                 }
             }} opened={opened2} onClose={() => setOpened2(false)} centered>
-                <Swiper
-                    spaceBetween={50}
-                    slidesPerView={1}
-                >
-                        <SwiperSlide>
-                            <div className={'w-full max-w-[1000px] h-[850px]'}>
-                                <Image layout={'fill'} objectFit={'contain'} src={primarna_foto.data.attributes.url}/>
-                            </div>
-                        </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={'w-full max-w-[1500px] h-[850px]'}>
-                            <Image layout={'fill'} objectFit={'contain'} src={dodatocna_foto1.data.attributes.url}/>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={'w-full max-w-[1500px] h-[850px]'}>
-                            <Image layout={'fill'} objectFit={'contain'} src={dodatocna_foto2.data.attributes.url}/>
-                        </div>
-                    </SwiperSlide>
-                    {/*<SwiperSlide><Image objectFit={'cover'} src={dodatocna_foto1.data.attributes.url} width={900} height={900}/></SwiperSlide>*/}
-                    {/*<SwiperSlide><Image objectFit={'cover'} src={dodatocna_foto2.data.attributes.url} width={900} height={900}/></SwiperSlide>*/}
-                </Swiper>
+                    <div className={'w-full h-[70vh] relative'}>
+                        <Image src={url} objectFit={'contain'} layout={'fill'}/>
+                    </div>
             </Modal>
             <div className="flex flex-col justify-center w-full xl:max-w-[1200px] mx-auto">
                 <div className="my-[100px]">
@@ -282,10 +270,14 @@ const ApartmentDetail = () => {
                 <div>
                     <h3 className="mb-[25px] font-bold text-[20px] xl:text-[24px] leading-[32px] tracking-[-0.1px] text-center xl:text-left">Apartmán
                         č. {cislo_bytu}</h3>
-                    <div onClick={() => setOpened2(true)}
+                    <div
                          className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center xl:items-start justify-center">
                         <div className={'border border-b-0 xl:border-b-[1px] border-black mb-[-50px] xl:mb-0'}>
                             <Image
+                                onClick={() => {
+                                    setOpened2(true)
+                                    setUrl(primarna_foto.data.attributes.url)
+                                }}
                                 objectFit="cover"
                                 width={primarna_foto.data.attributes.width}
                                 height={primarna_foto.data.attributes.height}
@@ -297,6 +289,10 @@ const ApartmentDetail = () => {
                         <div className="flex flex-col w-[100%] xl:w-1/3 shrink-0 justify-between h-[510px]">
                             <div className="w-full h-[300px] xl:h-[250px] relative border border-black">
                                 <Image
+                                    onClick={() => {
+                                        setOpened2(true)
+                                        setUrl(dodatocna_foto1.data.attributes.url)
+                                    }}
                                     objectFit="contain"
                                     layout="fill"
                                     alt="hero image"
@@ -307,6 +303,10 @@ const ApartmentDetail = () => {
                             <div
                                 className="w-full h-[300px] xl:h-[250px] relative border border-t-0 xl:border-t-[1px] border-black">
                                 <Image
+                                    onClick={() => {
+                                        setOpened2(true)
+                                        setUrl(dodatocna_foto2.data.attributes.url)
+                                    }}
                                     objectFit="contain"
                                     layout="fill"
                                     objectPosition={'center'}
@@ -350,7 +350,8 @@ const ApartmentDetail = () => {
                     </div>
                     <div className="flex justify-between mb-[25px] items-center">
                         <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Cena</p>
-                        <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px]">{cena ? `${cena} €` : '-'}</span>
+                        <span
+                            className="font-bold text-[24px] leading-[32px] tracking-[-0.1px]">{cena ? `${cena} €` : '-'}</span>
                     </div>
                     <div className="flex justify-between mb-[70px]">
                         <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">Dostupnosť</p>
@@ -457,8 +458,9 @@ const ApartmentDetail = () => {
                                 <span>{balkon_rozloha} m²</span>
                             </div>
                             <div className="flex justify-between mb-[70px]">
-                                <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková výmera {balkon_rozloha && '+ Balkón'} {terasa_rozloha && '+ Terasa'}
-                                    </p>
+                                <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">Celková
+                                    výmera {balkon_rozloha && '+ Balkón'} {terasa_rozloha && '+ Terasa'}
+                                </p>
                                 <span
                                     className="font-bold">{(celkova_rozloha + balkon_rozloha + terasa_rozloha).toFixed(2)} m²</span>
                             </div>

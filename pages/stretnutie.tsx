@@ -59,7 +59,7 @@ const Stretnutie = () => {
                                 <div className="flex gap-[20px] items-center mb-[100px] xl:mb-[20px]">
                                     <EmailSign/>
                                     <Link href={'mailto:info@oliviaresidenc.sk'}>
-                                        <a className="font-bold text-[18px] leading-7 text-white">info@oliviaresidenc.sk</a>
+                                        <a className="font-bold text-[18px] leading-7 text-white">info@oliviaresidence.sk</a>
                                     </Link>
                                 </div>
                                 <p className="hidden xl:inline-block font-medium text-[14px] leading-5 tracking-[0.1px] w-[305px] text-white pb-[40px] xl:pb-0">
