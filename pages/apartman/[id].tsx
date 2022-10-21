@@ -210,6 +210,9 @@ const ApartmentDetail = () => {
                                 <div className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"}`}>
                                     <div
                                         className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
+                                        <Link href={'/podlazie/3'}>
+                                            <a className="py-[7px]">3. podlažie</a>
+                                        </Link>
                                         <Link href={'/podlazie/4'}>
                                             <a className="py-[7px]">4. podlažie</a>
                                         </Link>
