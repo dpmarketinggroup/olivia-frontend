@@ -178,7 +178,7 @@ const ApartmentDetail = () => {
             </Modal>
             <Modal className="gallery-modal"  sx={{
                 '.mantine-Modal-modal': {
-                    width: '800px'
+                    width: '1500px'
                 }
             }} opened={opened2} onClose={() => setOpened2(false)} centered>
                 <Swiper
@@ -186,18 +186,18 @@ const ApartmentDetail = () => {
                     slidesPerView={1}
                 >
                         <SwiperSlide>
-                            <div className={'w-full max-w-[1000px] h-[700px]'}>
-                                <Image layout={'fill'} objectFit={'cover'} src={primarna_foto.data.attributes.url}/>
+                            <div className={'w-full max-w-[1000px] h-[850px]'}>
+                                <Image layout={'fill'} objectFit={'contain'} src={primarna_foto.data.attributes.url}/>
                             </div>
                         </SwiperSlide>
                     <SwiperSlide>
-                        <div className={'w-full max-w-[1000px] h-[700px]'}>
-                            <Image layout={'fill'} objectFit={'cover'} src={dodatocna_foto1.data.attributes.url}/>
+                        <div className={'w-full max-w-[1500px] h-[850px]'}>
+                            <Image layout={'fill'} objectFit={'contain'} src={dodatocna_foto1.data.attributes.url}/>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className={'w-full max-w-[1000px] h-[700px]'}>
-                            <Image layout={'fill'} objectFit={'cover'} src={dodatocna_foto2.data.attributes.url}/>
+                        <div className={'w-full max-w-[1500px] h-[850px]'}>
+                            <Image layout={'fill'} objectFit={'contain'} src={dodatocna_foto2.data.attributes.url}/>
                         </div>
                     </SwiperSlide>
                     {/*<SwiperSlide><Image objectFit={'cover'} src={dodatocna_foto1.data.attributes.url} width={900} height={900}/></SwiperSlide>*/}
