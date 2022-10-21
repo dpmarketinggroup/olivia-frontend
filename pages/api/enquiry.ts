@@ -54,35 +54,35 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
             }
         );
         // Process a POST request
-        // let transporter = nodemailer.createTransport({
-        //     port: 465,
-        //     host: "smtp.m1.websupport.sk",
-        //     auth: {
-        //         user: 'olivia@dpmg.dev',
-        //         pass: 'Vu8f})kV3B',
-        //     },
-        //     secure: true,
-        // })
+        let transporter = nodemailer.createTransport({
+            port: 465,
+            host: "smtp.m1.websupport.sk",
+            auth: {
+                user: 'olivia@dpmg.dev',
+                pass: 'Vu8f})kV3B',
+            },
+            secure: true,
+        })
 
-        // await transporter.sendMail({
-        //     from: {
-        //         name: 'Olivia Residence',
-        //         address: `${apartment ? 'predaj@oliviaresidence.sk' : 'info@oliviaresidence.sk'}`
-        //     },
-        //     subject: 'Nový dopyt z webovej stránky',
-        //     // bcc: 'leads@dpmg.dev',
-        //     to: `${apartment ? 'predaj@oliviaresidence.sk' : 'info@oliviaresidence.sk'}`,
-        //     html: `
-        //       <div>
-        //           <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>
-        //           <h5><span style="text-decoration: underline">Email:</span> ${email}</h5>
-        //           <h5><span style="text-decoration: underline">Telefónne číslo:</span> ${phone}</h5>
-        //           <h5><span style="text-decoration: underline">Správa:</span> ${message}</h5>
-        //           ${apartment ? `
-        //                 <h5><span style="text-decoration: underline">Apartmán:</span> č. ${apartment}</h5>
-        //           ` : ''}
-        //       </div>`
-        // })
+        await transporter.sendMail({
+            from: {
+                name: 'Olivia Residence',
+                address: `${apartment ? 'predaj@oliviaresidence.sk' : 'info@oliviaresidence.sk'}`
+            },
+            subject: 'Nový dopyt z webovej stránky',
+            // bcc: 'leads@dpmg.dev',
+            to: `${apartment ? 'predaj@oliviaresidence.sk' : 'info@oliviaresidence.sk'}`,
+            html: `
+              <div>
+                  <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>
+                  <h5><span style="text-decoration: underline">Email:</span> ${email}</h5>
+                  <h5><span style="text-decoration: underline">Telefónne číslo:</span> ${phone}</h5>
+                  <h5><span style="text-decoration: underline">Správa:</span> ${message}</h5>
+                  ${apartment ? `
+                        <h5><span style="text-decoration: underline">Apartmán:</span> č. ${apartment}</h5>
+                  ` : ''}
+              </div>`
+        })
 
         res.send({
             status: 200,
