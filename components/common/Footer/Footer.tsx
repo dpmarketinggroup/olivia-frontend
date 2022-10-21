@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, SyntheticEvent, useState} from "react";
 import Link from "next/link";
 import LogoSecondary from "../../icons/LogoSecondary";
 import {TextInput} from "@mantine/core";
@@ -6,12 +6,35 @@ import PaperPlaneIcon from "../../icons/PaperPlane";
 import RectangleFooter from "../../icons/RectangleFooter";
 import BrandlyLogoIcon from "../../icons/BrandlyLogo";
 import DpLogoIcon from "../../icons/dpLogo";
+import axios from "axios";
+import {useRouter} from "next/router";
 
 interface FooterProps {
     toBottom?: boolean
 }
 
 const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
+    const [email, setEmail] = useState('');
+    const [loading, setLoading] = useState(false);
+    const router = useRouter()
+
+
+    async function handleSubmit(e: SyntheticEvent) {
+        e.preventDefault();
+        if (!email) return;
+        try {
+            setLoading(true);
+            await axios.post("/api/newsletter", {
+                body: JSON.stringify({email})
+            })
+        } catch (err) {
+            console.error(err);
+        }
+        setEmail('');
+        setLoading(false)
+        await router.push('/dakujeme-za-email')
+    }
+
     return (
         <div className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"} w-full green`}>
             <div>
@@ -21,8 +44,10 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                             <LogoSecondary/>
                             <p className="text-[14px] leading-[20px] text-white opacity-60 w-full xl:max-w-[330px]">Najnovšie
                                 informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
-                            <form className={'w-full'} onSubmit={(e) => e.preventDefault()}>
+                            <form className={'w-full'} onSubmit={handleSubmit}>
                                 <TextInput
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     sx={{
                                         width: '100%',
                                         '.mantine-TextInput-input': {
@@ -36,7 +61,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                         }
                                     }}
                                     className="xl:w-[350px] text-[16px] leading-6"
-                                    placeholder="Email" rightSection={<button><PaperPlaneIcon/></button>}
+                                    placeholder="Email" rightSection={<button disabled={loading} type={'submit'}><PaperPlaneIcon/></button>}
                                     radius="xs"
                                 />
                             </form>

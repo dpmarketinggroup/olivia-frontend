@@ -59,7 +59,7 @@ const DeveloperSwiper = () => {
                         key={i}
                     >
                         <div className={'relative w-full xl:w-[255px] h-[195px] xl:h-[145px] xl:grayscale-[100%] xl:hover:grayscale-0'}>
-                            <Image alt={'Swiper image'} src={src} layout={'fill'} objectFit={'cover'}/>
+                            <Image priority={true} alt={'Swiper image'} src={src} layout={'fill'} objectFit={'cover'}/>
                         </div>
                         <h5 className={'text-green2 font-medium mt-[10px]'}>{label}</h5>
                     </SwiperSlide>

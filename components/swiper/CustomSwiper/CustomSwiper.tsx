@@ -60,7 +60,7 @@ const CustomSwiper = () => {
                         className={`xl:w-full`}
                         key={i}
                     >
-                        <Image alt={'Swiper image'} src={src} width={540} height={330}/>
+                        <Image priority={true} alt={'Swiper image'} src={src} width={540} height={330}/>
                     </SwiperSlide>
                 ))}
             </Swiper>

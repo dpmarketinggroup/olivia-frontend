@@ -48,7 +48,7 @@ const Negotiation = ({
                     className={`w-screen xl:max-w-[1920px] h-[400px] xl:h-[880px] relative xl:mx-auto xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
                     <Image
                         objectPosition={'center'}
-                        objectFit="contain"
+                        objectFit="cover"
                         alt="hero image"
                         layout={'fill'}
                         src={"/img/map.jpg"}
@@ -94,10 +94,6 @@ const Negotiation = ({
                     <div
                         className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1170px] left-[1060px] -z-30`}>
                         <RectangleLightIcon/>
-                    </div>
-                    <div
-                        className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[950px] left-[800px] -z-30`}>
-                        <RectangleDarkIcon/>
                     </div>
                 </div>
             </div>

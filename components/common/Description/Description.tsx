@@ -229,9 +229,7 @@ export const CustomDescription = ({
                     ))
                 }
             </div>
-            <Link href={'/stretnutie'}>
-                <Button className={'w-[190px]'} variant={'filled'}>Nezáväzné stretnutie</Button>
-            </Link>
+            <Button href={'/stretnutie'} className={'w-[190px]'} variant={'filled'}>Nezáväzné stretnutie</Button>
         </Description>
     )
 }

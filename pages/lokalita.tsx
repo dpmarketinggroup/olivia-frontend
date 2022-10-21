@@ -87,7 +87,7 @@ const Lokalita = () => {
                 <Button variant={'outlined'}>
                     Vybavenie apartmánov
                 </Button>
-                <Button variant={'filled'}>
+                <Button href={'/stretnutie'} variant={'filled'}>
                     Nezáväzné stretnutie
                 </Button>
             </div>

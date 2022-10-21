@@ -2,13 +2,29 @@ import {TextInput} from "@mantine/core";
 import {PaperPlane} from "@components/icons";
 import Image from "next/image";
 import Link from "next/link";
-import {SyntheticEvent} from "react";
+import {SyntheticEvent, useState} from "react";
 import {useRouter} from "next/router";
+import axios from "axios";
 
 const Subscription = () => {
     const router = useRouter();
+    const [loading, setLoading] = useState(false);
+    const [email, setEmail] = useState("");
+
     async function handleSubmit(e: SyntheticEvent) {
         e.preventDefault();
+        if (!email) return;
+        try {
+            setLoading(true);
+            await axios.post("/api/newsletter", {
+                body: JSON.stringify({email})
+            })
+        } catch (err) {
+            console.error(err);
+        }
+        setEmail('');
+        setLoading(false)
+
         await router.push('/dakujeme-za-email')
     }
     return (
@@ -19,14 +35,11 @@ const Subscription = () => {
                     <p className="text-[14px] leading-5 text-white xl:w-[320px]">Najnovšie informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
                     <form onSubmit={handleSubmit}>
                         <TextInput
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             className="text-[16px] leading-6"
                             placeholder="Email"
-                            // sx={{
-                            //     background:  rgba(255, 255, 255, 0.12),
-                            //     border: 0,
-                            //     color: white;
-                            // }}
-                            rightSection= {<button><PaperPlane/></button>}/>
+                            rightSection= {<button disabled={loading} type={'submit'}><PaperPlane/></button>}/>
                     </form>
                     <p className="text-[12px] leading-5 opacity-40 text-white xl:pb-[52px]">
                         Kliknutím na tlačidlo potvrdzujete, že súhlasíte s našimi podmienkami spracovania
@@ -35,7 +48,6 @@ const Subscription = () => {
                         </Link>
                     </p>
                 </div>
-                {/*Nerob to cez absolute position ale buď cez flex alebo grid*/}
                 <div className="h-[300px] xl:h-[455px] relative xl:w-[640px] bottom-0 max-w-[1440px] mx-auto xl:left-[250px] xl:top-[-390px] mt-[50px] xl:mt-0">
                     <Image
                         objectFit="cover"

@@ -11,15 +11,13 @@ import {useStore} from "../../lib/store/useStore";
 import {Button} from "@components/ui";
 import {CarDescription} from "@components/common/Description/Description";
 import axios from "axios";
-import {Swiper, SwiperSlide} from "swiper/react";
-import {GrNext, GrPrevious} from "react-icons/gr";
 
 const ApartmentDetail = () => {
     const [opened, setOpened] = useState(false);
     const [opened2, setOpened2] = useState(false);
     const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false)
     const [url, setUrl] = useState("");
-
+    const [loading, setLoading] = useState(false);
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [phone, setPhone] = useState('');
@@ -65,17 +63,25 @@ const ApartmentDetail = () => {
 
     async function handleSubmit(e: SyntheticEvent) {
         e.preventDefault()
-        if (!name || !surname || !email || !message) return;
-        await axios.post('/api/enquiry', {
-            body: JSON.stringify({
-                name,
-                surname,
-                email,
-                message,
-                phone,
-                apartment: cislo_bytu
+
+        if (!name || !surname || !email) return;
+
+        try {
+            setLoading(true)
+            await axios.post('/api/enquiry', {
+                body: JSON.stringify({
+                    name,
+                    surname,
+                    email,
+                    message,
+                    phone,
+                    apartment: cislo_bytu
+                })
             })
-        })
+        } catch (e) {
+            console.error(e)
+        }
+        setLoading(false)
         await router.push('/dakujeme')
     }
 
@@ -95,27 +101,32 @@ const ApartmentDetail = () => {
             <Head>
                 <title>Detail bytu | Olivia Residence</title>
             </Head>
-            <Modal sx={{
-                '.mantine-Modal-modal': {
-                    width: '100%',
-                    maxWidth: '770px',
-                    paddingBottom: '80px'
-                }
-            }} opened={opened} onClose={() => setOpened(false)} centered>
+            <Modal
+                sx={{
+                    '.mantine-Modal-modal': {
+                        width: '100%',
+                        maxWidth: '770px',
+                        paddingBottom: '80px'
+                    }
+                }}
+                opened={opened}
+                onClose={() => setOpened(false)}
+                centered
+            >
                 <h3 className={'text-[32px] leading-[38px] text-center font-bold text-primary'}>Mám záujem o byt
                     č. {cislo_bytu}</h3>
                 <form onSubmit={handleSubmit}
                       className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>
                     <div className={'flex flex-col xl:grid grid-cols-2 gap-[15px] mt-[40px]'}>
-                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} name={'name'}
+                        <CustomInput value={name} required={true} onChange={(e) => setName(e.target.value)} name={'name'}
                                      placeholder={'Meno'}/>
-                        <CustomInput value={surname} onChange={(e) => setSurname(e.target.value)} name={'surname'}
+                        <CustomInput value={surname} required={true} onChange={(e) => setSurname(e.target.value)} name={'surname'}
                                      placeholder={'Priezvisko'}/>
                     </div>
+                    <CustomInput value={email} required={true} onChange={(e) => setEmail(e.target.value)} name={'email'}
+                                 placeholder={'E-mailová adresa'}/>
                     <CustomInput value={phone} onChange={(e) => setPhone(e.target.value)} name={'phone'}
                                  placeholder={'Tel. č.'}/>
-                    <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} name={'email'}
-                                 placeholder={'E-mailová adresa'}/>
                     <Textarea value={message} onChange={(e) => setMessage(e.target.value)} name={'message'}
                               placeholder={'Vaša správa ...'} sx={{
                         '.mantine-Textarea-input': {
@@ -126,59 +137,63 @@ const ApartmentDetail = () => {
                         },
                         '.mantine-Checkbox-input': {}
                     }}/>
-                    <Checkbox label={'Súhlasím so spracovaním osobných údajov'}
-                              size={'md'}
-                              sx={{
-                                  '.mantine-Checkbox-label': {
-                                      color: '#999999',
-                                      fontFamily: 'Jost, sans-serif',
-                                      fontSize: '14px',
-                                      lineHeight: '20px',
-                                  },
-                                  '.mantine-Checkbox-input': {
-                                      backgroundColor: 'transparent',
-                                      border: '1.5px solid #0E3F3BCC',
-                                      opacity: 0.8,
-                                      borderRadius: 0,
-                                      display: 'flex',
-                                      alignItems: 'center'
-                                  },
-                                  '.mantine-Checkbox-input:checked': {
-                                      backgroundColor: '#476761',
-                                      opacity: 1,
-                                      border: 0
-                                  },
-                                  '.mantine-Checkbox-icon': {
-                                      color: 'white'
-                                  }
-                              }}/>
-                    <Checkbox label={'Chcem aby ste mi zasielali novinky o projekte'}
-                              size={'md'}
-                              sx={{
-                                  '.mantine-Checkbox-label': {
-                                      color: '#999999',
-                                      fontFamily: 'Jost, sans-serif',
-                                      fontSize: '14px',
-                                      lineHeight: '20px',
-                                  },
-                                  '.mantine-Checkbox-input': {
-                                      backgroundColor: 'transparent',
-                                      border: '1.5px solid #0E3F3BCC',
-                                      opacity: 0.8,
-                                      borderRadius: 0,
-                                      display: 'flex',
-                                      alignItems: 'center'
-                                  },
-                                  '.mantine-Checkbox-input:checked': {
-                                      backgroundColor: '#476761',
-                                      opacity: 1,
-                                      border: 0
-                                  },
-                                  '.mantine-Checkbox-icon': {
-                                      color: 'white'
-                                  }
-                              }}/>
-                    <button className={'bg-[#476761] h-[50px] text-white'}>
+                    <Checkbox
+                        required={true}
+                        label={'Súhlasím so spracovaním osobných údajov'}
+                        size={'md'}
+                        sx={{
+                            '.mantine-Checkbox-label': {
+                                color: '#999999',
+                                fontFamily: 'Jost, sans-serif',
+                                fontSize: '14px',
+                                lineHeight: '20px',
+                            },
+                            '.mantine-Checkbox-input': {
+                                backgroundColor: 'transparent',
+                                border: '1.5px solid #0E3F3BCC',
+                                opacity: 0.8,
+                                borderRadius: 0,
+                                display: 'flex',
+                                alignItems: 'center'
+                            },
+                            '.mantine-Checkbox-input:checked': {
+                                backgroundColor: '#476761',
+                                opacity: 1,
+                                border: 0
+                            },
+                            '.mantine-Checkbox-icon': {
+                                color: 'white'
+                            }
+                        }}/>
+                    <Checkbox
+                        label={'Chcem aby ste mi zasielali novinky o projekte'}
+                        size={'md'}
+                        sx={{
+                            '.mantine-Checkbox-label': {
+                                color: '#999999',
+                                fontFamily: 'Jost, sans-serif',
+                                fontSize: '14px',
+                                lineHeight: '20px',
+                            },
+                            '.mantine-Checkbox-input': {
+                                backgroundColor: 'transparent',
+                                border: '1.5px solid #0E3F3BCC',
+                                opacity: 0.8,
+                                borderRadius: 0,
+                                display: 'flex',
+                                alignItems: 'center'
+                            },
+                            '.mantine-Checkbox-input:checked': {
+                                backgroundColor: '#476761',
+                                opacity: 1,
+                                border: 0
+                            },
+                            '.mantine-Checkbox-icon': {
+                                color: 'white'
+                            }
+                        }}
+                    />
+                    <button disabled={loading} className={'bg-[#476761] h-[50px] text-white'}>
                         Odoslať
                     </button>
                 </form>
@@ -188,9 +203,9 @@ const ApartmentDetail = () => {
                     width: '1500px'
                 }
             }} opened={opened2} onClose={() => setOpened2(false)} centered>
-                    <div className={'w-full h-[70vh] relative'}>
-                        <Image src={url} objectFit={'contain'} layout={'fill'}/>
-                    </div>
+                <div className={'w-full h-[70vh] relative'}>
+                    <Image src={url} objectFit={'contain'} layout={'fill'}/>
+                </div>
             </Modal>
             <div className="flex flex-col justify-center w-full xl:max-w-[1200px] mx-auto">
                 <div className="my-[100px]">
@@ -274,7 +289,7 @@ const ApartmentDetail = () => {
                     <h3 className="mb-[25px] font-bold text-[20px] xl:text-[24px] leading-[32px] tracking-[-0.1px] text-center xl:text-left">Apartmán
                         č. {cislo_bytu}</h3>
                     <div
-                         className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center xl:items-start justify-center">
+                        className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center xl:items-start justify-center">
                         <div className={'border border-b-0 xl:border-b-[1px] border-black mb-[-50px] xl:mb-0'}>
                             <Image
                                 onClick={() => {
@@ -494,6 +509,8 @@ interface CustomInputProps {
     name: string;
     onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
     value?: string
+    withAsterisk?: boolean
+    required?: boolean
 }
 
 export const CustomInput = (props: CustomInputProps) => {

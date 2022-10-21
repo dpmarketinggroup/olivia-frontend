@@ -27,6 +27,8 @@ const Form
     const [phone, setPhone] = useState<E164Number>();
     const [message, setMessage] = useState('');
 
+    const [loading, setLoading] = useState(false);
+
     function getApartment() {
         if (!isClicked1 && !isClicked2) return;
         if (isClicked1) return "apartmán"
@@ -35,20 +37,23 @@ const Form
 
     async function handleSubmit(e: SyntheticEvent) {
         e.preventDefault();
-        if (!name || !surname || !email || !phone) return;
+        if (!name || !surname || !email) return;
         try {
+            setLoading(true)
             await axios.post('/api/enquiry', {
                 body: JSON.stringify({
                     name,
                     surname,
                     email,
                     phone,
-                    message: message || null,
+                    message,
+                    apartment: getApartment()
                 })
             })
         } catch (e) {
-           console.log("Could not send to backend");
+            console.log("Could not send to backend");
         }
+        setLoading(false)
         await router.push('/dakujeme')
     }
 
@@ -94,7 +99,7 @@ const Form
                                required={true} withAsterisk
                                label={<><span className={isGreen ? "text-white" : "text-black"}>Email</span></>}/>
                     <div className={'flex flex-col'}>
-                        <h5 className={isGreen ? "text-white" : "text-black"}>Tel. č. <span className={'text-red-600'}>*</span></h5>
+                        <h5 className={isGreen ? "text-white" : "text-black"}>Tel. č.</h5>
                         <PhoneInput
                             style={{
                                 height: '50px'
@@ -111,9 +116,9 @@ const Form
                     <Textarea
                         label={<><span className={isGreen ? "text-white" : "text-black"}>Správa</span></>}
                         value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Správa"
-                              radius="xs"
-                              minRows={6}
-                              maxRows={6}
+                        radius="xs"
+                        minRows={6}
+                        maxRows={6}
                     />
                     <Checkbox required={true} label={
                         <>
@@ -131,6 +136,7 @@ const Form
                         </>
                     } radius="xs" color="green"/>
                     <button
+                        disabled={loading}
                         className={`py-[12px] ${meeting ? " bg-[#89A6A2] hover:bg-[#476761]" : "bg-[#476761] hover:bg-primary"} text-white`}>Odoslať
                     </button>
                 </div>
