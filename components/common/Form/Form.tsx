@@ -43,12 +43,11 @@ const Form
                     surname,
                     email,
                     phone,
-                    message,
-                    apartment: getApartment(),
+                    message: message || null,
                 })
             })
         } catch (e) {
-           console.error(e);
+           console.log("Could not send to backend");
         }
         await router.push('/dakujeme')
     }
@@ -116,7 +115,7 @@ const Form
                               minRows={6}
                               maxRows={6}
                     />
-                    <Checkbox label={
+                    <Checkbox required={true} label={
                         <>
                             <p className="text-[14px] leading-5 text-[#999999]">Súhlasím so spracovaním <Link
                                 href="/gdpr"><a

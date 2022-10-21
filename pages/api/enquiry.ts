@@ -7,7 +7,7 @@ interface Data {
     surname: string;
     phone: string;
     email: string;
-    message: string;
+    message?: string;
     apartment?: string;
 }
 
@@ -15,29 +15,28 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     const {email, surname, name, phone, message, apartment} = JSON.parse(req.body.body) as Data;
     const modifiedNum = phone.substring(1);
     const url = "https://api.sendinblue.com/v3/contacts";
-
     if (req.method === "POST") {
-        await axios.post(
-            url,
-            {
-                email,
-                attributes: {
-                    FIRSTNAME: name,
-                    LASTNAME: surname,
-                    SMS: Number(modifiedNum),
-                },
-                listIds: [3],
-                emailBlacklisted: false,
-            },
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                    accept: "application/json",
-                    "api-key":
-                        "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",
-                },
-            }
-        );
+        // await axios.post(
+        //     url,
+        //     {
+        //         email,
+        //         attributes: {
+        //             FIRSTNAME: name,
+        //             LASTNAME: surname,
+        //             SMS: Number(modifiedNum),
+        //         },
+        //         listIds: [3],
+        //         emailBlacklisted: false,
+        //     },
+        //     {
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //             accept: "application/json",
+        //             "api-key":
+        //                 "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",
+        //         },
+        //     }
+        // );
         // Process a POST request
         let transporter = nodemailer.createTransport({
             port: 465,

@@ -29,11 +29,11 @@ const CustomSwiper = () => {
                     nextEl: ".int-next",
                     prevEl: ".int-prev",
                 }}
-                spaceBetween={30}
+                spaceBetween={15}
                 slidesPerView={1}
                 breakpoints={{
                     1280: {
-                        slidesPerView: 2
+                        slidesPerView: 3
                     }
                 }}
             >

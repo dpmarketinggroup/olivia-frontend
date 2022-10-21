@@ -2,15 +2,22 @@ import {TextInput} from "@mantine/core";
 import {PaperPlane} from "@components/icons";
 import Image from "next/image";
 import Link from "next/link";
+import {SyntheticEvent} from "react";
+import {useRouter} from "next/router";
 
 const Subscription = () => {
+    const router = useRouter();
+    async function handleSubmit(e: SyntheticEvent) {
+        e.preventDefault();
+        await router.push('/dakujeme-za-email')
+    }
     return (
         <div className='flex justify-center xl:mb-[80px] bg-black xl:bg-transparent xl:h-[340px] green'>
             <div className="xl:mx-[165px] xl:bg-black w-full xl:max-w-[1200px] relative px-[1rem] xl:px-0">
                 <div className="flex flex-col gap-[22px] xl:ml-[72px] xl:w-[350px]">
                     <h3 className="font-bold text-[32px] leading-[38px] text-[#89A6A2] pt-[52px]">Odber noviniek</h3>
                     <p className="text-[14px] leading-5 text-white xl:w-[320px]">Najnovšie informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
-                    <form onSubmit={(e) => e.preventDefault()}>
+                    <form onSubmit={handleSubmit}>
                         <TextInput
                             className="text-[16px] leading-6"
                             placeholder="Email"
