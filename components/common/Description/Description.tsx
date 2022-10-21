@@ -18,13 +18,14 @@ export interface DescriptionProps {
     src: string;
     children: React.ReactNode;
     className?: string;
-    reverse?:boolean
-    heading?:boolean
+    reverse?: boolean
+    heading?: boolean
 }
 
-const Description = ({children, src, className, reverse, heading}: DescriptionProps) => {
+const Description = ({children, src, className, reverse}: DescriptionProps) => {
     return (
-        <div className={`relative flex flex-col ${reverse ? 'xl:flex-row-reverse': 'xl:flex-row'} justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className} mb-[125px]`}>
+        <div
+            className={`relative flex flex-col ${reverse ? 'xl:flex-row-reverse' : 'xl:flex-row'} justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className} mb-[125px]`}>
             <div className={'shrink-0 mb-[25px] xl:mb-0'}>
                 <Image objectFit="cover" width={555} height={400} alt="description image" src={src} loading={'eager'}/>
             </div>
@@ -61,16 +62,12 @@ export const CommonDescription = () => {
                 ))}
             </div>
             <div className={'flex flex-col xl:flex-row gap-[10px]'}>
-                <Link href={'/o-projekte'}>
-                    <Button variant={'outlined'}>
-                        O projekte
-                    </Button>
-                </Link>
-                <Link href={'/stretnutie'}>
-                    <Button variant={'filled'}>
-                        Nezáväzné stretnutie
-                    </Button>
-                </Link>
+                <Button href={'/o-projekte'} variant={'outlined'}>
+                    O projekte
+                </Button>
+                <Button href={'/stretnutie'} variant={'filled'}>
+                    Nezáväzné stretnutie
+                </Button>
             </div>
             <div className='hidden xl:block absolute right-[-100px] top-[30px]'>
                 <RectangleMediumIcon/>
@@ -83,7 +80,7 @@ export const CommonDescription = () => {
 
 export const ApartmentEquipmentDescription = () => {
     return (
-        <Description className={'my-[50px] xl:my-[95px]'} src={'/img/room2.jpg'} >
+        <Description className={'my-[50px] xl:my-[95px]'} src={'/img/room2.jpg'}>
             <h3 className={'font-bold text-[24px] leading-[32px] text-black xl:max-w-[300px] mb-[40px] mt-[30px] xl:mt-0'}>
                 <span className={'text-green2 underline'}>Vysoký štandard </span>
                 pre Váš maximálny komfort</h3>
@@ -131,17 +128,18 @@ export const ApartmentEquipmentDescription = () => {
     )
 }
 
-interface CarDescriptionProps{
-    oProjekte?:boolean
+interface CarDescriptionProps {
+    oProjekte?: boolean
 }
 
-export const CarDescription = ({oProjekte = false}:CarDescriptionProps) => {
+export const CarDescription = ({oProjekte = false}: CarDescriptionProps) => {
     return (
         <>
             <a className={'xl:relative bottom-[100px]'} id={'garazove-parkovanie'}></a>
             <Description src={"/img/car.png"}>
                 <h3 className={'text-[40px] leading-[48px] text-green2 font-bold'}>Garážové parkovanie</h3>
-                <p className={'text-black/60 my-[20px]'}>Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a
+                <p className={'text-black/60 my-[20px]'}>Olivia Residence ponúka garážové státia na prenájom, vďaka
+                    ktorým bude parkovanie komfortný a
                     bezproblémový zážitok.</p>
                 <div className={'flex flex-col gap-[15px] mb-[30px]'}>
                     {
@@ -199,24 +197,24 @@ export const CarDescription = ({oProjekte = false}:CarDescriptionProps) => {
 }
 
 type Bulletpoint = {
-    icon:JSX.Element, label: string
+    icon: JSX.Element, label: string
 }
 
-interface CustomDescriptionProps{
-    src:string;
-    title:string;
-    description:string;
-    bulletPoints:Bulletpoint[],
-    reverse?:boolean
+interface CustomDescriptionProps {
+    src: string;
+    title: string;
+    description: string;
+    bulletPoints: Bulletpoint[],
+    reverse?: boolean
 }
 
 export const CustomDescription = ({
-    src,
-    title,
-    description,
-    bulletPoints,
-    reverse = false,
-                                  }:CustomDescriptionProps) => {
+                                      src,
+                                      title,
+                                      description,
+                                      bulletPoints,
+                                      reverse = false,
+                                  }: CustomDescriptionProps) => {
     return (
         <Description src={`/img/${src}`} reverse={reverse}>
             <h3 className={'text-[40px] leading-[48px] text-green2 font-bold'}>{title}</h3>
