@@ -39,31 +39,33 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
 
     return (
         <>
-            {
-                 (mainPage && !cookieConsentIsTrue) && (
-                    <div className="flex bg-[#0E3F3B] items-center w-full justify-center fixed md:h-[40px] xl:mt-0 z-[99]">
-                        <div className="w-full max-w-[1920px] px-[1rem] xl:px-0 relative">
-                            <div className="flex flex-col md:flex-row md:gap-[20px] ml-[23%] md:ml-[35%] xl:ml-0 pt-[3px] xl:pt-0">
-                                <p className="text-white font-medium text-[14px] leading-5 w-[160px] xl:ml-[40%]">
-                                    Výstavba oficiálne začala.
-                                </p>
-                                <div className="flex gap-[8px] items-center">
-                                    <Link href="/">
-                                        <a className="text-white font-medium text-[14px] leading-5 underline underline-offset-[5px] pb-[5px] xl:pb-0 ml-[55px] md:ml-0">Viac</a>
-                                    </Link>
-                                    <RightArrowIcon/>
-                                </div>
-                            </div>
-                            <div className="xl:mr-[13px] absolute right-[1rem] xl:right-[12px] top-[13px] md:top-[1px]">
-                                <button onClick={onClick}>
-                                    <CloseIcon/>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                )
-            }
-        <nav className={`bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] ${(mainPage && !cookieConsentIsTrue) && "mt-[40px]"} xl:h-[60px] w-full fixed top-0 z-50`}>
+            {/*{*/}
+            {/*    */}
+            {/*     (mainPage && !cookieConsentIsTrue) && (*/}
+            {/*        <div className="flex bg-[#0E3F3B] items-center w-full justify-center fixed md:h-[40px] xl:mt-0 z-[99]">*/}
+            {/*            <div className="w-full max-w-[1920px] px-[1rem] xl:px-0 relative">*/}
+            {/*                <div className="flex flex-col md:flex-row md:gap-[20px] ml-[23%] md:ml-[35%] xl:ml-0 pt-[3px] xl:pt-0">*/}
+            {/*                    <p className="text-white font-medium text-[14px] leading-5 w-[160px] xl:ml-[40%]">*/}
+            {/*                        Výstavba oficiálne začala.*/}
+            {/*                    </p>*/}
+            {/*                    <div className="flex gap-[8px] items-center">*/}
+            {/*                        <Link href="/">*/}
+            {/*                            <a className="text-white font-medium text-[14px] leading-5 underline underline-offset-[5px] pb-[5px] xl:pb-0 ml-[55px] md:ml-0">Viac</a>*/}
+            {/*                        </Link>*/}
+            {/*                        <RightArrowIcon/>*/}
+            {/*                    </div>*/}
+            {/*                </div>*/}
+            {/*                <div className="xl:mr-[13px] absolute right-[1rem] xl:right-[12px] top-[13px] md:top-[1px]">*/}
+            {/*                    <button onClick={onClick}>*/}
+            {/*                        <CloseIcon/>*/}
+            {/*                    </button>*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*    )*/}
+            {/*}*/}
+        {/*    ${(mainPage && !cookieConsentIsTrue) && "mt-[40px]"}*/}
+        <nav className={`bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] xl:h-[60px] w-full fixed top-0 z-50`}>
             <div className={`relative lg:shadow-none w-full max-w-[1920px] mx-auto xl:h-[60px] flex items-center justify-between`}>
                 <div className="xl:flex gap-[50] items-center mx-4 xl:ml-[40px] xl:mr-0 h-full w-full">
                     <div
