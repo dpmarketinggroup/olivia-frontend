@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const DeveloperSwiper = () => {
     return (
-        <div className={`text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col w-full xl:max-w-[1400px] xl:mx-auto`}>
+        <div className={`text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col w-full xl:max-w-[1200px] xl:mx-auto`}>
             <div
                 className={`flex flex-col xl:flex-row w-full justify-between mb-[25px] xl:mb-[65px]`}>
                 <div className={'flex flex-col'}>
@@ -39,7 +39,7 @@ const DeveloperSwiper = () => {
                     prevEl: ".int-prev",
                 }}
                 spaceBetween={30}
-                slidesPerView={'auto'}
+                slidesPerView={4}
             >
                 {[
                     {src: "/img/austria.jpg", label: 'Austria Trend Hotel Bratislava'},
@@ -50,7 +50,7 @@ const DeveloperSwiper = () => {
                     {src: "/img/tatracentrum.jpg", label: 'Tatracentrum Bratislava'},
                 ].map(({src, label}, i) => (
                     <SwiperSlide
-                        className={`xl:w-full xl:max-w-fit`}
+                        className={`xl:w-full`}
                         key={i}
                     >
                         <div className={'relative w-full xl:w-[255px] h-[195px] xl:h-[145px] xl:grayscale-[100%] xl:hover:grayscale-0'}>

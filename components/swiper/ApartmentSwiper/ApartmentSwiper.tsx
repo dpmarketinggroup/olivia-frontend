@@ -8,7 +8,7 @@ import Link from "next/link";
 const ApartmentSwiper = () => {
     return (
         <div
-            className={`xl:relative text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col overflow-visible xl:mb-[50px] xl:max-w-[1400px] xl:mx-auto h-[590px]`}>
+            className={`xl:relative text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col overflow-visible xl:mb-[50px] w-full xl:max-w-[1200px] xl:mx-auto h-[590px]`}>
             <div
                 className={`flex gap-6 flex-col xl:flex-row w-full justify-between xl:items-center mb-[65px]`}>
                 <h3 className="text-[26px] leading-[46px] xl:text-[40px] xl:leading-[40px] font-bold text-black">
@@ -35,6 +35,7 @@ const ApartmentSwiper = () => {
                 </div>
             </div>
             <Swiper
+                className={'w-full'}
                 watchOverflow={false}
                 direction={"horizontal"}
                 modules={[Navigation]}
@@ -44,7 +45,7 @@ const ApartmentSwiper = () => {
                     prevEl: ".apa-prev",
                 }}
                 spaceBetween={50}
-                slidesPerView={'auto'}
+                slidesPerView={3}
             >
                 {[
                     {src: '/img/1.png', label: '1 izbový apartmán'},
@@ -54,7 +55,7 @@ const ApartmentSwiper = () => {
                     {src: '/img/4.png', label: '4 izbový apartmán'},
                 ].map(({src, label}, i) => (
                     <SwiperSlide
-                        className={`xl:w-full xl:max-w-fit`}
+                        className={`xl:w-full`}
                         key={i}
                     >
                         <h5 className={'text-green2 font-bold text-[24px] leading-[32px] mb-[25px]'}>{label}</h5>
