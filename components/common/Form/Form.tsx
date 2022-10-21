@@ -35,7 +35,7 @@ const Form
 
     async function handleSubmit(e: SyntheticEvent) {
         e.preventDefault();
-        if (!name || !surname || !email || !phone || !message) return;
+        if (!name || !surname || !email || !phone) return;
         try {
             await axios.post('/api/enquiry', {
                 body: JSON.stringify({
@@ -95,7 +95,7 @@ const Form
                                required={true} withAsterisk
                                label={<><span className={isGreen ? "text-white" : "text-black"}>Email</span></>}/>
                     <div className={'flex flex-col'}>
-                        <h5 className={isGreen ? "text-white" : "text-black"}>Tel. č.</h5>
+                        <h5 className={isGreen ? "text-white" : "text-black"}>Tel. č. <span className={'text-red-600'}>*</span></h5>
                         <PhoneInput
                             style={{
                                 height: '50px'

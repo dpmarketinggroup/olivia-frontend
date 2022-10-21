@@ -45,14 +45,14 @@ const Negotiation = ({
                     )
                 }
                 <div
-                    className={`w-full xl:max-w-[1920px] h-[400px] xl:h-[800px] relative xl:mx-auto xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
+                    className={`w-screen xl:max-w-[1920px] h-[400px] xl:h-[880px] relative xl:mx-auto xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
                     <Image
                         objectPosition={'center'}
-                        objectFit="cover"
+                        objectFit="contain"
                         alt="hero image"
                         layout={'fill'}
                         src={"/img/map.jpg"}
-                        loading={'eager'}
+                        priority={true}
                     />
                     <div className={`${retail ? "hidden" : "hidden xl:block"} absolute bottom-[-52px] left-0`}>
                         <RectangleDarkIcon/>

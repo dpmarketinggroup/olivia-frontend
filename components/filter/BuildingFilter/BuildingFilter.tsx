@@ -357,7 +357,7 @@ const Building = () => {
             <div id={'results'}
                  className={`flex flex-col xl:gap-[120px] px-[1rem] xl:px-0 xl:min-h-[1px] bg-[#F5F5F5] mt-[-80px] ${(oneRooms || oneAndHalfRooms || twoRooms || threeRooms || fourRooms) && 'xl:py-[100px]'}`}>
                 {oneRooms?.length ? (
-                    <div>
+                    <div id={'one-apt'}>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>1-izbové
                             byty</h3>
                         <div
@@ -389,7 +389,7 @@ const Building = () => {
 
                 ) : ''}
                 {oneAndHalfRooms?.length ? (
-                    <div>
+                    <div id={'oneHalf-apt'}>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>1.5-izbové
                             byty</h3>
                         <div
@@ -421,7 +421,7 @@ const Building = () => {
 
                 ) : ''}
                 {twoRooms?.length ? (
-                    <div>
+                    <div id={'two-apt'}>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>2-izbové
                             byty</h3>
                         <div
@@ -453,7 +453,7 @@ const Building = () => {
 
                 ) : ''}
                 {threeRooms?.length ? (
-                    <div>
+                    <div id={'three-apt'}>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>3-izbové
                             byty</h3>
                         <div
@@ -485,7 +485,7 @@ const Building = () => {
 
                 ) : ''}
                 {fourRooms?.length ? (
-                    <div>
+                    <div id={'four-apt'}>
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>4-izbové
                             byty</h3>
                         <div
