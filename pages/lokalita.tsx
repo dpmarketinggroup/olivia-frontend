@@ -84,7 +84,7 @@ const Lokalita = () => {
                 apartmánov</h2>
             <ApartmentEquipmentDescription/>
             <div className={'flex flex-col xl:flex-row gap-[10px] justify-center mt-[-50px] mb-[70px] xl:mb-[175px] mx-4 '}>
-                <Button variant={'outlined'}>
+                <Button href={'/o-projekte#vybavenie'} variant={'outlined'}>
                     Vybavenie apartmánov
                 </Button>
                 <Button href={'/stretnutie'} variant={'filled'}>

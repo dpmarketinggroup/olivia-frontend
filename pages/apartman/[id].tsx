@@ -11,6 +11,8 @@ import {useStore} from "../../lib/store/useStore";
 import {Button} from "@components/ui";
 import {CarDescription} from "@components/common/Description/Description";
 import axios from "axios";
+import PhoneInput from "react-phone-number-input";
+import {E164Number} from "libphonenumber-js";
 
 const ApartmentDetail = () => {
     const [opened, setOpened] = useState(false);
@@ -20,7 +22,7 @@ const ApartmentDetail = () => {
     const [loading, setLoading] = useState(false);
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
-    const [phone, setPhone] = useState('');
+    const [phone, setPhone] = useState<E164Number>();
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
@@ -70,12 +72,13 @@ const ApartmentDetail = () => {
             setLoading(true)
             await axios.post('/api/enquiry', {
                 body: JSON.stringify({
+                    type: 'dopyt',
                     name,
                     surname,
                     email,
                     message,
                     phone,
-                    apartment: cislo_bytu
+                    apartment: `Byt č.${cislo_bytu}`
                 })
             })
         } catch (e) {
@@ -118,15 +121,26 @@ const ApartmentDetail = () => {
                 <form onSubmit={handleSubmit}
                       className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>
                     <div className={'flex flex-col xl:grid grid-cols-2 gap-[15px] mt-[40px]'}>
-                        <CustomInput value={name} required={true} onChange={(e) => setName(e.target.value)} name={'name'}
+                        <CustomInput value={name} required={true} onChange={(e) => setName(e.target.value)}
+                                     name={'name'}
                                      placeholder={'Meno'}/>
-                        <CustomInput value={surname} required={true} onChange={(e) => setSurname(e.target.value)} name={'surname'}
+                        <CustomInput value={surname} required={true} onChange={(e) => setSurname(e.target.value)}
+                                     name={'surname'}
                                      placeholder={'Priezvisko'}/>
                     </div>
                     <CustomInput value={email} required={true} onChange={(e) => setEmail(e.target.value)} name={'email'}
                                  placeholder={'E-mailová adresa'}/>
-                    <CustomInput value={phone} onChange={(e) => setPhone(e.target.value)} name={'phone'}
-                                 placeholder={'Tel. č.'}/>
+                    <PhoneInput
+                        style={{
+                            height: '50px'
+                        }}
+                        international={false}
+                        countries={["SK"]}
+                        value={phone}
+                        defaultCountry={"SK"}
+                        onChange={(val) => setPhone(val)}
+                        placeholder={"Telefónne číslo"}
+                    />
                     <Textarea value={message} onChange={(e) => setMessage(e.target.value)} name={'message'}
                               placeholder={'Vaša správa ...'} sx={{
                         '.mantine-Textarea-input': {

@@ -37,11 +37,16 @@ const Form
 
     async function handleSubmit(e: SyntheticEvent) {
         e.preventDefault();
+        if (meeting){
+            if (!isClicked1 && !isClicked2) return;
+        }
         if (!name || !surname || !email) return;
+
         try {
             setLoading(true)
             await axios.post('/api/enquiry', {
                 body: JSON.stringify({
+                    type: `${meeting ? "stretnutie" : "kontakt"}`,
                     name,
                     surname,
                     email,
@@ -63,19 +68,28 @@ const Form
                 {
                     meeting &&
                     <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] items-center mb-[45px]">
-                        <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">Mám záujem o:</span>
-                        <Checkbox disabled={isClicked2 && true}
-                                  onClick={() => setClicked1(!isClicked1)}
-                                  label={
-                                      <>
+                        <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">Mám záujem o: <span className={'text-red-500'}>*</span></span>
+                        <Checkbox
+                            checked={isClicked1}
+                            onClick={() => {
+                                if (isClicked2) setClicked2(false);
+                                setClicked1(!isClicked1)
+                            }
+                            }
+                            label={
+                                <>
                     <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
                         apartmán
                     </span>
-                                      </>
-                                  } radius="xl"
+                                </>
+                            } radius="xl"
                         />
-                        <Checkbox disabled={isClicked1 && true}
-                                  onClick={() => setClicked2(!isClicked2)}
+                        <Checkbox
+                            checked={isClicked2}
+                                  onClick={() => {
+                                      if (isClicked1) setClicked1(false);
+                                      setClicked2(!isClicked2)
+                                  }}
                                   label={
                                       <>
                     <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
