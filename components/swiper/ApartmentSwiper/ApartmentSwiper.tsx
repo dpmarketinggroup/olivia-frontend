@@ -45,7 +45,12 @@ const ApartmentSwiper = () => {
                     prevEl: ".apa-prev",
                 }}
                 spaceBetween={50}
-                slidesPerView={3}
+                slidesPerView={1}
+                breakpoints={{
+                    1280: {
+                        slidesPerView: 3
+                    }
+                }}
             >
                 {[
                     {src: '/img/1.png', label: '1 izbový apartmán'},

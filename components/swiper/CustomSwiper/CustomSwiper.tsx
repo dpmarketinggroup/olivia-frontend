@@ -30,7 +30,12 @@ const CustomSwiper = () => {
                     prevEl: ".int-prev",
                 }}
                 spaceBetween={30}
-                slidesPerView={2}
+                slidesPerView={1}
+                breakpoints={{
+                    1280: {
+                        slidesPerView: 2
+                    }
+                }}
             >
                 {[
                     "/img/interier/1.jpg",

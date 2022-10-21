@@ -39,7 +39,12 @@ const DeveloperSwiper = () => {
                     prevEl: ".int-prev",
                 }}
                 spaceBetween={30}
-                slidesPerView={4}
+                slidesPerView={1}
+                breakpoints={{
+                    1280: {
+                        slidesPerView: 4
+                    }
+                }}
             >
                 {[
                     {src: "/img/austria.jpg", label: 'Austria Trend Hotel Bratislava'},
