@@ -1,5 +1,5 @@
 import {SyntheticEvent, useState} from "react";
-import {Checkbox, Textarea, TextInput, Input} from "@mantine/core";
+import {Checkbox, Textarea, TextInput, Input, Loader} from "@mantine/core";
 import Link from "next/link";
 import axios from "axios";
 import PhoneInput from "react-phone-number-input";
@@ -37,9 +37,6 @@ const Form
 
     async function handleSubmit(e: SyntheticEvent) {
         e.preventDefault();
-        if (meeting){
-            if (!isClicked1 && !isClicked2) return;
-        }
         if (!name || !surname || !email) return;
 
         try {
@@ -68,7 +65,7 @@ const Form
                 {
                     meeting &&
                     <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] items-center mb-[45px]">
-                        <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">Mám záujem o: <span className={'text-red-500'}>*</span></span>
+                        <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">Mám záujem o: </span>
                         <Checkbox
                             checked={isClicked1}
                             onClick={() => {
@@ -151,7 +148,7 @@ const Form
                     } radius="xs" color="green"/>
                     <button
                         disabled={loading}
-                        className={`py-[12px] ${meeting ? " bg-[#89A6A2] hover:bg-[#476761]" : "bg-[#476761] hover:bg-primary"} text-white`}>Odoslať
+                        className={`py-[12px] ${meeting ? " bg-[#89A6A2] hover:bg-[#476761]" : "bg-[#476761] hover:bg-primary"} text-white flex items-center justify-center gap-[10px]`}>Odoslať {loading && <Loader size={20}/>}
                     </button>
                 </div>
             </div>

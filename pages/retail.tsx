@@ -24,7 +24,7 @@ const Retail = () => {
                                         obchodného priestoru</h4>
                                     <p className="text-[16px] xl:text-[14px] leading-5 text-[#676766] text-center xl:text-start">Prenajmite
                                         si <strong>obchodný
-                                            priestor v dynamickej lokalite </strong>, kde Váš biznis určite nesplynie s
+                                            priestor v dynamickej lokalite</strong>, kde Váš biznis určite nesplynie s
                                         konkurenciou.</p>
                                 </div>
                                 <div className={'flex xl:block flex-col items-center xl:max-w-[190px]'}>

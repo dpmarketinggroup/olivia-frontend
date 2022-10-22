@@ -46,6 +46,8 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
                             <form className={'w-full'} onSubmit={handleSubmit}>
                                 <TextInput
+                                    type={'email'}
+                                    required={true}
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     sx={{

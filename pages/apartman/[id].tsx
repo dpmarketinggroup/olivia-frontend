@@ -1,5 +1,5 @@
 import Head from "next/head";
-import {Checkbox, Modal, Textarea, TextInput} from "@mantine/core";
+import {Checkbox, Loader, Modal, Textarea, TextInput} from "@mantine/core";
 import {MapFooter} from "@components/common";
 import {ArrowDownNotFilledIcon, Bank, FloorPlan, RightArrow, Severka, Star} from "@components/icons";
 import Link from "next/link";
@@ -207,8 +207,9 @@ const ApartmentDetail = () => {
                             }
                         }}
                     />
-                    <button disabled={loading} className={'bg-[#476761] h-[50px] text-white'}>
-                        Odoslať
+                    <button
+                        disabled={loading}
+                        className={`py-[12px] bg-[#476761] hover:bg-primary text-white flex items-center justify-center gap-[10px]`}>Odoslať {loading && <Loader size={20}/>}
                     </button>
                 </form>
             </Modal>

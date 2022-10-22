@@ -35,6 +35,8 @@ const Subscription = () => {
                     <p className="text-[14px] leading-5 text-white xl:w-[320px]">Najnovšie informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
                     <form onSubmit={handleSubmit}>
                         <TextInput
+                            type={'email'}
+                            required={true}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="text-[16px] leading-6"
