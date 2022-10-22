@@ -3,6 +3,7 @@ import {Button} from "@components/ui";
 import {RectangleDarkIcon, RectangleLightIcon, RectangleMediumIcon} from "@components/icons";
 import {useMediaQuery} from "@mantine/hooks";
 import {useEffect, useRef} from "react";
+import {FaArrowsAltH} from "react-icons/all";
 
 interface NegotiationProps {
     title: string;
@@ -33,7 +34,7 @@ const Negotiation = ({
 
     return (
         <div className='flex justify-center'>
-            <div className="w-full flex flex-col">
+            <div className="w-full flex flex-col relative">
                 {!centerText ?
                     (
                         <div
@@ -55,7 +56,7 @@ const Negotiation = ({
                 }
                 <div
                     ref={ref}
-                    className={`overflow-scroll xl:overflow-visible xl:mx-auto `}>
+                    className={`overflow-scroll xl:overflow-visible xl:mx-auto`}>
                     <div className={'relative w-[1000px] xl:w-screen xl:max-w-[1920px] h-[450px] xl:h-[880px]'}>
                         <Image
                             objectPosition={'center'}
@@ -109,6 +110,7 @@ const Negotiation = ({
                         <RectangleLightIcon/>
                     </div>
                 </div>
+                <FaArrowsAltH color={'white'} size={40} className={'shadow-xl absolute bottom-[1rem] inset-x-0 mx-auto'}/>
             </div>
         </div>
     );
