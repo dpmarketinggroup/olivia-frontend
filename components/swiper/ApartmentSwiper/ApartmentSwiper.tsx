@@ -58,15 +58,13 @@ const ApartmentSwiper = () => {
                     {src: '/img/2.png', label: '2 izbový apartmán', id: 'two-apt'},
                     {src: '/img/3.png', label: '3 izbový apartmán', id: 'three-apt'},
                     {src: '/img/4.png', label: '4 izbový apartmán', id: 'four-apt'},
-                ].map(({src, label, id}, i) => (
+                ].map(({src, label, id}) => (
                     <SwiperSlide
                         className={`xl:w-full`}
-                        key={i}
+                        key={id}
                     >
                         <h5 className={'text-green2 font-bold text-[24px] leading-[32px] mb-[25px]'}>{label}</h5>
-                        <Link href={`/ponuka-bytov#one-apt`}>
                             <Image priority={true} objectPosition={'left'} objectFit={'contain'} alt={'Swiper image'} src={src} width={300} height={200}/>
-                        </Link>
                     </SwiperSlide>
                 ))}
             </Swiper>
