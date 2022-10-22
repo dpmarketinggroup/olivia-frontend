@@ -22,10 +22,10 @@ const Home = () => {
             <Head>
                 <title>Moderné mestské bývanie | Olivia Residence</title>
             </Head>
-            <div className="flex justify-center mt-[75px] pt-[50px] xl:overflow-hidden">
-                <div className="h-[650px] border xl:h-[725px] w-full xl:max-w-[1920px] xl:mb-[140px] relative xl:flex">
-                    <div className="absolute inset-0 w-full -z-[22] overflow-hidden">
-                        <video autoPlay={true} playsInline={true} muted={true} loop={true}>
+            <div className="flex justify-center mt-[75px] xl:mt-0 xl:overflow-hidden">
+                <div className="h-[650px] xl:h-[725px] w-full xl:max-w-[1920px] xl:mb-[140px] relative flex">
+                    <div className="absolute inset-0 xl:w-full -z-[22] xl:overflow-hidden">
+                        <video className={'h-full xl:h-auto object-cover'} autoPlay={true} playsInline={true} muted={true} loop={true}>
                             <source type="video/mp4"
                                     src="/videos/vid1.mp4"/>
                             <source
@@ -33,7 +33,7 @@ const Home = () => {
                                 type="video/mp4"/>
                         </video>
                     </div>
-                    <div className="w-full xl:max-w-[1400px] xl:mx-auto xl:my-auto">
+                    <div className="w-full xl:max-w-[1400px] xl:mx-auto my-auto">
                         <div className="w-[300px] xl:w-[600px] mb-[40px] mx-4 xl:mx-0">
                             <h1 className="font-bold text-[34px] xl:text-[56px] leading-[40px] xl:leading-[60px] tracking-[-1px] text-white">
                                 Moderný štýl bývania v dynamickej lokalite so skvelými možnosťami
