@@ -90,8 +90,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                         }}
                              className={`${!isOpenMobileNav && "hidden"} my-auto flex xl:flex flex-col xl:flex-row w-full gap-[25px] items-center xl:h-auto xl:min-w-full`}>
                             <div
-                                className={'flex flex-col xl:flex-row gap-[35px] xl:gap-[25px] text-[20px] xl:text-[16px] xl:mt-0'}>
-                                <div className={'xl:hidden flex flex-col gap-[35px]'}>
+                                className={'flex flex-col xl:flex-row gap-[20px] xl:gap-[25px] xl:text-[16px] xl:mt-0'}>
+                                <div className={'xl:hidden flex flex-col gap-[20px]'}>
                                     <Link href={'/ponuka-bytov'} className={'xl:hidden'}>
                                         <a>Ponuka apartmánov</a>
                                     </Link>
@@ -118,7 +118,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                                 <Link href="/lokalita">
                                     <a>Lokalita</a>
                                 </Link>
-                                <div className={'flex flex-col gap-[35px] xl:hidden'}>
+                                <div className={'flex flex-col gap-[20px] xl:hidden'}>
                                     <Link href="/o-projekte">
                                         <a>O projekte</a>
                                     </Link>
