@@ -65,7 +65,7 @@ const ApartmentSwiper = () => {
                     >
                         <h5 className={'text-green2 font-bold text-[24px] leading-[32px] mb-[25px]'}>{label}</h5>
                         <Link href={`/ponuka-bytov#one-apt`}>
-                            <Image priority={true} objectFit={'contain'} alt={'Swiper image'} src={src} width={300} height={200}/>
+                            <Image priority={true} objectPosition={'left'} objectFit={'contain'} alt={'Swiper image'} src={src} width={300} height={200}/>
                         </Link>
                     </SwiperSlide>
                 ))}
