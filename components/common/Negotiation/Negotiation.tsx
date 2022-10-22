@@ -3,7 +3,7 @@ import {Button} from "@components/ui";
 import {RectangleDarkIcon, RectangleLightIcon, RectangleMediumIcon} from "@components/icons";
 import {useMediaQuery} from "@mantine/hooks";
 import {useEffect, useRef} from "react";
-import {FaArrowsAltH} from "react-icons/all";
+import {FaArrowsAltH} from "react-icons/fa";
 
 interface NegotiationProps {
     title: string;

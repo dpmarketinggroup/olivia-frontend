@@ -8,7 +8,7 @@ import Link from "next/link";
 const ApartmentSwiper = () => {
     return (
         <div
-            className={`xl:relative text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col overflow-visible xl:mb-[50px] w-full xl:max-w-[1200px] xl:mx-auto h-[590px]`}>
+            className={`xl:relative text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col overflow-visible xl:mb-[50px] w-full xl:max-w-[1200px] xl:mx-auto`}>
             <div
                 className={`flex gap-6 flex-col xl:flex-row w-full justify-between xl:items-center mb-[65px]`}>
                 <h3 className="text-[26px] leading-[46px] xl:text-[40px] xl:leading-[40px] font-bold text-black">
@@ -44,7 +44,7 @@ const ApartmentSwiper = () => {
                     nextEl: ".apa-next",
                     prevEl: ".apa-prev",
                 }}
-                spaceBetween={50}
+                spaceBetween={40}
                 slidesPerView={1}
                 breakpoints={{
                     1280: {
@@ -63,8 +63,13 @@ const ApartmentSwiper = () => {
                         className={`xl:w-full`}
                         key={id}
                     >
-                        <h5 className={'text-green2 font-bold text-[24px] leading-[32px] mb-[25px]'}>{label}</h5>
-                            <Image priority={true} objectPosition={'left'} objectFit={'contain'} alt={'Swiper image'} src={src} width={300} height={200}/>
+                        <div>
+                            <h5 className={'text-green2 font-bold text-[24px] leading-[32px] mb-[15px]'}>{label}</h5>
+                            <div className={'relative h-[400px]'}>
+                                <Image className={'border'} priority={true}  objectPosition={'left'} objectFit={'contain'} alt={'Swiper image'}
+                                       src={src} layout={'fill'}/>
+                            </div>
+                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
