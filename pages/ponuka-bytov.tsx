@@ -15,7 +15,7 @@ const PonukaBytov = () => {
             </Head>
             <div className="flex justify-center building mt-[50px] xl:mt-[70px]">
                 <div className="w-full xl:w-full">
-                    <div className="flex justify-center my-[70px] xl:mb-0">
+                    <div className="flex justify-center mt-[70px]">
                         <div className="m xl:mx-[165px]">
                             <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                                 <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>

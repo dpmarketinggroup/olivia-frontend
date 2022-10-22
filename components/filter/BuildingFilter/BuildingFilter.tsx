@@ -172,7 +172,7 @@ const Building = () => {
     return (
         <>
             <div
-                className="w-full xl:max-w-[1920px] xl3">
+                className="w-full xl:max-w-[1920px] xl3 overflow-hidden">
                 <House/>
             </div>
             <div className="building bg-primary-pattern w-full mb-[80px] px-[1rem] xl:px-0">
