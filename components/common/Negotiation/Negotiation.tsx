@@ -55,7 +55,7 @@ const Negotiation = ({
                 }
                 <div
                     ref={ref}
-                    className={`scrollmenu overflow-scroll xl:mx-auto xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
+                    className={`overflow-scroll xl:overflow-visible xl:mx-auto `}>
                     <div className={'relative w-[1000px] xl:w-screen xl:max-w-[1920px] h-[400px] xl:h-[880px]'}>
                         <Image
                             objectPosition={'center'}
