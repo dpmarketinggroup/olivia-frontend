@@ -67,9 +67,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
         {/*    ${(mainPage && !cookieConsentIsTrue) && "mt-[40px]"} */}
         <nav className={`px-[1rem] bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] xl:h-[60px] w-full fixed top-0 z-50`}>
             <div className={`relative lg:shadow-none w-full xl:max-w-[1920px] mx-auto xl:h-[60px] flex items-center justify-between`}>
-                <div className="xl:flex gap-[50] items-center xl:ml-[40px] xl:mr-0 h-full min-w-full xl:min-w-fit">
+                <div className={`${isOpenMobileNav && 'h-screen'} xl:h-auto flex flex-col xl:flex-row gap-[50] items-center xl:ml-[40px] xl:mr-0 min-w-full xl:min-w-fit`}>
                     <div
-                        className={`flex justify-between ${!isOpenMobileNav ? "mb-[20px]" : "mb-[35px]"} mt-[20px] xl:mb-0 xl:mt-0`}>
+                        className={`w-full flex justify-between ${!isOpenMobileNav ? "mb-[20px]" : "mb-[35px]"} mt-[20px] xl:mb-0 xl:mt-0`}>
                         <Link href="/">
                             <a><Logo/></a>
                         </Link>
@@ -84,10 +84,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                     <div onClick={() => {
                         setIsOpenMobileNav(false);
                         setScrollLocked(() => false)
-                    }}
-                         className={`${!isOpenMobileNav && "hidden"} flex xl:flex flex-col xl:flex-row w-full gap-[25px] justify-center items-center h-[calc(100vh-60px)] xl:h-auto xl:w-auto`}>
+                    }} className={`${!isOpenMobileNav && "hidden"} my-auto flex xl:flex flex-col xl:flex-row w-full gap-[25px] items-center xl:h-auto xl:min-w-full`}>
                         <div
-                            className={'flex flex-col  xl:flex-row gap-[35px] xl:gap-[25px] text-[20px] xl:text-[16px] xl:mt-0'}>
+                            className={'flex flex-col xl:flex-row gap-[35px] xl:gap-[25px] text-[20px] xl:text-[16px] xl:mt-0'}>
                             <div className={'xl:hidden flex flex-col gap-[35px]'}>
                                 <Link href={'/ponuka-bytov'} className={'xl:hidden'}>
                                     <a>Ponuka apartmánov</a>
