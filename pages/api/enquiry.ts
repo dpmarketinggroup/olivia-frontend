@@ -29,7 +29,14 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     // const modifiedNum =
     const url = "https://api.sendinblue.com/v3/contacts";
     if (req.method === "POST") {
-        console.log(apartment, name, surname, email)
+        let response = await axios.get(`https://api.sendinblue.com/v3/contacts/${email}`, {
+            headers: {
+                "Content-Type": "application/json",
+                accept: "application/json",
+                "api-key":
+                    "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",
+            },
+        });
         await axios.post(
             url,
             {
@@ -41,7 +48,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
                     SMS: phone ? Number(phone?.substring(1)) : null,
                     ZAUJEM_O: apartment
                 },
-                listIds: [getListId(type)],
+                listIds: [...response.data.listIds, getListId(type)],
                 emailBlacklisted: false,
             },
             {

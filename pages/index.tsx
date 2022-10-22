@@ -1,10 +1,16 @@
 import Link from "next/link";
-import {FloorPlan, ArrowDownNotFilledIcon, RightArrow, Severka, RectangleMediumIcon, RectangleDarkIcon, RectangleLightIcon} from "@components/icons/";
-import {Timeline, MapFooter, Negotiation, Articles, Subscription} from "@components/common";
+import {
+    FloorPlan,
+    ArrowDownNotFilledIcon,
+    RightArrow,
+    RectangleMediumIcon,
+    RectangleDarkIcon,
+    RectangleLightIcon
+} from "@components/icons/";
+import {Timeline, MapFooter, Negotiation, Subscription} from "@components/common";
 import {BuildingFilter} from "@components/filter";
 import {ApartmentSwiper, CustomSwiper, DeveloperSwiper} from "@components/swiper";
 import Head from "next/head";
-import Image from "next/image";
 import {ApartmentEquipmentDescription, CommonDescription} from "@components/common/Description/Description";
 import {Button} from "@components/ui";
 import React, {useState} from "react";
@@ -16,15 +22,15 @@ const Home = () => {
             <Head>
                 <title>Moderné mestské bývanie | Olivia Residence</title>
             </Head>
-            <div className="flex justify-center pt-[50px] xl:overflow-hidden">
-                <div className="h-[650px] xl:h-[725px] w-full max-w-[1920px] xl:mb-[140px] relative xl:flex">
+            <div className="flex justify-center mt-[75px] pt-[50px] xl:overflow-hidden">
+                <div className="h-[650px] border xl:h-[725px] w-full xl:max-w-[1920px] xl:mb-[140px] relative xl:flex">
                     <div className="absolute inset-0 w-full -z-[22] overflow-hidden">
                         <video autoPlay={true} playsInline={true} muted={true} loop={true}>
                             <source type="video/mp4"
                                     src="/videos/vid1.mp4"/>
                             <source
                                 src="/videos/vid2.mp4"
-                                type="video/mp4" />
+                                type="video/mp4"/>
                         </video>
                     </div>
                     <div className="w-full xl:max-w-[1400px] xl:mx-auto xl:my-auto">
@@ -68,8 +74,10 @@ const Home = () => {
                         <h1 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] text-center xl:text-left">Ponuka
                             apartmánov</h1>
                     </div>
-                    <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:justify-between xl:mr-[180px]">
-                        <div className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute xl:right-[210px] cursor-pointer"
+                    <div
+                        className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:justify-between xl:mr-[180px]">
+                        <div
+                            className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute xl:right-[210px] cursor-pointer"
                             onClick={() => setIsFloorDropDownCLicked((prevState) => !prevState)}>
                             <span
                                 className="drop-span font-bold text-[18px] leading-7 text-[#476761]">7. podlažie</span>
@@ -144,7 +152,8 @@ const Home = () => {
                 <h2 className={'text-[#0E3F3B] font-bold text-[40px] leading-[48px] mx-4 xl:mx-0 xl:text-center'}>Vybavenie
                     apartmánov</h2>
                 <ApartmentEquipmentDescription/>
-                <div className={'mx-auto flex flex-col xl:flex-row gap-[15px] w-full xl:w-auto px-[1rem] xl:px-0 mt-[-60px] xl:mt-0'}>
+                <div
+                    className={'mx-auto flex flex-col xl:flex-row gap-[15px] w-full xl:w-auto px-[1rem] xl:px-0 mt-[-60px] xl:mt-0'}>
                     <Link href={'/o-projekte#vybavenie'}>
                         <Button variant={'outlined'}>
                             Vybavenie apartmánov
