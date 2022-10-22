@@ -1,4 +1,4 @@
-import {TextInput} from "@mantine/core";
+import {Loader, TextInput} from "@mantine/core";
 import {PaperPlane} from "@components/icons";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,12 +27,14 @@ const Subscription = () => {
 
         await router.push('/dakujeme-za-email')
     }
+
     return (
         <div className='flex justify-center xl:mb-[80px] bg-black xl:bg-transparent xl:h-[340px] green'>
             <div className="xl:mx-[165px] xl:bg-black w-full xl:max-w-[1200px] relative px-[1rem] xl:px-0">
                 <div className="flex flex-col gap-[22px] xl:ml-[72px] xl:w-[350px]">
                     <h3 className="font-bold text-[32px] leading-[38px] text-[#89A6A2] pt-[52px]">Odber noviniek</h3>
-                    <p className="text-[14px] leading-5 text-white xl:w-[320px]">Najnovšie informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
+                    <p className="text-[14px] leading-5 text-white xl:w-[320px]">Najnovšie informácie o projekte Olivia
+                        Residence priamo do Vašej schránky.</p>
                     <form onSubmit={handleSubmit}>
                         <TextInput
                             type={'email'}
@@ -41,7 +43,8 @@ const Subscription = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             className="text-[16px] leading-6"
                             placeholder="Email"
-                            rightSection= {<button disabled={loading} type={'submit'}><PaperPlane/></button>}/>
+                            rightSection={<button disabled={loading} type={'submit'}>{loading ? <Loader size={15}/> :
+                                <PaperPlane/>}</button>}/>
                     </form>
                     <p className="text-[12px] leading-5 opacity-40 text-white xl:pb-[52px]">
                         Kliknutím na tlačidlo potvrdzujete, že súhlasíte s našimi podmienkami spracovania
@@ -50,7 +53,8 @@ const Subscription = () => {
                         </Link>
                     </p>
                 </div>
-                <div className="h-[300px] xl:h-[455px] relative xl:w-[640px] bottom-0 max-w-[1440px] mx-auto xl:left-[250px] xl:top-[-390px] mt-[50px] xl:mt-0">
+                <div
+                    className="h-[300px] xl:h-[455px] relative xl:w-[640px] bottom-0 max-w-[1440px] mx-auto xl:left-[250px] xl:top-[-390px] mt-[50px] xl:mt-0">
                     <Image
                         objectFit="cover"
                         layout="fill"

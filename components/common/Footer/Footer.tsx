@@ -1,7 +1,7 @@
 import React, {FunctionComponent, SyntheticEvent, useState} from "react";
 import Link from "next/link";
 import LogoSecondary from "../../icons/LogoSecondary";
-import {TextInput} from "@mantine/core";
+import {Loader, TextInput} from "@mantine/core";
 import PaperPlaneIcon from "../../icons/PaperPlane";
 import RectangleFooter from "../../icons/RectangleFooter";
 import BrandlyLogoIcon from "../../icons/BrandlyLogo";
@@ -63,7 +63,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                         }
                                     }}
                                     className="xl:w-[350px] text-[16px] leading-6"
-                                    placeholder="Email" rightSection={<button disabled={loading} type={'submit'}><PaperPlaneIcon/></button>}
+                                    placeholder="Email" rightSection={<button disabled={loading} type={'submit'}>{loading ? <Loader size={15}/> : <PaperPlaneIcon/>}</button>}
                                     radius="xs"
                                 />
                             </form>
