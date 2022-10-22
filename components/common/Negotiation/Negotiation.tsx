@@ -110,7 +110,7 @@ const Negotiation = ({
                         <RectangleLightIcon/>
                     </div>
                 </div>
-                <FaArrowsAltH color={'white'} size={40} className={'shadow-xl absolute bottom-[1rem] inset-x-0 mx-auto'}/>
+                <FaArrowsAltH color={'white'} size={40} className={'xl:hidden shadow-xl absolute bottom-[1rem] inset-x-0 mx-auto'}/>
             </div>
         </div>
     );
