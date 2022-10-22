@@ -65,9 +65,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
             {/*    )*/}
             {/*}*/}
         {/*    ${(mainPage && !cookieConsentIsTrue) && "mt-[40px]"} */}
-        <nav className={`bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] xl:h-[60px] w-full fixed top-0 z-50`}>
-            <div className={`relative lg:shadow-none w-full max-w-[1920px] mx-auto xl:h-[60px] flex items-center justify-between`}>
-                <div className="xl:flex gap-[50] items-center mx-4 xl:ml-[40px] xl:mr-0 h-full w-full">
+        <nav className={`px-[1rem] bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] xl:h-[60px] w-full fixed top-0 z-50`}>
+            <div className={`relative lg:shadow-none w-full xl:max-w-[1920px] mx-auto xl:h-[60px] flex items-center justify-between`}>
+                <div className="xl:flex gap-[50] items-center xl:ml-[40px] xl:mr-0 h-full min-w-full xl:min-w-fit">
                     <div
                         className={`flex justify-between ${!isOpenMobileNav ? "mb-[20px]" : "mb-[35px]"} mt-[20px] xl:mb-0 xl:mt-0`}>
                         <Link href="/">
@@ -78,17 +78,25 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                                     onClick={() => {
                                         setIsOpenMobileNav((o) => !o);
                                         setScrollLocked((c) => !c);
-                                    }} className={'mr-[-25px]'}/>
+                                    }}/>
                         </div>
                     </div>
                     <div onClick={() => {
                         setIsOpenMobileNav(false);
                         setScrollLocked(() => false)
                     }}
-                         className={`${!isOpenMobileNav && "hidden"} flex xl:flex flex-col xl:flex-row gap-[25px] justify-center items-center h-[calc(100vh-60px)] xl:h-auto xl:w-auto`}>
+                         className={`${!isOpenMobileNav && "hidden"} flex xl:flex flex-col xl:flex-row w-full gap-[25px] justify-center items-center h-[calc(100vh-60px)] xl:h-auto xl:w-auto`}>
                         <div
-                            className={'flex flex-col xl:flex-row gap-[35px] xl:gap-[25px] text-[20px] xl:text-[16px] mt-[-320px] xl:mt-0'}>
-                            <div className="flex gap-[10px] items-center">
+                            className={'flex flex-col  xl:flex-row gap-[35px] xl:gap-[25px] text-[20px] xl:text-[16px] xl:mt-0'}>
+                            <div className={'xl:hidden flex flex-col gap-[35px]'}>
+                                <Link href={'/ponuka-bytov'} className={'xl:hidden'}>
+                                    <a>Ponuka apartmánov</a>
+                                </Link>
+                                <Link href={'/ponuka-bytov'} className={'xl:hidden'}>
+                                    <a>Garážové parkovanie</a>
+                                </Link>
+                            </div>
+                            <div className="hidden xl:block flex gap-[10px] items-center">
                                 <div className="dropdown">
                                     <Link href="/ponuka-bytov">
                                         <a className="drop-span">Ponuka apartmánov</a>
@@ -107,7 +115,18 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                             <Link href="/lokalita">
                                 <a>Lokalita</a>
                             </Link>
-                            <div>
+                            <div className={'flex flex-col gap-[35px] xl:hidden'}>
+                                <Link href="/o-projekte">
+                                    <a>O projekte</a>
+                                </Link>
+                                <Link href="/o-projekte#harmonogram">
+                                    <a>Harmonogram</a>
+                                </Link>
+                                <Link href="/o-projekte#financovanie">
+                                    <a>Financovanie</a>
+                                </Link>
+                            </div>
+                            <div className={'hidden xl:block'}>
                                 <div className="dropdown">
                                     <Link href="/o-projekte">
                                         <a>O projekte</a>
@@ -124,7 +143,6 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                                         <DownArrowIcon/>
                                     </div>
                                 </div>
-
                             </div>
                             <Link href="/retail">
                                 <a>Retail</a>
@@ -136,6 +154,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                                 <a>Kontakt</a>
                             </Link>
                         </div>
+                        <button className={'bg-[#476761] xl:hidden px-[10px] py-[6px] w-full text-white'}>fff</button>
                     </div>
                 </div>
                 <div className="flex gap-[27px] mr-[40px]">
@@ -155,8 +174,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({mainPage = false}) => {
                     </div>
                     <Link href='/stretnutie'>
                         <button
-                            className={`hover:bg-[#0E3F3B] font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]
-                             ${isOpenMobileNav ? "block absolute bottom-[280px] left-[75px] md:left-[290px]" : "hidden xl:block"}`} onClick={() => setIsOpenMobileNav(false)}>Nezáväzné
+                            className={`hidden xl:block hover:bg-[#0E3F3B] font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]`} onClick={() => setIsOpenMobileNav(false)}>Nezáväzné
                             stretnutie
                         </button>
                     </Link>
