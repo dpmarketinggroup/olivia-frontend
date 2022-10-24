@@ -119,22 +119,30 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                         <RectangleFooter/>
                     </div>
                 </div>
-                <div className="flex gap-[50px] xl:gap-[130px] bg-[#000000] justify-center opacity-90">
-                    <p className="pl-4 xl:pl-[165px] text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">©
-                        2022 Olivia Residence.
-                        Všetky práva vyhradené.</p>
-                    <div className="hidden xl:flex gap-[10px] items-center">
-                        <p className="text-white text-[12px] leading-5">Branding and Webdesign by</p>
+                <div className="px-[1rem] xl:px-0 flex flex-col xl:flex-row gap-[25px] pb-[15px] xl:pb-0 xl:gap-[50px] xl:gap-[130px] bg-[#000000] justify-center opacity-90">
+                    <div className={'xl:flex xl:justify-between xl:w-full xl:max-w-[1200px]'}>
+                        <p className="text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">©
+                            2022 Olivia Residence.
+                            Všetky práva vyhradené.</p>
+                        <div className="hidden xl:flex gap-[10px] items-center">
+                            <p className="text-white text-[12px] leading-5">Branding and Webdesign by</p>
+                            <BrandlyLogoIcon/>
+                            <span className="text-white">|</span>
+                            <p className="text-white text-[12px] leading-5">Developed by</p>
+                            <DpLogoIcon/>
+                        </div>
+                        <Link href="/gdpr">
+                            <a className="pr-4 text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">Ochrana
+                                osobných údajov</a>
+                        </Link>
+                    </div>
+                    <div className="flex xl:hidden gap-[10px] items-center">
+                        <p className="text-white text-[9px]  xl:text-[12px] leading-5">Branding and Webdesign by</p>
                         <BrandlyLogoIcon/>
                         <span className="text-white">|</span>
                         <p className="text-white text-[12px] leading-5">Developed by</p>
                         <DpLogoIcon/>
                     </div>
-                    <Link href="/gdpr">
-                        <a className="pr-4 xl:pr-[165px] text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">Ochrana
-                            osobných údajov</a>
-                    </Link>
-
                 </div>
             </div>
         </div>
