@@ -74,7 +74,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
         await transporter.sendMail({
             from: {
                 name: 'Olivia Residence',
-                address: `${apartment ? 'predaj@oliviaresidence.sk' : 'info@oliviaresidence.sk'}`
+                address: `${type === 'dopyt' ? 'predaj@oliviaresidence.sk' : 'info@oliviaresidence.sk'}`
             },
             subject: 'Nový dopyt z webovej stránky',
             // bcc: 'leads@dpmg.dev',
