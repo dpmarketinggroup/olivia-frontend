@@ -78,7 +78,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
             },
             subject: 'Nový dopyt z webovej stránky',
             // bcc: 'leads@dpmg.dev',
-            to: `${type === 'dopyt' ? 'jan.nahalka348@gmail.com' : 'info@oliviaresidence.sk'}`,
+            to: `${type === 'dopyt' ? 'predaj@oliviaresidence.sk' : 'info@oliviaresidence.sk'}`,
             html: `
               <div>
                   <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>
