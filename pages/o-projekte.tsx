@@ -46,7 +46,7 @@ const OProjekte = () => {
             title: "Priestranné balkóny a terasy s exteriérovým slnečným tienením",
             description: "Veľko-metrážne balkóny a terasy s exteriérovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
             bulletPoints: [
-                {icon: <BasketIcon/>, label: "Balkón ako štandard pre každý byt"},
+                {icon: <BasketIcon/>, label: "Balkón ako štandard pre každý apartmán"},
                 {icon: <ElectricPanelIcon/>, label: "Elektrické exteriérové slnečné tienenie ako štandard"},
                 {icon: <TwoArrowsIcon/>, label: "Veľko-metrážne terasy"},
             ],

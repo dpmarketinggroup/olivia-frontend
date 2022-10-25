@@ -116,7 +116,7 @@ const ApartmentDetail = () => {
                 onClose={() => setOpened(false)}
                 centered
             >
-                <h3 className={'text-[32px] leading-[38px] text-center font-bold text-primary'}>Mám záujem o byt
+                <h3 className={'text-[32px] leading-[38px] text-center font-bold text-primary'}>Mám záujem o apartmán
                     č. {cislo_bytu}</h3>
                 <form onSubmit={handleSubmit}
                       className={'flex flex-col gap-[15px] xl:w-full xl:max-w-[540px] xl:mx-auto font-pr'}>
@@ -236,45 +236,45 @@ const ApartmentDetail = () => {
                                 className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer"
                                 onClick={() => setIsFloorDropDownCLicked((prevState) => !prevState)}>
                                 <span
-                                    className="drop-span font-bold text-[18px] leading-7 text-[#476761]">{apartment.data.attributes.poschodie}. podlažie</span>
+                                    className="drop-span font-bold text-[18px] leading-7 text-[#476761]">{apartment.data.attributes.poschodie}. poschodie</span>
                                 <div className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"}`}>
                                     <div
                                         className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
                                         <Link href={'/podlazie/3'}>
-                                            <a className="py-[7px]">3. podlažie</a>
+                                            <a className="py-[7px]">3. poschodie</a>
                                         </Link>
                                         <Link href={'/podlazie/4'}>
-                                            <a className="py-[7px]">4. podlažie</a>
+                                            <a className="py-[7px]">4. poschodie</a>
                                         </Link>
                                         <Link href={'/podlazie/5'}>
-                                            <a className="py-[7px]">5. podlažie</a>
+                                            <a className="py-[7px]">5. poschodie</a>
                                         </Link>
                                         <Link href={'/podlazie/6'}>
-                                            <a className="py-[7px]">6. podlažie</a>
+                                            <a className="py-[7px]">6. poschodie</a>
                                         </Link>
                                         <Link href={'/podlazie/7'}>
-                                            <a className="py-[7px]">7. podlažie</a>
+                                            <a className="py-[7px]">7. poschodie</a>
                                         </Link>
                                         <Link href={'/podlazie/8'}>
-                                            <a className="py-[7px]">8. podlažie</a>
+                                            <a className="py-[7px]">8. poschodie</a>
                                         </Link>
                                         <Link href={'/podlazie/9'}>
-                                            <a className="py-[7px]">9. podlažie</a>
+                                            <a className="py-[7px]">9. poschodie</a>
                                         </Link>
                                         <Link href={'/podlazie/10'}>
-                                            <a className="py-[7px]">10. podlažie</a>
+                                            <a className="py-[7px]">10. poschodie</a>
                                         </Link>
                                         <Link href={'/podlazie/11'}>
-                                            <a className="py-[7px]">11. podlažie</a>
+                                            <a className="py-[7px]">11. poschodie</a>
                                         </Link>
                                         <Link href={'/podlazie/12'}>
-                                            <a className="py-[7px]">12. podlažie</a>
+                                            <a className="py-[7px]">12. poschodie</a>
                                         </Link>
                                         <Link href={'/podlazie/13'}>
-                                            <a className="py-[7px]">13. podlažie</a>
+                                            <a className="py-[7px]">13. poschodie</a>
                                         </Link>
                                         <Link href={'/podlazie/14'}>
-                                            <a className="py-[7px]">14. podlažie</a>
+                                            <a className="py-[7px]">14. poschodie</a>
                                         </Link>
                                     </div>
                                 </div>

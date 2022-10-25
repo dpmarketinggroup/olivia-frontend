@@ -44,7 +44,7 @@ export const CommonDescription = () => {
             <h3 className={'font-bold text-[40px] leading-[48px] text-[#0E3F3B] xl:max-w-[310px]'}>Moderné mestské
                 bývanie</h3>
             <p className={'text-black/60 mt-[20px]'}>
-                Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval za steny ich bytu. Pre ľudí, ktorí chcú
+                Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval za steny ich apartmánu. Pre ľudí, ktorí chcú
                 mať ich obľúbené aktivity na dosah ruky. Pre ľudí, ktorí chcú svoj čas využívať efektívne.
                 A pre ľudí, ktorí chcú mať z bývania zážitok.
                 Olivia nie je len bývanie, je to životný štýl.
@@ -144,7 +144,7 @@ export const CarDescription = ({oProjekte = false}: CarDescriptionProps) => {
                 <div className={'flex flex-col gap-[15px] mb-[30px]'}>
                     {
                         [
-                            {icon: <Man/>, label: 'Prechod do Vášho bytu suchou nohou'},
+                            {icon: <Man/>, label: 'Prechod do Vášho apartmánu suchou nohou'},
                             {icon: <Parking/>, label: 'Dlhodobý prenájom garážových státí'},
                             {icon: <Camera/>, label: 'Zabezpečené kamerovým systémom'}
                         ].map(({label, icon}, i) => (
