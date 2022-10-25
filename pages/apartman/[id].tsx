@@ -286,7 +286,7 @@ const ApartmentDetail = () => {
                                 className="flex gap-[10px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[380px] xl:w-[450px] xl:justify-center">
                                 <Link href="/ponuka-bytov">
                                     <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Výber
-                                        podlažia</a>
+                                        poschodia</a>
                                 </Link>
                                 <RightArrow stroke="#00000033"/>
                                 <span
