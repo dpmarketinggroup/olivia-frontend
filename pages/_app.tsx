@@ -22,6 +22,7 @@ function MyApp({Component, pageProps}: AppProps) {
                 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
                 <meta name="msapplication-TileColor" content="#da532c"/>
                 <meta name="theme-color" content="#ffffff"/>
+                {/*<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="fefafcaa-5d1e-4369-84f5-b19f54db2b38" data-blockingmode="auto" type="text/javascript"></script>*/}
             </Head>
             <MantineProvider>
                 <Navbar mainPage={router.pathname === '/' && true}/>
