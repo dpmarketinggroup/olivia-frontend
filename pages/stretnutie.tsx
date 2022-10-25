@@ -3,7 +3,6 @@ import Head from "next/head";
 import Link from "next/link";
 import {Form} from "@components/common/";
 import {
-    Phone,
     EmailSign,
     MapPoint2,
     RectangleLightIcon,
@@ -59,12 +58,12 @@ const Stretnutie = () => {
                                 <div className="flex gap-[20px] items-center mb-[100px] xl:mb-[20px]">
                                     <EmailSign/>
                                     <Link href={'mailto:info@oliviaresidenc.sk'}>
-                                        <a className="font-bold text-[18px] leading-7 text-white">info@oliviaresidenc.sk</a>
+                                        <a className="font-bold text-[18px] leading-7 text-white">info@oliviaresidence.sk</a>
                                     </Link>
                                 </div>
                                 <p className="hidden xl:inline-block font-medium text-[14px] leading-5 tracking-[0.1px] w-[305px] text-white pb-[40px] xl:pb-0">
                                     V prípade otázok sa na mňa neváhajte obrátiť.
-                                    Rada Vám poradím a zodpoviem Vaše otázky.
+                                    Rád Vám poradím a zodpoviem Vaše otázky.
                                 </p>
                             </div>
                         </div>
@@ -76,19 +75,25 @@ const Stretnutie = () => {
                     <div className={`flex flex-col xl:flex-row  xl:gap-[85px]`}>
                         <div>
                             <div className="flex flex-col gap-[20px] mt-[55px] xl:mt-[75px] mx-4 mb-[45px]">
-                                <p className="font-medium text-[14px] leading-5 text-[#999999] xl:w-[455px] text-center xl:text-start">Dohodnite
-                                    si
-                                    nezáväzné stretnutie alebo sa u nás zastavte v čase otváracej doby. Radi Vás
-                                    privítame a zodpovieme Vaše otázky.</p>
+                                <p className="font-medium text-[14px] leading-5 text-[#999999] xl:w-[455px] text-center xl:text-start">
+                                    Dohodnite si nezáväzné stretnutie alebo sa u nás zastavte v čase otváracej doby.
+                                    Radi Vás privítame a zodpovieme Vaše otázky.
+                                </p>
                                 <div className="flex flex-col items-center xl:items-start">
                                 <span
                                     className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">PO - PIA</span>
                                     <span
-                                        className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">10.00 - 18.00</span>
+                                        className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">15.00 - 18.00</span>
                                 </div>
                                 <div className="flex flex-col items-center xl:items-start">
                                 <span
-                                    className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">SO - NE</span>
+                                    className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">SO</span>
+                                    <span
+                                        className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">10.00 - 15.00</span>
+                                </div>
+                                <div className="flex flex-col items-center xl:items-start">
+                                <span
+                                    className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">NE  a Sviatky</span>
                                     <span
                                         className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">Zatvorené</span>
                                 </div>
@@ -104,7 +109,7 @@ const Stretnutie = () => {
                                 </div>
                                 <Link href="https://goo.gl/maps/CVbzvKFDCXY9aeaK6">
                                     <button
-                                        className="hover:bg-primary font-medium text-[16px] leading-6 tracking-[0.1px] text-white py-[12px] px-[45px] bg-[#476761] mb-[55px] xl:mb-[75px]">Navigovať
+                                        className="hover:bg-primary font-medium text-[16px] xl:mt-[30px] leading-6 tracking-[0.1px] text-white py-[12px] px-[45px] bg-[#476761] mb-[55px] xl:mb-[75px] xl:max-w-[160px]">Navigovať
                                     </button>
                                 </Link>
                             </div>
@@ -116,7 +121,7 @@ const Stretnutie = () => {
                                 width={540}
                                 height={385}
                                 alt="Mapa"
-                                src={"/img/smallMap.jpg"}
+                                src={"/map.jpg"}
                                 loading={'eager'}
                             />
                         </div>

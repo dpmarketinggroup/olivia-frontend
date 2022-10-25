@@ -2,6 +2,8 @@ import Image from "next/image";
 import {Button} from "@components/ui";
 import {RectangleDarkIcon, RectangleLightIcon, RectangleMediumIcon} from "@components/icons";
 import {useMediaQuery} from "@mantine/hooks";
+import {useEffect, useRef} from "react";
+import {FaArrowsAltH} from "react-icons/fa";
 
 interface NegotiationProps {
     title: string;
@@ -22,9 +24,17 @@ const Negotiation = ({
                      }: NegotiationProps) => {
     const matches = useMediaQuery('(min-width: 1920px)');
     const matchesTablet = useMediaQuery('(min-width: 1280px)')
+    const ref = useRef<HTMLDivElement | null>(null);
+    useEffect(() => {
+
+        ref && ref.current!.scrollTo({
+            left: 350
+        })
+    }, []);
+
     return (
         <div className='flex justify-center'>
-            <div className="w-full flex flex-col">
+            <div className="w-full flex flex-col relative">
                 {!centerText ?
                     (
                         <div
@@ -45,15 +55,19 @@ const Negotiation = ({
                     )
                 }
                 <div
-                    className={`w-full xl:max-w-[1920px] h-[400px] xl:h-[800px] relative xl:mx-auto xl:mb-[-8px] ${matches && "pb-[80px]"}`}>
-                    <Image
-                        objectPosition={'center'}
-                        objectFit="cover"
-                        alt="hero image"
-                        layout={'fill'}
-                        src={"/img/map.jpg"}
-                        loading={'eager'}
-                    />
+                    ref={ref}
+                    className={`overflow-scroll xl:overflow-visible xl:mx-auto`}>
+                    <div className={'relative w-[1000px] xl:w-screen xl:max-w-[1920px] h-[450px] xl:h-[880px]'}>
+                        <Image
+                            objectPosition={'center'}
+                            objectFit="cover"
+                            alt="hero image"
+                            layout={'fill'}
+                            src={"/img/map.jpg"}
+                            priority={true}
+                            quality={100}
+                        />
+                    </div>
                     <div className={`${retail ? "hidden" : "hidden xl:block"} absolute bottom-[-52px] left-0`}>
                         <RectangleDarkIcon/>
                     </div>
@@ -95,11 +109,8 @@ const Negotiation = ({
                         className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[1170px] left-[1060px] -z-30`}>
                         <RectangleLightIcon/>
                     </div>
-                    <div
-                        className={`${lokalita ? "hidden xl:block" : "hidden"} absolute bottom-[950px] left-[800px] -z-30`}>
-                        <RectangleDarkIcon/>
-                    </div>
                 </div>
+                <FaArrowsAltH color={'white'} size={40} className={'xl:hidden shadow-xl absolute bottom-[1rem] inset-x-0 mx-auto'}/>
             </div>
         </div>
     );

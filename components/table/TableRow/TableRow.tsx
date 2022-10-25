@@ -58,8 +58,8 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
                         borderWidth: '0 20px 15px 20px',
                         borderColor: 'transparent transparent #fff transparent'
                     }}></div>
-                    <div className={'bg-white'}>
-                        <Image alt={apartmentNumber} src={img} width={200} height={140}/>
+                    <div className={'bg-white w-full max-w-[150px] h-[120px]'}>
+                        <Image alt={apartmentNumber} objectFit={'cover'} layout={'fill'} src={img}/>
                     </div>
                 </div>
             </div>

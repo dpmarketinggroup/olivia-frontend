@@ -1,5 +1,5 @@
 import {SyntheticEvent, useState} from "react";
-import {Checkbox, Textarea, TextInput, Input} from "@mantine/core";
+import {Checkbox, Textarea, TextInput, Input, Loader} from "@mantine/core";
 import Link from "next/link";
 import axios from "axios";
 import PhoneInput from "react-phone-number-input";
@@ -27,6 +27,8 @@ const Form
     const [phone, setPhone] = useState<E164Number>();
     const [message, setMessage] = useState('');
 
+    const [loading, setLoading] = useState(false);
+
     function getApartment() {
         if (!isClicked1 && !isClicked2) return;
         if (isClicked1) return "apartmán"
@@ -35,21 +37,25 @@ const Form
 
     async function handleSubmit(e: SyntheticEvent) {
         e.preventDefault();
-        if (!name || !surname || !email || !phone || !message) return;
+        if (!name || !surname || !email) return;
+
         try {
+            setLoading(true)
             await axios.post('/api/enquiry', {
                 body: JSON.stringify({
+                    type: `${meeting ? "stretnutie" : "kontakt"}`,
                     name,
                     surname,
                     email,
                     phone,
                     message,
-                    apartment: getApartment(),
+                    apartment: getApartment()
                 })
             })
         } catch (e) {
-           console.error(e);
+            console.log("Could not send to backend");
         }
+        setLoading(false)
         await router.push('/dakujeme')
     }
 
@@ -59,19 +65,28 @@ const Form
                 {
                     meeting &&
                     <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] items-center mb-[45px]">
-                        <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">Mám záujem o:</span>
-                        <Checkbox disabled={isClicked2 && true}
-                                  onClick={() => setClicked1(!isClicked1)}
-                                  label={
-                                      <>
+                        <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">Mám záujem o: </span>
+                        <Checkbox
+                            checked={isClicked1}
+                            onClick={() => {
+                                if (isClicked2) setClicked2(false);
+                                setClicked1(!isClicked1)
+                            }
+                            }
+                            label={
+                                <>
                     <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
                         apartmán
                     </span>
-                                      </>
-                                  } radius="xl"
+                                </>
+                            } radius="xl"
                         />
-                        <Checkbox disabled={isClicked1 && true}
-                                  onClick={() => setClicked2(!isClicked2)}
+                        <Checkbox
+                            checked={isClicked2}
+                                  onClick={() => {
+                                      if (isClicked1) setClicked1(false);
+                                      setClicked2(!isClicked2)
+                                  }}
                                   label={
                                       <>
                     <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
@@ -112,11 +127,11 @@ const Form
                     <Textarea
                         label={<><span className={isGreen ? "text-white" : "text-black"}>Správa</span></>}
                         value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Správa"
-                              radius="xs"
-                              minRows={6}
-                              maxRows={6}
+                        radius="xs"
+                        minRows={6}
+                        maxRows={6}
                     />
-                    <Checkbox label={
+                    <Checkbox required={true} label={
                         <>
                             <p className="text-[14px] leading-5 text-[#999999]">Súhlasím so spracovaním <Link
                                 href="/gdpr"><a
@@ -132,7 +147,8 @@ const Form
                         </>
                     } radius="xs" color="green"/>
                     <button
-                        className={`py-[12px] ${meeting ? " bg-[#89A6A2] hover:bg-[#476761]" : "bg-[#476761] hover:bg-primary"} text-white`}>Odoslať
+                        disabled={loading}
+                        className={`py-[12px] ${meeting ? " bg-[#89A6A2] hover:bg-[#476761]" : "bg-[#476761] hover:bg-primary"} text-white flex items-center justify-center gap-[10px]`}>Odoslať {loading && <Loader size={20}/>}
                     </button>
                 </div>
             </div>

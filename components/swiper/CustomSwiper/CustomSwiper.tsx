@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const CustomSwiper = () => {
     return (
-        <div className={`text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col`}>
+        <div className={`text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col xl:w-full xl:max-w-[1200px] xl:mx-auto`}>
             <div
-                className={`flex w-full justify-between xl:max-w-[1200px] items-center mb-[25px] xl:mb-[65px] xl:mx-auto`}>
+                className={`flex w-full justify-between items-center mb-[25px] xl:mb-[65px]`}>
                 <h3 className="text-[26px] leading-[46px] xl:text-[40px] xl:leading-[40px] font-bold text-center xl:text-left text-black">
                     Galéria
                 </h3>
@@ -29,8 +29,13 @@ const CustomSwiper = () => {
                     nextEl: ".int-next",
                     prevEl: ".int-prev",
                 }}
-                spaceBetween={30}
-                slidesPerView={'auto'}
+                spaceBetween={15}
+                slidesPerView={1}
+                breakpoints={{
+                    1280: {
+                        slidesPerView: 3
+                    }
+                }}
             >
                 {[
                     "/img/interier/1.jpg",
@@ -52,10 +57,10 @@ const CustomSwiper = () => {
                     "/img/interier/17.jpg",
                 ].map((src, i) => (
                     <SwiperSlide
-                        className={`xl:w-full xl:max-w-fit ${i === 0 && 'swiper-ml'}`}
+                        className={`xl:w-full`}
                         key={i}
                     >
-                        <Image alt={'Swiper image'} src={src} width={540} height={330}/>
+                        <Image priority={true} alt={'Swiper image'} src={src} width={540} height={330}/>
                     </SwiperSlide>
                 ))}
             </Swiper>

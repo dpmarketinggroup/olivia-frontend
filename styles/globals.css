@@ -35,3 +35,14 @@
 .PhoneInputInput:focus-visible {
   outline: none;
 }
+
+.bad {
+  fill: black !important;
+  opacity: 0.55 !important;
+}
+
+.scrollmenu::before,
+.scrollmenu::after {
+  content: "";
+  flex: 0 0 55%;
+}

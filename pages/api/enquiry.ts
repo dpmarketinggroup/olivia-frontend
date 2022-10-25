@@ -5,28 +5,50 @@ import axios from "axios";
 interface Data {
     name: string;
     surname: string;
-    phone: string;
+    phone?: string;
     email: string;
-    message: string;
+    message?: string;
     apartment?: string;
+    type: string;
+}
+
+function getListId(type: string) {
+    switch (type) {
+        case "stretnutie":
+            return 10
+        case "dopyt":
+            return 8
+        case "kontakt":
+            return 9
+    }
+    return 0;
 }
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
-    const {email, surname, name, phone, message, apartment} = JSON.parse(req.body.body) as Data;
-    const modifiedNum = phone.substring(1);
+    const {email, surname, name, phone, message, apartment, type} = JSON.parse(req.body.body) as Data;
+    // const modifiedNum =
     const url = "https://api.sendinblue.com/v3/contacts";
-
     if (req.method === "POST") {
+        let response = await axios.get(`https://api.sendinblue.com/v3/contacts/${email}`, {
+            headers: {
+                "Content-Type": "application/json",
+                accept: "application/json",
+                "api-key":
+                    "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",
+            },
+        });
         await axios.post(
             url,
             {
+                updateEnabled: true,
                 email,
                 attributes: {
                     FIRSTNAME: name,
                     LASTNAME: surname,
-                    SMS: Number(modifiedNum),
+                    SMS: phone ? Number(phone?.substring(1)) : null,
+                    ZAUJEM_O: apartment
                 },
-                listIds: [3],
+                listIds: [...response.data.listIds, getListId(type)],
                 emailBlacklisted: false,
             },
             {
@@ -52,11 +74,11 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
         await transporter.sendMail({
             from: {
                 name: 'Olivia Residence',
-                address: `${apartment ? 'predaj@oliviaresidence.sk' : 'info@oliviaresidence.sk'}`
+                address: `${type === 'dopyt' ? 'predaj@oliviaresidence.sk' : 'info@oliviaresidence.sk'}`
             },
             subject: 'Nový dopyt z webovej stránky',
             // bcc: 'leads@dpmg.dev',
-            to: `${apartment ? 'predaj@oliviaresidence.sk' : 'info@oliviaresidence.sk'}`,
+            to: `${type === 'dopyt' ? 'predaj@oliviaresidence.sk' : 'info@oliviaresidence.sk'}`,
             html: `
               <div>
                   <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>

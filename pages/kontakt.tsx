@@ -1,9 +1,8 @@
 import {Form, Hero, MapFooter} from "@components/common";
-import {Phone, EmailSign, PhoneHero} from "@components/icons";
+import { EmailSign, PhoneHero} from "@components/icons";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
-
 
 const Kontakt = () => {
     return (
@@ -42,7 +41,7 @@ const Kontakt = () => {
                         </div>
                         <p className="hidden xl:inline-block text-[#999999] w-full xl:max-w-[335px]">
                             V prípade otázok sa na mňa neváhajte obrátiť.
-                            Rada Vám poradím a zodpoviem Vaše otázky.
+                            Rád Vám poradím a zodpoviem Vaše otázky.
                         </p>
                     </div>
                 </div>

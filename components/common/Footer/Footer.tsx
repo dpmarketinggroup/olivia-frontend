@@ -1,17 +1,40 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, SyntheticEvent, useState} from "react";
 import Link from "next/link";
 import LogoSecondary from "../../icons/LogoSecondary";
-import {TextInput} from "@mantine/core";
+import {Loader, TextInput} from "@mantine/core";
 import PaperPlaneIcon from "../../icons/PaperPlane";
 import RectangleFooter from "../../icons/RectangleFooter";
 import BrandlyLogoIcon from "../../icons/BrandlyLogo";
 import DpLogoIcon from "../../icons/dpLogo";
+import axios from "axios";
+import {useRouter} from "next/router";
 
 interface FooterProps {
     toBottom?: boolean
 }
 
 const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
+    const [email, setEmail] = useState('');
+    const [loading, setLoading] = useState(false);
+    const router = useRouter()
+
+
+    async function handleSubmit(e: SyntheticEvent) {
+        e.preventDefault();
+        if (!email) return;
+        try {
+            setLoading(true);
+            await axios.post("/api/newsletter", {
+                body: JSON.stringify({email})
+            })
+        } catch (err) {
+            console.error(err);
+        }
+        setEmail('');
+        setLoading(false)
+        await router.push('/dakujeme-za-email')
+    }
+
     return (
         <div className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"} w-full green`}>
             <div>
@@ -21,8 +44,12 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                             <LogoSecondary/>
                             <p className="text-[14px] leading-[20px] text-white opacity-60 w-full xl:max-w-[330px]">Najnovšie
                                 informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
-                            <form className={'w-full'} onSubmit={(e) => e.preventDefault()}>
+                            <form className={'w-full'} onSubmit={handleSubmit}>
                                 <TextInput
+                                    type={'email'}
+                                    required={true}
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     sx={{
                                         width: '100%',
                                         '.mantine-TextInput-input': {
@@ -36,7 +63,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                         }
                                     }}
                                     className="xl:w-[350px] text-[16px] leading-6"
-                                    placeholder="Email" rightSection={<button><PaperPlaneIcon/></button>}
+                                    placeholder="Email" rightSection={<button disabled={loading} type={'submit'}>{loading ? <Loader size={15}/> : <PaperPlaneIcon/>}</button>}
                                     radius="xs"
                                 />
                             </form>
@@ -92,22 +119,30 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                         <RectangleFooter/>
                     </div>
                 </div>
-                <div className="flex gap-[50px] xl:gap-[130px] bg-[#000000] justify-center opacity-90">
-                    <p className="pl-4 xl:pl-[165px] text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">©
-                        2022 Olivia Residence.
-                        Všetky práva vyhradené.</p>
-                    <div className="hidden xl:flex gap-[10px] items-center">
-                        <p className="text-white text-[12px] leading-5">Branding and Webdesign by</p>
+                <div className="px-[1rem] xl:px-0 flex flex-col xl:flex-row gap-[25px] pb-[15px] xl:pb-0 xl:gap-[50px] xl:gap-[130px] bg-[#000000] justify-center opacity-90">
+                    <div className={'xl:flex xl:justify-between xl:w-full xl:max-w-[1200px]'}>
+                        <p className="text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">©
+                            2022 Olivia Residence.
+                            Všetky práva vyhradené.</p>
+                        <div className="hidden xl:flex gap-[10px] items-center">
+                            <p className="text-white text-[12px] leading-5">Branding and Webdesign by</p>
+                            <BrandlyLogoIcon/>
+                            <span className="text-white">|</span>
+                            <p className="text-white text-[12px] leading-5">Developed by</p>
+                            <DpLogoIcon/>
+                        </div>
+                        <Link href="/gdpr">
+                            <a className="pr-4 text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">Ochrana
+                                osobných údajov</a>
+                        </Link>
+                    </div>
+                    <div className="flex xl:hidden gap-[10px] items-center">
+                        <p className="text-white text-[9px]  xl:text-[12px] leading-5">Branding and Webdesign by</p>
                         <BrandlyLogoIcon/>
                         <span className="text-white">|</span>
                         <p className="text-white text-[12px] leading-5">Developed by</p>
                         <DpLogoIcon/>
                     </div>
-                    <Link href="/gdpr">
-                        <a className="pr-4 xl:pr-[165px] text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">Ochrana
-                            osobných údajov</a>
-                    </Link>
-
                 </div>
             </div>
         </div>

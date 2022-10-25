@@ -15,7 +15,7 @@ const PonukaBytov = () => {
             </Head>
             <div className="flex justify-center building mt-[50px] xl:mt-[70px]">
                 <div className="w-full xl:w-full">
-                    <div className="flex justify-center my-[70px] xl:mb-0">
+                    <div className="flex justify-center mt-[70px]">
                         <div className="m xl:mx-[165px]">
                             <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                                 <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
@@ -30,6 +30,9 @@ const PonukaBytov = () => {
                                     <div className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"}`}>
                                         <div
                                             className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
+                                            <Link href={'/podlazie/3'}>
+                                                <a className="py-[7px]">3. podlažie</a>
+                                            </Link>
                                             <Link href={'/podlazie/4'}>
                                                 <a className="py-[7px]">4. podlažie</a>
                                             </Link>

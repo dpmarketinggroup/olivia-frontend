@@ -39,7 +39,7 @@ const Lokalita = () => {
             bulletPoints: [
                 {icon: <Basket/>, label: "Fresh Market, Yeme a Kaufland v tesnej blízkosti"},
                 {icon: <Bag/>, label: "Nákupné centrum OC Vivo 7 min pešo"},
-                {icon: <SmilingHouse/>, label: "Množstvo škôl a skôlok v okolí"},
+                {icon: <SmilingHouse/>, label: "Množstvo škôl a škôlok v okolí"},
                 {icon: <PlaygroundIcon/>, label: "Detské ihriská v blízkosti"},
             ],
             reverse: true
@@ -47,7 +47,7 @@ const Lokalita = () => {
         {
             src: "bus.png",
             title: "Výhodné logistické pripojenie",
-            description: "Lokalita, z ktorej máte všade blízko. Či chete ísť do centra mesta, von z mesta, alebo vlakom za hranice Slovenska.",
+            description: "Lokalita, z ktorej máte všade blízko. Či chcete ísť do centra mesta, von z mesta, alebo vlakom za hranice Slovenska.",
             bulletPoints: [
                 {icon: <Scooter/>, label: "Elektrickou kolobežkou do mesta 10 min"},
                 {icon: <Flag/>, label: "3 zastávky MHD v blízkosti do 500m"},
@@ -58,7 +58,7 @@ const Lokalita = () => {
         {
             src: "sportPeople.png",
             title: "Aktivity a voľný čas",
-            description: "Miesto, ktoré splýva s Vašim aktívnym životným štýlom. Rekreačné aktivity a športoviská tu máte na dosah ruky.",
+            description: "Miesto, ktoré splýva s Vaším aktívnym životným štýlom. Rekreačné aktivity a športoviská tu máte na dosah ruky.",
             bulletPoints: [
                 {icon: <WeightIcon/>, label: "Fitness centrá v blízkom okolí"},
                 {icon: <Man/>, label: "Bežecká trať Kuchajda 5 min pešo"},
@@ -74,7 +74,7 @@ const Lokalita = () => {
                 <title>Lokalita | Olivia Residence</title>
             </Head>
             <Hero imgName="lokalitaHero" icon={<MapPoint fill="#89A6A2" size={45}/>} title="Lokalita"
-                  description="Dynamická lokalita so skvelými možnosťami.Rožňavská 8, Bratislava"/>
+                  description="Dynamická lokalita so skvelými možnosťami. Rožňavská 1A, Bratislava"/>
             {customDescriptionList.map((props, k) => (
                 <CustomDescription key={k} {...props} />
             ))}
@@ -84,10 +84,10 @@ const Lokalita = () => {
                 apartmánov</h2>
             <ApartmentEquipmentDescription/>
             <div className={'flex flex-col xl:flex-row gap-[10px] justify-center mt-[-50px] mb-[70px] xl:mb-[175px] mx-4 '}>
-                <Button variant={'outlined'}>
+                <Button href={'/o-projekte#vybavenie'} variant={'outlined'}>
                     Vybavenie apartmánov
                 </Button>
-                <Button variant={'filled'}>
+                <Button href={'/stretnutie'} variant={'filled'}>
                     Nezáväzné stretnutie
                 </Button>
             </div>
