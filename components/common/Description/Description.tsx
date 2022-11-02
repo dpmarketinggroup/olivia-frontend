@@ -33,7 +33,7 @@ const Description = ({
     <div
       className={`relative flex flex-col ${
         reverse ? "xl:flex-row-reverse" : "xl:flex-row"
-      } justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className} xl:mb-[125px]`}
+      } justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
       <div className={"shrink-0 mb-[25px] xl:mb-0"}>
         <Image
