@@ -25,8 +25,11 @@ const Equipment = ({ href, title }: IEquipment) => {
           <ListIcon />
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-3xl">{title}</h4>
-            <Link href={href} target={"_blank"}>
-              <a className="cursor-pointer text-green2 text-lg font-medium">
+            <Link href={href}>
+              <a
+                target={"_blank"}
+                className="cursor-pointer text-green2 text-lg font-medium"
+              >
                 Stiahnuť
               </a>
             </Link>
