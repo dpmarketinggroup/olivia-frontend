@@ -645,7 +645,7 @@ const ApartmentDetail = () => {
       </div>
       <Equipment
         title="Štandardné vybavenie"
-        href="/UCB_A4 letak_Hypo Olivia Residence_10 2022 _FINAL.pdf"
+        href="/OLIVIA štandardne vybavenie[68].pdf"
       />
       <MapFooter />
     </>
