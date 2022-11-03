@@ -62,7 +62,7 @@ const Building = () => {
         async function fetch() {
             const res = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts?pagination[pageSize]=200&populate=*&filters[dostupnost][$ne]=predaný`)
 
-            if (router.pathname === '/ponuka-bytov') {
+            if (router.pathname === '/ponuka-apartmanov') {
                 setOneRooms(res.data.data.filter((val: any) => val.attributes?.pocet_izieb === 'jedno-izbový'))
                 setTwoRooms(res.data.data.filter((val: any) => val.attributes?.pocet_izieb === 'dvoj-izbový'))
                 setOneAndHalfRooms(res.data.data.filter((val: any) => val.attributes?.pocet_izieb === 'jeden a pol-izbový'))

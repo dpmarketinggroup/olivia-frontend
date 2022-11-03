@@ -198,7 +198,7 @@ const OProjekte = () => {
                       Jozef Onderčo
                     </p>
                     <span className="text-[14px] leading-5">
-                      Fin. poradca | UniCredit Bank
+                      Kontaktná osoba pre hypotekárne financovanie.
                     </span>
                   </div>
                 </div>

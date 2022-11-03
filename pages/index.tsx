@@ -61,7 +61,7 @@ const Home = () => {
                   Nezáväzné stretnutie
                 </button>
               </Link>
-              <Link href="/ponuka-bytov">
+              <Link href="/ponuka-apartmanov">
                 <button className="w-full hover:bg-[#476761] hover:border-[#476761] font-medium text-[16px] leading-[24px] tracking-[-0.1px] xl:w-[210px] h-[50px] border border-white text-white">
                   Ponuka apartmánov
                 </button>
@@ -148,7 +148,7 @@ const Home = () => {
               </div>
             </div>
             <div className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] z-10">
-              <Link href="/ponuka-bytov">
+              <Link href="/ponuka-apartmanov">
                 <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761] text-center xl:text-left">
                   Výber poschodia
                 </a>

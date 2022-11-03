@@ -81,7 +81,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                     <a className="opacity-60 hover:opacity-100">Domovská
                                         stránka</a>
                                 </Link>
-                                <Link href="/ponuka-bytov">
+                                <Link href="/ponuka-apartmanov">
                                     <a className="opacity-60 hover:opacity-100">Apartmány</a>
                                 </Link>
                                 <Link href='/o-projekte'>
