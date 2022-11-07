@@ -287,7 +287,7 @@ const ApartmentDetail = () => {
                 }
               >
                 <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">
-                  {apartment.data.attributes.poschodie}. podlažie
+                  {apartment.data.attributes.poschodie}. poschodie
                 </span>
                 <div
                   className={`${
