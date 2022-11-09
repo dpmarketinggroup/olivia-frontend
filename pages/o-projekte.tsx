@@ -48,7 +48,7 @@ const OProjekte = () => {
         { icon: <SinkIcon />, label: "Sanita vo vysokej kvalite" },
         {
           icon: <GlassStarIcon />,
-          label: "Kvalitné materiály podlahy a obkladov",
+          label: "Kvalitné materiály, podlahy a obklady",
         },
       ],
     },
