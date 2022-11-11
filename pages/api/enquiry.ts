@@ -81,6 +81,7 @@ export default async function handler(
           ? "predaj@oliviaresidence.sk"
           : "info@oliviaresidence.sk"
       }`,
+
       html: `
               <div>
                   <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>
