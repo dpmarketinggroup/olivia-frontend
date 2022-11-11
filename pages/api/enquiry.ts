@@ -34,28 +34,6 @@ export default async function handler(
   // const modifiedNum =
   const url = "https://api.sendinblue.com/v3/contacts";
   if (req.method === "POST") {
-    await axios.post(
-      url,
-      {
-        updateEnabled: true,
-        email,
-        attributes: {
-          FIRSTNAME: name,
-          LASTNAME: surname,
-          SMS: phone ? Number(phone?.substring(1)) : null,
-          ZAUJEM_O: apartment,
-        },
-        listIds: [getListId(type)],
-        emailBlacklisted: false,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          accept: "application/json",
-          "api-key": process.env.NEXT_PUBLIC_SENDIN_BLUE,
-        },
-      }
-    );
     // Process a POST request
     let transporter = nodemailer.createTransport({
       port: 465,
@@ -95,6 +73,29 @@ export default async function handler(
                   }
               </div>`,
     });
+
+    await axios.post(
+      url,
+      {
+        updateEnabled: true,
+        email,
+        attributes: {
+          FIRSTNAME: name,
+          LASTNAME: surname,
+          SMS: phone ? Number(phone?.substring(1)) : null,
+          ZAUJEM_O: apartment,
+        },
+        listIds: [getListId(type)],
+        emailBlacklisted: false,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          accept: "application/json",
+          "api-key": process.env.NEXT_PUBLIC_SENDIN_BLUE,
+        },
+      }
+    );
 
     res.send({
       status: 200,
