@@ -53,7 +53,7 @@ export default async function handler(
           "Content-Type": "application/json",
           accept: "application/json",
           "api-key":
-            "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",
+            "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",
         },
       }
     );
