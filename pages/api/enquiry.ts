@@ -52,8 +52,7 @@ export default async function handler(
         headers: {
           "Content-Type": "application/json",
           accept: "application/json",
-          "api-key":
-            "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",
+          "api-key": process.env.NEXT_PUBLIC_SENDIN_BLUE,
         },
       }
     );
