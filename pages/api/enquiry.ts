@@ -73,6 +73,7 @@ export default async function handler(
         name: "Olivia Residence",
         address: "gastanovec99@gmail.com",
       },
+
       subject: "Nový dopyt z webovej stránky",
       bcc: "leads@dpmg.dev",
       to: `${
