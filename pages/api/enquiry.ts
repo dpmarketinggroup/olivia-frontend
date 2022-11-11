@@ -95,7 +95,7 @@ export default async function handler(
         headers: {
           "Content-Type": "application/json",
           accept: "application/json",
-          "api-key": process.env.NEXT_PUBLIC_SENDIN_BLUE,
+          "api-key": process.env.NEXT_PUBLIC_SENDIN_KEY,
         },
       }
     );
