@@ -48,9 +48,12 @@ export default async function handler(
     await transporter.sendMail({
       from: {
         name: "Olivia Residence",
-        address: "gastanovec99@gmail.com",
+        address: `${
+          type === "dopyt"
+            ? "predaj@oliviaresidence.sk"
+            : "info@oliviaresidence.sk"
+        }`,
       },
-
       subject: "Nový dopyt z webovej stránky",
       bcc: "leads@dpmg.dev",
       to: `${
