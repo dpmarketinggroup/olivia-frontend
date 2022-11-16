@@ -124,12 +124,12 @@ const OProjekte = () => {
                   {
                     offer: "01.",
                     description:
-                      "Podpis Rezervačnej zmluvy a zaplatenie rezervačného poplatku 5000€, ktorý bude vrátený po podpise Zmluvy o budúcej kúpnej zmluve.",
+                      "Podpis Zmluvy o budúcej kúpnej zmluve a zaplatenie 20% kúpnej ceny.",
                   },
                   {
                     offer: "02.",
                     description:
-                      "Podpis Zmluvy o budúcej kúpnej zmluve a zaplatenie 20% kúpnej ceny.",
+                      "Podpis kúpnej zmluvy po vydaní kolaudačného rozhodnutia a zaplatenie zvyšnej časti kúpnej ceny.",
                   },
                 ].map(({ offer, description }, index) => (
                   <div
@@ -145,15 +145,10 @@ const OProjekte = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col xl:flex-row gap-[30px]  bg-[background: #F5F5F5] -translate-y-[60%] xl:-translate-y-1/2 h-[260px]">
+              <div className="flex flex-col xl:justify-center xl:flex-row gap-[30px]  bg-[background: #F5F5F5] -translate-y-[60%] xl:-translate-y-1/2 h-[260px]">
                 {[
                   {
                     offer: "03.",
-                    description:
-                      "Podpis kúpnej zmluvy po vydaní kolaudačného rozhodnutia a zaplatenie zvyšnej časti kúpnej ceny.",
-                  },
-                  {
-                    offer: "04.",
                     description:
                       "Odovzdanie Vášho nového rezidenčného apartmánu.",
                   },

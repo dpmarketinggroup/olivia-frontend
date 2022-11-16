@@ -63,7 +63,7 @@ export const CommonDescription = () => {
         Moderné mestské bývanie
       </h3>
       <p className={"text-black/60 mt-[20px]"}>
-        Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval za steny
+        Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval steny
         ich bytu. Pre ľudí, ktorí chcú mať ich obľúbené aktivity na dosah ruky.
         Pre ľudí, ktorí chcú svoj čas využívať efektívne. A pre ľudí, ktorí chcú
         mať z bývania zážitok. Olivia nie je len bývanie, je to životný štýl.
@@ -123,12 +123,10 @@ export const ApartmentEquipmentDescription = () => {
             title: "Apartmán na kľúč",
             description: (
               <p className={"text-[#676766]"}>
-                Bývanie v Olivia Residence je úplne bezstarostné. Ponúkame{" "}
-                <span className={"font-bold"}>
-                  komplexne zariadené apartmány vrátane kompletne vybavenej
-                  kuchyne so spotrebičmi a sanitou.
-                </span>{" "}
-                Vašou jedinou starosťou bude výber nábytku.
+                Bývanie v Olivia Residence je úplne bezstarostné. Ponúkame
+                komplexne zariadené apartmány, vrátane kompletne vybavenej
+                kuchyne so spotrebičmi a sanitou. Vašou jedinou starosťou bude
+                výber nábytku.
               </p>
             ),
           },

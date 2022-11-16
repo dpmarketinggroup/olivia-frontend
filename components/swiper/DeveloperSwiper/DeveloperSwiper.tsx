@@ -16,7 +16,7 @@ const DeveloperSwiper = () => {
             Developer BZ Group
           </h3>
           <p className={"text-[#676766] xl:max-w-[540px]"}>
-            Sme skúsení tím ľudí s dlhoročnými skúsenosťami, ktorý má za sebou
+            Sme dynamický tím ľudí s dlhoročnými skúsenosťami, ktorý má za sebou
             mnoho projektov situovaných po celom Slovensku.
           </p>
         </div>
