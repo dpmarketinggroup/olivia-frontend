@@ -128,8 +128,7 @@ const OProjekte = () => {
                   },
                   {
                     offer: "02.",
-                    description:
-                      "Podpis kúpnej zmluvy po vydaní kolaudačného rozhodnutia a zaplatenie zvyšnej časti kúpnej ceny.",
+                    description: "Zaplatenie 20% kúpnej ceny.",
                   },
                 ].map(({ offer, description }, index) => (
                   <div
@@ -149,6 +148,11 @@ const OProjekte = () => {
                 {[
                   {
                     offer: "03.",
+                    description:
+                      "Podpis kúpnej zmluvy po vydaní kolaudačného rozhodnutia a zaplatenie zvyšnej časti kúpnej ceny.",
+                  },
+                  {
+                    offer: "04.",
                     description:
                       "Odovzdanie Vášho nového rezidenčného apartmánu.",
                   },
