@@ -123,11 +123,11 @@ const OProjekte = () => {
                 {[
                   {
                     offer: "01.",
-                    description: "Podpis Zmluvy o budúcej kúpnej zmluve ",
+                    description: "Podpis Zmluvy o budúcej kúpnej zmluve.",
                   },
                   {
                     offer: "02.",
-                    description: "zaplatenie 20% kúpnej ceny.",
+                    description: "Úhrada vo výške 20% z kúpnej ceny.",
                   },
                 ].map(({ offer, description }, index) => (
                   <div
