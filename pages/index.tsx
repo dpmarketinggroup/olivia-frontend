@@ -26,9 +26,15 @@ import {
 } from "@components/common/Description/Description";
 import { Button } from "@components/ui";
 import React, { useState } from "react";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useRouter} from "next/router";
+import {useTranslation} from "next-i18next";
 
 const Home = () => {
   const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false);
+
+  const {t: translate} = useTranslation('home');
+
   return (
     <>
       <Head>
@@ -51,19 +57,18 @@ const Home = () => {
           <div className="w-full xl:max-w-[1400px] xl:mx-auto my-auto">
             <div className="w-[300px] xl:w-[600px] mb-[40px] mx-4 xl:mx-0">
               <h1 className="font-bold text-[34px] xl:text-[56px] leading-[40px] xl:leading-[60px] tracking-[-1px] text-white">
-                Moderný štýl bývania v dynamickej lokalite so skvelými
-                možnosťami
+                {translate("hero-heading")}
               </h1>
             </div>
             <div className="flex flex-col xl:flex-row gap-[10px] mx-4 xl:mx-0">
               <Link href="/stretnutie">
                 <button className="w-full hover:bg-[#0E3F3B] bg-[#89A6A2] xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px]">
-                  Nezáväzné stretnutie
+                  {translate("button-meeting")}
                 </button>
               </Link>
               <Link href="/ponuka-apartmanov">
                 <button className="w-full hover:bg-[#476761] hover:border-[#476761] font-medium text-[16px] leading-[24px] tracking-[-0.1px] xl:w-[210px] h-[50px] border border-white text-white">
-                  Ponuka apartmánov
+                  {translate("hero-button-white")}
                 </button>
               </Link>
             </div>
@@ -86,7 +91,7 @@ const Home = () => {
           <div className="flex flex-col gap-[30px] items-center mb-[50px] ">
             <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />
             <h1 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] text-center xl:text-left">
-              Ponuka apartmánov
+              {translate("filter-heading")}
             </h1>
           </div>
           <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:justify-between xl:mr-[180px]">
@@ -97,7 +102,7 @@ const Home = () => {
               }
             >
               <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">
-                7. poschodie
+                {translate("filter-drop-down-7")}
               </span>
               <div
                 className={`${
@@ -106,40 +111,40 @@ const Home = () => {
               >
                 <div className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
                   <Link href={"/podlazie/3"}>
-                    <a className="py-[7px]">3. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-3")}</a>
                   </Link>
                   <Link href={"/podlazie/4"}>
-                    <a className="py-[7px]">4. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-4")}</a>
                   </Link>
                   <Link href={"/podlazie/5"}>
-                    <a className="py-[7px]">5. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-5")}</a>
                   </Link>
                   <Link href={"/podlazie/6"}>
-                    <a className="py-[7px]">6. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-6")}</a>
                   </Link>
                   <Link href={"/podlazie/7"}>
-                    <a className="py-[7px]">7. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-7")}</a>
                   </Link>
                   <Link href={"/podlazie/8"}>
-                    <a className="py-[7px]">8. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-8")}</a>
                   </Link>
                   <Link href={"/podlazie/9"}>
-                    <a className="py-[7px]">9. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-9")}</a>
                   </Link>
                   <Link href={"/podlazie/10"}>
-                    <a className="py-[7px]">10. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-10")}</a>
                   </Link>
                   <Link href={"/podlazie/11"}>
-                    <a className="py-[7px]">11. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-11")}</a>
                   </Link>
                   <Link href={"/podlazie/12"}>
-                    <a className="py-[7px]">12. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-12")}</a>
                   </Link>
                   <Link href={"/podlazie/13"}>
-                    <a className="py-[7px]">13. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-13")}</a>
                   </Link>
                   <Link href={"/podlazie/14"}>
-                    <a className="py-[7px]">14. poschodie</a>
+                    <a className="py-[7px]">{translate("filter-drop-down-14")}</a>
                   </Link>
                 </div>
               </div>
@@ -150,16 +155,16 @@ const Home = () => {
             <div className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] z-10">
               <Link href="/ponuka-apartmanov">
                 <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761] text-center xl:text-left">
-                  Výber poschodia
+                  {translate("filter-step-1")}
                 </a>
               </Link>
               <RightArrow stroke="#476761" />
               <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033] text-center xl:text-left">
-                Výber apartmánu
+                  {translate("filter-step-2")}
               </span>
               <RightArrow stroke="#00000033" />
               <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033] text-center xl:text-left">
-                Detail apartmánu
+                {translate("filter-step-3")}
               </span>
             </div>
             {/*<div className="hidden xl:inline-block relative left-[285px]">*/}
@@ -171,7 +176,7 @@ const Home = () => {
       <BuildingFilter />
       <ApartmentSwiper />
       <Negotiation
-        title={"Lokalita v centre diania"}
+        title={translate("negotiation-heading")}
         subtitle={"Rožňavská 1A, Bratislava"}
       />
       <div className={"flex flex-col py-[70px] xl:py-[150px] bg-[#F5F5F5]"}>
@@ -180,7 +185,7 @@ const Home = () => {
             "text-[#0E3F3B] font-bold text-[40px] leading-[48px] mx-4 xl:mx-0 xl:text-center"
           }
         >
-          Vybavenie apartmánov
+          {translate("description-main-heading")}
         </h2>
         <ApartmentEquipmentDescription />
         <div
@@ -189,10 +194,10 @@ const Home = () => {
           }
         >
           <Link href={"/o-projekte#vybavenie"}>
-            <Button variant={"outlined"}>Vybavenie apartmánov</Button>
+            <Button variant={"outlined"}>{translate("button-home-amenities")}</Button>
           </Link>
           <Link href={"/stretnutie"}>
-            <Button variant={"filled"}>Nezáväzné stretnutie</Button>
+            <Button variant={"filled"}>{translate("button-meeting")}</Button>
           </Link>
         </div>
       </div>
@@ -204,5 +209,18 @@ const Home = () => {
     </>
   );
 };
+
+interface StaticProps{
+  locale: string
+}
+
+export async function getStaticProps({locale}:StaticProps){
+  return{
+    props:{
+      ...(await serverSideTranslations(locale, ['home']))
+      //Will be passed to the page component as props
+    }
+  }
+}
 
 export default Home;

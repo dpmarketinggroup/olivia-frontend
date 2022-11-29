@@ -2,14 +2,16 @@ import {SwiperSlide, Swiper} from "swiper/react";
 import {LeftArrow, RightArrow} from "@components/icons";
 import {Navigation} from "swiper";
 import Image from "next/image";
+import {useTranslation} from "next-i18next";
 
 const CustomSwiper = () => {
+    const {t: translate} = useTranslation('home');
     return (
         <div className={`text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col xl:w-full xl:max-w-[1200px] xl:mx-auto`}>
             <div
                 className={`flex w-full justify-between items-center mb-[25px] xl:mb-[65px]`}>
                 <h3 className="text-[26px] leading-[46px] xl:text-[40px] xl:leading-[40px] font-bold text-center xl:text-left text-black">
-                    Galéria
+                    {translate("gallery-swiper-heading")}
                 </h3>
                 <div className="gap-[5px] flex">
                     <div className={'bg-black/20 w-[20px] h-[20px] flex items-center justify-center'}>

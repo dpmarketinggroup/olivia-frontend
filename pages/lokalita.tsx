@@ -17,6 +17,8 @@ import {
 } from "@components/icons";
 import {ApartmentEquipmentDescription, CustomDescription} from "@components/common/Description/Description";
 import {Button} from "@components/ui";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useTranslation} from "next-i18next";
 
 type Bulletpoint = {
     icon: JSX.Element, label: string
@@ -31,39 +33,40 @@ interface CustomDescriptionProps {
 }
 
 const Lokalita = () => {
+    const {t: translate} = useTranslation('home');
     const customDescriptionList: CustomDescriptionProps[] = [
         {
             src: "twoGirls.png",
-            title: "Občianska vybavenosť",
-            description: "Rozmanitý výber potravín a obchodov v tesnej blízkosti, kultúrne podujatia vo Fresh Market, banka, pošta, klientské centrum a mnoho iných služieb v okolí, ktoré urobia z Vášho bývania komfortný zážitok.",
+            title: translate("description-lokalita-1-heading"),
+            description: translate("description-lokalita-1-description"),
             bulletPoints: [
-                {icon: <Basket/>, label: "Fresh Market, Yeme a Kaufland v tesnej blízkosti"},
-                {icon: <Bag/>, label: "Nákupné centrum OC Vivo 7 min pešo"},
-                {icon: <SmilingHouse/>, label: "Množstvo škôl a škôlok v okolí"},
-                {icon: <PlaygroundIcon/>, label: "Detské ihriská v blízkosti"},
+                {icon: <Basket/>, label: translate("description-lokalita-1-bullet-1")},
+                {icon: <Bag/>, label: translate("description-lokalita-1-bullet-2")},
+                {icon: <SmilingHouse/>, label: translate("description-lokalita-1-bullet-3")},
+                {icon: <PlaygroundIcon/>, label: translate("description-lokalita-1-bullet-4")},
             ],
             reverse: true
         },
         {
             src: "bus.png",
-            title: "Výhodné logistické pripojenie",
-            description: "Lokalita, z ktorej máte všade blízko. Či chcete ísť do centra mesta, von z mesta, alebo vlakom za hranice Slovenska.",
+            title: translate("description-lokalita-2-heading"),
+            description:  translate("description-lokalita-2-description"),
             bulletPoints: [
-                {icon: <Scooter/>, label: "Elektrickou kolobežkou do mesta 10 min"},
-                {icon: <Flag/>, label: "3 zastávky MHD v blízkosti do 500m"},
-                {icon: <RingRoadArrow/>, label: "Obchvat D4 8 min autom"},
-                {icon: <TrainIcon/>, label: "Vlaková stanica Nové Mesto 10 min pešo"},
+                {icon: <Scooter/>, label: translate("description-lokalita-2-bullet-1")},
+                {icon: <Flag/>, label:  translate("description-lokalita-2-bullet-2")},
+                {icon: <RingRoadArrow/>, label:  translate("description-lokalita-2-bullet-3")},
+                {icon: <TrainIcon/>, label: translate("description-lokalita-2-bullet-4")},
             ],
         },
         {
             src: "sportPeople.png",
-            title: "Aktivity a voľný čas",
-            description: "Miesto, ktoré splýva s Vaším aktívnym životným štýlom. Rekreačné aktivity a športoviská tu máte na dosah ruky.",
+            title: translate("description-lokalita-3-heading"),
+            description:  translate("description-lokalita-3-description"),
             bulletPoints: [
-                {icon: <WeightIcon/>, label: "Fitness centrá v blízkom okolí"},
-                {icon: <Man/>, label: "Bežecká trať Kuchajda 5 min pešo"},
-                {icon: <TennisIcon/>, label: "Tenisové kurty, bowling a iné športové centrá v blízkom okolí"},
-                {icon: <FootballIcon/>, label: "Futbalové a basketbalové ihriská v blízkosti"},
+                {icon: <WeightIcon/>, label: translate("description-lokalita-3-bullet-1")},
+                {icon: <Man/>, label: translate("description-lokalita-3-bullet-2")},
+                {icon: <TennisIcon/>, label: translate("description-lokalita-3-bullet-3")},
+                {icon: <FootballIcon/>, label:translate("description-lokalita-3-bullet-4")},
             ],
             reverse: true
         }
@@ -73,26 +76,39 @@ const Lokalita = () => {
             <Head>
                 <title>Lokalita | Olivia Residence</title>
             </Head>
-            <Hero imgName="lokalitaHero" icon={<MapPoint fill="#89A6A2" size={45}/>} title="Lokalita"
-                  description="Dynamická lokalita so skvelými možnosťami. Rožňavská 1A, Bratislava"/>
+            <Hero imgName="lokalitaHero" icon={<MapPoint fill="#89A6A2" size={45}/>} title={translate("hero-lokalita-title")}
+                  description={translate("hero-lokalita-subtitle")}/>
             {customDescriptionList.map((props, k) => (
                 <CustomDescription key={k} {...props} />
             ))}
-            <Negotiation title="Rožňavská 1A, Bratislava" subtitle="Lokalita, v ktorej máte všetko na dosah."
+            <Negotiation title="Rožňavská 1A, Bratislava" subtitle={translate("negotiation-subheading")}
                          centerText={true} lokalita={true}/>
-            <h2 className={'mt-[175px] font-bold text-[40px] leading-[48px] tracking-[-0.5] text-[#0E3F3B] mx-4 xl:mx-0 xl:text-center'}>Vybavenie
-                apartmánov</h2>
+            <h2 className={'mt-[175px] font-bold text-[40px] leading-[48px] tracking-[-0.5] text-[#0E3F3B] mx-4 xl:mx-0 xl:text-center'}>{translate("description-main-heading")}</h2>
             <ApartmentEquipmentDescription/>
             <div className={'flex flex-col xl:flex-row gap-[10px] justify-center mt-[-50px] mb-[70px] xl:mb-[175px] mx-4 '}>
                 <Button href={'/o-projekte#vybavenie'} variant={'outlined'}>
-                    Vybavenie apartmánov
+                    {translate("button-home-amenities")}
                 </Button>
                 <Button href={'/stretnutie'} variant={'filled'}>
-                    Nezáväzné stretnutie
+                    {translate("button-meeting")}
                 </Button>
             </div>
             <MapFooter/>
         </>
     )
 }
+
+interface StaticProps{
+    locale: string
+}
+
+export async function getStaticProps({locale}:StaticProps){
+    return{
+        props:{
+            ...(await serverSideTranslations(locale, ['home']))
+            //Will be passed to the page component as props
+        }
+    }
+}
+
 export default Lokalita;

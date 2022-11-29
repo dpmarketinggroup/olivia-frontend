@@ -3,6 +3,7 @@ import Image from "next/image";
 import {RectangleDarkIcon, RectangleLightIcon, RectangleMediumIcon} from "@components/icons";
 import React from "react";
 import RectangleLight from "@components/icons/RectangleLight";
+import {useTranslation} from "next-i18next";
 
 interface HeroProps {
     imgName: string,
@@ -19,6 +20,7 @@ const Hero = ({
                   description,
                     withRectangles = false,
               }: HeroProps) => {
+    const {t: translate} = useTranslation('home');
     return (
         <div className="flex justify-center mt-[60px]">
             <div className="h-[460px] w-full xl:max-w-[1920px] mb-[60px] xl:mb-[140px] relative">
@@ -44,7 +46,7 @@ const Hero = ({
                     <Link href="/stretnutie">
                         <button
                             className="hover:bg-primary bg-[#89A6A2] w-full xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px]">
-                            Nezáväzné stretnutie
+                            {translate("button-meeting")}
                         </button>
                     </Link>
                     <div className={`${withRectangles ? "hidden xl:block" : "hidden"} absolute -bottom-[224px] -left-[260px]`}>

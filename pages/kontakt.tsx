@@ -3,17 +3,20 @@ import { EmailSign, PhoneHero} from "@components/icons";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
+import {useTranslation} from "next-i18next";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 const Kontakt = () => {
+    const {t: translate} = useTranslation('home');
+
     return (
         <div className={'flex flex-col '}>
             <Head>
                 <title>Kontakt | Olivia Residence</title>
             </Head>
-            <Hero imgName="kontaktHero" icon={<PhoneHero/>} title="Kontakt"/>
+            <Hero imgName="kontaktHero" icon={<PhoneHero/>} title={translate("hero-contact-heading")}/>
             <div className="mx-auto flex flex-col">
-                <p className="font-medium text-[16px] leading-6 mb-[20px] text-center xl:text-start">V prípade
-                    otázok nás neváhajte kontaktovať</p>
+                <p className="font-medium text-[16px] leading-6 mb-[20px] text-center xl:text-start">{translate("form-heading")}</p>
                 <div className="flex flex-col xl:flex-row gap-[40px] xl:gap-[135px]">
                     <div className="xl:mb-[125px]">
                         <Form isGreen={false}/>
@@ -49,6 +52,19 @@ const Kontakt = () => {
             <MapFooter/>
         </div>
     )
+}
+
+interface StaticProps{
+    locale: string
+}
+
+export async function getStaticProps({locale}:StaticProps){
+    return{
+        props:{
+            ...(await serverSideTranslations(locale, ['home']))
+            //Will be passed to the page component as props
+        }
+    }
 }
 
 export default Kontakt;

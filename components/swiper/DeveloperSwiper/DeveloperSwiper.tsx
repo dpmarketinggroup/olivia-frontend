@@ -2,8 +2,10 @@ import {LeftArrow, LogoBZ, RightArrow} from "@components/icons";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper";
 import Image from "next/image";
+import {useTranslation} from "next-i18next";
 
 const DeveloperSwiper = () => {
+    const {t: translate} = useTranslation('home');
     return (
         <div className={`text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col w-full xl:max-w-[1200px] xl:mx-auto`}>
             <div
@@ -13,8 +15,7 @@ const DeveloperSwiper = () => {
                         Developer BZ Group
                     </h3>
                     <p className={'text-[#676766] xl:max-w-[540px]'}>
-                        Sme skúsení tím ľudí s dlhoročnými skúsenosťami, ktorý má za sebou mnoho projektov situovaných
-                        po celom Slovensku.
+                        {translate("developer-swiper-description")}
                     </p>
                 </div>
                 <div className={'flex xl:flex-col justify-between items-end mt-[35px] xl:mt-0'}>

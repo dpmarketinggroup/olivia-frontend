@@ -8,6 +8,7 @@ import BrandlyLogoIcon from "../../icons/BrandlyLogo";
 import DpLogoIcon from "../../icons/dpLogo";
 import axios from "axios";
 import {useRouter} from "next/router";
+import {useTranslation} from "next-i18next";
 
 interface FooterProps {
     toBottom?: boolean
@@ -16,7 +17,8 @@ interface FooterProps {
 const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
     const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false);
-    const router = useRouter()
+    const router = useRouter();
+    const {t: translate} = useTranslation('home');
 
 
     async function handleSubmit(e: SyntheticEvent) {
@@ -42,8 +44,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                     <div className="flex flex-col xl:flex-row xl:gap-[205px] items-center xl:items-start justify-between mx-auto xl:max-w-[1200px]">
                         <div className="flex flex-col justify-center gap-[26px] pt-[45px] w-full">
                             <LogoSecondary/>
-                            <p className="text-[14px] leading-[20px] text-white opacity-60 w-full xl:max-w-[330px]">Najnovšie
-                                informácie o projekte Olivia Residence priamo do Vašej schránky.</p>
+                            <p className="text-[14px] leading-[20px] text-white opacity-60 w-full xl:max-w-[330px]">{translate("footer-description")}</p>
                             <form className={'w-full'} onSubmit={handleSubmit}>
                                 <TextInput
                                     type={'email'}
@@ -67,29 +68,27 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                     radius="xs"
                                 />
                             </form>
-                            <p className="text-[12px] leading-[20px] opacity-40 text-white xl:max-w-[350px] pb-[25px]">Kliknutím
-                                na tlačidlo potvrdzujete, že súhlasíte s našimi podmienkami spracovania
+                            <p className="text-[12px] leading-[20px] opacity-40 text-white xl:max-w-[350px] pb-[25px]">{translate("footer-click-text-first-part")}
                                 <Link href="/gdpr">
-                                    <a className="underline underline-offset-[3px]"> osobných údajov.</a>
-                                </Link></p>
+                                    <a className="underline underline-offset-[3px]">{translate("footer-click-text-second-part")}</a>
+                                </Link>
+                            </p>
                         </div>
                         <div
                             className="flex flex-col gap-[15px] xl:flex-row xl:gap-[100px] justify-end xl:pt-[80px] pb-[20px] xl:pb-0 w-full text-center xl:text-left">
                             <div
                                 className="hidden md:flex flex-col gap-[15px] font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white">
                                 <Link href='/'>
-                                    <a className="opacity-60 hover:opacity-100">Domovská
-                                        stránka</a>
+                                    <a className="opacity-60 hover:opacity-100">{translate("footer-link-home")}</a>
                                 </Link>
                                 <Link href="/ponuka-apartmanov">
-                                    <a className="opacity-60 hover:opacity-100">Apartmány</a>
+                                    <a className="opacity-60 hover:opacity-100">{translate("footer-link-apartments")}</a>
                                 </Link>
                                 <Link href='/o-projekte'>
-                                    <a className="opacity-60 hover:opacity-100">O
-                                        projekte</a>
+                                    <a className="opacity-60 hover:opacity-100">{translate("footer-link-about")}</a>
                                 </Link>
                                 <Link href='/lokalita'>
-                                    <a className="opacity-60 hover:opacity-100">Lokalita</a>
+                                    <a className="opacity-60 hover:opacity-100">{translate("footer-link-location")}</a>
                                 </Link>
                             </div>
                             <div
@@ -98,15 +97,15 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                                 {/*    <a>Novinky</a>*/}
                                 {/*</Link>*/}
                                 <Link href="/retail">
-                                    <a className="opacity-60 hover:opacity-100">Retail</a>
+                                    <a className="opacity-60 hover:opacity-100">{translate("footer-link-retail")}</a>
                                 </Link>
                                 <Link href="/kontakt">
-                                    <a className="opacity-60 hover:opacity-100">Kontakt</a>
+                                    <a className="opacity-60 hover:opacity-100">{translate("footer-link-contact")}</a>
                                 </Link>
                             </div>
                             <div
                                 className=" flex flex-col gap-[15px] items-start xl:items-end text-center xl:text-left font-medium text-[14px] xl:text-[16px] leading-5 xl:leading-6 text-white opacity-60">
-                                <h5>Predajné miesto</h5>
+                                <h5>{translate("footer-sale-place")}</h5>
                                 <h5>Rožňavská 1A</h5>
                                 <h5>831 04 Bratislava</h5>
                                 <Link href={'mailto:info@oliviaresidence.sk'}>
@@ -121,9 +120,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                 </div>
                 <div className="px-[1rem] xl:px-0 flex flex-col xl:flex-row gap-[25px] pb-[15px] xl:pb-0 xl:gap-[50px] xl:gap-[130px] bg-[#000000] justify-center opacity-90">
                     <div className={'xl:flex xl:justify-between xl:w-full xl:max-w-[1200px]'}>
-                        <p className="text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">©
-                            2022 Olivia Residence.
-                            Všetky práva vyhradené.</p>
+                        <p className="text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">{translate("footer-all-rights")}</p>
                         <div className="hidden xl:flex gap-[10px] items-center">
                             <p className="text-white text-[12px] leading-5">Branding and Webdesign by</p>
                             <BrandlyLogoIcon/>
@@ -132,8 +129,7 @@ const Footer: FunctionComponent<FooterProps> = ({toBottom = false}) => {
                             <DpLogoIcon/>
                         </div>
                         <Link href="/gdpr">
-                            <a className="pr-4 text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">Ochrana
-                                osobných údajov</a>
+                            <a className="pr-4 text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">{translate("footer-protection")}</a>
                         </Link>
                     </div>
                     <div className="flex xl:hidden gap-[10px] items-center">

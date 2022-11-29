@@ -1,0 +1,208 @@
+{
+  "hero-heading": "Moderný štýl bývania v dynamickej lokalite so skvelými možnosťami",
+  "hero-button-white": "Ponuka apartmánov",
+  "button-meeting": "Nezáväzné stretnutie",
+
+
+  "hero-lokalita-title": "Lokalita",
+  "hero-lokalita-subtitle": "Dynamická lokalita so skvelými možnosťami. Rožňavská 1A, Bratislava",
+
+  "hero-o-projekte": "Všetky podstatné informácie o Vašom novom bývaní na jednom mieste.",
+
+  "hero-retail-title": "Retail",
+  "hero-retail-subtitle": "Lukratívna lokalita pre život aj biznis",
+
+  "hero-contact-heading": "Kontakt",
+
+  "hero-stretnutie-heading": "Nezáväzné stretnutie v Predajnom mieste",
+  "hero-stretnutie-subheading-1": "Vyplňte formulár a zvoľte si preferovaný dátum a čas stretnutia.",
+  "hero-stretnutie-subheading-2": "Náš predajca Vás bude následne kontaktovať a potvrdí Vám termín stretnutia.",
+
+
+
+  "form-first-name": "Meno",
+  "form-interested-in": "Mám záujem o:",
+  "form-interested-apartment": "apartmán",
+  "form-interested-commercial": "obchodný priestor",
+  "form-second-name": "Priezvisko",
+  "form-email": "Email",
+  "form-number": "Tel. č.",
+  "form-message": "Správa",
+  "form-check-1-1": "Súhlasím so spracovaním",
+  "form-check-1-2": "osobných údajov",
+  "form-check-2": "Chcem aby ste mi zasielali novinky o projekte",
+  "form-button": "Odoslať",
+  "form-heading": "V prípade otázok nás neváhajte kontaktovať",
+
+
+  "timeline-1-heading": "Rezervácie",
+  "timeline-1-span": "3. kvartál",
+  "timeline-2-heading": "Výstavba",
+  "timeline-2-span": "4. kvartál",
+  "timeline-3-heading": "Kolaudácia",
+  "timeline-4-span": "2. kvartál",
+
+  "retail-section-heading-1": "Prenájom obchodného priestoru",
+  "retail-section-heading-2": "Pôdorys na mieru",
+  "retail-section-description-1-first-part": "Prenajmite si ",
+  "retail-section-description-1-second-part": "obchodný priestor v dynamickej lokalite",
+  "retail-section-description-1-third-part": "kde Váš biznis určite nesplynie s konkurenciou.",
+  "retail-section-description-2-first-part": "Pre prvých pár záujemcov ponúkame jedinečnú možnosť",
+  "retail-section-description-2-second-part": "návrhu obchodného priestoru na mieru",
+  "retail-section-description-2-third-part": "podľa Vašich potrieb",
+
+
+  "description-heading": "Moderné mestské bývanie",
+  "description-paragraph": "Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval za steny ich bytu. Pre ľudí, ktorí chcú mať ich obľúbené aktivity na dosah ruky. Pre ľudí, ktorí chcú svoj čas využívať efektívne. A pre ľudí, ktorí chcú mať z bývania zážitok. Olivia nie je len bývanie, je to životný štýl.",
+  "button-about-project": "O projekte",
+  "description-bullet-1": "Skvelá dynamická lokalita",
+  "description-bullet-2": "Vysoký štandard vybavenia",
+  "description-bullet-3": "Štýlové a kvalitné prevedenie",
+
+  "description-main-heading": "Vybavenie apartmánov",
+  "description-heading-2-first-part": "Vysoký štandard",
+  "description-heading-2-second-part": "pre Váš maximálny komfort",
+  "description-bullet-heading-1": "Apartmán na kľúč",
+  "description-bullet-description-1-first-part": "Bývanie v Olivia Residence je úplne bezstarostné. Ponúkame",
+  "description-bullet-description-1-second-part": "komplexne zariadené apartmány vrátane kompletne vybavenej kuchyne so spotrebičmi a sanitou.",
+  "description-bullet-description-1-third-part": "Vašou jedinou starosťou bude výber nábytku.",
+  "description-bullet-heading-2": "Vysoký štandard vybavenia",
+  "description-bullet-description-2": "Olivia nevyniká len množstvom nadštandardného vybavenia, ale aj jeho prevedením. Materiály použité v apartmánoch zodpovedajú vysokým štandardom kvality.",
+  "button-home-amenities": "Vybavenie apartmánov",
+
+  "description-car-heading": "Garážové parkovanie",
+  "description-car-description": "Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok.",
+  "description-car-bullet-1": "Prechod do Vášho bytu suchou nohou",
+  "description-car-bullet-2": "Dlhodobý prenájom garážových státí",
+  "description-car-bullet-3": "Zabezpečené kamerovým systémom",
+
+  "description-lokalita-1-heading": "Občianska vybavenosť",
+  "description-lokalita-1-description": "Rozmanitý výber potravín a obchodov v tesnej blízkosti, kultúrne podujatia vo Fresh Market, banka, pošta, klientské centrum a mnoho iných služieb v okolí, ktoré urobia z Vášho bývania komfortný zážitok.",
+  "description-lokalita-1-bullet-1": "Fresh Market, Yeme a Kaufland v tesnej blízkosti",
+  "description-lokalita-1-bullet-2": "Nákupné centrum OC Vivo 7 min pešo",
+  "description-lokalita-1-bullet-3": "Množstvo škôl a škôlok v okolí",
+  "description-lokalita-1-bullet-4": "Detské ihriská v blízkosti",
+
+  "description-lokalita-2-heading": "Výhodné logistické pripojenie",
+  "description-lokalita-2-description": "Lokalita, z ktorej máte všade blízko. Či chcete ísť do centra mesta, von z mesta, alebo vlakom za hranice Slovenska.",
+  "description-lokalita-2-bullet-1": "Elektrickou kolobežkou do mesta 10 min",
+  "description-lokalita-2-bullet-2": "3 zastávky MHD v blízkosti do 500m",
+  "description-lokalita-2-bullet-3": "Obchvat D4 8 min autom",
+  "description-lokalita-2-bullet-4": "Vlaková stanica Nové Mesto 10 min pešo",
+
+  "description-lokalita-3-heading": "Aktivity a voľný čas",
+  "description-lokalita-3-description": "Miesto, ktoré splýva s Vaším aktívnym životným štýlom. Rekreačné aktivity a športoviská tu máte na dosah ruky.",
+  "description-lokalita-3-bullet-1": "Fitness centrá v blízkom okolí",
+  "description-lokalita-3-bullet-2": "Bežecká trať Kuchajda 5 min pešo",
+  "description-lokalita-3-bullet-3": "Tenisové kurty, bowling a iné športové centrá v blízkom okolí",
+  "description-lokalita-3-bullet-4": "Futbalové a basketbalové ihriská v blízkosti",
+
+  "description-lokalita-4-heading": "Vysoký štandard vrátane kompletnej kuchyne a sanity",
+  "description-lokalita-4-description": "Veľko-metrážne balkóny a terasy s exteriérovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
+  "description-lokalita-4-bullet-1": "Kuchynská linka so spotrebičmi ako štandard",
+  "description-lokalita-4-bullet-2": "Sanita vo vysokej kvalite",
+  "description-lokalita-4-bullet-3": "Kvalitné materiály podlahy a obkladov",
+
+  "description-lokalita-5-heading": "Priestranné balkóny a terasy s exteriérovým slnečným tienením",
+  "description-lokalita-5-description": "Veľko-metrážne balkóny a terasy s exteriérovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
+  "description-lokalita-5-bullet-1": "Balkón ako štandard pre každý byt",
+  "description-lokalita-5-bullet-2": "Elektrické exteriérové slnečné tienenie ako štandard",
+  "description-lokalita-5-bullet-3": "Veľko-metrážne terasy",
+
+
+
+  "filter-heading": "Ponuka apartmánov",
+  "filter-step-1": "Výber poschodia",
+  "filter-step-2": "Výber apartmánu",
+  "filter-step-3": "Detail apartmánu",
+  "filter-drop-down-3": "3. poschodie",
+  "filter-drop-down-4": "4. poschodie",
+  "filter-drop-down-5": "5. poschodie",
+  "filter-drop-down-6": "6. poschodie",
+  "filter-drop-down-7": "7. poschodie",
+  "filter-drop-down-8": "8. poschodie",
+  "filter-drop-down-9": "9. poschodie",
+  "filter-drop-down-10": "10. poschodie",
+  "filter-drop-down-11": "11. poschodie",
+  "filter-drop-down-12": "12. poschodie",
+  "filter-drop-down-13": "13. poschodie",
+  "filter-drop-down-14": "14. poschodie",
+  "price": "Cena €",
+  "floor": "Poschodie",
+  "size": "Rozloha",
+  "sold-apartments": "nezobrazovať predané",
+  "reserved-apartments": "nezobrazovať rezervované",
+  "terrace": "s terasou",
+  "with-balcony": "s balkónom",
+  "without-balcony": "bez balkónu",
+  "search": "Hľadať",
+  "filter-floor-1": "1-izbové apartmány",
+  "filter-floor-1.5": "1.5-izbové apartmány",
+  "filter-floor-2": "2-izbové apartmány",
+  "filter-floor-3": "3-izbové apartmány",
+  "filter-floor-4": "4-izbové apartmány",
+  "filter-apartment-num": "Číslo apartmánu",
+  "filter-floor": "Poschodie",
+  "filter-num-of-rooms": "Počet izieb",
+  "filter-availability": "Dostupnosť",
+  "filter-available": "voľný",
+  "filter-reserved": "rezervovaný",
+
+
+  "equipment-heading": "Štandardné vybavenie",
+  "equipment-heading-2": "Ponuka financovania",
+  "equipment-link": "Stiahnuť",
+
+
+  "financing-heading": "Podmienky financovania",
+  "financing-subheading": "Financujúca banka",
+  "financing-01": "Podpis Rezervačnej zmluvy a zaplatenie rezervačného poplatku 5000€, ktorý bude vrátený po podpise Zmluvy o budúcej kúpnej zmluve.",
+  "financing-02": "Podpis Zmluvy o budúcej kúpnej zmluve a zaplatenie 20% kúpnej ceny.",
+  "financing-03": "Podpis kúpnej zmluvy po vydaní kolaudačného rozhodnutia a zaplatenie zvyšnej časti kúpnej ceny.",
+  "financing-04": "Odovzdanie Vášho nového rezidenčného apartmánu.",
+  "financing-person": "Kontaktná osoba pre hypotekárne financovanie",
+
+
+
+  "apartment-swiper-link": "Ponuka apartmánov",
+  "apartment-swiper-item-1": "1 izbový apartmán",
+  "apartment-swiper-item-1.5": "1.5 izbový apartmán",
+  "apartment-swiper-item-2": "2 izbový apartmán",
+  "apartment-swiper-item-3": "3 izbový apartmán",
+  "apartment-swiper-item-4": "4 izbový apartmán",
+
+  "gallery-swiper-heading": "Galéria",
+
+  "developer-swiper-description": "Sme skúsení tím ľudí s dlhoročnými skúsenosťami, ktorý má za sebou mnoho projektov situovaných po celom Slovensku.",
+
+
+  "negotiation-heading": "Lokalita v centre diania",
+  "negotiation-button": "Viac o lokalite",
+  "negotiation-subheading": "Lokalita, v ktorej máte všetko na dosah.",
+
+
+  "subscription-heading": "Odber noviniek",
+  "subscription-subheading": "Najnovšie informácie o projekte Olivia Residence priamo do Vašej schránky.",
+  "subscription-click-text-first-part": "Kliknutím na tlačidlo potvrdzujete, že súhlasíte s našimi podmienkami spracovania",
+  "subscription-click-text-second-part": "osobných údajov.",
+
+
+  "map-footer-heading-first-part": "Dohodnite si",
+  "map-footer-heading-second-part": "Nezáväzné stretnutie",
+  "map-footer-heading-third-part": "v Predajnom mieste",
+  "map-footer-description": "Zodpovieme všetky Vaše otázky, prevedieme Vás procesom kúpy a poskytneme Vám všetky potrebné informácie o Vašom novom bývaní.",
+
+
+  "footer-description": "Najnovšie informácie o projekte Olivia Residence priamo do Vašej schránky.",
+  "footer-click-text-first-part": "Kliknutím na tlačidlo potvrdzujete, že súhlasíte s našimi podmienkami spracovania",
+  "footer-click-text-second-part": "osobných údajov.",
+  "footer-link-home": "Domovská stránka",
+  "footer-link-apartments": "Apartmány",
+  "footer-link-about": "O projekte",
+  "footer-link-location": "Lokalita",
+  "footer-link-retail": "Retail",
+  "footer-link-contact": "Kontakt",
+  "footer-sale-place": "Predajné miesto",
+  "footer-all-rights": "© 2022 Olivia Residence. Všetky práva vyhradené.",
+  "footer-protection": "Ochrana osobných údajov"
+}

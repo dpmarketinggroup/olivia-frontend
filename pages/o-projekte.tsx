@@ -20,6 +20,8 @@ import BasketIcon from "@components/icons/Basket";
 import ElectricPanelIcon from "@components/icons/ElectricPanel";
 import TwoArrowsIcon from "@components/icons/TwoArrows";
 import React from "react";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useTranslation} from "next-i18next";
 
 interface CustomDescriptionProps {
   src: string;
@@ -34,36 +36,37 @@ interface CustomDescriptionProps {
 }
 
 const OProjekte = () => {
+  const {t: translate} = useTranslation('home');
   const customDescriptionList: CustomDescriptionProps[] = [
     {
       src: "room3.jpg",
-      title: "Vysoký štandard vrátane kompletnej kuchyne a sanity",
+      title: translate("description-lokalita-4-heading"),
       description:
-        "Veľko-metrážne balkóny a terasy s exteriérovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
+          translate("description-lokalita-4-description"),
       bulletPoints: [
         {
           icon: <KitchenIcon />,
-          label: "Kuchynská linka so spotrebičmi ako štandard",
+          label: translate("description-lokalita-4-bullet-1"),
         },
-        { icon: <SinkIcon />, label: "Sanita vo vysokej kvalite" },
+        { icon: <SinkIcon />, label: translate("description-lokalita-4-bullet-2") },
         {
           icon: <GlassStarIcon />,
-          label: "Kvalitné materiály podlahy a obkladov",
+          label: translate("description-lokalita-4-bullet-3"),
         },
       ],
     },
     {
       src: "balcony.jpg",
-      title: "Priestranné balkóny a terasy s exteriérovým slnečným tienením",
+      title: translate("description-lokalita-5-heading"),
       description:
-        "Veľko-metrážne balkóny a terasy s exteriérovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
+          translate("description-lokalita-5-description"),
       bulletPoints: [
-        { icon: <BasketIcon />, label: "Balkón ako štandard pre každý byt" },
+        { icon: <BasketIcon />, label:  translate("description-lokalita-5-bullet-1") },
         {
           icon: <ElectricPanelIcon />,
-          label: "Elektrické exteriérové slnečné tienenie ako štandard",
+          label: translate("description-lokalita-5-bullet-2"),
         },
-        { icon: <TwoArrowsIcon />, label: "Veľko-metrážne terasy" },
+        { icon: <TwoArrowsIcon />, label: translate("description-lokalita-5-bullet-3") },
       ],
       reverse: true,
     },
@@ -77,15 +80,15 @@ const OProjekte = () => {
       <Hero
         imgName={"oProjekteHero"}
         icon={<House />}
-        title={"O projekte"}
-        description="Všetky podstatné informácie o Vašom novom bývaní na jednom mieste."
+        title={translate("footer-link-about")}
+        description={translate("hero-o-projekte")}
         withRectangles={true}
       />
       <Timeline />
       <div className={"px-[1rem] xl:px-0 xl:mx-auto"}>
         <Link href="/stretnutie">
           <button className="hover:bg-primary bg-[#476761] w-full xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] mb-[90px] xl:mb-[185px]">
-            Nezáväzné stretnutie
+            {translate("button-meeting")}
           </button>
         </Link>
       </div>
@@ -101,7 +104,7 @@ const OProjekte = () => {
         <CarDescription oProjekte={true} />
       </div>
       <Equipment
-        title="Štandardné vybavenie"
+        title={translate("equipment-heading")}
         href="/OLIVIA štandardne vybavenie[68].pdf"
       />
       <div className="flex justify-center" id="financovanie">
@@ -110,10 +113,10 @@ const OProjekte = () => {
             <div className="bg-black w-full px-[1rem] xl:px-0 h-[750px] xl:h-[600px]">
               <div className="flex flex-col gap-[30px] justify-center items-center pt-[130px] pb-[350px] xl:pb-[270px]">
                 <h2 className="font-bold text-[32px] xl:text-[40px] leading-[48px] text-[#F5F5F5] text-center xl:text-left">
-                  Podmienky financovania
+                  {translate("financing-heading")}
                 </h2>
                 <span className="text-[16px] leading-6 tracking-[0.1px] text-[#89A6A2]">
-                  Financujúca banka
+                  {translate("financing-subheading")}
                 </span>
                 <UniCredit classname="w-full h-[44px] xl:-h-[65] xl:-w-[492px]" />
               </div>
@@ -124,12 +127,12 @@ const OProjekte = () => {
                   {
                     offer: "01.",
                     description:
-                      "Podpis Rezervačnej zmluvy a zaplatenie rezervačného poplatku 5000€, ktorý bude vrátený po podpise Zmluvy o budúcej kúpnej zmluve.",
+                        translate("financing-01"),
                   },
                   {
                     offer: "02.",
                     description:
-                      "Podpis Zmluvy o budúcej kúpnej zmluve a zaplatenie 20% kúpnej ceny.",
+                        translate("financing-02"),
                   },
                 ].map(({ offer, description }, index) => (
                   <div
@@ -150,12 +153,12 @@ const OProjekte = () => {
                   {
                     offer: "03.",
                     description:
-                      "Podpis kúpnej zmluvy po vydaní kolaudačného rozhodnutia a zaplatenie zvyšnej časti kúpnej ceny.",
+                        translate("financing-03"),
                   },
                   {
                     offer: "04.",
                     description:
-                      "Odovzdanie Vášho nového rezidenčného apartmánu.",
+                        translate("financing-04"),
                   },
                 ].map(({ offer, description: description }, index) => (
                   <div
@@ -198,7 +201,7 @@ const OProjekte = () => {
                       Jozef Onderčo
                     </p>
                     <span className="text-[14px] leading-5">
-                      Kontaktná osoba pre hypotekárne financovanie.
+                      {translate("financing-person")}
                     </span>
                   </div>
                 </div>
@@ -216,7 +219,7 @@ const OProjekte = () => {
         </div>
       </div>
       <Equipment
-        title="Ponuka financovania"
+        title={translate("equipment-heading-2")}
         href="UCB_A4 letak_Hypo Olivia Residence_10 2022 _FINAL.pdf"
       />
       <div className={"xl:mt-[100px] xl:mb-[100px]"}>
@@ -226,5 +229,18 @@ const OProjekte = () => {
     </div>
   );
 };
+
+interface StaticProps{
+  locale: string
+}
+
+export async function getStaticProps({locale}:StaticProps){
+  return{
+    props:{
+      ...(await serverSideTranslations(locale, ['home']))
+      //Will be passed to the page component as props
+    }
+  }
+}
 
 export default OProjekte;

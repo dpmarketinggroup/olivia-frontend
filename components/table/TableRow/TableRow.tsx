@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import {useTranslation} from "next-i18next";
 
 export interface TableRowProps {
     id: number;
@@ -24,6 +25,16 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
                 return 'bg-[#E4B80B]'
         }
     }
+
+    const {t: translate} = useTranslation('home');
+    const translateAvailability = (availability: string) => {
+        if (availability === 'voľný')
+            return translate("filter-available")
+        else if(availability === 'rezervovaný')
+            return translate("filter-reserved")
+        return 'predaný'
+    }
+
     return (
         <Link href={`/apartman/${id}`}>
             <div className={'group cursor-pointer w-full flex items-center justify-between py-[20px] hover:bg-[#0E3F3B33] xl:relative'}>
@@ -47,7 +58,7 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
                 </div>
                 <div className={'xl:w-[130px]'}>
                     <div className={`${getColor()} w-min px-[10px] h-[30px] flex items-center justify-center font-medium text-white text-[14px] leading-[20px] ml-auto`}>
-                        {availability}
+                        {translateAvailability(availability)}
                     </div>
                 </div>
                 <div className={`absolute w-[200px] h-[180px] hidden group-hover:flex items-center flex-col z-[3] top-[90%] left-[39%]`}>

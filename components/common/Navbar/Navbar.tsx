@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Burger, Select } from "@mantine/core";
 import { useScrollLock } from "@mantine/hooks";
 import Cookies from "js-cookie";
+import {useRouter} from "next/router";
 
 interface NavbarProps {
   mainPage?: boolean;
@@ -14,7 +15,8 @@ const USER_CONSENT_COOKIE_KEY = "cookie_consent_is_true";
 const USER_CONSENT_COOKIE_EXPIRE_DATE = 3;
 
 const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
-  const languages = ["SK", "EN"];
+  const languages = ["sk", "en"];
+  const {locale, locales, push} = useRouter();
 
   const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
   const [cookieConsentIsTrue, setCookieConsentIsTrue] = useState(true);
@@ -194,10 +196,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
             </div>
           </div>
           <div className="flex gap-[27px] mr-[40px]">
-            <div className="hidden flex items-center gap-[5px]">
+            <div className="flex items-center gap-[5px]">
               <div className="languages">
                 <Select
-                  className="hidden w-[50px]"
+                  className="w-[50px]"
                   data={languages}
                   placeholder="SK"
                   variant="unstyled"
@@ -205,6 +207,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                   rightSectionWidth={30}
                   styles={{ rightSection: { pointerEvents: "none" } }}
                   transitionDuration={80}
+                  onChange={(selected) => selected !== null ? push('/', undefined, {locale: selected}) : null}
                 />
               </div>
             </div>

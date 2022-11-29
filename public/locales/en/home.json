@@ -1,0 +1,206 @@
+{
+  "hero-heading": "Modern living in a location filled with opportunities",
+  "hero-button-white": "Our apartments",
+  "button-meeting": "Informal meeting",
+
+
+  "hero-lokalita-title": "Location",
+  "hero-lokalita-subtitle": "Location with great opportunities. Rožňavská 1A, Bratislava",
+
+  "hero-o-projekte": "All you need to know about your new home in one place.",
+
+  "hero-retail-title": "Retail",
+  "hero-retail-subtitle": "Exclusive location for housing and business",
+
+  "hero-contact-heading": "Contact us",
+
+  "hero-stretnutie-heading": "Set up an informal meeting at our point of sale",
+  "hero-stretnutie-subheading-1": "Fill out the form and select a suitable date and time for the meeting.",
+  "hero-stretnutie-subheading-2": "Our salesperson will contact you shortly to confirm the meeting.",
+
+
+  "form-first-name": "Name",
+  "form-interested-in": "I am interested in:",
+  "form-interested-apartment": "an apartment",
+  "form-interested-commercial": "a commercial property",
+  "form-second-name": "Surname",
+  "form-email": "Email",
+  "form-number": "Phone number",
+  "form-message": "Notes",
+  "form-check-1-1": "I consent to the processing of",
+  "form-check-1-2": "the personal data",
+  "form-check-2": "I want to receive news about the project",
+  "form-button": "Submit",
+  "form-heading": "Feel free to contact us if you have any questions",
+
+
+  "timeline-1-heading": "Reservations",
+  "timeline-1-span": "Q3",
+  "timeline-2-heading": "Construction",
+  "timeline-2-span": "Q4",
+  "timeline-3-heading": "Building approval",
+  "timeline-4-span": "Q2",
+
+
+  "retail-section-heading-1": "Rent a commercial property",
+  "retail-section-heading-2": "Unique floor plan",
+  "retail-section-description-1-first-part": "Rent",
+  "retail-section-description-1-second-part": "a commercial property in a great location ",
+  "retail-section-description-1-third-part": "and make your business shine among the competitors.",
+  "retail-section-description-2-first-part": "The first applicants have a unique opportunity to ",
+  "retail-section-description-2-second-part": "design their own floor plan",
+  "retail-section-description-2-third-part": "according to their needs.",
+
+
+  "description-heading": "Modern City Living",
+  "description-paragraph": "Olivia is for people who want their home to expand beyond the walls of their apartment. They want their favourite activities to be within minutes, and they want to use their time effectively. Living is an experience for them. Olivia is more than just housing it is a lifestyle.",
+  "button-about-project": "About the project",
+  "description-bullet-1": "Great dynamic location",
+  "description-bullet-2": "High-quality amenities",
+  "description-bullet-3": "Stylish and fine design",
+
+  "description-main-heading": "Home amenities",
+  "description-heading-2-first-part": "High standard",
+  "description-heading-2-second-part": "for maximum comfort",
+  "description-bullet-heading-1": "Turnkey apartments",
+  "description-bullet-description-1-first-part": "Living in Olivia Residence is completely worry-free. Our",
+  "description-bullet-description-1-second-part": "apartments are fully equipped including a kitchen with appliances.",
+  "description-bullet-description-1-third-part": "Your only responsibility is to furnish your home.",
+  "description-bullet-heading-2": "High quality amenities",
+  "description-bullet-description-2": "Olivia apartments stand out not only thanks to premium home amenities but also thanks to high-quality materials.",
+  "button-home-amenities": "Home amenities",
+
+  "description-car-heading": "Garage parking",
+  "description-car-description": "Olivia Residence rents spaces for parking in a garage to have a comfortable and problem-free parking experience.",
+  "description-car-bullet-1": "Enter your home directly and with clean shoes",
+  "description-car-bullet-2": "Long-term rental of parking places",
+  "description-car-bullet-3": "The garage is monitored by security cameras",
+
+  "description-lokalita-1-heading": "Community amenities",
+  "description-lokalita-1-description": "Various grocery stores and shops located nearby, cultural events in Fresh Market, bank, post office, client centre, and many other services guarantee a comfortable living.",
+  "description-lokalita-1-bullet-1": "Fresh Market, Yeme, and Kaufland are located nearby",
+  "description-lokalita-1-bullet-2": "Shopping centre OC Vivo is 7 minutes on foot",
+  "description-lokalita-1-bullet-3": "Many schools and kindergartens in the area",
+  "description-lokalita-1-bullet-4": "Playgrounds",
+
+  "description-lokalita-2-heading": "Convenient logistic connection",
+  "description-lokalita-2-description": "Whether you want to go to the city centre, out of the city, or take the train abroad, everything is close to you.",
+  "description-lokalita-2-bullet-1": "Get to the city in 10 minutes using an electric scooter",
+  "description-lokalita-2-bullet-2": "3 public transport stops in 500m radius",
+  "description-lokalita-2-bullet-3": "D4 bypass only 8 minutes by car",
+  "description-lokalita-2-bullet-4": "The Nové Mesto train station is only 10 minutes on foot",
+
+  "description-lokalita-3-heading": "Free time activites",
+  "description-lokalita-3-description": "",
+  "description-lokalita-3-bullet-1": "Fitness centers nearby",
+  "description-lokalita-3-bullet-2": "Running trail Kuchajda only 5 minutes on foot",
+  "description-lokalita-3-bullet-3": "Tennis courts, a bowling alley, and other sports centres nearby",
+  "description-lokalita-3-bullet-4": "Possibility to play football and basketball in the area",
+
+  "description-lokalita-4-heading": "High standard and a fully equipped kitchen and bathroom",
+  "description-lokalita-4-description": "Spacious balcony and terrace with external shading and an incredible panoramic view of Bratislava",
+  "description-lokalita-4-bullet-1": "Kitchen unit with appliances as a standard",
+  "description-lokalita-4-bullet-2": "High-quality bathrooms",
+  "description-lokalita-4-bullet-3": "Quality materials, flooring, and tiling",
+
+  "description-lokalita-5-heading": "Spacious balconies and terraces with external shading",
+  "description-lokalita-5-description": "Spacious balcony and terrace with external shading and an incredible panoramic view of Bratislava",
+  "description-lokalita-5-bullet-1": "Spacious balconies",
+  "description-lokalita-5-bullet-2": "External shading ",
+  "description-lokalita-5-bullet-3": "Spacious terraces",
+
+
+  "filter-heading": "Our apartments",
+  "filter-step-1": "Select the floor",
+  "filter-step-2": "Select the apartment",
+  "filter-step-3": "Apartment details",
+  "filter-drop-down-3": "3rd floor",
+  "filter-drop-down-4": "4rd floor",
+  "filter-drop-down-5": "5rd floor",
+  "filter-drop-down-6": "6rd floor",
+  "filter-drop-down-7": "7rd floor",
+  "filter-drop-down-8": "8rd floor",
+  "filter-drop-down-9": "9rd floor",
+  "filter-drop-down-10": "10rd floor",
+  "filter-drop-down-11": "11rd floor",
+  "filter-drop-down-12": "12rd floor",
+  "filter-drop-down-13": "13rd floor",
+  "filter-drop-down-14": "14rd floor",
+  "price": "Price €",
+  "floor": "Floor",
+  "size": "Size",
+  "sold-apartments": "exclude the sold apartments",
+  "reserved-apartments": "exclude the reserved apartments",
+  "terrace": "with a terrace",
+  "with-balcony": "with a balcony",
+  "without-balcony": "without a balcony",
+  "search": "Search",
+  "filter-floor-1": "1 bedroom apartments",
+  "filter-floor-1.5": "1.5 bedroom apartments",
+  "filter-floor-2": "2 bedroom apartments",
+  "filter-floor-3": "3 bedroom apartments",
+  "filter-floor-4": "4 bedroom apartments",
+  "filter-apartment-num": "Apartment number",
+  "filter-floor": "Floor",
+  "filter-num-of-rooms": "Number of rooms",
+  "filter-availability": "Availability",
+  "filter-available": "available",
+  "filter-reserved": "reserved",
+
+
+  "equipment-heading": "Standard amenities",
+  "equipment-heading-2": "Financing offer",
+  "equipment-link": "Download",
+
+
+  "financing-heading": "Financing conditions",
+  "financing-subheading": "Financial institution",
+  "financing-01": "A reservation agreement is signed and a reservation fee of 5000 euros is paid.  After the signing of the pre-sale agreement, the reservation fee shall be paid back.",
+  "financing-02": "A pre-sale agreement is signed, and 20% of the purchase price is paid.",
+  "financing-03": "A sales agreement is signed after the final approval, and the rest of the purchase price is paid.",
+  "financing-04": "The apartment is handed over to you.",
+  "financing-person": "Mortgage expert",
+
+
+  "apartment-swiper-link": "Our apartments",
+  "apartment-swiper-item-1": "1 room apartment",
+  "apartment-swiper-item-1.5": "1.5 room apartment",
+  "apartment-swiper-item-2": "2 room apartment",
+  "apartment-swiper-item-3": "3 room apartment",
+  "apartment-swiper-item-4": "4 room apartment",
+
+  "gallery-swiper-heading": "Gallery",
+
+  "developer-swiper-description": "We are an experienced team with many years of experience and many projects located throughout Slovakia.",
+
+
+  "negotiation-heading": "At the heart of the action",
+  "negotiation-button": "Find out more about the location",
+  "negotiation-subheading": "A location that ensures that everything within your reach",
+
+
+  "subscription-heading": "Subscribe to our newsletter",
+  "subscription-subheading": "Get the latest information about the Olivia Residence Project delivered to your inbox.",
+  "subscription-click-text-first-part": "By clicking submit,  you consent to the conditions of",
+  "subscription-click-text-second-part": "personal data processing.",
+
+
+  "map-footer-heading-first-part": "Set up",
+  "map-footer-heading-second-part": "an informal meeting",
+  "map-footer-heading-third-part": "at our point of sale",
+  "map-footer-description": "We will answer all your questions, explain the buying process, and provide all information about your new home.",
+
+
+  "footer-description": "Get the latest information about the Olivia Residence Project delivered to your inbox.",
+  "footer-click-text-first-part": "By clicking submit, you consent to the conditions of",
+  "footer-click-text-second-part": "personal data processing.",
+  "footer-link-home": "Homepage",
+  "footer-link-apartments": "Apartments",
+  "footer-link-about": "About the project",
+  "footer-link-location": "Location",
+  "footer-link-retail": "Retail",
+  "footer-link-contact": "Contact",
+  "footer-sale-place": "Point of sale",
+  "footer-all-rights": "© 2022 Olivia Residence. All rights reserved.",
+  "footer-protection": "Personal data protection"
+}

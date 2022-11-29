@@ -7,6 +7,7 @@ import {BasketCrossed, TwoArrows, Basket} from "@components/icons";
 import axios from "axios";
 import {useRouter} from "next/router";
 import Link from "next/link";
+import {useTranslation} from "next-i18next";
 
 export type Response = {
     id: number;
@@ -46,6 +47,8 @@ const Building = () => {
 
     const [isSoldChecked, setIsSoldChecked] = useState(true);
     const [isReservatedChecked, setIsReservatedChecked] = useState(false);
+
+    const {t: translate} = useTranslation('home');
 
     const [clicked, setClicked] = useState({
         room1Clicked: false,
@@ -179,7 +182,7 @@ const Building = () => {
                 <div className={'w-full xl:max-w-[1200px] mx-auto py-[45px] xl:py-[90px]'}>
                     <div className={'flex flex-col xl:grid grid-cols-3 gap-[50px]'}>
                         <div className={'text-white'}>
-                            <h5 className={'mb-[20px] text-[14px] leading-[20px]'}>Cena € <span
+                            <h5 className={'mb-[20px] text-[14px] leading-[20px]'}>{translate("price")} <span
                                 className={'font-bold pl-[1rem]'}>{price[0]}k - {price[1]}k</span></h5>
                             <RangeSlider onChange={value => setPrice(value)} value={price} min={70} step={10} max={380}
                                          size={2} sx={{
@@ -195,7 +198,7 @@ const Building = () => {
                             }}/>
                         </div>
                         <div className={'text-white'}>
-                            <h5 className={'mb-[20px] text-[14px] leading-[20px]'}>Poschodie <span
+                            <h5 className={'mb-[20px] text-[14px] leading-[20px]'}>{translate("floor")} <span
                                 className={'font-bold pl-[1rem]'}>{floor[0]}-{floor[1]}</span></h5>
                             <RangeSlider size={2} onChange={value => setFloor(value)} value={floor} min={3} minRange={2}
                                          max={14} sx={{
@@ -211,7 +214,7 @@ const Building = () => {
                             }}/>
                         </div>
                         <div className={'text-white'}>
-                            <h5 className={'mb-[20px] text-[14px] leading-[20px]'}>Rozloha <span
+                            <h5 className={'mb-[20px] text-[14px] leading-[20px]'}>{translate("size")} <span
                                 className={'font-bold pl-[1rem]'}>{area[0]} - {area[1]} m²</span></h5>
                             <RangeSlider onChange={value => setArea(value)} value={area} min={20} step={5} max={130}
                                          size={2} sx={{
@@ -263,7 +266,7 @@ const Building = () => {
                                     </FilterButton>
                                 </div>
                                 <div className={'flex gap-[30px] mt-[30px] xl:mt-0'}>
-                                    <Checkbox label={'nezobrazovať predané'} size={'md'} checked={isSoldChecked}
+                                    <Checkbox label={translate("sold-apartments")} size={'md'} checked={isSoldChecked}
                                               onChange={(e) => setIsSoldChecked(e.currentTarget.checked)} sx={{
                                         '.mantine-Checkbox-label': {
                                             color: 'white'
@@ -285,7 +288,7 @@ const Building = () => {
                                             color: '#0E3F3B'
                                         }
                                     }}/>
-                                    <Checkbox label={'nezobrazovať rezervované'} checked={isReservatedChecked}
+                                    <Checkbox label={translate("reserved-apartments")} checked={isReservatedChecked}
                                               onChange={(e) => setIsReservatedChecked(e.currentTarget.checked)}
                                               size={'md'}
                                               sx={{
@@ -322,7 +325,7 @@ const Building = () => {
                                         })} icon={<TwoArrows width={'22'} height={'22'}
                                                              fill={clicked.withTerrace ? '#0E3F3B' : 'white'}/>}
                                                       variant={'rectangle'}>
-                                            s terasou
+                                            {translate("terrace")}
                                         </FilterButton>
                                     </div>
                                     <FilterButton className={'justify-center xl:justify-start'}
@@ -332,7 +335,7 @@ const Building = () => {
                                     }} icon={<Basket width={'22'} height={'22'}
                                                      fill={clicked.withBalcony ? '#0E3F3B' : 'white'}/>}
                                                   variant={'rectangle'}>
-                                        s balkónom
+                                        {translate("with-balcony")}
                                     </FilterButton>
                                     <FilterButton className={'justify-center xl:justify-start'}
                                                   clicked={clicked.withoutBalcony} onClick={() => {
@@ -340,12 +343,12 @@ const Building = () => {
                                         setClicked({...clicked, withoutBalcony: !clicked.withoutBalcony})
                                     }} icon={<BasketCrossed fill={clicked.withoutBalcony ? '#0E3F3B' : 'white'}/>}
                                                   variant={'rectangle'}>
-                                        bez balkónu
+                                        {translate("without-balcony")}
                                     </FilterButton>
                                 </div>
                                 <Link href={`${router.pathname}#results`}>
                                     <button disabled={loading} onClick={handleClick}
-                                            className={'bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]'}>Hľadať
+                                            className={'bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]'}>{translate("search")}
                                     </button>
                                 </Link>
                             </div>
@@ -358,11 +361,10 @@ const Building = () => {
                  className={`flex flex-col xl:gap-[120px] px-[1rem] xl:px-0 xl:min-h-[1px] bg-[#F5F5F5] mt-[-80px] ${(oneRooms || oneAndHalfRooms || twoRooms || threeRooms || fourRooms) && 'xl:py-[100px]'}`}>
                 {oneRooms?.length ? (
                     <div id={'one-apt'}>
-                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>1-izbové
-                            apartmány</h3>
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>{translate("filter-floor-1")}</h3>
                         <div
                             className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
-                            {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
+                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', translate("filter-availability")].map((value, index) => (
                                 <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
                                     key={index}>{value}</h5>
                             ))}
@@ -390,11 +392,10 @@ const Building = () => {
                 ) : ''}
                 {oneAndHalfRooms?.length ? (
                     <div id={'oneHalf-apt'}>
-                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>1.5-izbové
-                            apartmány</h3>
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>{translate("filter-floor-1.5")}</h3>
                         <div
                             className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
-                            {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
+                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH',translate("filter-availability")].map((value, index) => (
                                 <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
                                     key={index}>{value}</h5>
                             ))}
@@ -422,11 +423,10 @@ const Building = () => {
                 ) : ''}
                 {twoRooms?.length ? (
                     <div id={'two-apt'}>
-                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>2-izbové
-                            apartmány</h3>
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>{translate("filter-floor-2")}</h3>
                         <div
                             className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
-                            {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
+                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', translate("filter-availability")].map((value, index) => (
                                 <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
                                     key={index}>{value}</h5>
                             ))}
@@ -454,11 +454,10 @@ const Building = () => {
                 ) : ''}
                 {threeRooms?.length ? (
                     <div id={'three-apt'}>
-                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>3-izbové
-                            apartmány</h3>
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>{translate("filter-floor-3")}</h3>
                         <div
                             className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
-                            {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
+                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', translate("filter-availability")].map((value, index) => (
                                 <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
                                     key={index}>{value}</h5>
                             ))}
@@ -486,11 +485,10 @@ const Building = () => {
                 ) : ''}
                 {fourRooms?.length ? (
                     <div id={'four-apt'}>
-                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>4-izbové
-                            apartmány</h3>
+                        <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>{translate("filter-floor-4")}</h3>
                         <div
                             className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
-                            {['Číslo apartmánu', 'Poschodie', 'Počet izieb', 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', 'Dostupnosť'].map((value, index) => (
+                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', translate("filter-availability")].map((value, index) => (
                                 <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
                                     key={index}>{value}</h5>
                             ))}

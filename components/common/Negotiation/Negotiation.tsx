@@ -4,6 +4,7 @@ import {RectangleDarkIcon, RectangleLightIcon, RectangleMediumIcon} from "@compo
 import {useMediaQuery} from "@mantine/hooks";
 import {useEffect, useRef} from "react";
 import {FaArrowsAltH} from "react-icons/fa";
+import {useTranslation} from "next-i18next";
 
 interface NegotiationProps {
     title: string;
@@ -22,6 +23,7 @@ const Negotiation = ({
                          lokalita = false,
                         retail = false
                      }: NegotiationProps) => {
+    const {t: translate} = useTranslation('home');
     const matches = useMediaQuery('(min-width: 1920px)');
     const matchesTablet = useMediaQuery('(min-width: 1280px)')
     const ref = useRef<HTMLDivElement | null>(null);
@@ -44,7 +46,7 @@ const Negotiation = ({
                                 <p className="text-[#676766] font-normal text-[14px] xl:text-[16px] leading-[24px] tracking-[0.1px]">{subtitle}</p>
                             </div>
                             <Button variant={'outlined'} href={'/lokalita'}>
-                                {buttonText}
+                                {buttonText === "Viac o lokalite" ? translate("negotiation-button") : buttonText}
                             </Button>
                         </div>
                     ) : (

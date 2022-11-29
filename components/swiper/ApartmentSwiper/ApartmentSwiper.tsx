@@ -4,8 +4,10 @@ import { Navigation } from "swiper";
 import Image from "next/image";
 import RightArrowIcon from "@components/icons/RightArrow";
 import Link from "next/link";
+import {useTranslation} from "next-i18next";
 
 const ApartmentSwiper = () => {
+  const {t: translate} = useTranslation('home');
   return (
     <div
       className={`xl:relative text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col overflow-visible xl:mb-[50px] w-full xl:max-w-[1200px] xl:mx-auto`}
@@ -40,7 +42,7 @@ const ApartmentSwiper = () => {
                   "border-b border-white text-[18px] leading-[28px] text-green2 hover:border-b hover:border-primary"
                 }
               >
-                Ponuka apartmánov
+                {translate("apartment-swiper-link")}
               </a>
             </Link>
             <RightArrowIcon stroke={"#476761"} />
@@ -66,15 +68,11 @@ const ApartmentSwiper = () => {
         }}
       >
         {[
-          { src: "/img/1.png", label: "1 izbový apartmán", id: "one-apt" },
-          {
-            label: "1.5 izbový apartmán",
-            src: "/img/15.png",
-            id: "oneHalf-apt",
-          },
-          { src: "/img/2.png", label: "2 izbový apartmán", id: "two-apt" },
-          { src: "/img/3.png", label: "3 izbový apartmán", id: "three-apt" },
-          { src: "/img/4.png", label: "4 izbový apartmán", id: "four-apt" },
+          { src: "/img/1.png", label: translate("apartment-swiper-item-1"), id: "one-apt" },
+          {label: translate("apartment-swiper-item-1.5"), src: "/img/15.png", id: "oneHalf-apt",},
+          { src: "/img/2.png", label: translate("apartment-swiper-item-2"), id: "two-apt" },
+          { src: "/img/3.png", label: translate("apartment-swiper-item-3"), id: "three-apt" },
+          { src: "/img/4.png", label: translate("apartment-swiper-item-4"), id: "four-apt" },
         ].map(({ src, label, id }) => (
           <SwiperSlide className={`xl:w-full`} key={id}>
             <div>

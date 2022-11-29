@@ -14,6 +14,7 @@ import {
 } from "@components/icons";
 import { Button } from "@components/ui";
 import Link from "next/link";
+import {useTranslation} from "next-i18next";
 
 export interface DescriptionProps {
   src: string;
@@ -53,6 +54,7 @@ const Description = ({
 export default Description;
 
 export const CommonDescription = () => {
+    const {t: translate} = useTranslation('home');
   return (
     <Description src={"/img/room.jpg"}>
       <h3
@@ -60,19 +62,16 @@ export const CommonDescription = () => {
           "font-bold text-[40px] leading-[48px] text-[#0E3F3B] xl:max-w-[310px]"
         }
       >
-        Moderné mestské bývanie
+          {translate("description-heading")}
       </h3>
       <p className={"text-black/60 mt-[20px]"}>
-        Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval za steny
-        ich bytu. Pre ľudí, ktorí chcú mať ich obľúbené aktivity na dosah ruky.
-        Pre ľudí, ktorí chcú svoj čas využívať efektívne. A pre ľudí, ktorí chcú
-        mať z bývania zážitok. Olivia nie je len bývanie, je to životný štýl.
+          {translate("description-paragraph")}
       </p>
       <div className={"my-[25px] flex flex-col gap-[10px]"}>
         {[
-          { icon: <MapPoint size={25} />, label: "Skvelá dynamická lokalita" },
-          { icon: <Star />, label: "Vysoký štandard vybavenia" },
-          { icon: <GlassStar />, label: "Štýlové a kvalitné prevedenie" },
+          { icon: <MapPoint size={25} />, label: translate("description-bullet-1")},
+          { icon: <Star />, label: translate("description-bullet-2")},
+          { icon: <GlassStar />, label: translate("description-bullet-3")},
         ].map(({ icon, label }, i) => (
           <div
             className={"flex gap-[12px] items-center font-bold text-black/60"}
@@ -85,10 +84,10 @@ export const CommonDescription = () => {
       </div>
       <div className={"flex flex-col xl:flex-row gap-[10px]"}>
         <Button href={"/o-projekte"} variant={"outlined"}>
-          O projekte
+            {translate("button-about-project")}
         </Button>
         <Button href={"/stretnutie"} variant={"filled"}>
-          Nezáväzné stretnutie
+            {translate("button-meeting")}
         </Button>
       </div>
       <div className="hidden xl:block absolute right-[-100px] top-[30px]">
@@ -102,6 +101,7 @@ export const CommonDescription = () => {
 };
 
 export const ApartmentEquipmentDescription = () => {
+    const {t: translate} = useTranslation('home');
   return (
     <Description className={"my-[50px] xl:my-[95px]"} src={"/img/room2.jpg"}>
       <h3
@@ -109,8 +109,8 @@ export const ApartmentEquipmentDescription = () => {
           "font-bold text-[24px] leading-[32px] text-black xl:max-w-[300px] mb-[40px] mt-[30px] xl:mt-0"
         }
       >
-        <span className={"text-green2 underline"}>Vysoký štandard </span>
-        pre Váš maximálny komfort
+        <span className={"text-green2 underline"}>{translate("description-heading-2-first-part")} </span>
+          {translate("description-heading-2-second-part")}
       </h3>
       <div
         className={
@@ -120,26 +120,23 @@ export const ApartmentEquipmentDescription = () => {
         {[
           {
             icon: <Key />,
-            title: "Apartmán na kľúč",
+            title: translate("description-bullet-heading-1"),
             description: (
               <p className={"text-[#676766]"}>
-                Bývanie v Olivia Residence je úplne bezstarostné. Ponúkame{" "}
+                  {translate("description-bullet-description-1-first-part")}{" "}
                 <span className={"font-bold"}>
-                  komplexne zariadené apartmány vrátane kompletne vybavenej
-                  kuchyne so spotrebičmi a sanitou.
+                    {translate("description-bullet-description-1-second-part")}
                 </span>{" "}
-                Vašou jedinou starosťou bude výber nábytku.
+                  {translate("description-bullet-description-1-third-part")}
               </p>
             ),
           },
           {
             icon: <Star />,
-            title: "Vysoký štandard vybavenia",
+            title: translate("description-bullet-heading-2"),
             description: (
               <p className={"text-[#676766]"}>
-                Olivia nevyniká len množstvom nadštandardného vybavenia, ale aj
-                jeho prevedením. Materiály použité v apartmánoch zodpovedajú
-                vysokým štandardom kvality.
+                  {translate("description-bullet-description-2")}
               </p>
             ),
           },
@@ -175,6 +172,7 @@ interface CarDescriptionProps {
 }
 
 export const CarDescription = ({ oProjekte = false }: CarDescriptionProps) => {
+    const {t: translate} = useTranslation('home');
   return (
     <>
       <a
@@ -183,17 +181,16 @@ export const CarDescription = ({ oProjekte = false }: CarDescriptionProps) => {
       ></a>
       <Description src={"/img/car.png"}>
         <h3 className={"text-[40px] leading-[48px] text-green2 font-bold"}>
-          Garážové parkovanie
+            {translate("description-car-heading")}
         </h3>
         <p className={"text-black/60 my-[20px]"}>
-          Olivia Residence ponúka garážové státia na prenájom, vďaka ktorým bude
-          parkovanie komfortný a bezproblémový zážitok.
+            {translate("description-car-description")}
         </p>
         <div className={"flex flex-col gap-[15px] mb-[30px]"}>
           {[
-            { icon: <Man />, label: "Prechod do Vášho bytu suchou nohou" },
-            { icon: <Parking />, label: "Dlhodobý prenájom garážových státí" },
-            { icon: <Camera />, label: "Zabezpečené kamerovým systémom" },
+            { icon: <Man />, label: translate("description-car-bullet-1")},
+            { icon: <Parking />, label: translate("description-car-bullet-2")},
+            { icon: <Camera />, label: translate("description-car-bullet-3")},
           ].map(({ label, icon }, i) => (
             <div className={"flex gap-[10px]"} key={i}>
               {icon}
@@ -203,7 +200,7 @@ export const CarDescription = ({ oProjekte = false }: CarDescriptionProps) => {
         </div>
         <Link href={"/stretnutie"}>
           <Button className={"w-[190px]"} variant={"filled"}>
-            Nezáväzné stretnutie
+              {translate("button-meeting")}
           </Button>
         </Link>
         <div
@@ -280,6 +277,7 @@ export const CustomDescription = ({
   bulletPoints,
   reverse = false,
 }: CustomDescriptionProps) => {
+    const {t: translate} = useTranslation('home');
   return (
     <Description src={`/img/${src}`} reverse={reverse}>
       <h3 className={"text-[40px] leading-[48px] text-green2 font-bold"}>
@@ -295,7 +293,7 @@ export const CustomDescription = ({
         ))}
       </div>
       <Button href={"/stretnutie"} className={"w-[190px]"} variant={"filled"}>
-        Nezáväzné stretnutie
+          {translate("button-meeting")}
       </Button>
     </Description>
   );

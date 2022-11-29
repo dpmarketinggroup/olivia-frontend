@@ -1,8 +1,10 @@
 import Check from "../../icons/Check";
 import PaperIcon from "../../icons/Paper";
 import RollerIcon from "../../icons/Roller";
+import {useTranslation} from "next-i18next";
 
 const Timeline = ({}) => {
+    const {t: translate} = useTranslation('home');
     return (
         <>
             <a className={'relative bottom-[100px] xl:bottom-[200px]'} id={'harmonogram'}></a>
@@ -11,21 +13,21 @@ const Timeline = ({}) => {
                 {[
                     {
                         icon: <PaperIcon classname="w-[35px] h-[38px] xl:w-[46px] xl:h-[49px]"/>,
-                        title: "Rezervácie",
+                        title: translate("timeline-1-heading"),
                         year: 2022,
-                        quarter: "3. kvartál",
+                        quarter: translate("timeline-1-span"),
                     },
                     {
                         icon: <RollerIcon classname="w-[31px] h-[38px] xl:w-[42px] xl:h-[49px]"/>,
-                        title: "Výstavba",
+                        title: translate("timeline-2-heading"),
                         year: 2022,
-                        quarter: "4. kvartál",
+                        quarter: translate("timeline-2-span"),
                     },
                     {
                         icon: <Check classname="w-[37px] h-[38px] xl:w-[48px] xl:h-[49px]"/>,
-                        title: "Kolaudácia",
+                        title: translate("timeline-3-heading"),
                         year: 2024,
-                        quarter: "2. kvartál"
+                        quarter: translate("timeline-3-span")
                     },
                 ].map(({quarter, title, year, icon}, index) =>
                     <>

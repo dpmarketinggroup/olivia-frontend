@@ -10,8 +10,11 @@ import {
     RectangleMediumIcon
 } from "@components/icons";
 import React from "react";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useTranslation} from "next-i18next";
 
 const Stretnutie = () => {
+    const {t: translate} = useTranslation('home');
     return (
         <>
             <Head>
@@ -21,15 +24,14 @@ const Stretnutie = () => {
                 <div className="relative w-full xl:max-w-[1920px]">
                     <div className="flex flex-col items-center pt-[100px] xl:pt-[140px]">
                         <MapPoint2/>
-                        <h1 className="font-bold text-[32px] xl:text-[40px] leading-[48px] tracking-[-0.5px] text-white xl:w-[600px] text-center mb-[55px] xl:mb-[px] mt-[40px] mx-4">Nezáväzné
-                            stretnutie v Predajnom mieste</h1>
+                        <h1 className="font-bold text-[32px] xl:text-[40px] leading-[48px] tracking-[-0.5px] text-white xl:w-[600px] text-center mb-[55px] xl:mb-[px] mt-[40px] mx-4">
+                            {translate("hero-stretnutie-heading")}</h1>
                     </div>
                     <div className="hidden xl:flex h-[2px] bg-white opacity-30 max-w-[1090px] mx-auto"></div>
-                    <p className="mb-[70px] xl:mb-[40px] text-[18px] leading-7 text-white xl:w-auto mx-4 xl:mx-0 text-center mt-[30px]">Vyplňte
-                        formulár a zvoľte si
-                        preferovaný dátum a
-                        čas stretnutia.<br/> Náš predajca Vás bude
-                        následne kontaktovať a potvrdí Vám termín stretnutia.
+                    <p className="mb-[70px] xl:mb-[40px] text-[18px] leading-7 text-white xl:w-auto mx-4 xl:mx-0 text-center mt-[30px]">
+                        {translate("hero-stretnutie-subheading-1")}
+                        <br/>                         {translate("hero-stretnutie-subheading-2")}
+
                     </p>
                     <div className="xl:flex justify-center">
                         <div className="flex flex-col xl:flex-row xl:gap-[135px] xl:items-start">
@@ -174,6 +176,19 @@ const Stretnutie = () => {
             </div>
         </>
     )
+}
+
+interface StaticProps{
+    locale: string
+}
+
+export async function getStaticProps({locale}:StaticProps){
+    return{
+        props:{
+            ...(await serverSideTranslations(locale, ['home']))
+            //Will be passed to the page component as props
+        }
+    }
 }
 
 export default Stretnutie;

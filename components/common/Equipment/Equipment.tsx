@@ -1,5 +1,6 @@
 import ListIcon from "@components/icons/ListIcon";
 import Link from "next/link";
+import {useTranslation} from "next-i18next";
 
 interface IEquipment {
   title: string;
@@ -7,6 +8,7 @@ interface IEquipment {
 }
 
 const Equipment = ({ href, title }: IEquipment) => {
+    const {t: translate} = useTranslation('home');
   return (
     <section className="relative w-full max-w-[1920px] mx-auto">
       <div className="w-[60px] hidden xl:block h-[60px] bg-black/5 absolute top-0 left-0"></div>
@@ -30,7 +32,7 @@ const Equipment = ({ href, title }: IEquipment) => {
                 target={"_blank"}
                 className="cursor-pointer text-green2 text-lg font-medium"
               >
-                Stiahnuť
+                  {translate("equipment-link")}
               </a>
             </Link>
           </div>
