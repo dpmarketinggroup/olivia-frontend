@@ -19,7 +19,6 @@ import GlassStarIcon from "@components/icons/GlassStar";
 import BasketIcon from "@components/icons/Basket";
 import ElectricPanelIcon from "@components/icons/ElectricPanel";
 import TwoArrowsIcon from "@components/icons/TwoArrows";
-import React from "react";
 
 interface CustomDescriptionProps {
   src: string;
