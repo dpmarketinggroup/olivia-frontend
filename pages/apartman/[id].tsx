@@ -20,8 +20,12 @@ import { CarDescription } from "@components/common/Description/Description";
 import axios from "axios";
 import PhoneInput from "react-phone-number-input";
 import { E164Number } from "libphonenumber-js";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {GetStaticPaths} from "next";
+import {useTranslation} from "next-i18next";
 
 const ApartmentDetail = () => {
+  const {t: translate} = useTranslation('home');
   const [opened, setOpened] = useState(false);
   const [opened2, setOpened2] = useState(false);
   const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false);
@@ -109,6 +113,14 @@ const ApartmentDetail = () => {
     }
   }
 
+  const translateAvailability= (availability:string) => {
+    if (availability === "voľný")
+      return translate("filter-available");
+    else if (availability === "rezervovaný")
+      return translate("filter-reserved");
+    return translate("filter-sold");
+  }
+
   return (
     <>
       <Head>
@@ -131,7 +143,7 @@ const ApartmentDetail = () => {
             "text-[32px] leading-[38px] text-center font-bold text-primary"
           }
         >
-          Mám záujem o byt č. {cislo_bytu}
+          {translate("form-interested-in-apart-n")} {cislo_bytu}
         </h3>
         <form
           onSubmit={handleSubmit}
@@ -147,14 +159,14 @@ const ApartmentDetail = () => {
               required={true}
               onChange={(e) => setName(e.target.value)}
               name={"name"}
-              placeholder={"Meno"}
+              placeholder={translate("form-first-name")}
             />
             <CustomInput
               value={surname}
               required={true}
               onChange={(e) => setSurname(e.target.value)}
               name={"surname"}
-              placeholder={"Priezvisko"}
+              placeholder={translate("form-second-name")}
             />
           </div>
           <CustomInput
@@ -162,7 +174,7 @@ const ApartmentDetail = () => {
             required={true}
             onChange={(e) => setEmail(e.target.value)}
             name={"email"}
-            placeholder={"E-mailová adresa"}
+            placeholder={translate("form-email")}
           />
           <PhoneInput
             style={{
@@ -173,13 +185,13 @@ const ApartmentDetail = () => {
             value={phone}
             defaultCountry={"SK"}
             onChange={(val) => setPhone(val)}
-            placeholder={"Telefónne číslo"}
+            placeholder={translate("form-number")}
           />
           <Textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             name={"message"}
-            placeholder={"Vaša správa ..."}
+            placeholder={translate("form-message")}
             sx={{
               ".mantine-Textarea-input": {
                 border: 0,
@@ -192,7 +204,7 @@ const ApartmentDetail = () => {
           />
           <Checkbox
             required={true}
-            label={"Súhlasím so spracovaním osobných údajov"}
+            label={`${translate("form-check-1-1")} ${translate("form-check-1-2")}`}
             size={"md"}
             sx={{
               ".mantine-Checkbox-label": {
@@ -220,7 +232,7 @@ const ApartmentDetail = () => {
             }}
           />
           <Checkbox
-            label={"Chcem aby ste mi zasielali novinky o projekte"}
+            label={translate("form-check-2")}
             size={"md"}
             sx={{
               ".mantine-Checkbox-label": {
@@ -251,7 +263,7 @@ const ApartmentDetail = () => {
             disabled={loading}
             className={`py-[12px] bg-[#476761] hover:bg-primary text-white flex items-center justify-center gap-[10px]`}
           >
-            Odoslať {loading && <Loader size={20} />}
+            {translate("form-button")}{loading && <Loader size={20} />}
           </button>
         </form>
       </Modal>
@@ -276,7 +288,7 @@ const ApartmentDetail = () => {
             <div className="flex flex-col gap-[30px] items-center mb-[50px]">
               <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />
               <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">
-                Detail apartmánu
+                {translate("filter-step-3")}
               </h1>
             </div>
             <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
@@ -287,7 +299,7 @@ const ApartmentDetail = () => {
                 }
               >
                 <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">
-                  {apartment.data.attributes.poschodie}. podlažie
+                  {apartment.data.attributes.poschodie}{translate("filter-drop-down-general")}
                 </span>
                 <div
                   className={`${
@@ -296,40 +308,40 @@ const ApartmentDetail = () => {
                 >
                   <div className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
                     <Link href={"/podlazie/3"}>
-                      <a className="py-[7px]">3. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-3")}</a>
                     </Link>
                     <Link href={"/podlazie/4"}>
-                      <a className="py-[7px]">4. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-4")}</a>
                     </Link>
                     <Link href={"/podlazie/5"}>
-                      <a className="py-[7px]">5. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-5")}</a>
                     </Link>
                     <Link href={"/podlazie/6"}>
-                      <a className="py-[7px]">6. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-6")}</a>
                     </Link>
                     <Link href={"/podlazie/7"}>
-                      <a className="py-[7px]">7. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-7")}</a>
                     </Link>
                     <Link href={"/podlazie/8"}>
-                      <a className="py-[7px]">8. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-8")}</a>
                     </Link>
                     <Link href={"/podlazie/9"}>
-                      <a className="py-[7px]">9. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-9")}</a>
                     </Link>
                     <Link href={"/podlazie/10"}>
-                      <a className="py-[7px]">10. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-10")}</a>
                     </Link>
                     <Link href={"/podlazie/11"}>
-                      <a className="py-[7px]">11. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-11")}</a>
                     </Link>
                     <Link href={"/podlazie/12"}>
-                      <a className="py-[7px]">12. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-12")}</a>
                     </Link>
                     <Link href={"/podlazie/13"}>
-                      <a className="py-[7px]">13. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-13")}</a>
                     </Link>
                     <Link href={"/podlazie/14"}>
-                      <a className="py-[7px]">14. podlažie</a>
+                      <a className="py-[7px]">{translate("filter-drop-down-14")}</a>
                     </Link>
                   </div>
                 </div>
@@ -340,16 +352,16 @@ const ApartmentDetail = () => {
               <div className="flex gap-[10px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[380px] xl:w-[450px] xl:justify-center">
                 <Link href="/ponuka-apartmanov">
                   <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">
-                    Výber podlažia
+                    {translate("filter-step-1")}
                   </a>
                 </Link>
                 <RightArrow stroke="#00000033" />
                 <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">
-                  Výber apartmánu
+                  {translate("filter-step-2")}
                 </span>
                 <RightArrow stroke="#00000033" />
                 <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761]">
-                  Detail apartmánu
+                  {translate("filter-step-3")}
                 </span>
               </div>
               {/*<div className="hidden xl:inline-block">*/}
@@ -360,7 +372,7 @@ const ApartmentDetail = () => {
         </div>
         <div>
           <h3 className="mb-[25px] font-bold text-[20px] xl:text-[24px] leading-[32px] tracking-[-0.1px] text-center xl:text-left">
-            Apartmán č. {cislo_bytu}
+            {translate("apartment-n")} {cislo_bytu}
           </h3>
           <div className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center xl:items-start justify-center">
             <div
@@ -416,12 +428,12 @@ const ApartmentDetail = () => {
           <div className="flex gap-[15px] items-center">
             <Bank />
             <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">
-              Financovanie
+              {translate("financing")}
             </span>
             <div className="flex gap-[8px] items-center">
               <Link href="/o-projekte#financovanie">
                 <a className="font-medium text-[14px] leading-5 text-green2">
-                  Viac
+                  {translate("more")}
                 </a>
               </Link>
               <RightArrow stroke="#476761" />
@@ -430,12 +442,12 @@ const ApartmentDetail = () => {
           <div className="flex gap-[15px] items-center">
             <Star />
             <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">
-              Nadštandardné vybavenie
+              {translate("superior-equipment")}
             </span>
             <div className="flex gap-[8px] items-center">
               <Link href={"/o-projekte#vybavenie"}>
                 <a className="font-medium text-[14px] leading-5 text-green2">
-                  Viac
+                  {translate("more")}
                 </a>
               </Link>
               <RightArrow stroke="#476761" />
@@ -445,7 +457,7 @@ const ApartmentDetail = () => {
         <div className="px-4 xl:mx-auto w-full mb-[100px] xl:mb-0">
           <div className="flex justify-between mb-[25px]">
             <p className="text-[#676766] font-medium text-[16px] leading-6 tracking-[0.1px]">
-              Číslo apartmánu
+              {translate("filter-apartment-num")}
             </p>
             <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">
               {cislo_bytu}
@@ -453,7 +465,7 @@ const ApartmentDetail = () => {
           </div>
           <div className="flex justify-between mb-[25px] items-center">
             <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-              Cena
+              {translate("price-without-sign")}
             </p>
             <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px]">
               {cena ? `${cena} €` : "-"}
@@ -461,28 +473,28 @@ const ApartmentDetail = () => {
           </div>
           <div className="flex justify-between mb-[70px]">
             <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-              Dostupnosť
+              {translate("filter-availability")}
             </p>
             <span
               className={`font-bold text-[16px] leading-6 tracking-[0.1px] ${getAvailabilityTextColor(
                 dostupnost
               )}`}
             >
-              {dostupnost}
+              {translateAvailability(dostupnost)}
             </span>
           </div>
           <div className="flex justify-between mb-[25px]">
             <p className="font-medium text-[14px] leading-5 tracking-[0.1px] opacity-40">
-              Názov
+              {translate("filter-title")}
             </p>
             <span className="font-medium text-[14px] leading-5 tracking-[0.1px] opacity-40">
-              Plocha
+              {translate("filter-area")}
             </span>
           </div>
           {kuchynska_miestnostv2_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Kuchyňa
+                {translate("filter-kitchen")}
               </p>
               <span>{kuchynska_miestnostv2_rozloha} m²</span>
             </div>
@@ -490,7 +502,7 @@ const ApartmentDetail = () => {
           {predsien_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Predsieň
+                {translate("filter-vestibule")}
               </p>
               <span>{predsien_rozloha} m²</span>
             </div>
@@ -498,7 +510,7 @@ const ApartmentDetail = () => {
           {obyvacia_izba_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Obývacia izba
+                {translate("filter-livingroom")}
               </p>
               <span>{obyvacia_izba_rozloha} m²</span>
             </div>
@@ -506,7 +518,7 @@ const ApartmentDetail = () => {
           {chodba_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Chodba
+                {translate("filter-hallway")}
               </p>
               <span>{chodba_rozloha} m²</span>
             </div>
@@ -514,7 +526,7 @@ const ApartmentDetail = () => {
           {pracovna_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Pracovňa
+                {translate("office")}
               </p>
               <span>{pracovna_rozloha} m²</span>
             </div>
@@ -522,7 +534,7 @@ const ApartmentDetail = () => {
           {spaci_kut_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Spací kút
+                {translate("sleeping-area")}
               </p>
               <span>{spaci_kut_rozloha} m²</span>
             </div>
@@ -530,7 +542,7 @@ const ApartmentDetail = () => {
           {izba4_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Šatník
+                {translate("filter-wardrobe")}
               </p>
               <span>{izba4_rozloha} m²</span>
             </div>
@@ -538,7 +550,7 @@ const ApartmentDetail = () => {
           {izba_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Izba č.1
+                {translate("filter-room-n")}1
               </p>
               <span>{izba_rozloha} m²</span>
             </div>
@@ -546,7 +558,7 @@ const ApartmentDetail = () => {
           {izba2_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Izba č.2
+                {translate("filter-room-n")}2
               </p>
               <span>{izba2_rozloha} m²</span>
             </div>
@@ -554,7 +566,7 @@ const ApartmentDetail = () => {
           {izba3_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Izba č.3
+                {translate("filter-room-n")}3
               </p>
               <span>{izba3_rozloha} m²</span>
             </div>
@@ -562,7 +574,7 @@ const ApartmentDetail = () => {
           {kupelna_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Kúpeľňa
+                {translate("filter-bathroom")}
               </p>
               <span>{kupelna_rozloha} m²</span>
             </div>
@@ -578,21 +590,21 @@ const ApartmentDetail = () => {
           {kupelna_wc_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Kúpelňa + WC
+                {translate("filter-bathroom")} + WC
               </p>
               <span>{kupelna_wc_rozloha} m²</span>
             </div>
           )}
           <div className="flex justify-between mb-[25px]">
             <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">
-              Celková výmera
+              {translate("total-area")}
             </p>
             <span className="font-bold">{celkova_rozloha} m²</span>
           </div>
           {terasa_rozloha && (
             <div className="flex justify-between mb-[25px]">
               <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                Terasa
+                {translate("filter-terrace-alone")}
               </p>
               <span>{terasa_rozloha} m²</span>
             </div>
@@ -601,14 +613,14 @@ const ApartmentDetail = () => {
             <>
               <div className="flex justify-between mb-[25px]">
                 <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                  Balkón
+                  {translate("filter-balcony-alone")}
                 </p>
                 <span>{balkon_rozloha} m²</span>
               </div>
               <div className="flex justify-between mb-[70px]">
                 <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">
-                  Celková výmera {balkon_rozloha && "+ Balkón"}{" "}
-                  {terasa_rozloha && "+ Terasa"}
+                  {translate("total-area")} {balkon_rozloha && `+ ${translate("filter-balcony-alone")}`}{" "}
+                  {terasa_rozloha && `+ ${translate("filter-terrace-alone")}`}
                 </p>
                 <span className="font-bold">
                   {(celkova_rozloha + balkon_rozloha + terasa_rozloha).toFixed(
@@ -624,27 +636,27 @@ const ApartmentDetail = () => {
             className={"w-full h-[50px] bg-primary text-white"}
           >
             {" "}
-            Mám záujem o apartmán č. {cislo_bytu}
+            {translate("form-interested-in-apart-n")} {cislo_bytu}
           </button>
         </div>
         <div className="flex flex-col gap-[30px] items-center mb-[120px] xl:mb-[190px] xl:mt-[160px]">
           <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />
           <h1 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] w-[250px] xl:w-auto text-center xl:text-left">
-            Pôdorys apartmánu na stiahnutie
+            {translate("equipment-heading-3")}
           </h1>
           <Button
             variant={"filled"}
             href={podorys.data.attributes.url}
             target={"_blank"}
           >
-            Stiahnuť pôdorys
+            {translate("equipment-download")}
           </Button>
         </div>
         <CarDescription />
         <CustomSwiper />
       </div>
       <Equipment
-        title="Štandardné vybavenie"
+        title={translate("equipment-heading")}
         href="/OLIVIA štandardne vybavenie[68].pdf"
       />
       <MapFooter />
@@ -677,5 +689,25 @@ export const CustomInput = (props: CustomInputProps) => {
     />
   );
 };
+
+interface StaticProps{
+  locale: string
+}
+
+export async function getStaticProps({locale}:StaticProps){
+  return{
+    props:{
+      ...(await serverSideTranslations(locale, ['home']))
+    }
+  }
+}
+
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+
+  return {
+    paths: [],
+    fallback: 'blocking'
+  }
+}
 
 export default ApartmentDetail;

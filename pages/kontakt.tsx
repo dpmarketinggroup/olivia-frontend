@@ -43,8 +43,7 @@ const Kontakt = () => {
                             </Link>
                         </div>
                         <p className="hidden xl:inline-block text-[#999999] w-full xl:max-w-[335px]">
-                            V prípade otázok sa na mňa neváhajte obrátiť.
-                            Rád Vám poradím a zodpoviem Vaše otázky.
+                            {translate("contact-and-meeting")}
                         </p>
                     </div>
                 </div>

@@ -64,8 +64,7 @@ const Stretnutie = () => {
                                     </Link>
                                 </div>
                                 <p className="hidden xl:inline-block font-medium text-[14px] leading-5 tracking-[0.1px] w-[305px] text-white pb-[40px] xl:pb-0">
-                                    V prípade otázok sa na mňa neváhajte obrátiť.
-                                    Rád Vám poradím a zodpoviem Vaše otázky.
+                                    {translate("contact-and-meeting")}
                                 </p>
                             </div>
                         </div>

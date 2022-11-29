@@ -57,8 +57,7 @@ const Retail = () => {
                                         <a className="font-bold text-[18px] leading-7">info@oliviaresidence.sk</a>
                                     </Link>
                                 </div>
-                                <p className="hidden xl:block font-medium text-[16px] leading-6 tracking-[0.1px] text-[#676766] w-[335px] mb-[23px]">V
-                                    prípade záujmu o prenájom obchodného priestoru ma neváhajte kontaktovať</p>
+                                <p className="hidden xl:block font-medium text-[16px] leading-6 tracking-[0.1px] text-[#676766] w-[335px] mb-[23px]">{translate("retail-text")}</p>
                             </div>
                         </div>
                     </div>

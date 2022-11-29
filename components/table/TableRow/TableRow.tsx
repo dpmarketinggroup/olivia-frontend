@@ -32,7 +32,7 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
             return translate("filter-available")
         else if(availability === 'rezervovaný')
             return translate("filter-reserved")
-        return 'predaný'
+        return translate("filter-sold")
     }
 
     return (

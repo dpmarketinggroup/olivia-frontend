@@ -21,6 +21,7 @@
 
   "form-first-name": "Name",
   "form-interested-in": "I am interested in:",
+  "form-interested-in-apart-n": "I am interested in apartment n.",
   "form-interested-apartment": "an apartment",
   "form-interested-commercial": "a commercial property",
   "form-second-name": "Surname",
@@ -114,6 +115,7 @@
   "filter-step-1": "Select the floor",
   "filter-step-2": "Select the apartment",
   "filter-step-3": "Apartment details",
+  "filter-drop-down-general": "rd floor",
   "filter-drop-down-3": "3rd floor",
   "filter-drop-down-4": "4rd floor",
   "filter-drop-down-5": "5rd floor",
@@ -127,6 +129,7 @@
   "filter-drop-down-13": "13rd floor",
   "filter-drop-down-14": "14rd floor",
   "price": "Price €",
+  "price-without-sign": "Price",
   "floor": "Floor",
   "size": "Size",
   "sold-apartments": "exclude the sold apartments",
@@ -146,10 +149,29 @@
   "filter-availability": "Availability",
   "filter-available": "available",
   "filter-reserved": "reserved",
+  "filter-sold": "sold",
+  "filter-size": "Apartment m²",
+  "filter-balcony-terrace": "Balcony | Terrace m²",
+  "filter-terrace": "Terrace m²",
+  "filter-terrace-alone": "Terrace",
+  "filter-balcony": "Balcony m²",
+  "filter-balcony-alone": "Balcony",
+  "filter-price": "Price with DPH",
+  "filter-title": "Title",
+  "filter-area": "Area",
+  "filter-kitchen": "Kitchen",
+  "filter-vestibule": "Vestibule",
+  "filter-livingroom": "Living room",
+  "filter-hallway": "Hallway",
+  "filter-wardrobe": "Wardrobe",
+  "filter-room-n": "Room n.",
+  "filter-bathroom": "Bathroom",
 
 
   "equipment-heading": "Standard amenities",
   "equipment-heading-2": "Financing offer",
+  "equipment-heading-3": "Floor plan of the apartment for download",
+  "equipment-download": "Download floor plan ",
   "equipment-link": "Download",
 
 
@@ -163,6 +185,7 @@
 
 
   "apartment-swiper-link": "Our apartments",
+  "apartment-swiper-item-general": " room apartment",
   "apartment-swiper-item-1": "1 room apartment",
   "apartment-swiper-item-1.5": "1.5 room apartment",
   "apartment-swiper-item-2": "2 room apartment",
@@ -202,5 +225,26 @@
   "footer-link-contact": "Contact",
   "footer-sale-place": "Point of sale",
   "footer-all-rights": "© 2022 Olivia Residence. All rights reserved.",
-  "footer-protection": "Personal data protection"
+  "footer-protection": "Personal data protection",
+
+
+  "apartment-n": "Apartment no.",
+  "more": "More",
+
+
+  "schedule": "Schedule",
+  "financing": "Financing",
+  "superior-equipment": "Superior equipment",
+  "from-1-to-4": "From 1-room to 4-room apartments",
+  "retail-text": "If you are interested in renting a commercial space, do not hesitate to contact me",
+  "contact-and-meeting": "Do not hesitate to contact me if you have any questions. I will be happy to advise you and answer your questions.",
+  "financial-helper": "Financial advisor of UniCredit Bank",
+  "financial-helper-text": "Please feel free to contact me. I will present you with a detailed financing model and answer all your questions.",
+  "interactive-map": "Click on the interactive map to view information about the apartment",
+  "apartment-on-floor": "Choosing an apartment on the floor",
+  "office": "Office",
+  "sleeping-area": "Sleeping area",
+  "total-area": "Total area"
+
+
 }

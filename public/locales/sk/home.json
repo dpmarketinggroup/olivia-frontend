@@ -22,6 +22,7 @@
 
   "form-first-name": "Meno",
   "form-interested-in": "Mám záujem o:",
+  "form-interested-in-apart-n": "Mám záujem o apartmán č.",
   "form-interested-apartment": "apartmán",
   "form-interested-commercial": "obchodný priestor",
   "form-second-name": "Priezvisko",
@@ -115,6 +116,7 @@
   "filter-step-1": "Výber poschodia",
   "filter-step-2": "Výber apartmánu",
   "filter-step-3": "Detail apartmánu",
+  "filter-drop-down-general": ". poschodie",
   "filter-drop-down-3": "3. poschodie",
   "filter-drop-down-4": "4. poschodie",
   "filter-drop-down-5": "5. poschodie",
@@ -128,6 +130,7 @@
   "filter-drop-down-13": "13. poschodie",
   "filter-drop-down-14": "14. poschodie",
   "price": "Cena €",
+  "price-without-sign": "Cena",
   "floor": "Poschodie",
   "size": "Rozloha",
   "sold-apartments": "nezobrazovať predané",
@@ -147,10 +150,29 @@
   "filter-availability": "Dostupnosť",
   "filter-available": "voľný",
   "filter-reserved": "rezervovaný",
+  "filter-sold": "predaný",
+  "filter-size": "Apartmán m²",
+  "filter-balcony-terrace": "Balkón | Terasa m²",
+  "filter-terrace": "Terasa m²",
+  "filter-terrace-alone": "Terasa",
+  "filter-balcony": "Balkon m²",
+  "filter-balcony-alone": "Balkon",
+  "filter-price": "Cena s DPH",
+  "filter-title": "Title",
+  "filter-area": "Area",
+  "filter-kitchen": "Kuchyňa",
+  "filter-vestibule": "Predsieň",
+  "filter-livingroom": "Obývacia izba",
+  "filter-hallway": "Chodba",
+  "filter-wardrobe": "Šatník",
+  "filter-room-n": "Izba č.",
+  "filter-bathroom": "Kúpeľňa",
 
 
   "equipment-heading": "Štandardné vybavenie",
   "equipment-heading-2": "Ponuka financovania",
+  "equipment-heading-3": "Pôdorys apartmánu na stiahnutie",
+  "equipment-download": "Stiahnuť pôdorys",
   "equipment-link": "Stiahnuť",
 
 
@@ -165,6 +187,7 @@
 
 
   "apartment-swiper-link": "Ponuka apartmánov",
+  "apartment-swiper-item-general": "-izbový apartmán",
   "apartment-swiper-item-1": "1 izbový apartmán",
   "apartment-swiper-item-1.5": "1.5 izbový apartmán",
   "apartment-swiper-item-2": "2 izbový apartmán",
@@ -204,5 +227,25 @@
   "footer-link-contact": "Kontakt",
   "footer-sale-place": "Predajné miesto",
   "footer-all-rights": "© 2022 Olivia Residence. Všetky práva vyhradené.",
-  "footer-protection": "Ochrana osobných údajov"
+  "footer-protection": "Ochrana osobných údajov",
+
+
+  "apartment-n": "Apartmán č.",
+  "more": "Viac",
+
+
+
+  "schedule": "Harmonogram",
+  "financing": "Financovanie",
+  "superior-equipment": "Nadštandardné vybavenie",
+  "from-1-to-4": "Od 1 izbových až po 4 izbové apartmány",
+  "retail-text": "V prípade záujmu o prenájom obchodného priestoru ma neváhajte kontaktovať",
+  "contact-and-meeting": "V prípade otázok sa na mňa neváhajte obrátiť. Rád Vám poradím a zodpoviem Vaše otázky.",
+  "financial-helper": "Finančný poradca UniCredit Bank",
+  "financial-helper-text": "Neváhajte ma kontaktovať. Predstavím Vám detailný model financovania a zodpoviem všetky Vaše otázky.",
+  "interactive-map": "Kliknutím na interaktívnu mapu zobrazíte informácie o apartmáne",
+  "apartment-on-floor": "Výber apartmánu na poschodí",
+  "office": "Pracovňa",
+  "sleeping-area": "Spací kút",
+  "total-area": "Celková výmera"
 }

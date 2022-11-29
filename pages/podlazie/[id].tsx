@@ -20,8 +20,12 @@ import {
     Floor9
 } from "@components/floors";
 import React, {useState} from "react";
+import {useTranslation} from "next-i18next";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {GetStaticPaths} from "next";
 
 const FloorDetail = () => {
+    const {t: translate} = useTranslation('home');
     const router = useRouter()
     const fetch = useStore(state => state.setSelectedApartment)
     const apartment = useStore(state => state.selectedApartment)
@@ -83,10 +87,10 @@ const FloorDetail = () => {
         if (balkon_rozloha && terasa_rozloha) {
             return (
                 <>
-                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Terasa m²</span>
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">{translate("filter-terrace")}</span>
                     <span
                         className="pr-[70px] text-right font-bold text-[14px] leading-5">{terasa_rozloha} m²</span>
-                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Balkon m²</span>
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">{translate("filter-balcony")}</span>
                     <span
                         className="pr-[70px] text-right font-bold text-[14px] leading-5">{balkon_rozloha} m²</span>
                 </>
@@ -95,7 +99,7 @@ const FloorDetail = () => {
         if (balkon_rozloha || terasa_rozloha) {
             return (
                 <>
-                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Balkón | Terasa m²</span>
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">{translate("filter-balcony-terrace")}</span>
                     <span
                         className="pr-[70px] text-right font-bold text-[14px] leading-5">{balkon_rozloha || terasa_rozloha} m²</span>
                 </>
@@ -130,8 +134,7 @@ const FloorDetail = () => {
     }
     function renderDetail() {
         if (!apartment || !apartment.length) {
-            return <p className="pb-[420px] w-[300px] mx-auto text-[18px] font-bold text-center">Kliknutím na
-                interaktívnu mapu zobrazíte informácie o apartmáne</p>
+            return <p className="pb-[420px] w-[300px] mx-auto text-[18px] font-bold text-center">{translate("interactive-map")}</p>
         }
         const {
             cislo_bytu,
@@ -143,28 +146,36 @@ const FloorDetail = () => {
         } = apartment[0].attributes || null
         const {id} = apartment[0]
 
+        const translateAvailability= (availability:string) => {
+            if (availability === "voľný")
+                return translate("filter-available");
+            else if (availability === "rezervovaný")
+                return translate("filter-reserved");
+            return translate("filter-sold");
+        }
+
         return (
             <div className={'flex flex-col'}>
                 <div className="grid grid-cols-2 gap-y-[30px] mb-[40px]">
                     {pocet_izieb ? (
                         <>
                             <span
-                                className="pl-[70px] font-bold text-[16px] leading-6 tracking-[0.1px]">{getApartmentNumber(pocet_izieb)}-izbový apartmán</span>
+                                className="pl-[70px] font-bold text-[16px] leading-6 tracking-[0.1px]">{getApartmentNumber(pocet_izieb)}{translate("apartment-swiper-item-general")}</span>
                         </>
                     ) : <span></span>}
                     <span
                         className="pr-[70px] font-bold text-[16px] leading-6 tracking-[0.1px] text-right">č. {cislo_bytu}</span>
-                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Dostupnosť</span>
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">{translate("filter-availability")}</span>
                     <div className="pr-[70px] text-[14px] font-medium leading-5 text-white ml-[75px] w-[53px]">
-                        <span className={`px-[10px] py-[5px] ${getAvailabilityBgColor(dostupnost)}`}>{dostupnost}</span>
+                        <span className={`px-[10px] py-[5px] ${getAvailabilityBgColor(dostupnost)}`}>{translateAvailability(dostupnost)}</span>
                     </div>
                     {pocet_izieb && (
                         <>
-                            <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Počet izieb</span>
+                            <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">{translate("filter-num-of-rooms")}</span>
                             <span className="pr-[70px] text-right font-bold text-[14px] leading-5">{getApartmentNumber(pocet_izieb)}</span>
                         </>
                     )}
-                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Apartmán m²</span>
+                    <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">{translate("filter-size")}</span>
                     <span className="pr-[70px] text-right font-bold text-[14px] leading-5">{celkova_rozloha} m²</span>
                     {renderBalcony()}
                     <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">Celková výmera</span>
@@ -172,7 +183,7 @@ const FloorDetail = () => {
                         className="pr-[70px] text-right font-bold text-[14px] leading-5">{(celkova_rozloha + balkon_rozloha + terasa_rozloha).toFixed(2)} m²</span>
                 </div>
                 <Button className={'mx-auto'} variant={'filled'} href={`/apartman/${id}`}>
-                    Detail apartmánu
+                    {translate("filter-step-3")}
                 </Button>
             </div>
         )
@@ -189,8 +200,7 @@ const FloorDetail = () => {
                         <div className="xl:mx-auto w-full xl:max-w-[1200px]">
                             <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                                 <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]"/>
-                                <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">Výber
-                                    apartmánu na poschodí</h1>
+                                <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">{translate("apartment-on-floor")}</h1>
                             </div>
                             <div
                                 className="relative flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
@@ -198,45 +208,45 @@ const FloorDetail = () => {
                                     className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer self-start xl:self-auto mx-4"
                                     onClick={() => setIsFloorDropDownCLicked((prevState) => !prevState)}>
                                     <span
-                                        className="drop-span font-bold text-[18px] leading-7 text-[#476761]">{router.query.id}. poschodie</span>
+                                        className="drop-span font-bold text-[18px] leading-7 text-[#476761]">{router.query.id}{translate("filter-drop-down-general")}</span>
                                     <div className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"}`}>
                                         <div
                                             className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
                                             <Link href={'/podlazie/3'}>
-                                                <a className="py-[7px]">3. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-3")}</a>
                                             </Link>
                                             <Link href={'/podlazie/4'}>
-                                                <a className="py-[7px]">4. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-4")}</a>
                                             </Link>
                                             <Link href={'/podlazie/5'}>
-                                                <a className="py-[7px]">5. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-5")}</a>
                                             </Link>
                                             <Link href={'/podlazie/6'}>
-                                                <a className="py-[7px]">6. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-6")}</a>
                                             </Link>
                                             <Link href={'/podlazie/7'}>
-                                                <a className="py-[7px]">7. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-7")}</a>
                                             </Link>
                                             <Link href={'/podlazie/8'}>
-                                                <a className="py-[7px]">8. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-8")}</a>
                                             </Link>
                                             <Link href={'/podlazie/9'}>
-                                                <a className="py-[7px]">9. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-9")}</a>
                                             </Link>
                                             <Link href={'/podlazie/10'}>
-                                                <a className="py-[7px]">10. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-10")}</a>
                                             </Link>
                                             <Link href={'/podlazie/11'}>
-                                                <a className="py-[7px]">11. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-11")}</a>
                                             </Link>
                                             <Link href={'/podlazie/12'}>
-                                                <a className="py-[7px]">12. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-12")}</a>
                                             </Link>
                                             <Link href={'/podlazie/13'}>
-                                                <a className="py-[7px]">13. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-13")}</a>
                                             </Link>
                                             <Link href={'/podlazie/14'}>
-                                                <a className="py-[7px]">14. poschodie</a>
+                                                <a className="py-[7px]">{translate("filter-drop-down-14")}</a>
                                             </Link>
                                         </div>
                                     </div>
@@ -247,14 +257,13 @@ const FloorDetail = () => {
                                 <div
                                     className="flex gap-[10px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[130px] xl:w-[450px] xl:justify-center">
                                     <Link href="/ponuka-apartmanov">
-                                        <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Výber
-                                            poschodia</a>
+                                        <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">{translate("filter-step-1")}</a>
                                     </Link>
                                     <RightArrow stroke="#00000033"/>
                                     <span
-                                        className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761]">Výber apartmánu</span>
+                                        className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761]">{translate("filter-step-2")}</span>
                                     <RightArrow stroke="#476761"/>
-                                    <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">Detail apartmánu</span>
+                                    <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">{translate("filter-step-3")}</span>
                                 </div>
                                 <div className="absolute bottom-0 left-[300px] xl:static inline-block">
                                     <Severka/>
@@ -280,5 +289,26 @@ const FloorDetail = () => {
         </>
     );
 };
+
+interface StaticProps{
+    locale: string
+}
+
+export async function getStaticProps({locale}:StaticProps){
+    return{
+        props:{
+            ...(await serverSideTranslations(locale, ['home']))
+            //Will be passed to the page component as props
+        }
+    }
+}
+
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+
+    return {
+        paths: [], //indicates that no page needs be created at build time
+        fallback: 'blocking' //indicates the type of fallback
+    }
+}
 
 export default FloorDetail;

@@ -364,7 +364,7 @@ const Building = () => {
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>{translate("filter-floor-1")}</h3>
                         <div
                             className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
-                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', translate("filter-availability")].map((value, index) => (
+                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), translate("filter-size"), translate("filter-balcony-terrace"), translate("filter-price"), translate("filter-availability")].map((value, index) => (
                                 <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
                                     key={index}>{value}</h5>
                             ))}
@@ -395,7 +395,7 @@ const Building = () => {
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>{translate("filter-floor-1.5")}</h3>
                         <div
                             className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
-                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH',translate("filter-availability")].map((value, index) => (
+                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), translate("filter-size"), translate("filter-balcony-terrace"), translate("filter-price"),translate("filter-availability")].map((value, index) => (
                                 <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
                                     key={index}>{value}</h5>
                             ))}
@@ -426,7 +426,7 @@ const Building = () => {
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>{translate("filter-floor-2")}</h3>
                         <div
                             className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
-                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', translate("filter-availability")].map((value, index) => (
+                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), translate("filter-size"), translate("filter-balcony-terrace"), translate("filter-price"), translate("filter-availability")].map((value, index) => (
                                 <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
                                     key={index}>{value}</h5>
                             ))}
@@ -457,7 +457,7 @@ const Building = () => {
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>{translate("filter-floor-3")}</h3>
                         <div
                             className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
-                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', translate("filter-availability")].map((value, index) => (
+                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), translate("filter-size"), translate("filter-balcony-terrace"), translate("filter-price"), translate("filter-availability")].map((value, index) => (
                                 <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
                                     key={index}>{value}</h5>
                             ))}
@@ -488,7 +488,7 @@ const Building = () => {
                         <h3 className={'w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]'}>{translate("filter-floor-4")}</h3>
                         <div
                             className={'w-full xl:max-w-[1200px] mx-auto flex justify-between text-black/40 font-medium text-[14px] leading-[20px]'}>
-                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), 'Apartmán m²', 'Balkón | Terasa m²', 'Cena s DPH', translate("filter-availability")].map((value, index) => (
+                            {[translate("filter-apartment-num"), translate("filter-floor"), translate("filter-num-of-rooms"), translate("filter-size"), translate("filter-balcony-terrace"), translate("filter-price"), translate("filter-availability")].map((value, index) => (
                                 <h5 className={`text-[14px] xl:text-[16px] xl:w-[130px] ${index === 6 && 'text-right'} ${(value === 'Balkón | Terasa m²' || value === 'Apartmán m²' || value === 'Cena s DPH') && 'hidden xl:flex'}`}
                                     key={index}>{value}</h5>
                             ))}

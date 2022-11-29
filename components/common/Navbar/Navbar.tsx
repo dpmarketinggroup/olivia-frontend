@@ -6,6 +6,7 @@ import { Burger, Select } from "@mantine/core";
 import { useScrollLock } from "@mantine/hooks";
 import Cookies from "js-cookie";
 import {useRouter} from "next/router";
+import {useTranslation} from "next-i18next";
 
 interface NavbarProps {
   mainPage?: boolean;
@@ -16,7 +17,8 @@ const USER_CONSENT_COOKIE_EXPIRE_DATE = 3;
 
 const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
   const languages = ["sk", "en"];
-  const {locale, locales, push} = useRouter();
+  const {asPath ,locale, locales, push} = useRouter();
+  const {t: translate} = useTranslation('home');
 
   const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
   const [cookieConsentIsTrue, setCookieConsentIsTrue] = useState(true);
@@ -112,24 +114,24 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               >
                 <div className={"xl:hidden flex flex-col gap-[20px]"}>
                   <Link href={"/ponuka-apartmanov"} className={"xl:hidden"}>
-                    <a>Ponuka apartmánov</a>
+                    <a>{translate("filter-heading")}</a>
                   </Link>
                   <Link
                     href={"/ponuka-apartmanov#garazove-parkovanie"}
                     className={"xl:hidden"}
                   >
-                    <a>Garážové parkovanie</a>
+                    <a>{translate("description-car-heading")}</a>
                   </Link>
                 </div>
                 <div className="hidden xl:block flex gap-[10px] items-center">
                   <div className="dropdown">
                     <Link href="/ponuka-apartmanov">
-                      <a className="drop-span">Ponuka apartmánov</a>
+                      <a className="drop-span">{translate("filter-heading")}</a>
                     </Link>
                     <div className="dropdown-content">
                       <Link href="/ponuka-apartmanov#garazove-parkovanie">
                         <a className="w-[180px] pt-[20px] pb-[20px] px-[10px] text-center">
-                          Garážové parkovanie
+                          {translate("description-car-heading")}
                         </a>
                       </Link>
                     </div>
@@ -139,33 +141,33 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                   </div>
                 </div>
                 <Link href="/lokalita">
-                  <a>Lokalita</a>
+                  <a>{translate("footer-link-location")}</a>
                 </Link>
                 <div className={"flex flex-col gap-[20px] xl:hidden"}>
                   <Link href="/o-projekte">
-                    <a>O projekte</a>
+                    <a>{translate("button-about-project")}</a>
                   </Link>
                   <Link href="/o-projekte#harmonogram">
-                    <a>Harmonogram</a>
+                    <a>{translate("schedule")}</a>
                   </Link>
                   <Link href="/o-projekte#financovanie">
-                    <a>Financovanie</a>
+                    <a>{translate("financing")}</a>
                   </Link>
                 </div>
                 <div className={"hidden xl:block"}>
                   <div className="dropdown">
                     <Link href="/o-projekte">
-                      <a>O projekte</a>
+                      <a>{translate("button-about-project")}</a>
                     </Link>
                     <div className="dropdown-content">
                       <Link href="/o-projekte#harmonogram">
                         <a className="pt-[20px] pb-[10px] px-[20px]">
-                          Harmonogram
+                          {translate("schedule")}
                         </a>
                       </Link>
                       <Link href="/o-projekte#financovanie">
                         <a className="pt-0 pb-[20px] px-[20px] text-[#476761]">
-                          Financovanie
+                          {translate("financing")}
                         </a>
                       </Link>
                     </div>
@@ -181,7 +183,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 {/*    <a>Novinky</a>*/}
                 {/*</Link>*/}
                 <Link href="/kontakt">
-                  <a>Kontakt</a>
+                  <a>{translate("footer-link-contact")}</a>
                 </Link>
               </div>
               <Link href={"/stretnutie"}>
@@ -190,7 +192,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                     "bg-[#476761] xl:hidden px-[10px] py-[6px] w-full text-white"
                   }
                 >
-                  Nezáväzné stretnutie
+                  {translate("button-meeting")}
                 </button>
               </Link>
             </div>
@@ -207,7 +209,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                   rightSectionWidth={30}
                   styles={{ rightSection: { pointerEvents: "none" } }}
                   transitionDuration={80}
-                  onChange={(selected) => selected !== null ? push('/', undefined, {locale: selected}) : null}
+                  onChange={(selected) => selected !== null ? push(asPath, undefined, {locale: selected}) : null}
                 />
               </div>
             </div>
@@ -216,7 +218,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 className={`hidden xl:block hover:bg-[#0E3F3B] font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]`}
                 onClick={() => setIsOpenMobileNav(false)}
               >
-                Nezáväzné stretnutie
+                {translate("button-meeting")}
               </button>
             </Link>
           </div>

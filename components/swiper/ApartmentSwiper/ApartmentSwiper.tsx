@@ -16,7 +16,7 @@ const ApartmentSwiper = () => {
         className={`flex gap-6 flex-col xl:flex-row w-full justify-between xl:items-center mb-[65px]`}
       >
         <h3 className="text-[26px] leading-[46px] xl:text-[40px] xl:leading-[40px] font-bold text-black">
-          Od 1 izbových až po 4 izbové apartmány
+          {translate("from-1-to-4")}
         </h3>
         <div className={"flex items-center gap-[30px]"}>
           <div className="gap-[5px] flex">

@@ -179,11 +179,10 @@ const OProjekte = () => {
               <div className="flex flex-col xl:flex-row gap-[50px] xl:gap-[100px] xl:pt-[550px] pb-[50px] xl:mx-[165px] items-center justify-center">
                 <div className="hidden xl:inline-block">
                   <h4 className="font-bold text-[18px] leading-7 mb-[10px]">
-                    Finančný poradca UniCredit Bank
+                    {translate("financial-helper")}
                   </h4>
                   <p className="text-[14px] leading-[20px] text-[#999999] w-[350px]">
-                    Neváhajte ma kontaktovať. Predstavím Vám detailný model
-                    financovania a zodpoviem všetky Vaše otázky.
+                    {translate("financial-helper-text")}
                   </p>
                 </div>
                 <div className="flex gap-[20px] items-center mt-[740px] xl:mt-0">
