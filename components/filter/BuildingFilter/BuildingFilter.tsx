@@ -45,6 +45,16 @@ const Building = () => {
   const [threeRooms, setThreeRooms] = useState<Response[]>();
   const [fourRooms, setFourRooms] = useState<Response[]>();
 
+  const [room1Clicked, setRoom1Clicked] = useState(false);
+  const [room2Clicked, setRoom2Clicked] = useState(false);
+  const [room15Clicked, setRoom15Clicked] = useState(false);
+  const [room3Clicked, setRoom3Clicked] = useState(false);
+  const [room4Clicked, setRoom4Clicked] = useState(false);
+  const [withTerrace, setWithTerrace] = useState(false);
+  const [withBalcony, setWithBalcony] = useState(false);
+  const [withoutBalcony, setWithoutBalcony] = useState(false);
+  const [withBalconyAndTerrace, setWithBalconyAndTerrace] = useState(false);
+
   const [price, setPrice] = useState<[number, number]>([70, 380]);
   const [floor, setFloor] = useState<[number, number]>([3, 14]);
   const [area, setArea] = useState<[number, number]>([20, 130]);
@@ -52,17 +62,17 @@ const Building = () => {
   const [isSoldChecked, setIsSoldChecked] = useState(true);
   const [isReservatedChecked, setIsReservatedChecked] = useState(false);
 
-  const [clicked, setClicked] = useState({
-    room1Clicked: false,
-    room15Clicked: false,
-    room2Clicked: false,
-    room3Clicked: false,
-    room4Clicked: false,
-    withTerrace: false,
-    withBalcony: false,
-    withoutBalcony: false,
-    withBalconyAndTerrace: false,
-  });
+  // const [clicked, setClicked] = useState({
+  //   room1Clicked: false,
+  //   room15Clicked: false,
+  //   room2Clicked: false,
+  //   room3Clicked: false,
+  //   room4Clicked: false,
+  //   withTerrace: false,
+  //   withBalcony: false,
+  //   withoutBalcony: false,
+  //   withBalconyAndTerrace: false,
+  // });
 
   useEffect(() => {
     async function fetch() {
@@ -103,7 +113,6 @@ const Building = () => {
   }, []);
 
   async function handleClick() {
-    const clickedButtons: { [x: string]: true }[] = [];
     let query = `?filters[cena][$gte]=${price[0] * 1000}&filters[cena][$lte]=${
       price[1] * 1000
     }&filters[celkova_rozloha][$gte]=${
@@ -117,54 +126,52 @@ const Building = () => {
       }`,
       ""
     );
-    Object.entries(clicked).forEach(([key, value]) => {
-      if (value) clickedButtons.push({ [key]: value });
-    });
-
-    if (clickedButtons.length) {
-      clickedButtons.forEach((button) => {
-        if (button.room1Clicked) {
-          query += `&filters[pocet_izieb][$eq]=jedno-izbový`;
-          query2 += `&filters[pocet_izieb][$eq]=jedno-izbový`;
-        }
-        if (button.room2Clicked) {
-          query += `&filters[pocet_izieb][$eq]=dvoj-izbový`;
-          query2 += `&filters[pocet_izieb][$eq]=dvoj-izbový`;
-        }
-        if (button.room15Clicked) {
-          query += `&filters[pocet_izieb][$eq]=jeden a pol-izbový`;
-          query2 += `&filters[pocet_izieb][$eq]=jeden a pol-izbový`;
-        }
-        if (button.room3Clicked) {
-          query += `&filters[pocet_izieb][$eq]=troj-izbový`;
-          query2 += `&filters[pocet_izieb][$eq]=troj-izbový`;
-        }
-
-        if (button.room4Clicked) {
-          query += `&filters[pocet_izieb][$eq]=štvor-izbový`;
-          query2 += `&filters[pocet_izieb][$eq]=štvor-izbový`;
-        }
-        if (button.withTerrace) {
-          query += `&filters[terasa_rozloha][$notNull]=true`;
-          query2 += `&filters[terasa_rozloha][$notNull]=true`;
-        }
-        if (button.withoutBalcony) {
-          query += `&filters[balkon_rozloha][$null]=true`;
-          query2 += `&filters[balkon_rozloha][$null]=true`;
-        }
-        if (button.withBalcony) {
-          query += `&filters[balkon_rozloha][$notNull]=true`;
-          query2 += `&filters[balkon_rozloha][$notNull]=true`;
-        }
-        if (button.withBalconyAndTerrace) {
-          query +=
-            "&filters[$and][0][balkon_rozloha][$notNull]=true&filters[$and][1][terasa_rozloha][$notNull]=true";
-          query2 +=
-            "&filters[$and][0][balkon_rozloha][$notNull]=true&filters[$and][1][terasa_rozloha][$notNull]=true";
-        }
-      });
+    if (room1Clicked) {
+      query += `&filters[pocet_izieb][$eq]=jedno-izbový`;
+      query2 += `&filters[pocet_izieb][$eq]=jedno-izbový`;
     }
-
+    if (room2Clicked) {
+      query += `&filters[pocet_izieb][$eq]=dvoj-izbový`;
+      query2 += `&filters[pocet_izieb][$eq]=dvoj-izbový`;
+    }
+    if (room15Clicked) {
+      query += `&filters[pocet_izieb][$eq]=jeden a pol-izbový`;
+      query2 += `&filters[pocet_izieb][$eq]=jeden a pol-izbový`;
+    }
+    if (room3Clicked) {
+      query += `&filters[pocet_izieb][$eq]=troj-izbový`;
+      query2 += `&filters[pocet_izieb][$eq]=troj-izbový`;
+    }
+    if (room4Clicked) {
+      query += `&filters[pocet_izieb][$eq]=štvor-izbový`;
+      query2 += `&filters[pocet_izieb][$eq]=štvor-izbový`;
+    }
+    if (withBalconyAndTerrace) {
+      query +=
+        "&filters[$and][0][balkon_rozloha][$notNull]=true&filters[$and][1][terasa_rozloha][$notNull]=true";
+      query2 +=
+        "&filters[$and][0][balkon_rozloha][$notNull]=true&filters[$and][1][terasa_rozloha][$notNull]=true";
+    }
+    if (withoutBalcony) {
+      query += `&filters[balkon_rozloha][$null]=true`;
+      query2 += `&filters[balkon_rozloha][$null]=true`;
+    }
+    if (withTerrace && withBalcony) {
+      query +=
+        "&filters[$or][0][balkon_rozloha][$notNull]=true&filters[$or][1][terasa_rozloha][$notNull]=true";
+      query2 +=
+        "&filters[$or][0][balkon_rozloha][$notNull]=true&filters[$or][1][terasa_rozloha][$notNull]=true";
+    } else {
+      if (withBalcony) {
+        query += `&filters[balkon_rozloha][$notNull]=true`;
+        query2 += `&filters[balkon_rozloha][$notNull]=true`;
+      }
+      if (withTerrace) {
+        alert("hehe");
+        query += `&filters[terasa_rozloha][$notNull]=true`;
+        query2 += `&filters[terasa_rozloha][$notNull]=true`;
+      }
+    }
     if (isSoldChecked && isReservatedChecked) {
       query += `&filters[$and][0][dostupnost][$ne]=rezervovaný&filters[$and][1][dostupnost][$ne]=predaný`;
       query2 += `&filters[$and][0][dostupnost][$ne]=rezervovaný&filters[$and][1][dostupnost][$ne]=predaný`;
@@ -341,61 +348,36 @@ const Building = () => {
               <div className={"flex flex-col xl:gap-[30px]"}>
                 <div className="flex justify-between xl:justify-start gap-[5px] xl:gap-[20px]">
                   <FilterButton
-                    clicked={clicked.room1Clicked}
-                    onClick={() =>
-                      setClicked({
-                        ...clicked,
-                        room1Clicked: !clicked.room1Clicked,
-                      })
-                    }
+                    clicked={room1Clicked}
+                    onClick={() => setRoom1Clicked((prev) => !prev)}
                     variant={"square"}
                   >
                     1 izb
                   </FilterButton>
                   <FilterButton
-                    clicked={clicked.room15Clicked}
-                    onClick={() =>
-                      setClicked({
-                        ...clicked,
-                        room15Clicked: !clicked.room15Clicked,
-                      })
-                    }
+                    clicked={room15Clicked}
+                    onClick={() => setRoom15Clicked((prev) => !prev)}
                     variant={"square"}
                   >
                     1.5 izb
                   </FilterButton>
                   <FilterButton
-                    clicked={clicked.room2Clicked}
-                    onClick={() =>
-                      setClicked({
-                        ...clicked,
-                        room2Clicked: !clicked.room2Clicked,
-                      })
-                    }
+                    clicked={room2Clicked}
+                    onClick={() => setRoom2Clicked((prev) => !prev)}
                     variant={"square"}
                   >
                     2 izb
                   </FilterButton>
                   <FilterButton
-                    clicked={clicked.room3Clicked}
-                    onClick={() =>
-                      setClicked({
-                        ...clicked,
-                        room3Clicked: !clicked.room3Clicked,
-                      })
-                    }
+                    clicked={room3Clicked}
+                    onClick={() => setRoom3Clicked((prev) => !prev)}
                     variant={"square"}
                   >
                     3 izb
                   </FilterButton>
                   <FilterButton
-                    clicked={clicked.room4Clicked}
-                    onClick={() =>
-                      setClicked({
-                        ...clicked,
-                        room4Clicked: !clicked.room4Clicked,
-                      })
-                    }
+                    clicked={room4Clicked}
+                    onClick={() => setRoom4Clicked((prev) => !prev)}
                     variant={"square"}
                   >
                     4 izb
@@ -466,20 +448,17 @@ const Building = () => {
                     <span className="text-white">Výbava:</span>
                     <FilterButton
                       className={"justify-center xl:justify-start"}
-                      clicked={clicked.withTerrace}
+                      clicked={withTerrace}
                       onClick={() => {
-                        if (clicked.withBalconyAndTerrace)
-                          clicked.withBalconyAndTerrace = false;
-                        setClicked({
-                          ...clicked,
-                          withTerrace: !clicked.withTerrace,
-                        });
+                        if (withBalconyAndTerrace)
+                          setWithBalconyAndTerrace(false);
+                        setWithTerrace((prev) => !prev);
                       }}
                       icon={
                         <TwoArrows
                           width={"22"}
                           height={"22"}
-                          fill={clicked.withTerrace ? "#0E3F3B" : "white"}
+                          fill={withTerrace ? "#0E3F3B" : "white"}
                         />
                       }
                       variant={"rectangle"}
@@ -489,22 +468,18 @@ const Building = () => {
                   </div>
                   <FilterButton
                     className={"justify-center xl:justify-start"}
-                    clicked={clicked.withBalcony}
+                    clicked={withBalcony}
                     onClick={() => {
-                      if (clicked.withBalconyAndTerrace)
-                        clicked.withBalconyAndTerrace = false;
-                      if (clicked.withoutBalcony)
-                        clicked.withoutBalcony = false;
-                      setClicked({
-                        ...clicked,
-                        withBalcony: !clicked.withBalcony,
-                      });
+                      if (withBalconyAndTerrace)
+                        setWithBalconyAndTerrace(false);
+                      if (withoutBalcony) setWithoutBalcony(false);
+                      setWithBalcony((prev) => !prev);
                     }}
                     icon={
                       <Basket
                         width={"22"}
                         height={"22"}
-                        fill={clicked.withBalcony ? "#0E3F3B" : "white"}
+                        fill={withBalcony ? "#0E3F3B" : "white"}
                       />
                     }
                     variant={"rectangle"}
@@ -513,17 +488,14 @@ const Building = () => {
                   </FilterButton>
                   <FilterButton
                     className={"justify-center xl:justify-start"}
-                    clicked={clicked.withoutBalcony}
+                    clicked={withoutBalcony}
                     onClick={() => {
-                      if (clicked.withBalcony) clicked.withBalcony = false;
-                      setClicked({
-                        ...clicked,
-                        withoutBalcony: !clicked.withoutBalcony,
-                      });
+                      if (withBalcony) setWithBalcony(false);
+                      setWithoutBalcony((prev) => !prev);
                     }}
                     icon={
                       <BasketCrossed
-                        fill={clicked.withoutBalcony ? "#0E3F3B" : "white"}
+                        fill={withoutBalcony ? "#0E3F3B" : "white"}
                       />
                     }
                     variant={"rectangle"}
@@ -535,15 +507,13 @@ const Building = () => {
                   className={"flex desktop:w-full items-end justify-between"}
                 >
                   <FilterButton
-                    clicked={clicked.withBalconyAndTerrace}
+                    clicked={withBalconyAndTerrace}
                     onClick={() => {
-                      if (clicked.withBalcony) clicked.withBalcony = false;
-                      if (clicked.withTerrace) clicked.withTerrace = false;
-
-                      setClicked({
-                        ...clicked,
-                        withBalconyAndTerrace: !clicked.withBalconyAndTerrace,
-                      });
+                      if (withBalcony || withTerrace) {
+                        setWithBalcony(false);
+                        setWithTerrace(false);
+                      }
+                      setWithBalconyAndTerrace((prev) => !prev);
                     }}
                     variant={"rectangle"}
                   >
