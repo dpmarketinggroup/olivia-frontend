@@ -70,7 +70,7 @@ const OProjekte = () => {
   ];
 
   return (
-    <div className={"flex flex-col"}>
+    <>
       <Head>
         <title>O projekte | Olivia Residence</title>
       </Head>
@@ -82,9 +82,9 @@ const OProjekte = () => {
         withRectangles={true}
       />
       <Timeline />
-      <div className={"px-[1rem] xl:px-0 xl:mx-auto"}>
+      <div className={"px-[1rem] xl:px-0 flex xl:mx-auto"}>
         <Link href="/stretnutie">
-          <button className="hover:bg-primary bg-[#476761] w-full xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] mb-[90px] xl:mb-[185px]">
+          <button className="hover:bg-primary desktop:mx-auto bg-[#476761] w-full xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] mb-[90px] xl:mb-[185px]">
             Nezáväzné stretnutie
           </button>
         </Link>
@@ -100,10 +100,13 @@ const OProjekte = () => {
       <div id={"garazove-parkovanie"}>
         <CarDescription oProjekte={true} />
       </div>
-      <Equipment
-        title="Štandardné vybavenie"
-        href="/OLIVIA štandardne vybavenie[68].pdf"
-      />
+      <div className="desktop:grid desktop:max-w-[1200px] grid-cols-2 mx-auto">
+        <Equipment
+          title="Štandardné vybavenie"
+          href="/OLIVIA štandardne vybavenie[68].pdf"
+        />
+        <Equipment title="Karta vybavenia" href="/karta.pdf" />
+      </div>
       <div className="flex justify-center" id="financovanie">
         <div className="w-full">
           <div className="relative xl:mb-[100px] xl:mb-0 flex flex-col">
@@ -170,7 +173,7 @@ const OProjekte = () => {
                 ))}
               </div>
             </div>
-            <div className=" w-[full] mt-[-750px] xl:mt-[-565px] bg-[#F5F5F5] h-[970px] xl:h-[750px] border-primary">
+            <div className="w-[full] mt-[-750px] xl:mt-[-565px] bg-[#F5F5F5] h-[970px] xl:h-[750px] border-primary">
               <div className="flex flex-col xl:flex-row gap-[50px] xl:gap-[100px] xl:pt-[550px] pb-[50px] xl:mx-[165px] items-center justify-center">
                 <div className="hidden xl:inline-block">
                   <h4 className="font-bold text-[18px] leading-7 mb-[10px]">
@@ -221,7 +224,7 @@ const OProjekte = () => {
         <Subscription />
       </div>
       <MapFooter />
-    </div>
+    </>
   );
 };
 

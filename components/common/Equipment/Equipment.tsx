@@ -8,7 +8,7 @@ interface IEquipment {
 
 const Equipment = ({ href, title }: IEquipment) => {
   return (
-    <section className="relative w-full max-w-[1920px] mx-auto">
+    <section className="relative w-full desktop:max-w-[1920px] mx-auto">
       <div className="w-[60px] hidden xl:block h-[60px] bg-black/5 absolute top-0 left-0"></div>
       <div className="w-[120px] hidden xl:flex flex-col absolute left-[60px] top-[60px]">
         <div className="w-[60px] h-[60px] bg-black/10 ml-auto"></div>
@@ -24,7 +24,7 @@ const Equipment = ({ href, title }: IEquipment) => {
         <div className="flex gap-[65px] items-center my-auto">
           <ListIcon />
           <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-3xl">{title}</h4>
+            <h4 className="font-bold text-xl desktop:text-3xl">{title}</h4>
             <Link href={href}>
               <a
                 target={"_blank"}
