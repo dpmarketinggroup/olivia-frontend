@@ -102,7 +102,7 @@ const OProjekte = () => {
       <div id={"garazove-parkovanie"}>
         <CarDescription oProjekte={true} />
       </div>
-      <div className="desktop:grid desktop:max-w-[1200px] grid-cols-2 mx-auto">
+      <div className="xl:grid xl:max-w-[1200px] grid-cols-2 mx-auto">
         <Equipment
           title={translate("equipment-heading")}
           href="/OLIVIA štandardne vybavenie[68].pdf"

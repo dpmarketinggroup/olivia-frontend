@@ -655,7 +655,7 @@ const ApartmentDetail = () => {
         <CarDescription />
         <CustomSwiper />
       </div>
-      <div className="desktop:grid desktop:max-w-[1200px] grid-cols-2 mx-auto">
+      <div className="xl:grid xl:max-w-[1200px] grid-cols-2 mx-auto">
         <Equipment
           title="Štandardné vybavenie"
           href="/OLIVIA štandardne vybavenie[68].pdf"
