@@ -77,40 +77,39 @@ const Stretnutie = () => {
                         <div>
                             <div className="flex flex-col gap-[20px] mt-[55px] xl:mt-[75px] mx-4 mb-[45px]">
                                 <p className="font-medium text-[14px] leading-5 text-[#999999] xl:w-[455px] text-center xl:text-start">
-                                    Dohodnite si nezáväzné stretnutie alebo sa u nás zastavte v čase otváracej doby.
-                                    Radi Vás privítame a zodpovieme Vaše otázky.
+                                    {translate("stretnutie-page-text")}
                                 </p>
                                 <div className="flex flex-col items-center xl:items-start">
                                 <span
-                                    className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">PO - PIA</span>
+                                    className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">{translate("mon-fri")}</span>
                                     <span
                                         className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">15.00 - 18.00</span>
                                 </div>
                                 <div className="flex flex-col items-center xl:items-start">
                                 <span
-                                    className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">SO</span>
+                                    className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">{translate("sat")}</span>
                                     <span
                                         className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">10.00 - 15.00</span>
                                 </div>
                                 <div className="flex flex-col items-center xl:items-start">
                                 <span
-                                    className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">NE  a Sviatky</span>
+                                    className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">{translate("sun-holiday")}</span>
                                     <span
-                                        className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">Zatvorené</span>
+                                        className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">{translate("closed")}</span>
                                 </div>
                                 <div className="flex flex-col items-center xl:items-start">
                                 <span
-                                    className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">Adresa</span>
+                                    className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">{translate("address")}</span>
                                     <span
                                         className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">Rožňavská 1A, Bratislava</span>
                                     <div className="flex gap-[12px] items-center">
                                         <MapPoint2 width="16" height="20" fill="000000"/>
-                                        <p className="font-medium text-[18px] leading-7">Fresh Market | Prízemie</p>
+                                        <p className="font-medium text-[18px] leading-7">Fresh Market | {translate("ground-floor")}</p>
                                     </div>
                                 </div>
                                 <Link href="https://goo.gl/maps/CVbzvKFDCXY9aeaK6">
                                     <button
-                                        className="hover:bg-primary font-medium text-[16px] xl:mt-[30px] leading-6 tracking-[0.1px] text-white py-[12px] px-[45px] bg-[#476761] mb-[55px] xl:mb-[75px] xl:max-w-[160px]">Navigovať
+                                        className="hover:bg-primary font-medium text-[16px] xl:mt-[30px] leading-6 tracking-[0.1px] text-white py-[12px] px-[45px] bg-[#476761] mb-[55px] xl:mb-[75px] xl:max-w-[160px]">{translate("navigate")}
                                     </button>
                                 </Link>
                             </div>
@@ -143,11 +142,11 @@ const Stretnutie = () => {
                     </div>
                     <div className="flex flex-col gap-[8px]">
                         <span
-                            className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">Tu sa nachádzame</span>
+                            className="font-medium text-[14px] leading-5 text-[#999999] opacity-[96]">{translate("here-we-are")}</span>
                         <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">Rožňavská 1A, Bratislava</span>
                         <div className="flex gap-[12px] items-center mb-[100px] xl:mb-0">
                             <MapPoint2 width="16" height="20" fill="000000"/>
-                            <p className="font-medium text-[18px] leading-7">Fresh Market | Prízemie</p>
+                            <p className="font-medium text-[18px] leading-7">Fresh Market | {translate("ground-floor")}</p>
                         </div>
                     </div>
                     <div className={`hidden xl:block absolute top-0 left-[-180px]`}>

@@ -41,7 +41,7 @@
   "timeline-2-heading": "Výstavba",
   "timeline-2-span": "4. kvartál",
   "timeline-3-heading": "Kolaudácia",
-  "timeline-4-span": "2. kvartál",
+  "timeline-3-span": "2. kvartál",
 
   "retail-section-heading-1": "Prenájom obchodného priestoru",
   "retail-section-heading-2": "Pôdorys na mieru",
@@ -172,6 +172,7 @@
   "equipment-heading": "Štandardné vybavenie",
   "equipment-heading-2": "Ponuka financovania",
   "equipment-heading-3": "Pôdorys apartmánu na stiahnutie",
+  "equipment-heading-4": "Karta vybavenia",
   "equipment-download": "Stiahnuť pôdorys",
   "equipment-link": "Stiahnuť",
 
@@ -214,6 +215,17 @@
   "map-footer-heading-second-part": "Nezáväzné stretnutie",
   "map-footer-heading-third-part": "v Predajnom mieste",
   "map-footer-description": "Zodpovieme všetky Vaše otázky, prevedieme Vás procesom kúpy a poskytneme Vám všetky potrebné informácie o Vašom novom bývaní.",
+  "stretnutie-page-text": "Dohodnite si nezáväzné stretnutie alebo sa u nás zastavte v čase otváracej doby. Radi Vás privítame a zodpovieme Vaše otázky.",
+
+
+  "mon-fri": "PO - PIA",
+  "sat": "SO",
+  "sun-holiday": "NE a Sviatky",
+  "closed": "Zatvorené",
+  "address": "Adresa",
+  "ground-floor": "Prízemie",
+  "navigate": "Navigovať",
+  "here-we-are": "Tu sa nachádzame",
 
 
   "footer-description": "Najnovšie informácie o projekte Olivia Residence priamo do Vašej schránky.",
@@ -234,7 +246,6 @@
   "more": "Viac",
 
 
-
   "schedule": "Harmonogram",
   "financing": "Financovanie",
   "superior-equipment": "Nadštandardné vybavenie",
@@ -247,5 +258,12 @@
   "apartment-on-floor": "Výber apartmánu na poschodí",
   "office": "Pracovňa",
   "sleeping-area": "Spací kút",
-  "total-area": "Celková výmera"
+  "total-area": "Celková výmera",
+
+
+  "thank-you": "Ďakujeme",
+  "thank-you-text-1": "Vaša správa bola úspešne doručená.",
+  "thank-you-text-2": "Budeme Vás kontaktovať čo najskôr.",
+  "home-page": "Domovská stránka",
+  "subscription": "Úspešne ste sa prihlásili k odberu noviniek."
 }

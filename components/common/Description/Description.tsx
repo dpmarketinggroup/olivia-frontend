@@ -286,7 +286,7 @@ export const CustomDescription = ({
       <p className={"text-black/60 my-[20px]"}>{description}</p>
       <div className={"flex flex-col gap-[15px] mb-[30px]"}>
         {bulletPoints.map(({ label, icon }, i) => (
-          <div className={"flex gap-[10px] text-[14px]"} key={i}>
+          <div className={"flex items-center gap-[10px] text-[14px]"} key={i}>
             {icon}
             <h5>{label}</h5>
           </div>

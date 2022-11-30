@@ -40,7 +40,7 @@
   "timeline-2-heading": "Construction",
   "timeline-2-span": "Q4",
   "timeline-3-heading": "Building approval",
-  "timeline-4-span": "Q2",
+  "timeline-3-span": "Q2",
 
 
   "retail-section-heading-1": "Rent a commercial property",
@@ -171,6 +171,7 @@
   "equipment-heading": "Standard amenities",
   "equipment-heading-2": "Financing offer",
   "equipment-heading-3": "Floor plan of the apartment for download",
+  "equipment-heading-4": "Equipment card",
   "equipment-download": "Download floor plan ",
   "equipment-link": "Download",
 
@@ -212,6 +213,17 @@
   "map-footer-heading-second-part": "an informal meeting",
   "map-footer-heading-third-part": "at our point of sale",
   "map-footer-description": "We will answer all your questions, explain the buying process, and provide all information about your new home.",
+  "stretnutie-page-text": "Arrange a non-binding meeting or stop by during our opening hours. We will be happy to welcome you and answer your questions.",
+
+
+  "mon-fri": "MO - FRI",
+  "sat": "SA",
+  "sun-holiday": "SU and Holidays",
+  "closed": "Closed",
+  "address": "Address",
+  "ground-floor": "Ground flooe",
+  "navigate": "Navigate",
+  "here-we-are": "Here we are",
 
 
   "footer-description": "Get the latest information about the Olivia Residence Project delivered to your inbox.",
@@ -244,7 +256,12 @@
   "apartment-on-floor": "Choosing an apartment on the floor",
   "office": "Office",
   "sleeping-area": "Sleeping area",
-  "total-area": "Total area"
+  "total-area": "Total area",
 
 
+  "thank-you": "Thank you",
+  "thank-you-text-1": "Your message has been successfully delivered.",
+  "thank-you-text-2": "We will contact you as soon as possible.",
+  "home-page": "Home page",
+  "subscription": "You have successfully subscribed to the newsletter."
 }

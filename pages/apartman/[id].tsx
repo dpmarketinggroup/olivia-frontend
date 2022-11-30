@@ -655,10 +655,13 @@ const ApartmentDetail = () => {
         <CarDescription />
         <CustomSwiper />
       </div>
-      <Equipment
-        title={translate("equipment-heading")}
-        href="/OLIVIA štandardne vybavenie[68].pdf"
-      />
+      <div className="desktop:grid desktop:max-w-[1200px] grid-cols-2 mx-auto">
+        <Equipment
+          title="Štandardné vybavenie"
+          href="/OLIVIA štandardne vybavenie[68].pdf"
+        />
+        <Equipment title="Karta vybavenia" href="/karta.pdf" />
+      </div>
       <MapFooter />
     </>
   );

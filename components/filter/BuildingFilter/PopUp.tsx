@@ -1,17 +1,19 @@
 import React, {FunctionComponent} from "react";
 import {useTranslation} from "next-i18next";
 
+
 interface PopUpProps {
-    top: string
-    left: string
-    display?: string
-    title: string
-    room1?: number
-    room15?: number,
-    room2?: number
-    room3?: number
-    room4?: number
+  top: string;
+  left: string;
+  display?: string;
+  title: string;
+  room1?: number;
+  room15?: number;
+  room2?: number;
+  room3?: number;
+  room4?: number;
 }
+
 
 const PopUp: FunctionComponent<PopUpProps>
     = ({

@@ -7,7 +7,8 @@ const nextConfig = {
   i18n,
   images: {
     domains: ['res.cloudinary.com']
-  }
+  },
+  env: {  NEXT_PUBLIC_SENDIN_KEY: process.env.NEXT_PUBLIC_SENDIN_KEY  }
 }
 
 
