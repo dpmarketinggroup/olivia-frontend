@@ -254,7 +254,7 @@ const Building = () => {
           <div className={"flex flex-col xl:grid grid-cols-3 gap-[50px]"}>
             <div className={"text-white"}>
               <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
-                Cena €{" "}
+                {translate("price")}{" "}
                 <span className={"font-bold pl-[1rem]"}>
                   {price[0]}k - {price[1]}k
                 </span>
@@ -281,7 +281,7 @@ const Building = () => {
             </div>
             <div className={"text-white"}>
               <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
-                Poschodie{" "}
+                {translate("floor")}{" "}
                 <span className={"font-bold pl-[1rem]"}>
                   {floor[0]}-{floor[1]}
                 </span>
@@ -308,7 +308,7 @@ const Building = () => {
             </div>
             <div className={"text-white"}>
               <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
-                Rozloha{" "}
+                {translate("size")}{" "}
                 <span className={"font-bold pl-[1rem]"}>
                   {area[0]} - {area[1]} m²
                 </span>
@@ -376,7 +376,7 @@ const Building = () => {
                 </div>
                 <div className={"flex gap-[30px] mt-[30px] xl:mt-0"}>
                   <Checkbox
-                    label={"nezobrazovať predané"}
+                    label={translate("sold-apartments")}
                     size={"md"}
                     checked={isSoldChecked}
                     onChange={(e) => setIsSoldChecked(e.currentTarget.checked)}
@@ -403,7 +403,7 @@ const Building = () => {
                     }}
                   />
                   <Checkbox
-                    label={"nezobrazovať rezervované"}
+                    label={translate("reserved-apartments")}
                     checked={isReservatedChecked}
                     onChange={(e) =>
                       setIsReservatedChecked(e.currentTarget.checked)
@@ -448,7 +448,7 @@ const Building = () => {
                       }}
                       variant={"rectangle"}
                     >
-                      s terasou aj balkónom
+                      {translate("terrace-balcony")}
                     </FilterButton>
                   </div>
                   <FilterButton
@@ -468,7 +468,7 @@ const Building = () => {
                     }
                     variant={"rectangle"}
                   >
-                    s terasou
+                    {translate("terrace")}
                   </FilterButton>
                   <FilterButton
                     className={"justify-center xl:justify-start"}
@@ -488,7 +488,7 @@ const Building = () => {
                     }
                     variant={"rectangle"}
                   >
-                    s balkónom
+                    {translate("with-balcony")}
                   </FilterButton>
                   <FilterButton
                     className={"justify-center xl:justify-start"}
@@ -504,7 +504,7 @@ const Building = () => {
                     }
                     variant={"rectangle"}
                   >
-                    bez balkónu
+                    {translate("without-balcony")}
                   </FilterButton>
                 </div>
                 <Link href={`${router.pathname}#results`}>
@@ -515,7 +515,7 @@ const Building = () => {
                       "bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]"
                     }
                   >
-                    Hľadať
+                    {translate("search")}
                   </button>
                 </Link>
               </div>
@@ -541,7 +541,7 @@ const Building = () => {
                 "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
-              1-izbové apartmány
+              {translate("filter-floor-1")}
             </h3>
             <div
               className={
@@ -549,13 +549,13 @@ const Building = () => {
               }
             >
               {[
-                "Číslo apartmánu",
-                "Poschodie",
-                "Počet izieb",
-                "Apartmán m²",
-                "Balkón | Terasa m²",
-                "Cena s DPH",
-                "Dostupnosť",
+                translate("filter-apartment-num"),
+                translate("filter-floor"),
+                translate("filter-num-of-rooms"),
+                translate("filter-size"),
+                translate("filter-balcony-terrace"),
+                translate("filter-price"),
+                translate("filter-availability"),
               ].map((value, index) => (
                 <h5
                   className={`text-[14px] xl:text-[16px] xl:w-[130px] ${
@@ -603,7 +603,7 @@ const Building = () => {
                 "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
-              1.5-izbové apartmány
+              {translate("filter-floor-1.5")}
             </h3>
             <div
               className={
@@ -611,13 +611,13 @@ const Building = () => {
               }
             >
               {[
-                "Číslo apartmánu",
-                "Poschodie",
-                "Počet izieb",
-                "Apartmán m²",
-                "Balkón | Terasa m²",
-                "Cena s DPH",
-                "Dostupnosť",
+                translate("filter-apartment-num"),
+                translate("filter-floor"),
+                translate("filter-num-of-rooms"),
+                translate("filter-size"),
+                translate("filter-balcony-terrace"),
+                translate("filter-price"),
+                translate("filter-availability"),
               ].map((value, index) => (
                 <h5
                   className={`text-[14px] xl:text-[16px] xl:w-[130px] ${
@@ -665,7 +665,7 @@ const Building = () => {
                 "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
-              2-izbové apartmány
+              {translate("filter-floor-2")}
             </h3>
             <div
               className={
@@ -673,13 +673,13 @@ const Building = () => {
               }
             >
               {[
-                "Číslo apartmánu",
-                "Poschodie",
-                "Počet izieb",
-                "Apartmán m²",
-                "Balkón | Terasa m²",
-                "Cena s DPH",
-                "Dostupnosť",
+                translate("filter-apartment-num"),
+                translate("filter-floor"),
+                translate("filter-num-of-rooms"),
+                translate("filter-size"),
+                translate("filter-balcony-terrace"),
+                translate("filter-price"),
+                translate("filter-availability"),
               ].map((value, index) => (
                 <h5
                   className={`text-[14px] xl:text-[16px] xl:w-[130px] ${
@@ -727,7 +727,7 @@ const Building = () => {
                 "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
-              3-izbové apartmány
+              {translate("filter-floor-3")}
             </h3>
             <div
               className={
@@ -735,13 +735,13 @@ const Building = () => {
               }
             >
               {[
-                "Číslo apartmánu",
-                "Poschodie",
-                "Počet izieb",
-                "Apartmán m²",
-                "Balkón | Terasa m²",
-                "Cena s DPH",
-                "Dostupnosť",
+                translate("filter-apartment-num"),
+                translate("filter-floor"),
+                translate("filter-num-of-rooms"),
+                translate("filter-size"),
+                translate("filter-balcony-terrace"),
+                translate("filter-price"),
+                translate("filter-availability"),
               ].map((value, index) => (
                 <h5
                   className={`text-[14px] xl:text-[16px] xl:w-[130px] ${
@@ -789,7 +789,7 @@ const Building = () => {
                 "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
-              4-izbové apartmány
+              {translate("filter-floor-4")}
             </h3>
             <div
               className={
@@ -797,13 +797,13 @@ const Building = () => {
               }
             >
               {[
-                "Číslo apartmánu",
-                "Poschodie",
-                "Počet izieb",
-                "Apartmán m²",
-                "Balkón | Terasa m²",
-                "Cena s DPH",
-                "Dostupnosť",
+                translate("filter-apartment-num"),
+                translate("filter-floor"),
+                translate("filter-num-of-rooms"),
+                translate("filter-size"),
+                translate("filter-balcony-terrace"),
+                translate("filter-price"),
+                translate("filter-availability"),
               ].map((value, index) => (
                 <h5
                   className={`text-[14px] xl:text-[16px] xl:w-[130px] ${
