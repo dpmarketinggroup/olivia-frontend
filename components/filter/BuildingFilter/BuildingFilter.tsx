@@ -62,18 +62,6 @@ const Building = () => {
   const [isSoldChecked, setIsSoldChecked] = useState(true);
   const [isReservatedChecked, setIsReservatedChecked] = useState(false);
 
-  // const [clicked, setClicked] = useState({
-  //   room1Clicked: false,
-  //   room15Clicked: false,
-  //   room2Clicked: false,
-  //   room3Clicked: false,
-  //   room4Clicked: false,
-  //   withTerrace: false,
-  //   withBalcony: false,
-  //   withoutBalcony: false,
-  //   withBalconyAndTerrace: false,
-  // });
-
   useEffect(() => {
     async function fetch() {
       const res = await axios.get(
@@ -446,25 +434,38 @@ const Building = () => {
                   <div className="flex flex-col">
                     <span className="text-white">Výbava:</span>
                     <FilterButton
-                      className={"justify-center xl:justify-start"}
-                      clicked={withTerrace}
+                      clicked={withBalconyAndTerrace}
                       onClick={() => {
-                        if (withBalconyAndTerrace)
-                          setWithBalconyAndTerrace(false);
-                        setWithTerrace((prev) => !prev);
+                        if (withBalcony || withTerrace) {
+                          setWithBalcony(false);
+                          setWithTerrace(false);
+                        }
+                        setWithBalconyAndTerrace((prev) => !prev);
                       }}
-                      icon={
-                        <TwoArrows
-                          width={"22"}
-                          height={"22"}
-                          fill={withTerrace ? "#0E3F3B" : "white"}
-                        />
-                      }
                       variant={"rectangle"}
                     >
-                      s terasou
+                      s terasou aj balkónom
                     </FilterButton>
                   </div>
+                  <FilterButton
+                    className={"justify-center xl:justify-start"}
+                    clicked={withTerrace}
+                    onClick={() => {
+                      if (withBalconyAndTerrace)
+                        setWithBalconyAndTerrace(false);
+                      setWithTerrace((prev) => !prev);
+                    }}
+                    icon={
+                      <TwoArrows
+                        width={"22"}
+                        height={"22"}
+                        fill={withTerrace ? "#0E3F3B" : "white"}
+                      />
+                    }
+                    variant={"rectangle"}
+                  >
+                    s terasou
+                  </FilterButton>
                   <FilterButton
                     className={"justify-center xl:justify-start"}
                     clicked={withBalcony}
@@ -502,34 +503,17 @@ const Building = () => {
                     bez balkónu
                   </FilterButton>
                 </div>
-                <div
-                  className={"flex desktop:w-full items-end justify-between"}
-                >
-                  <FilterButton
-                    clicked={withBalconyAndTerrace}
-                    onClick={() => {
-                      if (withBalcony || withTerrace) {
-                        setWithBalcony(false);
-                        setWithTerrace(false);
-                      }
-                      setWithBalconyAndTerrace((prev) => !prev);
-                    }}
-                    variant={"rectangle"}
+                <Link href={`${router.pathname}#results`}>
+                  <button
+                    disabled={loading}
+                    onClick={handleClick}
+                    className={
+                      "bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]"
+                    }
                   >
-                    s terasou aj balkónom
-                  </FilterButton>
-                  <Link href={`${router.pathname}#results`}>
-                    <button
-                      disabled={loading}
-                      onClick={handleClick}
-                      className={
-                        "bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]"
-                      }
-                    >
-                      Hľadať
-                    </button>
-                  </Link>
-                </div>
+                    Hľadať
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
