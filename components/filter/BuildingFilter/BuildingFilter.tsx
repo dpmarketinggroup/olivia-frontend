@@ -167,7 +167,6 @@ const Building = () => {
         query2 += `&filters[balkon_rozloha][$notNull]=true`;
       }
       if (withTerrace) {
-        alert("hehe");
         query += `&filters[terasa_rozloha][$notNull]=true`;
         query2 += `&filters[terasa_rozloha][$notNull]=true`;
       }
