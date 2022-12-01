@@ -20,12 +20,12 @@ import { CarDescription } from "@components/common/Description/Description";
 import axios from "axios";
 import PhoneInput from "react-phone-number-input";
 import { E164Number } from "libphonenumber-js";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {GetStaticPaths} from "next";
-import {useTranslation} from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { GetStaticPaths } from "next";
+import { useTranslation } from "next-i18next";
 
 const ApartmentDetail = () => {
-  const {t: translate} = useTranslation('home');
+  const { t: translate } = useTranslation("home");
   const [opened, setOpened] = useState(false);
   const [opened2, setOpened2] = useState(false);
   const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false);
@@ -113,13 +113,12 @@ const ApartmentDetail = () => {
     }
   }
 
-  const translateAvailability= (availability:string) => {
-    if (availability === "voľný")
-      return translate("filter-available");
+  const translateAvailability = (availability: string) => {
+    if (availability === "voľný") return translate("filter-available");
     else if (availability === "rezervovaný")
       return translate("filter-reserved");
     return translate("filter-sold");
-  }
+  };
 
   return (
     <>
@@ -191,7 +190,7 @@ const ApartmentDetail = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             name={"message"}
-            placeholder={translate("form-message")}
+            placeholder={translate("form-message") || ""}
             sx={{
               ".mantine-Textarea-input": {
                 border: 0,
@@ -204,7 +203,9 @@ const ApartmentDetail = () => {
           />
           <Checkbox
             required={true}
-            label={`${translate("form-check-1-1")} ${translate("form-check-1-2")}`}
+            label={`${translate("form-check-1-1")} ${translate(
+              "form-check-1-2"
+            )}`}
             size={"md"}
             sx={{
               ".mantine-Checkbox-label": {
@@ -263,7 +264,8 @@ const ApartmentDetail = () => {
             disabled={loading}
             className={`py-[12px] bg-[#476761] hover:bg-primary text-white flex items-center justify-center gap-[10px]`}
           >
-            {translate("form-button")}{loading && <Loader size={20} />}
+            {translate("form-button")}
+            {loading && <Loader size={20} />}
           </button>
         </form>
       </Modal>
@@ -299,7 +301,8 @@ const ApartmentDetail = () => {
                 }
               >
                 <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">
-                  {apartment.data.attributes.poschodie}{translate("filter-drop-down-general")}
+                  {apartment.data.attributes.poschodie}
+                  {translate("filter-drop-down-general")}
                 </span>
                 <div
                   className={`${
@@ -308,40 +311,64 @@ const ApartmentDetail = () => {
                 >
                   <div className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
                     <Link href={"/podlazie/3"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-3")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-3")}
+                      </a>
                     </Link>
                     <Link href={"/podlazie/4"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-4")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-4")}
+                      </a>
                     </Link>
                     <Link href={"/podlazie/5"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-5")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-5")}
+                      </a>
                     </Link>
                     <Link href={"/podlazie/6"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-6")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-6")}
+                      </a>
                     </Link>
                     <Link href={"/podlazie/7"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-7")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-7")}
+                      </a>
                     </Link>
                     <Link href={"/podlazie/8"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-8")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-8")}
+                      </a>
                     </Link>
                     <Link href={"/podlazie/9"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-9")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-9")}
+                      </a>
                     </Link>
                     <Link href={"/podlazie/10"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-10")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-10")}
+                      </a>
                     </Link>
                     <Link href={"/podlazie/11"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-11")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-11")}
+                      </a>
                     </Link>
                     <Link href={"/podlazie/12"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-12")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-12")}
+                      </a>
                     </Link>
                     <Link href={"/podlazie/13"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-13")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-13")}
+                      </a>
                     </Link>
                     <Link href={"/podlazie/14"}>
-                      <a className="py-[7px]">{translate("filter-drop-down-14")}</a>
+                      <a className="py-[7px]">
+                        {translate("filter-drop-down-14")}
+                      </a>
                     </Link>
                   </div>
                 </div>
@@ -619,7 +646,8 @@ const ApartmentDetail = () => {
               </div>
               <div className="flex justify-between mb-[70px]">
                 <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">
-                  {translate("total-area")} {balkon_rozloha && `+ ${translate("filter-balcony-alone")}`}{" "}
+                  {translate("total-area")}{" "}
+                  {balkon_rozloha && `+ ${translate("filter-balcony-alone")}`}{" "}
                   {terasa_rozloha && `+ ${translate("filter-terrace-alone")}`}
                 </p>
                 <span className="font-bold">
@@ -693,24 +721,23 @@ export const CustomInput = (props: CustomInputProps) => {
   );
 };
 
-interface StaticProps{
-  locale: string
+interface StaticProps {
+  locale: string;
 }
 
-export async function getStaticProps({locale}:StaticProps){
-  return{
-    props:{
-      ...(await serverSideTranslations(locale, ['home']))
-    }
-  }
+export async function getStaticProps({ locale }: StaticProps) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["home"])),
+    },
+  };
 }
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
-
   return {
     paths: [],
-    fallback: 'blocking'
-  }
-}
+    fallback: "blocking",
+  };
+};
 
 export default ApartmentDetail;

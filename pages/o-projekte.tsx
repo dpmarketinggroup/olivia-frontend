@@ -19,8 +19,8 @@ import GlassStarIcon from "@components/icons/GlassStar";
 import BasketIcon from "@components/icons/Basket";
 import ElectricPanelIcon from "@components/icons/ElectricPanel";
 import TwoArrowsIcon from "@components/icons/TwoArrows";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {useTranslation} from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 interface CustomDescriptionProps {
   src: string;
@@ -35,19 +35,21 @@ interface CustomDescriptionProps {
 }
 
 const OProjekte = () => {
-  const {t: translate} = useTranslation('home');
+  const { t: translate } = useTranslation("home");
   const customDescriptionList: CustomDescriptionProps[] = [
     {
       src: "room3.jpg",
       title: translate("description-lokalita-4-heading"),
-      description:
-          translate("description-lokalita-4-description"),
+      description: translate("description-lokalita-4-description"),
       bulletPoints: [
         {
           icon: <KitchenIcon />,
           label: translate("description-lokalita-4-bullet-1"),
         },
-        { icon: <SinkIcon />, label: translate("description-lokalita-4-bullet-2") },
+        {
+          icon: <SinkIcon />,
+          label: translate("description-lokalita-4-bullet-2"),
+        },
         {
           icon: <GlassStarIcon />,
           label: translate("description-lokalita-4-bullet-3"),
@@ -57,15 +59,20 @@ const OProjekte = () => {
     {
       src: "balcony.jpg",
       title: translate("description-lokalita-5-heading"),
-      description:
-          translate("description-lokalita-5-description"),
+      description: translate("description-lokalita-5-description"),
       bulletPoints: [
-        { icon: <BasketIcon />, label:  translate("description-lokalita-5-bullet-1") },
+        {
+          icon: <BasketIcon />,
+          label: translate("description-lokalita-5-bullet-1"),
+        },
         {
           icon: <ElectricPanelIcon />,
           label: translate("description-lokalita-5-bullet-2"),
         },
-        { icon: <TwoArrowsIcon />, label: translate("description-lokalita-5-bullet-3") },
+        {
+          icon: <TwoArrowsIcon />,
+          label: translate("description-lokalita-5-bullet-3"),
+        },
       ],
       reverse: true,
     },
@@ -80,7 +87,7 @@ const OProjekte = () => {
         imgName={"oProjekteHero"}
         icon={<House />}
         title={translate("footer-link-about")}
-        description={translate("hero-o-projekte")}
+        description={translate("hero-o-projekte") || ""}
         withRectangles={true}
       />
       <Timeline />
@@ -128,13 +135,11 @@ const OProjekte = () => {
                 {[
                   {
                     offer: "01.",
-                    description:
-                        translate("financing-01"),
+                    description: translate("financing-01"),
                   },
                   {
                     offer: "02.",
-                    description:
-                        translate("financing-02"),
+                    description: translate("financing-02"),
                   },
                 ].map(({ offer, description }, index) => (
                   <div
@@ -154,13 +159,11 @@ const OProjekte = () => {
                 {[
                   {
                     offer: "03.",
-                    description:
-                        translate("financing-03"),
+                    description: translate("financing-03"),
                   },
                   {
                     offer: "04.",
-                    description:
-                        translate("financing-04"),
+                    description: translate("financing-04"),
                   },
                 ].map(({ offer, description: description }, index) => (
                   <div
@@ -231,17 +234,17 @@ const OProjekte = () => {
   );
 };
 
-interface StaticProps{
-  locale: string
+interface StaticProps {
+  locale: string;
 }
 
-export async function getStaticProps({locale}:StaticProps){
-  return{
-    props:{
-      ...(await serverSideTranslations(locale, ['home']))
+export async function getStaticProps({ locale }: StaticProps) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["home"])),
       //Will be passed to the page component as props
-    }
-  }
+    },
+  };
 }
 
 export default OProjekte;
