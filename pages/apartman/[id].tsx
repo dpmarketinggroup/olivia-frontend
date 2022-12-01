@@ -733,9 +733,14 @@ export async function getStaticProps({ locale }: StaticProps) {
   };
 }
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
   return {
-    paths: [],
+    paths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((id) => {
+      return {
+        params: { id: id.toString() },
+        locale: "sk",
+      };
+    }),
     fallback: "blocking",
   };
 };
