@@ -685,10 +685,10 @@ const ApartmentDetail = () => {
       </div>
       <div className="xl:grid xl:max-w-[1200px] grid-cols-2 mx-auto">
         <Equipment
-          title="Štandardné vybavenie"
+          title={translate("equipment-heading")}
           href="/OLIVIA štandardne vybavenie[68].pdf"
         />
-        <Equipment title="Karta vybavenia" href="/karta.pdf" />
+        <Equipment title={translate("equipment-heading-4")} href="/karta.pdf" />
       </div>
       <MapFooter />
     </>
