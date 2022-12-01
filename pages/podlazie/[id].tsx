@@ -25,9 +25,9 @@ import {
   Floor9,
 } from "@components/floors";
 import React, { useState } from "react";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {GetStaticPaths} from "next";
-import {useTranslation} from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { GetStaticPaths } from "next";
+import { useTranslation } from "next-i18next";
 
 const FloorDetail = () => {
   const { t: translate } = useTranslation("home");
@@ -146,12 +146,10 @@ const FloorDetail = () => {
   }
 
   const availableTranslate = (available: string) => {
-    if (available === "voľný")
-      return translate("filter-available")
-    else if (available === "rezervovaný")
-      return translate("filter-reserved")
-    return translate("filter-sold")
-  }
+    if (available === "voľný") return translate("filter-available");
+    else if (available === "rezervovaný") return translate("filter-reserved");
+    return translate("filter-sold");
+  };
   function renderDetail() {
     if (!apartment || !apartment.length) {
       return (
@@ -176,14 +174,16 @@ const FloorDetail = () => {
           {pocet_izieb ? (
             <>
               <span className="pl-[70px] font-bold text-[16px] leading-6 tracking-[0.1px]">
-                {getApartmentNumber(pocet_izieb)}{translate("apartment-swiper-item-general")}
+                {getApartmentNumber(pocet_izieb)}
+                {translate("apartment-swiper-item-general")}
               </span>
             </>
           ) : (
             <span></span>
           )}
           <span className="pr-[70px] font-bold text-[16px] leading-6 tracking-[0.1px] text-right">
-            {translate("number")}{cislo_bytu}
+            {translate("number")}
+            {cislo_bytu}
           </span>
           <span className="pl-[70px] text-[14px] leading-7 text-[#999999]">
             {translate("filter-availability")}
@@ -255,7 +255,8 @@ const FloorDetail = () => {
                   }
                 >
                   <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">
-                    {router.query.id}{translate("filter-drop-down-general")}
+                    {router.query.id}
+                    {translate("filter-drop-down-general")}
                   </span>
                   <div
                     className={`${
@@ -264,40 +265,64 @@ const FloorDetail = () => {
                   >
                     <div className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
                       <Link href={"/podlazie/3"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-3")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-3")}
+                        </a>
                       </Link>
                       <Link href={"/podlazie/4"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-4")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-4")}
+                        </a>
                       </Link>
                       <Link href={"/podlazie/5"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-5")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-5")}
+                        </a>
                       </Link>
                       <Link href={"/podlazie/6"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-6")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-6")}
+                        </a>
                       </Link>
                       <Link href={"/podlazie/7"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-7")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-7")}
+                        </a>
                       </Link>
                       <Link href={"/podlazie/8"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-8")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-8")}
+                        </a>
                       </Link>
                       <Link href={"/podlazie/9"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-9")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-9")}
+                        </a>
                       </Link>
                       <Link href={"/podlazie/10"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-10")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-10")}
+                        </a>
                       </Link>
                       <Link href={"/podlazie/11"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-11")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-11")}
+                        </a>
                       </Link>
                       <Link href={"/podlazie/12"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-12")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-12")}
+                        </a>
                       </Link>
                       <Link href={"/podlazie/13"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-13")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-13")}
+                        </a>
                       </Link>
                       <Link href={"/podlazie/14"}>
-                        <a className="py-[7px]">{translate("filter-drop-down-14")}</a>
+                        <a className="py-[7px]">
+                          {translate("filter-drop-down-14")}
+                        </a>
                       </Link>
                     </div>
                   </div>
@@ -313,11 +338,11 @@ const FloorDetail = () => {
                   </Link>
                   <RightArrow stroke="#00000033" />
                   <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761]">
-                      {translate("filter-step-2")}
+                    {translate("filter-step-2")}
                   </span>
                   <RightArrow stroke="#476761" />
                   <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">
-                      {translate("filter-step-3")}
+                    {translate("filter-step-3")}
                   </span>
                 </div>
                 <div className="absolute bottom-0 left-[300px] xl:static inline-block">
@@ -353,9 +378,14 @@ export async function getStaticProps({ locale }: StaticProps) {
   };
 }
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
   return {
-    paths: [],
+    paths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((id) => {
+      return {
+        params: { id: id.toString() },
+        locale: "sk",
+      };
+    }),
     fallback: "blocking",
   };
 };
