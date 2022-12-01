@@ -343,35 +343,35 @@ const Building = () => {
                     onClick={() => setRoom1Clicked((prev) => !prev)}
                     variant={"square"}
                   >
-                    1 izb
+                    1 {translate("room")}
                   </FilterButton>
                   <FilterButton
                     clicked={room15Clicked}
                     onClick={() => setRoom15Clicked((prev) => !prev)}
                     variant={"square"}
                   >
-                    1.5 izb
+                    1.5 {translate("room")}
                   </FilterButton>
                   <FilterButton
                     clicked={room2Clicked}
                     onClick={() => setRoom2Clicked((prev) => !prev)}
                     variant={"square"}
                   >
-                    2 izb
+                    2 {translate("room")}
                   </FilterButton>
                   <FilterButton
                     clicked={room3Clicked}
                     onClick={() => setRoom3Clicked((prev) => !prev)}
                     variant={"square"}
                   >
-                    3 izb
+                    3 {translate("room")}
                   </FilterButton>
                   <FilterButton
                     clicked={room4Clicked}
                     onClick={() => setRoom4Clicked((prev) => !prev)}
                     variant={"square"}
                   >
-                    4 izb
+                    4 {translate("room")}
                   </FilterButton>
                 </div>
                 <div className={"flex gap-[30px] mt-[30px] xl:mt-0"}>
@@ -436,7 +436,7 @@ const Building = () => {
               <div className={"xl:flex flex-col xl:items-end"}>
                 <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] xl:items-end">
                   <div className="flex flex-col">
-                    <span className="text-white">Výbava:</span>
+                    <span className="text-white">{translate("equipment")}</span>
                     <FilterButton
                       clicked={withBalconyAndTerrace}
                       onClick={() => {
@@ -447,6 +447,7 @@ const Building = () => {
                         setWithBalconyAndTerrace((prev) => !prev);
                       }}
                       variant={"rectangle"}
+                      className={"justify-center xl:justify-start"}
                     >
                       {translate("terrace-balcony")}
                     </FilterButton>

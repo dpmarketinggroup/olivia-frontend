@@ -264,5 +264,8 @@
   "thank-you-text-1": "Your message has been successfully delivered.",
   "thank-you-text-2": "We will contact you as soon as possible.",
   "home-page": "Home page",
-  "subscription": "You have successfully subscribed to the newsletter."
+  "subscription": "You have successfully subscribed to the newsletter.",
+  "number": "n. ",
+  "equipment": "Equipment:",
+  "room": "r"
 }

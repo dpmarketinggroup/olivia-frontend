@@ -4,6 +4,7 @@ import Link from "next/link";
 import {useRouter} from "next/router";
 import {useStore} from "../../../lib/store/useStore";
 import axios from "axios";
+import {useTranslation} from "next-i18next";
 
 type Floor = {
     oneRooms: number
@@ -43,7 +44,8 @@ const HouseExtension = () => {
     const div3 = useRef<HTMLDivElement | null>(null)
 
     const router = useRouter()
-    const fetch = useStore(state => state.setSelectedApartment)
+    const fetch = useStore(state => state.setSelectedApartment);
+    const {t: translate} = useTranslation('home');
 
     async function getRooms(floor: number): Promise<Floor | undefined> {
         const response = await axios.get(`https://floating-scrubland-57360.herokuapp.com/api/byts?filters[poschodie][$eq]=${floor}`)
@@ -418,63 +420,63 @@ const HouseExtension = () => {
             </g>
             <foreignObject className="node" x="950" y="100" width="250" height="250px">
                 <div className="none" ref={div14}>
-                    <PopUp room15={twelthFloor?.oneHalfRooms} room1={twelthFloor?.oneRooms} room2={twelthFloor?.twoRooms} room3={twelthFloor?.threeRooms} room4={twelthFloor?.fourRooms} title={'14. poschodie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room15={twelthFloor?.oneHalfRooms} room1={twelthFloor?.oneRooms} room2={twelthFloor?.twoRooms} room3={twelthFloor?.threeRooms} room4={twelthFloor?.fourRooms} title={translate("filter-drop-down-14")} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="150" width="250" height="250px">
                 <div className="none" ref={div13}>
-                    <PopUp room15={eleventhFloor?.oneHalfRooms} room1={eleventhFloor?.oneRooms} room2={eleventhFloor?.twoRooms} room3={eleventhFloor?.threeRooms} room4={eleventhFloor?.fourRooms} title={'13. poschodie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room15={eleventhFloor?.oneHalfRooms} room1={eleventhFloor?.oneRooms} room2={eleventhFloor?.twoRooms} room3={eleventhFloor?.threeRooms} room4={eleventhFloor?.fourRooms} title={translate("filter-drop-down-13")} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="200" width="250" height="250px">
                 <div className="none" ref={div12}>
-                    <PopUp room15={tenthFloor?.oneHalfRooms} room1={tenthFloor?.oneRooms} room2={tenthFloor?.twoRooms} room3={tenthFloor?.threeRooms} room4={tenthFloor?.fourRooms} title={'12. poschodie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room15={tenthFloor?.oneHalfRooms} room1={tenthFloor?.oneRooms} room2={tenthFloor?.twoRooms} room3={tenthFloor?.threeRooms} room4={tenthFloor?.fourRooms} title={translate("filter-drop-down-12")} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="250" width="250" height="250px">
                 <div className="none" ref={div11}>
-                    <PopUp room15={ninthFloor?.oneHalfRooms} room1={ninthFloor?.oneRooms} room2={ninthFloor?.twoRooms} room3={ninthFloor?.threeRooms} room4={ninthFloor?.fourRooms} title={'11. poschodie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room15={ninthFloor?.oneHalfRooms} room1={ninthFloor?.oneRooms} room2={ninthFloor?.twoRooms} room3={ninthFloor?.threeRooms} room4={ninthFloor?.fourRooms} title={translate("filter-drop-down-11")} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             {/*5*/}
             <foreignObject className="node" x="950" y="300" width="250" height="250px">
                 <div className="none" ref={div10}>
-                    <PopUp room15={eighthFloor?.oneHalfRooms} room1={eighthFloor?.oneRooms} room2={eighthFloor?.twoRooms} room3={eighthFloor?.threeRooms} room4={eighthFloor?.fourRooms} title={'10. poschodie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room15={eighthFloor?.oneHalfRooms} room1={eighthFloor?.oneRooms} room2={eighthFloor?.twoRooms} room3={eighthFloor?.threeRooms} room4={eighthFloor?.fourRooms} title={translate("filter-drop-down-10")} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="350" width="250" height="250px">
                 <div className="none" ref={div9}>
-                    <PopUp room15={seventhFloor?.oneHalfRooms} room1={seventhFloor?.oneRooms} room2={seventhFloor?.twoRooms} room3={seventhFloor?.threeRooms} room4={seventhFloor?.fourRooms} title={'09. poschodie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room15={seventhFloor?.oneHalfRooms} room1={seventhFloor?.oneRooms} room2={seventhFloor?.twoRooms} room3={seventhFloor?.threeRooms} room4={seventhFloor?.fourRooms} title={translate("filter-drop-down-9")} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="430" width="250" height="250px">
                 <div className="none" ref={div8}>
-                    <PopUp room15={sixthFloor?.oneHalfRooms} room1={sixthFloor?.oneRooms} room2={sixthFloor?.twoRooms} room3={sixthFloor?.threeRooms} room4={sixthFloor?.fourRooms} title={'08. poschodie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room15={sixthFloor?.oneHalfRooms} room1={sixthFloor?.oneRooms} room2={sixthFloor?.twoRooms} room3={sixthFloor?.threeRooms} room4={sixthFloor?.fourRooms} title={translate("filter-drop-down-8")} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="470" width="250" height="250px">
                 <div className="none" ref={div7}>
-                    <PopUp room15={fifthFloor?.oneHalfRooms} room1={fifthFloor?.oneRooms} room2={fifthFloor?.twoRooms} room3={fifthFloor?.threeRooms} room4={fifthFloor?.fourRooms} title={'07. poschodie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room15={fifthFloor?.oneHalfRooms} room1={fifthFloor?.oneRooms} room2={fifthFloor?.twoRooms} room3={fifthFloor?.threeRooms} room4={fifthFloor?.fourRooms} title={translate("filter-drop-down-7")} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="530" width="250" height="250px">
                 <div className="none" ref={div6}>
-                    <PopUp room15={fourthFloor?.oneHalfRooms} room1={fourthFloor?.oneRooms} room2={fourthFloor?.twoRooms} room3={fourthFloor?.threeRooms} room4={fourthFloor?.fourRooms} title={'06. poschodie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room15={fourthFloor?.oneHalfRooms} room1={fourthFloor?.oneRooms} room2={fourthFloor?.twoRooms} room3={fourthFloor?.threeRooms} room4={fourthFloor?.fourRooms} title={translate("filter-drop-down-6")} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="570" width="250" height="250px">
                 <div className="none" ref={div5}>
-                    <PopUp room15={thirdFloor?.oneHalfRooms} room1={thirdFloor?.oneRooms} room2={thirdFloor?.twoRooms} room3={thirdFloor?.threeRooms} room4={thirdFloor?.fourRooms} title={'05. poschodie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room15={thirdFloor?.oneHalfRooms} room1={thirdFloor?.oneRooms} room2={thirdFloor?.twoRooms} room3={thirdFloor?.threeRooms} room4={thirdFloor?.fourRooms} title={translate("filter-drop-down-5")} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="630" width="250" height="250px">
                 <div className="none" ref={div4}>
-                    <PopUp room15={secondFloor?.oneHalfRooms} room1={secondFloor?.oneRooms} room2={secondFloor?.twoRooms} room3={secondFloor?.threeRooms} room4={secondFloor?.fourRooms} title={'04. poschodie'} top={'600px'} left={'950px'} display={'block'}/>
+                    <PopUp room15={secondFloor?.oneHalfRooms} room1={secondFloor?.oneRooms} room2={secondFloor?.twoRooms} room3={secondFloor?.threeRooms} room4={secondFloor?.fourRooms} title={translate("filter-drop-down-4")} top={'600px'} left={'950px'} display={'block'}/>
                 </div>
             </foreignObject>
             <foreignObject className="node" x="950" y="700" width="250" height="250px">
                 <div className="none" ref={div3}>
-                    <PopUp room15={firstFloor?.oneHalfRooms} room1={firstFloor?.oneRooms} room2={firstFloor?.twoRooms} room3={firstFloor?.threeRooms} room4={firstFloor?.fourRooms} title={'03. poschodie'} top={'600px'} left={'950px'}
+                    <PopUp room15={firstFloor?.oneHalfRooms} room1={firstFloor?.oneRooms} room2={firstFloor?.twoRooms} room3={firstFloor?.threeRooms} room4={firstFloor?.fourRooms} title={translate("filter-drop-down-3")} top={'600px'} left={'950px'}
                            display={'block'}/>
                 </div>
             </foreignObject>

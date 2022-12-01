@@ -13,7 +13,7 @@ const FilterButton = ({variant, icon, onClick, children, clicked = false, classN
     function getClass() {
         switch (variant) {
             case "rectangle":
-                return 'h-[40px] px-[15px]'
+                return 'h-[50px] px-[15px] leading-[17px]'
             case "square":
                 return 'w-[70px] h-[70px] flex items-center justify-center font-bold'
         }
