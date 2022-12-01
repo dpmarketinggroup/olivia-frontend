@@ -131,15 +131,16 @@ const OProjekte = () => {
               </div>
             </div>
             <div className="mx-auto">
+              {/*TODO: Preklad*/}
               <div className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-[110%] xl:-translate-y-1/2 h-[290px]">
                 {[
                   {
                     offer: "01.",
-                    description: translate("financing-01"),
+                    description: "Podpis Zmluvy o budúcej kúpnej zmluve.",
                   },
                   {
                     offer: "02.",
-                    description: translate("financing-02"),
+                    description: "Úhrada vo výške 20% z kúpnej ceny.",
                   },
                 ].map(({ offer, description }, index) => (
                   <div
@@ -159,11 +160,13 @@ const OProjekte = () => {
                 {[
                   {
                     offer: "03.",
-                    description: translate("financing-03"),
+                    description:
+                      "Podpis kúpnej zmluvy po vydaní kolaudačného rozhodnutia a zaplatenie zvyšnej časti kúpnej ceny.",
                   },
                   {
                     offer: "04.",
-                    description: translate("financing-04"),
+                    description:
+                      "Odovzdanie Vášho nového rezidenčného apartmánu.",
                   },
                 ].map(({ offer, description: description }, index) => (
                   <div
@@ -184,7 +187,8 @@ const OProjekte = () => {
               <div className="flex flex-col xl:flex-row gap-[50px] xl:gap-[100px] xl:pt-[550px] pb-[50px] xl:mx-[165px] items-center justify-center">
                 <div className="hidden xl:inline-block">
                   <h4 className="font-bold text-[18px] leading-7 mb-[10px]">
-                    {translate("financial-helper")}
+                    {/*TODO: Preklad*/}
+                    Kontaktná osoba pre hypotekárne financovanie UniCredit bank
                   </h4>
                   <p className="text-[14px] leading-[20px] text-[#999999] w-[350px]">
                     {translate("financial-helper-text")}
