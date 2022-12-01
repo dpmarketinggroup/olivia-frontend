@@ -738,13 +738,24 @@ export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
     "https://floating-scrubland-57360.herokuapp.com/api/byts?pagination[pageSize]=200"
   );
 
+  const sk = data.data.map((val: any) => {
+    return {
+      params: { id: val.id.toString() },
+      locale: "sk",
+    };
+  });
+
+  const en = data.data.map((val: any) => {
+    return {
+      params: { id: val.id.toString() },
+      locale: "en",
+    };
+  });
+  const paths = [...en, ...sk];
+
   return {
-    paths: data.data.map((val: any) => {
-      return {
-        params: { id: val.id.toString() },
-      };
-    }),
-    fallback: false,
+    paths,
+    fallback: true,
   };
 };
 
