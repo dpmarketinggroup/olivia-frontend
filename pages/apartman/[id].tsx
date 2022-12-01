@@ -734,14 +734,17 @@ export async function getStaticProps({ locale }: StaticProps) {
 }
 
 export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
+  const { data } = await axios.get(
+    "https://floating-scrubland-57360.herokuapp.com/api/byts?pagination[pageSize]=200"
+  );
+
   return {
-    paths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((id) => {
+    paths: data.data.map((val: any) => {
       return {
-        params: { id: id.toString() },
-        locale: "sk",
+        params: { id: val.id.toString() },
       };
     }),
-    fallback: "blocking",
+    fallback: false,
   };
 };
 
