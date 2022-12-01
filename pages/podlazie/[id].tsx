@@ -386,7 +386,7 @@ export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
         locale: "en",
       };
     }),
-    fallback: false,
+    fallback: true,
   };
 };
 
