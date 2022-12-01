@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Burger, Select } from "@mantine/core";
 import { useScrollLock } from "@mantine/hooks";
 import Cookies from "js-cookie";
-import {useRouter} from "next/router";
-import {useTranslation} from "next-i18next";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 interface NavbarProps {
   mainPage?: boolean;
@@ -17,8 +17,8 @@ const USER_CONSENT_COOKIE_EXPIRE_DATE = 3;
 
 const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
   const languages = ["sk", "en"];
-  const {asPath ,locale, locales, push} = useRouter();
-  const {t: translate} = useTranslation('home');
+  const { asPath, locale, locales, push } = useRouter();
+  const { t: translate } = useTranslation("home");
 
   const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
   const [cookieConsentIsTrue, setCookieConsentIsTrue] = useState(true);
@@ -209,7 +209,11 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                   rightSectionWidth={30}
                   styles={{ rightSection: { pointerEvents: "none" } }}
                   transitionDuration={80}
-                  onChange={(selected) => selected !== null ? push(asPath, undefined, {locale: selected}) : null}
+                  onChange={(selected) =>
+                    selected !== null
+                      ? push(asPath, asPath, { locale: selected })
+                      : null
+                  }
                 />
               </div>
             </div>
