@@ -7,7 +7,8 @@ import { BasketCrossed, TwoArrows, Basket } from "@components/icons";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next";
+import Both from "@components/icons/Both";
 
 export type Response = {
   id: number;
@@ -60,8 +61,7 @@ const Building = () => {
   const [floor, setFloor] = useState<[number, number]>([3, 14]);
   const [area, setArea] = useState<[number, number]>([20, 130]);
 
-
-  const {t: translate} = useTranslation('home');
+  const { t: translate } = useTranslation("home");
   const [isSoldChecked, setIsSoldChecked] = useState(true);
   const [isReservatedChecked, setIsReservatedChecked] = useState(false);
 
@@ -102,7 +102,6 @@ const Building = () => {
 
     fetch();
   }, []);
-
 
   async function handleClick() {
     let query = `?filters[cena][$gte]=${price[0] * 1000}&filters[cena][$lte]=${
@@ -448,6 +447,13 @@ const Building = () => {
                       }}
                       variant={"rectangle"}
                       className={"justify-center xl:justify-start"}
+                      icon={
+                        <Both
+                          width="22"
+                          height="22"
+                          fill={withBalconyAndTerrace ? "#0E3F3B" : "#fff"}
+                        />
+                      }
                     >
                       {translate("terrace-balcony")}
                     </FilterButton>

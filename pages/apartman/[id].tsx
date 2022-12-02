@@ -6,7 +6,6 @@ import {
   Bank,
   FloorPlan,
   RightArrow,
-  Severka,
   Star,
 } from "@components/icons";
 import Link from "next/link";
