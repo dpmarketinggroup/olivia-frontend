@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {LeftArrow} from "@components/icons";
 import Head from "next/head";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 function Custom404() {
     return (
@@ -23,6 +24,19 @@ function Custom404() {
             </div>
         </>
     )
+}
+
+interface StaticProps{
+    locale: string
+}
+
+export async function getStaticProps({locale}:StaticProps){
+    return{
+        props:{
+            ...(await serverSideTranslations(locale, ['home']))
+            //Will be passed to the page component as props
+        }
+    }
 }
 
 export default Custom404;
