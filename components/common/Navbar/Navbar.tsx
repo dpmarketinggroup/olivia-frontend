@@ -203,7 +203,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 <Select
                   className="w-[50px]"
                   data={languages}
-                  placeholder="SK"
+                  placeholder={locale}
                   variant="unstyled"
                   rightSection={<DownArrowIcon fill={"black"} />}
                   rightSectionWidth={30}
