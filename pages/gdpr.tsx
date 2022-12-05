@@ -1,4 +1,5 @@
 import Head from "next/head";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 const GDPR = () => {
     return (
@@ -84,6 +85,19 @@ const GDPR = () => {
             </div>
         </>
     )
+}
+
+interface StaticProps{
+    locale: string
+}
+
+export async function getStaticProps({locale}:StaticProps){
+    return{
+        props:{
+            ...(await serverSideTranslations(locale, ['home']))
+            //Will be passed to the page component as props
+        }
+    }
 }
 
 export default GDPR;
