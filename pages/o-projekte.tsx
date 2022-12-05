@@ -112,7 +112,7 @@ const OProjekte = () => {
       <div className="xl:grid xl:max-w-[1200px] grid-cols-2 mx-auto">
         <Equipment
           title={translate("equipment-heading")}
-          href="/OLIVIA štandardne vybavenie[68].pdf"
+          href="/standart.pdf"
         />
         <Equipment title={translate("equipment-heading-4")} href="/karta.pdf" />
       </div>
