@@ -98,6 +98,23 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 />
               </div>
             </div>
+            <div className={`languages xl:hidden ${!isOpenMobileNav ? 'hidden' : 'block'}`}>
+              <Select
+                  className="w-[50px]"
+                  data={languages}
+                  placeholder={locale}
+                  variant="unstyled"
+                  rightSection={<DownArrowIcon fill={"black"} />}
+                  rightSectionWidth={30}
+                  styles={{ rightSection: { pointerEvents: "none" } }}
+                  transitionDuration={80}
+                  onChange={(selected) =>
+                      selected !== null
+                          ? push(asPath, asPath, { locale: selected })
+                          : null
+                  }
+              />
+            </div>
             <div
               onClick={() => {
                 setIsOpenMobileNav(false);
@@ -199,7 +216,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
           </div>
           <div className="flex gap-[27px] mr-[40px]">
             <div className="flex items-center gap-[5px]">
-              <div className="languages">
+              <div className="languages hidden xl:block">
                 <Select
                   className="w-[50px]"
                   data={languages}
