@@ -180,11 +180,14 @@
 
   "financing-heading": "Podmienky financovania",
   "financing-subheading": "Financujúca banka",
-  "financing-01": "Podpis Rezervačnej zmluvy a zaplatenie rezervačného poplatku 5000€, ktorý bude vrátený po podpise Zmluvy o budúcej kúpnej zmluve.",
-  "financing-02": "Podpis Zmluvy o budúcej kúpnej zmluve a zaplatenie 20% kúpnej ceny.",
+  "financing-01-old": "Podpis Rezervačnej zmluvy a zaplatenie rezervačného poplatku 5000€, ktorý bude vrátený po podpise Zmluvy o budúcej kúpnej zmluve.",
+  "financing-01": "Podpis Zmluvy o budúcej kúpnej zmluve.",
+  "financing-02-old": "Podpis Zmluvy o budúcej kúpnej zmluve a zaplatenie 20% kúpnej ceny.",
+  "financing-02": "Úhrada vo výške 20% z kúpnej ceny.",
   "financing-03": "Podpis kúpnej zmluvy po vydaní kolaudačného rozhodnutia a zaplatenie zvyšnej časti kúpnej ceny.",
   "financing-04": "Odovzdanie Vášho nového rezidenčného apartmánu.",
   "financing-person": "Kontaktná osoba pre hypotekárne financovanie",
+  
 
 
 
@@ -253,7 +256,7 @@
   "from-1-to-4": "Od 1 izbových až po 4 izbové apartmány",
   "retail-text": "V prípade záujmu o prenájom obchodného priestoru ma neváhajte kontaktovať",
   "contact-and-meeting": "V prípade otázok sa na mňa neváhajte obrátiť. Rád Vám poradím a zodpoviem Vaše otázky.",
-  "financial-helper": "Finančný poradca UniCredit Bank",
+  "financial-helper": "Kontaktná osoba pre hypotekárne financovanie UniCredit bank",
   "financial-helper-text": "Neváhajte ma kontaktovať. Predstavím Vám detailný model financovania a zodpoviem všetky Vaše otázky.",
   "interactive-map": "Kliknutím na interaktívnu mapu zobrazíte informácie o apartmáne",
   "apartment-on-floor": "Výber apartmánu na poschodí",

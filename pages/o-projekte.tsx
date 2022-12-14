@@ -131,64 +131,50 @@ const OProjekte = () => {
               </div>
             </div>
             <div className="mx-auto">
-              {/*TODO: Preklad*/}
               <div className="flex flex-col xl:flex-row gap-[30px] xl:justify-center bg-[background: #F5F5F5] -translate-y-[110%] xl:-translate-y-1/2 h-[290px]">
-                {[
-                  {
-                    offer: "01.",
-                    description: "Podpis Zmluvy o budúcej kúpnej zmluve.",
-                  },
-                  {
-                    offer: "02.",
-                    description: "Úhrada vo výške 20% z kúpnej ceny.",
-                  },
-                ].map(({ offer, description }, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center justify-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px] xl:mb-[30px]"
-                  >
+              <div className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center justify-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px] xl:mb-[30px]">
                     <span className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">
-                      {offer}
+                      01
                     </span>
                     <p className="w-[290px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">
-                      {description}
+                      {translate("financing-01")}
                     </p>
-                  </div>
-                ))}
+                </div>
+
+                <div className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center justify-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px] xl:mb-[30px]">
+                    <span className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">
+                      02
+                    </span>
+                    <p className="w-[290px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">
+                      {translate("financing-02")}
+                    </p>
+                </div>
               </div>
               <div className="flex flex-col xl:justify-center xl:flex-row gap-[30px]  bg-[background: #F5F5F5] -translate-y-[60%] xl:-translate-y-1/2 h-[260px]">
-                {[
-                  {
-                    offer: "03.",
-                    description:
-                      "Podpis kúpnej zmluvy po vydaní kolaudačného rozhodnutia a zaplatenie zvyšnej časti kúpnej ceny.",
-                  },
-                  {
-                    offer: "04.",
-                    description:
-                      "Odovzdanie Vášho nového rezidenčného apartmánu.",
-                  },
-                ].map(({ offer, description: description }, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center justify-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px]"
-                  >
+                <div className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center justify-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px]">
                     <span className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">
-                      {offer}
+                      03
                     </span>
                     <p className="w-[290px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">
-                      {description}
+                      {translate("financing-03")}
                     </p>
-                  </div>
-                ))}
+                </div>
+
+                <div className="flex flex-col gap-[20px] py-[25px] px-[30px] text-center items-center justify-center drop-shadow-[0_0_60px_rgba(0,0,0,0.1)] bg-white ml-3 mr-4 xl:mx-0 w-[350px]">
+                    <span className="font-bold text-[24px] leading-8 tracking-[-0.1px] text-[#476761]">
+                      04
+                    </span>
+                    <p className="w-[290px] text-[16px] leading-6 tracking-[0.1px] text-[#676766]">
+                      {translate("financing-04")}
+                    </p>
+                </div>
               </div>
             </div>
             <div className="w-[full] mt-[-750px] xl:mt-[-565px] bg-[#F5F5F5] h-[970px] xl:h-[750px] border-primary">
               <div className="flex flex-col xl:flex-row gap-[50px] xl:gap-[100px] xl:pt-[550px] pb-[50px] xl:mx-[165px] items-center justify-center">
                 <div className="hidden xl:inline-block">
                   <h4 className="font-bold text-[18px] leading-7 mb-[10px]">
-                    {/*TODO: Preklad*/}
-                    Kontaktná osoba pre hypotekárne financovanie UniCredit bank
+                    {translate("financial-helper")}
                   </h4>
                   <p className="text-[14px] leading-[20px] text-[#999999] w-[350px]">
                     {translate("financial-helper-text")}
