@@ -185,8 +185,8 @@ const OProjekte = () => {
                     <Image
                       objectFit="cover"
                       layout="fill"
-                      alt="Jozef Mrkvička"
-                      src="/img/jozefOndercok.png"
+                      alt="Jozef Onderčo"
+                      src="/img/jozef-onderco-cropped.png"
                       loading={"eager"}
                     />
                   </div>
