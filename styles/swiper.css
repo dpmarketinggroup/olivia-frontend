@@ -1,0 +1,135 @@
+/*Form modal*/
+/*.mantine-Modal-root{*/
+/*    top: 200px;*/
+/*    left: 400px;*/
+/*    right: -500px;*/
+/*}*/
+
+/*.mantine-Modal-inner{*/
+/*    width: 50%;*/
+/*    position: relative;*/
+/*    padding: 0;*/
+/*}*/
+
+/*.mantine-Modal-modal{*/
+/*    width: 100%;*/
+/*    padding: 20px 30px 80px;*/
+/*}*/
+
+/*@media (min-width: 380px) {*/
+/*    .mantine-Modal-modal {*/
+/*        width: auto;*/
+/*    }*/
+/*}*/
+
+/*@media (min-width: 900px) {*/
+/*    .mantine-Modal-modal {*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
+/*///////////////////////////////////*/
+
+/*Gallery modal*/
+/*.gallery-modal .mantine-Modal-modal {*/
+/*    width: 50%;*/
+/*    padding: 20px 30px 80px;*/
+/*    background-color: transparent;*/
+/*}*/
+
+/*@media (min-width: 380px) {*/
+/*    .gallery-modal .mantine-Modal-modal {*/
+/*        width: auto;*/
+/*    }*/
+/*}*/
+
+/*@media (min-width: 900px) {*/
+/*    .gallery-modal .mantine-Modal-modal {*/
+/*        width: 50%;*/
+/*    }*/
+/*}*/
+/*////////////////////////////*/
+
+@media (min-width: 1280px) {
+    .swiper-ml{
+        margin-left: 4%;
+    }
+}
+
+@media (min-width: 1380px) {
+    .swiper-ml{
+        margin-left: 7%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .swiper-ml{
+        margin-left: 9%;
+    }
+}
+
+
+@media (min-width: 1540px) {
+    .swiper-ml{
+        margin-left: 11%;
+    }
+}
+
+@media (min-width: 1640px) {
+    .swiper-ml{
+        margin-left: 13%;
+    }
+}
+
+@media (min-width: 1740px) {
+    .swiper-ml{
+        margin-left: 16%;
+    }
+}
+
+@media (min-width: 1840px) {
+    .swiper-ml{
+        margin-left: 18%;
+    }
+}
+
+@media (min-width: 1940px) {
+    .swiper-ml{
+        margin-left: 20%;
+    }
+}
+
+@media (min-width: 2040px) {
+    .swiper-ml{
+        margin-left: 21%;
+    }
+}
+
+@media (min-width: 2140px) {
+    .swiper-ml{
+        margin-left: 22%;
+    }
+}
+
+@media (min-width: 2240px) {
+    .swiper-ml{
+        margin-left: 24%;
+    }
+}
+
+@media (min-width: 2340px) {
+    .swiper-ml{
+        margin-left: 25%;
+    }
+}
+
+@media (min-width: 2440px) {
+    .swiper-ml{
+        margin-left: 26%;
+    }
+}
+
+@media (min-width: 2540px) {
+    .swiper-ml{
+        margin-left: 27%;
+    }
+}
