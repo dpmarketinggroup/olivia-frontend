@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Checkbox, Loader, Modal, Textarea, TextInput } from "@mantine/core";
-import { Equipment, MapFooter, Info } from "@components/common";
+import Equipment from "@components/common/Equipment";
 import {
   ArrowDownNotFilledIcon,
   Bank,
@@ -23,6 +23,7 @@ import { E164Number } from "libphonenumber-js";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticPaths } from "next";
 import { useTranslation } from "next-i18next";
+import MapFooter from "@components/common/MapFooter";
 
 const ApartmentDetail = () => {
   const { t: translate } = useTranslation("home");
@@ -327,9 +328,8 @@ const ApartmentDetail = () => {
                   {translate("filter-drop-down-general")}
                 </span>
                 <div
-                  className={`${
-                    isFloorDropDownCLicked ? "dropdown-content" : "hidden"
-                  }`}
+                  className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"
+                    }`}
                 >
                   <div className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
                     <Link href={"/podlazie/3"}>
