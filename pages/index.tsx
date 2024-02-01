@@ -34,7 +34,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { Modal } from "@mantine/core";
 import Image from "next/image";
-import ReactPlayer from "react-player";
+
 
 const Home = () => {
   const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false);
