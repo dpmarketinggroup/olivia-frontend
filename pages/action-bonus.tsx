@@ -1,10 +1,4 @@
-import {
-  Form,
-  Hero,
-  MapFooter,
-  Negotiation,
-  Equipment,
-} from "@components/common";
+import Negotiation from "@components/common/Negotiation";
 import {
   InfoIcon2,
   CalendarIcon,
