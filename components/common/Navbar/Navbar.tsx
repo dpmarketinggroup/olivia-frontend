@@ -211,12 +211,12 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
             >
               <div
                 className={
-                  "flex flex-col xl:flex-row gap-[20px] xl:gap-[25px] xl:text-[16px] xl:mt-0"
+                  "flex flex-col xl:flex-row gap-[20px] xl:gap-[15px] xl:text-[16px] xl:mt-0 "
                 }
               >
                 <div className={"xl:hidden flex flex-col gap-[20px]"}>
                   <Link href={"/ponuka-apartmanov"} className={"xl:hidden"}>
-                    <a className="p-[3px]">{translate("filter-heading")}</a>
+                    <a className="p-[3px] ">{translate("filter-heading")}</a>
                   </Link>
                   <Link
                     href={"/ponuka-apartmanov#garazove-parkovanie"}
@@ -225,7 +225,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                     <a>{translate("description-car-heading")}</a>
                   </Link>
                 </div>
-                <div className="p-[3px]  hidden xl:block flex gap-[10px] items-center">
+                <div className="p-[3px]  flex gap-[10px] justify-center items-center">
                   <div className="dropdown ">
                     <Link href="/ponuka-apartmanov">
                       <a className="drop-span p-[3px] ">
@@ -245,16 +245,21 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                   </div>
                 </div>
                 <Link href="/action-bonus">
-                  <a className="font-bold text-[#ffffff] bg-[#89A6A2] border-[#89A6A2] p-[1px] border-[2px] ">
-                    {translate("footer-link-action")}
+                  <a className="font-bold text-[#ffffff]   flex justify-center items-center">
+                    <p className="bg-[#89A6A2] border-[#89A6A2] p-[1px] border-[2px]">{translate("footer-link-action")}</p>
+                  </a>
+                </Link>
+                <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+                  <a className="font-bold text-[#ffffff] text-center flex justify-center bg-[#476761] border-[#476761] p-[1px] border-[2px] ">
+                    Virtuálna prehliadka<br /> ukážkového apartmánu
                   </a>
                 </Link>
                 <Link href="/lokalita">
-                  <a className="p-[3px]">{translate("footer-link-location")}</a>
+                  <a className="p-[3px] flex justify-center items-center"><p>{translate("footer-link-location")}</p></a>
                 </Link>
-                <div className={"flex flex-col gap-[20px] xl:hidden"}>
+                <div className={"flex flex-col gap-[20px] xl:hidden items-center"}>
                   <Link href="/o-projekte">
-                    <a className="p-[3px]">
+                    <a className="p-[3px] ">
                       {translate("button-about-project")}
                     </a>
                   </Link>
@@ -265,7 +270,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                     <a>{translate("financing")}</a>
                   </Link>
                 </div>
-                <div className={"hidden p-[3px] xl:block"}>
+                <div className={"hidden p-[3px] xl:flex justify-center items-center"}>
                   <div className="dropdown">
                     <Link href="/o-projekte">
                       <a>{translate("button-about-project")}</a>
@@ -288,13 +293,13 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                   </div>
                 </div>
                 <Link href="/retail">
-                  <a className="p-[3px]">{translate("hero-retail-title")}</a>
+                  <a className="p-[3px] flex justify-center items-center"  >{translate("hero-retail-title")}</a>
                 </Link>
                 {/*<Link href="/novinky">*/}
                 {/*    <a>Novinky</a>*/}
                 {/*</Link>*/}
                 <Link href="/kontakt">
-                  <a className="p-[3px]">{translate("footer-link-contact")}</a>
+                  <a className="p-[3px] flex justify-center items-center">{translate("footer-link-contact")}</a>
                 </Link>
               </div>
               <Link href={"/stretnutie"}>
