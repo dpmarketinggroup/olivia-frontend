@@ -166,7 +166,7 @@ const OProjekte = () => {
           title={translate("equipment-heading")}
           href="/standart.pdf"
         />
-        <Equipment title={translate("equipment-heading-4")} href="/karta_vybavenia.pdf" />
+        <Equipment title={translate("equipment-heading-4")} href="/karta_vybavenia1.pdf" />
       </div>
       <div className="flex justify-center" id="financovanie">
         <div className="w-full">
