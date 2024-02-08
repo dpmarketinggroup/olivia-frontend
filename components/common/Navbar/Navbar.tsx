@@ -214,7 +214,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                   "flex flex-col xl:flex-row gap-[20px] xl:gap-[15px] xl:text-[16px] xl:mt-0 "
                 }
               >
-                <div className={"xl:hidden flex flex-col gap-[20px]"}>
+                <div className={"xl:hidden flex flex-col justify-center items-center gap-[20px]"}>
                   <Link href={"/ponuka-apartmanov"} className={"xl:hidden"}>
                     <a className="p-[3px] ">{translate("filter-heading")}</a>
                   </Link>
@@ -225,7 +225,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                     <a>{translate("description-car-heading")}</a>
                   </Link>
                 </div>
-                <div className="p-[3px]  flex gap-[10px] justify-center items-center">
+                <div className="p-[3px]  hidden xl:flex gap-[10px] justify-center items-center">
                   <div className="dropdown ">
                     <Link href="/ponuka-apartmanov">
                       <a className="drop-span p-[3px] ">
@@ -265,6 +265,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                   <Link href="/o-projekte#financovanie">
                     <a>{translate("financing")}</a>
                   </Link>
+                  <Link href="/retail">
+                    <a className="p-[3px] flex justify-center items-center "  >{translate("hero-retail-title")}</a>
+                  </Link>
                 </div>
                 <div className={"hidden p-[3px] xl:flex justify-center items-center"}>
                   <div className="dropdown">
@@ -282,15 +285,16 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                           {translate("financing")}
                         </a>
                       </Link>
+                      <Link href="/retail">
+                        <a className="p-[3px] flex justify-center items-center  pb-[20px] px-[20px] "  >{translate("hero-retail-title")}</a>
+                      </Link>
                     </div>
                     <div className="ml-[10px] inline-block">
                       <DownArrowIcon />
                     </div>
                   </div>
                 </div>
-                <Link href="/retail">
-                  <a className="p-[3px] flex justify-center items-center"  >{translate("hero-retail-title")}</a>
-                </Link>
+
                 {/*<Link href="/novinky">*/}
                 {/*    <a>Novinky</a>*/}
                 {/*</Link>*/}
