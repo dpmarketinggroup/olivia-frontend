@@ -242,7 +242,8 @@
   "ground-floor": "Erdgeschoss",
   "navigate": "Navigieren",
   "here-we-are": "Hier finden Sie uns",
-  "show-apartment": "Virtueller Rundgang<br />durch die Musterwohnung",
+  "show-apartment-1": "Virtueller Rundgang",
+  "show-apartment-2": "durch die Musterwohnung",
 
   "footer-description": "Erhalten Sie die neuesten Informationen über Olivia Residence direkt in Ihren Posteingang.",
   "footer-click-text-first-part": "Durch Klicken auf Absenden erklären Sie sich damit einverstanden, dass Ihre personenbezogenen Daten gemäß",
