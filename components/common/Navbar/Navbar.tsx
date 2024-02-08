@@ -249,11 +249,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                     <p className="bg-[#89A6A2] border-[#89A6A2] p-[1px] border-[2px]">{translate("footer-link-action")}</p>
                   </a>
                 </Link>
-                <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
-                  <a className="font-bold text-[#ffffff] text-center flex justify-center bg-[#476761] border-[#476761] p-[1px] border-[2px] ">
-                    Virtuálna prehliadka<br /> ukážkového apartmánu
-                  </a>
-                </Link>
+
                 <Link href="/lokalita">
                   <a className="p-[3px] flex justify-center items-center"><p>{translate("footer-link-location")}</p></a>
                 </Link>
@@ -300,6 +296,11 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 {/*</Link>*/}
                 <Link href="/kontakt">
                   <a className="p-[3px] flex justify-center items-center">{translate("footer-link-contact")}</a>
+                </Link>
+                <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+                  <a className="font-bold text-[#ffffff] text-center flex justify-center bg-[#476761] border-[#476761] p-[1px] border-[2px] ">
+                    {translate("show-apartment")}
+                  </a>
                 </Link>
               </div>
               <Link href={"/stretnutie"}>
