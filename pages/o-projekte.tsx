@@ -161,12 +161,12 @@ const OProjekte = () => {
       <div>
         <EcologicDescription oProjekte={true} />
       </div>
-      <div className="xl:grid xl:max-w-[1200px] grid-cols-2 mx-auto">
+      <div id="standardy" className="xl:grid xl:max-w-[1200px] grid-cols-2 mx-auto">
         <Equipment
           title={translate("equipment-heading")}
-          href="/standart.pdf"
+          href="/OLIVIA Residence_štandard projektu.pdf"
         />
-        <Equipment title={translate("equipment-heading-4")} href="/OLIVIA Residence_Karta Vybavenia.pdf" />
+        <Equipment title={translate("equipment-heading-4")} href="/OLIVIA Residence_štandard apartmánov.pdf" />
       </div>
       <div className="flex justify-center" id="financovanie">
         <div className="w-full">

@@ -266,7 +266,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                     <a>{translate("financing")}</a>
                   </Link>
                   <Link href="/retail">
-                    <a className="p-[3px] flex justify-center items-center "  >{translate("hero-retail-title")}</a>
+                    <a className="p-[3px] flex justify-center items-center ">{translate("hero-retail-title")}</a>
+                  </Link>
+                  <Link href="/o-projekte#standardy">
+                    <a className="p-[3px] flex justify-center items-center ">{translate("standards-nav")}</a>
                   </Link>
                 </div>
                 <div className={"hidden p-[3px] xl:flex justify-center items-center"}>
@@ -286,7 +289,12 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                         </a>
                       </Link>
                       <Link href="/retail">
-                        <a className="p-[3px] flex justify-center items-center  pb-[20px] px-[20px] "  >{translate("hero-retail-title")}</a>
+                        <a className="p-[3px] flex justify-center items-center text-center pb-[20px] px-[20px] "  >{translate("hero-retail-title")}</a>
+                      </Link>
+                      <Link href="/o-projekte#standardy">
+                        <a className="pb-[20px] px-[20px] text-center">
+                          Štandardy projektu
+                        </a>
                       </Link>
                     </div>
                     <div className="ml-[10px] inline-block">
