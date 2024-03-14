@@ -39,8 +39,9 @@ export default async function handler(
       port: 465,
       host: "smtp.m1.websupport.sk",
       auth: {
-        user: "olivia@dpmg.dev",
-        pass: "Vu8f})kV3B",
+        user: "info@oliviaresidence.sk",
+        pass: "Jt5k;,Vqdz",
+        // "Vu8f})kV3B"
       },
       secure: true,
     });
