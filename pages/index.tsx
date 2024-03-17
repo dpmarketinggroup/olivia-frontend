@@ -129,7 +129,7 @@ const Home = () => {
           muted={true}
           loop={true}
         >
-          <source type="video/mp4" src="/videos/231213OR4301-Benefit-VYHLAD-5x4 (1).mp4" />
+          <source type="video/mp4" src="/videos/231213OR4301-V2-16x9-WEB.mp4" />
 
         </video>
       </div>
