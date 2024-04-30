@@ -327,11 +327,11 @@ const ApartmentDetail = () => {
                   {apartment.data.attributes.poschodie}
                   {translate("filter-drop-down-general")}
                 </span>
-                <div
+                {/* <div
                   className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"
                     }`}
-                >
-                  <div className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
+                > */}
+                {/* <div className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
                     <Link href={"/podlazie/3"}>
                       <a className="py-[7px]">
                         {translate("filter-drop-down-3")}
@@ -392,11 +392,11 @@ const ApartmentDetail = () => {
                         {translate("filter-drop-down-14")}
                       </a>
                     </Link>
-                  </div>
-                </div>
-                <div className="ml-[10px] inline-block">
+                  </div> */}
+                {/* </div> */}
+                {/* <div className="ml-[10px] inline-block">
                   <ArrowDownNotFilledIcon />
-                </div>
+                </div> */}
               </div>
               <div className="flex gap-[10px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[380px] xl:w-[450px] xl:justify-center">
                 <Link href="/ponuka-apartmanov">
@@ -761,7 +761,7 @@ const ApartmentDetail = () => {
         </div>
         <CarDescription />
         <CustomSwiper />
-      </div>
+      </div >
       <div className="xl:grid xl:max-w-[1200px] grid-cols-2 mx-auto">
         <Equipment
           title={translate("equipment-heading")}
