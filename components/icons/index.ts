@@ -74,3 +74,4 @@ export { default as PencilIcon } from "./pencil";
 export { default as BuildIcon } from "./build";
 export { default as Home2Icon } from "./home2";
 export { default as iIcon } from "./i";
+export { default as SpecialistIcon } from "./Specialist";

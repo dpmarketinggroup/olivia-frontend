@@ -21,6 +21,7 @@ import {
   BuildIcon,
   PencilIcon,
   iIcon,
+  SpecialistIcon
 } from "@components/icons";
 import ListIcon from "@components/icons/ListIcon";
 import Image from "next/image";
@@ -390,6 +391,12 @@ const Action = () => {
             <PercentIcon />
             <p className="text-[22px] mt-[15px] leading-[24px] text-black text-left">
               <strong>{translate("better-offer-5")}</strong>
+            </p>
+          </div>
+          <div className="bg-[#fbfbfb] w-[370px] md:h-[240px] h-[160px] p-[16px] ">
+            <SpecialistIcon />
+            <p className="text-[22px] mt-[15px] leading-[24px] text-black text-left">
+              <strong>{translate("better-offer-6")}</strong>
             </p>
           </div>
         </div>
