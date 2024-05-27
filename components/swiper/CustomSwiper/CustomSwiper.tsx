@@ -51,6 +51,8 @@ const CustomSwiper = () => {
         }}
       >
         {[
+          "/img/240524OR4901-DJI_0020.00_00_08_11.Still002.jpg",
+          "/img/240524OR4901-DJI_0020.00_02_53_25.Still014.jpg",
           "/img/231213OR4301-test-ex1-still-2.jpg",
           "/img/231213OR4301-test-ex3-still-1.jpg",
           "/img/IMG_0572.JPG",
