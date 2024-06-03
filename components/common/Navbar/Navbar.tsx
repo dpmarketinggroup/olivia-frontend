@@ -101,8 +101,34 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
-    setTimeout(() => setShowModal(true), 10000);
+    setTimeout(() => setShowModal(true), 5000);
   }, []);
+  useEffect(() => {
+    const hasVisited = localStorage.getItem("hasVisited");
+    if (!hasVisited) {
+      setTimeout(() => setShowModal(true), 5000);
+      localStorage.setItem("hasVisited", "true");
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        const hasVisited = localStorage.getItem("hasVisited");
+        if (!hasVisited) {
+          setTimeout(() => setShowModal(true), 5000);
+          localStorage.setItem("hasVisited", "true");
+        }
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
 
   return (
     <>
