@@ -24,6 +24,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticPaths } from "next";
 import { useTranslation } from "next-i18next";
 import MapFooter from "@components/common/MapFooter";
+import 'react-phone-number-input/style.css';
+
 
 const ApartmentDetail = () => {
   const { t: translate } = useTranslation("home");
