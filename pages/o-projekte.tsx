@@ -303,35 +303,17 @@ const OProjekte = () => {
           </div>
         </div>
       </section>{" "}
-      <div className="w-[full] mt-[80px] xl:mt-[150px] bg-[#F5F5F5] h-[200px] xl:h-[250px] border-primary">
-        <div className="flex flex-col xl:flex-row xl:gap-[100px] xl:pt-[60px] pb-[40px] xl:mx-[165px] items-center justify-center">
-          <div className="hidden xl:inline-block">
+      <div className="w-[full] mt-[80px] xl:mt-[150px] bg-[#F5F5F5]  xl:h-[250px] border-primary">
+        <div className="flex flex-col xl:flex-row xl:gap-[100px] pt-[60px] pb-[40px] xl:mx-[165px] items-center justify-center text-center">
+          <div className="inline-block">
             <h4 className="font-bold text-[18px] leading-7 mb-[10px]">
               {translate("financial-helper")}
             </h4>
-            <p className="text-[14px] leading-[20px] text-[#999999] w-[450px]">
+            <p className="text-[14px] leading-[20px] text-[#999999]">
               {translate("financial-helper-text")}
             </p>
           </div>
-          <div className="flex gap-[20px] items-center mt-[50px] xl:mt-0">
-            {/* <div className="h-[60px] w-[60px] relative">
-                    <Image
-                      objectFit="cover"
-                      layout="fill"
-                      alt="Jozef Onderčo"
-                      src="/img/jozef-onderco-cropped.png"
-                      loading={"eager"}
-                    />
-                  </div> */}
-            <div>
-              <p className="font-bold text-[16px] leading-6 tracking-[0.1px] ">
-                Ing. Darko Poljak, MSc
-              </p>
-              <span className="text-[14px] leading-5">
-                {translate("financing-person")}
-              </span>
-            </div>
-          </div>
+
 
         </div>
         {/* <Equipment
