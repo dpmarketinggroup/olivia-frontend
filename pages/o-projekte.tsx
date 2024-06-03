@@ -309,7 +309,7 @@ const OProjekte = () => {
             <h4 className="font-bold text-[18px] leading-7 mb-[10px]">
               {translate("financial-helper")}
             </h4>
-            <p className="text-[14px] leading-[20px] text-[#999999] w-[350px]">
+            <p className="text-[14px] leading-[20px] text-[#999999] w-[450px]">
               {translate("financial-helper-text")}
             </p>
           </div>
@@ -332,14 +332,7 @@ const OProjekte = () => {
               </span>
             </div>
           </div>
-          <div className="flex items-center gap-[20px]">
-            <EmailSign />
-            <Link href={"mailto:jozef.onderco@unicreditgroup.sk"}>
-              <a className="font-bold text-[18px] leading-7">
-                darko@oliviaresidence.sk
-              </a>
-            </Link>
-          </div>
+
         </div>
         {/* <Equipment
         title={translate("equipment-heading-2")}

@@ -119,7 +119,8 @@ const HouseExtension = () => {
         className={"relative"}
         onMouseEnter={() => {
           div3.current?.classList.remove("none");
-          div3.current?.classList.add("block");
+          div3.current?.classList.add("xl:block");
+          div3.current?.classList.add("hidden");
         }}
         onMouseLeave={() => div3.current?.classList.add("none")}
         onClick={() => fetch("_03_highlight", Number(router.query.id))}
@@ -146,7 +147,8 @@ const HouseExtension = () => {
         data-name="04 highlight"
         onMouseEnter={() => {
           div4.current?.classList.remove("none");
-          div4.current?.classList.add("block");
+          div4.current?.classList.add("xl:block");
+          div4.current?.classList.add("hidden");
         }}
         onMouseLeave={() => div4.current?.classList.add("none")}
         onClick={() => fetch("08.01", Number(router.query.id))}
@@ -173,7 +175,8 @@ const HouseExtension = () => {
         data-name="05 highlight"
         onMouseEnter={() => {
           div5.current?.classList.remove("none");
-          div5.current?.classList.add("block");
+          div5.current?.classList.add("xl:block");
+          div5.current?.classList.add("hidden");
         }}
         onMouseLeave={() => div5.current?.classList.add("none")}
         onClick={() => fetch("08.01", Number(router.query.id))}
@@ -200,7 +203,8 @@ const HouseExtension = () => {
         data-name="06 highlight"
         onMouseEnter={() => {
           div6.current?.classList.remove("none");
-          div6.current?.classList.add("block");
+          div6.current?.classList.add("xl:block");
+          div6.current?.classList.add("hidden");
         }}
         onMouseLeave={() => div6.current?.classList.add("none")}
         onClick={() => fetch("08.01", Number(router.query.id))}
@@ -227,7 +231,8 @@ const HouseExtension = () => {
         data-name="07 highlight"
         onMouseEnter={() => {
           div7.current?.classList.remove("none");
-          div7.current?.classList.add("block");
+          div7.current?.classList.add("xl:block");
+          div7.current?.classList.add("hidden");
         }}
         onMouseLeave={() => div7.current?.classList.add("none")}
         onClick={() => fetch("08.01", Number(router.query.id))}
@@ -254,7 +259,8 @@ const HouseExtension = () => {
         data-name="08 highlight"
         onMouseEnter={() => {
           div8.current?.classList.remove("none");
-          div8.current?.classList.add("block");
+          div8.current?.classList.add("xl:block");
+          div8.current?.classList.add("hidden");
         }}
         onMouseLeave={() => div8.current?.classList.add("none")}
         onClick={() => fetch("08.01", Number(router.query.id))}
@@ -281,7 +287,8 @@ const HouseExtension = () => {
         data-name="09 highlight"
         onMouseEnter={() => {
           div9.current?.classList.remove("none");
-          div9.current?.classList.add("block");
+          div9.current?.classList.add("xl:block");
+          div9.current?.classList.add("hidden");
         }}
         onMouseLeave={() => div9.current?.classList.add("none")}
         onClick={() => fetch("08.01", Number(router.query.id))}
@@ -307,7 +314,8 @@ const HouseExtension = () => {
         data-name="10 highlight"
         onMouseEnter={() => {
           div10.current?.classList.remove("none");
-          div10.current?.classList.add("block");
+          div10.current?.classList.add("xl:block");
+          div10.current?.classList.add("hidden");
         }}
         onMouseLeave={() => div10.current?.classList.add("none")}
         onClick={() => fetch("08.01", Number(router.query.id))}
@@ -334,7 +342,8 @@ const HouseExtension = () => {
         data-name="11 highlight"
         onMouseEnter={() => {
           div11.current?.classList.remove("none");
-          div11.current?.classList.add("block");
+          div11.current?.classList.add("xl:block");
+          div11.current?.classList.add("hidden");
         }}
         onMouseLeave={() => div11.current?.classList.add("none")}
         onClick={() => fetch("08.01", Number(router.query.id))}
@@ -360,7 +369,8 @@ const HouseExtension = () => {
         data-name="12 highlight"
         onMouseEnter={() => {
           div12.current?.classList.remove("none");
-          div12.current?.classList.add("block");
+          div12.current?.classList.add("xl:block");
+          div12.current?.classList.add("hidden");
         }}
         onMouseLeave={() => div12.current?.classList.add("none")}
         onClick={() => fetch("08.01", Number(router.query.id))}
@@ -386,7 +396,8 @@ const HouseExtension = () => {
         data-name="13 highlight"
         onMouseEnter={() => {
           div13.current?.classList.remove("none");
-          div13.current?.classList.add("block");
+          div13.current?.classList.add("xl:block");
+          div13.current?.classList.add("hidden");
         }}
         onMouseLeave={() => div13.current?.classList.add("none")}
         onClick={() => fetch("08.01", Number(router.query.id))}
@@ -412,7 +423,9 @@ const HouseExtension = () => {
         data-name="14 highlight"
         onMouseEnter={() => {
           div14.current?.classList.remove("none");
-          div14.current?.classList.add("block");
+          div14.current?.classList.add("xl:block");
+          div14.current?.classList.add("hidden");
+
         }}
         onMouseLeave={() => div14.current?.classList.add("none")}
         onClick={() => fetch("08.01", Number(router.query.id))}
@@ -450,7 +463,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-14")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
@@ -471,7 +484,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-13")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
@@ -492,7 +505,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-12")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
@@ -513,7 +526,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-11")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
@@ -535,7 +548,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-10")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
@@ -556,7 +569,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-9")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
@@ -577,7 +590,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-8")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
@@ -598,7 +611,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-7")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
@@ -619,7 +632,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-6")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
@@ -640,7 +653,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-5")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
@@ -661,7 +674,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-4")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
@@ -682,7 +695,7 @@ const HouseExtension = () => {
             title={translate("filter-drop-down-3")}
             top={"600px"}
             left={"950px"}
-            display={"block"}
+            display={"hidden xl:block"}
           />
         </div>
       </foreignObject>
