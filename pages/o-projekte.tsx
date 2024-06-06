@@ -233,9 +233,27 @@ const OProjekte = () => {
           </div>
         </div>
       </div>
+      <div className="w-[full]  bg-[#F5F5F5]  xl:h-[250px] border-primary">
+        <div className="flex flex-col xl:flex-row xl:gap-[100px] pt-[60px] pb-[40px] xl:mx-[165px] items-center justify-center text-center">
+          <div className="inline-block">
+            <h4 className="font-bold text-[26px] leading-8 mb-[10px]">
+              {translate("financial-helper")}
+            </h4>
+            <p className="text-[20px] leading-[28px] text-[#999999]">
+              {translate("financial-helper-text")}
+            </p>
+          </div>
+
+
+        </div>
+        {/* <Equipment
+        title={translate("equipment-heading-2")}
+        href="Detailná ponuka financovania.pdf"
+      /> */}
+      </div>
       <section
         className={
-          "px-4 w-full xl:max-w-[1200px] xl:mx-auto mt-[70px] xl:mt-[150px] mb-[45px] xl:mb-[70px]"
+          "px-4 w-full xl:max-w-[1200px] xl:mx-auto my-[70px] xl:mt-[150px] mb-[70px] xl:mb-[70px]"
         }
       >
         <h2
@@ -303,24 +321,7 @@ const OProjekte = () => {
           </div>
         </div>
       </section>{" "}
-      <div className="w-[full] mt-[80px] xl:mt-[150px] bg-[#F5F5F5]  xl:h-[250px] border-primary">
-        <div className="flex flex-col xl:flex-row xl:gap-[100px] pt-[60px] pb-[40px] xl:mx-[165px] items-center justify-center text-center">
-          <div className="inline-block">
-            <h4 className="font-bold text-[18px] leading-7 mb-[10px]">
-              {translate("financial-helper")}
-            </h4>
-            <p className="text-[14px] leading-[20px] text-[#999999]">
-              {translate("financial-helper-text")}
-            </p>
-          </div>
 
-
-        </div>
-        {/* <Equipment
-        title={translate("equipment-heading-2")}
-        href="Detailná ponuka financovania.pdf"
-      /> */}
-      </div>
       <div className={"xl:mt-[100px] xl:mb-[100px]"}>
         <Subscription />
       </div>
