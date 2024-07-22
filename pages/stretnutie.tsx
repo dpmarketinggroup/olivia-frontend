@@ -99,7 +99,7 @@ const Stretnutie = () => {
                     {translate("mon-fri")}
                   </span>
                   <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">
-                    13.00 - 18.00
+                    13.00 - 17.00
                   </span>
                 </div>
                 <div className="flex flex-col items-center xl:items-start">
@@ -107,7 +107,7 @@ const Stretnutie = () => {
                     {translate("sat")}
                   </span>
                   <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">
-                    10.00 - 15.00
+                    10.00 - 14.00
                   </span>
                 </div>
                 <div className="flex flex-col items-center xl:items-start">
