@@ -10,3 +10,4 @@ export { default as Description } from "./Description";
 export { default as Navbar } from "./Navbar";
 export { default as Equipment } from "./Equipment";
 export { default as Info } from "./Info";
+export { default as useRecaptcha } from "./useRecaptcha";

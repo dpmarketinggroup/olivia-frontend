@@ -7,6 +7,8 @@ import "react-phone-number-input/style.css";
 import { E164Number } from "libphonenumber-js";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import ReCAPTCHA from 'react-google-recaptcha';
+import useRecaptcha from '@components/common/useRecaptcha'
 
 interface FormProps {
   meeting?: boolean;
@@ -14,6 +16,7 @@ interface FormProps {
 }
 
 const Form = ({ meeting = false, isGreen }: FormProps) => {
+  const { capchaToken, recaptchaRef, handleRecaptcha } = useRecaptcha();
   const router = useRouter();
   const [isClicked1, setClicked1] = useState(false);
   const [isClicked2, setClicked2] = useState(false);
@@ -34,7 +37,7 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
 
   async function handleSubmit(e: SyntheticEvent) {
     e.preventDefault();
-    if (!name || !surname || !email) return;
+    if (!name || !surname || !email || !capchaToken) return;
 
     try {
       setLoading(true);
@@ -51,7 +54,12 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
       });
     } catch (e) {
       console.log("Could not send to backend");
+      console.log(name + surname + email + phone + message);
     }
+
+
+    // Reset captcha after submission
+    recaptchaRef.current?.reset();
     setLoading(false);
     await router.push("/dakujeme");
   }
@@ -204,13 +212,17 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
             radius="xs"
             color="green"
           />
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey="6LfjnccpAAAAABzMDixAyBN6mGhwdeV8vezeXIDv"
+            onChange={handleRecaptcha}
+          />
           <button
-            disabled={loading}
-            className={`py-[12px] ${
-              meeting
-                ? " bg-[#89A6A2] hover:bg-[#476761]"
-                : "bg-[#476761] hover:bg-primary"
-            } text-white flex items-center justify-center gap-[10px]`}
+            disabled={loading || !capchaToken}
+            className={`py-[12px] ${meeting
+              ? " bg-[#89A6A2] hover:bg-[#476761]"
+              : "bg-[#476761] hover:bg-primary"
+              } text-white flex items-center justify-center gap-[10px]`}
           >
             {translate("form-button")}
             {loading && <Loader size={20} />}
