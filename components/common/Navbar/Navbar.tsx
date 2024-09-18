@@ -48,7 +48,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
             className={"w-full xl:w-[780px] h-[230px] xl:h-[560px] relative"}
           >
             <Image
-              src={"/img/modal-banner-3.jpg"}
+              src={"/img/240903OR5301-koncept-1.png"}
               objectFit={"contain"}
               layout={"fill"}
             />
