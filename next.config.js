@@ -1,15 +1,17 @@
 /** @type {import('next').NextConfig} */
-const { i18n } = require('./next-i18next.config');
+const { i18n } = require("./next-i18next.config");
 
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   i18n,
   images: {
-    domains: ['res.cloudinary.com']
+    domains: ["res.cloudinary.com"],
   },
-  env: {  NEXT_PUBLIC_SENDIN_KEY: process.env.NEXT_PUBLIC_SENDIN_KEY  } 
-}
+  env: {
+    NEXT_PUBLIC_SENDIN_KEY: process.env.NEXT_PUBLIC_SENDIN_KEY,
+    SEND_PASSWD: process.env.SEND_PASSWD,
+  },
+};
 
-
-module.exports = nextConfig
+module.exports = nextConfig;

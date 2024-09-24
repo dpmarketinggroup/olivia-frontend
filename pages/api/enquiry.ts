@@ -40,7 +40,7 @@ export default async function handler(
       host: "smtp.m1.websupport.sk",
       auth: {
         user: "info@oliviaresidence.sk",
-        pass: "i7LnrByH9JJm.!",
+        pass: process.env.SEND_PASSWD,
       },
       secure: true,
     });
