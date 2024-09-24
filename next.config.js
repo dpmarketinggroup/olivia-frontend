@@ -11,6 +11,7 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_SENDIN_KEY: process.env.NEXT_PUBLIC_SENDIN_KEY,
     SEND_PASSWD: process.env.SEND_PASSWD,
+    SEND_MAIL: process.env.SEND_MAIL,
   },
 };
 

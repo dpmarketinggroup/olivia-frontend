@@ -39,7 +39,7 @@ export default async function handler(
       port: 465,
       host: "smtp.m1.websupport.sk",
       auth: {
-        user: "info@oliviaresidence.sk",
+        user: process.env.SEND_MAIL,
         pass: process.env.SEND_PASSWD,
       },
       secure: true,
