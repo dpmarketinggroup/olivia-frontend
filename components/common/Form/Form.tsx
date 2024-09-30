@@ -21,6 +21,7 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
   const [isClicked1, setClicked1] = useState(false);
   const [isClicked2, setClicked2] = useState(false);
 
+
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
@@ -52,16 +53,22 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
           apartment: getApartment(),
         }),
       });
+
+      await router.push("/dakujeme");
     } catch (e) {
-      console.log("Could not send to backend");
+
+      await router.push("/notsender");
       console.log(name + surname + email + phone + message);
     }
+
 
 
     // Reset captcha after submission
     recaptchaRef.current?.reset();
     setLoading(false);
-    await router.push("/dakujeme");
+
+
+
   }
   const { t: translate } = useTranslation("home");
   return (

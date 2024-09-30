@@ -33,6 +33,7 @@ export { default as Paper } from "./Paper";
 export { default as PaperPlane } from "./PaperPlane";
 export { default as Parking } from "./Parking";
 export { default as Phone } from "./Phone";
+export { default as PhoneBig } from "./Phone_big";
 export { default as PhoneHero } from "./PhoneHero";
 export { default as RectangleFooter } from "./RectangleFooter";
 export { default as RightArrow } from "./RightArrow";
