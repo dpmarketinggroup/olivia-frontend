@@ -49,9 +49,8 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
 
   return (
     <div
-      className={`${
-        toBottom && "xl:absolute bottom-0 left-0 right-0"
-      } w-full green`}
+      className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"
+        } w-full green`}
     >
       <div>
         <div className="relative bg-black w-full px-[1rem] xl:px-[165px]">
@@ -110,11 +109,11 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
                     {translate("footer-link-apartments")}
                   </a>
                 </Link>
-                <Link href="/action-bonus">
+                {/* <Link href="/action-bonus">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-action")}
                   </a>
-                </Link>
+                </Link> */}
                 <Link href="/o-projekte">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-about")}
