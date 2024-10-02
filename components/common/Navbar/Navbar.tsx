@@ -335,11 +335,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 <Link href="/kontakt">
                   <a className="p-[3px] flex justify-center items-center">{translate("footer-link-contact")}</a>
                 </Link>
-                <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
-                  <a className="font-bold text-[#ffffff] text-center flex justify-center bg-[#476761] border-[#476761] p-[1px] border-[2px] ">
-                    {translate("show-apartment-1")}<br /> {translate("show-apartment-2")}
-                  </a>
-                </Link>
+
               </div>
               <Link href={"/stretnutie"}>
                 <button

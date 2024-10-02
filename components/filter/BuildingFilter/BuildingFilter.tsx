@@ -531,17 +531,28 @@ const Building = () => {
                     {translate("without-balcony")}
                   </FilterButton>
                 </div>
-                <Link href={`${router.pathname}#results`}>
-                  <button
-                    disabled={loading}
-                    onClick={handleClick}
-                    className={
-                      "bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]"
-                    }
-                  >
-                    {translate("search")}
-                  </button>
-                </Link>
+                <div className=" flex flex-col items-end">
+                  <Link href={`${router.pathname}#results`}>
+                    <button
+                      disabled={loading}
+                      onClick={handleClick}
+                      className={
+                        "bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]"
+                      }
+                    >
+                      {translate("search")}
+                    </button>
+                  </Link>
+                  <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+                    <button
+                      className={
+                        "bg-[#476761] hover:bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px] "
+                      }
+                    >
+                      Prejdite sa po ukážkovom apartmáne OLIVIA Residence
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
