@@ -132,7 +132,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
   return (
     <>
-      {modalTranslate()}
+      {/* {modalTranslate()} */}
       {/*{*/}
 
       {/*     (mainPage && !cookieConsentIsTrue) && (*/}
