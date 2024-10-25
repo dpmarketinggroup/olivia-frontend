@@ -10,7 +10,7 @@ const TopApartmentSwiper = () => {
   const [countIndex, setCountIndex] = useState(0);
   const nextSlide = () => {
     setCountIndex((prevIndex) =>
-      prevIndex === 2 ? prevIndex : prevIndex + 1
+      prevIndex === 4 ? prevIndex : prevIndex + 1
     );
   };
 

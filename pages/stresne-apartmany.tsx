@@ -22,6 +22,7 @@ type Bulletpoint = {
 
 
 interface MyObject {
+  total: string;
   podorys: string;
   number_flat: string;
   area_flat: string;
@@ -32,10 +33,10 @@ interface MyObject {
 
 
 const myArray: MyObject[] = [
-  { podorys: "/1501.pdf", number_flat: "15.01", area_flat: "132,73 m2", rooms: "4+kk", area_balcon: "20,48 m2", area_terasa: "59,80 m2", },
-  { podorys: "/1502.pdf", number_flat: "15.02", area_flat: "120,28 m2", rooms: "4+kk", area_terasa: "84,85 m2", },
-  { podorys: "/1503.pdf", number_flat: "15.03", area_flat: "126,75 m2", rooms: "4+kk", area_balcon: "9,26 m2", area_terasa: "102,12 m2", },
-  { podorys: "/1504.pdf", number_flat: "15.04", area_flat: "98,01 m2", rooms: "3+kk", area_balcon: "11,16 m2", },
+  { total: "213,01 m2", podorys: "/1501.pdf", number_flat: "15.01", area_flat: "132,73 m2", rooms: "4+kk", area_balcon: "20,48 m2", area_terasa: "59,80 m2", },
+  { total: "205,13 m2", podorys: "/1502.pdf", number_flat: "15.02", area_flat: "120,28 m2", rooms: "4+kk", area_terasa: "84,85 m2", },
+  { total: "238,13 m2", podorys: "/1503.pdf", number_flat: "15.03", area_flat: "126,75 m2", rooms: "4+kk", area_balcon: "9,26 m2", area_terasa: "102,12 m2", },
+  { total: "109,17 m2", podorys: "/1504.pdf", number_flat: "15.04", area_flat: "98,01 m2", rooms: "3+kk", area_balcon: "11,16 m2", },
 ];
 
 const Podorys: string[] = [
@@ -86,7 +87,7 @@ const StresneApartmany = () => {
                 </div>
               </Link>
               <video
-                className={"h-full rounded-2xl"}
+                className={"rounded-2xl"}
                 autoPlay={true}
                 playsInline={true}
                 muted={true}
@@ -113,7 +114,7 @@ const StresneApartmany = () => {
                 </div>
               </Link>
               <video
-                className={"h-full rounded-2xl"}
+                className={"rounded-2xl"}
                 autoPlay={true}
                 playsInline={true}
                 muted={true}
@@ -139,18 +140,18 @@ const StresneApartmany = () => {
           <h2 className="font-bold text-[24px] sm:text-[32px] xl:text-[40px] leading-[30px] sm:leading-[40px] xl:leading-[48px] text-black text-center max-w-[85%] sm:max-w-[60%] mb-8">{translate("top-apartments-premium-standard-h2")}</h2>
         </div>
         <div className="w-full ">
-          <div className="flex flex-col sm:flex-row justify-center items-center font-semibold text-[20px] w-full px-0 sm:px-20 border-b-[#00000022] border-b-[1px]">
-            <div className={(currentIndex === 0 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[34px] flex flex-col lg:flex-row justify-center items-center"}>
-              15.01 <span className={(currentIndex === 0 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[16px] "}>132,73m2</span>
+          <div className="flex flex-row justify-center items-center font-semibold text-[20px] w-full px-0 sm:px-20 border-b-[#00000022] border-b-[1px] max-w-[100%]">
+            <div onClick={() => setCurrentIndex(0)} className={(currentIndex === 0 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[10px] sm:px-[34px] flex flex-col lg:flex-row justify-center items-center cursor-pointer"}>
+              15.01 <span className={(currentIndex === 0 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[12px] sm:text-[16px] "}>132,73m2</span>
             </div>
-            <div className={(currentIndex === 1 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[34px] flex flex-col lg:flex-row justify-center items-center"}>
-              15.02 <span className={(currentIndex === 1 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[16px] "}>120,28m2</span>
+            <div onClick={() => setCurrentIndex(1)} className={(currentIndex === 1 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[10px] sm:px-[34px] flex flex-col lg:flex-row justify-center items-center cursor-pointer"}>
+              15.02 <span className={(currentIndex === 1 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[12px] sm:text-[16px] "}>120,28m2</span>
             </div>
-            <div className={(currentIndex === 2 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[34px] flex flex-col lg:flex-row justify-center items-center"}>
-              15.03 <span className={(currentIndex === 2 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[16px] "}>126,75m2</span>
+            <div onClick={() => setCurrentIndex(2)} className={(currentIndex === 2 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[10px] sm:px-[34px] flex flex-col lg:flex-row justify-center items-center cursor-pointer"}>
+              15.03 <span className={(currentIndex === 2 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[12px] sm:text-[16px] "}>126,75m2</span>
             </div>
-            <div className={(currentIndex === 3 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[34px] flex flex-col lg:flex-row justify-center items-center"}>
-              15.04 <span className={(currentIndex === 3 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[16px] "}>98,01m2</span>
+            <div onClick={() => setCurrentIndex(3)} className={(currentIndex === 3 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[10px] sm:px-[34px] flex flex-col lg:flex-row justify-center items-center cursor-pointer"}>
+              15.04 <span className={(currentIndex === 3 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[12px] sm:text-[16px] "}>98,01m2</span>
             </div>
           </div>
           <div className="bg-[#FAFAFA] w-full flex flex-col sm:flex-row justify-center items-center py-10 gap-4 sm:gap-20">
@@ -222,6 +223,11 @@ const StresneApartmany = () => {
                         <p className="text-black">{myArray[currentIndex].area_terasa}</p>
                       </div>
                     </>) : (<></>)}
+                    <hr className="border-[1px] border-[#00000022]" />
+                    <div className="flex flex-row justify-between my-3 bg-primary p-2">
+                      <p className="text-white">Celková plocha</p>
+                      <p className="text-white">{myArray[currentIndex].total}</p>
+                    </div>
                     <hr className="border-[1px] border-[#00000022]" />
                     <div className="flex flex-row justify-between my-3">
                       <p className="text-[#00000077]">{translate("top-apartments-premium-properties-5")}</p>

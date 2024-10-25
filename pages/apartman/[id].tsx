@@ -519,7 +519,8 @@ const ApartmentDetail = () => {
               {translate("price-without-sign")}
             </p>
             <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px]">
-              {cena ? `${cena} €` : "-"}
+              {/* {cena ? `${cena} €` : "-"} */}
+              {translate("top-apartments-premium-properties-6")}
             </span>
           </div>
           <div className="flex justify-between mb-[70px]">
