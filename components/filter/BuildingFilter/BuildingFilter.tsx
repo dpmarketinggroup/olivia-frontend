@@ -614,7 +614,8 @@ const Building = () => {
                     id,
                     numberOfRooms: 1,
                     availability: attributes.dostupnost,
-                    price: attributes.cena,
+                    // price: attributes.cena,
+                    price: "Na vyžiadanie",
                     totalArea: attributes.celkova_rozloha,
                     additionalRoom: Number(
                       getAdditionalRoom(attributes).toFixed(2)
@@ -674,7 +675,8 @@ const Building = () => {
                     id,
                     numberOfRooms: 1.5,
                     availability: attributes.dostupnost,
-                    price: attributes.cena,
+                    // price: attributes.cena,
+                    price: "Na vyžiadanie",
                     totalArea: attributes.celkova_rozloha,
                     additionalRoom: Number(
                       getAdditionalRoom(attributes).toFixed(2)
@@ -734,7 +736,8 @@ const Building = () => {
                     id,
                     numberOfRooms: 2,
                     availability: attributes.dostupnost,
-                    price: attributes.cena,
+                    // price: attributes.cena,
+                    price: "Na vyžiadanie",
                     totalArea: attributes.celkova_rozloha,
                     additionalRoom: Number(
                       getAdditionalRoom(attributes).toFixed(2)
@@ -795,7 +798,8 @@ const Building = () => {
                     id,
                     numberOfRooms: 3,
                     availability: attributes.dostupnost,
-                    price: attributes.cena,
+                    // price: attributes.cena,
+                    price: "Na vyžiadanie",
                     totalArea: attributes.celkova_rozloha,
                     additionalRoom: Number(
                       getAdditionalRoom(attributes).toFixed(2)
@@ -856,7 +860,8 @@ const Building = () => {
                     id,
                     numberOfRooms: 4.5,
                     availability: attributes.dostupnost,
-                    price: attributes.cena,
+                    // price: attributes.cena,
+                    price: "Na vyžiadanie",
                     totalArea: attributes.celkova_rozloha,
                     additionalRoom: Number(
                       getAdditionalRoom(attributes).toFixed(2)

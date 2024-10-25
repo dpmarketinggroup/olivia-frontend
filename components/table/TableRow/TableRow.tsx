@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next";
 
 export interface TableRowProps {
     id: number;
@@ -14,7 +14,7 @@ export interface TableRowProps {
     img: string;
 }
 
-const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalArea, floor, additionalRoom, id, img}: TableRowProps) => {
+const TableRow = ({ apartmentNumber, numberOfRooms, availability, price, totalArea, floor, additionalRoom, id, img }: TableRowProps) => {
     function getColor() {
         switch (availability) {
             case "voľný":
@@ -26,11 +26,11 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
         }
     }
 
-    const {t: translate} = useTranslation('home');
+    const { t: translate } = useTranslation('home');
     const translateAvailability = (availability: string) => {
         if (availability === 'voľný')
             return translate("filter-available")
-        else if(availability === 'rezervovaný')
+        else if (availability === 'rezervovaný')
             return translate("filter-reserved")
         return translate("filter-sold")
     }
@@ -54,7 +54,8 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
                     {additionalRoom}
                 </div>
                 <div className={'xl:w-[130px] hidden xl:flex'}>
-                    {price ? `${price} €` : '-'}
+                    {/* {price ? `${price} €` : '-'} */}
+                    {price}
                 </div>
                 <div className={'xl:w-[130px]'}>
                     <div className={`${getColor()} w-min px-[10px] h-[30px] flex items-center justify-center font-medium text-white text-[14px] leading-[20px] ml-auto`}>
@@ -63,14 +64,14 @@ const TableRow = ({apartmentNumber, numberOfRooms, availability, price, totalAre
                 </div>
                 <div className={`absolute w-[200px] h-[180px] hidden group-hover:flex items-center flex-col z-[3] top-[90%] left-[39%]`}>
                     <div style={{
-                        width:0,
+                        width: 0,
                         height: 0,
                         borderStyle: 'solid',
                         borderWidth: '0 20px 15px 20px',
                         borderColor: 'transparent transparent #fff transparent'
                     }}></div>
                     <div className={'bg-white w-full max-w-[150px] h-[120px]'}>
-                        <Image alt={apartmentNumber} objectFit={'cover'} layout={'fill'} src={img}/>
+                        <Image alt={apartmentNumber} objectFit={'cover'} layout={'fill'} src={img} />
                     </div>
                 </div>
             </div>
