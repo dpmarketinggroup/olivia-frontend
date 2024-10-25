@@ -51,9 +51,8 @@ const Hero = ({
             </button>
           </Link>
           <div
-            className={`${
-              withRectangles ? "hidden xl:block" : "hidden"
-            } absolute -bottom-[224px] -left-[260px]`}
+            className={`${withRectangles ? "hidden xl:block" : "hidden"
+              } absolute -bottom-[224px] -left-[260px]`}
           >
             <div className={"flex"}>
               <RectangleDarkIcon />

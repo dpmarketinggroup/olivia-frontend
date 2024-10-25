@@ -160,7 +160,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
       {/*}*/}
       {/*    ${(mainPage && !cookieConsentIsTrue) && "mt-[40px]"} */}
       <nav
-        className={`bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] xl:h-[95px] w-full fixed top-0 z-50`}
+        className={`bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] xl:h-[95px] w-full fixed top-0 z-[100]`}
       >
         <div className="bg-primary">{infoSlider()}</div>
         <div
