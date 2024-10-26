@@ -142,16 +142,16 @@ const StresneApartmany = () => {
         <div className="w-full ">
           <div className="flex flex-row justify-center items-center font-semibold text-[20px] w-full px-0 sm:px-20 border-b-[#00000022] border-b-[1px] max-w-[100%]">
             <div onClick={() => setCurrentIndex(0)} className={(currentIndex === 0 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[10px] sm:px-[34px] flex flex-col lg:flex-row justify-center items-center cursor-pointer"}>
-              15.01 <span className={(currentIndex === 0 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[12px] sm:text-[16px] "}>132,73m2</span>
+              15.01 <span className={(currentIndex === 0 ? "text-[#43645F] " : "text-[#00000027] ") + "lg:ml-6 text-[12px] sm:text-[16px] "}>213,01m2</span>
             </div>
             <div onClick={() => setCurrentIndex(1)} className={(currentIndex === 1 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[10px] sm:px-[34px] flex flex-col lg:flex-row justify-center items-center cursor-pointer"}>
-              15.02 <span className={(currentIndex === 1 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[12px] sm:text-[16px] "}>120,28m2</span>
+              15.02 <span className={(currentIndex === 1 ? "text-[#43645F] " : "text-[#00000027] ") + "lg:ml-6 text-[12px] sm:text-[16px] "}>205,13m2</span>
             </div>
             <div onClick={() => setCurrentIndex(2)} className={(currentIndex === 2 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[10px] sm:px-[34px] flex flex-col lg:flex-row justify-center items-center cursor-pointer"}>
-              15.03 <span className={(currentIndex === 2 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[12px] sm:text-[16px] "}>126,75m2</span>
+              15.03 <span className={(currentIndex === 2 ? "text-[#43645F] " : "text-[#00000027] ") + "lg:ml-6 text-[12px] sm:text-[16px] "}>238,13m2</span>
             </div>
             <div onClick={() => setCurrentIndex(3)} className={(currentIndex === 3 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[10px] sm:px-[34px] flex flex-col lg:flex-row justify-center items-center cursor-pointer"}>
-              15.04 <span className={(currentIndex === 3 ? "text-[#43645F] " : "text-[#00000027] ") + "ml-6 text-[12px] sm:text-[16px] "}>98,01m2</span>
+              15.04 <span className={(currentIndex === 3 ? "text-[#43645F] " : "text-[#00000027] ") + "lg:ml-6 text-[12px] sm:text-[16px] "}>109,17m2</span>
             </div>
           </div>
           <div className="bg-[#FAFAFA] w-full flex flex-col sm:flex-row justify-center items-center py-10 gap-4 sm:gap-20">

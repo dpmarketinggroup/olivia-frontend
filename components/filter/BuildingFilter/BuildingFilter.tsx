@@ -266,7 +266,7 @@ const Building = () => {
           className={"w-full xl:max-w-[1200px] mx-auto py-[45px] xl:py-[90px]"}
         >
           <div className={"flex flex-col xl:grid grid-cols-3 gap-[50px]"}>
-            <div className={"text-white"}>
+            {/* <div className={"text-white"}>
               <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
                 {translate("price")}{" "}
                 <span className={"font-bold pl-[1rem]"}>
@@ -292,7 +292,7 @@ const Building = () => {
                   },
                 }}
               />
-            </div>
+            </div> */}
             <div className={"text-white"}>
               <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
                 {translate("floor")}{" "}
@@ -615,7 +615,7 @@ const Building = () => {
                     numberOfRooms: 1,
                     availability: attributes.dostupnost,
                     // price: attributes.cena,
-                    price: "Na vyžiadanie",
+                    price: translate("top-apartments-premium-properties-6"),
                     totalArea: attributes.celkova_rozloha,
                     additionalRoom: Number(
                       getAdditionalRoom(attributes).toFixed(2)
@@ -676,7 +676,7 @@ const Building = () => {
                     numberOfRooms: 1.5,
                     availability: attributes.dostupnost,
                     // price: attributes.cena,
-                    price: "Na vyžiadanie",
+                    price: translate("top-apartments-premium-properties-6"),
                     totalArea: attributes.celkova_rozloha,
                     additionalRoom: Number(
                       getAdditionalRoom(attributes).toFixed(2)
@@ -737,7 +737,7 @@ const Building = () => {
                     numberOfRooms: 2,
                     availability: attributes.dostupnost,
                     // price: attributes.cena,
-                    price: "Na vyžiadanie",
+                    price: translate("top-apartments-premium-properties-6"),
                     totalArea: attributes.celkova_rozloha,
                     additionalRoom: Number(
                       getAdditionalRoom(attributes).toFixed(2)
@@ -799,7 +799,7 @@ const Building = () => {
                     numberOfRooms: 3,
                     availability: attributes.dostupnost,
                     // price: attributes.cena,
-                    price: "Na vyžiadanie",
+                    price: translate("top-apartments-premium-properties-6"),
                     totalArea: attributes.celkova_rozloha,
                     additionalRoom: Number(
                       getAdditionalRoom(attributes).toFixed(2)
@@ -861,7 +861,7 @@ const Building = () => {
                     numberOfRooms: 4.5,
                     availability: attributes.dostupnost,
                     // price: attributes.cena,
-                    price: "Na vyžiadanie",
+                    price: translate("top-apartments-premium-properties-6"),
                     totalArea: attributes.celkova_rozloha,
                     additionalRoom: Number(
                       getAdditionalRoom(attributes).toFixed(2)
