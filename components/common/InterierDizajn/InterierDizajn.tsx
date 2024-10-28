@@ -7,7 +7,7 @@ import { InterierDizajnItem } from "..";
 const InterierDizajnProps = () => {
   const { t: translate } = useTranslation('home');
   return (
-    <section className="relative w-full desktop:max-w-[1920px] mx-auto px-2 flex flex-col justify-center items-center mb-[6rem]">
+    <section className="relative  w-full desktop:max-w-[1920px] mx-auto px-2 flex flex-col justify-center items-center pb-[2rem]">
       <h2 className="font-bold xl:w-auto text-[25px] xl:text-[40px] leading-[28px] xl:leading-[48px] tracking-[-0.5px] my-[4rem]">
         {translate("top-apartments-interior-h2")}
       </h2>

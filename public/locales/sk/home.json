@@ -358,7 +358,7 @@
   "offer-financing": "Ponuka financovania",
   "financing-btn": "Pozrieť financovanie",
 
-  "top-apartments-h1-1": "Vychutnajte si mestský život naplno v našich ",
+  "top-apartments-h1-1": "Vychutnajte si mestský život naplno v ",
   "top-apartments-h1-2": "exkluzívnych strešných bytoch apartmánového typu",
   "top-apartments-h2": "Objavte prémiové vybavenie, priestranné interiéry, súkromie a nádherný výhľad na Bratislavu. Relaxujte na súkromnej terase s panoramatickým výhľadom na mesto a vychutnajte si západy slnka ako z filmu.",
   "top-apartments-virtual": "Spustiť virtuálnu prehliadku",
@@ -379,7 +379,7 @@
   "top-apartments-interior-item4": "Taliansky veľkoformátový obklad a dlažby",
   "top-apartments-swiper-label1": "Walk in sprchové kúty",
   "top-apartments-swiper-object1": "Kúpeľňa & sanita",
-  "top-apartments-swiper-label2": "Kvalitné vstavané spotrebiče, výrobca Miele",
+  "top-apartments-swiper-label2": "Kvalitné vstavané spotrebiče, prémiovej značky Miele",
   "top-apartments-swiper-object2": "Kuchyňa",
   "top-apartments-swiper-label3": "Priestranné terasy a balkóny s očarujúcim výhľadom na Bratislavu",
   "top-apartments-swiper-object3": "Exteriér, Terasy & Balkóny",
@@ -389,5 +389,6 @@
   "top-apartments-swiper-object5": "Bezpečnosť & komfort",
   "top-apartmnets-meet-h2": "Dohodnite si nezáväzné stretnutie v predajnom mieste",
   "top-apartmnets-meet-p": "Zodpovieme všetky Vaše otázky, prevedieme Vás procesom kúpy a poskytneme Vám všetky potrebné informácie o Vašom novom bývaní",
-  "footer-link-top-apartments": "Strešné apartmány"
+  "footer-link-top-apartments": "Strešné apartmány",
+  "top-apartments-info": "Niektoré prvky vybavenia sú ilustračné. Konkrétne vybavenie vyplýva zo štandardu uvedeného v karte vybavenia."
 }

@@ -10,7 +10,7 @@ const TopApartmentSwiper = () => {
   const [countIndex, setCountIndex] = useState(0);
   const nextSlide = () => {
     setCountIndex((prevIndex) =>
-      prevIndex === 4 ? prevIndex : prevIndex + 1
+      prevIndex === 7 ? prevIndex : prevIndex + 1
     );
   };
 
@@ -22,33 +22,23 @@ const TopApartmentSwiper = () => {
   };
 
   return (
-    <section className="bg-[#2A2A2A]">
-      <div className={"mt-8 pt-8 flex sm:hidden flex-col"}>
-        <h3 className="text-[28px] sm:text-[36px] xl:text-[48px] xl:leading-[44px] font-bold text-left sm:text-center xl:text-left text-white ">
-          {translate("top-apartments-interior-h2")}
-        </h3>
+    <section className="bg-[#ffffff]">
 
-      </div>
       <div
-        className={`text-white py-4 sm:py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col-reverse sm:flex-col w-full xl:max-w-[1200px] xl:mx-auto`}
+        className={`text-white py-4 sm:py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex  flex-col w-full xl:max-w-[1200px] xl:mx-auto`}
       >
         <div
-          className={`flex flex-col xl:flex-row w-full justify-between mb-[25px] xl:mb-[65px]`}
+          className={`flex flex-col  w-full justify-end mb-[25px] xl:mb-[65px]`}
         >
-          <div className={"hidden sm:flex flex-col"}>
-            <h3 className="text-[28px] sm:text-[36px] xl:text-[48px] xl:leading-[44px] font-bold text-left sm:text-center xl:text-left text-white ">
-              {translate("top-apartments-interior-h2")}
-            </h3>
 
-          </div>
 
           <div
             className={
-              "flex xl:flex-col justify-between items-start mt-[35px] xl:mt-0"
+              "flex flex-col justify-end items-end mt-[35px] xl:mt-0"
             }
           >
 
-            <div className=" gap-4 flex">
+            <div className=" gap-4 flex items-end">
               <div
                 className={
                   " w-[130px] h-[45px] flex items-center justify-center"
@@ -61,7 +51,7 @@ const TopApartmentSwiper = () => {
                   " w-[130px] h-[45px]  flex items-center justify-center"
                 }
               >
-                <BigRightArrow className="int-next" onClick={nextSlide} opacity={countIndex === 2 ? "0.2" : "1"} />
+                <BigRightArrow className="int-next" onClick={nextSlide} opacity={countIndex === 7 ? "0.2" : "1"} />
               </div>
             </div>
           </div>
@@ -77,7 +67,7 @@ const TopApartmentSwiper = () => {
           }}
           spaceBetween={30}
           slidesPerView={1}
-          centeredSlides={true}
+
           breakpoints={{
             1280: {
               slidesPerView: 3,
@@ -114,6 +104,26 @@ const TopApartmentSwiper = () => {
               label: translate("top-apartments-swiper-label5"),
               object: translate("top-apartments-swiper-object5"),
             },
+            {
+              src: "/img/obklad.png",
+              label: translate("top-apartments-interior-item4"),
+              object: translate("top-apartments-swiper-object1"),
+            },
+            {
+              src: "/img/podlaha.png",
+              label: translate("top-apartments-interior-item3"),
+              object: translate("top-apartments-swiper-object2"),
+            },
+            {
+              src: "/img/zaluzie.png",
+              label: translate("top-apartments-interior-item2"),
+              object: translate("top-apartments-swiper-object3"),
+            },
+            {
+              src: "/img/dvere.png",
+              label: translate("top-apartments-interior-item1"),
+              object: translate("top-apartments-swiper-object5"),
+            },
           ].map(({ src, label, object }, i) => (
             <SwiperSlide className={`w-[290px] sm:w-[400px]  h-[400px]`} key={i}>
 
@@ -143,7 +153,7 @@ const TopApartmentSwiper = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-
+        <p className="text-white mx-auto mt-8 bg-[#2A2A2A] p-4 text-center w-full sm:w-[80%] flex justify-center items-center">Niektoré prvky vybavenia sú ilustračné. Konkrétne vybavenie vyplýva zo štandardu uvedeného v karte vybavenia.</p>
       </div>
     </section>
   );

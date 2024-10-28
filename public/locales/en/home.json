@@ -354,7 +354,7 @@
   "offer-financing": "Financing",
   "financing-btn": "More about financing",
 
-  "top-apartments-h1-1": "Enjoy city life to the fullest in our ",
+  "top-apartments-h1-1": "Enjoy city life to the fullest in ",
   "top-apartments-h1-2": "exclusive penthouse apartments",
   "top-apartments-h2": "Discover premium amenities, spacious interiors, privacy and spectacular views of Bratislava. Relax on your private terrace with panoramic city views and enjoy movie-like sunsets.",
   "top-apartments-virtual": "Start the virtual tour",
@@ -375,7 +375,7 @@
   "top-apartments-interior-item4": "Italian large format tiles",
   "top-apartments-swiper-label1": "Walk in shower enclosures",
   "top-apartments-swiper-object1": "Bathroom & sanitation",
-  "top-apartments-swiper-label2": "Quality built-in appliances, manufacturer Miele",
+  "top-apartments-swiper-label2": "Quality built-in appliances, premium brand Miele",
   "top-apartments-swiper-object2": "Kitchen",
   "top-apartments-swiper-label3": "Spacious terraces and balconies with enchanting views of Bratislava",
   "top-apartments-swiper-object3": "Exterior, Terraces & Balconies",
@@ -385,5 +385,6 @@
   "top-apartments-swiper-object5": "Safety & comfort",
   "top-apartmnets-meet-h2": "Arrange a no-obligation meeting at the point of sale",
   "top-apartmnets-meet-p": "We will answer all your questions, guide you through the buying process and provide you with all the necessary information about your new home",
-  "footer-link-top-apartments": "Rooftop apartments"
+  "footer-link-top-apartments": "Rooftop apartments",
+  "top-apartments-info": "Some equipment items are illustrative. The specific equipment is based on the standard listed in the equipment card."
 }
