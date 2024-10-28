@@ -166,7 +166,7 @@ const OProjekte = () => {
           title={translate("equipment-heading")}
           href="/OLIVIA Residence_štandard projektu.pdf"
         />
-        <Equipment title={translate("equipment-heading-4")} href="/OLIVIA Residence_štandard apartmánov.pdf" />
+        <Equipment title={translate("equipment-heading-4")} href="/Karta vybavenia OLIVIA Residence.pdf" />
       </div>
       <div className="flex justify-center" id="financovanie">
         <div className="w-full">
