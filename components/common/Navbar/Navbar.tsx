@@ -275,11 +275,11 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                     <p className="bg-[#89A6A2] border-[#89A6A2] p-[1px] border-[2px]">{translate("footer-link-action")}</p>
                   </a>
                 </Link>*/}
-                {/* <Link href="/stresne-apartmany">
+                <Link href="/stresne-apartmany">
                   <a className="font-bold text-[#ffffff]   flex justify-center items-center">
-                    <p className="bg-[#89A6A2] border-[#89A6A2] p-[1px] border-[2px]">{translate("footer-link-top-apartments")}</p>
+                    <p className=" border-[#89A6A2] p-[1px] border-[2px]">{translate("footer-link-top-apartments")}</p>
                   </a>
-                </Link> */}
+                </Link>
                 <Link href="/lokalita">
                   <a className="p-[3px] flex justify-center items-center"><p>{translate("footer-link-location")}</p></a>
                 </Link>
