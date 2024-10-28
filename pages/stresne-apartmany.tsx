@@ -82,7 +82,7 @@ const StresneApartmany = () => {
         title={translate("hero-lokalita-title")}
         description={translate("hero-lokalita-subtitle") || ""}
       />
-      <section className="relative w-full desktop:max-w-[1920px] mx-auto flex flex-col justify-center items-center mt-6 mb-[10rem]">
+      <section className="relative w-full desktop:max-w-[1920px] mx-auto flex flex-col justify-center items-center mt-6 mb-[6rem]">
         <div className="relative flex md:flex-row flex-col justify-center items-center gap-12">
           <div className="relative max-w-[92%] sm:max-w-[85%] md:max-w-[40%]">
             <div className="relative">
@@ -142,9 +142,7 @@ const StresneApartmany = () => {
       </section>
 
       <section id="main" className="w-full  desktop:max-w-[1920px] mx-0 px-0 sm:px-1 sm:mx-auto flex flex-col justify-center items-center ">
-        <div className="flex justify-center ">
-          <h2 className="font-bold text-[24px] sm:text-[32px] xl:text-[40px] leading-[30px] sm:leading-[40px] xl:leading-[48px] text-black text-center max-w-[85%] sm:max-w-[60%] mb-8">{translate("top-apartments-premium-standard-h2")}</h2>
-        </div>
+
         <div className="w-full ">
           <div className="flex flex-row justify-center items-center font-semibold text-[20px] w-full px-0 sm:px-20 border-b-[#00000022] border-b-[1px] max-w-[100%]">
             <div onClick={() => setCurrentIndex(0)} className={(currentIndex === 0 ? "text-[#43645F] border-b-[#43645F] " : "text-[#00000077] border-b-white ") + "text-[20px]     border-b-[2px] py-[16px] sm:py-[22px] px-[10px] sm:px-[34px] flex flex-col lg:flex-row justify-center items-center cursor-pointer"}>
@@ -260,6 +258,9 @@ const StresneApartmany = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="flex justify-center ">
+          <h2 className="font-bold text-[24px] sm:text-[32px] xl:text-[40px] leading-[30px] sm:leading-[40px] xl:leading-[48px] text-black text-center max-w-[85%] sm:max-w-[60%] mt-8">{translate("top-apartments-premium-standard-h2")}</h2>
         </div>
       </section >
       <InterierDizajn />

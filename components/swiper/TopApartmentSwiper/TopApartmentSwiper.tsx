@@ -22,7 +22,7 @@ const TopApartmentSwiper = () => {
   };
 
   return (
-    <section className="bg-[#ffffff]">
+    <section className="bg-[#2A2A2A]">
 
       <div
         className={`text-white py-4 sm:py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex  flex-col w-full xl:max-w-[1200px] xl:mx-auto`}
@@ -127,7 +127,7 @@ const TopApartmentSwiper = () => {
           ].map(({ src, label, object }, i) => (
             <SwiperSlide className={`w-[290px] sm:w-[400px]  h-[400px]`} key={i}>
 
-              <div className="relative flex items-end w-[400px] h-[400px] z-100">
+              <div className="relative flex flex-wrap items-end w-[290px] sm:w-[400px] h-[400px] z-100">
                 <div className="w-full p-[20px] flex flex-col gap-4 bg-gradient-to-t  from-[#000000] to-[#FFFFFF00]">
                   <p className="font-medium text-[18px]">{object}</p>
                   <hr className="border-[1px] border-[#FFFFFF65]" />

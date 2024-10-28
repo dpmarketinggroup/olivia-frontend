@@ -13,7 +13,7 @@ const BigRightArrow: FunctionComponent<BigArrowProps> = ({
 }) => {
   return (
     <svg onClick={onClick} className={className + ' cursor-pointer'} width="142" height="48" viewBox="0 0 142 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path opacity={opacity} d="M116.254 1.43848L139 24.1841M139 24.1841L116.254 46.9297M139 24.1841H0.681763" stroke="black" stroke-width="3" />
+      <path opacity={opacity} d="M116.254 1.43848L139 24.1841M139 24.1841L116.254 46.9297M139 24.1841H0.681763" stroke="white" stroke-width="3" />
     </svg>
 
 
