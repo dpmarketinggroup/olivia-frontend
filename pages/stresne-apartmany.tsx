@@ -29,16 +29,21 @@ interface MyObject {
   rooms: string;
   area_balcon?: string;
   area_terasa?: string;
-  prehliadka?: string;
 }
 
 
 const myArray: MyObject[] = [
-  { total: "213,01 m2", podorys: "/1501.pdf", number_flat: "15.01", area_flat: "132,73 m2", rooms: "4+kk", area_balcon: "20,48 m2", area_terasa: "59,80 m2", prehliadka: "https://mollyinvr.com/projects/euroinvest/olivia/?project=APT1501" },
-  { total: "205,13 m2", podorys: "/1502.pdf", number_flat: "15.02", area_flat: "120,28 m2", rooms: "4+kk", area_terasa: "84,85 m2", prehliadka: "https://mollyinvr.com/projects/euroinvest/olivia/?project=APT1501" },
+  {
+    total: "213,01 m2", podorys: "/1501.pdf", number_flat: "15.01", area_flat: "132,73 m2", rooms: "4+kk", area_balcon: "20,48 m2", area_terasa: "59,80 m2",
+
+  },
+  {
+    total: "205,13 m2", podorys: "/1502.pdf", number_flat: "15.02", area_flat: "120,28 m2", rooms: "4+kk", area_terasa: "84,85 m2",
+
+  },
   { total: "238,13 m2", podorys: "/1503.pdf", number_flat: "15.03", area_flat: "126,75 m2", rooms: "4+kk", area_balcon: "9,26 m2", area_terasa: "102,12 m2", },
   { total: "109,17 m2", podorys: "/1504.pdf", number_flat: "15.04", area_flat: "98,01 m2", rooms: "3+kk", area_balcon: "11,16 m2", },
-];
+]
 
 const Podorys: string[] = [
   "/img/15.01.svg",
@@ -241,8 +246,12 @@ const StresneApartmany = () => {
                         {translate("button-meeting")}
                       </button>
                     </Link>
-                    {myArray[currentIndex].prehliadka ? (
-                      <Link href={myArray[currentIndex].prehliadka} >
+                    {currentIndex === 0 ? (
+                      <Link href="https://mollyinvr.com/projects/euroinvest/olivia/?project=APT1501 ">
+                        <span className="text-[#476761] text-[14px] sm:text-[14px] flex flex-row gap-1 justify-center items-center cursor-pointer h-[50px]">{translate("top-apartments-virtual")}<ThreeDIcon /></span>
+                      </Link>) : (<></>)}
+                    {currentIndex === 1 ? (
+                      <Link href="https://mollyinvr.com/projects/euroinvest/olivia/?project=APT1502 ">
                         <span className="text-[#476761] text-[14px] sm:text-[14px] flex flex-row gap-1 justify-center items-center cursor-pointer h-[50px]">{translate("top-apartments-virtual")}<ThreeDIcon /></span>
                       </Link>) : (<></>)}
                   </div>
