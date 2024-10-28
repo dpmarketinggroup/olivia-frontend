@@ -164,7 +164,7 @@ const StresneApartmany = () => {
 
               />
             </div>
-            <div>
+            <div className="w-[90%] sm:w-auto">
               <div className="relative">
                 <div className="absolute top-[0%] right-[0%] z-[60] flex flex-row gap-2 p-4 mr-2 sm:mr-0 items-center">
                   <p className="text-white text-[18px]">{translate("top-apartments-premium-standard-next")}</p>
@@ -290,7 +290,7 @@ export async function getStaticProps({ locale }: StaticProps) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["home"])),
-      //Will be passed to the page component as props
+      //Will be passed to the page component as pro
     },
   };
 }

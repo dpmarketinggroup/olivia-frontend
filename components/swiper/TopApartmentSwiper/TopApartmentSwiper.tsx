@@ -23,7 +23,7 @@ const TopApartmentSwiper = () => {
 
   return (
     <section className="bg-[#2A2A2A]">
-      <div className={"mt-8 flex sm:hidden flex-col"}>
+      <div className={"mt-8 pt-8 flex sm:hidden flex-col"}>
         <h3 className="text-[28px] sm:text-[36px] xl:text-[48px] xl:leading-[44px] font-bold text-left sm:text-center xl:text-left text-white ">
           {translate("top-apartments-interior-h2")}
         </h3>
