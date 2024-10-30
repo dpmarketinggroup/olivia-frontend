@@ -34,7 +34,7 @@ interface MyObject {
 
 const myArray: MyObject[] = [
   {
-    total: "213,01 m2", podorys: "/1501.pdf", number_flat: "15.01", area_flat: "132,73 m2", rooms: "4+kk", area_balcon: "20,48 m2", area_terasa: "59,80 m2",
+    total: "213,01 m2", podorys: "/MEGA.pdf", number_flat: "15.01", area_flat: "132,73 m2", rooms: "4+kk", area_balcon: "20,48 m2", area_terasa: "59,80 m2",
 
   },
   {
