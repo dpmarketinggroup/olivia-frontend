@@ -74,11 +74,15 @@ const Home = () => {
               {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
             </video>
           </div>
-          <div className="w-full xl:max-w-[1400px] xl:mx-auto my-auto">
-            <div className="w-[300px] xl:w-[600px] mb-[40px] mx-4 xl:mx-0">
-              <h1 className="font-bold text-[29px] xl:text-[42px] leading-[32px] xl:leading-[47px] tracking-[-1px] text-white">
+          <div className="relative w-full xl:max-w-[1400px] xl:mx-auto my-auto">
+            <div className="absolute rounded-full  bg-[#0E3F3B] w-[120px] h-[120px] md:w-[150px] md:h-[150px] rotate-12 top-[103%] sm:top-[0%] left-[60%] sm:left-[70%] md:left-[70%] flex justify-center items-center z-[2] ">
+              <p className="font-bold leading-[20px] text-[12px] md:text-[14px] xl:text-[16px] text-white text-center uppercase">Skolaudované!</p>
+            </div>
+            <div className="w-[300px] xl:w-[600px] mb-[40px] mx-4 xl:mx-0 relative">
+              <h1 className="relative font-bold text-[29px] xl:text-[42px] leading-[32px] xl:leading-[47px] tracking-[-1px] text-white">
                 {translate("hero-heading")}
               </h1>
+
             </div>
             <div className="flex flex-col xl:flex-row gap-[10px] mx-4 xl:mx-0">
               <Link href="/stretnutie">
@@ -104,7 +108,7 @@ const Home = () => {
             <RectangleLightIcon />
           </div>
         </div>
-      </div>
+      </div >
       <div className="flex justify-center md:h-[400px] sm:h-[350px] h-[250px] xl:mt-2 mt-20 mb-10">
 
 
