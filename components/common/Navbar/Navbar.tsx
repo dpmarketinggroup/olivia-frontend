@@ -48,7 +48,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
             className={"w-full xl:w-[780px] h-[230px] xl:h-[560px] relative"}
           >
             <Image
-              src={"/img/240903OR5601-v1-1x1 (1).png"}
+              src={"/241122OR5901-1x1.png"}
               objectFit={"contain"}
               layout={"fill"}
             />
@@ -132,7 +132,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
   return (
     <>
-      {/* {modalTranslate()} */}
+      {modalTranslate()}
       {/*{*/}
 
       {/*     (mainPage && !cookieConsentIsTrue) && (*/}
