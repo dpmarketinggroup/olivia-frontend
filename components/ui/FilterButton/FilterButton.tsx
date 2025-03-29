@@ -9,21 +9,21 @@ interface FilterButtonProps {
     className?: string;
 }
 
-const FilterButton = ({variant, icon, onClick, children, clicked = false, className}: FilterButtonProps) => {
+const FilterButton = ({ variant, icon, onClick, children, clicked = false, className }: FilterButtonProps) => {
     function getClass() {
         switch (variant) {
             case "rectangle":
-                return 'h-[50px] px-[15px] leading-[17px]'
+                return 'py-2 px-4 flex flex-row  justify-center font-medium rounded-3xl drop-shadow-lg'
             case "square":
-                return 'w-[70px] h-[70px] flex items-center justify-center font-bold'
+                return 'py-2 px-4 flex flex-row  justify-center font-medium rounded-3xl drop-shadow-lg'
         }
     }
 
     return (
         <button onClick={onClick}
-                className={`${getClass()} ${clicked ? 'bg-white text-[#0E3F3B]' : 'border-white text-white'} border-2`}>
+            className={`${getClass()} ${clicked ? 'bg-primary text-white' : ' text-primary bg-white'} `}>
             <div
-                className={`${variant === 'square' && 'max-w-[20px]'} ${className} flex items-center gap-[10px]`}>{variant === 'rectangle' && icon}{children}</div>
+                className={`${variant === 'square'} ${className} flex items-center gap-[10px]`}>{variant === 'rectangle' && icon}{children}</div>
         </button>
     );
 };

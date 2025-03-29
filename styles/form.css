@@ -1,15 +1,16 @@
 /*Green form*/
 .green .mantine-TextInput-input {
-    background: rgba(255, 255, 255, 0.12);
-    border: 0;
-    height: 48px;
-    color: white;
+  background: rgba(255, 255, 255);
+  border: 0;
+  height: 62px;
+  color: #676766;
+  border-radius: 0;
 }
 
 .green .mantine-Textarea-input {
-    background:  rgba(255, 255, 255, 0.12);
-    border: 0;
-    color: white;
+  background: rgba(255, 255, 255, 0.12);
+  border: 0;
+  color: white;
 }
 
 /*.green .mantine-TextInput-input:focus,*/
@@ -18,13 +19,13 @@
 /*}*/
 
 .green .mantine-Checkbox-input {
-    background-color: rgba(0, 0, 0, 0.07);
-    border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.07);
+  border: 2px solid white;
 }
 
 .green .mantine-Checkbox-input:checked {
-    background-color: #89A6A2;
-    border: none;
+  background-color: #89a6a2;
+  border: none;
 }
 
 /*@media (min-width: 640px) {*/
@@ -36,13 +37,12 @@
 /*    }*/
 /*}*/
 
-
 /*Grey form*/
 .grey .mantine-TextInput-input {
-    background: rgba(0, 0, 0, 0.07);
-    border: 0;
-    height: 48px;
-    color: black;
+  background: rgba(0, 0, 0, 0.07);
+  border: 0;
+  height: 48px;
+  color: black;
 }
 
 /*.grey .mantine-TextInput-input:focus,*/
@@ -51,26 +51,22 @@
 /*}*/
 
 .grey .mantine-Textarea-input {
-    background: rgba(0, 0, 0, 0.07);
-    border: 0;
-    color: black;
+  background: rgba(0, 0, 0, 0.07);
+  border: 0;
+  color: black;
 }
 
 .grey .mantine-Checkbox-input {
-    background-color: rgba(0, 0, 0, 0.07);
-    border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.07);
+  border: 2px solid white;
 }
 
 .grey .mantine-Checkbox-input:checked {
-    background: #476761;
-    border: none;
+  background: #476761;
+  border: none;
 }
 
-
-
 /*Building filter*/
-
-
 
 /*Odber noviniek a Footer*/
 /*.mantine-TextInput-input {*/
@@ -84,4 +80,3 @@
 /*    background: rgba(255, 255, 255, 0.24);*/
 /*    border-bottom: 2px solid white;*/
 /*}*/
-

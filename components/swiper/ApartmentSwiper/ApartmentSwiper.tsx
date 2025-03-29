@@ -5,6 +5,7 @@ import Image from "next/image";
 import RightArrowIcon from "@components/icons/RightArrow";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
+import ArrowLink from "@components/icons/ArrowLink";
 
 const ApartmentSwiper = () => {
   const { t: translate } = useTranslation("home");
@@ -15,37 +16,24 @@ const ApartmentSwiper = () => {
       <div
         className={`flex gap-6 flex-col xl:flex-row w-full justify-between xl:items-center mb-[65px]`}
       >
-        <h3 className="text-[26px] leading-[46px] xl:text-[40px] xl:leading-[40px] font-bold text-black">
+        <h3 className="text-[26px] leading-[46px] xl:text-[48px] xl:leading-[48px] w-[40%] text-black">
           {translate("from-1-to-4")}
         </h3>
         <div className={"flex items-center gap-[30px]"}>
-          <div className="gap-[5px] flex">
-            <div
-              className={
-                "cursor-pointer apa-prev bg-black/20 w-[20px] h-[20px] flex items-center justify-center"
-              }
-            >
-              <LeftArrow />
-            </div>
-            <div
-              className={
-                "cursor-pointer apa-next bg-black/20 w-[20px] h-[20px] flex items-center justify-center"
-              }
-            >
-              <RightArrow />
-            </div>
-          </div>
+
           <div className={"flex gap-[10px] items-center"}>
             <Link href={"/ponuka-apartmanov"}>
+
               <a
                 className={
-                  "border-b border-white text-[18px] leading-[28px] text-green2 hover:border-b hover:border-primary"
+                  "border-b pb-2 text-[18px] leading-[28px] text-primary border-primary flex flex-row gap-2 justify-center items-center"
                 }
               >
-                {translate("apartment-swiper-link")}
+                {translate("apartment-swiper-link")}<ArrowLink />
               </a>
+
             </Link>
-            <RightArrowIcon stroke={"#476761"} />
+
           </div>
         </div>
       </div>
@@ -104,7 +92,7 @@ const ApartmentSwiper = () => {
               >
                 {label}
               </h5>
-              <div className={"relative h-[400px]"}>
+              <div className={"relative h-[350px] border-r-[1px] border-[#00000022]"}>
                 <Image
                   className={"border"}
                   priority={true}
@@ -119,6 +107,22 @@ const ApartmentSwiper = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="gap-[5px] flex ml-auto">
+        <div
+          className={
+            "bg-black/20 w-[62px] h-[62px] flex items-center justify-center"
+          }
+        >
+          <LeftArrow className="int-prev" stroke="#087168" />
+        </div>
+        <div
+          className={
+            "bg-black/20 w-[62px] h-[62px] flex items-center justify-center"
+          }
+        >
+          <RightArrow className="int-next" stroke="#087168" />
+        </div>
+      </div>
     </div>
   );
 };

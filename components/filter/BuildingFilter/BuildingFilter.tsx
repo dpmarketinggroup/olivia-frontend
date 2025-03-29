@@ -9,7 +9,11 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import Both from "@components/icons/Both";
-
+import OverButtonIcon from "@components/icons/OverButton";
+import OverButtonBigIcon from "@components/icons/OverButtonBig";
+import PaperPlaneIcon from "@components/icons/PaperPlane";
+import Image from "next/image";
+import ArrowLink from "@components/icons/ArrowLink";
 export type Response = {
   id: number;
   attributes: {
@@ -261,96 +265,13 @@ const Building = () => {
       <div className="w-full xl:max-w-[1920px] xl3 overflow-hidden">
         <House />
       </div>
-      <div className="building bg-primary-pattern w-full mb-[80px] px-[1rem] xl:px-0">
+      <div className="building bg-white w-full mb-[80px]  pb-10 px-[1rem] xl:px-0">
         <div
-          className={"w-full xl:max-w-[1200px] mx-auto py-[45px] xl:py-[90px]"}
-        >
-          <div className={"flex flex-col xl:grid grid-cols-3 gap-[50px]"}>
-            {/* <div className={"text-white"}>
-              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
-                {translate("price")}{" "}
-                <span className={"font-bold pl-[1rem]"}>
-                  {price[0]}k - {price[1] === 500 ? "nad " + price[1] + "k" : price[1] + "k"}
-                </span>
-              </h5>
-              <RangeSlider
-                onChange={(value) => setPrice(value)}
-                value={price}
-                min={130}
-                step={10}
-                max={500}
-                size={2}
-                sx={{
-                  ".mantine-Slider-thumb": {
-                    color: "white",
-                    border: "none",
-                    width: 20,
-                    height: 20,
-                  },
-                  ".mantine-Slider-bar": {
-                    backgroundColor: "white",
-                  },
-                }}
-              />
-            </div> */}
-            <div className={"text-white"}>
-              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
-                {translate("floor")}{" "}
-                <span className={"font-bold pl-[1rem]"}>
-                  {floor[0]}-{floor[1]}
-                </span>
-              </h5>
-              <RangeSlider
-                size={2}
-                onChange={(value) => setFloor(value)}
-                value={floor}
-                min={3}
-                minRange={2}
-                max={14}
-                sx={{
-                  ".mantine-Slider-thumb": {
-                    color: "white",
-                    border: "none",
-                    width: 20,
-                    height: 20,
-                  },
-                  ".mantine-Slider-bar": {
-                    backgroundColor: "white",
-                  },
-                }}
-              />
-            </div>
-            <div className={"text-white"}>
-              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
-                {translate("size")}{" "}
-                <span className={"font-bold pl-[1rem]"}>
-                  {area[0]} - {area[1]} m²
-                </span>
-              </h5>
-              <RangeSlider
-                onChange={(value) => setArea(value)}
-                value={area}
-                min={20}
-                step={5}
-                max={200}
-                size={2}
-                sx={{
-                  ".mantine-Slider-thumb": {
-                    color: "white",
-                    border: "none",
-                    width: 20,
-                    height: 20,
-                  },
-                  ".mantine-Slider-bar": {
-                    backgroundColor: "white",
-                  },
-                }}
-              />
-            </div>
-          </div>
-          <div className={"flex flex-col xl:flex-row justify-between"}>
-            <div className="flex xl:flex-row flex-col xl:justify-between gap-[30px] mt-[50px] w-full">
-              <div className={"flex flex-col xl:gap-[30px]"}>
+          className={"w-full xl:max-w-[1200px] mx-auto py-[45px] xl:py-[90px] gap-8 flex flex-row"}
+        ><div className={"flex flex-col xl:flex-row justify-between"}>
+            <div className="flex flex-col xl:justify-between gap-[30px] mt-[50px] w-full">
+              <div className={"flex flex-col "}>
+                <span className="text-black">Počet izieb</span>
                 <div className="flex justify-between xl:justify-start gap-[5px] xl:gap-[20px]">
                   <FilterButton
                     clicked={room1Clicked}
@@ -449,10 +370,10 @@ const Building = () => {
                   />
                 </div> */}
               </div>
-              <div className={"xl:flex flex-col xl:items-end"}>
+              <div className={"flex flex-col w-full"}>
                 <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] xl:items-end">
                   <div className="flex flex-col">
-                    <span className="text-white">{translate("equipment")}</span>
+                    <span className="text-black">{translate("equipment")}</span>
                     <FilterButton
                       clicked={withBalconyAndTerrace}
                       onClick={() => {
@@ -468,7 +389,7 @@ const Building = () => {
                         <Both
                           width="22"
                           height="22"
-                          fill={withBalconyAndTerrace ? "#0E3F3B" : "#fff"}
+                          fill={withBalconyAndTerrace ? "white" : "#087168"}
                         />
                       }
                     >
@@ -487,7 +408,7 @@ const Building = () => {
                       <TwoArrows
                         width={"22"}
                         height={"22"}
-                        fill={withTerrace ? "#0E3F3B" : "white"}
+                        fill={withTerrace ? "white" : "#087168"}
                       />
                     }
                     variant={"rectangle"}
@@ -507,7 +428,7 @@ const Building = () => {
                       <Basket
                         width={"22"}
                         height={"22"}
-                        fill={withBalcony ? "#0E3F3B" : "white"}
+                        fill={withBalcony ? "white" : "#087168"}
                       />
                     }
                     variant={"rectangle"}
@@ -523,7 +444,7 @@ const Building = () => {
                     }}
                     icon={
                       <BasketCrossed
-                        fill={withoutBalcony ? "#0E3F3B" : "white"}
+                        fill={withoutBalcony ? "white" : "#087168"}
                       />
                     }
                     variant={"rectangle"}
@@ -531,31 +452,139 @@ const Building = () => {
                     {translate("without-balcony")}
                   </FilterButton>
                 </div>
-                <div className=" flex flex-col items-end">
-                  <Link href={`${router.pathname}#results`}>
-                    <button
-                      disabled={loading}
-                      onClick={handleClick}
-                      className={
-                        "bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]"
-                      }
-                    >
-                      {translate("search")}
-                    </button>
-                  </Link>
-                  <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
-                    <button
-                      className={
-                        "bg-[#476761] hover:bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px] "
-                      }
-                    >
-                      Prejdite sa po ukážkovom apartmáne OLIVIA Residence
-                    </button>
-                  </Link>
+                <div className=" flex flex-row justify-between">
+
+
+
                 </div>
-              </div>
+              </div>  </div>
+          </div>
+
+
+          <div className={"flex flex-col w-1/3  gap-[50px] "}>
+            {/* <div className={"text-white"}>
+              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
+                {translate("price")}{" "}
+                <span className={"font-bold pl-[1rem]"}>
+                  {price[0]}k - {price[1] === 500 ? "nad " + price[1] + "k" : price[1] + "k"}
+                </span>
+              </h5>
+              <RangeSlider
+                onChange={(value) => setPrice(value)}
+                value={price}
+                min={130}
+                step={10}
+                max={500}
+                size={2}
+                sx={{
+                  ".mantine-Slider-thumb": {
+                    color: "white",
+                    border: "none",
+                    width: 20,
+                    height: 20,
+                  },
+                  ".mantine-Slider-bar": {
+                    backgroundColor: "white",
+                  },
+                }}
+              />
+            </div> */}
+            <div className={"text-black"}>
+              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
+                {translate("floor")}{" "}
+                <span className={"font-bold pl-[1rem]"}>
+                  {floor[0]}-{floor[1]}
+                </span>
+              </h5>
+              <RangeSlider
+                size={2}
+                onChange={(value) => setFloor(value)}
+                value={floor}
+                min={3}
+                minRange={2}
+                max={14}
+                sx={{
+                  ".mantine-Slider-thumb": {
+                    backgroundColor: "black",
+                    color: "white",
+                    border: "none",
+                    width: 20,
+                    height: 20,
+                  },
+                  ".mantine-Slider-bar": {
+                    backgroundColor: "#087168",
+                  },
+                }}
+              />
+            </div>
+            <div className={"text-black"}>
+              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
+                {translate("size")}{" "}
+                <span className={"font-bold pl-[1rem]"}>
+                  {area[0]} - {area[1]} m²
+                </span>
+              </h5>
+              <RangeSlider
+                onChange={(value) => setArea(value)}
+                value={area}
+                min={20}
+                step={5}
+                max={200}
+                size={2}
+                sx={{
+                  ".mantine-Slider-thumb": {
+                    backgroundColor: "black",
+                    color: "white",
+                    border: "none",
+                    width: 20,
+                    height: 20,
+                  },
+                  ".mantine-Slider-bar": {
+                    backgroundColor: "#087168",
+                  },
+                }}
+              />
             </div>
           </div>
+
+        </div>
+        <div className="flex flex-row justify-between max-w-[1200px] mx-auto">
+          <div className="bg-yellow relative p-6 w-1/2">
+            <div className="absolute top-0 right-[-10px]">
+              <OverButtonBigIcon />
+            </div>
+            <div className="absolute top-[-40%] right-0">
+              <Image
+                src="/img/iphone.png"
+                alt="alternativny text"
+                width={"434"}
+                height="325"
+              />
+            </div>
+            <p className="text-[#0E3F3B] text-[20px] w-1/2">
+              Prejdite sa po ukážkovom apartmáne OLIVIA Residence
+            </p>
+            <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+              <button
+                className={
+                  "  h-[35px]  text-[#0E3F3B] font-medium mt-[30px] border-b-[1px] border-[#0E3F3B] flex flex-row justify-center items-center gap-2"
+                }
+              >
+                Vyskúšať
+                <ArrowLink fill="#0E3F3B" />
+              </button>
+            </Link>
+          </div>
+          <Link href={`${router.pathname}#results`}>
+            <button
+              disabled={loading}
+              onClick={handleClick}
+              className="relative bg-primary text-white hidden sm:flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px]"
+            >
+              <p className="text-[18px] leading-[18px]">Vyhľadaj</p> <PaperPlaneIcon fill="#ffffff" />
+              <div className="absolute z-[10] top-0 right-0"><OverButtonIcon /></div>
+            </button>
+          </Link>
         </div>
       </div>
       <div

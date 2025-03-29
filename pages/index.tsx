@@ -139,11 +139,31 @@ const Home = () => {
       </div>
 
       <CommonDescription />
+      <div className="max-w-[1200px] w-full bg-primary mx-auto p-10 flex flex-row gap-6 justify-between ">
+        <div >
+          <h2 className="text-white  text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px]">Prečo práve tu?</h2>
+          <p className="text-white opacity-40 text-[24px] xl:text-[28px] leading-[24px] xl:leading-[28px] italic font-thin mt-4">Výhody bývania a lokality</p>
+        </div>
+        <div>
+          <div className="flex flex-row ">
+            <p className="text-white text-[20px]"><span className="font-bold">Vysoký komfort</span> služieb
+              a obchodov v budove</p>
+          </div>
+          <div>
+            <div className="w-fit px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px]"><p>DM drogerie markt</p></div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
       <div className="flex justify-center mt-[70px] xl:mt-[200px]">
-        <div className="m xl:mx-[165px]">
-          <div className="flex flex-col gap-[30px] items-center mb-[50px] ">
+        <div className="m relative  xl:mx-[165px]">
+          <div className="relative top-[150px] flex flex-col gap-[30px] items-center mb-[50px] ">
             <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />
-            <h1 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] text-center xl:text-left">
+            <h1 className=" text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px] text-center xl:text-left">
               {translate("filter-heading")}
             </h1>
           </div>
@@ -229,7 +249,7 @@ const Home = () => {
                 <ArrowDownNotFilledIcon />
               </div>
             </div> */}
-            <div className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] z-10">
+            {/* <div className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] z-10">
               <Link href="/ponuka-apartmanov">
                 <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761] text-center xl:text-left">
                   {translate("filter-step-1")}
@@ -243,7 +263,7 @@ const Home = () => {
               <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033] text-center xl:text-left">
                 {translate("filter-step-3")}
               </span>
-            </div>
+            </div> */}
             {/*<div className="hidden xl:inline-block relative left-[285px]">*/}
             {/*    <Severka/>*/}
             {/*</div>*/}
@@ -256,7 +276,7 @@ const Home = () => {
         title={translate("negotiation-heading")}
         subtitle={"Rožňavská 1A, Bratislava"}
       />
-      <div className={"flex flex-col py-[70px] xl:py-[150px] bg-[#F5F5F5]"}>
+      {/* <div className={"flex flex-col py-[70px] xl:py-[150px] bg-[#F5F5F5]"}>
         <h2
           className={
             "text-[#0E3F3B] font-bold text-[40px] leading-[48px] mx-4 xl:mx-0 xl:text-center"
@@ -279,7 +299,7 @@ const Home = () => {
             <Button variant={"filled"}>{translate("button-meeting")}</Button>
           </Link>
         </div>
-      </div>
+      </div> */}
       <CustomSwiper />
       {/*<Articles classname={'mb-[150px] xl:pt-[120px]'}/>*/}
       <Subscription />
