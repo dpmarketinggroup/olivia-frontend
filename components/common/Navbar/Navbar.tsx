@@ -295,9 +295,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                   <Link href="/o-projekte#financovanie">
                     <a>{translate("financing")}</a>
                   </Link>
-                  <Link href="/retail">
+                  {/* <Link href="/retail">
                     <a className="p-[3px] flex justify-center items-center ">{translate("hero-retail-title")}</a>
-                  </Link>
+                  </Link> */}
                   <Link href="/o-projekte#standardy">
                     <a className="p-[3px] flex justify-center items-center ">{translate("standards-nav")}</a>
                   </Link>
@@ -318,9 +318,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                           {translate("financing")}
                         </a>
                       </Link>
-                      <Link href="/retail">
+                      {/* <Link href="/retail">
                         <a className="p-[3px] flex justify-center items-center text-center pb-[20px] px-[20px] "  >{translate("hero-retail-title")}</a>
-                      </Link>
+                      </Link> */}
                       <Link href="/o-projekte#standardy">
                         <a className="pb-[20px] px-[20px] text-center">
                           Štandardy projektu

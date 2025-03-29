@@ -134,11 +134,11 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
                 {/*<Link href="/novinky">*/}
                 {/*    <a>Novinky</a>*/}
                 {/*</Link>*/}
-                <Link href="/retail">
+                {/* <Link href="/retail">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-retail")}
                   </a>
-                </Link>
+                </Link> */}
                 <Link href="/kontakt">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-contact")}
