@@ -5,16 +5,18 @@ interface OverButtonBigIconProps {
     fill?: string;
     height?: string;
     width?: string;
+    className?: string;
 }
 
 const OverButtonBigIcon: FunctionComponent<OverButtonBigIconProps> = (
     { fill = "white",
         height = "210",
-        width = "220"
+        width = "220",
+        className = "",
     }
 ) => {
     return (
-        <svg width={width} height={height} viewBox="0 0 210 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width={width} height={height} className={className} viewBox="0 0 210 220" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.4" d="M210 88.1063L210 44.0366L168.013 44.0366L168.013 88.1063L210 88.1063Z" fill={fill} />
             <path opacity="0.4" d="M168.013 44.037L168.013 -0.0327148L126.025 -0.0327168L126.025 44.037L168.013 44.037Z" fill={fill} />
             <path opacity="0.3" d="M126.025 44.037L126.025 -0.0327148L84.0376 -0.0327168L84.0376 44.037L126.025 44.037Z" fill={fill} />

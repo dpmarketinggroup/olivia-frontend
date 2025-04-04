@@ -15,14 +15,21 @@ import {
 import { Button } from "@components/ui";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
-
+import KitchenIcon from "@components/icons/KitchenIcon";
+import WashBasin from "@components/icons/WashBasin";
+import Tile from "@components/icons/Tile";
+import Blinds from "@components/icons/Blinds";
+import Eco from "@components/icons/Eco";
+import Intercom from "@components/icons/Intercom";
+import { marked } from 'marked'
 export interface DescriptionProps {
-  src: string;
+  src?: string;
   children: React.ReactNode;
   className?: string;
   width?: string;
   reverse?: boolean;
   heading?: boolean;
+  video?: boolean;
 }
 
 const Description: FunctionComponent<DescriptionProps> = ({
@@ -31,24 +38,53 @@ const Description: FunctionComponent<DescriptionProps> = ({
   className,
   reverse,
   width = "400",
+  video
 }) => {
   return (
     <div
-      className={`relative flex flex-col ${
-        reverse ? "xl:flex-row-reverse" : "xl:flex-row"
-      } justify-between items-center justify-center px-[1rem] xl:px-0 w-full xl:max-w-[1200px] mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
+      className={`relative mt-[30rem] md:mt-[25rem] xl:mt-60  flex flex-row bg-bgLight ${reverse ? "xl:flex-row-reverse" : "xl:flex-row "
+        } justify-between items-center justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
-      <div className={"shrink-0 mb-[25px] xl:mb-0"}>
-        <Image
-          objectFit="cover"
-          width={555}
-          height={width}
-          alt="description image"
-          src={src}
-          loading={"eager"}
-        />
+      <div className={"relative shrink-0 mb-0 "}>
+        <div className="relative top-0 left-0 z-[5] w-[50px] md:w-[100px] h-[90vh] bg-white"></div>
+        {video ?
+          (<div className="absolute left-0 top-[-200px] md:top-[-100px] z-[10]">
+            <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] sm:w-[425px] sm:h-[425px] lg:w-[550px] lg:h-[550px]"}>
+              <div className="absolute top-0 left-0 z-[10]">
+                <div className="flex flex-row">
+                  <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white"></div>
+                  <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white"></div>
+                </div>
+                <div className="flex flex-row">
+                  <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white"></div>
+                  <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-transparent"></div>
+                </div>
+              </div>
+              <video
+                className={"w-full aspect-square object-cover"}
+                autoPlay={true}
+                playsInline={true}
+                muted={true}
+                loop={true}
+              >
+                <source type="video/mp4" src="/videos/230405OR2602-Bez-textu-16x9.mp4" />
+                {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
+                {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
+              </video>
+            </div>
+          </div>) : (
+
+            <Image
+              objectFit="cover"
+              width={555}
+              height={width}
+              alt="description image"
+              src={src}
+              loading={"eager"}
+            />
+          )}
       </div>
-      <div className="flex flex-col">{children}</div>
+      <div className="flex flex-col w-[85%] md:w-[45%] pb-6 pt-20 md:pt-2 0 px-6 md:p-6">{children}</div>
     </div>
   );
 };
@@ -58,49 +94,65 @@ export default Description;
 export const CommonDescription = () => {
   const { t: translate } = useTranslation("home");
   return (
-    <Description src={"/img/room.jpg"}>
+    <Description video={true}>
       <h3
         className={
-          "font-bold text-[40px] leading-[48px] text-[#0E3F3B] xl:max-w-[310px]"
+          "font-normal text-[48px] leading-[48px] text-black mb-4"
         }
       >
-        {translate("description-heading")}
+        {translate("description-heading")} <br />OLIVIA Residence?
       </h3>
-      <p className={"text-black/60 mt-[20px]"}>
-        {translate("description-paragraph")}
-      </p>
-      <div className={"my-[25px] flex flex-col gap-[10px]"}>
-        {[
-          {
-            icon: <MapPoint size={25} />,
-            label: translate("description-bullet-1"),
-          },
-          { icon: <Star />, label: translate("description-bullet-2") },
-          { icon: <GlassStar />, label: translate("description-bullet-3") },
-        ].map(({ icon, label }, i) => (
-          <div
-            className={"flex gap-[12px] items-center font-bold text-black/60"}
-            key={i}
-          >
-            {icon}
-            <h5>{label}</h5>
-          </div>
-        ))}
+      <div className={"my-[25px] flex flex-col gap-6"}>
+        <div
+          className={"flex gap-[12px] flex-row items-center text-black"}>
+          <KitchenIcon />
+          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
+            __html: marked(translate("description-bullet-1"))
+          }}></h5>
+        </div>
+        <div
+          className={"flex gap-[12px] flex-row items-center text-black"}>
+          <WashBasin />
+          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
+            __html: marked(translate("description-bullet-2"))
+          }}></h5>
+        </div>
+        <div
+          className={"flex gap-[12px] flex-row items-center text-black"}>
+          <Tile />
+          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
+            __html: marked(translate("description-bullet-3"))
+          }}></h5>
+        </div>
+        <div
+          className={"flex gap-[12px] flex-row items-center text-black"}>
+          <Blinds />
+          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
+            __html: marked(translate("description-bullet-4"))
+          }}></h5>
+        </div>
+        <div
+          className={"flex gap-[12px] flex-row items-center text-black"}>
+          <Eco />
+          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
+            __html: marked(translate("description-bullet-5"))
+          }}></h5>
+        </div>
+        <div
+          className={"flex gap-[12px] flex-row items-center text-black"}>
+          <Intercom />
+          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
+            __html: marked(translate("description-bullet-6"))
+          }}></h5>
+        </div>
+
       </div>
       <div className={"flex flex-col xl:flex-row gap-[10px]"}>
-        <Button href={"/o-projekte"} variant={"outlined"}>
-          {translate("button-about-project")}
-        </Button>
-        <Button href={"/stretnutie"} variant={"filled"} className={"w-[220px]"}>
-          {translate("button-meeting")}
-        </Button>
+        <p className="text-[24px] text-[#676766]" dangerouslySetInnerHTML={{
+          __html: marked(translate("description-inform"))
+        }}></p>
       </div>
-      <div className="hidden xl:block absolute right-[-100px] top-[30px]">
-        <RectangleMediumIcon />
-      </div>
-      <div className="hidden xl:block absolute left-[555px] bottom-[-53px]">
-        <RectangleLightIcon />
-      </div>
+
     </Description>
   );
 };
@@ -155,21 +207,7 @@ export const ApartmentEquipmentDescription = () => {
           </div>
         ))}
       </div>
-      <div className="hidden xl:block absolute bottom-[-54px] left-[150px]">
-        <RectangleLightIcon />
-      </div>
-      <div className="hidden xl:block absolute bottom-[-220px] left-[-60px]">
-        <RectangleDarkIcon />
-      </div>
-      <div className="hidden xl:block absolute top-[-80px] right-[50px]">
-        <RectangleMediumIcon />
-      </div>
-      <div className="hidden xl:block absolute bottom-[-260px] right-[-120px]">
-        <RectangleDarkIcon />
-      </div>
-      <div className="hidden xl:block absolute bottom-[-202px] right-[-60px]">
-        <RectangleMediumIcon />
-      </div>
+
     </Description>
   );
 };
@@ -265,23 +303,20 @@ export const CarDescription = ({ oProjekte = false }: CarDescriptionProps) => {
           <RectangleLightIcon />
         </div>
         <div
-          className={`${
-            oProjekte ? "hidden xl:block" : "hidden"
-          } absolute bottom-[1475px] left-[-60px]`}
+          className={`${oProjekte ? "hidden xl:block" : "hidden"
+            } absolute bottom-[1475px] left-[-60px]`}
         >
           <RectangleLightIcon />
         </div>
         <div
-          className={`${
-            oProjekte ? "hidden xl:block" : "hidden"
-          }  absolute bottom-[1050px] left-[1100px]`}
+          className={`${oProjekte ? "hidden xl:block" : "hidden"
+            }  absolute bottom-[1050px] left-[1100px]`}
         >
           <RectangleDarkIcon />
         </div>
         <div
-          className={`${
-            oProjekte ? "hidden xl:block" : "hidden"
-          } absolute bottom-[990px] left-[1040px]`}
+          className={`${oProjekte ? "hidden xl:block" : "hidden"
+            } absolute bottom-[990px] left-[1040px]`}
         >
           <RectangleLightIcon />
         </div>
@@ -375,23 +410,20 @@ export const EcologicDescription = ({
           <RectangleLightIcon />
         </div>
         <div
-          className={`${
-            oProjekte ? "hidden xl:block" : "hidden"
-          } absolute bottom-[1475px] left-[-60px]`}
+          className={`${oProjekte ? "hidden xl:block" : "hidden"
+            } absolute bottom-[1475px] left-[-60px]`}
         >
           <RectangleLightIcon />
         </div>
         <div
-          className={`${
-            oProjekte ? "hidden xl:block" : "hidden"
-          }  absolute bottom-[1050px] left-[1100px]`}
+          className={`${oProjekte ? "hidden xl:block" : "hidden"
+            }  absolute bottom-[1050px] left-[1100px]`}
         >
           <RectangleDarkIcon />
         </div>
         <div
-          className={`${
-            oProjekte ? "hidden xl:block" : "hidden"
-          } absolute bottom-[990px] left-[1040px]`}
+          className={`${oProjekte ? "hidden xl:block" : "hidden"
+            } absolute bottom-[990px] left-[1040px]`}
         >
           <RectangleLightIcon />
         </div>

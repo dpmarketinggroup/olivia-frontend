@@ -13,9 +13,9 @@ const FilterButton = ({ variant, icon, onClick, children, clicked = false, class
     function getClass() {
         switch (variant) {
             case "rectangle":
-                return 'py-2 px-4 flex flex-row  justify-center font-medium rounded-3xl drop-shadow-lg'
+                return 'py-2 px-4 flex flex-row  justify-center font-medium rounded-3xl drop-shadow-lg max-h-[40px]'
             case "square":
-                return 'py-2 px-4 flex flex-row  justify-center font-medium rounded-3xl drop-shadow-lg'
+                return 'py-2 px-4 flex flex-row  justify-center font-medium rounded-3xl drop-shadow-lg max-h-[40px]'
         }
     }
 

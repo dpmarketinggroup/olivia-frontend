@@ -34,12 +34,12 @@ const Subscription = () => {
     return (
         <div className='relative flex justify-center xl:mb-[80px] bg-primary xl:bg-transparent xl:h-[340px] green'>
 
-            <div className="relative xl:mx-[165px] xl:bg-primary w-full xl:max-w-[1200px] relative px-[1rem] py-4 xl:px-0 max-h-[317px]">
+            <div className="relative xl:mx-[165px] xl:bg-primary w-full xl:max-w-[1200px] relative px-[1rem] py-8  xl:px-0 max-h-[350px]">
                 <div className="absolute top-0 right-0 z-[5]">
                     <BgSquare />
                 </div>
                 <div className="flex flex-col gap-[22px] xl:ml-[72px] relative z-[20]">
-                    <h3 className="text-[48px] leading-[38px] text-white pt-0 sm:pt-[35px]">{translate("subscription-heading")}</h3>
+                    <h3 className="text-[48px] leading-[38px] text-white pt-0 sm:pt-[35px] sm:w-full w-[60%]">{translate("subscription-heading")}</h3>
                     <p className="text-[14px] leading-5 text-white ">{translate("subscription-subheading")}</p>
                     <form onSubmit={handleSubmit} className="flex flex-row w-[90%] md:w-1/2 lg:w-[40%]">
                         <TextInput
@@ -72,7 +72,7 @@ const Subscription = () => {
                     </p>
                 </div>
                 <div
-                    className="relative xl:h-[455px]  lg:h-[364px] sm:h-[228px] h-[114px] xl:w-[640px] lg:w-[512px] sm:w-[320px] w-[160px] max-w-[1440px] mx-auto xl:left-[250px] lg:left-[250px] md:left-[200px] sm:left-[150px]  mobile:left-[120px] left-[80px] top-[-300px] sm:top-[-300px] md:top-[-200px] lg:top-[-200px]   xl:top-[-290px]  z-[10]">
+                    className="relative xl:h-[455px]  lg:h-[364px] sm:h-[228px] h-[114px] xl:w-[640px] lg:w-[512px] sm:w-[320px] w-[160px] max-w-[1440px] mx-auto xl:left-[250px] lg:left-[250px] md:left-[200px] sm:left-[150px]  left-[80px] top-[-300px] sm:top-[-300px] md:top-[-200px] lg:top-[-200px]   xl:top-[-290px]  z-[10]">
                     <Image
                         quality={100}
                         objectFit="cover"

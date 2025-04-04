@@ -1,51 +1,51 @@
 /*BUILDING*/
 .cls-1 {
-    fill: none;
+  fill: none;
 }
 
 .cls-2 {
-    fill: url(#linear-gradient);
+  fill: url(#linear-gradient);
 }
 
 .cls-3 {
-    clip-path: url(#clip-path);
+  clip-path: url(#clip-path);
 }
 
 .cls-4 {
-    fill: #89a6a2;
+  fill: #89a6a2;
 }
 
 .cls-5 {
-    fill: #0e3f3b;
-    fill-opacity: 0.6;
+  fill: #0e3f3b;
+  fill-opacity: 0.6;
 }
 
 g[id*="highlight"] {
-    opacity: 0;
+  opacity: 0;
 }
 
 g[id*="highlight"]:hover {
-    opacity: 1;
-    cursor: pointer;
+  opacity: 1;
+  cursor: pointer;
 }
 
 g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
-    fill: #0e3f3b;
+  fill: #0e3f3b;
 }
 
-.block {
+/* .block {
     display: block;
-}
+} */
 
 .none {
-    display: none;
+  display: none;
 }
 
 @media (min-width: 1890px) {
-    .xl3 {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .xl3 {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /*/////////////////////////////////////////////////////////////////*/
@@ -54,365 +54,363 @@ g[id*="highlight"]:hover + g[id*="nr"] .cls-4 {
 /*Floor*/
 /*from 3 to 14 (Floor3.tsx - Floor14.tsx)*/
 .st0 {
-    fill: #ECECEC;
+  fill: #ececec;
 }
 
 .st1 {
-    fill: #FFFFFF;
+  fill: #ffffff;
 }
 
 .st2 {
-    fill: none;
-    stroke: #000000;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #000000;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .st3 {
-    stroke: #000000;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  stroke: #000000;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .st4 {
-    fill: none;
-    stroke: #6FC6D8;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #6fc6d8;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .st5 {
-    fill: none;
-    stroke: #989898;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #989898;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .st6 {
-    fill: none;
-    stroke: #000000;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #000000;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
 }
 
 .st7 {
-    fill: #89A5A1;
+  fill: #89a5a1;
 }
 
 .st8 {
-    fill: #476761;
+  fill: #476761;
 }
 
 .st9 {
-    fill: #0D3F3B;
+  fill: #0d3f3b;
 }
 
 .st10 {
-    fill: url(#SVGID_1_);
+  fill: url(#SVGID_1_);
 }
 
 .st11 {
-    fill: #3C3C3B;
+  fill: #3c3c3b;
 }
 
 .st12 {
-    fill: #575756;
+  fill: #575756;
 }
 
 .st13 {
-    fill: #6F6F6E;
+  fill: #6f6f6e;
 }
 
 .st14 {
-    fill: #868686;
+  fill: #868686;
 }
 
 .st15 {
-    fill: #9C9B9B;
+  fill: #9c9b9b;
 }
 
 .st16 {
-    fill: #B1B1B1;
+  fill: #b1b1b1;
 }
 
 .st17 {
-    fill: #C6C6C5;
+  fill: #c6c6c5;
 }
 
 .st18 {
-    fill: #D9D9D9;
+  fill: #d9d9d9;
 }
 
 .st19 {
-    opacity: 0;
-    fill: #476761;
-    enable-background: new;
+  opacity: 0;
+  fill: #476761;
+  enable-background: new;
 }
 
 .st19:hover {
-    cursor: pointer;
-    opacity: 0.7;
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .st20 {
-    fill: #F5F5F5;
+  fill: #f5f5f5;
 }
 
 .st21 {
-    enable-background: new;
+  enable-background: new;
 }
 
 /*floor 13 (Floor13.tsx)*/
 .floor13 .st0 {
-    fill: #ECECEC;
+  fill: #ececec;
 }
 
 .floor13 .st1 {
-    fill: #FFFFFF;
+  fill: #ffffff;
 }
 
 .floor13 .st2 {
-    fill: none;
-    stroke: #000000;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #000000;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .floor13 .st3 {
-    stroke: #000000;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  stroke: #000000;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .floor13 .st4 {
-    fill: none;
-    stroke: #6FC6D8;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #6fc6d8;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .floor13 .st5 {
-    fill: none;
-    stroke: #989898;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #989898;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .floor13 .st6 {
-    fill: none;
-    stroke: #000000;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #000000;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
 }
 
 .floor13 .st7 {
-    enable-background: new;
+  enable-background: new;
 }
 
 .floor13 .st8 {
-    fill: #89A5A1;
+  fill: #89a5a1;
 }
 
 .floor13 .st9 {
-    fill: #476761;
+  fill: #476761;
 }
 
 .floor13 .st10 {
-    fill: #0D3F3B;
+  fill: #0d3f3b;
 }
 
 .floor13 .st11 {
-    fill: url(#SVGID_1_);
+  fill: url(#SVGID_1_);
 }
 
 .floor13 .st12 {
-    fill: #3C3C3B;
+  fill: #3c3c3b;
 }
 
 .floor13 .st13 {
-    fill: #575756;
+  fill: #575756;
 }
 
 .floor13 .st14 {
-    fill: #6F6F6E;
+  fill: #6f6f6e;
 }
 
 .floor13 .st15 {
-    fill: #868686;
+  fill: #868686;
 }
 
 .floor13 .st16 {
-    fill: #9C9B9B;
+  fill: #9c9b9b;
 }
 
 .floor13 .st17 {
-    fill: #B1B1B1;
+  fill: #b1b1b1;
 }
 
 .floor13 .st18 {
-    fill: #C6C6C5;
+  fill: #c6c6c5;
 }
 
 .floor13 .st19 {
-    fill: #D9D9D9;
+  fill: #d9d9d9;
 }
 
 .floor13 .st20 {
-    cursor: pointer;
-    opacity: 0;
-    fill: #476761;
+  cursor: pointer;
+  opacity: 0;
+  fill: #476761;
 }
 
 .st20:hover {
-    cursor: pointer;
-    opacity: 0.7;
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .floor13 .st21 {
-    fill: #F5F5F5;
+  fill: #f5f5f5;
 }
 
 /*floor 14 (Floor14.tsx)*/
 .floor14 .st0 {
-    fill: #ECECEC;
+  fill: #ececec;
 }
 
 .floor14 .st1 {
-    fill: none;
-    stroke: #1A161A;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #1a161a;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .floor14 .st2 {
-    fill: none;
-    stroke: #000000;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #000000;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .floor14 .st3 {
-    fill: none;
-    stroke: #989898;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #989898;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .floor14 .st4 {
-    fill: none;
-    stroke: #1A161A;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #1a161a;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
 }
 
 .floor14 .st5 {
-    fill: #1A161A;
-    stroke: #1A161A;
-    stroke-width: 0.24;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
+  fill: #1a161a;
+  stroke: #1a161a;
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 .floor14 .st6 {
-    fill: #1A161A;
+  fill: #1a161a;
 }
 
 .floor14 .st7 {
-    enable-background: new;
+  enable-background: new;
 }
 
 .floor14 .st8 {
-    fill: #89A5A1;
+  fill: #89a5a1;
 }
 
 .floor14 .st9 {
-    fill: #476761;
+  fill: #476761;
 }
 
 .floor14 .st10 {
-    fill: #0D3F3B;
+  fill: #0d3f3b;
 }
 
 .floor14 .st11 {
-    fill: url(#SVGID_1_);
+  fill: url(#SVGID_1_);
 }
 
 .floor14 .st12 {
-    fill: #3C3C3B;
+  fill: #3c3c3b;
 }
 
 .floor14 .st13 {
-    fill: #575756;
+  fill: #575756;
 }
 
 .floor14 .st14 {
-    fill: #6F6F6E;
+  fill: #6f6f6e;
 }
 
 .floor14 .st15 {
-    fill: #868686;
+  fill: #868686;
 }
 
 .floor14 .st16 {
-    fill: #9C9B9B;
+  fill: #9c9b9b;
 }
 
 .floor14 .st17 {
-    fill: #B1B1B1;
+  fill: #b1b1b1;
 }
 
 .floor14 .st18 {
-    fill: #C6C6C5;
+  fill: #c6c6c5;
 }
 
 .floor14 .st19 {
-    fill: #D9D9D9;
+  fill: #d9d9d9;
 }
 
 .floor14 .st20 {
-    opacity: 0;
-    fill: #476761;
+  opacity: 0;
+  fill: #476761;
 }
 
 .floor14 .st20:hover {
-    cursor: pointer;
-    opacity: 0.7;
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .floor14 .st21 {
-    fill: #F5F5F5;
+  fill: #f5f5f5;
 }
 #background_gradient {
-    display: none;
+  display: none;
 }
 
-
 /*/////////////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////////////*/
-

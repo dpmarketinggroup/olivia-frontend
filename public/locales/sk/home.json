@@ -1,10 +1,12 @@
 {
-  "information-slider": "Ukážkový apartmán OTVORENÝ. Nájdete nás vo Fresh Markete na prízemí. Otváracie hodiny: Po - PI: 13:00 - 17:00 | So: 10:00 - 14:00",
+  "information-slider": "Showroom je pre Vás OTVORENÝ. Nájdete nás vo Fresh Markete na prízemí. Otváracie hodiny: Po - PI: 13:00 - 17:00 | So: 10:00 - 14:00",
   "pop-up": "/img/modal-banner-new.jpg",
-  "hero-heading": "Moderná rezidencia apartmánového typu, s najvyššími technickými a užívateľskými štandardmi, určená na bývanie aj na podnikanie",
-  "hero-button-white": "Ponuka apartmánov",
-  "button-meeting": "Nezáväzné stretnutie",
-
+  "hero-heading": "Moderná rezidencia apartmánového typu",
+  "hero-desc": "s najvyššími technickými a užívateľskými štandardmi, určená na bývanie aj na podnikanie",
+  "hero-button-white": "Voľné apartmány",
+  "button-meeting": "Rezervácia obhliadky",
+  "button-direction": "Získať trasu",
+  "approve": "Skolaudované",
   "standards-nav": "Štandardy projektu",
 
   "hero-lokalita-title": "Lokalita",
@@ -20,6 +22,8 @@
   "hero-stretnutie-heading": "Nezáväzné stretnutie v Predajnom mieste",
   "hero-stretnutie-subheading-1": "Vyplňte formulár a zvoľte si preferovaný dátum a čas stretnutia.",
   "hero-stretnutie-subheading-2": "Náš predajca Vás bude následne kontaktovať a potvrdí Vám termín stretnutia.",
+
+  "hero-inform": "V OLIVIA Residence je možné zriadiť trvalý pobyt.",
 
   "form-first-name": "Meno",
   "form-interested-in": "Mám záujem o:",
@@ -59,12 +63,18 @@
 
   "button-home": "Domov",
 
-  "description-heading": "Moderné mestské bývanie",
-  "description-paragraph": "Olivia je určená pre ľudí, ktorí chcú, aby ich domov presahoval steny ich bytu. Pre ľudí, ktorí chcú mať ich obľúbené aktivity na dosah ruky. Pre ľudí, ktorí chcú svoj čas využívať efektívne. A pre ľudí, ktorí chcú mať z bývania zážitok. Olivia nie je len bývanie, je to životný štýl.",
-  "button-about-project": "O projekte",
-  "description-bullet-1": "Skvelá dynamická lokalita",
-  "description-bullet-2": "Vysoký štandard vybavenia",
-  "description-bullet-3": "Štýlové a kvalitné prevedenie",
+  "description-heading": "Čo ponúka",
+
+  "description-bullet-1": "Plné vybavené **kuchyne na mieru vrátane spotrebičov**",
+  "description-bullet-2": "Sanita od **renomovaných značiek**",
+  "description-bullet-3": "**Talianske** obklady a dlažby",
+  "description-bullet-4": "**Elektrické** exteriérové slnečné tienenie",
+  "description-bullet-5": "Klimatizácia",
+  "description-bullet-6": "**Inteligentný** vrátnik",
+  "description-inform": "Uvedené vybavenie získate **v cene** apartmánu.",
+
+  "download-h": "Stiahnite si \n\nkatalóg vybavenia",
+  "download-button": "Stiahnuť katalóg",
 
   "description-main-heading": "Vybavenie apartmánov",
   "description-heading-2-first-part": "Vysoký štandard",
@@ -124,7 +134,7 @@
   "description-lokalita-5-bullet-2": "Elektrické exteriérové slnečné tienenie ako štandard",
   "description-lokalita-5-bullet-3": "Veľko-metrážne terasy",
 
-  "filter-heading": "Ponuka apartmánov",
+  "filter-heading": "Ponuka voľných apartmánov",
   "filter-step-1": "Výber poschodia",
   "filter-step-2": "Výber apartmánu",
   "filter-step-3": "Detail apartmánu",
@@ -152,7 +162,9 @@
   "with-balcony": "s balkónom",
   "without-balcony": "bez balkónu",
   "terrace-balcony": "s terasou aj balkónom",
-  "search": "Hľadať",
+  "search": "Vyhľadať",
+  "showroom-offer": "Prejdite sa po ukážkovom apartmáne OLIVIA Residence",
+  "check-it": "Vyskúšať",
   "filter-floor-1": "1-izbové apartmány",
   "filter-floor-1.5": "1.5-izbové apartmány",
   "filter-floor-2": "2-izbové apartmány",
@@ -249,6 +261,8 @@
   "show-apartment-1": "Virtuálna prehliadka",
   "show-apartment-2": "ukážkového apartmánu",
 
+  "footer-navigation": "Navigácia",
+  "footer-social-media": "Sociálne siete",
   "footer-description": "Najnovšie informácie o projekte Olivia Residence priamo do Vašej schránky.",
   "footer-click-text-first-part": "Kliknutím na tlačidlo potvrdzujete, že súhlasíte s našimi podmienkami spracovania",
   "footer-click-text-second-part": " osobných údajov.",

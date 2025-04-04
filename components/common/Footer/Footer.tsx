@@ -101,7 +101,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
                 />
                 <button disabled={loading} type={"submit"} className="relative bg-primary text-white hidden sm:flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]">
                   {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
-                  <p className="text-[18px] leading-[18px]">Odoslať</p> <PaperPlaneIcon fill="#ffffff" />
+                  <p className="text-[18px] leading-[18px]">{translate("form-button")}</p> <PaperPlaneIcon fill="#ffffff" />
                   <div className="absolute z-[10] top-0 right-0"><OverButtonIcon /></div>
                 </button>
                 <button disabled={loading} type={"submit"} className="sm:hidden relative bg-[#FFA100] text-white flex flex-row justify-center items-center gap-2 px-[24px] py-[24px] text-[18px]">
@@ -121,7 +121,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
             </div>
             <div className="flex flex-col gap-[12px] md:flex-row xl:gap-[15px] justify-between xl:justify-end xl:pt-[40px] pb-[20px] xl:pb-0 w-full xl:text-left">
               <div className="hidden lg:flex flex-col gap-[15px] font-thin text-[14px] xl:text-[14px] leading-5 xl:leading-6 text-black">
-                <p className="text-black opacity-60 font-medium">Navigácia</p>
+                <p className="text-black opacity-60 font-medium">{translate("footer-navigation")}</p>
 
                 <Link href="/ponuka-apartmanov">
                   <a className="opacity-60 hover:opacity-100">
@@ -176,7 +176,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
 
               </div>
               <div className=" flex flex-col gap-[12px] items-start text-center xl:text-left font-medium text-[14px] xl:text-[14px] leading-5 xl:leading-6 text-black ">
-                <p className="text-black opacity-60 font-medium">Sociálne siete</p>
+                <p className="text-black opacity-60 font-medium">{translate("footer-social-media")}</p>
                 <div className={"flex gap-[25px] items-center"}>
                   <Link href={"https://www.instagram.com/olivia.residence/"} >
                     <div className="cursor-pointer h-[36px] w-[36px] rounded-full bg-white flex justify-center items-center drop-shadow-md">

@@ -1,10 +1,12 @@
 {
-  "information-slider": "Showroom OPEN. You can find us in Fresh Market on the ground floor. Opening hours: Mon - Fri: 13:00 - 17:00 | Sat: 10:00 - 14:00",
+  "information-slider": "The showroom is OPEN for you. You can find us in Fresh Market on the ground floor. Opening hours: Mon - Fri: 13:00 - 17:00 | Sat: 10:00 - 14:00",
   "pop-up": "/img/modal-banner.jpg",
-  "hero-heading": "Invest in modern, key-ready urban living with excellent value growth potential",
-  "hero-button-white": "Our apartments",
-  "button-meeting": "Informal meeting",
-
+  "hero-heading": "Modern apartment type residence",
+  "hero-desc": "with the highest technical and user standards, designed for living and business",
+  "hero-button-white": "Free apartments",
+  "button-meeting": "Book a Viewing",
+  "button-direction": "Get Directions",
+  "approve": "Approved for use",
   "standards-nav": "Project standards",
 
   "hero-lokalita-title": "Location",
@@ -20,6 +22,8 @@
   "hero-stretnutie-heading": "Set up an informal meeting at our point of sale",
   "hero-stretnutie-subheading-1": "Fill out the form and select a suitable date and time for the meeting.",
   "hero-stretnutie-subheading-2": "Our salesperson will contact you shortly to confirm the meeting.",
+
+  "hero-inform": "It is possible to establish permanent residence in OLIVIA Residence.",
 
   "form-first-name": "Name",
   "form-interested-in": "I am interested in:",
@@ -59,12 +63,19 @@
 
   "button-home": "Home",
 
-  "description-heading": "Modern City Living",
-  "description-paragraph": "Experience modern city living in a whole new way. Olivia combines the conveniences of urban living with effective time management so you can reach your favourite activities in minimal time.",
   "button-about-project": "About the project",
-  "description-bullet-1": "Great dynamic location",
-  "description-bullet-2": "High-quality amenities",
-  "description-bullet-3": "Stylish and fine design",
+  "description-heading": "What it offers",
+
+  "description-bullet-1": "Fully equipped **custom kitchens including appliances**",
+  "description-bullet-2": "Sanitary ware from **renowned brands**",
+  "description-bullet-3": "**Italian** tiles",
+  "description-bullet-4": "**Electric** exterior solar shading",
+  "description-bullet-5": "Air Conditioning",
+  "description-bullet-6": "**Intelligent** gatekeeper",
+  "description-inform": "The above amenities are **included in the price** of the apartment.",
+
+  "download-h": "Download \n\nthe equipment catalogue",
+  "download-button": "Download the catalogue",
 
   "description-main-heading": "Home amenities",
   "description-heading-2-first-part": "High standard",
@@ -124,7 +135,7 @@
   "description-lokalita-5-bullet-2": "Electric outdoor shading",
   "description-lokalita-5-bullet-3": "Spacious terraces",
 
-  "filter-heading": "Our apartments",
+  "filter-heading": "Our free apartments",
   "filter-step-1": "Select the floor",
   "filter-step-2": "Select the apartment",
   "filter-step-3": "Apartment details",
@@ -153,6 +164,8 @@
   "without-balcony": "without a balcony",
   "terrace-balcony": "with terrace and balcony",
   "search": "Search",
+  "showroom-offer": "Take a walk around the OLIVIA Residence show apartment",
+  "check-it": "Check it out",
   "filter-floor-1": "1 bedroom apartments",
   "filter-floor-1.5": "1.5 bedroom apartments",
   "filter-floor-2": "2 bedroom apartments",
@@ -246,10 +259,11 @@
   "here-we-are": "Here we are",
   "show-apartment-1": "Virtual tour",
   "show-apartment-2": "of the showroom",
-
+  "footer-navigation": "Navigation",
+  "footer-social-media": "Social networks",
   "footer-description": "Get the latest information about the Olivia Residence Project delivered to your inbox.",
   "footer-click-text-first-part": "By clicking submit, you consent to the conditions of",
-  "footer-click-text-second-part": "personal data processing.",
+  "footer-click-text-second-part": " personal data processing.",
   "footer-link-home": "Homepage",
   "footer-link-apartments": "Apartments",
   "footer-link-about": "About the project",

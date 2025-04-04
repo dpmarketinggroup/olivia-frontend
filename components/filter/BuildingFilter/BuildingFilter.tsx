@@ -11,9 +11,9 @@ import { useTranslation } from "next-i18next";
 import Both from "@components/icons/Both";
 import OverButtonIcon from "@components/icons/OverButton";
 import OverButtonBigIcon from "@components/icons/OverButtonBig";
-import PaperPlaneIcon from "@components/icons/PaperPlane";
 import Image from "next/image";
 import ArrowLink from "@components/icons/ArrowLink";
+import MagnifierIcon from "@components/icons/Magnifier";
 export type Response = {
   id: number;
   attributes: {
@@ -262,17 +262,18 @@ const Building = () => {
 
   return (
     <>
-      <div className="w-full xl:max-w-[1920px] xl3 overflow-hidden">
+      <div className="w-full xl:max-w-[1920px]  overflow-hidden">
         <House />
       </div>
-      <div className="building bg-white w-full mb-[80px]  pb-10 px-[1rem] xl:px-0">
+      <div className="building bg-white w-full mb-[80px]  pb-10 px-0 md:px-[1rem] xl:px-0">
         <div
-          className={"w-full xl:max-w-[1200px] mx-auto py-[45px] xl:py-[90px] gap-8 flex flex-row"}
-        ><div className={"flex flex-col xl:flex-row justify-between"}>
-            <div className="flex flex-col xl:justify-between gap-[30px] mt-[50px] w-full">
+          className={"w-full max-w-[1200px] mx-auto px-8 py-[45px] xl:py-[90px] gap-8 flex flex-col md:flex-row justify-between"}
+        >
+          <div className={"flex flex-col md:flex-row flex-wrap justify-between"}>
+            <div className="flex flex-col xl:justify-between gap-[30px]  w-full">
               <div className={"flex flex-col "}>
-                <span className="text-black">Počet izieb</span>
-                <div className="flex justify-between xl:justify-start gap-[5px] xl:gap-[20px]">
+                <span className="text-black mb-2">Počet izieb</span>
+                <div className="flex  flex-wrap xl:justify-start gap-[10px] xl:gap-[20px]">
                   <FilterButton
                     clicked={room1Clicked}
                     onClick={() => setRoom1Clicked((prev) => !prev)}
@@ -371,9 +372,11 @@ const Building = () => {
                 </div> */}
               </div>
               <div className={"flex flex-col w-full"}>
-                <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] xl:items-end">
+                <div className="flex flex-wrap flex-row gap-[10px] 
+                
+                xl:gap-[20px] items-end">
                   <div className="flex flex-col">
-                    <span className="text-black">{translate("equipment")}</span>
+                    <span className="text-black mb-2">{translate("equipment")}</span>
                     <FilterButton
                       clicked={withBalconyAndTerrace}
                       onClick={() => {
@@ -461,7 +464,7 @@ const Building = () => {
           </div>
 
 
-          <div className={"flex flex-col w-1/3  gap-[50px] "}>
+          <div className={"flex flex-col w-full md:w-1/2  gap-[50px] "}>
             {/* <div className={"text-white"}>
               <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
                 {translate("price")}{" "}
@@ -489,7 +492,7 @@ const Building = () => {
                 }}
               />
             </div> */}
-            <div className={"text-black"}>
+            <div className={"text-black w-full"}>
               <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
                 {translate("floor")}{" "}
                 <span className={"font-bold pl-[1rem]"}>
@@ -517,7 +520,7 @@ const Building = () => {
                 }}
               />
             </div>
-            <div className={"text-black"}>
+            <div className={"text-black w-full"}>
               <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
                 {translate("size")}{" "}
                 <span className={"font-bold pl-[1rem]"}>
@@ -548,41 +551,59 @@ const Building = () => {
           </div>
 
         </div>
-        <div className="flex flex-row justify-between max-w-[1200px] mx-auto">
-          <div className="bg-yellow relative p-6 w-1/2">
-            <div className="absolute top-0 right-[-10px]">
-              <OverButtonBigIcon />
+        <div className="flex flex-col-reverse md:flex-row justify-between max-w-[1200px] mx-auto">
+          <div className="overflow-hidden md:overflow-visible w-full md:w-2/3 lg:w-1/2">
+            <div className="bg-yellow relative my-20 md:mt-0 p-6 w-full ">
+              <div className="absolute top-0 right-[-10px]">
+                <OverButtonBigIcon />
+              </div>
+
+
+              <div className="absolute top-[-40%] right-[-140px] md:right-[-50px]">
+                <Image
+                  src="/img/iphone.png"
+                  alt="alternativny text"
+                  width={"434"}
+                  height="325"
+                />
+
+              </div>
+              <p className="text-[#0E3F3B] text-[20px] w-1/2">
+                {translate("showroom-offer")}
+              </p>
+              <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+                <button
+                  className={
+                    "  h-[35px]  text-[#0E3F3B] font-medium mt-[30px] border-b-[1px] border-[#0E3F3B] flex flex-row justify-center items-center gap-2"
+                  }
+                >
+                  {translate("check-it")}
+                  <ArrowLink fill="#0E3F3B" />
+                </button>
+              </Link>
             </div>
-            <div className="absolute top-[-40%] right-0">
-              <Image
-                src="/img/iphone.png"
-                alt="alternativny text"
-                width={"434"}
-                height="325"
-              />
-            </div>
-            <p className="text-[#0E3F3B] text-[20px] w-1/2">
-              Prejdite sa po ukážkovom apartmáne OLIVIA Residence
-            </p>
-            <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
-              <button
-                className={
-                  "  h-[35px]  text-[#0E3F3B] font-medium mt-[30px] border-b-[1px] border-[#0E3F3B] flex flex-row justify-center items-center gap-2"
-                }
-              >
-                Vyskúšať
-                <ArrowLink fill="#0E3F3B" />
-              </button>
-            </Link>
           </div>
           <Link href={`${router.pathname}#results`}>
             <button
               disabled={loading}
               onClick={handleClick}
-              className="relative bg-primary text-white hidden sm:flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px]"
-            >
-              <p className="text-[18px] leading-[18px]">Vyhľadaj</p> <PaperPlaneIcon fill="#ffffff" />
-              <div className="absolute z-[10] top-0 right-0"><OverButtonIcon /></div>
+              className="drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] mx-[1rem] group"
+            ><div className="group-hover:hidden block">
+
+                <MagnifierIcon fill="#ffffff" />
+              </div>
+              <div className="group-hover:block hidden ">
+                <MagnifierIcon fill="#087168" />
+              </div>
+              <p className="text-[18px] leading-[18px]">{translate("search")}</p>
+              <div className="absolute z-[10] top-0 right-0">
+                <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                  <OverButtonIcon />
+                </div>
+                <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                  <OverButtonIcon fill="#087168" />
+                </div></div>
             </button>
           </Link>
         </div>

@@ -5,6 +5,7 @@ import React, {
   MouseEvent,
 } from "react";
 import Logo from "../../icons/Logo";
+import LogoWhite from "@components/icons/LogoWhite";
 import DownArrowIcon from "../../icons/DownArrow";
 import Link from "next/link";
 import { Burger, Modal, Select } from "@mantine/core";
@@ -15,7 +16,8 @@ import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { FaFacebookSquare, FaInstagramSquare, FaYoutube } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
-
+import { OverButtonIcon } from "@components/icons";
+import ArrowLink from "@components/icons/ArrowLink";
 interface NavbarProps {
   mainPage?: boolean;
 }
@@ -24,10 +26,30 @@ const USER_CONSENT_COOKIE_KEY = "cookie_consent_is_true";
 const USER_CONSENT_COOKIE_EXPIRE_DATE = 3;
 
 const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
-  const languages = ["sk", "en", "de"];
+  const languages = ["sk", "en"];
   const router = useRouter();
   const { asPath, locale, locales, push } = useRouter();
   const { t: translate } = useTranslation("home");
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  function telNumber() {
+    if (locale === "sk") {
+      return (
+        <Link href={"tel:+421901923324"}>
+
+          <a className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2"> +421 901 923 324<ArrowLink /></a>
+        </Link>
+      );
+    }
+  }
   function modalTranslate() {
     if (locale === "sk") {
       return (
@@ -61,19 +83,19 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
   function infoSlider() {
     if (locale === "de") {
       return (
-        <Marquee pauseOnHover speed={30} gradient={!mobileAndTablet}>
-          <p className="text-white text-center py-[5px] px-[5px]">
-            {translate("information-slider")}
-          </p>
-        </Marquee>
+        // <Marquee pauseOnHover speed={30} >
+        <p className="text-white text-center py-[8px] px-[5px]">
+          {translate("information-slider")}
+        </p>
+        // </Marquee>
       );
     } else {
       return (
-        <Marquee pauseOnHover speed={30} gradient={!mobileAndTablet}>
-          <p className="text-white text-center py-[5px] px-[5px]">
-            {translate("information-slider")}
-          </p>
-        </Marquee>
+        // <Marquee pauseOnHover speed={30} >
+        <p className="text-white text-center py-[8px] px-[5px]">
+          {translate("information-slider")}
+        </p>
+        // </Marquee >
       );
     }
   }
@@ -132,7 +154,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
   return (
     <>
-      {modalTranslate()}
+      {/* {modalTranslate()} */}
       {/*{*/}
 
       {/*     (mainPage && !cookieConsentIsTrue) && (*/}
@@ -159,28 +181,67 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
       {/*    )*/}
       {/*}*/}
       {/*    ${(mainPage && !cookieConsentIsTrue) && "mt-[40px]"} */}
+      {/* <nav
+        className={`bg-transparent shadow-[0_0_10px_rgba(0,0,0,0.15)] xl:h-[95px] w-full fixed top-0 z-[100]`}
+      > */}
       <nav
-        className={`bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] xl:h-[95px] w-full fixed top-0 z-[100]`}
-      >
-        <div className="bg-primary">{infoSlider()}</div>
+        className={`${(isScrolled || isOpenMobileNav) ? "bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] " : "bg-transparent"}  w-full fixed top-0 z-[100]`}
+      ><Marquee gradient={false} className="bg-black">
+
+          <div className="bg-black">{infoSlider()}</div>
+        </Marquee>
         <div
-          className={`px-[1rem] xl:px-0 relative lg:shadow-none w-full xl:max-w-[1920px] mx-auto xl:h-[60px] flex items-center justify-between`}
+          className={`px-6 relative lg:shadow-none w-full xl:max-w-[1920px] mx-auto h-[100px] flex items-center justify-between`}
         >
+
+
           <div
-            className={`${isOpenMobileNav && "h-screen"
-              } xl:h-auto flex flex-col xl:flex-row gap-[50] items-center xl:ml-[40px] xl:mr-0 min-w-full xl:min-w-fit`}
+            className={
+              "hidden xl:flex flex-row gap-[20px] xl:gap-[15px] xl:text-[16px] xl:mt-0 "
+            }
           >
-            <div
-              className={`w-full flex justify-between ${!isOpenMobileNav ? "mb-[20px]" : "mb-[35px]"
-                } mt-[20px] xl:mb-0 xl:mt-0`}
-            >
-              <Link href="/">
-                <a>
-                  <Logo />
+            <Link href="/ponuka-apartmanov">
+              <a className={` drop-span p-[3px] mt-1 ${isScrolled ? "text-black " : "text-white"} uppercase`}>
+                {translate("filter-heading")}
+              </a>
+            </Link>
+            <Link href="/stresne-apartmany">
+              <a className={` ${isScrolled ? "text-black " : "text-white"}  uppercase flex justify-center items-center mt-1`}>
+                <p className="">{translate("footer-link-top-apartments")}</p>
+              </a>
+            </Link>
+            <Link href="/lokalita">
+              <a className={`mt-1 p-[3px] ${isScrolled ? "text-black " : "text-white"} text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p></a>
+            </Link>
+
+
+          </div>
+
+
+
+          <div
+            className={`xl:w-fit w-full flex flex-col justify-center   xl:mb-0 xl:mt-0`}
+          >
+            <div className="flex justify-between">
+
+              <Link href="/" >
+                <a >
+                  {(isScrolled || isOpenMobileNav) ? <><div className="sm:hidden flex">
+                    <Logo width={104} height={25} /> </div> <div className="hidden sm:block">
+                      <Logo width={208} height={50} /> </div></> : <><div className="sm:hidden flex">
+                        <LogoWhite width={104} height={25} /> </div> <div className="hidden sm:block">
+                      <LogoWhite width={208} height={50} /> </div></>}
+
                 </a>
               </Link>
-              <div className="xl:hidden">
+              <div className="xl:hidden flex flex-row justify-center items-center gap-6">
+                <Link href="/ponuka-apartmanov">
+                  <button className={`${isOpenMobileNav ? "hidden" : "block"} w-fit ${isScrolled ? "bg-[#f4f4f4]" : "bg-white"} hover:bg-primary  font-medium text-[12px] sm:text-[16px] leading-[24px] tracking-[-0.1px] w-[100px] sm:w-[210px] hover:text-white text-primary h-[32px] sm:h-[63px] `}>
+                    Voľné apartmány
+                  </button>
+                </Link>
                 <Burger
+                  color={(isScrolled || isOpenMobileNav) ? "#087168" : "white"}
                   opened={isOpenMobileNav}
                   onClick={() => {
                     setIsOpenMobileNav((o) => !o);
@@ -189,34 +250,91 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 />
               </div>
             </div>
-            <div
-              className={` gap-[25px] items-center mb-[20px] ${!isOpenMobileNav ? "hidden" : "flex"
-                }`}
-            >
-              <Link href={"https://www.instagram.com/olivia.residence/"}>
-                <FaInstagramSquare
-                  className={"w-[30px] h-[30px] cursor-pointer"}
-                />
+
+
+            <div className={`${isOpenMobileNav ? "flex" : "hidden"} flex-col absolute  bg-white w-full top-[6rem] left-0 gap-4 py-2`}>
+              <Link href="/ponuka-apartmanov">
+                <a className={` drop-span p-[3px] text-black uppercase mx-auto`}>
+                  {translate("filter-heading")}
+                </a>
               </Link>
-              <Link href={"https://www.facebook.com/olivia.residence.ba"}>
-                <FaFacebookSquare
-                  className={"w-[30px] h-[30px] cursor-pointer"}
-                />
+              <Link href="/stresne-apartmany">
+                <a className={`text-black   uppercase flex justify-center items-center mt-1`}>
+                  <p className="">{translate("footer-link-top-apartments")}</p>
+                </a>
               </Link>
-              <Link href={"https://www.youtube.com/@oliviaresidence6315"}>
-                <FaYoutube className={"w-[30px] h-[30px] cursor-pointer"} />
+              <Link href="/lokalita">
+                <a className={`mt-1 p-[3px] text-black text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p></a>
+              </Link>
+              <Link href="/o-projekte">
+                <a className="uppercase text-black mx-auto">{translate("button-about-project")}</a>
+              </Link>
+              <Link href="/kontakt" className="">
+                <a className={`mt-1 p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-contact")}</a>
+              </Link>
+              <Link href="/stretnutie" className=" w-fit">
+
+                <button className="flex w-fit mx-auto relative bg-primary text-white max-h-fit  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]">
+
+                  <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+                  <div className="absolute z-[10] top-0 right-0"><OverButtonIcon /></div>
+                </button>
+
+              </Link>
+              <Link href={"mailto:info@oliviaresidence.sk"}>
+                <a className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2 text-[16px]">info@oliviaresidence.sk <ArrowLink /></a>
+              </Link>
+              {telNumber()}
+              <div className="text-black flex flex-row gap-2 mx-auto mb-4">
+
+                <button
+
+                  onClick={() => push(asPath, asPath, { locale: "sk" })}
+                  className={`uppercase text-[16px] ${locale === "sk" ? "text-black font-bold" : "text-gray-500"
+                    }`}
+                >
+                  SK
+                </button>
+                <p>|</p>
+                <button
+
+                  onClick={() => push(asPath, asPath, { locale: "en" })}
+                  className={`uppercase text-[16px] ${locale === "en" ? "text-black font-bold" : "text-gray-500"
+                    }`}
+                >
+                  EN
+                </button>
+
+              </div>
+              <div className="mx-auto">
+
+                <h5 className="text-[#676766] text-[16px] text-center mx-auto">{translate("footer-sale-place")}</h5>
+                <h5 className="font-normal text-center mx-auto text-[14px]">Rožňavská 1A</h5>
+                <h5 className="font-normal mx-auto text-center text-[14px]">831 04 Bratislava</h5>
+                <Link href={"mailto:info@oliviaresidence.sk"}>
+                  <a className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2">info@oliviaresidence.sk <ArrowLink /></a>
+                </Link>
+                {telNumber()}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-[5px]">
+            <div className="hidden xl:flex flex-row">
+              <Link href="/o-projekte">
+                <a className={`mt-1 p-[3px] flex justify-center ${isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("button-about-project")}</a>
+              </Link>
+              <Link href="/kontakt" className="">
+                <a className={`mt-1 p-[3px] flex justify-center ${isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}</a>
               </Link>
             </div>
-            <div
-              className={`languages xl:hidden ${!isOpenMobileNav ? "hidden" : "block"
-                }`}
-            >
+            <div className={`languages ${isScrolled ? "black" : "white"} hidden xl:block`}>
               <Select
-                className="w-[50px]"
+                className="w-[50px] uppercase"
                 data={languages}
                 placeholder={locale}
                 variant="unstyled"
-                rightSection={<DownArrowIcon fill={"black"} />}
+                rightSection={<DownArrowIcon fill={isScrolled ? "black" : 'white'} />}
                 rightSectionWidth={30}
                 styles={{ rightSection: { pointerEvents: "none" } }}
                 transitionDuration={80}
@@ -226,178 +344,34 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                     : null
                 }
               />
+
             </div>
-            <div
-              onClick={() => {
-                setIsOpenMobileNav(false);
-                setScrollLocked(() => false);
-              }}
-              className={`${!isOpenMobileNav && "hidden"
-                } my-[30px] desktop:my-auto flex xl:flex flex-col xl:flex-row w-full gap-[25px] items-center xl:h-auto xl:min-w-full`}
-            >
-              <div
-                className={
-                  "flex flex-col xl:flex-row gap-[20px] xl:gap-[15px] xl:text-[16px] xl:mt-0 "
-                }
-              >
-                <div className={"xl:hidden flex flex-col justify-center items-center gap-[20px]"}>
-                  <Link href={"/ponuka-apartmanov"} className={"xl:hidden"}>
-                    <a className="p-[3px] ">{translate("filter-heading")}</a>
-                  </Link>
-                  <Link
-                    href={"/ponuka-apartmanov#garazove-parkovanie"}
-                    className={"xl:hidden"}
-                  >
-                    <a>{translate("description-car-heading")}</a>
-                  </Link>
-                </div>
-                <div className="p-[3px]  hidden xl:flex gap-[10px] justify-center items-center">
-                  <div className="dropdown ">
-                    <Link href="/ponuka-apartmanov">
-                      <a className="drop-span p-[3px] ">
-                        {translate("filter-heading")}
-                      </a>
-                    </Link>
-                    <div className="dropdown-content">
-                      <Link href="/ponuka-apartmanov#garazove-parkovanie">
-                        <a className="w-[180px] pt-[20px] pb-[20px] px-[10px] text-center">
-                          {translate("description-car-heading")}
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="ml-[10px] inline-block">
-                      <DownArrowIcon fill={"black"} />
-                    </div>
-                  </div>
-                </div>
-                {/*  <Link href="/action-bonus">
-                  <a className="font-bold text-[#ffffff]   flex justify-center items-center">
-                    <p className="bg-[#89A6A2] border-[#89A6A2] p-[1px] border-[2px]">{translate("footer-link-action")}</p>
-                  </a>
-                </Link>*/}
-                <Link href="/stresne-apartmany">
-                  <a className="font-bold text-[#ffffff] bg-[#89A6A2]  flex justify-center items-center">
-                    <p className=" border-[#89A6A2] p-[1px] border-[2px]">{translate("footer-link-top-apartments")}</p>
-                  </a>
-                </Link>
-                <Link href="/lokalita">
-                  <a className="p-[3px] flex justify-center items-center"><p>{translate("footer-link-location")}</p></a>
-                </Link>
-                <div className={"flex flex-col gap-[20px] xl:hidden items-center"}>
-                  <Link href="/o-projekte">
-                    <a className="p-[3px] ">
-                      {translate("button-about-project")}
-                    </a>
-                  </Link>
-                  {/* <Link href="/o-projekte#harmonogram">
-                    <a>{translate("schedule")}</a>
-                  </Link> */}
-                  <Link href="/o-projekte#financovanie">
-                    <a>{translate("financing")}</a>
-                  </Link>
-                  <Link href="/retail">
-                    <a className="p-[3px] flex justify-center items-center ">{translate("hero-retail-title")}</a>
-                  </Link>
-                  <Link href="/o-projekte#standardy">
-                    <a className="p-[3px] flex justify-center items-center ">{translate("standards-nav")}</a>
-                  </Link>
-                </div>
-                <div className={"hidden p-[3px] xl:flex justify-center items-center"}>
-                  <div className="dropdown">
-                    <Link href="/o-projekte">
-                      <a>{translate("button-about-project")}</a>
-                    </Link>
-                    <div className="dropdown-content">
-                      {/* <Link href="/o-projekte#harmonogram">
-                        <a className="pt-[20px] pb-[10px] px-[20px]">
-                          {translate("schedule")}
-                        </a>
-                      </Link> */}
-                      <Link href="/o-projekte#financovanie">
-                        <a className="pt-[20px] pb-[20px] px-[20px] text-[#476761]">
-                          {translate("financing")}
-                        </a>
-                      </Link>
-                      <Link href="/retail">
-                        <a className="p-[3px] flex justify-center items-center text-center pb-[20px] px-[20px] "  >{translate("hero-retail-title")}</a>
-                      </Link>
-                      <Link href="/o-projekte#standardy">
-                        <a className="pb-[20px] px-[20px] text-center">
-                          Štandardy projektu
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="ml-[10px] inline-block">
-                      <DownArrowIcon />
-                    </div>
-                  </div>
-                </div>
+            <div className="hidden xl:block">
 
-                {/*<Link href="/novinky">*/}
-                {/*    <a>Novinky</a>*/}
-                {/*</Link>*/}
-                <Link href="/kontakt">
-                  <a className="p-[3px] flex justify-center items-center">{translate("footer-link-contact")}</a>
-                </Link>
-
-              </div>
-              <Link href={"/stretnutie"}>
+              <Link href="/stretnutie">
                 <button
-                  className={
-                    "bg-[#476761] xl:hidden px-[10px] py-[6px] w-full text-white"
-                  }
+
+                  className="drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
                 >
-                  {translate("button-meeting")}
+                  <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+
+                  <div className="absolute z-[10] top-0 right-0">
+                    <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out ">
+
+                      <OverButtonIcon />
+                    </div>
+                    <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                      <OverButtonIcon fill="#087168" />
+                    </div></div>
+
                 </button>
+
               </Link>
             </div>
-          </div>
-          <div className="flex gap-[27px] mr-[40px]">
-            <div className={"hidden xl:flex gap-[15px] items-center"}>
-              <Link href={"https://www.instagram.com/olivia.residence/"}>
-                <FaInstagramSquare
-                  className={"w-[20px] h-[20px] cursor-pointer"}
-                />
-              </Link>
-              <Link href={"https://www.facebook.com/olivia.residence.ba"}>
-                <FaFacebookSquare
-                  className={"w-[20px] h-[20px] cursor-pointer"}
-                />
-              </Link>
-              <Link href={"https://www.youtube.com/@oliviaresidence6315"}>
-                <FaYoutube className={"w-[20px] h-[20px] cursor-pointer"} />
-              </Link>
-            </div>
-            <div className="flex items-center gap-[5px]">
-              <div className="languages hidden xl:block">
-                <Select
-                  className="w-[50px]"
-                  data={languages}
-                  placeholder={locale}
-                  variant="unstyled"
-                  rightSection={<DownArrowIcon fill={"black"} />}
-                  rightSectionWidth={30}
-                  styles={{ rightSection: { pointerEvents: "none" } }}
-                  transitionDuration={80}
-                  onChange={(selected) =>
-                    selected !== null
-                      ? push(asPath, asPath, { locale: selected })
-                      : null
-                  }
-                />
-              </div>
-            </div>
-            <Link href="/stretnutie">
-              <button
-                className={`hidden xl:block hover:bg-[#0E3F3B] font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]`}
-                onClick={() => setIsOpenMobileNav(false)}
-              >
-                {translate("button-meeting")}
-              </button>
-            </Link>
+
           </div>
         </div>
-      </nav>
+      </nav >
     </>
   );
 };

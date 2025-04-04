@@ -8,6 +8,8 @@ import {
   RectangleLightIcon,
   InfoIcon,
 } from "@components/icons/";
+import ArrowLink from "@components/icons/ArrowLink";
+import OverButtonIcon from "@components/icons/OverButton";
 import {
   Timeline,
   MapFooter,
@@ -15,8 +17,12 @@ import {
   Subscription,
   Info,
   Equipment,
+
 } from "@components/common";
+import OverButtonBigIcon from "@components/icons/OverButtonBig";
+import ShopIcon from "@components/icons/Shop";
 import { BuildingFilter } from "@components/filter";
+import AboutUs from "@components/icons/AboutUs";
 import {
   ApartmentSwiper,
   CustomSwiper,
@@ -34,6 +40,13 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { Modal } from "@mantine/core";
 import Image from "next/image";
+import Thermometer from "@components/icons/Thermometer";
+import CheckIcon from "@components/icons/CheckIcon";
+import Coins from "@components/icons/Coins";
+import Tree from "@components/icons/Tree";
+import PeoplePoints from "@components/icons/PeoplePoints";
+import ParkingFlag from "@components/icons/ParkingFlag";
+
 
 
 const Home = () => {
@@ -60,8 +73,18 @@ const Home = () => {
       <Head>
         <title>Moderné mestské bývanie | Olivia Residence</title>
       </Head>
-      <div className="flex justify-center mt-[75px] xl:mt-0 xl:overflow-hidden">
-        <div className="h-[650px] xl:h-[725px] w-full xl:max-w-[1920px] xl:mb-[140px] relative flex">
+      <div className="flex justify-center mt-[15px] xl:mt-0 xl:overflow-hidden">
+        <div className="h-[650px] md:h-screen w-full xl:max-w-[1920px] xl:mb-[140px] relative flex">
+          <div className="absolute bottom-0 right-0 z-[10]">
+            <div className="flex flex-row">
+              <div className="w-[30px] sm:w-[70px] h-[30px] sm:h-[70px] bg-transparent"></div>
+              <div className="w-[30px] sm:w-[70px] h-[30px] sm:h-[70px] bg-white"></div>
+            </div>
+            <div className="flex flex-row">
+              <div className="w-[30px] sm:w-[70px] h-[30px] sm:h-[70px] bg-white"></div>
+              <div className="w-[30px] sm:w-[70px] h-[30px] sm:h-[70px] bg-white"></div>
+            </div>
+          </div>
           <div className="absolute inset-0 xl:w-full -z-[22] xl:overflow-hidden brightness-50">
             <video
               className={"h-full xl:h-auto object-cover"}
@@ -70,49 +93,92 @@ const Home = () => {
               muted={true}
               loop={true}
             >
-              <source type="video/mp4" src="/videos/vid1.mp4" />
+              <source type="video/mp4" src="/videos/hero.mp4" />
+              {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
               {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
             </video>
           </div>
-          <div className="relative w-full xl:max-w-[1400px] xl:mx-auto my-auto">
-            <div className="absolute rounded-full  bg-[#0E3F3B] w-[120px] h-[120px] md:w-[150px] md:h-[150px] rotate-12 top-[103%] sm:top-[0%] left-[60%] sm:left-[70%] md:left-[70%] flex justify-center items-center z-[2] ">
-              <p className="font-bold leading-[20px] text-[12px] md:text-[14px] xl:text-[16px] text-white text-center uppercase">Skolaudované!</p>
-            </div>
-            <div className="w-[300px] xl:w-[600px] mb-[40px] mx-4 xl:mx-0 relative">
-              <h1 className="relative font-bold text-[29px] xl:text-[42px] leading-[32px] xl:leading-[47px] tracking-[-1px] text-white">
+          <div className="relative w-full px-4 md:px-8 xl:max-w-[1400px] xl:mx-auto my-auto">
+
+            <div className="w-full sm:w-[600px] lg:w-[620px] mt-20 mb-[40px]  relative">
+              <div className="relative w-fit mb-8 px-6 py-2 rounded-full bg-yellow overflow-hidden">
+                <div className="absolute  inset-0 flex justify-center items-center">
+                  <OverButtonBigIcon width="120" height="120" className="absolute top-0 right-[-7px]" />
+                </div>
+                <p className="relative text-[#0E3F3B] text-[18px] font-medium text-center">
+                  {translate("approve")}
+                </p>
+              </div>
+              <h1 className="relative  text-[28px] sm:text-[40px] sm:text-[72px] leading-[30px] sm:leading-[42px] sm:leading-[72px] tracking-[-1px] text-white">
                 {translate("hero-heading")}
               </h1>
-
+              <p className="text-white text-[16px] mt-6">{translate("hero-desc")}</p>
             </div>
-            <div className="flex flex-col xl:flex-row gap-[10px] mx-4 xl:mx-0">
-              <Link href="/stretnutie">
-                <button className="w-full hover:bg-[#0E3F3B] bg-[#89A6A2] xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px]">
-                  {translate("button-meeting")}
+            <div className="flex flex-col sm:flex-row gap-4 sm:mx-4 xl:mx-0">
+              <Link href={`/`}>
+                <button
+
+                  className="drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+                >
+                  <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+                  <div className="group-hover:hidden block">
+
+                    <ArrowLink fill="#ffffff" />
+                  </div>
+                  <div className="group-hover:block hidden ">
+                    <ArrowLink fill="#087168" />
+                  </div>
+                  <div className="absolute z-[10] top-0 right-0">
+                    <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                      <OverButtonIcon />
+                    </div>
+                    <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                      <OverButtonIcon fill="#087168" />
+                    </div></div>
+
                 </button>
               </Link>
               <Link href="/ponuka-apartmanov">
-                <button className="w-full hover:bg-[#476761] hover:border-[#476761] font-medium text-[16px] leading-[24px] tracking-[-0.1px] xl:w-[210px] h-[50px] border border-white text-white">
+                <button className="hidden sm:block w-fit bg-white hover:bg-primary  font-medium text-[16px] leading-[24px] tracking-[-0.1px] w-[210px] hover:text-white text-primary h-[63px] ">
                   {translate("hero-button-white")}
                 </button>
               </Link>
             </div>
           </div>
-          {infoBanner()}
-          <div className="hidden xl:block absolute bottom-[-65px]  left-0">
-            <RectangleDarkIcon />
-          </div>
-          <div className="hidden xl:block  absolute bottom-[-65px]  left-[60px]">
-            <RectangleMediumIcon />
-          </div>
-          <div className="hidden xl:block absolute bottom-[-125px]  left-0">
-            <RectangleLightIcon />
-          </div>
+
         </div>
       </div >
-      <div className="flex justify-center md:h-[400px] sm:h-[350px] h-[250px] xl:mt-2 mt-20 mb-10">
+      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-fit xl:h-4 mb-20">
+
+        <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-200px] z-[10]">
+
+          <div className="hidden md:block">
+
+            <Image
+              src={"/img/about-us.jpeg"} width={300} height={300} alt="Ukazka" />
+          </div>
+          <div className=" flex md:hidden">
+
+            <Image
+              src={"/img/about-us.jpeg"} width={170} height={170} alt="Ukazka" />
+          </div>
+          <div className="bg-primary w-[170px] h-[170px] md:w-[280px] md:h-[300px] relative flex flex-col justify-center items-center">
+            <div className="hidden md:block absolute top-0 right-[-8px]">
+              <OverButtonBigIcon height="300" width="300" />
+            </div>
+            <div className="flex md:hidden absolute top-0 right-[-2px]">
+              <OverButtonBigIcon height="170" width="170" />
+            </div>
+            <AboutUs />
+            <p className="text-[16px] md:text-[25px] mt-4 leading-[18px] md:leading-[30px] text-center text-white  w-[90%] md:w-[55%]">{translate("hero-inform")}</p>
+          </div>
+        </div>
+      </div>
+      {/* <div className="flex justify-center md:h-[400px] sm:h-[350px] h-[250px] xl:mt-2 mt-20 mb-10">*/}
 
 
-        {/* <ReactPlayer
+      {/* <ReactPlayer
           width="500px"
           height="400px"
           url="/videos/231213OR4301-Benefit-VYHLAD-5x4 (1).mp4"
@@ -126,40 +192,140 @@ const Home = () => {
         />
         <source src="/videos/231213OR4301-Benefit-VYHLAD-5x4 (1).mp4" type="video/mp4" />  */}
 
-        <video
-          className={"h-full xl:h-auto object-cover"}
-          autoPlay={true}
-          playsInline={true}
-          muted={true}
-          loop={true}
-        >
-          <source type="video/mp4" src="/videos/231213OR4301-Benefit-VYHLAD-16x9.mp4" />
+      {/*} <video
+        className={"h-full xl:h-auto object-cover"}
+        autoPlay={true}
+        playsInline={true}
+        muted={true}
+        loop={true}
+      >
+        <source type="video/mp4" src="/videos/231213OR4301-Benefit-VYHLAD-16x9.mp4" />
 
-        </video>
-      </div>
+      </video>
+    </div > */}
 
       <CommonDescription />
-      <div className="max-w-[1200px] w-full bg-primary mx-auto p-10 flex flex-row gap-6 justify-between ">
-        <div >
-          <h2 className="text-white  text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px]">Prečo práve tu?</h2>
-          <p className="text-white opacity-40 text-[24px] xl:text-[28px] leading-[24px] xl:leading-[28px] italic font-thin mt-4">Výhody bývania a lokality</p>
+      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-[200px] ">
+        <div className="absolute top-0 right-[-10px]">
+          <OverButtonBigIcon height="259" width="259" />
         </div>
-        <div>
-          <div className="flex flex-row ">
-            <p className="text-white text-[20px]"><span className="font-bold">Vysoký komfort</span> služieb
-              a obchodov v budove</p>
-          </div>
-          <div>
-            <div className="w-fit px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px]"><p>DM drogerie markt</p></div>
-          </div>
+        <div className="hidden md:flex lg:hidden absolute top-[-20%] right-10 md:right-20 z-[6]">
+          <Image
+            src="/img/laptop.png"
+            alt="alternativny text"
+            width={"422.5"}
+            height="312.32"
+          />
         </div>
+        <div className="hidden lg:flex absolute top-[-20%] right-10 md:right-20 z-[6]">
+          <Image
+            src="/img/laptop.png"
+            alt="alternativny text"
+            width={"650"}
+            height="488"
+          />
+        </div>
+        <div className="flex md:hidden absolute top-[-10%] right-[-120px] md:right-20 z-[6]">
+          <Image
+            src="/img/laptop.png"
+            alt="alternativny text"
+            width={"357.5"}
+            height="268.4"
+          />
+        </div>
+        <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
+          {translate("download-h")}
+        </p>
+        <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+          <button
+            className={
+              "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"
+            }
+          >
+            {translate("download-button")}
 
+          </button>
+        </Link>
       </div>
 
+      {/* <div className="max-w-[1200px] w-full mt-[100px] bg-primary mx-auto pb-10 pr-10 flex flex-row gap-6 justify-between relative">
+        <div className="bg-white h-[600px] w-[100px] mr-10">
+
+        </div>
+        <div className={"bottom-0 absolute left-0 shrink-0  xl:mb-0 w-[250px] h-[250px] xl:w-[480px] xl:h-[480px]"}>
+          <div className="relative">
+            <div className="absolute bottom-0 z-[10]">
+              <div className="flex flex-row">
+                <div className="w-[80px] h-[80px] bg-white"></div>
+                <div className="w-[80px] h-[80px] bg-transparent"></div>
+              </div>
+              <div className="flex flex-row">
+                <div className="w-[80px] h-[80px] bg-white"></div>
+                <div className="w-[80px] h-[80px] bg-white"></div>
+              </div>
+            </div>
+            <video
+              className={"w-full aspect-square object-cover"}
+              autoPlay={true}
+              playsInline={true}
+              muted={true}
+              loop={true}
+            >
+              <source type="video/mp4" src="/videos/250206OR6501-LOKALITA-shorter-16x9.mp4" />
+       
+    </video >
+          </div >
+        </div >
+        <div className="mt-12 mr-auto">
+          <h2 className="text-white  text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px]">Prečo práve tu?</h2>
+          <p className="text-white opacity-40 text-[24px] xl:text-[28px] leading-[24px] xl:leading-[28px] italic font-thin mt-2">Výhody bývania a lokality</p>
+        </div>
+        <div className="w-[45%] mt-16">
+          <div className="flex flex-row justify-start items-center gap-4 w-full mb-4">
+            <ShopIcon />
+            <p className="text-white text-[20px] leading-[24px] "><span className="font-bold">Vysoký komfort</span> služieb<br />
+              a obchodov v budove</p>
+          </div>
+          <div className="flex flex-row flex-wrap gap-2 border-b-[2px] pb-6 border-[#ffffff33] border-dashed">
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>DM drogerie markt</p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>Lekáreň Vesnala</p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>MMG barbers</p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>Nechtové štúdio</p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>Notariát</p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>Prepojenie s Fresh Market</p></div>
+          </div>
+          <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
+            <Thermometer /><p className="text-white text-[18px] leading-[22px]"><span className="font-bold">Ekologické vykurovanie</span><br />
+              pomocou tepelných čerpadiel</p>
+          </div>
+          <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
+            <Coins /><p className="text-white text-[18px] leading-[22px]"><span className="font-bold">Nižšie náklady</span><br />
+
+              na vykurovanie</p>
+          </div>
+          <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
+            <PeoplePoints /><p className="text-white text-[18px] leading-[22px]">
+              Široká <br /><span className="font-bold">občianska
+                vybavenosť</span></p>
+          </div>
+          <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
+            <ParkingFlag /><p className="text-white text-[18px] leading-[22px]">Parkovanie<br />
+              v <span className="font-bold">podzemnej garáži</span>
+            </p>
+          </div>
+          <div className="flex flex-row justify-start items-center py-4 gap-2 ">
+            <Tree /><p className="text-white text-[18px] leading-[22px]">Prírodný rekreačný<br />
+              areál jazera <span className="font-bold">Kuchajda</span>
+            </p>
+          </div>
+        </div>
+
+      </div >
+
+ */}
 
 
-
-      <div className="flex justify-center mt-[70px] xl:mt-[200px]">
+      <div className="flex justify-center mt-[70px] ">
         <div className="m relative  xl:mx-[165px]">
           <div className="relative top-[150px] flex flex-col gap-[30px] items-center mb-[50px] ">
             <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />

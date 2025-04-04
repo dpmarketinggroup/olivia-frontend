@@ -38,67 +38,87 @@ const Negotiation = ({
     }, []);
 
     return (
-        <div className='flex justify-center '>
-            <div className="w-full flex flex-col relative">
-                {!centerText ?
-                    (
-                        <div
-                            className="flex flex-col xl:flex-row gap-[25px] xl:items-end max-w-[1200px] w-full mx-auto ">
-                            <div className="flex flex-col gap-[10px] xl:gap-[20px]">
-                                <h3 className=" xl:w-auto text-[25px] xl:text-[48px] leading-[28px] xl:leading-[48px] tracking-[-0.5px]">{title}</h3>
-                                <p className="text-[#0E3F3B] opacity-[30%] font-normal text-[14px] xl:text-[24px] leading-[24px] italic">{subtitle}</p>
-                            </div>
-                            {/* <Button variant={'outlined'} href={'/lokalita'}>
+        <>
+            <div className='flex justify-center '>
+                <div className="w-full flex flex-col relative">
+                    {!centerText ?
+                        (
+                            <div
+                                className="flex flex-col xl:flex-row gap-[25px] xl:items-end max-w-[1200px] w-full mx-auto px-4">
+                                <div className="flex flex-col gap-[10px] xl:gap-[20px]">
+                                    <h3 className=" xl:w-auto text-[25px] xl:text-[48px] leading-[28px] xl:leading-[48px] tracking-[-0.5px]">{title}</h3>
+                                    <p className="text-[#0E3F3B] opacity-[30%] font-normal text-[14px] xl:text-[24px] leading-[24px] italic">{subtitle}</p>
+                                </div>
+                                {/* <Button variant={'outlined'} href={'/lokalita'}>
                                 {buttonText === "Viac o lokalite" ? translate("negotiation-button") : buttonText}
                             </Button> */}
+                            </div>
+                        ) : (
+                            <div className="xl:text-center">
+                                <h3 className="font-bold text-[32px] leading-[38px] tracking-[-0.4px] text-green2 mb-[20px] mx-4">{title}</h3>
+                                <p className="text-[16px] leading-6 tracking-[0.1px] text-[#676766] mb-[60px] mx-4 xl:mx-0">{subtitle}</p>
+                            </div>
+                        )
+                    }
+                    <div
+                        ref={ref}
+                        className={`overflow-scroll xl:overflow-visible xl:mx-auto`}>
+
+                        <div className={'relative w-[1000px] xl:w-screen xl:max-w-[1920px] h-[450px] xl:h-[880px]'}>
+                            <Image
+                                objectPosition={'center'}
+                                objectFit="cover"
+                                alt="hero image"
+                                layout={'fill'}
+                                src={"/img/map.png"}
+                                priority={true}
+                                quality={100}
+                            />
+                            <div className="hidden md:block absolute z-[10] top-[2px] right-0 ">
+
+
+                                <button className="relative bg-[url('/img/ponuka.jpeg')] bg-cover bg-center text-white  flex flex-col justify-between  items-start gap-2  text-[18px] w-[395px] h-[220px] mb-4  ">
+                                    <div className="absolute z-[5] w-full h-full bg-black opacity-50"></div>
+                                    {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
+                                    <div className="z-[10] mt-8 ml-8"><ArrowLink fill="white" /></div>
+
+                                    <p className="text-[22px] mb-8 ml-8 z-[10] font-medium leading-[18px]">{translate("filter-heading")}</p>
+
+                                    <div className="absolute z-[10] top-0 right-[-10px]"><OverButtonBigIcon /></div>
+
+                                </button>
+                                <button className="relative bg-yellow text-[#0E3F3B] hidden sm:flex flex-row justify-between  items-center gap-2 px-[32px] py-[22px] w-full text-[18px] max-h-[96px] h-[96px]">
+                                    {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
+                                    <p className="text-[22px] font-medium leading-[18px]">{translate("button-meeting")}</p><Booking />
+                                    <div className="absolute z-[10] top-0 right-0"><OverButtonIcon height="96" width="158" /></div>
+                                </button>
+                            </div>
                         </div>
-                    ) : (
-                        <div className="xl:text-center">
-                            <h3 className="font-bold text-[32px] leading-[38px] tracking-[-0.4px] text-green2 mb-[20px] mx-4">{title}</h3>
-                            <p className="text-[16px] leading-6 tracking-[0.1px] text-[#676766] mb-[60px] mx-4 xl:mx-0">{subtitle}</p>
-                        </div>
-                    )
-                }
-                <div
-                    ref={ref}
-                    className={`overflow-scroll xl:overflow-visible xl:mx-auto`}>
-
-                    <div className={'relative w-[1000px] xl:w-screen xl:max-w-[1920px] h-[450px] xl:h-[880px]'}>
-                        <Image
-                            objectPosition={'center'}
-                            objectFit="cover"
-                            alt="hero image"
-                            layout={'fill'}
-                            src={"/img/map.png"}
-                            priority={true}
-                            quality={100}
-                        />
-                        <div className="absolute z-[10] top-[100px] right-[100px] ">
 
 
-                            <button className="relative bg-[url('/img/ponuka.jpeg')] bg-cover bg-center text-white  flex flex-col justify-between  items-start gap-2  text-[18px] w-[395px] h-[220px] mb-4  ">
-                                <div className="absolute z-[5] w-full h-full bg-black opacity-50"></div>
-                                {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
-                                <div className="z-[10] mt-8 ml-8"><ArrowLink fill="white" /></div>
-
-                                <p className="text-[22px] mb-8 ml-8 z-[10] font-medium leading-[18px]">Ponuka voľných apartmánov</p>
-
-                                <div className="absolute z-[10] top-0 right-[-10px]"><OverButtonBigIcon /></div>
-
-                            </button>
-                            <button className="relative bg-yellow text-[#0E3F3B] hidden sm:flex flex-row justify-between  items-center gap-2 px-[32px] py-[22px] w-full text-[18px] max-h-[96px] h-[96px]">
-                                {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
-                                <p className="text-[22px] font-medium leading-[18px]">Rezervácia obhliadky</p><Booking />
-                                <div className="absolute z-[10] top-0 right-0"><OverButtonIcon height="96" width="158" /></div>
-                            </button>
-                        </div>
                     </div>
+                    <FaArrowsAltH color={'black'} size={40} className={'xl:hidden shadow-xl absolute bottom-[1rem] inset-x-0 mx-auto'} />
+                </div> </div>
+            <div className="md:hidden block relative z-[10] w-full mx-auto mt-6 px-4">
 
 
-                </div>
-                <FaArrowsAltH color={'white'} size={40} className={'xl:hidden shadow-xl absolute bottom-[1rem] inset-x-0 mx-auto'} />
+                <button className="relative bg-[url('/img/ponuka.jpeg')] bg-cover bg-center text-white  flex flex-col justify-between  items-start gap-2  text-[18px] w-full md:w-[395px] h-[220px] mb-4  ">
+                    <div className="absolute z-[5] w-full h-full bg-black opacity-50"></div>
+                    {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
+                    <div className="z-[10] mt-8 ml-8"><ArrowLink fill="white" /></div>
+
+                    <p className="text-[22px] mb-8 ml-8 z-[10] font-medium leading-[18px]">Ponuka voľných apartmánov</p>
+
+                    <div className="absolute z-[10] top-0 right-[-10px]"><OverButtonBigIcon /></div>
+
+                </button>
+                <button className="relative bg-yellow text-[#0E3F3B] flex flex-row justify-between  items-center gap-2 px-[32px] py-[22px] w-full text-[18px] max-h-[96px] h-[96px]">
+                    {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
+                    <p className="text-[22px] font-medium leading-[18px]">Rezervácia obhliadky</p><Booking />
+                    <div className="absolute z-[10] top-0 right-0"><OverButtonIcon height="96" width="158" /></div>
+                </button>
             </div>
-        </div>
+        </>
     );
 };
 
