@@ -33,7 +33,7 @@ import Bus from "@components/icons/Bus";
 import Motorway from "@components/icons/Motorway";
 import Train2 from "@components/icons/Train2";
 export interface DescriptionProps {
-  src?: string;
+  src: string;
   children: React.ReactNode;
   className?: string;
   width?: string;
@@ -133,7 +133,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
 }) => {
   const { t: translate } = useTranslation("home");
   return (
-    <Description video={true} className={className}>
+    <Description src={''} video={true} className={className}>
       <h3
         className={
           `font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`
@@ -223,7 +223,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
 
 export interface TransportDescriptionProps {
   className?: string;
-  src?: string;
+  src: string;
   button?: boolean;
   fill?: boolean;
 }
@@ -304,7 +304,7 @@ export const TransportDescription: FunctionComponent<TransportDescriptionProps> 
 
 export interface SportDescriptionProps {
   className?: string;
-  src?: string;
+  src: string;
   button?: boolean;
   fill?: boolean;
 }
