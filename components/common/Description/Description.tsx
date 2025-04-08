@@ -12,6 +12,7 @@ import {
   RectangleMediumIcon,
   Star,
 } from "@components/icons";
+import { useEffect } from "react";
 import { Button } from "@components/ui";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
@@ -32,6 +33,7 @@ import ElectricScooter from "@components/icons/ElectricScooter";
 import Bus from "@components/icons/Bus";
 import Motorway from "@components/icons/Motorway";
 import Train2 from "@components/icons/Train2";
+import { useState } from "react";
 export interface DescriptionProps {
   src: string;
   children: React.ReactNode;
@@ -131,7 +133,39 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
   button,
 
 }) => {
+  const [bullets, setBullets] = useState<string[]>([]);
+  const [infoText, setInfoText] = useState<string>("");
   const { t: translate } = useTranslation("home");
+  useEffect(() => {
+    const fetchTranslations = async () => {
+      const keys = [
+        "description-bullet-1",
+        "description-bullet-2",
+        "description-bullet-3",
+        "description-bullet-4",
+        "description-bullet-5",
+        "description-bullet-6",
+        "description-inform",
+      ];
+      const rawTranslations = await Promise.all(keys.map((key) => translate(key)));
+
+      // potom parse cez marked
+      const parsed = rawTranslations.map((text) => marked(text));
+      setBullets(parsed.slice(0, 6));
+      setInfoText(parsed[6]);
+    };
+
+    fetchTranslations();
+  }, []);
+
+  const icons = [
+    <KitchenIcon fill={fill} />,
+    <WashBasin fill={fill} />,
+    <Tile fill={fill} />,
+    <Blinds fill={fill} />,
+    <Eco fill={fill} />,
+    <Intercom fill={fill} />,
+  ];
   return (
     <Description src={''} video={true} className={className}>
       <h3
@@ -142,54 +176,25 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
         {translate("description-heading")} <br />OLIVIA Residence?
       </h3>
       <div className={"my-[25px] flex flex-col gap-6"}>
-        <div
-          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
-          <KitchenIcon fill={fill} />
-          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
-            __html: marked(translate("description-bullet-1"))
-          }}></h5>
-        </div>
-        <div
-          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
-          <WashBasin fill={fill} />
-          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
-            __html: marked(translate("description-bullet-2"))
-          }}></h5>
-        </div>
-        <div
-          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
-          <Tile fill={fill} />
-          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
-            __html: marked(translate("description-bullet-3"))
-          }}></h5>
-        </div>
-        <div
-          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
-          <Blinds fill={fill} />
-          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
-            __html: marked(translate("description-bullet-4"))
-          }}></h5>
-        </div>
-        <div
-          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
-          <Eco fill={fill} />
-          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
-            __html: marked(translate("description-bullet-5"))
-          }}></h5>
-        </div>
-        <div
-          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
-          <Intercom fill={fill} />
-          <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
-            __html: marked(translate("description-bullet-6"))
-          }}></h5>
-        </div>
+        {bullets.map((bullet, i) => (
+          <div
+            key={i}
+            className={`flex gap-[12px] flex-row items-center text-${fill}`}
+          >
+            {icons[i]}
+            <h5
+              className="text-[18px] w-2/3 leading-none mt-1"
+              dangerouslySetInnerHTML={{ __html: bullet }}
+            />
+          </div>
+        ))}
 
       </div>
       <div className={"flex flex-col xl:flex-row gap-[10px] leading-none mb-4"}>
-        <p className={`text-[24px] text-${fill} opacity-70`} dangerouslySetInnerHTML={{
-          __html: marked(translate("description-inform"))
-        }}></p>
+        <p
+          className={`text-[24px] text-${fill} opacity-70`}
+          dangerouslySetInnerHTML={{ __html: infoText }}
+        />
       </div>
       {button && (
         <Link href={`/`}>
