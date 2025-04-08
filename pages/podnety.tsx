@@ -11,6 +11,8 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import useRecaptcha from '@components/common/useRecaptcha'
 import PaperPlaneIcon from "@components/icons/PaperPlane";
 import { OverButtonIcon } from "@components/icons";
+import Head from "next/head";
+
 interface FormProps {
   meeting?: boolean;
   isGreen: boolean;
@@ -31,7 +33,7 @@ interface CustomDescriptionProps {
 
 const Podnety = () => {
 
-
+  const { t: translate } = useTranslation("home");
 
   const { capchaToken, recaptchaRef, handleRecaptcha } = useRecaptcha();
   const router = useRouter();
@@ -87,7 +89,7 @@ const Podnety = () => {
 
 
   }
-  const { t: translate } = useTranslation("home");
+
   return (
     <>
       <Head>
@@ -95,45 +97,45 @@ const Podnety = () => {
       </Head>
 
 
-      <form onSubmit={handleSubmit} className={isGreen ? "green" : "grey"}>
+      <form onSubmit={handleSubmit} className={""}>
         <div className="mx-4 xl:mx-0">
-          {meeting && (
-            <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] items-center mb-[45px]">
-              <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">
-                {translate("form-interested-in")}
-              </span>
-              <Checkbox
-                checked={isClicked1}
-                onClick={() => {
-                  if (isClicked2) setClicked2(false);
-                  setClicked1(!isClicked1);
-                }}
-                label={
-                  <>
-                    <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
-                      {translate("form-interested-apartment")}
-                    </span>
-                  </>
-                }
-                radius="xl"
-              />
-              <Checkbox
-                checked={isClicked2}
-                onClick={() => {
-                  if (isClicked1) setClicked1(false);
-                  setClicked2(!isClicked2);
-                }}
-                label={
-                  <>
-                    <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
-                      {translate("form-interested-commercial")}
-                    </span>
-                  </>
-                }
-                radius="xl"
-              />
-            </div>
-          )}
+
+          <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] items-center mb-[45px]">
+            <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">
+              {translate("form-interested-in")}
+            </span>
+            <Checkbox
+              checked={isClicked1}
+              onClick={() => {
+                if (isClicked2) setClicked2(false);
+                setClicked1(!isClicked1);
+              }}
+              label={
+                <>
+                  <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
+                    {translate("form-interested-apartment")}
+                  </span>
+                </>
+              }
+              radius="xl"
+            />
+            <Checkbox
+              checked={isClicked2}
+              onClick={() => {
+                if (isClicked1) setClicked1(false);
+                setClicked2(!isClicked2);
+              }}
+              label={
+                <>
+                  <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
+                    {translate("form-interested-commercial")}
+                  </span>
+                </>
+              }
+              radius="xl"
+            />
+          </div>
+
           <div className="flex flex-col gap-[15px] w-full xl:w-[645px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] w-full">
               <TextInput
@@ -174,7 +176,7 @@ const Podnety = () => {
 
                 value={phone}
 
-                className={`placeholder:text-black ${isGreen && "green"}`}
+                className={`placeholder:text-black `}
                 onChange={(val) => setPhone(val.target.value)}
                 placeholder={translate("form-number") || ""}
               />
@@ -222,10 +224,9 @@ const Podnety = () => {
             />
             <button
               disabled={loading || !capchaToken}
-              className={`py-[12px] ${meeting
-                ? "relative bg-yellow text-white  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]"
-                : "relative bg-primary text-white  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]"
-                } text-white flex items-center justify-center gap-[10px] w-full md:w-fit h-[63px] group hover:bg-white hover:scale-105 transform transition-transform duration-300 ease-in-out drop-shadow-md`}
+              className={`py-[12px] 
+                 relative bg-primary text-white  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]
+                text-white flex items-center justify-center gap-[10px] w-full md:w-fit h-[63px] group hover:bg-white hover:scale-105 transform transition-transform duration-300 ease-in-out drop-shadow-md`}
             >
 
               <p className="text-[18px] group-hover:text-primary text-white leading-[18px]"> {translate("form-button")}</p>
@@ -260,13 +261,5 @@ interface StaticProps {
   locale: string;
 }
 
-export async function getStaticProps({ locale }: StaticProps) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["home"])),
-      //Will be passed to the page component as props
-    },
-  };
-}
 
 export default Podnety;

@@ -1,4 +1,6 @@
-import React, { FunctionComponent } from "react";
+'use client'
+
+import React, { useEffect, useState, FunctionComponent } from "react";
 import Image from "next/image";
 import {
   Camera,
@@ -12,7 +14,6 @@ import {
   RectangleMediumIcon,
   Star,
 } from "@components/icons";
-import { useEffect } from "react";
 import { Button } from "@components/ui";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
@@ -33,7 +34,7 @@ import ElectricScooter from "@components/icons/ElectricScooter";
 import Bus from "@components/icons/Bus";
 import Motorway from "@components/icons/Motorway";
 import Train2 from "@components/icons/Train2";
-import { useState } from "react";
+
 export interface DescriptionProps {
   src: string;
   children: React.ReactNode;
@@ -128,83 +129,73 @@ export interface CommonDescriptionProps {
 }
 
 export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
-  fill,
+  fill = "black",
   className,
   button,
-
 }) => {
-  const [bullets, setBullets] = useState<string[]>([]);
-  const [infoText, setInfoText] = useState<string>("");
-  const { t: translate } = useTranslation("home");
-  useEffect(() => {
-    const fetchTranslations = async () => {
-      const keys = [
-        "description-bullet-1",
-        "description-bullet-2",
-        "description-bullet-3",
-        "description-bullet-4",
-        "description-bullet-5",
-        "description-bullet-6",
-        "description-inform",
-      ];
-      const rawTranslations = await Promise.all(keys.map((key) => translate(key)));
+  const { t } = useTranslation("home");
 
-      // potom parse cez marked
-      const parsed = rawTranslations.map((text) => marked(text));
-      setBullets(parsed.slice(0, 6));
-      setInfoText(parsed[6]);
+  const [texts, setTexts] = useState<{
+    heading: string;
+    bullets: string[];
+    info: string;
+    buttonText: string;
+  } | null>(null);
+
+  useEffect(() => {
+    const loadTexts = async () => {
+      setTexts({
+        heading: t("description-heading"),
+        bullets: [
+          t("description-bullet-1"),
+          t("description-bullet-2"),
+          t("description-bullet-3"),
+          t("description-bullet-4"),
+          t("description-bullet-5"),
+          t("description-bullet-6"),
+        ],
+        info: t("description-inform"),
+        buttonText: t("button-meeting"),
+      });
     };
 
-    fetchTranslations();
-  }, []);
+    loadTexts();
+  }, [t]);
 
-  const icons = [
-    <KitchenIcon fill={fill} />,
-    <WashBasin fill={fill} />,
-    <Tile fill={fill} />,
-    <Blinds fill={fill} />,
-    <Eco fill={fill} />,
-    <Intercom fill={fill} />,
-  ];
+  if (!texts) return null; // alebo loader
+
+  const icons = [KitchenIcon, WashBasin, Tile, Blinds, Eco, Intercom];
+
   return (
     <Description src={''} video={true} className={className}>
-      <h3
-        className={
-          `font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`
-        }
-      >
-        {translate("description-heading")} <br />OLIVIA Residence?
+      <h3 className={`font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`}>
+        {texts.heading} <br /> OLIVIA Residence?
       </h3>
-      <div className={"my-[25px] flex flex-col gap-6"}>
-        {bullets.map((bullet, i) => (
-          <div
-            key={i}
-            className={`flex gap-[12px] flex-row items-center text-${fill}`}
-          >
-            {icons[i]}
-            <h5
-              className="text-[18px] w-2/3 leading-none mt-1"
-              dangerouslySetInnerHTML={{ __html: bullet }}
-            />
-          </div>
-        ))}
-
+      <div className="my-[25px] flex flex-col gap-6">
+        {texts.bullets.map((bullet, i) => {
+          const Icon = icons[i];
+          return (
+            <div key={i} className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+              <Icon fill={fill} />
+              <h5
+                className="text-[18px] w-2/3 leading-none mt-1"
+                dangerouslySetInnerHTML={{ __html: marked(bullet) }}
+              />
+            </div>
+          );
+        })}
       </div>
-      <div className={"flex flex-col xl:flex-row gap-[10px] leading-none mb-4"}>
+      <div className="flex flex-col xl:flex-row gap-[10px] leading-none mb-4">
         <p
           className={`text-[24px] text-${fill} opacity-70`}
-          dangerouslySetInnerHTML={{ __html: infoText }}
+          dangerouslySetInnerHTML={{ __html: marked(texts.info) }}
         />
       </div>
       {button && (
-        <Link href={`/`}>
-          <button
-
-            className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
-          >
-            <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+        <Link href="/">
+          <button className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group">
+            <p className="text-[18px] leading-[18px]">{texts.buttonText}</p>
             <div className="group-hover:hidden block">
-
               <ArrowLink fill="#000000" />
             </div>
             <div className="group-hover:block hidden ">
@@ -212,13 +203,12 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
             </div>
             <div className="absolute z-[10] top-0 right-0">
               <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
-
                 <OverButtonIcon />
               </div>
               <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
                 <OverButtonIcon fill="#FFA100" />
-              </div></div>
-
+              </div>
+            </div>
           </button>
         </Link>
       )}
@@ -230,7 +220,7 @@ export interface TransportDescriptionProps {
   className?: string;
   src: string;
   button?: boolean;
-  fill?: boolean;
+  fill?: string;
 }
 
 export const TransportDescription: FunctionComponent<TransportDescriptionProps> = ({
