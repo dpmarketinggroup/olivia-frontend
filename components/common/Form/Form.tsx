@@ -9,7 +9,8 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import ReCAPTCHA from 'react-google-recaptcha';
 import useRecaptcha from '@components/common/useRecaptcha'
-
+import PaperPlaneIcon from "@components/icons/PaperPlane";
+import { OverButtonIcon } from "@components/icons";
 interface FormProps {
   meeting?: boolean;
   isGreen: boolean;
@@ -112,94 +113,67 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
           </div>
         )}
         <div className="flex flex-col gap-[15px] w-full xl:w-[645px]">
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-[16px] w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] w-full">
             <TextInput
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder={translate("form-first-name") || ""}
+              placeholder={translate("form-first-name") + "*" || ""}
               radius="xs"
               required={true}
               withAsterisk
-              label={
-                <>
-                  <span className={isGreen ? "text-white" : "text-black"}>
-                    {translate("form-first-name")}
-                  </span>
-                </>
-              }
+
             />
 
             <TextInput
               value={surname}
               onChange={(e) => setSurname(e.target.value)}
-              placeholder={translate("form-second-name") || ""}
+              placeholder={translate("form-second-name") + "*" || ""}
               radius="xs"
               required={true}
               withAsterisk
-              label={
-                <>
-                  <span className={isGreen ? "text-white" : "text-black"}>
-                    {translate("form-second-name")}
-                  </span>
-                </>
-              }
+
             />
           </div>
-          <TextInput
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            radius="xs"
-            required={true}
-            withAsterisk
-            label={
-              <>
-                <span className={isGreen ? "text-white" : "text-black"}>
-                  Email
-                </span>
-              </>
-            }
-          />
-          <div className={"flex flex-col"}>
-            <h5 className={isGreen ? "text-white" : "text-black"}>
-              {translate("form-number")}
-            </h5>
-            <PhoneInput
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] w-full">
+            <TextInput
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email*"
+              radius="xs"
+              required={true}
+              withAsterisk
+
+            />
+
+            <TextInput
               style={{
                 height: "50px",
               }}
-              international={false}
-              countries={["SK"]}
+
               value={phone}
-              defaultCountry={"SK"}
+
               className={`placeholder:text-black ${isGreen && "green"}`}
-              onChange={(val) => setPhone(val)}
-              placeholder={translate("form-number")}
+              onChange={(val) => setPhone(val.target.value)}
+              placeholder={translate("form-number") || ""}
             />
           </div>
           <Textarea
-            label={
-              <>
-                <span className={isGreen ? "text-white" : "text-black"}>
-                  {translate("form-message")}
-                </span>
-              </>
-            }
+
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder={translate("form-message") || ""}
             radius="xs"
-            minRows={6}
+            minRows={3}
             maxRows={6}
           />
           <Checkbox
             required={true}
             label={
               <>
-                <p className="text-[14px] leading-5 text-[#999999]">
+                <p className="text-[14px] leading-5 text-black">
                   {translate("form-check-1-1")}{" "}
                   <Link href="/gdpr">
-                    <a className="underline">{translate("form-check-1-2")}</a>
+                    <a className="underline text-primary">{translate("form-check-1-2")}</a>
                   </Link>
                 </p>
               </>
@@ -211,7 +185,7 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
             className="mb-[20px] xl:mb-0"
             label={
               <>
-                <p className="text-[14px] leading-5 text-[#999999]">
+                <p className="text-[14px] leading-5 text-black">
                   {translate("form-check-2")}
                 </p>
               </>
@@ -227,16 +201,35 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
           <button
             disabled={loading || !capchaToken}
             className={`py-[12px] ${meeting
-              ? " bg-[#89A6A2] hover:bg-[#476761]"
-              : "bg-[#476761] hover:bg-primary"
-              } text-white flex items-center justify-center gap-[10px]`}
+              ? "relative bg-yellow text-white  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]"
+              : "relative bg-primary text-white  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]"
+              } text-white flex items-center justify-center gap-[10px] w-full md:w-fit h-[63px] group hover:bg-white hover:scale-105 transform transition-transform duration-300 ease-in-out drop-shadow-md`}
           >
-            {translate("form-button")}
+
+            <p className="text-[18px] group-hover:text-primary text-white leading-[18px]"> {translate("form-button")}</p>
+
+            <div className="group-hover:hidden">
+              <PaperPlaneIcon fill="white" />
+
+            </div>
+            <div className="group-hover:block hidden">
+              <PaperPlaneIcon fill="#087168" />
+
+            </div>
+            <div className="absolute z-[10] top-0 right-0">
+              <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out ">
+
+                <OverButtonIcon />
+              </div>
+              <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                <OverButtonIcon fill="#087168" />
+              </div></div>
             {loading && <Loader size={20} />}
           </button>
+
         </div>
       </div>
-    </form>
+    </form >
   );
 };
 

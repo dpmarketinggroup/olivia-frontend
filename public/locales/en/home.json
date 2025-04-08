@@ -8,9 +8,10 @@
   "button-direction": "Get Directions",
   "approve": "Approved for use",
   "standards-nav": "Project standards",
+  "contact": "Contact",
 
   "hero-lokalita-title": "Location",
-  "hero-lokalita-subtitle": "Location with great opportunities. Rožňavská 1A, Bratislava",
+  "hero-lokalita-subtitle": "Location with great opportunities.",
 
   "hero-o-projekte": "All you need to know about your new home in one place.",
 
@@ -74,6 +75,21 @@
   "description-bullet-6": "**Intelligent** gatekeeper",
   "description-inform": "The above amenities are **included in the price** of the apartment.",
 
+  "description-locale-heading": "Why here?",
+  "description-locale-description1": "Benefits of living and location",
+  "description-locale-description2": "**High comfort** of services\n\n and shops in the building",
+  "description-locale-properties-1": "DM drogerie markt",
+  "description-locale-properties-2": "Vesnala Pharmacy",
+  "description-locale-properties-3": "MMG barbers",
+  "description-locale-properties-4": "Nail studio",
+  "description-locale-properties-5": "Notariat",
+  "description-locale-properties-6": "Link with Fresh Market",
+  "description-locale-bullet-1": "**Ecological heating**\n\n with heat pumps",
+  "description-locale-bullet-2": "**Lower heating costs**",
+  "description-locale-bullet-3": "Wide\n\n **civic amenities**",
+  "description-locale-bullet-4": "Parking \n\nin **underground garage**",
+  "description-locale-bullet-5": "Natural recreational \n\narea of the lake **Kuchajda**",
+
   "download-h": "Download \n\nthe equipment catalogue",
   "download-button": "Download the catalogue",
 
@@ -97,6 +113,12 @@
   "description-car-bullet-5": "Short-term rental of parking spaces",
 
   "description-ecologic-heading": "Heating with heat pumps",
+
+  "description-parking-heading": "Parking space in the underground garage",
+  "description-parking-text": "It is possible to purchase a garage parking space, which will make parking comfortable and hassle-free.",
+
+  "description-storage-heading": "Storage space on its own floor",
+  "description-storage-text": "You can also purchase a storage space on your floor to have your equipment always at hand.",
 
   "description-ecologic-bullet-1": "Significantly lower costs (by more than 50%)",
   "description-ecologic-bullet-2": "Automatic heating without the need for manual intervention",
@@ -129,7 +151,9 @@
   "description-lokalita-4-bullet-2": "High-quality bathrooms",
   "description-lokalita-4-bullet-3": "Quality materials, flooring, and tiling",
 
-  "description-lokalita-5-heading": "Spacious balconies and terraces with external shading",
+  "description-lokalita-5-heading-1": "Spacious balconies and terraces",
+  "description-lokalita-5-heading-2": " with external shading",
+  "description-lokalita-5-heading-3": " included in the price",
   "description-lokalita-5-description": "Spacious balcony and terrace with external shading and an incredible panoramic view of Bratislava",
   "description-lokalita-5-bullet-1": "Spacious balconies",
   "description-lokalita-5-bullet-2": "Electric outdoor shading",

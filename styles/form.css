@@ -39,7 +39,7 @@
 
 /*Grey form*/
 .grey .mantine-TextInput-input {
-  background: rgba(0, 0, 0, 0.07);
+  background: rgb(255, 255, 255);
   border: 0;
   height: 48px;
   color: black;
@@ -51,18 +51,18 @@
 /*}*/
 
 .grey .mantine-Textarea-input {
-  background: rgba(0, 0, 0, 0.07);
+  background: rgb(255, 255, 255);
   border: 0;
   color: black;
 }
 
 .grey .mantine-Checkbox-input {
-  background-color: rgba(0, 0, 0, 0.07);
-  border: 2px solid white;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.319);
 }
 
 .grey .mantine-Checkbox-input:checked {
-  background: #476761;
+  background: #087168;
   border: none;
 }
 

@@ -8,9 +8,10 @@
   "button-direction": "Získať trasu",
   "approve": "Skolaudované",
   "standards-nav": "Štandardy projektu",
+  "contact": "Kontaktovať",
 
   "hero-lokalita-title": "Lokalita",
-  "hero-lokalita-subtitle": "Dynamická lokalita so skvelými možnosťami. Rožňavská 1A, Bratislava",
+  "hero-lokalita-subtitle": "Dynamická lokalita so skvelými možnosťami.",
 
   "hero-o-projekte": "Všetky podstatné informácie o Vašom novom bývaní na jednom mieste.",
 
@@ -87,6 +88,22 @@
   "description-bullet-description-2": "Olivia nevyniká len množstvom nadštandardného vybavenia, ale aj jeho prevedením. Materiály použité v apartmánoch zodpovedajú vysokým štandardom kvality.",
   "button-home-amenities": "Vybavenie apartmánov",
 
+  "description-locale-heading": "Prečo práve tu?",
+  "description-locale-description1": "Výhody bývania a lokality",
+  "description-locale-description2": "**Vysoký komfort** služieb\n\n a obchodov v budove",
+  "description-locale-properties-1": "DM drogerie markt",
+  "description-locale-properties-2": "Lekáreň Vesnala",
+  "description-locale-properties-3": "MMG barbers",
+  "description-locale-properties-4": "Nechtové štúdio",
+  "description-locale-properties-5": "Notariát",
+  "description-locale-properties-6": "Prepojenie s Fresh Market",
+
+  "description-locale-bullet-1": "**Ekologické vykurovanie**\n\n pomocou tepelných čerpadiel",
+  "description-locale-bullet-2": "**Nižšie náklady**\n\n na vykurovanie",
+  "description-locale-bullet-3": "Široká\n\n **občianska vybavenosť**",
+  "description-locale-bullet-4": "Parkovanie\n\n v **podzemnej garáži**",
+  "description-locale-bullet-5": "Prírodný rekreačný\n\n areál jazera **Kuchajda**",
+
   "description-car-heading": "Garážové parkovanie a úložné priestory",
   "description-car-description": "Olivia Residence ponúka garážové státia, vďaka ktorým bude parkovanie komfortný a bezproblémový zážitok. K bývaniu je možné si zakúpiť aj úložný priestor na vašom poschodí, aby ste mali svoje vybavenie vždy po ruke.",
   "description-car-bullet-1": "Prechod do Vášho apartmánu suchou nohou",
@@ -94,6 +111,12 @@
   "description-car-bullet-3": "Zabezpečené kamerovým systémom",
   "description-car-bullet-4": "Garážové státie na predaj",
   "description-car-bullet-5": "Krátkodobý prenájom garážových státí",
+
+  "description-parking-heading": "Parkovacie státie v podzemnej garáži",
+  "description-parking-text": "K bývaniu je možné si zakúpiť garážové státie, vďaka ktorému bude parkovanie komfortné a bezproblémové.",
+
+  "description-storage-heading": "Úložné priestory na vlastnom podlaží",
+  "description-storage-text": "K bývaniu je možné si zakúpiť aj úložný priestor na Vašom poschodí, aby ste mali svoje vybavenie vždy po ruke.",
 
   "description-ecologic-heading": "Vykurovanie pomocou tepelných čerpadiel",
 
@@ -118,7 +141,7 @@
   "description-lokalita-3-heading": "Aktivity a voľný čas",
   "description-lokalita-3-description": "Miesto, ktoré splýva s Vaším aktívnym životným štýlom. Rekreačné aktivity a športoviská tu máte na dosah ruky.",
   "description-lokalita-3-bullet-1": "Fitness centrá v blízkom okolí",
-  "description-lokalita-3-bullet-2": "Bežecká trať Kuchajda 5 min pešo",
+  "description-lokalita-3-bullet-2": "Rekreačný prírodný areál jazera Kuchajda 5 min pešo",
   "description-lokalita-3-bullet-3": "Tenisové kurty, bowling a iné športové centrá v blízkom okolí",
   "description-lokalita-3-bullet-4": "Futbalové a basketbalové ihriská v blízkosti",
 
@@ -128,7 +151,9 @@
   "description-lokalita-4-bullet-2": "Sanita vo vysokej kvalite",
   "description-lokalita-4-bullet-3": "Kvalitné materiály podlahy a obkladov",
 
-  "description-lokalita-5-heading": "Priestranné balkóny a terasy s exteriérovým slnečným tienením",
+  "description-lokalita-5-heading-1": "Priestranné balkóny a terasy s",
+  "description-lokalita-5-heading-2": " exteriérovým slnečným tienením",
+  "description-lokalita-5-heading-3": " v cene apartmánu",
   "description-lokalita-5-description": "Veľko-metrážne balkóny a terasy s exteriérovým slnečným tienením sprevádzané výhľadmi na panorámu Bratislavy.",
   "description-lokalita-5-bullet-1": "Balkón ako štandard pre každý apartmán",
   "description-lokalita-5-bullet-2": "Elektrické exteriérové slnečné tienenie ako štandard",
@@ -138,7 +163,7 @@
   "filter-step-1": "Výber poschodia",
   "filter-step-2": "Výber apartmánu",
   "filter-step-3": "Detail apartmánu",
-  "filter-drop-down-general": ". poschodie",
+  "filter-drop-down-general": ". oschodie",
   "filter-drop-down-3": "3. poschodie",
   "filter-drop-down-4": "4. poschodie",
   "filter-drop-down-5": "5. poschodie",
@@ -202,7 +227,7 @@
 
   "equipment-heading": "Štandardné vybavenie",
   "equipment-heading-2": "Detailná ponuka financovania",
-  "equipment-heading-3": "Pôdorys apartmánu na stiahnutie",
+  "equipment-heading-3": "Pôdorys apartmánu",
   "equipment-heading-4": "Karta vybavenia",
   "equipment-download": "Stiahnuť pôdorys",
   "equipment-link": "Stiahnuť",
@@ -278,7 +303,7 @@
   "footer-protection": "Ochrana osobných údajov",
 
   "apartment-n": "Apartmán č.",
-  "more": "Viac",
+  "more": "Zisti viac",
 
   "schedule": "Harmonogram",
   "financing": "Financovanie",
@@ -292,7 +317,7 @@
   "apartment-on-floor": "Výber apartmánu na poschodí",
   "office": "Pracovňa",
   "sleeping-area": "Spací kút",
-  "total-area": "Celková výmera",
+  "total-area": "Výmera apartmánu",
   "partner-bank": "Partnerské banky",
   "partner-bank-description": "Pre potreby hypotekárneho financovania je Projekt OLIVIA Residence nastavený v nasledujúcich bankách",
 

@@ -99,15 +99,43 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
 
                   radius="xs"
                 />
-                <button disabled={loading} type={"submit"} className="relative bg-primary text-white hidden sm:flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]">
+                <button disabled={loading} type={"submit"} className="drop-shadow-md relative hover:bg-white bg-primary  hover:text-primary text-white hidden sm:flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] group">
                   {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
-                  <p className="text-[18px] leading-[18px]">{translate("form-button")}</p> <PaperPlaneIcon fill="#ffffff" />
-                  <div className="absolute z-[10] top-0 right-0"><OverButtonIcon /></div>
+                  <p className="text-[18px] leading-[18px]">{translate("form-button")}</p>
+                  <div className="group-hover:hidden">
+
+                    <PaperPlaneIcon fill="#ffffff" />
+                  </div>
+                  <div className="group-hover:block hidden">
+
+                    <PaperPlaneIcon fill="#087168" />
+                  </div>
+                  <div className="absolute z-[10] top-0 right-0">
+                    <div className="group-hover:block hidden">
+                      <OverButtonIcon fill="#087168" />
+                    </div>
+
+                    <div className="group-hover:hidden">
+                      <OverButtonIcon />
+                    </div>
+                  </div>
                 </button>
-                <button disabled={loading} type={"submit"} className="sm:hidden relative bg-[#FFA100] text-white flex flex-row justify-center items-center gap-2 px-[24px] py-[24px] text-[18px]">
+                <button disabled={loading} type={"submit"} className="sm:hidden relative hover:bg-white bg-[#FFA100] text-white flex flex-row justify-center items-center gap-2 px-[24px] py-[24px] text-[18px] group">
                   {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
-                  <PaperPlaneIcon fill="#000000" />
-                  <div className="absolute z-[10] top-0 right-0"><OverButtonIcon /></div>
+                  <div className="group-hover:hidden">
+                    <PaperPlaneIcon fill="#000000" />
+                  </div>
+                  <div className="group-hover:block hidden">
+                    <PaperPlaneIcon fill="#FFA100" />
+                  </div>
+                  <div className="absolute z-[10] top-0 right-0">
+                    <div className="group-hover:block hidden">
+                      <OverButtonIcon fill="#FFA100" />
+                    </div>
+
+                    <div className="group-hover:hidden">
+                      <OverButtonIcon />
+                    </div></div>
                 </button>
               </form>
               <p className="text-[12px] opacity-60 text-black  pb-[25px]">
@@ -230,7 +258,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

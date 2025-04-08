@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Checkbox, RangeSlider } from "@mantine/core";
+import { useRef } from "react";
 import House from "./House";
 import { Table } from "@components/table";
 import { FilterButton } from "@components/ui/";
@@ -73,6 +74,17 @@ const Building = () => {
   const { t: translate } = useTranslation("home");
   const [isSoldChecked, setIsSoldChecked] = useState(true);
   const [isReservatedChecked, setIsReservatedChecked] = useState(true);
+
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+
+  useEffect(() => {
+    const el = contentRef.current;
+    if (el && el.scrollHeight > 600) {
+      setIsOverflowing(true);
+    }
+  }, []);
 
   useEffect(() => {
     async function fetch() {
@@ -262,7 +274,7 @@ const Building = () => {
 
   return (
     <>
-      <div className="w-full xl:max-w-[1920px]  overflow-hidden">
+      <div className="w-full xl:max-w-[1920px] mx-auto overflow-hidden">
         <House />
       </div>
       <div className="building bg-white w-full mb-[80px]  pb-10 px-0 md:px-[1rem] xl:px-0">
@@ -609,15 +621,31 @@ const Building = () => {
         </div>
       </div>
       <div
+        ref={contentRef}
         id={"results"}
-        className={`flex flex-col xl:gap-[120px] px-[1rem] xl:px-0 xl:min-h-[1px] bg-[#F5F5F5] mt-[-80px] ${(oneRooms ||
-          oneAndHalfRooms ||
-          twoRooms ||
-          threeRooms ||
-          fourAndHalfRooms) &&
+        className={`${isExpanded ? "max-h-full" : "max-h-[600px] overflow-hidden"
+          } flex flex-col xl:gap-[120px] px-[1rem] xl:px-0 xl:min-h-[1px] bg-[#F5F5F5] relative mt-[-80px] ${(oneRooms ||
+            oneAndHalfRooms ||
+            twoRooms ||
+            threeRooms ||
+            fourAndHalfRooms) &&
           "xl:py-[100px]"
           }`}
-      >
+      > {!isExpanded && (
+        <div className="absolute bottom-0 pb-8 left-1/2 transform -translate-x-1/2 w-full z-[10] bg-gradient-to-t from-white to-transparent">
+
+          <button
+            className={
+              "relative text-[18px] hover:text-white drop-shadow-md hover:bg-[#0E3F3B] text-[#0E3F3B] bg-[#F4F4F4] font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10] mx-auto"
+            }
+
+            onClick={() => setIsExpanded((prev) => !prev)}
+          >
+            {isExpanded ? "Zobraziť menej" : "Zobraziť viac"}
+          </button>
+        </div>
+      )}
+
         {oneRooms?.length ? (
           <div id={"one-apt"}>
             <h3
@@ -926,6 +954,7 @@ const Building = () => {
           ""
         )}
       </div>
+
     </>
   );
 };

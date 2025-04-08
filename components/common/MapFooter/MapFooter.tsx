@@ -38,11 +38,26 @@ const MapFooter = () => {
                                 </button>
                             </Link>
                             <Link href="" >
-                                <button className="relative bg-primary text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] max-h-[62px] min-w-fit text-[18px] w-full sm:w-fit">
+                                <button className="relative hover:bg-white bg-primary hover:text-primary text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] max-h-[62px] min-w-fit text-[18px] w-full sm:w-fit group drop-shadow-md hover:scale-105 transform transition-transform duration-300 ease-in-out">
                                     {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
                                     <p className="text-[18px] leading-[18px]">{translate("button-direction")}</p>
-                                    <ArrowLink fill="#ffffff" />
-                                    <div className="absolute z-[10] top-0 right-0"><OverButtonIcon /></div>
+                                    <div className="group-hover:hidden">
+
+                                        <ArrowLink fill="#ffffff" />
+                                    </div>
+                                    <div className="group-hover:block hidden">
+
+                                        <ArrowLink fill="#087168" />
+                                    </div>
+                                    <div className="absolute z-[10] top-0 right-0"> <div className="absolute z-[10] top-0 right-0">
+                                        <div className="group-hover:block hidden">
+                                            <OverButtonIcon fill="#087168" />
+                                        </div>
+
+                                        <div className="group-hover:hidden">
+                                            <OverButtonIcon />
+                                        </div>
+                                    </div></div>
                                 </button>
                             </Link>
                         </div>

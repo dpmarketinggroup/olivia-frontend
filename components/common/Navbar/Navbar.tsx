@@ -18,6 +18,7 @@ import { FaFacebookSquare, FaInstagramSquare, FaYoutube } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
 import { OverButtonIcon } from "@components/icons";
 import ArrowLink from "@components/icons/ArrowLink";
+
 interface NavbarProps {
   mainPage?: boolean;
 }
@@ -28,11 +29,16 @@ const USER_CONSENT_COOKIE_EXPIRE_DATE = 3;
 const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
   const languages = ["sk", "en"];
   const router = useRouter();
+  const path = router.pathname;  // napr. "/apartman/[id]"
+  const aspath = router.asPath;
   const { asPath, locale, locales, push } = useRouter();
   const { t: translate } = useTranslation("home");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isWhite, setIsWhite] = useState(false);
+
 
   useEffect(() => {
+    setIsWhite(aspath.startsWith("/apartman/") || aspath.startsWith("/en/apartman/"));
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -185,7 +191,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
         className={`bg-transparent shadow-[0_0_10px_rgba(0,0,0,0.15)] xl:h-[95px] w-full fixed top-0 z-[100]`}
       > */}
       <nav
-        className={`${(isScrolled || isOpenMobileNav) ? "bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] " : "bg-transparent"}  w-full fixed top-0 z-[100]`}
+        className={`${(isWhite || isScrolled || isOpenMobileNav) ? "bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] " : "bg-transparent"}  w-full fixed top-0 z-[100]`}
       ><Marquee gradient={false} className="bg-black">
 
           <div className="bg-black">{infoSlider()}</div>
@@ -201,17 +207,17 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
             }
           >
             <Link href="/ponuka-apartmanov">
-              <a className={` drop-span p-[3px] mt-1 ${isScrolled ? "text-black " : "text-white"} uppercase`}>
+              <a className={` drop-span p-[3px] mt-1 ${isWhite || isScrolled ? "text-black " : "text-white"} uppercase`}>
                 {translate("filter-heading")}
               </a>
             </Link>
             <Link href="/stresne-apartmany">
-              <a className={` ${isScrolled ? "text-black " : "text-white"}  uppercase flex justify-center items-center mt-1`}>
+              <a className={` ${isWhite || isScrolled ? "text-black " : "text-white"}  uppercase flex justify-center items-center mt-1`}>
                 <p className="">{translate("footer-link-top-apartments")}</p>
               </a>
             </Link>
             <Link href="/lokalita">
-              <a className={`mt-1 p-[3px] ${isScrolled ? "text-black " : "text-white"} text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p></a>
+              <a className={`mt-1 p-[3px] ${isWhite || isScrolled ? "text-black " : "text-white"} text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p></a>
             </Link>
 
 
@@ -226,7 +232,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
               <Link href="/" >
                 <a >
-                  {(isScrolled || isOpenMobileNav) ? <><div className="sm:hidden flex">
+                  {(isWhite || isScrolled || isOpenMobileNav) ? <><div className="sm:hidden flex">
                     <Logo width={104} height={25} /> </div> <div className="hidden sm:block">
                       <Logo width={208} height={50} /> </div></> : <><div className="sm:hidden flex">
                         <LogoWhite width={104} height={25} /> </div> <div className="hidden sm:block">
@@ -236,12 +242,12 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               </Link>
               <div className="xl:hidden flex flex-row justify-center items-center gap-6">
                 <Link href="/ponuka-apartmanov">
-                  <button className={`${isOpenMobileNav ? "hidden" : "block"} w-fit ${isScrolled ? "bg-[#f4f4f4]" : "bg-white"} hover:bg-primary  font-medium text-[12px] sm:text-[16px] leading-[24px] tracking-[-0.1px] w-[100px] sm:w-[210px] hover:text-white text-primary h-[32px] sm:h-[63px] `}>
-                    Voľné apartmány
+                  <button className={`${isOpenMobileNav ? "hidden" : "block"} w-fit ${isWhite || isScrolled ? "bg-[#f4f4f4]" : "bg-white"} hover:bg-primary  font-medium text-[12px] sm:text-[16px] leading-[24px] tracking-[-0.1px] w-[100px] sm:w-[210px] hover:text-white text-primary h-[32px] sm:h-[63px] `}>
+                    {translate("hero-button-white")}
                   </button>
                 </Link>
                 <Burger
-                  color={(isScrolled || isOpenMobileNav) ? "#087168" : "white"}
+                  color={(isWhite || isScrolled || isOpenMobileNav) ? "#087168" : "white"}
                   opened={isOpenMobileNav}
                   onClick={() => {
                     setIsOpenMobileNav((o) => !o);
@@ -267,7 +273,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 <a className={`mt-1 p-[3px] text-black text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p></a>
               </Link>
               <Link href="/o-projekte">
-                <a className="uppercase text-black mx-auto">{translate("button-about-project")}</a>
+                <a className="uppercase text-black mx-auto">{translate("footer-link-about")}</a>
               </Link>
               <Link href="/kontakt" className="">
                 <a className={`mt-1 p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-contact")}</a>
@@ -322,19 +328,19 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
           <div className="flex items-center gap-[5px]">
             <div className="hidden xl:flex flex-row">
               <Link href="/o-projekte">
-                <a className={`mt-1 p-[3px] flex justify-center ${isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("button-about-project")}</a>
+                <a className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-about")}</a>
               </Link>
               <Link href="/kontakt" className="">
-                <a className={`mt-1 p-[3px] flex justify-center ${isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}</a>
+                <a className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}</a>
               </Link>
             </div>
-            <div className={`languages ${isScrolled ? "black" : "white"} hidden xl:block`}>
+            <div className={`languages ${isWhite || isScrolled ? "black" : "white"} hidden xl:block`}>
               <Select
                 className="w-[50px] uppercase"
                 data={languages}
                 placeholder={locale}
                 variant="unstyled"
-                rightSection={<DownArrowIcon fill={isScrolled ? "black" : 'white'} />}
+                rightSection={<DownArrowIcon fill={isWhite || isScrolled ? "black" : 'white'} />}
                 rightSectionWidth={30}
                 styles={{ rightSection: { pointerEvents: "none" } }}
                 transitionDuration={80}

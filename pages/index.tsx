@@ -46,7 +46,7 @@ import Coins from "@components/icons/Coins";
 import Tree from "@components/icons/Tree";
 import PeoplePoints from "@components/icons/PeoplePoints";
 import ParkingFlag from "@components/icons/ParkingFlag";
-
+import { marked } from "marked";
 
 
 const Home = () => {
@@ -204,7 +204,7 @@ const Home = () => {
       </video>
     </div > */}
 
-      <CommonDescription />
+      <CommonDescription fill="black" className="bg-bgLight" />
       <div className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-[200px] ">
         <div className="absolute top-0 right-[-10px]">
           <OverButtonBigIcon height="259" width="259" />
@@ -248,7 +248,7 @@ const Home = () => {
         </Link>
       </div>
 
-      {/* <div className="max-w-[1200px] w-full mt-[100px] bg-primary mx-auto pb-10 pr-10 flex flex-row gap-6 justify-between relative">
+      <div className="max-w-[1200px] w-full mt-[100px] bg-primary mx-auto pb-10 pr-10 flex flex-row gap-6 justify-between relative">
         <div className="bg-white h-[600px] w-[100px] mr-10">
 
         </div>
@@ -272,57 +272,75 @@ const Home = () => {
               loop={true}
             >
               <source type="video/mp4" src="/videos/250206OR6501-LOKALITA-shorter-16x9.mp4" />
-       
-    </video >
+
+            </video >
           </div >
         </div >
         <div className="mt-12 mr-auto">
-          <h2 className="text-white  text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px]">Prečo práve tu?</h2>
-          <p className="text-white opacity-40 text-[24px] xl:text-[28px] leading-[24px] xl:leading-[28px] italic font-thin mt-2">Výhody bývania a lokality</p>
+          <h2 className="text-white  text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px]">{translate("description-locale-heading")}</h2>
+          <p className="text-white opacity-40 text-[24px] xl:text-[28px] leading-[24px] xl:leading-[28px] italic font-thin mt-2" dangerouslySetInnerHTML={{
+            __html: marked(translate("description-locale-description1"))
+          }}></p>
         </div>
         <div className="w-[45%] mt-16">
           <div className="flex flex-row justify-start items-center gap-4 w-full mb-4">
             <ShopIcon />
-            <p className="text-white text-[20px] leading-[24px] "><span className="font-bold">Vysoký komfort</span> služieb<br />
-              a obchodov v budove</p>
+            <p className="text-white text-[20px] leading-[24px] " dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-description2"))
+            }}></p>
           </div>
           <div className="flex flex-row flex-wrap gap-2 border-b-[2px] pb-6 border-[#ffffff33] border-dashed">
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>DM drogerie markt</p></div>
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>Lekáreň Vesnala</p></div>
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>MMG barbers</p></div>
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>Nechtové štúdio</p></div>
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>Notariát</p></div>
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p>Prepojenie s Fresh Market</p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-properties-1"))
+            }}></p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-properties-2"))
+            }}></p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-properties-3"))
+            }}></p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-properties-4"))
+            }}></p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-properties-5"))
+            }}></p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-properties-6"))
+            }}></p></div>
           </div>
           <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-            <Thermometer /><p className="text-white text-[18px] leading-[22px]"><span className="font-bold">Ekologické vykurovanie</span><br />
-              pomocou tepelných čerpadiel</p>
+            <Thermometer /><p className="text-white text-[18px] leading-[22px]" dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-bullet-1"))
+            }}></p>
           </div>
           <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-            <Coins /><p className="text-white text-[18px] leading-[22px]"><span className="font-bold">Nižšie náklady</span><br />
-
-              na vykurovanie</p>
+            <Coins /><p className="text-white text-[18px] leading-[22px]" dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-bullet-2"))
+            }}></p>
           </div>
           <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-            <PeoplePoints /><p className="text-white text-[18px] leading-[22px]">
-              Široká <br /><span className="font-bold">občianska
-                vybavenosť</span></p>
+            <PeoplePoints /><p className="text-white text-[18px] leading-[22px]" dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-bullet-3"))
+            }}></p>
           </div>
           <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-            <ParkingFlag /><p className="text-white text-[18px] leading-[22px]">Parkovanie<br />
-              v <span className="font-bold">podzemnej garáži</span>
+            <ParkingFlag /><p className="text-white text-[18px] leading-[22px]" dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-bullet-4"))
+            }}>
             </p>
           </div>
           <div className="flex flex-row justify-start items-center py-4 gap-2 ">
-            <Tree /><p className="text-white text-[18px] leading-[22px]">Prírodný rekreačný<br />
-              areál jazera <span className="font-bold">Kuchajda</span>
+            <Tree /><p className="text-white text-[18px] leading-[22px]" dangerouslySetInnerHTML={{
+              __html: marked(translate("description-locale-bullet-5"))
+            }}>
             </p>
           </div>
         </div>
 
       </div >
 
- */}
+
 
 
       <div className="flex justify-center mt-[70px] ">

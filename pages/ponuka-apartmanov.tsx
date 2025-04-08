@@ -1,10 +1,13 @@
 import { MapFooter, Info } from "@components/common";
 import { BuildingFilter } from "@components/filter";
+
+import Image from "next/image";
 import {
   FloorPlan,
   ArrowDownNotFilledIcon,
   RightArrow,
   InfoIcon,
+  OverButtonIcon,
 } from "@components/icons";
 import Head from "next/head";
 import Link from "next/link";
@@ -12,11 +15,14 @@ import {
   CarDescription,
   EcologicDescription,
 } from "@components/common/Description/Description";
+import AboutUs from "@components/icons/AboutUs";
 import React, { useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-
+import Hero from "@components/common/Hero";
+import OverButtonBigIcon from "@components/icons/OverButtonBig";
+import ArrowLink from "@components/icons/ArrowLink";
 const PonukaBytov = () => {
   const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false);
   const { asPath, locale, locales, push } = useRouter();
@@ -38,19 +44,42 @@ const PonukaBytov = () => {
   return (
     <>
       <Head>
-        <title>Ponuka apartmánov | Olivia Residence</title>
+        <title>{translate("filter-heading")} | Olivia Residence</title>
       </Head>
-      <div className="flex justify-center building mt-[50px] xl:mt-[70px]">
+      <Hero
+        imgName="hero_offer-apart"
+        title={translate("filter-heading")}
+        description={""}
+      />
+      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-fit xl:h-4 mb-20">
+
+        <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-100px] z-[10]">
+
+          <div className="block">
+
+
+            <div className="bg-primary  w-[350px] md:w-[400px] h-[200px] relative flex flex-col justify-center items-start px-8">
+
+              <div className="flex absolute top-0 right-[-4px]">
+                <OverButtonBigIcon height="200" width="200" />
+              </div>
+              <AboutUs />
+              <p className="text-[16px] md:text-[18px] mt-4 leading-[18px] md:leading-[30px] text-white  font-semibold">{translate("hero-inform")}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center building">
         <div className="w-full xl:w-full">
           <div className="flex justify-center mt-[70px]">
             <div className="m xl:mx-[165px]">
-              <div className="flex flex-col gap-[30px] items-center mb-[50px]">
+              {/* <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                 <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />
                 <h1 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] text-center xl:text-left">
                   {translate("filter-heading")}
                 </h1>
-              </div>
-              {infoBanner()}
+              </div> */}
+
               <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:justify-between ">
                 {/* <div
                   className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute xl:right-[210px] cursor-pointer"
@@ -133,7 +162,7 @@ const PonukaBytov = () => {
                     <ArrowDownNotFilledIcon />
                   </div>
                 </div> */}
-                <div className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] z-10">
+                {/* <div className="flex gap-[18px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] z-10">
                   <Link href="/ponuka-apartmanov">
                     <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761] text-center xl:text-left">
                       {translate("filter-step-1")}
@@ -147,7 +176,7 @@ const PonukaBytov = () => {
                   <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033] text-center xl:text-left">
                     {translate("filter-step-3")}
                   </span>
-                </div>
+                </div> */}
                 {/*<div className="hidden xl:inline-block relative left-[285px]">*/}
                 {/*    <Severka/>*/}
                 {/*</div>*/}
@@ -155,12 +184,165 @@ const PonukaBytov = () => {
             </div>
           </div>
           <BuildingFilter />
-          <div className={"xl:mt-[200px]"}>
-            <CarDescription />
-            <EcologicDescription />
-          </div>
+
         </div>
       </div>
+      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-[200px] ">
+        <div className="absolute top-0 right-[-10px]">
+          <OverButtonBigIcon height="259" width="259" />
+        </div>
+        <div className="hidden md:flex lg:hidden absolute top-[-20%] right-10 md:right-20 z-[6]">
+          <Image
+            src="/img/laptop.png"
+            alt="alternativny text"
+            width={"422.5"}
+            height="312.32"
+          />
+        </div>
+        <div className="hidden lg:flex absolute top-[-20%] right-10 md:right-20 z-[6]">
+          <Image
+            src="/img/laptop.png"
+            alt="alternativny text"
+            width={"650"}
+            height="488"
+          />
+        </div>
+        <div className="flex md:hidden absolute top-[-10%] right-[-120px] md:right-20 z-[6]">
+          <Image
+            src="/img/laptop.png"
+            alt="alternativny text"
+            width={"357.5"}
+            height="268.4"
+          />
+        </div>
+        <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
+          {translate("download-h")}
+        </p>
+        <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+          <button
+            className={
+              "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"
+            }
+          >
+            {translate("download-button")}
+
+          </button>
+        </Link>
+      </div>
+      <div className="max-w-[1200px] mt-40 mb-[44rem] sm:mb-[47rem] md:my-40 w-full mx-auto ">
+        <div className="flex flex-col md:flex-row gap-10 h-[90vh] px-4 md:px-8">
+          <div className="flex flex-col ">
+            <div className="w-full relative">
+              <div className="absolute top-0 right-0 z-[10]">
+                <div className="flex flex-row">
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                </div>
+                <div className="flex flex-row">
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-transparent"></div>
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                </div>
+              </div>
+
+              <Image
+                src="/img/parking.jpeg"
+                alt="parking"
+                width={2000}
+                height={1333}
+              />
+            </div>
+            <div className="bg-primary relative  p-8 mt-[-7px]">
+              <div className="absolute top-0 right-[-10px]">
+                <OverButtonBigIcon />
+              </div>
+              <div className="space-y-10">
+                <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-parking-heading")}</h2>
+                <p className="text-white text-[16px]  ">{translate("description-parking-text")}</p>
+                <Link href={`/`}>
+                  <button
+
+                    className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+                  >
+                    <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+                    <div className="group-hover:hidden block">
+
+                      <ArrowLink fill="#000000" />
+                    </div>
+                    <div className="group-hover:block hidden ">
+                      <ArrowLink fill="#FFA100" />
+                    </div>
+                    <div className="absolute z-[10] top-0 right-0">
+                      <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                        <OverButtonIcon />
+                      </div>
+                      <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                        <OverButtonIcon fill="#FFA100" />
+                      </div></div>
+
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+          </div>
+          <div className="flex flex-col">
+
+            <div className="bg-primary relative w-full p-8">
+              <div className="absolute top-0 right-[-10px]">
+                <OverButtonBigIcon />
+              </div>
+              <div className="space-y-10">
+                <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-storage-heading")}</h2>
+                <p className="text-white text-[16px]  ">{translate("description-storage-text")}</p>
+                <Link href={`/`}>
+                  <button
+
+                    className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+                  >
+                    <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+                    <div className="group-hover:hidden block">
+
+                      <ArrowLink fill="#000000" />
+                    </div>
+                    <div className="group-hover:block hidden ">
+                      <ArrowLink fill="#FFA100" />
+                    </div>
+                    <div className="absolute z-[10] top-0 right-0">
+                      <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                        <OverButtonIcon />
+                      </div>
+                      <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                        <OverButtonIcon fill="#FFA100" />
+                      </div></div>
+
+                  </button>
+                </Link>
+              </div>
+            </div>
+            <div className="w-full relative">
+              <div className="absolute bottom-0 right-0 z-[10]">
+                <div className="flex flex-row">
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-transparent"></div>
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                </div>
+                <div className="flex flex-row">
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                </div>
+              </div>
+
+              <Image
+                src="/img/ulozny_priestor.png"
+                alt="parking"
+                width={2000}
+                height={1333}
+              />
+            </div>
+          </div>
+        </div>
+      </div >
       <MapFooter />
     </>
   );

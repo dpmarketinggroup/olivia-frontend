@@ -8,6 +8,7 @@ import {
   RightArrow,
   Star,
   InfoIcon,
+  OverButtonIcon,
 } from "@components/icons";
 import Link from "next/link";
 import Image from "next/image";
@@ -25,8 +26,14 @@ import { GetStaticPaths } from "next";
 import { useTranslation } from "next-i18next";
 import MapFooter from "@components/common/MapFooter";
 import 'react-phone-number-input/style.css';
+import ArrowLink from "@components/icons/ArrowLink";
+import OverButtonBigIcon from "@components/icons/OverButtonBig";
 
-
+type Photo = {
+  url: string;
+  width: number;
+  height: number;
+};
 const ApartmentDetail = () => {
   const { t: translate } = useTranslation("home");
   const [opened, setOpened] = useState(false);
@@ -39,7 +46,7 @@ const ApartmentDetail = () => {
   const [phone, setPhone] = useState<E164Number>();
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
+  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const router = useRouter();
   const { asPath, locale, locales, push } = useRouter();
   const getApartment = useStore((state) => state.getApartment);
@@ -62,6 +69,12 @@ const ApartmentDetail = () => {
       );
     }
   }
+
+  useEffect(() => {
+    if (apartment?.data?.attributes?.primarna_foto?.data?.attributes) {
+      setSelectedPhoto(apartment.data.attributes.primarna_foto.data.attributes);
+    }
+  }, [apartment]);
   if (!apartment || !apartment.data)
     return <div className={"h-screen"}>No apartment found</div>;
 
@@ -97,6 +110,10 @@ const ApartmentDetail = () => {
     hala,
     spalna,
   } = apartment.data.attributes;
+
+
+
+
 
   async function handleSubmit(e: SyntheticEvent) {
     e.preventDefault();
@@ -308,18 +325,18 @@ const ApartmentDetail = () => {
         </div>
       </Modal>
       <div className="flex flex-col justify-center w-full xl:max-w-[1200px] mx-auto">
-        <div className="my-[100px]">
+        <div className="my-[70px] md:my-[100px]">
           <div className="xl:mx-auto w-full xl:max-w-[1200px]">
-            <div className="flex flex-col gap-[30px] items-center mb-[50px]">
+            {/* <div className="flex flex-col gap-[30px] items-center mb-[50px]">
               <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />
               <h1 className="font-bold text-[32px] xl:w-auto xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] text-center xl:text-left">
                 {translate("filter-step-3")}
               </h1>
               {infoBanner()}
-            </div>
+            </div> */}
 
             <div className="flex flex-col xl:flex-row flex-col-reverse gap-[25px] xl:gap-0 items-center xl:items-start xl:justify-between xl:max-w-[1200px]">
-              <div
+              {/* <div
                 className="dropdown px-[30px] py-[15px] bg-[#F5F5F5] rounded-[33px] apartment absolute cursor-pointer"
                 onClick={() =>
                   setIsFloorDropDownCLicked((prevState) => !prevState)
@@ -328,12 +345,12 @@ const ApartmentDetail = () => {
                 <span className="drop-span font-bold text-[18px] leading-7 text-[#476761]">
                   {apartment.data.attributes.poschodie}
                   {translate("filter-drop-down-general")}
-                </span>
-                {/* <div
+                </span> */}
+              {/* <div
                   className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"
                     }`}
                 > */}
-                {/* <div className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
+              {/* <div className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
                     <Link href={"/podlazie/3"}>
                       <a className="py-[7px]">
                         {translate("filter-drop-down-3")}
@@ -395,12 +412,12 @@ const ApartmentDetail = () => {
                       </a>
                     </Link>
                   </div> */}
-                {/* </div> */}
-                {/* <div className="ml-[10px] inline-block">
+              {/* </div> */}
+              {/* <div className="ml-[10px] inline-block">
                   <ArrowDownNotFilledIcon />
                 </div> */}
-              </div>
-              <div className="flex gap-[10px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[380px] xl:w-[450px] xl:justify-center">
+              {/* </div> */}
+              {/* <div className="flex gap-[10px] xl:gap-[15px] items-center py-[11px] xl:py-[23px] px-[16px] xl:px-[25px] bg-[#F5F5F5] rounded-[33px] xl:mr-[380px] xl:w-[450px] xl:justify-center">
                 <Link href="/ponuka-apartmanov">
                   <a className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#00000033]">
                     {translate("filter-step-1")}
@@ -414,38 +431,56 @@ const ApartmentDetail = () => {
                 <span className="font-medium text-[12px] xl:text-[14px] leading-5 text-[#476761]">
                   {translate("filter-step-3")}
                 </span>
-              </div>
+              </div> */}
               {/*<div className="hidden xl:inline-block">*/}
               {/*    <Severka/>*/}
               {/*</div>*/}
             </div>
           </div>
-        </div>
-        <div>
-          <h3 className="mb-[25px] font-bold text-[20px] xl:text-[24px] leading-[32px] tracking-[-0.1px] text-center xl:text-left">
+        </div> <div className="block md:hidden bg-bgLight p-4">
+
+          <div className=""><p className="text-primary md:w-full w-2/3 text-[16px]"> {translate("filter-heading")} <span className="text-black opacity-30">/</span> <span className="text-black">{translate("apartment-n")} {cislo_bytu}</span></p></div>
+          <h3 className="my-[25px]  text-[36px] xl:text-[42px] leading-[40px] tracking-[-0.1px] ">
             {translate("apartment-n")} {cislo_bytu}
           </h3>
-          <div className="flex flex-col xl:flex-row gap-[20px] xl:gap-[40px] mb-[70px] items-center xl:items-start justify-center">
+        </div>
+        <div className="flex  gap-10 flex-col md:flex-row  justify-between ">
+
+          <div className="flex flex-col gap-[20px]  mb-[70px] items-center xl:items-start justify-center w-full max-w-1/2 ">
             <div
               className={
-                "border border-b-0 xl:border-b-[1px] border-black mb-[-50px] xl:mb-0"
+                " mb-[-50px] xl:mb-0 cursor-pointer"
               }
             >
-              <Image
-                onClick={() => {
-                  setOpened2(true);
-                  setUrl(primarna_foto.data.attributes.url);
-                }}
-                objectFit="cover"
-                width={primarna_foto.data.attributes.width}
-                height={primarna_foto.data.attributes.height}
-                alt="hero image"
-                src={primarna_foto.data.attributes.url}
-                loading={"eager"}
-              />
+              {selectedPhoto && (
+                <Image
+                  onClick={() => {
+                    setOpened2(true);
+                    setUrl(selectedPhoto?.url);
+                  }}
+                  objectFit="cover"
+                  width={selectedPhoto?.width}
+                  height={selectedPhoto?.height}
+                  alt="hero image"
+                  src={selectedPhoto?.url}
+                  loading={"eager"}
+                />)}
             </div>
-            <div className="flex flex-col w-[100%] xl:w-1/3 shrink-0 justify-between h-[510px]">
-              <div className="w-full h-[300px] xl:h-[250px] relative border border-black">
+            <div className="flex flex-row w-[100%]  shrink-0 justify-between h-fit">
+              {/* <div className="w-full h-[250px] xl:h-[200px] relative border border-black p-10 cursor-pointer">
+                <Image
+                  onClick={() => {
+                    setOpened2(true);
+                    setUrl(primarna_foto.data.attributes.url);
+                  }}
+                  objectFit="cover"
+                  layout="fill"
+                  alt="hero image"
+                  src={primarna_foto.data.attributes.url}
+                  loading={"eager"}
+                />
+              </div>
+              <div className="w-full h-[250px] xl:h-[200px] relative opacity-40 cursor-pointer">
                 <Image
                   onClick={() => {
                     setOpened2(true);
@@ -458,7 +493,7 @@ const ApartmentDetail = () => {
                   loading={"eager"}
                 />
               </div>
-              <div className="w-full h-[300px] xl:h-[250px] relative border border-t-0 xl:border-t-[1px] border-black">
+              <div className="w-full h-[250px] xl:h-[200px] relative  opacity-40 cursor-pointer ">
                 <Image
                   onClick={() => {
                     setOpened2(true);
@@ -471,306 +506,547 @@ const ApartmentDetail = () => {
                   src={dodatocna_foto2.data.attributes.url}
                   loading={"eager"}
                 />
+              </div> */}
+
+              {[primarna_foto, dodatocna_foto1, dodatocna_foto2].map((foto, index) => {
+                const src = foto.data.attributes;
+                const isActive = selectedPhoto?.url === src?.url;
+
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setSelectedPhoto(src)}
+                    className={`w-full h-[250px] xl:h-[200px] relative cursor-pointer transition-all duration-300
+              ${isActive ? "opacity-100 border border-black" : "opacity-40 border-none"}`}
+                  >
+                    <Image
+                      objectFit="contain"
+                      layout="fill"
+                      alt="gallery image"
+                      src={src?.url}
+                      loading="eager"
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="bg-bgLight  py-4 px-2 lg:p-10 w-full max-w-1/2 relative h-fit">
+            <div className="absolute top-0 right-0 z-[10]">
+              <div className="flex flex-row">
+                <div className="bg-white w-[30px] md:w-[50px] h-[30px] md:h-[50px]"></div>
+                <div className="bg-white w-[30px] md:w-[50px] h-[30px] md:h-[50px]"></div>
               </div>
+              <div className="flex flex-row">
+                <div className="bg-transparent w-[30px] md:w-[50px] h-[30px] md:h-[50px]"></div>
+                <div className="bg-white w-[30px] md:w-[50px] h-[30px] md:h-[50px]"></div>
+              </div>
+            </div>
+            <div className="hidden md:block"><p className="text-primary md:w-full w-2/3 text-[16px]"> {translate("filter-heading")} <span className="text-black opacity-30">/</span> <span className="text-black">{translate("apartment-n")} {cislo_bytu}</span></p></div>
+            <h3 className="hidden md:block mt-[25px]  text-[36px] xl:text-[42px] leading-[40px] tracking-[-0.1px] ">
+              {translate("apartment-n")} {cislo_bytu}
+            </h3>
+            <div className="px-4 xl:mx-auto w-full mt-[40px] mb-[100px] xl:mb-0">
+              <div className="flex justify-between mb-[15px]">
+                <p className="text-[#0E3F3B4D] font-medium text-[16px] leading-6 tracking-[0.1px]">
+                  {translate("floor")}
+                </p>
+                <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">
+                  {apartment.data.attributes.poschodie}
+
+                </span>
+              </div>
+              <div className="flex justify-between mb-[15px]">
+                <p className="text-[#0E3F3B4D] font-medium text-[16px] leading-6 tracking-[0.1px]">
+                  {translate("filter-apartment-num")}
+                </p>
+                <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">
+                  {cislo_bytu}
+                </span>
+              </div>
+              <div className="flex justify-between mb-[15px] items-center">
+                <p className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#0E3F3B4D]">
+                  {translate("price-without-sign")}
+                </p>
+                <span className="font-bold text-[16px] leading-6 tracking-[-0.1px]">
+                  {/* {cena ? `${cena} €` : "-"} */}
+                  {translate("top-apartments-premium-properties-6")}
+                </span>
+              </div>
+              <div className="flex justify-between mb-[15px]">
+                <p className="font-medium text-[16px] leading-6 tracking-[0.1px] text-[#0E3F3B4D]">
+                  {translate("filter-availability")}
+                </p>
+                <span
+                  className={`font-bold text-[16px] leading-6 tracking-[0.1px] ${getAvailabilityTextColor(
+                    dostupnost
+                  )}`}
+                >
+                  {translateAvailability(dostupnost)}
+                </span>
+              </div>
+              {/* <div className="flex justify-between mb-[25px]">
+                <p className="font-medium text-[14px] leading-5 tracking-[0.1px] opacity-40">
+                  {translate("filter-title")}
+                </p>
+                <span className="font-medium text-[14px] leading-5 tracking-[0.1px] opacity-40">
+                  {translate("filter-area")}
+                </span>
+              </div> */}
+              <div className="flex justify-between mb-[15px] mt-[50px]">
+                <p className=" text-[24px] leading-6 tracking-[0.1px]">
+                  {translate("total-area")}
+                </p>
+                <span className="text-[24px]">{celkova_rozloha} m²</span>
+              </div>
+
+              {kuchynska_miestnostv2_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-kitchen")}
+                  </p>
+                  <span className={"font-bold"}>{kuchynska_miestnostv2_rozloha} m²</span>
+                </div>
+              )}
+              {predsien_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-vestibule")}
+                  </p>
+                  <span className={"font-bold"}>{predsien_rozloha} m²</span>
+                </div>
+              )}
+              {obyvacia_izba_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-livingroom")}
+                  </p>
+                  <span className={"font-bold"}>{obyvacia_izba_rozloha} m²</span>
+                </div>
+              )}
+              {chodba_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-hallway")}
+                  </p>
+                  <span className={"font-bold"}>{chodba_rozloha} m²</span>
+                </div>
+              )}
+              {chodba_rozloha2 && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-hallway")}
+                  </p>
+                  <span className={"font-bold"}>{chodba_rozloha2} m²</span>
+                </div>
+              )}
+              {pracovna_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("office")}
+                  </p>
+                  <span className={"font-bold"}>{pracovna_rozloha} m²</span>
+                </div>
+              )}
+              {spaci_kut_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("sleeping-area")}
+                  </p>
+                  <span className={"font-bold"}>{spaci_kut_rozloha} m²</span>
+                </div>
+              )}
+              {izba4_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-wardrobe")}
+                  </p>
+                  <span className={"font-bold"}>{izba4_rozloha} m²</span>
+                </div>
+              )}
+              {izba_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-room-n")}1
+                  </p>
+                  <span className={"font-bold"}>{izba_rozloha} m²</span>
+                </div>
+              )}
+              {izba2_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-room-n")}2
+                  </p>
+                  <span className={"font-bold"}>{izba2_rozloha} m²</span>
+                </div>
+              )}
+              {izba3_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-room-n")}3
+                  </p>
+                  <span className={"font-bold"}>{izba3_rozloha} m²</span>
+                </div>
+              )}
+              {kupelna_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-bathroom")}
+                  </p>
+                  <span className={"font-bold"}>{kupelna_rozloha} m²</span>
+                </div>
+              )}
+              {wc_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    WC
+                  </p>
+                  <span className={"font-bold"}>{wc_rozloha} m²</span>
+                </div>
+              )}
+              {kupelna_wc_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-bathroom")} + WC
+                  </p>
+                  <span className={"font-bold"}>{kupelna_wc_rozloha} m²</span>
+                </div>
+              )}
+              {kupelna_wc_1_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-bathroom")} + WC 1
+                  </p>
+                  <span className={"font-bold"}>{kupelna_wc_1_rozloha} m²</span>
+                </div>
+              )}
+              {kupelna_wc_2_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-bathroom")} + WC 2
+                  </p>
+                  <span className={"font-bold"}>{kupelna_wc_2_rozloha} m²</span>
+                </div>
+              )}
+              {hala && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-hall")}
+                  </p>
+                  <span className={"font-bold"}>{hala} m²</span>
+                </div>
+              )}
+              {spajza && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-pantry")}
+                  </p>
+                  <span className={"font-bold"}>{spajza} m²</span>
+                </div>
+              )}
+              {prirucny_sklad && (
+                <div className="flex justify-between mb-[15px] ">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-handy-storage")}
+                  </p>
+                  <span className={"font-bold"}>{prirucny_sklad} m²</span>
+                </div>
+              )}
+              {spalna && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-bedroom")}
+                  </p>
+                  <span className={"font-bold"}>{spalna} m²</span>
+                </div>
+              )}
+
+
+              {terasa_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-terrace-alone")}
+                  </p>
+                  <span className={"font-bold"}>{terasa_rozloha} m²</span>
+                </div>
+              )}
+              {balkon_rozloha && (
+                <>
+                  <div className="flex justify-between mb-[15px]">
+                    <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                      {translate("filter-balcony-alone")}
+                    </p>
+                    <span className={"font-bold"}>{balkon_rozloha} m²</span>
+                  </div>
+                  <div className="flex justify-between mb-[70px]">
+                    <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">
+                      {translate("total-area")}{" "}
+                      {balkon_rozloha && `+ ${translate("filter-balcony-alone")}`}{" "}
+                      {terasa_rozloha && `+ ${translate("filter-terrace-alone")}`}
+                    </p>
+                    <span className="font-bold">
+                      {(celkova_rozloha + balkon_rozloha + terasa_rozloha).toFixed(
+                        2
+                      )}{" "}
+                      m²
+                    </span>
+                  </div>
+                </>
+              )}
+              <button
+                onClick={() => setOpened(true)}
+                className={"drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-full md:w-fit group"}
+              >
+                {" "}
+                <p className="text-[18px] leading-[18px]">
+                  {translate("form-interested-in-apart-n")} {cislo_bytu}</p>
+                <div className="absolute z-[10] top-0 right-0">
+                  <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out ">
+
+                    <OverButtonIcon fill="white" />
+                  </div>
+                  <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                    <OverButtonIcon fill="#087168" />
+                  </div></div>
+              </button>
             </div>
           </div>
         </div>
-        <div className="flex flex-col xl:flex-row gap-[20px] xl:gap-[75px] items-center mb-[85px]">
-          <div className="flex gap-[15px] items-center">
+        <div className=" my-10 flex flex-col lg:flex-row gap-6 items-center mb-[85px] max-w-[1200px] px-4">
+          <div className="flex flex-col justify-between gap-[15px] bg-bgLight relative p-8 border-b-[2px] border-yellow h-[264px] w-full">
+            <div className="absolute top-0 right-0 z-[10]">
+              <div className="flex flex-row">
+                <div className="bg-white h-[28px] w-[28px]"></div>
+                <div className="bg-white h-[28px] w-[28px]"></div>
+              </div>
+              <div className="flex flex-row">
+                <div className="bg-transparent h-[28px] w-[28px]"></div>
+                <div className="bg-white h-[28px] w-[28px]"></div>
+              </div>
+            </div>
             <Bank />
-            <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">
+            <span className="text-[#0E3F3B] text-[28px] leading-6 tracking-[0.1px] ">
               {translate("financing")}
             </span>
             <div className="flex gap-[8px] items-center">
               <Link href="/o-projekte#financovanie">
-                <a className="font-medium text-[14px] leading-5 text-green2">
-                  {translate("more")}
+                <a className="font-medium text-[20px] leading-5 text-green2">
+                  <p className="border-b-[1px] border-[#0E3F3B]">{translate("more")}</p>
                 </a>
               </Link>
-              <RightArrow stroke="#476761" />
+              <ArrowLink fill="#0E3F3B" />
             </div>
           </div>
-          <div className="flex gap-[15px] items-center">
+          <div className="flex flex-col justify-between gap-[15px] bg-bgLight relative p-8 border-b-[2px] border-yellow h-[264px] w-full">
+            <div className="absolute top-0 right-0 z-[10]">
+              <div className="flex flex-row">
+                <div className="bg-white h-[28px] w-[28px]"></div>
+                <div className="bg-white h-[28px] w-[28px]"></div>
+              </div>
+              <div className="flex flex-row">
+                <div className="bg-transparent h-[28px] w-[28px]"></div>
+                <div className="bg-white h-[28px] w-[28px]"></div>
+              </div>
+            </div>
             <Star />
-            <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">
+            <span className="text-[#0E3F3B] text-[28px] leading-6 tracking-[0.1px] ">
               {translate("superior-equipment")}
             </span>
             <div className="flex gap-[8px] items-center">
               <Link href={"/o-projekte#vybavenie"}>
-                <a className="font-medium text-[14px] leading-5 text-green2">
-                  {translate("more")}
+                <a className="font-medium text-[20px] leading-5 text-green2">
+                  <p className="border-b-[1px] border-[#0E3F3B]">{translate("more")}</p>
                 </a>
               </Link>
-              <RightArrow stroke="#476761" />
+              <ArrowLink fill="#0E3F3B" />
+            </div>
+          </div>
+          <div className="flex flex-col justify-between gap-[15px] bg-bgLight relative p-8 border-b-[2px] border-yellow h-[264px] w-full">
+            <div className="absolute top-0 right-0 z-[10]">
+              <div className="flex flex-row">
+                <div className="bg-white h-[28px] w-[28px]"></div>
+                <div className="bg-white h-[28px] w-[28px]"></div>
+              </div>
+              <div className="flex flex-row">
+                <div className="bg-transparent h-[28px] w-[28px]"></div>
+                <div className="bg-white h-[28px] w-[28px]"></div>
+              </div>
+            </div>
+            <FloorPlan />
+            <span className="text-[#0E3F3B] text-[28px] leading-6 tracking-[0.1px] ">
+              {translate("equipment-heading-3")}
+            </span>
+            <div className="flex gap-[8px] items-center">
+              <Link href={"/o-projekte#vybavenie"}>
+                <a className="font-medium text-[20px] leading-5 text-green2">
+                  <p className="border-b-[1px] border-[#0E3F3B]">{translate("equipment-link")}</p>
+                </a>
+              </Link>
+              <ArrowLink fill="#0E3F3B" />
             </div>
           </div>
         </div>
-        <div className="px-4 xl:mx-auto w-full mb-[100px] xl:mb-0">
-          <div className="flex justify-between mb-[25px]">
-            <p className="text-[#676766] font-medium text-[16px] leading-6 tracking-[0.1px]">
-              {translate("filter-apartment-num")}
-            </p>
-            <span className="font-bold text-[16px] leading-6 tracking-[0.1px]">
-              {cislo_bytu}
-            </span>
-          </div>
-          <div className="flex justify-between mb-[25px] items-center">
-            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-              {translate("price-without-sign")}
-            </p>
-            <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px]">
-              {/* {cena ? `${cena} €` : "-"} */}
-              {translate("top-apartments-premium-properties-6")}
-            </span>
-          </div>
-          <div className="flex justify-between mb-[70px]">
-            <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-              {translate("filter-availability")}
-            </p>
-            <span
-              className={`font-bold text-[16px] leading-6 tracking-[0.1px] ${getAvailabilityTextColor(
-                dostupnost
-              )}`}
-            >
-              {translateAvailability(dostupnost)}
-            </span>
-          </div>
-          <div className="flex justify-between mb-[25px]">
-            <p className="font-medium text-[14px] leading-5 tracking-[0.1px] opacity-40">
-              {translate("filter-title")}
-            </p>
-            <span className="font-medium text-[14px] leading-5 tracking-[0.1px] opacity-40">
-              {translate("filter-area")}
-            </span>
-          </div>
-          {kuchynska_miestnostv2_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-kitchen")}
-              </p>
-              <span>{kuchynska_miestnostv2_rozloha} m²</span>
-            </div>
-          )}
-          {predsien_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-vestibule")}
-              </p>
-              <span>{predsien_rozloha} m²</span>
-            </div>
-          )}
-          {obyvacia_izba_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-livingroom")}
-              </p>
-              <span>{obyvacia_izba_rozloha} m²</span>
-            </div>
-          )}
-          {chodba_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-hallway")}
-              </p>
-              <span>{chodba_rozloha} m²</span>
-            </div>
-          )}
-          {chodba_rozloha2 && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-hallway")}
-              </p>
-              <span>{chodba_rozloha2} m²</span>
-            </div>
-          )}
-          {pracovna_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("office")}
-              </p>
-              <span>{pracovna_rozloha} m²</span>
-            </div>
-          )}
-          {spaci_kut_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("sleeping-area")}
-              </p>
-              <span>{spaci_kut_rozloha} m²</span>
-            </div>
-          )}
-          {izba4_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-wardrobe")}
-              </p>
-              <span>{izba4_rozloha} m²</span>
-            </div>
-          )}
-          {izba_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-room-n")}1
-              </p>
-              <span>{izba_rozloha} m²</span>
-            </div>
-          )}
-          {izba2_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-room-n")}2
-              </p>
-              <span>{izba2_rozloha} m²</span>
-            </div>
-          )}
-          {izba3_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-room-n")}3
-              </p>
-              <span>{izba3_rozloha} m²</span>
-            </div>
-          )}
-          {kupelna_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-bathroom")}
-              </p>
-              <span>{kupelna_rozloha} m²</span>
-            </div>
-          )}
-          {wc_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                WC
-              </p>
-              <span>{wc_rozloha} m²</span>
-            </div>
-          )}
-          {kupelna_wc_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-bathroom")} + WC
-              </p>
-              <span>{kupelna_wc_rozloha} m²</span>
-            </div>
-          )}
-          {kupelna_wc_1_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-bathroom")} + WC 1
-              </p>
-              <span>{kupelna_wc_1_rozloha} m²</span>
-            </div>
-          )}
-          {kupelna_wc_2_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-bathroom")} + WC 2
-              </p>
-              <span>{kupelna_wc_2_rozloha} m²</span>
-            </div>
-          )}
-          {hala && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-hall")}
-              </p>
-              <span>{hala} m²</span>
-            </div>
-          )}
-          {spajza && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-pantry")}
-              </p>
-              <span>{spajza} m²</span>
-            </div>
-          )}
-          {prirucny_sklad && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-handy-storage")}
-              </p>
-              <span>{prirucny_sklad} m²</span>
-            </div>
-          )}
-          {spalna && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-bedroom")}
-              </p>
-              <span>{spalna} m²</span>
-            </div>
-          )}
 
-          <div className="flex justify-between mb-[25px]">
-            <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">
-              {translate("total-area")}
-            </p>
-            <span className="font-bold">{celkova_rozloha} m²</span>
-          </div>
-          {terasa_rozloha && (
-            <div className="flex justify-between mb-[25px]">
-              <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                {translate("filter-terrace-alone")}
-              </p>
-              <span>{terasa_rozloha} m²</span>
-            </div>
-          )}
-          {balkon_rozloha && (
-            <>
-              <div className="flex justify-between mb-[25px]">
-                <p className="font-medium text-[16px] leading-6 tracking-[0.1px]">
-                  {translate("filter-balcony-alone")}
-                </p>
-                <span>{balkon_rozloha} m²</span>
-              </div>
-              <div className="flex justify-between mb-[70px]">
-                <p className="font-bold text-[16px] leading-6 tracking-[0.1px]">
-                  {translate("total-area")}{" "}
-                  {balkon_rozloha && `+ ${translate("filter-balcony-alone")}`}{" "}
-                  {terasa_rozloha && `+ ${translate("filter-terrace-alone")}`}
-                </p>
-                <span className="font-bold">
-                  {(celkova_rozloha + balkon_rozloha + terasa_rozloha).toFixed(
-                    2
-                  )}{" "}
-                  m²
-                </span>
-              </div>
-            </>
-          )}
-          <button
-            onClick={() => setOpened(true)}
-            className={"w-full h-[50px] bg-primary text-white"}
-          >
-            {" "}
-            {translate("form-interested-in-apart-n")} {cislo_bytu}
-          </button>
-        </div>
-        <div className="flex flex-col gap-[30px] items-center mb-[120px] xl:mb-[190px] xl:mt-[160px]">
-          <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />
-          <h1 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] tracking-[-0.5px] w-[250px] xl:w-auto text-center xl:text-left">
-            {translate("equipment-heading-3")}
-          </h1>
-          <Button
-            variant={"filled"}
-            href={podorys.data.attributes.url}
-            target={"_blank"}
-          >
-            {translate("equipment-download")}
-          </Button>
-        </div>
-        <CarDescription />
-        <CustomSwiper />
       </div >
-      <div className="xl:grid xl:max-w-[1200px] grid-cols-2 mx-auto">
-        <Equipment
-          title={translate("equipment-heading")}
-          href="/standart.pdf"
-        />
-        <Equipment title={translate("equipment-heading-4")} href="/karta.pdf" />
+      <div className="max-w-[1200px] mt-40 mb-[44rem] sm:mb-[47rem] md:my-40 w-full mx-auto ">
+        <div className="flex flex-col md:flex-row gap-10 h-[90vh] px-4 md:px-8">
+          <div className="flex flex-col ">
+            <div className="w-full relative">
+              <div className="absolute top-0 right-0 z-[10]">
+                <div className="flex flex-row">
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                </div>
+                <div className="flex flex-row">
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-transparent"></div>
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                </div>
+              </div>
+
+              <Image
+                src="/img/parking.jpeg"
+                alt="parking"
+                width={2000}
+                height={1333}
+              />
+            </div>
+            <div className="bg-primary relative  p-8 mt-[-7px]">
+              <div className="absolute top-0 right-[-10px]">
+                <OverButtonBigIcon />
+              </div>
+              <div className="space-y-10">
+                <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">Parkovacie státie
+                  v podzemnej garáži</h2>
+                <p className="text-white text-[16px]  ">K bývaniu je možné si zakúpiť garážové státie, vďaka ktorému bude parkovanie komfortné a bezproblémové.</p>
+                <Link href={`/`}>
+                  <button
+
+                    className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+                  >
+                    <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+                    <div className="group-hover:hidden block">
+
+                      <ArrowLink fill="#000000" />
+                    </div>
+                    <div className="group-hover:block hidden ">
+                      <ArrowLink fill="#FFA100" />
+                    </div>
+                    <div className="absolute z-[10] top-0 right-0">
+                      <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                        <OverButtonIcon />
+                      </div>
+                      <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                        <OverButtonIcon fill="#FFA100" />
+                      </div></div>
+
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+          </div>
+          <div className="flex flex-col">
+
+            <div className="bg-primary relative w-full p-8">
+              <div className="absolute top-0 right-[-10px]">
+                <OverButtonBigIcon />
+              </div>
+              <div className="space-y-10">
+                <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">Úložné priestory
+                  na vlastnom podlaží</h2>
+                <p className="text-white text-[16px]  ">K bývaniu je možné si zakúpiť aj úložný priestor na Vašom poschodí,
+                  aby ste mali svoje vybavenie vždy po ruke.</p>
+                <Link href={`/`}>
+                  <button
+
+                    className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+                  >
+                    <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+                    <div className="group-hover:hidden block">
+
+                      <ArrowLink fill="#000000" />
+                    </div>
+                    <div className="group-hover:block hidden ">
+                      <ArrowLink fill="#FFA100" />
+                    </div>
+                    <div className="absolute z-[10] top-0 right-0">
+                      <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                        <OverButtonIcon />
+                      </div>
+                      <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                        <OverButtonIcon fill="#FFA100" />
+                      </div></div>
+
+                  </button>
+                </Link>
+              </div>
+            </div>
+            <div className="w-full relative">
+              <div className="absolute bottom-0 right-0 z-[10]">
+                <div className="flex flex-row">
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-transparent"></div>
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                </div>
+                <div className="flex flex-row">
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                </div>
+              </div>
+
+              <Image
+                src="/img/ulozny_priestor.png"
+                alt="parking"
+                width={2000}
+                height={1333}
+              />
+            </div>
+          </div>
+        </div>
+      </div >
+      <CustomSwiper />
+      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-[200px] ">
+        <div className="absolute top-0 right-[-10px]">
+          <OverButtonBigIcon height="259" width="259" />
+        </div>
+        <div className="hidden md:flex lg:hidden absolute top-[-20%] right-10 md:right-20 z-[6]">
+          <Image
+            src="/img/laptop.png"
+            alt="alternativny text"
+            width={"422.5"}
+            height="312.32"
+          />
+        </div>
+        <div className="hidden lg:flex absolute top-[-20%] right-10 md:right-20 z-[6]">
+          <Image
+            src="/img/laptop.png"
+            alt="alternativny text"
+            width={"650"}
+            height="488"
+          />
+        </div>
+        <div className="flex md:hidden absolute top-[-10%] right-[-120px] md:right-20 z-[6]">
+          <Image
+            src="/img/laptop.png"
+            alt="alternativny text"
+            width={"357.5"}
+            height="268.4"
+          />
+        </div>
+        <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
+          {translate("download-h")}
+        </p>
+        <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+          <button
+            className={
+              "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"
+            }
+          >
+            {translate("download-button")}
+
+          </button>
+        </Link>
       </div>
       <MapFooter />
     </>

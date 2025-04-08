@@ -8,6 +8,7 @@ import {
 import React from "react";
 import RectangleLight from "@components/icons/RectangleLight";
 import { useTranslation } from "next-i18next";
+import OverButtonIcon from "@components/icons/OverButton";
 
 interface HeroProps {
   imgName: string;
@@ -15,6 +16,7 @@ interface HeroProps {
   title: string;
   description?: string;
   withRectangles?: boolean;
+  button?: boolean;
 }
 
 const Hero = ({
@@ -22,46 +24,63 @@ const Hero = ({
   icon,
   title,
   description,
+  button,
   withRectangles = false,
 }: HeroProps) => {
   const { t: translate } = useTranslation("home");
   return (
-    <div className="flex justify-center mt-[60px]">
-      <div className="h-[460px] w-full xl:max-w-[1920px] mb-[60px] xl:mb-[140px] relative">
+    <div className="flex justify-center mt-[40px]">
+      <div className="h-[460px] w-full xl:max-w-[1920px]  relative">
         <div className="h-full w-full absolute -z-10">
           <Image
             objectFit="cover"
             layout="fill"
             alt="hero image"
-            src={`/img/${imgName}.jpg`}
+            src={`/img/${imgName}.png`}
             loading={"eager"}
           />
         </div>
-        <div className="relative xl:w-full xl:max-w-[1400px] xl:mx-auto mx-4 pt-[90px] mb-[20px]">
+        <div className="absolute bottom-0 right-0 ">
+          <div className="flex flex-row ">
+            <div className="bg-transparent h-[50px] w-[50px]"></div>
+            <div className="bg-white h-[50px] w-[50px]"></div>
+          </div>
+          <div className="flex flex-row ">
+            <div className="bg-white h-[50px] w-[50px]"></div>
+            <div className="bg-white h-[50px] w-[50px]"></div>
+          </div>
+        </div>
+        <div className="relative xl:w-full xl:max-w-[1200px] xl:mx-auto mx-8 py-8 flex flex-col justify-end h-full">
           <div className="mb-[30px] flex justify-center xl:block">{icon}</div>
-          <h1 className="font-bold  text-[56px] leading-[60px] tracking-[-1px] text-white mb-[20px] text-center xl:text-start">
+          <h1 className=" w-full md:w-1/2 text-[56px] md:text-[64px] leading-[68px] tracking-[-1px] text-white mb-[30px] text-left xl:text-start">
             {title}
           </h1>
-          <p className="text-[18px] leading-7 text-white mb-[40px] text-center xl:text-start">
+
+          {description && (<p className="text-[18px] leading-7 text-white mb-[40px] text-center xl:text-start">
             {description}
-          </p>
-          <Link href="/stretnutie">
-            <button className="hover:bg-primary bg-[#89A6A2] w-full xl:w-[210px] h-[50px] text-white font-medium text-[16px] leading-[24px] tracking-[-0.1px]">
-              {translate("button-meeting")}
+          </p>)}
+
+          {button && (<Link href="/stretnutie">
+            <button
+
+              className="drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+            >
+              <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+
+              <div className="absolute z-[10] top-0 right-0">
+                <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out ">
+
+                  <OverButtonIcon />
+                </div>
+                <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                  <OverButtonIcon fill="#087168" />
+                </div></div>
+
             </button>
-          </Link>
-          <div
-            className={`${withRectangles ? "hidden xl:block" : "hidden"
-              } absolute -bottom-[224px] -left-[260px]`}
-          >
-            <div className={"flex"}>
-              <RectangleDarkIcon />
-              <RectangleMediumIcon />
-            </div>
-            <div>
-              <RectangleLightIcon />
-            </div>
-          </div>
+
+          </Link>)}
+
+
         </div>
       </div>
     </div>

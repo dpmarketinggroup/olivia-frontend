@@ -21,7 +21,17 @@ import Tile from "@components/icons/Tile";
 import Blinds from "@components/icons/Blinds";
 import Eco from "@components/icons/Eco";
 import Intercom from "@components/icons/Intercom";
+import ArrowLink from "@components/icons/ArrowLink";
+import OverButtonIcon from "@components/icons/OverButton";
 import { marked } from 'marked'
+import Dumbbell from "@components/icons/Dumbbell";
+import Tennis2 from "@components/icons/Tennis2";
+import Lake from "@components/icons/Lake";
+import Pitch from "@components/icons/Pitch";
+import ElectricScooter from "@components/icons/ElectricScooter";
+import Bus from "@components/icons/Bus";
+import Motorway from "@components/icons/Motorway";
+import Train2 from "@components/icons/Train2";
 export interface DescriptionProps {
   src?: string;
   children: React.ReactNode;
@@ -30,6 +40,7 @@ export interface DescriptionProps {
   reverse?: boolean;
   heading?: boolean;
   video?: boolean;
+  button?: boolean;
 }
 
 const Description: FunctionComponent<DescriptionProps> = ({
@@ -38,15 +49,18 @@ const Description: FunctionComponent<DescriptionProps> = ({
   className,
   reverse,
   width = "400",
-  video
+  video,
+  button,
 }) => {
   return (
     <div
-      className={`relative mt-[30rem] md:mt-[25rem] xl:mt-60  flex flex-row bg-bgLight ${reverse ? "xl:flex-row-reverse" : "xl:flex-row "
-        } justify-between items-center justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
+      className={`relative mt-[30rem] md:mt-[25rem] xl:mt-80  flex  ${reverse ? "flex-row-reverse" : "flex-row "
+        } justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
       <div className={"relative shrink-0 mb-0 "}>
-        <div className="relative top-0 left-0 z-[5] w-[50px] md:w-[100px] h-[90vh] bg-white"></div>
+        {!video && (<div className="bg-white w-[100px] h-[400px]"></div>)}
+
+        <div className={`relative  z-[5] w-[50px] md:w-[100px] ${video ? "h-[90vh]" : ""} bg-white`}></div>
         {video ?
           (<div className="absolute left-0 top-[-200px] md:top-[-100px] z-[10]">
             <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] sm:w-[425px] sm:h-[425px] lg:w-[550px] lg:h-[550px]"}>
@@ -73,89 +87,302 @@ const Description: FunctionComponent<DescriptionProps> = ({
               </video>
             </div>
           </div>) : (
-
-            <Image
-              objectFit="cover"
-              width={555}
-              height={width}
-              alt="description image"
-              src={src}
-              loading={"eager"}
-            />
+            <div className={`absolute z-[20] ${reverse ? "right-0" : "left-0"} ${button ? "top-[400px] md:top-[-280px] lg:top-[-250px]" : "top-[300px] md:top-[-180px] lg:top-[-150px]"} `}>
+              <div className="relative h-[400px] w-[400px] lg:h-[500px] lg:w-[500px]">
+                <div className={`absolute bottom-0 md:top-0 ${reverse ? "right-0" : "left-0"} z-[10]`}>
+                  <div className="flex flex-row">
+                    <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] ${reverse ? "bg-transparent md:bg-white " : "bg-white"}`}></div>
+                    <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] ${reverse ? "bg-white" : "bg-transparent md:bg-white"}`}></div>
+                  </div>
+                  <div className="flex flex-row">
+                    <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] ${reverse ? "bg-white md:bg-transparent" : "bg-white"}`}></div>
+                    <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] ${reverse ? "bg-white" : "bg-white md:bg-transparent"}`}></div>
+                  </div>
+                </div >
+                <Image
+                  layout="fill"
+                  src={src}
+                  alt="description image"
+                  loading="eager"
+                  className="aspect-square object-cover w-[500px] h-auto"
+                />
+              </div >
+            </div >
           )}
-      </div>
-      <div className="flex flex-col w-[85%] md:w-[45%] pb-6 pt-20 md:pt-2 0 px-6 md:p-6">{children}</div>
-    </div>
+      </div >
+
+      <div className="flex flex-col w-[85%] md:w-[45%] pb-6 pt-20 md:pt-2 0 px-6 md:p-10 space-y-4">{children}</div>
+    </div >
   );
 };
 
 export default Description;
 
-export const CommonDescription = () => {
+
+export interface CommonDescriptionProps {
+  className?: string;
+  button?: boolean;
+  fill?: boolean;
+}
+
+export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
+  fill,
+  className,
+  button,
+
+}) => {
   const { t: translate } = useTranslation("home");
   return (
-    <Description video={true}>
+    <Description video={true} className={className}>
       <h3
         className={
-          "font-normal text-[48px] leading-[48px] text-black mb-4"
+          `font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`
         }
       >
         {translate("description-heading")} <br />OLIVIA Residence?
       </h3>
       <div className={"my-[25px] flex flex-col gap-6"}>
         <div
-          className={"flex gap-[12px] flex-row items-center text-black"}>
-          <KitchenIcon />
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <KitchenIcon fill={fill} />
           <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
             __html: marked(translate("description-bullet-1"))
           }}></h5>
         </div>
         <div
-          className={"flex gap-[12px] flex-row items-center text-black"}>
-          <WashBasin />
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <WashBasin fill={fill} />
           <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
             __html: marked(translate("description-bullet-2"))
           }}></h5>
         </div>
         <div
-          className={"flex gap-[12px] flex-row items-center text-black"}>
-          <Tile />
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <Tile fill={fill} />
           <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
             __html: marked(translate("description-bullet-3"))
           }}></h5>
         </div>
         <div
-          className={"flex gap-[12px] flex-row items-center text-black"}>
-          <Blinds />
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <Blinds fill={fill} />
           <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
             __html: marked(translate("description-bullet-4"))
           }}></h5>
         </div>
         <div
-          className={"flex gap-[12px] flex-row items-center text-black"}>
-          <Eco />
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <Eco fill={fill} />
           <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
             __html: marked(translate("description-bullet-5"))
           }}></h5>
         </div>
         <div
-          className={"flex gap-[12px] flex-row items-center text-black"}>
-          <Intercom />
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <Intercom fill={fill} />
           <h5 className="text-[18px] w-2/3 leading-none mt-1" dangerouslySetInnerHTML={{
             __html: marked(translate("description-bullet-6"))
           }}></h5>
         </div>
 
       </div>
-      <div className={"flex flex-col xl:flex-row gap-[10px]"}>
-        <p className="text-[24px] text-[#676766]" dangerouslySetInnerHTML={{
+      <div className={"flex flex-col xl:flex-row gap-[10px] leading-none mb-4"}>
+        <p className={`text-[24px] text-${fill} opacity-70`} dangerouslySetInnerHTML={{
           __html: marked(translate("description-inform"))
         }}></p>
       </div>
+      {button && (
+        <Link href={`/`}>
+          <button
 
+            className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+          >
+            <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+            <div className="group-hover:hidden block">
+
+              <ArrowLink fill="#000000" />
+            </div>
+            <div className="group-hover:block hidden ">
+              <ArrowLink fill="#FFA100" />
+            </div>
+            <div className="absolute z-[10] top-0 right-0">
+              <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                <OverButtonIcon />
+              </div>
+              <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                <OverButtonIcon fill="#FFA100" />
+              </div></div>
+
+          </button>
+        </Link>
+      )}
     </Description>
   );
 };
+
+export interface TransportDescriptionProps {
+  className?: string;
+  src?: string;
+  button?: boolean;
+  fill?: boolean;
+}
+
+export const TransportDescription: FunctionComponent<TransportDescriptionProps> = ({
+  fill,
+  className,
+  button,
+  src,
+
+}) => {
+  const { t: translate } = useTranslation("home");
+  return (
+    <Description video={false} className={className} src={src} reverse={true} button={button}>
+      <h3
+        className={
+          `font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`
+        }
+      >
+        {translate("description-lokalita-2-heading")}
+      </h3>
+      <p className="text-white text-[18px]"> {translate("description-lokalita-2-description")}</p>
+      <div className={"my-[25px] flex flex-col gap-6"}>
+        <div
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <ElectricScooter fill={fill} />
+          <h5 className="text-[18px]  leading-none mt-1"
+          > {translate("description-lokalita-2-bullet-1")}</h5>
+        </div>
+        <div
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <Bus fill={fill} />
+          <h5 className="text-[18px]  leading-none mt-1" >{translate("description-lokalita-2-bullet-2")}</h5>
+        </div>
+        <div
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <Motorway fill={fill} />
+          <h5 className="text-[18px] leading-none mt-1" >{translate("description-lokalita-2-bullet-3")}</h5>
+        </div>
+        <div
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <Train2 fill={fill} />
+          <h5 className="text-[18px]  leading-none mt-1" >{translate("description-lokalita-2-bullet-4")}</h5>
+        </div>
+
+
+      </div>
+
+      {button && (
+        <Link href={`/`}>
+          <button
+
+            className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+          >
+            <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+            <div className="group-hover:hidden block">
+
+              <ArrowLink fill="#000000" />
+            </div>
+            <div className="group-hover:block hidden ">
+              <ArrowLink fill="#FFA100" />
+            </div>
+            <div className="absolute z-[10] top-0 right-0">
+              <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                <OverButtonIcon />
+              </div>
+              <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                <OverButtonIcon fill="#FFA100" />
+              </div></div>
+
+          </button>
+        </Link>
+      )}
+    </Description>
+  );
+};
+
+export interface SportDescriptionProps {
+  className?: string;
+  src?: string;
+  button?: boolean;
+  fill?: boolean;
+}
+
+export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
+  fill,
+  className,
+  button,
+  src,
+
+}) => {
+  const { t: translate } = useTranslation("home");
+  return (
+    <Description video={false} className={className} src={src}>
+      <h3
+        className={
+          `font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`
+        }
+      >
+        {translate("description-lokalita-3-heading")}
+      </h3>
+      <p className="text-[#676766] text-[18px]"> {translate("description-lokalita-3-description")}</p>
+      <div className={"my-[25px] flex flex-col gap-6"}>
+        <div
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <Dumbbell fill={fill} />
+          <h5 className="text-[18px] w-2/3 leading-none mt-1"
+          >{translate("description-lokalita-3-bullet-1")}</h5>
+        </div>
+        <div
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <Lake fill={fill} />
+          <h5 className="text-[18px] w-2/3 leading-none mt-1" >{translate("description-lokalita-3-bullet-2")}</h5>
+        </div>
+        <div
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <Tennis2 fill={fill} />
+          <h5 className="text-[18px] w-2/3 leading-none mt-1" >{translate("description-lokalita-3-bullet-3")}</h5>
+        </div>
+        <div
+          className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+          <Pitch fill={fill} />
+          <h5 className="text-[18px] w-2/3 leading-none mt-1" >{translate("description-lokalita-3-bullet-4")}</h5>
+        </div>
+
+
+      </div>
+
+      {button && (
+        <Link href={`/`}>
+          <button
+
+            className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+          >
+            <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+            <div className="group-hover:hidden block">
+
+              <ArrowLink fill="#000000" />
+            </div>
+            <div className="group-hover:block hidden ">
+              <ArrowLink fill="#FFA100" />
+            </div>
+            <div className="absolute z-[10] top-0 right-0">
+              <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                <OverButtonIcon />
+              </div>
+              <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                <OverButtonIcon fill="#FFA100" />
+              </div></div>
+
+          </button>
+        </Link>
+      )}
+    </Description>
+  );
+};
+
 
 export const ApartmentEquipmentDescription = () => {
   const { t: translate } = useTranslation("home");

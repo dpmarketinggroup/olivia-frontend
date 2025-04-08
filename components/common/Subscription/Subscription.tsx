@@ -53,10 +53,16 @@ const Subscription = () => {
                                 width: "100%"
                             }}
                         />
-                        <button disabled={loading} type={"submit"} className="relative bg-yellow text-white hidden sm:flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]">
+                        <button disabled={loading} type={"submit"} className="hover:scale-105 transform transition-transform duration-300 ease-in-out relative hover:bg-white bg-yellow text-white hidden sm:flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] group drop-shadow-md">
                             {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
-                            <p className="text-[18px] text-primary leading-[18px]">Odoslať</p> <PaperPlaneIcon fill="#087168" />
-                            <div className="absolute z-[10] top-0 right-0"><OverButtonIcon /></div>
+                            <p className="text-[18px] text-primary leading-[18px]"> {translate("form-button")}</p> <PaperPlaneIcon fill="#087168" />
+                            <div className="absolute z-[10] top-0 right-0"><div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out ">
+
+                                <OverButtonIcon />
+                            </div>
+                                <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                                    <OverButtonIcon fill="#087168" />
+                                </div></div>
                         </button>
                         <button disabled={loading} type={"submit"} className="sm:hidden relative bg-[#FFA100] text-white flex flex-row justify-center items-center gap-2 px-[24px] py-[24px] text-[18px]">
                             {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
