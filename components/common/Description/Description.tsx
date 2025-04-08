@@ -122,7 +122,7 @@ export default Description;
 export interface CommonDescriptionProps {
   className?: string;
   button?: boolean;
-  fill?: boolean;
+  fill?: string;
 }
 
 export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
