@@ -71,7 +71,7 @@ const Stretnutie = () => {
                 </div>
                 <div className="flex gap-[20px] items-center mb-[10px]">
                   <EmailSign />
-                  <Link legacyBehavior shref={"mailto:info@oliviaresidenc.sk"}>
+                  <Link legacyBehavior href={"mailto:info@oliviaresidenc.sk"}>
                     <a className="font-bold text-[18px] leading-7 text-white">
                       info@oliviaresidence.sk
                     </a>
