@@ -585,10 +585,11 @@ const OProjekte = () => {
             <Image
               width={10}
               height={10}
-              layout="responsive"
+              fill
               alt="tatrabanka"
               src="/img/tatrabanka.svg"
               loading={"eager"}
+              style={{ objectFit: "cover" }}
             />
           </div>
         </div>
