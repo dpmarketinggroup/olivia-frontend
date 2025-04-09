@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 
 interface BgSquareProps {
-  opacity: string;
+  opacity?: string;
   className?: string;
   onClick?: () => void;
 }
