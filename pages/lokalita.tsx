@@ -24,6 +24,7 @@ import ParkingFlag from "@components/icons/ParkingFlag";
 import Tree from "@components/icons/Tree";
 import Booking from "@components/icons/Booking";
 import OverButtonIcon from "@components/icons/OverButton";
+import ReactMarkdown from 'react-markdown';
 import {
   ApartmentEquipmentDescription,
   CommonDescription,
@@ -39,6 +40,7 @@ import AboutUs from "@components/icons/AboutUs";
 import { marked } from "marked";
 import Link from "next/link";
 import Image from "next/image";
+import React from "react";
 type Bulletpoint = {
   icon: JSX.Element;
   label: string;
@@ -208,62 +210,38 @@ muted={true}
         </div >
         <div className="mt-12 mr-auto">
           <h2 className="text-white  text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px]">{translate("description-locale-heading")}</h2>
-          <p className="text-white opacity-40 text-[24px] xl:text-[28px] leading-[24px] xl:leading-[28px] italic font-thin mt-2" dangerouslySetInnerHTML={{
-            __html: marked(translate("description-locale-description1"))
-          }}></p>
+          <p className="text-white opacity-40 text-[24px] xl:text-[28px] leading-[24px] xl:leading-[28px] italic font-thin mt-2">
+            <ReactMarkdown>{translate("description-locale-description1")}</ReactMarkdown>
+          </p>
         </div>
         <div className="w-[45%] mt-16">
           <div className="flex flex-row justify-start items-center gap-4 w-full mb-4">
             <ShopIcon />
-            <p className="text-white text-[20px] leading-[24px] " dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-description2"))
-            }}></p>
+            <p className="text-white text-[20px] leading-[24px] " > <ReactMarkdown>{translate("description-locale-description2")}</ReactMarkdown></p>
           </div>
           <div className="flex flex-row flex-wrap gap-2 border-b-[2px] pb-6 border-[#ffffff33] border-dashed">
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-properties-1"))
-            }}></p></div>
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-properties-2"))
-            }}></p></div>
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-properties-3"))
-            }}></p></div>
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-properties-4"))
-            }}></p></div>
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-properties-5"))
-            }}></p></div>
-            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-properties-6"))
-            }}></p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-1")}</ReactMarkdown></p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-2")}</ReactMarkdown></p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-3")}</ReactMarkdown></p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-4")}</ReactMarkdown></p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-5")}</ReactMarkdown></p></div>
+            <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p><ReactMarkdown>{translate("description-locale-properties-6")}</ReactMarkdown></p></div>
           </div>
           <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-            <Thermometer /><p className="text-white text-[18px] leading-[22px]" dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-bullet-1"))
-            }}></p>
+            <Thermometer /><p className="text-white text-[18px] leading-[22px]" ><ReactMarkdown>{translate("description-locale-bullet-1")}</ReactMarkdown></p>
           </div>
           <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-            <Coins /><p className="text-white text-[18px] leading-[22px]" dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-bullet-2"))
-            }}></p>
+            <Coins /><p className="text-white text-[18px] leading-[22px]" ><ReactMarkdown>{translate("description-locale-bullet-2")}</ReactMarkdown></p>
           </div>
           <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-            <PeoplePoints /><p className="text-white text-[18px] leading-[22px]" dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-bullet-3"))
-            }}></p>
+            <PeoplePoints /><p className="text-white text-[18px] leading-[22px]" ><ReactMarkdown>{translate("description-locale-bullet-3")}</ReactMarkdown></p>
           </div>
           <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-            <ParkingFlag /><p className="text-white text-[18px] leading-[22px]" dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-bullet-4"))
-            }}>
+            <ParkingFlag /><p className="text-white text-[18px] leading-[22px]" ><ReactMarkdown>{translate("description-locale-bullet-4")}</ReactMarkdown>
             </p>
           </div>
           <div className="flex flex-row justify-start items-center py-4 gap-2 ">
-            <Tree /><p className="text-white text-[18px] leading-[22px]" dangerouslySetInnerHTML={{
-              __html: marked(translate("description-locale-bullet-5"))
-            }}>
+            <Tree /><p className="text-white text-[18px] leading-[22px]" ><ReactMarkdown>{translate("description-locale-bullet-5")}</ReactMarkdown>
             </p>
           </div>
           <button className=" mt-4 relative bg-yellow text-[#0E3F3B] flex flex-row justify-between  items-center gap-2 px-[32px] py-[22px] w-full text-[18px] max-h-[96px] h-[96px]">
