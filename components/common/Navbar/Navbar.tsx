@@ -207,17 +207,17 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               "hidden xl:flex flex-row gap-[20px] xl:gap-[15px] xl:text-[16px] xl:mt-0 "
             }
           >
-            <Link href="/ponuka-apartmanov">
+            <Link legacyBehavior href="/ponuka-apartmanov">
               <a className={` drop-span p-[3px] mt-1 ${isWhite || isScrolled ? "text-black " : "text-white"} uppercase`}>
                 {translate("filter-heading")}
               </a>
             </Link>
-            <Link href="/stresne-apartmany">
+            <Link legacyBehavior href="/stresne-apartmany">
               <a className={` ${isWhite || isScrolled ? "text-black " : "text-white"}  uppercase flex justify-center items-center mt-1`}>
                 <p className="">{translate("footer-link-top-apartments")}</p>
               </a>
             </Link>
-            <Link href="/lokalita">
+            <Link legacyBehavior href="/lokalita">
               <a className={`mt-1 p-[3px] ${isWhite || isScrolled ? "text-black " : "text-white"} text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p></a>
             </Link>
 
@@ -231,7 +231,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
           >
             <div className="flex justify-between">
 
-              <Link href="/" >
+              <Link href="/" legacyBehavior >
                 <a >
                   {(isWhite || isScrolled || isOpenMobileNav) ? <><div className="sm:hidden flex">
                     <Logo width={104} height={25} /> </div> <div className="hidden sm:block">
@@ -260,23 +260,23 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
 
             <div className={`${isOpenMobileNav ? "flex" : "hidden"} flex-col absolute  bg-white w-full top-[6rem] left-0 gap-4 py-2`}>
-              <Link href="/ponuka-apartmanov">
+              <Link legacyBehavior href="/ponuka-apartmanov">
                 <a className={` drop-span p-[3px] text-black uppercase mx-auto`}>
                   {translate("filter-heading")}
                 </a>
               </Link>
-              <Link href="/stresne-apartmany">
+              <Link legacyBehavior href="/stresne-apartmany">
                 <a className={`text-black   uppercase flex justify-center items-center mt-1`}>
                   <p className="">{translate("footer-link-top-apartments")}</p>
                 </a>
               </Link>
-              <Link href="/lokalita">
+              <Link legacyBehavior href="/lokalita">
                 <a className={`mt-1 p-[3px] text-black text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p></a>
               </Link>
-              <Link href="/o-projekte">
+              <Link legacyBehavior href="/o-projekte">
                 <a className="uppercase text-black mx-auto">{translate("footer-link-about")}</a>
               </Link>
-              <Link href="/kontakt" className="">
+              <Link legacyBehavior href="/kontakt" className="">
                 <a className={`mt-1 p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-contact")}</a>
               </Link>
               <Link href="/stretnutie" className=" w-fit">
@@ -288,7 +288,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 </button>
 
               </Link>
-              <Link href={"mailto:info@oliviaresidence.sk"}>
+              <Link legacyBehavior href={"mailto:info@oliviaresidence.sk"}>
                 <a className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2 text-[16px]">info@oliviaresidence.sk <ArrowLink /></a>
               </Link>
               {telNumber()}
@@ -318,7 +318,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 <h5 className="text-[#676766] text-[16px] text-center mx-auto">{translate("footer-sale-place")}</h5>
                 <h5 className="font-normal text-center mx-auto text-[14px]">Rožňavská 1A</h5>
                 <h5 className="font-normal mx-auto text-center text-[14px]">831 04 Bratislava</h5>
-                <Link href={"mailto:info@oliviaresidence.sk"}>
+                <Link legacyBehavior href={"mailto:info@oliviaresidence.sk"}>
                   <a className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2">info@oliviaresidence.sk <ArrowLink /></a>
                 </Link>
                 {telNumber()}
@@ -328,10 +328,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
           <div className="flex items-center gap-[5px]">
             <div className="hidden xl:flex flex-row">
-              <Link href="/o-projekte">
+              <Link legacyBehavior href="/o-projekte">
                 <a className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-about")}</a>
               </Link>
-              <Link href="/kontakt" className="">
+              <Link legacyBehavior href="/kontakt" className="">
                 <a className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}</a>
               </Link>
             </div>

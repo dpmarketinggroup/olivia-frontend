@@ -17,7 +17,7 @@ const Kontakt = () => {
       return (
         <div className="flex gap-[20px] items-center mb-[100px] xl:mb-[20px]">
           <PhoneIcon />
-          <Link href={"tel:+421901923324"}>
+          <Link legacyBehavior href={"tel:+421901923324"}>
             <a className="font-bold text-[18px] text-primary leading-7">+421 901 923 324</a>
           </Link>
         </div>
@@ -59,7 +59,7 @@ const Kontakt = () => {
             </div>
             <div className="flex gap-[20px] items-center mb-[10px]">
               <EmailSign />
-              <Link href={"mailto:info@oliviaresidenc.sk"}>
+              <Link legacyBehavior href={"mailto:info@oliviaresidenc.sk"}>
                 <a className="font-bold text-primary  text-[18px] leading-7">
                   info@oliviaresidence.sk
                 </a>

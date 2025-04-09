@@ -182,7 +182,7 @@ const StresneApartmany = () => {
                   <div className="relative">
                     <div className="relative z-50 w-full sm:w-[420px] flex flex-col justify-end  p-4 h-[350px] sm:h-[205px]">
 
-                      <Link href={myArray[currentIndex].podorys}>
+                      <Link legacyBehavior href={myArray[currentIndex].podorys}>
                         <a
                           target={"_blank"}
                           className="cursor-pointer text-white bg-black rounded-2xl flex flex-row gap-2 justify-center items-center py-1 px-2 w-fit text-sm font-medium"

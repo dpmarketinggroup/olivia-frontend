@@ -50,7 +50,7 @@ const Action = () => {
       return (
         <div className="flex gap-[20px] items-center mb-[100px] xl:mb-[20px]">
           <PhoneIcon />
-          <Link href={"tel:+421901923324"}>
+          <Link legacyBehavior href={"tel:+421901923324"}>
             <a className="font-bold text-[18px] leading-7">+421 901 923 324</a>
           </Link>
         </div>

@@ -29,7 +29,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
   function telNumber() {
     if (locale === "sk") {
       return (
-        <Link href={"tel:+421901923324"}>
+        <Link legacyBehavior href={"tel:+421901923324"}>
 
           <a className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2"> +421 901 923 324<ArrowLink /></a>
         </Link>
@@ -140,7 +140,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
               </form>
               <p className="text-[12px] opacity-60 text-black  pb-[25px]">
                 {translate("footer-click-text-first-part")}
-                <Link href="/gdpr">
+                <Link legacyBehavior href="/gdpr">
                   <a className="underline underline-offset-[3px]">
                     {translate("footer-click-text-second-part")}
                   </a>
@@ -151,7 +151,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
               <div className="hidden lg:flex flex-col gap-[15px] font-thin text-[14px] xl:text-[14px] leading-5 xl:leading-6 text-black">
                 <p className="text-black opacity-60 font-medium">{translate("footer-navigation")}</p>
 
-                <Link href="/ponuka-apartmanov">
+                <Link legacyBehavior href="/ponuka-apartmanov">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-apartments")}
                   </a>
@@ -161,17 +161,17 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
                     {translate("footer-link-action")}
                   </a>
                 </Link> */}
-                <Link href="/stresne-apartmany">
+                <Link legacyBehavior href="/stresne-apartmany">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-top-apartments")}
                   </a>
                 </Link>
-                <Link href="/o-projekte">
+                <Link legacyBehavior href="/o-projekte">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-about")}
                   </a>
                 </Link>
-                <Link href="/lokalita">
+                <Link legacyBehavior href="/lokalita">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-location")}
                   </a>
@@ -180,12 +180,12 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
                 {/*<Link href="/novinky">*/}
                 {/*    <a>Novinky</a>*/}
                 {/*</Link>*/}
-                <Link href="/retail">
+                <Link legacyBehavior href="/retail">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-retail")}
                   </a>
                 </Link>
-                <Link href="/kontakt">
+                <Link legacyBehavior href="/kontakt">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-contact")}
                   </a>
@@ -196,7 +196,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
                 <h5 className="opacity-60">{translate("footer-sale-place")}</h5>
                 <h5 className="font-normal opacity-60">Rožňavská 1A</h5>
                 <h5 className="font-normal opacity-60">831 04 Bratislava</h5>
-                <Link href={"mailto:info@oliviaresidence.sk"}>
+                <Link legacyBehavior href={"mailto:info@oliviaresidence.sk"}>
                   <a className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2">info@oliviaresidence.sk <ArrowLink /></a>
                 </Link>
                 {telNumber()}
@@ -231,7 +231,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
             <p className="text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">
               {translate("footer-all-rights")}
             </p>
-            <Link href="/gdpr">
+            <Link legacyBehavior href="/gdpr">
               <a className="pr-4 text-[12px] xl:text-[14px] leading-5 text-[#999999] py-[20px]">
                 {translate("footer-protection")}
               </a>

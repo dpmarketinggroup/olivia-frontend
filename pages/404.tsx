@@ -1,7 +1,7 @@
 import Link from "next/link";
-import {LeftArrow} from "@components/icons";
+import { LeftArrow } from "@components/icons";
 import Head from "next/head";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 function Custom404() {
     return (
@@ -15,8 +15,8 @@ function Custom404() {
                 <p className="text-center font-bold text-[24px] leading-[32px] tracking-[-0.1px] mb-[50px]">Stránku,
                     ktorú ste hľadali sme nenašli.</p>
                 <div className='flex gap-[10px] items-center justify-center mb-[185px]'>
-                    <LeftArrow stroke="#476761"/>
-                    <Link href='/'>
+                    <LeftArrow stroke="#476761" />
+                    <Link legacyBehavior href='/'>
                         <a className="font-medium text-[18px] leading-7 text-[#476761]">Späť</a>
                     </Link>
                 </div>
@@ -26,13 +26,13 @@ function Custom404() {
     )
 }
 
-interface StaticProps{
+interface StaticProps {
     locale: string
 }
 
-export async function getStaticProps({locale}:StaticProps){
-    return{
-        props:{
+export async function getStaticProps({ locale }: StaticProps) {
+    return {
+        props: {
             ...(await serverSideTranslations(locale, ['home']))
             //Will be passed to the page component as props
         }

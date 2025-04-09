@@ -25,7 +25,7 @@ const ApartmentSwiper = () => {
         <div className={"flex items-center gap-[30px]"}>
 
           <div className={"flex gap-[10px] items-center md:flex hidden"}>
-            <Link href={"/ponuka-apartmanov"} className="">
+            <Link href={"/ponuka-apartmanov"} className="" legacyBehavior>
 
               <a
                 className={
@@ -124,7 +124,7 @@ const ApartmentSwiper = () => {
         </div>
       </Swiper>
       <div className={"flex gap-[10px] mt-8   items-center flex md:hidden"}>
-        <Link href={"/ponuka-apartmanov"} className="">
+        <Link href={"/ponuka-apartmanov"} className="" legacyBehavior>
 
           <a
             className={

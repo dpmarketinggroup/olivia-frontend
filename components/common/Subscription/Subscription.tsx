@@ -72,7 +72,7 @@ const Subscription = () => {
                     </form>
                     <p className="text-[12px] leading-5 opacity-60 text-white xl:pb-[52px]">
                         {translate("subscription-click-text-first-part")}{" "}
-                        <Link href='/gdpr'>
+                        <Link href='/gdpr' legacyBehavior>
                             <a className=" underline underline-offset-[6px]">{translate("subscription-click-text-second-part")}</a>
                         </Link>
                     </p>

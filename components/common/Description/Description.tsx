@@ -24,7 +24,6 @@ import Eco from "@components/icons/Eco";
 import Intercom from "@components/icons/Intercom";
 import ArrowLink from "@components/icons/ArrowLink";
 import OverButtonIcon from "@components/icons/OverButton";
-import { marked } from 'marked'
 import Dumbbell from "@components/icons/Dumbbell";
 import Tennis2 from "@components/icons/Tennis2";
 import Lake from "@components/icons/Lake";

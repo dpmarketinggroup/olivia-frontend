@@ -196,7 +196,7 @@ const Podnety = () => {
                 <>
                   <p className="text-[14px] leading-5 text-black">
                     {translate("form-check-1-1")}{" "}
-                    <Link href="/gdpr">
+                    <Link legacyBehavior href="/gdpr">
                       <a className="underline text-primary">{translate("form-check-1-2")}</a>
                     </Link>
                   </p>
