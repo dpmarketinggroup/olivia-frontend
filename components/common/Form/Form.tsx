@@ -26,7 +26,7 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState<E164Number>();
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
   const [loading, setLoading] = useState(false);
