@@ -1,6 +1,4 @@
-'use client'
-
-import React, { useEffect, useState, FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import Image from "next/image";
 import {
   Camera,
@@ -14,6 +12,7 @@ import {
   RectangleMediumIcon,
   Star,
 } from "@components/icons";
+import ReactMarkdown from 'react-markdown';
 import { Button } from "@components/ui";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
@@ -34,7 +33,8 @@ import ElectricScooter from "@components/icons/ElectricScooter";
 import Bus from "@components/icons/Bus";
 import Motorway from "@components/icons/Motorway";
 import Train2 from "@components/icons/Train2";
-
+import { useState } from "react";
+import { useEffect } from "react";
 export interface DescriptionProps {
   src: string;
   children: React.ReactNode;
@@ -129,76 +129,58 @@ export interface CommonDescriptionProps {
 }
 
 export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
-  fill = "black",
+  fill = 'black',
   className,
   button,
 }) => {
-  const { t } = useTranslation("home");
+  const { t: translate } = useTranslation('home');
 
-  const [texts, setTexts] = useState<{
-    heading: string;
-    bullets: string[];
-    info: string;
-    buttonText: string;
-  } | null>(null);
-
-  useEffect(() => {
-    const loadTexts = async () => {
-      setTexts({
-        heading: t("description-heading"),
-        bullets: [
-          t("description-bullet-1"),
-          t("description-bullet-2"),
-          t("description-bullet-3"),
-          t("description-bullet-4"),
-          t("description-bullet-5"),
-          t("description-bullet-6"),
-        ],
-        info: t("description-inform"),
-        buttonText: t("button-meeting"),
-      });
-    };
-
-    loadTexts();
-  }, [t]);
-
-  if (!texts) return null; // alebo loader
-
-  const icons = [KitchenIcon, WashBasin, Tile, Blinds, Eco, Intercom];
+  const bullets = [
+    { icon: KitchenIcon, text: translate('description-bullet-1') },
+    { icon: WashBasin, text: translate('description-bullet-2') },
+    { icon: Tile, text: translate('description-bullet-3') },
+    { icon: Blinds, text: translate('description-bullet-4') },
+    { icon: Eco, text: translate('description-bullet-5') },
+    { icon: Intercom, text: translate('description-bullet-6') },
+  ];
 
   return (
     <Description src={''} video={true} className={className}>
       <h3 className={`font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`}>
-        {texts.heading} <br /> OLIVIA Residence?
+        {translate('description-heading')} <br />
+        OLIVIA Residence?
       </h3>
       <div className="my-[25px] flex flex-col gap-6">
-        {texts.bullets.map((bullet, i) => {
-          const Icon = icons[i];
+        {bullets.map((bullet, index) => {
+          const Icon = bullet.icon;
           return (
-            <div key={i} className={`flex gap-[12px] flex-row items-center text-${fill}`}>
+            <div key={index} className={`flex gap-[12px] flex-row items-center text-${fill}`}>
               <Icon fill={fill} />
-              <h5
-                className="text-[18px] w-2/3 leading-none mt-1"
-                dangerouslySetInnerHTML={{ __html: marked(bullet) }}
-              />
+              <p className="text-[18px] w-2/3 leading-none mt-1">
+                <ReactMarkdown >
+                  {bullet.text}
+                </ReactMarkdown>
+              </p>
             </div>
           );
         })}
       </div>
       <div className="flex flex-col xl:flex-row gap-[10px] leading-none mb-4">
-        <p
-          className={`text-[24px] text-${fill} opacity-70`}
-          dangerouslySetInnerHTML={{ __html: marked(texts.info) }}
-        />
+        <p className={`text-[24px] text-${fill} opacity-70`}>
+          <ReactMarkdown >
+
+            {translate('description-inform')}
+          </ReactMarkdown>
+        </p>
       </div>
       {button && (
         <Link href="/">
           <button className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group">
-            <p className="text-[18px] leading-[18px]">{texts.buttonText}</p>
+            <p className="text-[18px] leading-[18px]">{translate('button-meeting')}</p>
             <div className="group-hover:hidden block">
               <ArrowLink fill="#000000" />
             </div>
-            <div className="group-hover:block hidden ">
+            <div className="group-hover:block hidden">
               <ArrowLink fill="#FFA100" />
             </div>
             <div className="absolute z-[10] top-0 right-0">
