@@ -79,6 +79,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               src={"/241122OR5901-1x1.png"}
               objectFit={"contain"}
               layout={"fill"}
+              alt="Image"
             />
           </div>
         </Modal>
