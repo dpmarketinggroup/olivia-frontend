@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 
 interface AboutUsProps {
   fill?: string;
-  opacity: string;
+  opacity?: string;
   className?: string;
   onClick?: () => void;
 }
