@@ -79,7 +79,7 @@ const StresneApartmany = () => {
       <NewHero
         imgName={"hero-stresne-apartmany.png"}
         icon={<MapPoint fill="#89A6A2" size={45} />}
-        title={translate("hero-lokalita-title")}
+        title={translate("hero-lokalita-title") || ""}
         description={translate("hero-lokalita-subtitle") || ""}
       />
       <section className="relative w-full desktop:max-w-[1920px] mx-auto flex flex-col justify-center items-center mt-6 mb-[6rem]">
