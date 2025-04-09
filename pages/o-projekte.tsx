@@ -583,8 +583,8 @@ const OProjekte = () => {
           </div>
           <div className="h-[78px] xl:h-[100px] w-[120px] xl:w-[120px] relative">
             <Image
-              width="10px"
-              height="10px"
+              width={10}
+              height={10}
               layout="responsive"
               alt="tatrabanka"
               src="/img/tatrabanka.svg"
