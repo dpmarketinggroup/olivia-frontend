@@ -283,7 +283,7 @@ export interface SportDescriptionProps {
   className?: string;
   src: string;
   button?: boolean;
-  fill?: boolean;
+  fill?: string;
 }
 
 export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
