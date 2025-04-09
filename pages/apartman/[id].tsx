@@ -321,7 +321,7 @@ const ApartmentDetail = () => {
         centered
       >
         <div className={"w-full h-[70vh] relative"}>
-          <Image src={url} objectFit={"contain"} layout={"fill"} />
+          <Image src={url} objectFit={"contain"} layout={"fill"} alt="image" />
         </div>
       </Modal>
       <div className="flex flex-col justify-center w-full xl:max-w-[1200px] mx-auto">
