@@ -254,20 +254,35 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
             </div>
 
 
-            <div className={`${isOpenMobileNav ? "flex" : "hidden"} flex-col absolute  bg-white w-full top-[6rem] left-0 gap-4 py-2 z-[20] h-screen`}>
-              <Link href="/ponuka-apartmanov" className={` drop-span p-[3px] text-black uppercase mx-auto`}>
+            <div className={`${isOpenMobileNav ? "flex" : "hidden"} flex-col absolute  bg-white w-full top-[5rem] left-0 gap-4 py-2 z-[20] h-screen`}>
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/ponuka-apartmanov" className={` drop-span p-[3px] text-black uppercase mx-auto`}>
                 {translate("apartment-swiper-link")}
 
               </Link>
-              <Link href="/stresne-apartmany" className={`text-black   uppercase flex justify-center items-center mt-1`}>
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/stresne-apartmany" className={`text-black   uppercase flex justify-center items-center mt-1`}>
                 <p className="">{translate("footer-link-top-apartments")}</p>
 
               </Link>
-              <Link href="/lokalita" className={`mt-1 p-[3px] text-black text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p>
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/lokalita" className={`mt-1 p-[3px] text-black text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p>
               </Link>
-              <Link href="/o-projekte" className="uppercase text-black mx-auto">{translate("footer-link-about")}
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/o-projekte" className="uppercase text-black mx-auto">{translate("footer-link-about")}
               </Link>
-              <Link href="/kontakt" className={`mt-0 md:mt-1 p-0 md:p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-contact")}
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/kontakt" className={`mt-0 md:mt-1 p-0 md:p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-contact")}
               </Link>
 
               <Link href={`/stretnutie`} className="mx-auto">
@@ -327,7 +342,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 <h5 className="text-[#676766] text-[16px] text-center mx-auto">{translate("footer-sale-place")}</h5>
                 <h5 className="font-normal text-center mx-auto text-[14px]">Rožňavská 1B</h5>
                 <h5 className="font-normal mx-auto text-center text-[14px]">831 04 Bratislava</h5>
-                <Link href={"mailto:info@oliviaresidence.sk"} className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2">
+                <Link onClick={() => {
+                  setIsOpenMobileNav((o) => !o);
+                  setScrollLocked((c) => !c);
+                }} href={"mailto:info@oliviaresidence.sk"} className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2">
                   <>
                     info@oliviaresidence.sk <ArrowLink />
                   </>
