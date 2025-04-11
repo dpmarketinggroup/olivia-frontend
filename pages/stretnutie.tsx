@@ -121,7 +121,7 @@ const Stretnutie = () => {
                     {translate("address")}
                   </span>
                   <span className="font-bold text-[24px] leading-[32px] tracking-[-0.1px] opacity-[96]">
-                    Rožňavská 1A, Bratislava
+                    Rožňavská 1B, Bratislava
                   </span>
                   <div className="flex gap-[12px] items-center">
                     <MapPoint2 width="16" height="20" fill="000000" />

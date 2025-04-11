@@ -16,7 +16,7 @@ const MapFooter = () => {
                             <span className="underline decoration-primary underline-offset-[2px]"> {translate("map-footer-heading-second-part")}</span> {translate("map-footer-heading-third-part")}</h2>
                         <p className="text-[20px] sm:leading-[24px] text-[16px] sm:text-[20px] text-[#676766] w-[80%]">{translate("map-footer-description")}</p>
                         <p className="font-bold text-[18px] sm:text-[24px] leading-[32px] text-black xl:w-auto self-start">Rožňavská
-                            1A, Bratislava</p>
+                            1B, Bratislava</p>
                         <div className="block md:hidden">
 
                             <Image

@@ -250,24 +250,24 @@ export const TransportDescription: FunctionComponent<TransportDescriptionProps> 
   const { t: translate } = useTranslation("home");
   return (
     <div
-      className={`relative mt-[350px] mb-[400px] md:my-[500px]  flex  flex-row-reverse justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
-    >   <div className="bg-white w-[50px] md:w-[100px] md:h-[400px] h-[800px]"></div>
+      className={`relative mt-[350px] mb-[400px] md:mb-[500px] md:mt-[300px]  flex  flex-row-reverse justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
+    >   <div className="bg-white w-[50px] md:w-[80px] md:h-[400px] h-[800px]"></div>
 
 
 
 
 
 
-      <div className={`absolute z-[20] right-0 top-[800px] md:top-[-120px] lg:top-[-250px] `}>
+      <div className={`absolute z-[20] right-0 top-[800px] md:top-[-120px] lg:top-[-80px] `}>
         <div className="relative h-[280px] w-[280px] sm:h-[400px] sm:w-[400px] lg:h-[500px] lg:w-[500px]">
           <div className={`absolute bottom-0 md:top-0 right-0 z-[10]`}>
             <div className="flex flex-row">
-              <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-transparent md:bg-white `}></div>
-              <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white`}></div>
+              <div className={`w-[35px] sm:w-[60px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-transparent md:bg-white `}></div>
+              <div className={`w-[35px] sm:w-[60px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-white`}></div>
             </div>
             <div className="flex flex-row">
-              <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white md:bg-transparent`}></div>
-              <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white`}></div>
+              <div className={`w-[35px] sm:w-[60px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-white md:bg-transparent`}></div>
+              <div className={`w-[35px] sm:w-[60px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-white`}></div>
             </div>
           </div >
           <Image
@@ -281,7 +281,7 @@ export const TransportDescription: FunctionComponent<TransportDescriptionProps> 
       </div >
 
 
-      <div className="flex flex-col w-[85%] md:w-[45%] pb-[280px] md:pb-6 pt-20 md:pt-2  px-6 md:p-10 space-y-4">
+      <div className="flex flex-col w-[85%] md:w-[45%] pb-[280px]  pt-20 px-6 md:p-6 space-y-4">
         <h3
           className={
             `font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`
@@ -363,21 +363,21 @@ export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
   const { t: translate } = useTranslation("home");
   return (
     <div
-      className={`relative my-[300px] flex flex-row justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} `}
+      className={`relative my-[200px] flex flex-row justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} `}
     >
-      <div className="bg-white w-[50px] sm:w-[100px] h-[750px] sm:h-[510px]"></div>
+      <div className="bg-white w-[50px] sm:w-[80px] h-[750px] sm:h-[400px]"></div>
 
 
-      <div className={`absolute z-[20] left-0 top-[750px] md:top-[-180px] lg:top-[-150px] `}>
-        <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]">
+      <div className={`absolute z-[20] left-0 top-[750px] md:top-[-80px] lg:top-[-80px] `}>
+        <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[400px] lg:w-[400px]">
           <div className={`absolute bottom-0 md:top-0 left-0 z-[10]`}>
             <div className="flex flex-row">
-              <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px]  bg-white`}></div>
-              <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-transparent md:bg-white `}></div>
+              <div className={`w-[35px] sm:w-[60px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px]  bg-white`}></div>
+              <div className={`w-[35px] sm:w-[60px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-transparent md:bg-white `}></div>
             </div>
             <div className="flex flex-row">
-              <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white `}></div>
-              <div className={`w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white md:bg-transparent`}></div>
+              <div className={`w-[35px] sm:w-[60px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-white `}></div>
+              <div className={`w-[35px] sm:w-[60px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-white md:bg-transparent`}></div>
             </div>
           </div >
           <Image
@@ -390,10 +390,10 @@ export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
         </div >
 
       </div >
-      <div className="flex flex-col w-[85%] md:w-[45%] pt-20 md:pt-2 0 px-6 md:p-10 space-y-4 pb-[300px]  md:pb-6">
+      <div className="flex flex-col w-[85%] md:w-[45%] pt-20 md:pt-2  px-6 md:p-6 space-y-4 pb-[300px]  md:pb-6">
         <h3
           className={
-            `font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`
+            `font-normal text-[48px] leading-[48px] text-${fill} my-4`
           }
         >
           {translate("description-lokalita-3-heading")}

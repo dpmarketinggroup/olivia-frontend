@@ -309,10 +309,15 @@ muted={true}
               <Tree /><p className="text-white text-[17px] leading-[20px]"><ReactMarkdown>{translate("description-locale-bullet-5")}</ReactMarkdown>
               </p>
             </div>
-            <Link href={'/stretnutie'} className=" mt-4 relative bg-yellow text-[#0E3F3B] flex flex-row justify-between  items-center gap-2 px-[32px] py-[22px] w-full text-[18px] max-h-[96px] h-[96px]">
+            <Link href={'/stretnutie'} className="overflow-hidden mt-4 relative hover:bg-white bg-yellow text-[#0E3F3B] flex flex-row justify-between  items-center gap-2 px-[28px] py-[16px] w-full text-[18px] max-h-[96px] h-[63px] group">
               {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
-              <p className="text-[22px] font-medium leading-[24px]">{translate("button-meeting")}</p><Booking />
-              <div className="absolute z-[10] top-0 right-0"><OverButtonIcon height="96" width="158" /></div>
+              <p className="text-[20px] font-medium leading-[24px]">{translate("button-meeting")}</p><Booking />
+              <div className="absolute z-[10] top-0 right-0">
+                <div className="group-hover:hidden">
+                  <OverButtonIcon height="96" width="158" /></div>
+                <div className="group-hover:block hidden">
+                  <OverButtonIcon height="96" width="158" fill="#FFA100" /></div>
+              </div>
             </Link>
           </div>
         </div>

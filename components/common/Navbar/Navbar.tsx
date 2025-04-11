@@ -325,7 +325,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               <div className="mx-auto">
 
                 <h5 className="text-[#676766] text-[16px] text-center mx-auto">{translate("footer-sale-place")}</h5>
-                <h5 className="font-normal text-center mx-auto text-[14px]">Rožňavská 1A</h5>
+                <h5 className="font-normal text-center mx-auto text-[14px]">Rožňavská 1B</h5>
                 <h5 className="font-normal mx-auto text-center text-[14px]">831 04 Bratislava</h5>
                 <Link href={"mailto:info@oliviaresidence.sk"} className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2">
                   <>
