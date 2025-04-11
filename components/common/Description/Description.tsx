@@ -145,23 +145,23 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
 
   return (
     <div
-      className={`relative mt-[30rem] md:mt-[25rem] xl:mt-80  flex flex-row  justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
+      className={`relative mt-[30rem] md:mt-[25rem] xl:mt-[200px]  flex flex-row  justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
       <div className={"relative shrink-0 mb-0 "}>
-        <div className="bg-white w-[50px] md:w-[100px] h-[850px] md:h-[700px]"></div>
+        <div className="bg-white w-[50px] md:w-[80px] h-[850px] md:h-[560px]"></div>
 
         {/* <div className={`relative z-[5] w-[50px] md:w-[100px] h-[250px] bg-white`}></div> */}
 
-        <div className="absolute left-0 top-[-200px] md:top-[-100px] z-[10]">
-          <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] sm:w-[425px] sm:h-[425px] lg:w-[550px] lg:h-[550px]"}>
+        <div className="absolute left-0 top-[-80px] z-[10]">
+          <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] sm:w-[425px] sm:h-[425px] lg:w-[450px] lg:h-[450px]"}>
             <div className="absolute top-0 left-0 z-[10]">
               <div className="flex flex-row">
-                <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white"></div>
-                <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white"></div>
+                <div className="w-[35px] sm:w-[50px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-white"></div>
+                <div className="w-[35px] sm:w-[50px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-white"></div>
               </div>
               <div className="flex flex-row">
-                <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white"></div>
-                <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-transparent"></div>
+                <div className="w-[35px] sm:w-[50px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-white"></div>
+                <div className="w-[35px] sm:w-[50px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-transparent"></div>
               </div>
             </div>
             <video
@@ -179,18 +179,18 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
         </div>
       </div >
 
-      <div className="flex flex-col w-[85%] md:w-[45%] pb-6 pt-20 md:pt-4 0 px-6 md:p-10 space-y-4">
-        <h3 className={`font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`}>
+      <div className="flex flex-col w-[85%] md:w-[50%] pb-6 pt-10   px-4 md:p-6 ">
+        <h3 className={`font-normal text-[42px] leading-[42px] text-${fill}  my-4`}>
           {translate('description-heading')} <br />
           OLIVIA Residence?
         </h3>
-        <div className="my-[25px] flex flex-col gap-6">
+        <div className="my-[25px] flex flex-col gap-4">
           {bullets.map((bullet, index) => {
             const Icon = bullet.icon;
             return (
               <div key={index} className={`flex gap-[12px] flex-row items-center text-${fill}`}>
                 <Icon fill={fill} />
-                <p className="text-[18px] w-2/3 leading-none mt-1">
+                <p className="text-[17px] w-2/3 leading-none mt-1">
                   <ReactMarkdown >
                     {bullet.text}
                   </ReactMarkdown>
@@ -199,7 +199,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
             );
           })}
         </div>
-        <div className="flex flex-col xl:flex-row gap-[10px] leading-none mb-4">
+        <div className="flex flex-col xl:flex-row gap-[10px] leading-none my-4">
           <p className={`text-[24px] text-${fill} opacity-70`}>
             <ReactMarkdown  >
 
@@ -208,7 +208,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
           </p>
         </div>
         {button && (
-          <Link href="/">
+          <Link href="/stretnutie">
             <button className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group">
               <p className="text-[18px] leading-[18px]">{translate('button-meeting')}</p>
               <div className="group-hover:hidden block">

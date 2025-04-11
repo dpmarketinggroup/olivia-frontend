@@ -98,7 +98,7 @@ const ApartmentSwiper = () => {
               </h5>
               <div className={"relative h-[350px] "}>
                 <Image
-                  className={"border"}
+
                   priority={true}
                   objectPosition={"left"}
                   objectFit={"contain"}

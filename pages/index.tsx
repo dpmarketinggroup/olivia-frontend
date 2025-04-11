@@ -78,12 +78,12 @@ const Home = () => {
         <div className="h-[650px] md:h-screen w-full xl:max-w-[1920px] xl:mb-[140px] relative flex">
           <div className="absolute bottom-0 right-0 z-[10]">
             <div className="flex flex-row">
-              <div className="w-[30px] sm:w-[70px] h-[30px] sm:h-[70px] bg-transparent"></div>
-              <div className="w-[30px] sm:w-[70px] h-[30px] sm:h-[70px] bg-white"></div>
+              <div className="w-[30px] sm:w-[60px] h-[30px] sm:h-[60px] bg-transparent"></div>
+              <div className="w-[30px] sm:w-[60px] h-[30px] sm:h-[60px] bg-white"></div>
             </div>
             <div className="flex flex-row">
-              <div className="w-[30px] sm:w-[70px] h-[30px] sm:h-[70px] bg-white"></div>
-              <div className="w-[30px] sm:w-[70px] h-[30px] sm:h-[70px] bg-white"></div>
+              <div className="w-[30px] sm:w-[60px] h-[30px] sm:h-[60px] bg-white"></div>
+              <div className="w-[30px] sm:w-[60px] h-[30px] sm:h-[60px] bg-white"></div>
             </div>
           </div>
           <div className="absolute inset-0 xl:w-full -z-[22] xl:overflow-hidden brightness-50">
@@ -206,7 +206,7 @@ const Home = () => {
     </div > */}
 
       <CommonDescription fill="black" className="bg-bgLight" />
-      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-[200px] ">
+      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-8 w-full max-w-[1200px] mx-auto mb-[250px] mt-[200px] ">
         <div className="absolute top-0 right-[-10px]">
           <OverButtonBigIcon height="259" width="259" />
         </div>
@@ -218,12 +218,12 @@ const Home = () => {
             height={312.32}
           />
         </div>
-        <div className="hidden lg:flex absolute top-[-20%] right-10 md:right-20 z-[6]">
+        <div className="hidden lg:flex absolute top-[-30%] right-10 md:right-20 z-[6]">
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
-            width={"650"}
-            height="488"
+            width={585}
+            height={439.2}
           />
         </div>
         <div className="flex md:hidden absolute top-[-10%] right-[-120px] md:right-20 z-[6]">
@@ -234,7 +234,7 @@ const Home = () => {
             height={268.4}
           />
         </div>
-        <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
+        <p className="relative text-[#0E3F3B] text-[36px] md:text-[42px] leading-none z-[6] w-[80%] md:w-[40%]">
           {translate("download-h")}
         </p>
         <Link href="/Karta vybavenia OLIVIA Residence.pdf">
@@ -249,11 +249,11 @@ const Home = () => {
         </Link>
       </div>
 
-      <div className="max-w-[1200px] w-full mt-[100px] bg-primary mx-auto pb-4 sm:pb-10 pr-4 sm:pr-10 flex flex-row gap-6 justify-between relative">
-        <div className="bg-white h-[1150px] sm:h-[1080px] lg:h-[600px] w-[80px] sm:w-[100px] mr-2 sm:mr-10">
+      <div className="max-w-[1200px] w-full mt-[100px] bg-primary mx-auto pb-4 sm:pb-6 pr-4 sm:pr-6 flex flex-row gap-6 justify-between relative">
+        <div className="bg-white h-[1150px] sm:h-[1080px] lg:h-[550px] w-[40px] sm:w-[80px] mr-2 sm:mr-6">
 
         </div>
-        <div className={"bottom-0 absolute left-0 shrink-0  xl:mb-0 w-[300px] h-[300px] sm:w-[480px] sm:h-[480px]"}>
+        <div className={"bottom-0 absolute left-0 shrink-0  xl:mb-0 w-[300px] h-[300px] sm:w-[450px] sm:h-[450px]"}>
           <div className="relative">
             <div className="absolute bottom-0 z-[10]">
               <div className="flex flex-row">
@@ -278,40 +278,40 @@ const Home = () => {
           </div >
         </div >
         <div className="flex flex-col pb-[300px] sm:pb-[480px] lg:pb-0 lg:flex-row">
-          <div className="mt-12 mr-auto">
-            <h2 className="text-white  text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px]">{translate("description-locale-heading")}</h2>
-            <p className="text-white opacity-40 text-[24px] xl:text-[28px] leading-[24px] xl:leading-[28px] italic font-thin mt-2" ><ReactMarkdown>
+          <div className="mt-6 mr-auto">
+            <h2 className="text-white  text-[32px] xl:text-[42px] leading-[40px] xl:leading-[48px]">{translate("description-locale-heading")}</h2>
+            <p className="text-white opacity-40 text-[24px] xl:text-[26px] leading-[24px] xl:leading-[28px] italic font-thin mt-2" ><ReactMarkdown>
               {translate("description-locale-description1")}
             </ReactMarkdown></p>
           </div>
-          <div className="w-[95%] lg:w-[45%] mt-10 sm:mt-16">
+          <div className="w-[95%] lg:w-[55%] mt-10 sm:mt-8">
             <div className="flex flex-row justify-start items-center gap-4 w-full mb-4">
               <ShopIcon />
-              <p className="text-white text-[20px] leading-[24px] " ><ReactMarkdown>{translate("description-locale-description2")}</ReactMarkdown></p>
+              <p className="text-white text-[17px] leading-[20px] " ><ReactMarkdown>{translate("description-locale-description2")}</ReactMarkdown></p>
             </div>
-            <div className="flex flex-row flex-wrap gap-2 border-b-[2px] pb-6 border-[#ffffff33] border-dashed">
-              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-1")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-2")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-3")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-4")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-5")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-6")}</ReactMarkdown></p></div>
+            <div className="flex flex-row flex-wrap gap-[6px] w-[90%] border-b-[2px] pb-6 border-[#ffffff33] border-dashed">
+              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-1")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-2")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-3")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-4")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-5")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-6")}</ReactMarkdown></p></div>
             </div>
-            <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-              <Thermometer /><p className="text-white text-[18px] leading-[22px]"><ReactMarkdown>{translate("description-locale-bullet-1")}</ReactMarkdown></p>
+            <div className="flex flex-row justify-start items-center py-3 gap-2 border-b-[2px] border-[#ffffff33] border-dashed w-[90%]">
+              <Thermometer /><p className="text-white text-[17px] leading-[20px]"><ReactMarkdown>{translate("description-locale-bullet-1")}</ReactMarkdown></p>
             </div>
-            <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-              <Coins /><p className="text-white text-[18px] leading-[22px]"><ReactMarkdown>{translate("description-locale-bullet-2")}</ReactMarkdown></p>
+            <div className="flex flex-row justify-start items-center py-3 gap-2 border-b-[2px] border-[#ffffff33] border-dashed w-[90%]">
+              <Coins /><p className="text-white text-[17px] leading-[20px]"><ReactMarkdown>{translate("description-locale-bullet-2")}</ReactMarkdown></p>
             </div>
-            <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-              <PeoplePoints /><p className="text-white text-[18px] leading-[22px]"><ReactMarkdown>{translate("description-locale-bullet-3")}</ReactMarkdown></p>
+            <div className="flex flex-row justify-start items-center py-3 gap-2 border-b-[2px] border-[#ffffff33] border-dashed w-[90%]">
+              <PeoplePoints /><p className="text-white text-[17px] leading-[20px]"><ReactMarkdown>{translate("description-locale-bullet-3")}</ReactMarkdown></p>
             </div>
-            <div className="flex flex-row justify-start items-center py-4 gap-2 border-b-[2px] border-[#ffffff33] border-dashed">
-              <ParkingFlag /><p className="text-white text-[18px] leading-[22px]"><ReactMarkdown>{translate("description-locale-bullet-4")}</ReactMarkdown>
+            <div className="flex flex-row justify-start items-center py-3 gap-2 border-b-[2px] border-[#ffffff33] border-dashed w-[90%]">
+              <ParkingFlag /><p className="text-white text-[17px] leading-[20px]"><ReactMarkdown>{translate("description-locale-bullet-4")}</ReactMarkdown>
               </p>
             </div>
-            <div className="flex flex-row justify-start items-center py-4 gap-2 ">
-              <Tree /><p className="text-white text-[18px] leading-[22px]"><ReactMarkdown>{translate("description-locale-bullet-5")}</ReactMarkdown>
+            <div className="flex flex-row justify-start items-center py-3 gap-2 ">
+              <Tree /><p className="text-white text-[17px] leading-[20px]"><ReactMarkdown>{translate("description-locale-bullet-5")}</ReactMarkdown>
               </p>
             </div>
           </div>
@@ -322,9 +322,9 @@ const Home = () => {
 
 
 
-      <div className="flex justify-center mt-[70px] ">
-        <div className="m relative  xl:mx-[165px]">
-          <div className="relative top-[150px] flex flex-col gap-[30px] items-center mb-[50px] ">
+      <div className="flex justify-center mt-[10px] ">
+        <div className=" relative  xl:mx-[165px]">
+          <div className="relative top-[150px] flex flex-col gap-[30px] items-center mb-[10px] ">
             <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />
             <h1 className=" text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px] text-center xl:text-left">
               {translate("filter-heading")}
@@ -437,7 +437,7 @@ const Home = () => {
       <ApartmentSwiper />
       <Negotiation
         title={translate("negotiation-heading")}
-        subtitle={"Rožňavská 1A, Bratislava"}
+        subtitle={"Rožňavská 1B, Bratislava"}
       />
       {/* <div className={"flex flex-col py-[70px] xl:py-[150px] bg-[#F5F5F5]"}>
         <h2

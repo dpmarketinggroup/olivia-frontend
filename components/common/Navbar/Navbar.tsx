@@ -196,7 +196,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
           <div className="bg-black">{infoSlider()}</div>
         </Marquee>
         <div
-          className={`px-6 relative lg:shadow-none w-full xl:max-w-[1920px] mx-auto h-[100px] flex items-center justify-between`}
+          className={`px-6 relative lg:shadow-none w-full xl:max-w-[1920px] mx-auto h-[80px] flex items-center justify-between`}
         >
 
 
@@ -238,7 +238,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               </Link>
               <div className="xl:hidden flex flex-row justify-center items-center gap-6">
                 <Link href="/ponuka-apartmanov">
-                  <button className={`${isOpenMobileNav ? "hidden" : "block"} w-fit ${isWhite || isScrolled ? "bg-[#f4f4f4]" : "bg-white"} hover:bg-primary  font-medium text-[12px] sm:text-[16px] leading-[24px] tracking-[-0.1px] w-[100px] sm:w-[210px] px-6 hover:text-white text-primary h-[32px] sm:h-[63px] `}>
+                  <button className={`${isOpenMobileNav ? "hidden" : "block"} w-fit ${isWhite || isScrolled ? "bg-[#f4f4f4]" : "bg-white"} hover:bg-primary  font-medium text-[12px] sm:text-[16px] leading-[24px] tracking-[-0.1px] w-[100px] sm:w-[210px] px-6 hover:text-white text-primary h-[32px] sm:h-[59px] `}>
                     {translate("hero-button-white")}
                   </button>
                 </Link>
@@ -254,7 +254,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
             </div>
 
 
-            <div className={`${isOpenMobileNav ? "flex" : "hidden"} flex-col absolute  bg-white w-full top-[6rem] left-0 gap-4 py-2 z-[20]`}>
+            <div className={`${isOpenMobileNav ? "flex" : "hidden"} flex-col absolute  bg-white w-full top-[6rem] left-0 gap-4 py-2 z-[20] h-screen`}>
               <Link href="/ponuka-apartmanov" className={` drop-span p-[3px] text-black uppercase mx-auto`}>
                 {translate("apartment-swiper-link")}
 
@@ -267,17 +267,34 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               </Link>
               <Link href="/o-projekte" className="uppercase text-black mx-auto">{translate("footer-link-about")}
               </Link>
-              <Link href="/kontakt" className={`mt-1 p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-contact")}
+              <Link href="/kontakt" className={`mt-0 md:mt-1 p-0 md:p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-contact")}
               </Link>
-              <Link href="/stretnutie" className=" w-fit">
-                <Link href={"/stretnutie"}
-                  className="flex w-fit mx-auto relative bg-primary text-white max-h-fit  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]">
 
+              <Link href={`/stretnutie`} className="mx-auto">
+                <button
+
+                  className="drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+                >
                   <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
-                  <div className="absolute z-[10] top-0 right-0"><OverButtonIcon /></div>
-                </Link>
+                  <div className="group-hover:hidden block">
 
+                    <ArrowLink fill="#ffffff" />
+                  </div>
+                  <div className="group-hover:block hidden ">
+                    <ArrowLink fill="#087168" />
+                  </div>
+                  <div className="absolute z-[10] top-0 right-0">
+                    <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                      <OverButtonIcon />
+                    </div>
+                    <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                      <OverButtonIcon fill="#087168" />
+                    </div></div>
+
+                </button>
               </Link>
+
               <Link href={"mailto:info@oliviaresidence.sk"} className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2 text-[16px]">
                 <>
                   info@oliviaresidence.sk <ArrowLink />
@@ -350,7 +367,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               <Link href="/stretnutie">
                 <button
 
-                  className="drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+                  className="overflow-hidden drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[28px] py-[18px] text-[18px] max-h-[63px] w-fit group"
                 >
                   <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
 

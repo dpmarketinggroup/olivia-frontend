@@ -31,14 +31,17 @@ const Hero = ({
   const { t: translate } = useTranslation("home");
   return (
     <div className="flex justify-center mt-[40px]">
-      <div className="h-[460px] w-full xl:max-w-[1920px]  relative">
-        <div className="h-full w-full absolute -z-10">
+      <div className="h-[600px] w-full xl:max-w-[1920px]  relative">
+        <div className="h-[600px] w-full absolute -z-10">
           <Image
-            objectFit="cover"
-            layout="fill"
-            alt="hero image"
+            fill
             src={`/img/${imgName}.png`}
-            loading={"eager"}
+            alt="hero image"
+            quality={100}
+            loading="eager"
+            sizes="100vw"
+            style={{ objectFit: "cover" }}
+            priority
           />
         </div>
         <div className="absolute bottom-0 right-0 ">
@@ -57,7 +60,7 @@ const Hero = ({
             {title}
           </h1>
 
-          {description && (<p className="text-[18px] leading-7 text-white mb-[40px] text-center xl:text-start">
+          {description && (<p className="text-[18px] leading-7 text-white mb-[40px] text-start">
             {description}
           </p>)}
 

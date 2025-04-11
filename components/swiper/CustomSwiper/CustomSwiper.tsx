@@ -106,7 +106,7 @@ const CustomSwiper = () => {
             "/img/interier/16.jpg",
             "/img/interier/17.jpg",
           ].map((src, i) => (
-            <SwiperSlide className={`xl:w-full h-[300px]`} key={i}>
+            <SwiperSlide className={`xl:w-full h-[400px]`} key={i}>
               <div className="relative w-fit">
                 <div className="absolute z-[10] top-0 right-0">
                   <div className="flex flex-row">
@@ -132,7 +132,7 @@ const CustomSwiper = () => {
           ))}
 
 
-          <div className="flex flex-col justify-center items-center ">
+          {/* <div className="flex flex-col justify-center items-center ">
             <div className="swiper-scrollbar w-[80%]"></div>
             <div className="gap-[8px] flex ml-auto  ">
               <div className="int-prev md:hidden bg-[#f4f4f4] w-[62px] h-[62px] flex items-center justify-center cursor-pointer hover:opacity-40">
@@ -143,7 +143,7 @@ const CustomSwiper = () => {
               </div>
               <div className="w-[62px] h-[62px] hidden md:block"></div>
             </div>
-          </div>
+          </div> */}
 
 
 
