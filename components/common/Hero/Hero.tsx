@@ -9,6 +9,7 @@ import React from "react";
 import RectangleLight from "@components/icons/RectangleLight";
 import { useTranslation } from "next-i18next";
 import OverButtonIcon from "@components/icons/OverButton";
+import ArrowLink from "@components/icons/ArrowLink";
 
 interface HeroProps {
   imgName: string;
@@ -60,15 +61,21 @@ const Hero = ({
             {description}
           </p>)}
 
-          {button && (<Link href="/stretnutie">
+          {button && (<Link href={`/stretnutie`}>
             <button
 
               className="drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
             >
               <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+              <div className="group-hover:hidden block">
 
+                <ArrowLink fill="#ffffff" />
+              </div>
+              <div className="group-hover:block hidden ">
+                <ArrowLink fill="#087168" />
+              </div>
               <div className="absolute z-[10] top-0 right-0">
-                <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out ">
+                <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
 
                   <OverButtonIcon />
                 </div>
@@ -77,7 +84,6 @@ const Hero = ({
                 </div></div>
 
             </button>
-
           </Link>)}
 
 

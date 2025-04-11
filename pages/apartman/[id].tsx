@@ -829,10 +829,8 @@ const ApartmentDetail = () => {
               {translate("financing")}
             </span>
             <div className="flex gap-[8px] items-center">
-              <Link href="/o-projekte#financovanie">
-                <a className="font-medium text-[20px] leading-5 text-green2">
-                  <p className="border-b-[1px] border-[#0E3F3B]">{translate("more")}</p>
-                </a>
+              <Link href="/o-projekte#financovanie" className="font-medium text-[20px] leading-5 text-green2">
+                <p className="border-b-[1px] border-[#0E3F3B]">{translate("more")}</p>
               </Link>
               <ArrowLink fill="#0E3F3B" />
             </div>
@@ -853,10 +851,8 @@ const ApartmentDetail = () => {
               {translate("superior-equipment")}
             </span>
             <div className="flex gap-[8px] items-center">
-              <Link href={"/o-projekte#vybavenie"}>
-                <a className="font-medium text-[20px] leading-5 text-green2">
-                  <p className="border-b-[1px] border-[#0E3F3B]">{translate("more")}</p>
-                </a>
+              <Link href={"/#vybavenie"} className="font-medium text-[20px] leading-5 text-green2">
+                <p className="border-b-[1px] border-[#0E3F3B]">{translate("more")}</p>
               </Link>
               <ArrowLink fill="#0E3F3B" />
             </div>
@@ -877,10 +873,9 @@ const ApartmentDetail = () => {
               {translate("equipment-heading-3")}
             </span>
             <div className="flex gap-[8px] items-center">
-              <Link href={"/o-projekte#vybavenie"}>
-                <a className="font-medium text-[20px] leading-5 text-green2">
-                  <p className="border-b-[1px] border-[#0E3F3B]">{translate("equipment-link")}</p>
-                </a>
+              <Link href={podorys.data.attributes.url}
+                target={"_blank"} className="font-medium text-[20px] leading-5 text-green2">
+                <p className="border-b-[1px] border-[#0E3F3B]">{translate("equipment-link")}</p>
               </Link>
               <ArrowLink fill="#0E3F3B" />
             </div>
@@ -914,11 +909,10 @@ const ApartmentDetail = () => {
               <div className="absolute top-0 right-[-10px]">
                 <OverButtonBigIcon />
               </div>
-              <div className="space-y-10">
-                <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">Parkovacie státie
-                  v podzemnej garáži</h2>
-                <p className="text-white text-[16px]  ">K bývaniu je možné si zakúpiť garážové státie, vďaka ktorému bude parkovanie komfortné a bezproblémové.</p>
-                <Link href={`/`}>
+              <div className="flex flex-col gap-4">
+                <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-parking-heading")}</h2>
+                <p className="text-white text-[16px] mt-10 ">{translate("description-parking-text")}</p>
+                <Link href={`/stretnutie`}>
                   <button
 
                     className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
@@ -952,12 +946,10 @@ const ApartmentDetail = () => {
               <div className="absolute top-0 right-[-10px]">
                 <OverButtonBigIcon />
               </div>
-              <div className="space-y-10">
-                <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">Úložné priestory
-                  na vlastnom podlaží</h2>
-                <p className="text-white text-[16px]  ">K bývaniu je možné si zakúpiť aj úložný priestor na Vašom poschodí,
-                  aby ste mali svoje vybavenie vždy po ruke.</p>
-                <Link href={`/`}>
+              <div className="flex flex-col gap-4">
+                <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-storage-heading")}</h2>
+                <p className="text-white text-[16px]  mt-10 ">{translate("description-storage-text")}</p>
+                <Link href={`/stretnutie`}>
                   <button
 
                     className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
@@ -1006,7 +998,7 @@ const ApartmentDetail = () => {
         </div>
       </div >
       <CustomSwiper />
-      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-[200px] ">
+      <div id="vybavenie" className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-[200px] ">
         <div className="absolute top-0 right-[-10px]">
           <OverButtonBigIcon height="259" width="259" />
         </div>
@@ -1014,39 +1006,50 @@ const ApartmentDetail = () => {
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
-            width={"422.5"}
-            height="312.32"
+            width={422.5}
+            height={312.32}
           />
         </div>
         <div className="hidden lg:flex absolute top-[-20%] right-10 md:right-20 z-[6]">
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
-            width={"650"}
-            height="488"
+            width={650}
+            height={488}
           />
         </div>
         <div className="flex md:hidden absolute top-[-10%] right-[-120px] md:right-20 z-[6]">
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
-            width={"357.5"}
-            height="268.4"
+            width={357.5}
+            height={268.4}
           />
         </div>
         <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
           {translate("download-h")}
         </p>
-        <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
-          <button
-            className={
-              "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"
-            }
-          >
-            {translate("download-button")}
+        <div className="flex flex-col md:flex-row gap-2">
+          <Link href="/Karta vybavenia OLIVIA Residence.pdf">
+            <button
+              className={
+                "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"
+              }
+            >
+              {translate("equipment-house")}
 
-          </button>
-        </Link>
+            </button>
+          </Link>
+          <Link href="/OLIVIA Residence_štandard projektu.pdf">
+            <button
+              className={
+                "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"
+              }
+            >
+              {translate("equipment-apartman")}
+
+            </button>
+          </Link></div>
       </div>
       <MapFooter />
     </>
