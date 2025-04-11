@@ -74,7 +74,7 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
   const { t: translate } = useTranslation("home");
   return (
     <form onSubmit={handleSubmit} className={isGreen ? "green" : "grey"}>
-      <div className="mx-4 xl:mx-0">
+      <div className=" xl:mx-0">
         {meeting && (
           <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] items-center mb-[45px]">
             <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">

@@ -249,11 +249,11 @@ muted={true}
               <Tree /><p className="text-white text-[18px] leading-[22px]"><ReactMarkdown>{translate("description-locale-bullet-5")}</ReactMarkdown>
               </p>
             </div>
-            <button className=" mt-4 relative bg-yellow text-[#0E3F3B] flex flex-row justify-between  items-center gap-2 px-[32px] py-[22px] w-full text-[18px] max-h-[96px] h-[96px]">
+            <Link href={'/stretnutie'} className=" mt-4 relative bg-yellow text-[#0E3F3B] flex flex-row justify-between  items-center gap-2 px-[32px] py-[22px] w-full text-[18px] max-h-[96px] h-[96px]">
               {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
               <p className="text-[22px] font-medium leading-[24px]">{translate("button-meeting")}</p><Booking />
               <div className="absolute z-[10] top-0 right-0"><OverButtonIcon height="96" width="158" /></div>
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -278,7 +278,7 @@ muted={true}
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
-            width={422.5}
+            width={422}
             height={312.32}
           />
         </div>
@@ -301,7 +301,7 @@ muted={true}
         <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
           {translate("download-h")}
         </p>
-        <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+        <Link href="/Karta vybavenia OLIVIA Residence.pdf">
           <button
             className={
               "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"

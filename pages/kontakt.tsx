@@ -35,7 +35,7 @@ const Kontakt = () => {
         button={true}
         title={translate("hero-contact-heading")}
       />
-      <div className="mx-auto flex flex-col mt-40 px-10 pb-10 xl:pb-0 pt-10 bg-bgLight max-w-[1200px] relative">
+      <div className="mx-auto flex flex-col mt-40 px-4 md:px-10 pb-10 xl:pb-0 pt-10 bg-bgLight max-w-[1200px] relative">
         <div className="absolute bottom-0 left-0 z-[10]">
           <div className="flex flex-row ">
             <div className="bg-white h-[30px] md:h-[50px] w-[30px] md:w-[50px]"></div>

@@ -37,7 +37,7 @@ const MapFooter = () => {
                                     {translate("button-meeting")}
                                 </button>
                             </Link>
-                            <Link href="" >
+                            <Link href="https://www.google.com/maps/dir//Ro%C5%BE%C5%88avsk%C3%A1+1a,+831+04+Nov%C3%A9+Mesto/@48.1675611,17.1520738,143m/data=!3m1!1e3!4m18!1m8!3m7!1s0x476c8edad89e5d75:0xe415d86edbc1a2ae!2zUm_FvsWIYXZza8OhIDFhLCA4MzEgMDQgTm92w6kgTWVzdG8!3b1!8m2!3d48.1675602!4d17.1527175!16s%2Fg%2F11lktct9kn!4m8!1m0!1m5!1m1!1s0x476c8edad89e5d75:0xe415d86edbc1a2ae!2m2!1d17.1527175!2d48.1675602!3e3?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
                                 <button className="relative hover:bg-white bg-primary hover:text-primary text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] max-h-[62px] min-w-fit text-[18px] w-full sm:w-fit group drop-shadow-md hover:scale-105 transform transition-transform duration-300 ease-in-out">
                                     {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
                                     <p className="text-[18px] leading-[18px]">{translate("button-direction")}</p>

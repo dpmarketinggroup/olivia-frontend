@@ -254,7 +254,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
             </div>
 
 
-            <div className={`${isOpenMobileNav ? "flex" : "hidden"} flex-col absolute  bg-white w-full top-[6rem] left-0 gap-4 py-2`}>
+            <div className={`${isOpenMobileNav ? "flex" : "hidden"} flex-col absolute  bg-white w-full top-[6rem] left-0 gap-4 py-2 z-[20]`}>
               <Link href="/ponuka-apartmanov" className={` drop-span p-[3px] text-black uppercase mx-auto`}>
                 {translate("apartment-swiper-link")}
 
@@ -270,12 +270,12 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               <Link href="/kontakt" className={`mt-1 p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-contact")}
               </Link>
               <Link href="/stretnutie" className=" w-fit">
-
-                <button className="flex w-fit mx-auto relative bg-primary text-white max-h-fit  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]">
+                <Link href={"/stretnutie"}
+                  className="flex w-fit mx-auto relative bg-primary text-white max-h-fit  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]">
 
                   <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
                   <div className="absolute z-[10] top-0 right-0"><OverButtonIcon /></div>
-                </button>
+                </Link>
 
               </Link>
               <Link href={"mailto:info@oliviaresidence.sk"} className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2 text-[16px]">

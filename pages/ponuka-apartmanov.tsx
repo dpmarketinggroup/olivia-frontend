@@ -218,7 +218,7 @@ const PonukaBytov = () => {
         <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
           {translate("download-h")}
         </p>
-        <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+        <Link href="/Karta vybavenia OLIVIA Residence.pdf">
           <button
             className={
               "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"
@@ -258,7 +258,7 @@ const PonukaBytov = () => {
               <div className="flex flex-col gap-4">
                 <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-parking-heading")}</h2>
                 <p className="text-white text-[16px] mt-10 ">{translate("description-parking-text")}</p>
-                <Link href={`/`}>
+                <Link href={`/stretnutie`}>
                   <button
 
                     className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
@@ -295,7 +295,7 @@ const PonukaBytov = () => {
               <div className="flex flex-col gap-4">
                 <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-storage-heading")}</h2>
                 <p className="text-white text-[16px]  mt-10 ">{translate("description-storage-text")}</p>
-                <Link href={`/`}>
+                <Link href={`/stretnutie`}>
                   <button
 
                     className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"

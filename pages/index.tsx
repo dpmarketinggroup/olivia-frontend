@@ -116,7 +116,7 @@ const Home = () => {
               <p className="text-white text-[16px] mt-6">{translate("hero-desc")}</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 sm:mx-4 xl:mx-0">
-              <Link href={`/`}>
+              <Link href={`/stretnutie`}>
                 <button
 
                   className="drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
@@ -237,7 +237,7 @@ const Home = () => {
         <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
           {translate("download-h")}
         </p>
-        <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+        <Link href="/Karta vybavenia OLIVIA Residence.pdf">
           <button
             className={
               "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"

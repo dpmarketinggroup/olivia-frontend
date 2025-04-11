@@ -137,30 +137,30 @@ const OProjekte = () => {
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
-            width={"422.5"}
-            height="312.32"
+            width={422.5}
+            height={312.32}
           />
         </div>
         <div className="hidden lg:flex absolute top-[-20%] right-10 md:right-20 z-[6]">
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
-            width={"650"}
-            height="488"
+            width={650}
+            height={488}
           />
         </div>
         <div className="flex md:hidden absolute top-[-10%] right-[-120px] md:right-20 z-[6]">
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
-            width={"357.5"}
-            height="268.4"
+            width={357.5}
+            height={268.4}
           />
         </div>
         <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
           {translate("download-h")}
         </p>
-        <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+        <Link href="/Karta vybavenia OLIVIA Residence.pdf">
           <button
             className={
               "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"
@@ -262,7 +262,7 @@ const OProjekte = () => {
               <div className="space-y-10">
                 <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-parking-heading")}</h2>
                 <p className="text-white text-[16px]  ">{translate("description-parking-text")}</p>
-                <Link href={`/`}>
+                <Link href={`/stretnutie`}>
                   <button
 
                     className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
@@ -299,7 +299,7 @@ const OProjekte = () => {
               <div className="space-y-10">
                 <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-storage-heading")}</h2>
                 <p className="text-white text-[16px]  ">{translate("description-storage-text")}</p>
-                <Link href={`/`}>
+                <Link href={`/stretnutie`}>
                   <button
 
                     className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
@@ -499,8 +499,8 @@ const OProjekte = () => {
           </div>
         </div>
         <div className="xl:max-w-[1200px] mx-auto pb-[30rem]   md:pb-40 lg:pb-20 pt-10">
-          <h2 className="text-black h-[200px] text-[48px] text-center mx-auto ">{translate("financing")}</h2>
-          <div className="absolute bottom-[-100px] w-full left-1/2 transform -translate-x-1/2">
+          <h2 className="relative text-black h-[200px] text-[48px] text-center mx-auto z-[10] ">{translate("financing")}</h2>
+          <div className="absolute bottom-[-100px] w-full left-1/2 transform -translate-x-1/2 z-[5]">
             <div className="bg-yellow max-w-[1200px] relative p-6 md:p-8 mx-4 lg:mx-auto">
               <div className="absolute top-0 right-[-10px]">
                 <OverButtonBigIcon height="259" width="259" />
@@ -510,7 +510,7 @@ const OProjekte = () => {
                   <h3 className="text-[42px] text-[#0E3F3B] leading-none mb-8 w-[70%]">{translate("financial-helper")}</h3>
                   <p className="text-[18px] text-[#0E3F3B] w-[90%]">{translate("financial-helper-text")}</p>
                 </div>
-                <Link href="/">
+                <Link href="/kontakt">
                   <button
                     className={
                       "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10] w-full md:w-fit h-fit  "
@@ -583,8 +583,8 @@ const OProjekte = () => {
           </div>
           <div className="h-[78px] xl:h-[100px] w-[120px] xl:w-[120px] relative">
             <Image
-              width={10}
-              height={10}
+
+
               fill
               alt="tatrabanka"
               src="/img/tatrabanka.svg"

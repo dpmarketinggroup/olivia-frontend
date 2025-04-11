@@ -316,7 +316,7 @@ export const TransportDescription: FunctionComponent<TransportDescriptionProps> 
 
         </div>
 
-        <Link href={`/`}>
+        <Link href={`/stretnutie`}>
           <button
 
             className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"

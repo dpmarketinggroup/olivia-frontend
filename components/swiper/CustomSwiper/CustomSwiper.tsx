@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import OverButtonIcon from "@components/icons/OverButton";
 import ArrowLink from "@components/icons/ArrowLink";
-
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/scrollbar";
 const CustomSwiper = () => {
@@ -26,7 +26,7 @@ const CustomSwiper = () => {
           <h3 className="text-[46px] leading-[46px] xl:text-[56px] xl:leading-[48px]  text-center xl:text-left text-black">
             {translate("gallery-swiper-heading")}
           </h3>
-          <button
+          <Link href={"/stretnutie"}
 
             className="mt-4 hidden drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white md:flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
           >
@@ -47,7 +47,7 @@ const CustomSwiper = () => {
                 <OverButtonIcon fill="#087168" />
               </div></div>
 
-          </button>
+          </Link>
 
         </div>
         <Swiper
@@ -158,11 +158,11 @@ const CustomSwiper = () => {
           <RightArrow className="w-[20px] h-[20px]" stroke="#087168" />
         </div>
       </div>
-      <button className="mt-8 relative bg-primary text-white md:hidden flex flex-row justify-center items-center gap-2 w-full px-[32px] py-[22px] text-[18px] max-h-[62px]">
+      <Link href={"/stretnutie"} className="mt-8 relative bg-primary text-white md:hidden flex flex-row justify-center items-center gap-2 w-full px-[32px] py-[22px] text-[18px] max-h-[62px]">
         {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
         <p className="text-[18px] leading-[18px] ">{translate("button-meeting")}</p> <ArrowLink fill="#ffffff" />
         <div className="absolute z-[10] top-0 right-0"><OverButtonIcon /></div>
-      </button>
+      </Link>
     </div >
   );
 };
