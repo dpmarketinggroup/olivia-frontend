@@ -195,24 +195,24 @@ const PonukaBytov = () => {
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
-            width={"422.5"}
-            height="312.32"
+            width={422.5}
+            height={312.32}
           />
         </div>
         <div className="hidden lg:flex absolute top-[-20%] right-10 md:right-20 z-[6]">
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
-            width={"650"}
-            height="488"
+            width={650}
+            height={488}
           />
         </div>
         <div className="flex md:hidden absolute top-[-10%] right-[-120px] md:right-20 z-[6]">
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
-            width={"357.5"}
-            height="268.4"
+            width={357.5}
+            height={268.4}
           />
         </div>
         <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
@@ -255,9 +255,9 @@ const PonukaBytov = () => {
               <div className="absolute top-0 right-[-10px]">
                 <OverButtonBigIcon />
               </div>
-              <div className="space-y-10">
+              <div className="flex flex-col gap-4">
                 <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-parking-heading")}</h2>
-                <p className="text-white text-[16px]  ">{translate("description-parking-text")}</p>
+                <p className="text-white text-[16px] mt-10 ">{translate("description-parking-text")}</p>
                 <Link href={`/`}>
                   <button
 
@@ -292,9 +292,9 @@ const PonukaBytov = () => {
               <div className="absolute top-0 right-[-10px]">
                 <OverButtonBigIcon />
               </div>
-              <div className="space-y-10">
+              <div className="flex flex-col gap-4">
                 <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-storage-heading")}</h2>
-                <p className="text-white text-[16px]  ">{translate("description-storage-text")}</p>
+                <p className="text-white text-[16px]  mt-10 ">{translate("description-storage-text")}</p>
                 <Link href={`/`}>
                   <button
 
