@@ -120,7 +120,7 @@ const OProjekte = () => {
         <title>O projekte | Olivia Residence</title>
       </Head>
       <Hero
-        imgName={"hero_o_projekt"}
+        imgName={"495"}
         button={true}
         title={translate("footer-link-about")}
         description={""}

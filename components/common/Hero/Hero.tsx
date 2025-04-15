@@ -39,7 +39,7 @@ const Hero = ({
             alt="hero image"
             quality={100}
             loading="eager"
-            sizes="100vw"
+            sizes="(min-width: 1280px) 1920px, 100vw"
             style={{ objectFit: "cover" }}
           />
         </div>
