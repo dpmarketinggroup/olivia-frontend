@@ -71,7 +71,7 @@ const Kontakt = () => {
             </p>
           </div>
           <div className="xl:mb-[125px] w-full md:w-1/2">
-            <h2 className=" text-[48px] leading-[50px] w-2/3 mb-[20px] ">
+            <h2 className=" text-[48px] leading-[50px]  mb-[20px] ">
               {translate("form-heading")}
             </h2>
             <Form isGreen={false} />

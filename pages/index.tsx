@@ -324,7 +324,7 @@ const Home = () => {
 
       <div className="flex justify-center mt-[10px] ">
         <div className=" relative  xl:mx-[165px]">
-          <div className="relative top-[150px] flex flex-col gap-[30px] items-center mb-[10px] ">
+          <div className="relative top-[40px] md:top-[150px] flex flex-col gap-[30px] items-center mb-[10px] ">
             <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />
             <h1 className=" text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px] text-center xl:text-left">
               {translate("filter-heading")}

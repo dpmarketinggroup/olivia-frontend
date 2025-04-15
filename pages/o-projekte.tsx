@@ -120,7 +120,7 @@ const OProjekte = () => {
         <title>O projekte | Olivia Residence</title>
       </Head>
       <Hero
-        imgName={"495"}
+        imgName={"hero_o_projekt"}
         button={true}
         title={translate("footer-link-about")}
         description={""}
@@ -194,7 +194,7 @@ const OProjekte = () => {
                 muted={true}
                 loop={true}
               >
-                <source type="video/mp4" src="/videos/zaluzie.mp4" />
+                <source type="video/mp4" src="/videos/zaluzie.webm" />
                 {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
                 {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
               </video>

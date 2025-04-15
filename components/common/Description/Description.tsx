@@ -148,12 +148,12 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
       className={`relative mt-[20rem] md:mt-[25rem] xl:mt-[200px]  flex flex-row  justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
       <div className={"relative shrink-0 mb-0 "}>
-        <div className={`bg-white w-[50px] md:w-[80px] h-[850px] ${button ? "md:h-[600px]" : "md:h-[560px]"}`}></div>
+        <div className={`bg-white w-[50px] md:w-[80px] h-[800px] ${button ? "md:h-[600px]" : "md:h-[560px]"}`}></div>
 
         {/* <div className={`relative z-[5] w-[50px] md:w-[100px] h-[250px] bg-white`}></div> */}
 
-        <div className="absolute left-0 top-[-150px] md:top-[-80px] z-[10]">
-          <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] md:w-[425px] md:h-[425px] lg:w-[550px] lg:h-[550px]"}>
+        <div className="absolute left-0 top-[-80px] md:top-[-80px] z-[10]">
+          <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[280px] h-[280px] md:w-[425px] md:h-[425px] lg:w-[550px] lg:h-[550px]"}>
             <div className="absolute top-0 left-0 z-[10]">
               <div className="flex flex-row">
                 <div className="w-[35px] sm:w-[50px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-white"></div>

@@ -41,7 +41,6 @@ const Hero = ({
             loading="eager"
             sizes="100vw"
             style={{ objectFit: "cover" }}
-            priority
           />
         </div>
         <div className="absolute bottom-0 right-0 ">
