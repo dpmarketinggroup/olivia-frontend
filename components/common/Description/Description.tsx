@@ -64,8 +64,8 @@ const Description: FunctionComponent<DescriptionProps> = ({
 
         <div className={`relative  z-[5] w-[50px] md:w-[100px] ${video ? "h-[90vh]" : ""} bg-white`}></div>
         {video ?
-          (<div className="absolute left-0 top-[-200px] md:top-[-100px] z-[10]">
-            <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] sm:w-[425px] sm:h-[425px] lg:w-[550px] lg:h-[550px]"}>
+          (<div className="absolute left-[40px] top-[-200px] md:top-[-100px] z-[10]">
+            <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] sm:w-[425px] sm:h-[425px] lg:w-[580px] lg:h-[580px]"}>
               <div className="absolute top-0 left-0 z-[10]">
                 <div className="flex flex-row">
                   <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-white"></div>
@@ -148,12 +148,12 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
       className={`relative mt-[30rem] md:mt-[25rem] xl:mt-[200px]  flex flex-row  justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
       <div className={"relative shrink-0 mb-0 "}>
-        <div className="bg-white w-[50px] md:w-[80px] h-[850px] md:h-[560px]"></div>
+        <div className={`bg-white w-[50px] md:w-[80px] h-[850px] ${button ? "md:h-[660px]" : "md:h-[560px]"}`}></div>
 
         {/* <div className={`relative z-[5] w-[50px] md:w-[100px] h-[250px] bg-white`}></div> */}
 
-        <div className="absolute left-0 top-[-80px] z-[10]">
-          <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] sm:w-[425px] sm:h-[425px] lg:w-[450px] lg:h-[450px]"}>
+        <div className="absolute left-0 top-[-150px] md:top-[-80px] z-[10]">
+          <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] md:w-[425px] md:h-[425px] lg:w-[550px] lg:h-[550px]"}>
             <div className="absolute top-0 left-0 z-[10]">
               <div className="flex flex-row">
                 <div className="w-[35px] sm:w-[50px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-white"></div>
@@ -184,7 +184,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
           {translate('description-heading')} <br />
           OLIVIA Residence?
         </h3>
-        <div className="my-[25px] flex flex-col gap-4">
+        <div className="my-[25px] flex flex-col gap-2 md:gap-4">
           {bullets.map((bullet, index) => {
             const Icon = bullet.icon;
             return (
@@ -363,13 +363,13 @@ export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
   const { t: translate } = useTranslation("home");
   return (
     <div
-      className={`relative my-[200px] flex flex-row justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} `}
+      className={`px-2 relative my-[200px] flex flex-row justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} `}
     >
       <div className="bg-white w-[50px] sm:w-[80px] h-[750px] sm:h-[400px]"></div>
 
 
       <div className={`absolute z-[20] left-0 top-[750px] md:top-[-80px] lg:top-[-80px] `}>
-        <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[400px] lg:w-[400px]">
+        <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px]">
           <div className={`absolute bottom-0 md:top-0 left-0 z-[10]`}>
             <div className="flex flex-row">
               <div className={`w-[35px] sm:w-[60px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px]  bg-white`}></div>

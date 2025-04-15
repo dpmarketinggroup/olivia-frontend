@@ -200,9 +200,9 @@ const OProjekte = () => {
               </video>
             </div>
           </div>
-          <div className="w-full md:w-[45%] space-y-10 ml-4 px-4 pt-40 md:pt-2 md:ml-10 my-4 md:my-10">
+          <div className="w-full md:w-[45%] flex flex-col gap-8 ml-4 px-4 pt-40 md:pt-2 md:ml-10 my-4 md:my-10">
             <h2 className="text-black text-[48px] leading-none">{translate("description-lokalita-5-heading-1")}<span className="text-primary" >{translate("description-lokalita-5-heading-2")}</span>{translate("description-lokalita-5-heading-3")}</h2>
-            <p className="text-black text-[24px] leading-[32px] w-[90%]">{translate("description-lokalita-5-description")}</p>
+            <p className="text-black text-[24px] leading-[32px] w-[90%] mb-12 ">{translate("description-lokalita-5-description")}</p>
             <Link href="/stretnutie">
               <button
 
@@ -229,7 +229,7 @@ const OProjekte = () => {
 
             </Link>
           </div>
-          <div className="w-[80px] md:w-[100px] h-[90vh] sm:h-[80vh] bg-white"></div>
+          <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[600px] sm:h-[500px] bg-white"></div>
         </div>
       </div>
 

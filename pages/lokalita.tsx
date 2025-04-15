@@ -146,7 +146,7 @@ const Lokalita = () => {
               muted={true}
               loop={true}
             >
-              <source type="video/mp4" src="/videos/hero.mp4" />
+              <source type="video/mp4" src="/videos/250206OR6501-LOKALITA-shorter-16x9.mp4" />
               {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
               {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
             </video>
@@ -222,7 +222,7 @@ muted={true}
       </div> */}
       <div className="max-w-[1200px]  xl:w-full mx-auto relative h-fit xl:h-4 mb-20">
 
-        <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-170px] z-[10]">
+        <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-250px] z-[10]">
 
           <div className="block">
 
@@ -248,7 +248,7 @@ muted={true}
         <div className="bg-white h-[1150px] sm:h-[1080px] lg:h-[550px] w-[40px] sm:w-[80px] mr-2 sm:mr-6">
 
         </div>
-        <div className={"bottom-0 absolute left-0 shrink-0  xl:mb-0 w-[300px] h-[300px] sm:w-[450px] sm:h-[450px]"}>
+        <div className={"bottom-0 absolute left-0 shrink-0  xl:mb-0 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px]"}>
           <div className="relative">
             <div className="absolute bottom-0 z-[10]">
               <div className="flex flex-row">

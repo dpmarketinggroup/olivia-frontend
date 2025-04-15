@@ -152,7 +152,7 @@ const Home = () => {
       </div >
       <div className="max-w-[1200px]  xl:w-full mx-auto relative h-fit xl:h-4 mb-20">
 
-        <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-200px] z-[10]">
+        <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-250px] z-[10]">
 
           <div className="hidden md:block">
 
@@ -250,10 +250,10 @@ const Home = () => {
       </div>
 
       <div className="max-w-[1200px] w-full mt-[100px] bg-primary mx-auto pb-4 sm:pb-6 pr-4 sm:pr-6 flex flex-row gap-6 justify-between relative">
-        <div className="bg-white h-[1150px] sm:h-[1080px] lg:h-[550px] w-[40px] sm:w-[80px] mr-2 sm:mr-6">
+        <div className="bg-white h-[1150px] sm:h-[1080px] lg:h-[620px] w-[40px] sm:w-[80px] mr-2 sm:mr-6">
 
         </div>
-        <div className={"bottom-0 absolute left-0 shrink-0  xl:mb-0 w-[300px] h-[300px] sm:w-[450px] sm:h-[450px]"}>
+        <div className={"bottom-0 absolute left-0 shrink-0  xl:mb-0 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px]"}>
           <div className="relative">
             <div className="absolute bottom-0 z-[10]">
               <div className="flex flex-row">
