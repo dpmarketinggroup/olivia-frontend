@@ -175,7 +175,7 @@ const OProjekte = () => {
       <div className="w-full mx-auto mt-[25rem] mb-40 max-w-[1200px] ">
         <div className="bg-bgLight  flex flex-row relative justify-between items-end">
 
-          <div className="absolute right-0 top-[-200px] sm:top-[-300px] md:top-[-100px] z-[10]">
+          <div className="absolute right-0 top-[-150px] sm:top-[-300px] md:top-[-100px] z-[10]">
             <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] sm:w-[425px] sm:h-[425px] lg:w-[550px] lg:h-[550px]"}>
               <div className="absolute top-0 right-0 z-[10]">
                 <div className="flex flex-row">
