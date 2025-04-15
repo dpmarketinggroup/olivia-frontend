@@ -220,7 +220,7 @@ muted={true}
 
         </video>
       </div> */}
-      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-fit xl:h-4 mb-20">
+      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-fit xl:h-4 mb-60 xl:mb-20">
 
         <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-250px] z-[10]">
 
@@ -336,7 +336,7 @@ muted={true}
         {translate("description-main-heading")}
       </h2> */}
       <CommonDescription fill={"black"} className="bg-bgLight" />
-      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-8 w-full max-w-[1200px] mx-auto mb-[250px] mt-[200px] ">
+      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-8 w-full max-w-[1200px] mx-auto mb-[100px] md:mb-[250px] mt-[100px] md:mt-[200px] ">
         <div className="absolute top-0 right-[-10px]">
           <OverButtonBigIcon height="259" width="259" />
         </div>

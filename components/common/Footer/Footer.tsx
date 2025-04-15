@@ -194,7 +194,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
 
               <div className=" flex flex-col gap-[15px] items-start  font-medium text-[14px] xl:text-[14px] leading-5 xl:leading-6 text-black ">
                 <h5 className="opacity-60">{translate("footer-sale-place")}</h5>
-                <h5 className="font-normal opacity-60">Rožňavská 1A</h5>
+                <h5 className="font-normal opacity-60">Rožňavská 1B</h5>
                 <h5 className="font-normal opacity-60">831 04 Bratislava</h5>
                 <Link legacyBehavior href={"mailto:info@oliviaresidence.sk"}>
                   <a className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2">info@oliviaresidence.sk <ArrowLink /></a>

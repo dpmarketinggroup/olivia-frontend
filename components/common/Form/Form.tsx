@@ -14,9 +14,10 @@ import { OverButtonIcon } from "@components/icons";
 interface FormProps {
   meeting?: boolean;
   isGreen: boolean;
+  podnet?: boolean;
 }
 
-const Form = ({ meeting = false, isGreen }: FormProps) => {
+const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
   const { capchaToken, recaptchaRef, handleRecaptcha } = useRecaptcha();
   const router = useRouter();
   const [isClicked1, setClicked1] = useState(false);
@@ -43,18 +44,15 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
 
     try {
       setLoading(true);
-      await axios.post("/api/enquiry", {
-        body: JSON.stringify({
-          type: `${meeting ? "stretnutie" : "kontakt"}`,
-          name,
-          surname,
-          email,
-          phone,
-          message,
-          apartment: getApartment(),
-        }),
+      await axios.post(podnet ? "/api/podnety" : "/api/enquiry", {
+        type: meeting ? "stretnutie" : "kontakt",
+        name,
+        surname,
+        email,
+        phone,
+        message,
+        apartment: getApartment(),
       });
-
       await router.push("/dakujeme");
     } catch (e) {
 
@@ -202,7 +200,7 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
             className={`py-[12px] ${meeting
               ? "relative bg-yellow text-white  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]"
               : "relative bg-primary text-white  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]"
-              } text-white flex items-center justify-center gap-[10px] w-full md:w-fit h-[63px] group hover:bg-white hover:scale-105 transform transition-transform duration-300 ease-in-out drop-shadow-md`}
+              } text-white flex items-center justify-center gap-[10px] w-full md:w-fit h-[63px] group hover:bg-white hover:scale-105 transform transition-transform duration-300 ease-in-out drop-shadow-md cursor-pointer`}
           >
 
             <p className="text-[18px] group-hover:text-primary text-white leading-[18px]"> {translate("form-button")}</p>

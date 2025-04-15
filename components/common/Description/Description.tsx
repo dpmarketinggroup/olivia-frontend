@@ -145,7 +145,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
 
   return (
     <div
-      className={`relative mt-[30rem] md:mt-[25rem] xl:mt-[200px]  flex flex-row  justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
+      className={`relative mt-[20rem] md:mt-[25rem] xl:mt-[200px]  flex flex-row  justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
       <div className={"relative shrink-0 mb-0 "}>
         <div className={`bg-white w-[50px] md:w-[80px] h-[850px] ${button ? "md:h-[660px]" : "md:h-[560px]"}`}></div>
@@ -250,8 +250,8 @@ export const TransportDescription: FunctionComponent<TransportDescriptionProps> 
   const { t: translate } = useTranslation("home");
   return (
     <div
-      className={`relative mt-[350px] mb-[400px] md:mb-[500px] md:mt-[300px]  flex  flex-row-reverse justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
-    >   <div className="bg-white w-[50px] md:w-[80px] md:h-[400px] h-[800px]"></div>
+      className={`relative mt-[200px] mb-[400px] md:mb-[500px] md:mt-[300px]  flex  flex-row-reverse justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
+    >   <div className="bg-white w-[35px] sm:w-[60px] lg:w-[80px] md:h-[400px] h-[800px]"></div>
 
 
 
@@ -365,7 +365,7 @@ export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
     <div
       className={`px-2 relative my-[200px] flex flex-row justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} `}
     >
-      <div className="bg-white w-[50px] sm:w-[80px] h-[750px] sm:h-[400px]"></div>
+      <div className="bg-white w-[35px] sm:w-[60px] lg:w-[80px] h-[750px] sm:h-[400px]"></div>
 
 
       <div className={`absolute z-[20] left-0 top-[750px] md:top-[-80px] lg:top-[-80px] `}>

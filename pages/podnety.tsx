@@ -1,259 +1,81 @@
-import { SyntheticEvent, useState } from "react";
-import { Checkbox, Textarea, TextInput, Input, Loader } from "@mantine/core";
-import Link from "next/link";
-import axios from "axios";
-import PhoneInput from "react-phone-number-input";
-import "react-phone-number-input/style.css";
-import { E164Number } from "libphonenumber-js";
+import { Form, Hero, MapFooter } from "@components/common";
+import { EmailSign, PhoneHero } from "@components/icons";
+import Image from "next/image";
 import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
-import ReCAPTCHA from 'react-google-recaptcha';
-import useRecaptcha from '@components/common/useRecaptcha'
-import PaperPlaneIcon from "@components/icons/PaperPlane";
-import { OverButtonIcon } from "@components/icons";
 import Head from "next/head";
+import Link from "next/link";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import PhoneIcon from "@components/icons/Phone";
+import React from "react";
 
-interface FormProps {
-  meeting?: boolean;
-  isGreen: boolean;
-}
-
-type Bulletpoint = {
-  icon: JSX.Element;
-  label: string;
-};
-
-interface CustomDescriptionProps {
-  src: string;
-  title: string;
-  description: string;
-  bulletPoints: Bulletpoint[];
-  reverse?: boolean;
-}
-
-const Podnety = () => {
-
+const Kontakt = () => {
   const { t: translate } = useTranslation("home");
-
-  const { capchaToken, recaptchaRef, handleRecaptcha } = useRecaptcha();
-  const router = useRouter();
-  const [isClicked1, setClicked1] = useState(false);
-  const [isClicked2, setClicked2] = useState(false);
-
-
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-
-  const [loading, setLoading] = useState(false);
-
-  function getApartment() {
-    if (!isClicked1 && !isClicked2) return;
-    if (isClicked1) return "apartmán";
-    if (isClicked2) return "obchodný priestor";
-  }
-
-  async function handleSubmit(e: SyntheticEvent) {
-    e.preventDefault();
-    if (!name || !surname || !email || !capchaToken) return;
-
-    try {
-      setLoading(true);
-      await axios.post("/api/enquiry", {
-        body: JSON.stringify({
-          type: "podnet",
-          name,
-          surname,
-          email,
-          phone,
-          message,
-          apartment: getApartment(),
-        }),
-      });
-
-      await router.push("/dakujeme");
-    } catch (e) {
-
-      await router.push("/notsender");
-      console.log(name + surname + email + phone + message);
+  const { asPath, locale, locales, push } = useRouter();
+  function telNumber() {
+    if (locale === "sk") {
+      return (
+        <div className="flex gap-[20px] items-center mb-[100px] xl:mb-[20px]">
+          <PhoneIcon />
+          <Link legacyBehavior href={"tel:+421901923324"}>
+            <a className="font-bold text-[18px] text-primary leading-7">+421 901 923 324</a>
+          </Link>
+        </div>
+      );
     }
-
-
-
-    // Reset captcha after submission
-    recaptchaRef.current?.reset();
-    setLoading(false);
-
-
-
   }
 
   return (
-    <>
+    <div className={"flex flex-col"}>
       <Head>
         <title>Podnety | Olivia Residence</title>
       </Head>
 
-
-      <form onSubmit={handleSubmit} className={""}>
-        <div className="mx-4 xl:mx-0">
-
-          <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] items-center mb-[45px]">
-            <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">
-              {translate("form-interested-in")}
-            </span>
-            <Checkbox
-              checked={isClicked1}
-              onClick={() => {
-                if (isClicked2) setClicked2(false);
-                setClicked1(!isClicked1);
-              }}
-              label={
-                <>
-                  <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
-                    {translate("form-interested-apartment")}
-                  </span>
-                </>
-              }
-              radius="xl"
-            />
-            <Checkbox
-              checked={isClicked2}
-              onClick={() => {
-                if (isClicked1) setClicked1(false);
-                setClicked2(!isClicked2);
-              }}
-              label={
-                <>
-                  <span className="font-bold text-[16px] xl:text-[18px] leading-7 text-white">
-                    {translate("form-interested-commercial")}
-                  </span>
-                </>
-              }
-              radius="xl"
-            />
+      <div className="mx-auto mb-10 flex flex-col mt-40 px-4 md:px-10 pb-10 xl:pb-0 pt-10 bg-bgLight max-w-[1200px] relative">
+        <div className="absolute bottom-0 left-0 z-[10]">
+          <div className="flex flex-row ">
+            <div className="bg-white h-[30px] md:h-[50px] w-[30px] md:w-[50px]"></div>
+            <div className="bg-transparent h-[30px] md:h-[50px] w-[30px] md:w-[50px]"></div>
           </div>
-
-          <div className="flex flex-col gap-[15px] w-full xl:w-[645px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] w-full">
-              <TextInput
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder={translate("form-first-name") + "*" || ""}
-                radius="xs"
-                required={true}
-                withAsterisk
-
-              />
-
-              <TextInput
-                value={surname}
-                onChange={(e) => setSurname(e.target.value)}
-                placeholder={translate("form-second-name") + "*" || ""}
-                radius="xs"
-                required={true}
-                withAsterisk
-
-              />
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] w-full">
-              <TextInput
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email*"
-                radius="xs"
-                required={true}
-                withAsterisk
-
-              />
-
-              <TextInput
-                style={{
-                  height: "50px",
-                }}
-
-                value={phone}
-
-                className={`placeholder:text-black `}
-                onChange={(val) => setPhone(val.target.value)}
-                placeholder={translate("form-number") || ""}
-              />
-            </div>
-            <Textarea
-
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder={translate("form-message") || ""}
-              radius="xs"
-              minRows={3}
-              maxRows={6}
-            />
-            <Checkbox
-              required={true}
-              label={
-                <>
-                  <p className="text-[14px] leading-5 text-black">
-                    {translate("form-check-1-1")}{" "}
-                    <Link legacyBehavior href="/gdpr">
-                      <a className="underline text-primary">{translate("form-check-1-2")}</a>
-                    </Link>
-                  </p>
-                </>
-              }
-              radius="xs"
-              color="#476761"
-            />
-            <Checkbox
-              className="mb-[20px] xl:mb-0"
-              label={
-                <>
-                  <p className="text-[14px] leading-5 text-black">
-                    {translate("form-check-2")}
-                  </p>
-                </>
-              }
-              radius="xs"
-              color="green"
-            />
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey="6LfjnccpAAAAABzMDixAyBN6mGhwdeV8vezeXIDv"
-              onChange={handleRecaptcha}
-            />
-            <button
-              disabled={loading || !capchaToken}
-              className={`py-[12px] 
-                 relative bg-primary text-white  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]
-                text-white flex items-center justify-center gap-[10px] w-full md:w-fit h-[63px] group hover:bg-white hover:scale-105 transform transition-transform duration-300 ease-in-out drop-shadow-md`}
-            >
-
-              <p className="text-[18px] group-hover:text-primary text-white leading-[18px]"> {translate("form-button")}</p>
-
-              <div className="group-hover:hidden">
-                <PaperPlaneIcon fill="white" />
-
-              </div>
-              <div className="group-hover:block hidden">
-                <PaperPlaneIcon fill="#087168" />
-
-              </div>
-              <div className="absolute z-[10] top-0 right-0">
-                <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out ">
-
-                  <OverButtonIcon />
-                </div>
-                <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
-                  <OverButtonIcon fill="#087168" />
-                </div></div>
-              {loading && <Loader size={20} />}
-            </button>
-
+          <div className="flex flex-row ">
+            <div className="bg-white h-[30px] md:h-[50px] w-[30px] md:w-[50px]"></div>
+            <div className="bg-white h-[30px] md:h-[50px] w-[30px] md:w-[50px]"></div>
           </div>
         </div>
-      </form >
-    </>
+        <div className="flex flex-col md:flex-row gap:-[10px] md:gap-[40px] xl:gap-[135px]">
+
+          <div className="mx-0 md:mx-auto xl:mx-0">
+            <div className="flex gap-[20px] items-center mb-[20px]">
+              <div className={"leading-6"}>
+                <p className="font-bold text-[22px]">Ing. Vladimíra Kubinová</p>
+                <span className="text-[15px]">
+                  {translate("sales-assitant")}
+                </span>
+              </div>
+            </div>
+            <div className="flex gap-[20px] items-center mb-[10px]">
+              <EmailSign />
+              <Link legacyBehavior href={"mailto:info@oliviaresidenc.sk"}>
+                <a className="font-bold text-primary  text-[18px] leading-7">
+                  info@oliviaresidence.sk
+                </a>
+              </Link>
+            </div>
+            {telNumber()}
+            <p className="hidden xl:inline-block text-[15px] text-black w-full xl:max-w-[335px]">
+              {translate("contact-and-meeting")}
+            </p>
+          </div>
+          <div className="xl:mb-[125px] w-full md:w-1/2">
+            <h2 className=" text-[48px] leading-[50px]  mb-[20px] ">
+              {translate("podnety-heading")}
+            </h2>
+            <Form podnet={true} isGreen={false} />
+          </div>
+        </div>
+      </div>
+
+    </div>
   );
 };
 
@@ -261,5 +83,13 @@ interface StaticProps {
   locale: string;
 }
 
+export async function getStaticProps({ locale }: StaticProps) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["home"])),
+      //Will be passed to the page component as props
+    },
+  };
+}
 
-export default Podnety;
+export default Kontakt;

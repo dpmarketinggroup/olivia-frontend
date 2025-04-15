@@ -38,7 +38,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
 
   useEffect(() => {
-    setIsWhite(aspath.startsWith("/apartman/") || aspath.startsWith("/en/apartman/") || aspath.startsWith("/stresne-apartmany") || aspath.startsWith("/en/stresne-apartmany"));
+    setIsWhite(aspath.startsWith("/apartman/") || aspath.startsWith("/en/apartman/") || aspath.startsWith("/stresne-apartmany") || aspath.startsWith("/en/stresne-apartmany") || aspath.startsWith("/podnety") || aspath.startsWith("/en/podnety"));
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
