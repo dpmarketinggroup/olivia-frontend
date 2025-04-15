@@ -148,7 +148,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
       className={`relative mt-[20rem] md:mt-[25rem] xl:mt-[200px]  flex flex-row  justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
       <div className={"relative shrink-0 mb-0 "}>
-        <div className={`bg-white w-[50px] md:w-[80px] h-[850px] ${button ? "md:h-[660px]" : "md:h-[560px]"}`}></div>
+        <div className={`bg-white w-[50px] md:w-[80px] h-[850px] ${button ? "md:h-[600px]" : "md:h-[560px]"}`}></div>
 
         {/* <div className={`relative z-[5] w-[50px] md:w-[100px] h-[250px] bg-white`}></div> */}
 
