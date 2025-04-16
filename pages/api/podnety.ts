@@ -29,7 +29,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { email, surname, name, phone, message, apartment, type } = JSON.parse(
-    req.body.body
+    req.body
   ) as Data;
 
   const url = "https://api.sendinblue.com/v3/contacts";
