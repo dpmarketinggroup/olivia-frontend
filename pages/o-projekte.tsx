@@ -195,7 +195,7 @@ const OProjekte = () => {
 
 
       <CommonDescription className="bg-primary " fill="white" button={true} />
-      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-10 md:my-[200px] ">
+      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-10 w-full max-w-[1200px] mx-auto my-10 md:my-[200px] ">
         <div className="absolute top-0 right-[-10px]">
           <OverButtonBigIcon height="259" width="259" />
         </div>
@@ -215,7 +215,7 @@ const OProjekte = () => {
             height={488}
           />
         </div>
-        <div className="flex md:hidden absolute top-[-10%] right-[-120px] md:right-20 z-[6]">
+        <div className="flex md:hidden absolute top-[-10%] right-[-140px] md:right-20 z-[6]">
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
@@ -223,7 +223,7 @@ const OProjekte = () => {
             height={268.4}
           />
         </div>
-        <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
+        <p className="relative text-[#0E3F3B] text-[32px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
           {translate("download-h")}
         </p>
         <Link href="/Karta vybavenia OLIVIA Residence.pdf">

@@ -356,7 +356,7 @@ muted={true}
             height={439.2}
           />
         </div>
-        <div className="flex md:hidden absolute top-[-10%] right-[-120px] md:right-20 z-[6]">
+        <div className="flex md:hidden absolute top-[-10%] right-[-140px] md:right-20 z-[6]">
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
@@ -364,7 +364,7 @@ muted={true}
             height={268.4}
           />
         </div>
-        <p className="relative text-[#0E3F3B] text-[36px] md:text-[42px] leading-none z-[6] w-[80%] md:w-[40%]">
+        <p className="relative text-[#0E3F3B] text-[32px] md:text-[42px] leading-none z-[6] w-[80%] md:w-[40%]">
           {translate("download-h")}
         </p>
         <Link href="/Karta vybavenia OLIVIA Residence.pdf">

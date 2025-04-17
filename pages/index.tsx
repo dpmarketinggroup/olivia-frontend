@@ -150,7 +150,7 @@ const Home = () => {
 
         </div>
       </div >
-      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-fit xl:h-4 mb-20">
+      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-4 xl:h-4 mb-60">
 
         <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-250px] z-[10]">
 
@@ -226,7 +226,7 @@ const Home = () => {
             height={439.2}
           />
         </div>
-        <div className="flex md:hidden absolute top-[-10%] right-[-120px] md:right-20 z-[6]">
+        <div className="flex md:hidden absolute top-[-10%] right-[-140px] md:right-20 z-[6]">
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
@@ -234,7 +234,7 @@ const Home = () => {
             height={268.4}
           />
         </div>
-        <p className="relative text-[#0E3F3B] text-[36px] md:text-[42px] leading-none z-[6] w-[80%] md:w-[40%]">
+        <p className="relative text-[#0E3F3B] text-[32px] md:text-[42px] leading-none z-[6] w-[80%] md:w-[40%]">
           {translate("download-h")}
         </p>
         <Link href="/Karta vybavenia OLIVIA Residence.pdf">
@@ -250,7 +250,7 @@ const Home = () => {
       </div>
 
       <div className="max-w-[1200px] w-full mt-[100px] bg-primary mx-auto pb-4 sm:pb-6 pr-4 sm:pr-6 flex flex-row gap-6 justify-between relative">
-        <div className="bg-white h-[1150px] sm:h-[1080px] lg:h-[620px] w-[40px] sm:w-[80px] mr-2 sm:mr-6">
+        <div className="bg-white h-[1000px] sm:h-[1080px] lg:h-[620px] w-[40px] sm:w-[80px] mr-2 sm:mr-6">
 
         </div>
         <div className={"bottom-0 absolute left-0 shrink-0  xl:mb-0 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px]"}>

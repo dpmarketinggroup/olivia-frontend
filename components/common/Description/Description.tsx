@@ -148,7 +148,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
       className={`relative mt-[10rem] md:mt-[25rem] xl:mt-[200px]  flex flex-row  justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
       <div className={"relative shrink-0 mb-0 "}>
-        <div className={`bg-white w-[50px] md:w-[80px] ${button ? "h-[880px]" : "h-[800px]"} ${button ? "md:h-[600px]" : "md:h-[560px]"}`}></div>
+        <div className={`bg-white w-[35px] sm:w-[50px] lg:w-[80px] ${button ? "h-[880px]" : "h-[800px]"} ${button ? "md:h-[600px]" : "md:h-[560px]"}`}></div>
 
         {/* <div className={`relative z-[5] w-[50px] md:w-[100px] h-[250px] bg-white`}></div> */}
 
@@ -190,7 +190,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
             return (
               <div key={index} className={`flex gap-[12px] flex-row items-center text-${fill}`}>
                 <Icon fill={fill} />
-                <p className="text-[17px] w-2/3 leading-none mt-1">
+                <p className="text-[17px] w-full sm:w-2/3 leading-none mt-1">
                   <ReactMarkdown >
                     {bullet.text}
                   </ReactMarkdown>
