@@ -145,7 +145,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
 
   return (
     <div
-      className={`relative mt-[20rem] md:mt-[25rem] xl:mt-[200px]  flex flex-row  justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
+      className={`relative mt-[10rem] md:mt-[25rem] xl:mt-[200px]  flex flex-row  justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
       <div className={"relative shrink-0 mb-0 "}>
         <div className={`bg-white w-[50px] md:w-[80px] ${button ? "h-[880px]" : "h-[800px]"} ${button ? "md:h-[600px]" : "md:h-[560px]"}`}></div>
@@ -258,7 +258,7 @@ export const TransportDescription: FunctionComponent<TransportDescriptionProps> 
 
 
 
-      <div className={`absolute z-[20] right-0 top-[800px] md:top-[-120px] lg:top-[-80px] `}>
+      <div className={`absolute z-[20] right-0 top-[700px] md:top-[-120px] lg:top-[-80px] `}>
         <div className="relative h-[280px] w-[280px] sm:h-[400px] sm:w-[400px] lg:h-[500px] lg:w-[500px]">
           <div className={`absolute bottom-0 md:top-0 right-0 z-[10]`}>
             <div className="flex flex-row">
@@ -281,7 +281,7 @@ export const TransportDescription: FunctionComponent<TransportDescriptionProps> 
       </div >
 
 
-      <div className="flex flex-col w-[85%] md:w-[45%] pb-[280px]  pt-20 px-6 md:p-6 space-y-4">
+      <div className="flex flex-col w-[85%] md:w-[45%] pb-[24 0px]  pt-6 sm:pt-20 px-6 md:p-6 space-y-4">
         <h3
           className={
             `font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`
@@ -368,7 +368,7 @@ export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
       <div className="bg-white w-[35px] sm:w-[60px] lg:w-[80px] h-[750px] sm:h-[400px]"></div>
 
 
-      <div className={`absolute z-[20] left-0 top-[750px] md:top-[-80px] lg:top-[-80px] `}>
+      <div className={`absolute z-[20] left-0 top-[650px] md:top-[-80px] lg:top-[-80px] `}>
         <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px]">
           <div className={`absolute bottom-0 md:top-0 left-0 z-[10]`}>
             <div className="flex flex-row">
@@ -390,7 +390,7 @@ export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
         </div >
 
       </div >
-      <div className="flex flex-col w-[85%] md:w-[45%] pt-20 md:pt-2  px-6 md:p-6 space-y-4 pb-[300px]  md:pb-6">
+      <div className="flex flex-col w-[85%] md:w-[45%] pt-8 md:pt-2  px-6 md:p-6 space-y-4 pb-[300px]  md:pb-6">
         <h3
           className={
             `font-normal text-[48px] leading-[48px] text-${fill} my-4`

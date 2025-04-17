@@ -206,7 +206,7 @@ const Home = () => {
     </div > */}
 
       <CommonDescription fill="black" className="bg-bgLight" />
-      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-8 w-full max-w-[1200px] mx-auto mb-[250px] mt-[200px] ">
+      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-8 w-full max-w-[1200px] mx-auto my-10 md:mb-[250px] md:mt-[200px] ">
         <div className="absolute top-0 right-[-10px]">
           <OverButtonBigIcon height="259" width="259" />
         </div>

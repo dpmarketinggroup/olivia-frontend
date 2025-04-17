@@ -195,7 +195,7 @@ const OProjekte = () => {
 
 
       <CommonDescription className="bg-primary " fill="white" button={true} />
-      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-[200px] ">
+      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-10 md:my-[200px] ">
         <div className="absolute top-0 right-[-10px]">
           <OverButtonBigIcon height="259" width="259" />
         </div>
@@ -238,7 +238,7 @@ const OProjekte = () => {
         </Link>
       </div>
 
-      <div className="w-full mx-auto mt-[25rem] mb-40 max-w-[1200px] ">
+      <div className="w-full mx-auto mt-[15rem] sm:mt-[25rem] mb-40 max-w-[1200px] ">
         <div className="bg-bgLight  flex flex-row relative justify-between items-end">
 
           <div className="absolute right-0 top-[-150px] sm:top-[-300px] md:top-[-100px] z-[10]">
@@ -267,7 +267,7 @@ const OProjekte = () => {
             </div>
           </div>
           <div className="w-full md:w-[45%] flex flex-col gap-8 ml-4 px-4 pt-40 md:pt-2 md:ml-10 my-4 md:my-10">
-            <h2 className="text-black text-[48px] leading-none">{translate("description-lokalita-5-heading-1")}<span className="text-primary" >{translate("description-lokalita-5-heading-2")}</span>{translate("description-lokalita-5-heading-3")}</h2>
+            <h2 className="text-black text-[42px] md:text-[48px] leading-none">{translate("description-lokalita-5-heading-1")}<span className="text-primary" >{translate("description-lokalita-5-heading-2")}</span>{translate("description-lokalita-5-heading-3")}</h2>
             <p className="text-black text-[24px] leading-[32px] w-[90%] mb-12 ">{translate("description-lokalita-5-description")}</p>
             <Link href="/stretnutie">
               <button
@@ -295,22 +295,22 @@ const OProjekte = () => {
 
             </Link>
           </div>
-          <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[600px] sm:h-[500px] bg-white"></div>
+          <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[750px] sm:h-[500px] bg-white"></div>
         </div>
       </div>
 
-      <div className="max-w-[1200px] mt-20 mb-[20rem] sm:mb-[47rem] md:my-20 w-full mx-auto ">
+      <div className="max-w-[1200px] mt-20 mb-[47rem] sm:mb-[54rem] md:my-20 w-full mx-auto ">
         <div className="flex flex-col md:flex-row gap-10 h-[90vh] px-4 md:px-8">
           <div className="flex flex-col ">
             <div className="w-full relative">
               <div className="absolute top-0 right-0 z-[10]">
                 <div className="flex flex-row">
-                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
-                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                  <div className="w-[40px] lg:w-[100px] h-[40px] lg:h-[100px] bg-white"></div>
+                  <div className="w-[40px] lg:w-[100px] h-[40px] lg:h-[100px] bg-white"></div>
                 </div>
                 <div className="flex flex-row">
-                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-transparent"></div>
-                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                  <div className="w-[40px] lg:w-[100px] h-[40px] lg:h-[100px] bg-transparent"></div>
+                  <div className="w-[40px] lg:w-[100px] h-[40px] lg:h-[100px] bg-white"></div>
                 </div>
               </div>
 
@@ -394,12 +394,12 @@ const OProjekte = () => {
             <div className="w-full relative">
               <div className="absolute bottom-0 right-0 z-[10]">
                 <div className="flex flex-row">
-                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-transparent"></div>
-                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                  <div className="w-[40px] lg:w-[100px] h-[40px] lg:h-[100px] bg-transparent"></div>
+                  <div className="w-[40px] lg:w-[100px] h-[40px] lg:h-[100px] bg-white"></div>
                 </div>
                 <div className="flex flex-row">
-                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
-                  <div className="w-[40px] md:w-[100px] h-[40px] md:h-[100px] bg-white"></div>
+                  <div className="w-[40px] lg:w-[100px] h-[40px] lg:h-[100px] bg-white"></div>
+                  <div className="w-[40px] lg:w-[100px] h-[40px] lg:h-[100px] bg-white"></div>
                 </div>
               </div>
 
@@ -564,7 +564,7 @@ const OProjekte = () => {
             <div className="bg-white w-[40px] md:w-[100px] h-[40px] md:h-[100px] "></div>
           </div>
         </div>
-        <div className="xl:max-w-[1200px] mx-auto pb-[30rem]   md:pb-40 lg:pb-20 pt-10">
+        <div className="xl:max-w-[1200px] mx-auto pb-[27rem]   sm:pb-40 lg:pb-20 pt-10">
           <h2 className="relative text-black h-[200px] text-[48px] text-center mx-auto z-[10] ">{translate("financing")}</h2>
           <div className="absolute bottom-[-100px] w-full left-1/2 transform -translate-x-1/2 z-[5]">
             <div className="bg-yellow max-w-[1200px] relative p-6 md:p-8 mx-4 lg:mx-auto">
