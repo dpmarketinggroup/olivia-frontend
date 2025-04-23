@@ -553,7 +553,7 @@ const OProjekte = () => {
         href="Detailná ponuka financovania.pdf"
       /> 
     </div > */}
-      <div id="financovanie" className="w-full bg-bgLight relative p-4 md:p-8 mb-80 md:mb-80 lg:mb-20">
+      <div id="financovanie" className="w-full bg-bgLight relative p-4 md:p-8 mb-40 md:mb-60 lg:mb-20">
         <div className="absolute top-0 right-0">
           <div className="flex flex-row">
             <div className="bg-white w-[40px] md:w-[100px] h-[40px] md:h-[100px] "></div>
