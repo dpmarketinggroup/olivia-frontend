@@ -299,7 +299,7 @@ const OProjekte = () => {
         </div>
       </div>
 
-      <div className="max-w-[1200px] mt-20 mb-[47rem] sm:mb-[54rem] md:my-20 w-full mx-auto ">
+      <div className="max-w-[1200px] mt-20 mb-[40rem] xs:mb-[50rem] sm:mb-[54rem] h-fit md:my-20 w-full mx-auto ">
         <div className="flex flex-col md:flex-row gap-10 h-[90vh] px-4 md:px-8">
           <div className="flex flex-col ">
             <div className="w-full relative">

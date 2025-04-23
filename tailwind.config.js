@@ -19,7 +19,7 @@ module.exports = {
           "linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 69%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%)",
       },
       screens: {
-        xs: "400px",
+        xs: "440px",
         sm: "640px",
         md: "768px",
         lg: "1024px",
