@@ -86,23 +86,15 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
   }
 
   function infoSlider() {
-    if (locale === "de") {
-      return (
-        // <Marquee pauseOnHover speed={30} >
-        <p className="text-white text-center py-[8px] px-[5px]">
-          {translate("information-slider")}
-        </p>
-        // </Marquee>
-      );
-    } else {
-      return (
-        // <Marquee pauseOnHover speed={30} >
-        <p className="text-white text-center py-[8px] px-[5px]">
-          {translate("information-slider")}
-        </p>
-        // </Marquee >
-      );
-    }
+
+    return (
+      // <Marquee pauseOnHover speed={30} >
+      <p className="text-white text-center py-[8px] px-[5px]">
+        {translate("information-slider")}
+      </p>
+      // </Marquee >
+    );
+
   }
 
   const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);

@@ -1112,13 +1112,13 @@ export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
       locale: "en",
     };
   });
-  const de = data.data.map((val: any) => {
-    return {
-      params: { id: val.id.toString() },
-      locale: "de",
-    };
-  });
-  const paths = [...de, ...en, ...sk];
+  // const de = data.data.map((val: any) => {
+  //   return {
+  //     params: { id: val.id.toString() },
+  //     locale: "de",
+  //   };
+  // });
+  const paths = [...en, ...sk];
 
   return {
     paths,
