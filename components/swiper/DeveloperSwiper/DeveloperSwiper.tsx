@@ -58,7 +58,7 @@ const DeveloperSwiper = () => {
           { src: "/img/tatracentrum.jpg", label: "Tatracentrum Bratislava" },
         ].map(({ src, label }, i) => (
           <SwiperSlide className="xl:w-full" key={i}>
-            <div className="relative w-full xl:w-[510px] h-[390px] xl:h-[290px]">
+            <div className="relative w-full xl:w-[510px] h-[200px] xl:h-[290px]">
               <div className="absolute z-[10] top-0 right-0">
                 <div className="flex flex-row">
                   <div className="h-[58px] w-[58px] bg-white border-white border-[1px]"></div>

@@ -146,7 +146,7 @@ const Lokalita = () => {
               muted={true}
               loop={true}
             >
-              <source type="video/mp4" src="/videos/250206OR6501-LOKALITA-shorter-16x9.mp4" />
+              <source type="video/webm" src="/videos/250206OR6501-LOKALITA-shorter-16x9.webm" />
               {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
               {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
             </video>
@@ -220,20 +220,20 @@ muted={true}
 
         </video>
       </div> */}
-      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-fit xl:h-4 mb-60 xl:mb-20">
+      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-fit xl:h-4 mb-20 xl:mb-5">
 
-        <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-250px] z-[10]">
+        <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-20px] sm:top-[-50px] xl:top-[-250px] z-[10]">
 
           <div className="block">
 
 
-            <div className="bg-yellow  w-[350px] md:w-[400px] h-[200px] relative flex flex-col justify-center items-start px-8">
+            <div className="bg-yellow  w-[350px] md:w-[400px] md:h-[200px] h-[80px] relative flex flex-row gap-2 md:flex-col justify-start md:justify-center items-center md:items-start px-8 overflow-hidden ">
 
               <div className="flex absolute top-0 right-[-4px]">
                 <OverButtonBigIcon height="200" width="200" />
               </div>
               <AboutUs fill={'#0E3F3B'} />
-              <p className="text-[16px] md:text-[18px] mt-4 leading-[18px] md:leading-[30px] text-[#0E3F3B] font-semibold ">{translate("hero-inform")}</p>
+              <p className="text-[16px] md:text-[18px] mt-4 leading-[18px] md:leading-[30px] text-[#0E3F3B] font-semibold z-[20]">{translate("hero-inform")}</p>
             </div>
           </div>
         </div>
@@ -244,7 +244,7 @@ muted={true}
 
 
 
-      <div className="max-w-[1200px] mb-40 w-full mt-[100px] bg-primary mx-auto pb-4 sm:pb-6 pr-4 sm:pr-6 flex flex-row gap-6 justify-between relative">
+      <div className="max-w-[1200px] mb-20 w-full  bg-primary mx-auto pb-4 sm:pb-6 pr-4 sm:pr-6 flex flex-row gap-6 justify-between relative">
         <div className="bg-white h-[1150px] sm:h-[1080px] lg:h-[550px] w-[40px] sm:w-[80px] mr-2 sm:mr-6">
 
         </div>
@@ -267,7 +267,7 @@ muted={true}
               muted={true}
               loop={true}
             >
-              <source type="video/mp4" src="/videos/250206OR6501-LOKALITA-shorter-16x9.mp4" />
+              <source type="video/webm" src="/videos/250206OR6501-LOKALITA-shorter-16x9.webm" />
 
             </video >
           </div >
@@ -284,15 +284,15 @@ muted={true}
               <ShopIcon />
               <p className="text-white text-[17px] leading-[20px] " ><ReactMarkdown>{translate("description-locale-description2")}</ReactMarkdown></p>
             </div>
-            <div className="flex flex-row flex-wrap gap-[6px] w-[90%] border-b-[2px] pb-6 border-[#ffffff33] border-dashed">
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-1")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-2")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-3")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-4")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-5")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-6")}</ReactMarkdown></p></div>
+            <div className="flex flex-row flex-wrap gap-[6px]   pb-6 ">
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-1")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-2")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-3")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-4")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-5")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-6")}</ReactMarkdown></p></div>
             </div>
-            <div className="flex flex-row justify-start items-center py-3 gap-2 border-b-[2px] border-[#ffffff33] border-dashed w-[90%]">
+            <div className="flex flex-row justify-start items-center py-3 gap-2 border-y-[2px] border-[#ffffff33] border-dashed w-[90%]">
               <Thermometer /><p className="text-white text-[17px] leading-[20px]"><ReactMarkdown>{translate("description-locale-bullet-1")}</ReactMarkdown></p>
             </div>
             <div className="flex flex-row justify-start items-center py-3 gap-2 border-b-[2px] border-[#ffffff33] border-dashed w-[90%]">
@@ -326,7 +326,7 @@ muted={true}
 
       <Negotiation
         title={translate("negotiation-heading")}
-        subtitle={"Rožňavská 1A, Bratislava"}
+        subtitle={"Rožňavská 1B, Bratislava"}
       />
       {/* <h2
         className={
@@ -336,7 +336,7 @@ muted={true}
         {translate("description-main-heading")}
       </h2> */}
       <CommonDescription fill={"black"} className="bg-bgLight" />
-      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-8 w-full max-w-[1200px] mx-auto mb-[100px] md:mb-[250px] mt-[100px] md:mt-[200px] ">
+      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-8 w-full max-w-[1200px] mx-auto mb-[100px] md:mb-[120px] mt-[100px] md:mt-[100px] ">
         <div className="absolute top-0 right-[-10px]">
           <OverButtonBigIcon height="259" width="259" />
         </div>

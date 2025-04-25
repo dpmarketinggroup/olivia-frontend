@@ -277,14 +277,14 @@ const Building = () => {
       <div className="w-full xl:max-w-[1920px] mx-auto overflow-hidden">
         <House />
       </div>
-      <div className="building bg-white w-full mb-[80px]  pb-10 px-0 md:px-[1rem] xl:px-0">
+      <div className="building bg-white w-full mb-[10px]  pb-10 px-0 md:px-[1rem] xl:px-0">
         <div
           className={"w-full max-w-[1200px] mx-auto px-8 py-[45px] xl:py-[90px] gap-8 flex flex-col md:flex-row justify-between"}
         >
           <div className={"flex flex-col md:flex-row flex-wrap justify-between"}>
             <div className="flex flex-col xl:justify-between gap-[30px]  w-full">
               <div className={"flex flex-col "}>
-                <span className="text-black mb-2">Počet izieb</span>
+                <span className="text-black mb-2">{translate("filter-num-of-rooms")}</span>
                 <div className="flex  flex-wrap xl:justify-start gap-[10px] xl:gap-[20px]">
                   <FilterButton
                     clicked={room1Clicked}
@@ -388,7 +388,7 @@ const Building = () => {
                 
                 xl:gap-[20px] items-end">
                   <div className="flex flex-col">
-                    <span className="text-black mb-2">{translate("equipment")}</span>
+                    <span className="text-black mb-2">{translate("options")}</span>
                     <FilterButton
                       clicked={withBalconyAndTerrace}
                       onClick={() => {
@@ -624,7 +624,7 @@ const Building = () => {
         ref={contentRef}
         id={"results"}
         className={`${isExpanded ? "max-h-full" : "max-h-[600px] overflow-hidden"
-          } flex flex-col xl:gap-[120px] px-[1rem] xl:px-0 xl:min-h-[1px] bg-[#F5F5F5] relative mt-[-80px] ${(oneRooms ||
+          } flex flex-col xl:gap-[120px] px-[1rem] py-8 xl:px-0 xl:min-h-[1px] bg-[#F5F5F5] relative mt-[-80px] ${(oneRooms ||
             oneAndHalfRooms ||
             twoRooms ||
             threeRooms ||
@@ -641,7 +641,7 @@ const Building = () => {
 
             onClick={() => setIsExpanded((prev) => !prev)}
           >
-            {isExpanded ? "Zobraziť menej" : "Zobraziť viac"}
+            {isExpanded ? "Zobraziť menej" : translate("more")}
           </button>
         </div>
       )}
@@ -650,7 +650,7 @@ const Building = () => {
           <div id={"one-apt"}>
             <h3
               className={
-                "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
+                "w-full xl:max-w-[1200px] xl:mx-auto text-[24px] font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
               {translate("filter-floor-1")}
@@ -711,7 +711,7 @@ const Building = () => {
           <div id={"oneHalf-apt"}>
             <h3
               className={
-                "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
+                "w-full xl:max-w-[1200px] xl:mx-auto font-bold text-[24px] xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
               {translate("filter-floor-1.5")}
@@ -772,7 +772,7 @@ const Building = () => {
           <div id={"two-apt"}>
             <h3
               className={
-                "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
+                "w-full xl:max-w-[1200px] xl:mx-auto font-bold text-[24px] xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
               {translate("filter-floor-2")}
@@ -834,7 +834,7 @@ const Building = () => {
           <div id={"three-apt"}>
             <h3
               className={
-                "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
+                "w-full xl:max-w-[1200px] xl:mx-auto font-bold text-[24px] xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
               {translate("filter-floor-3")}
@@ -896,7 +896,7 @@ const Building = () => {
           <div id={"fourHalf-apt"}>
             <h3
               className={
-                "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
+                "w-full xl:max-w-[1200px] xl:mx-auto font-bold text-[24px] xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
               {translate("filter-floor-4.5")}

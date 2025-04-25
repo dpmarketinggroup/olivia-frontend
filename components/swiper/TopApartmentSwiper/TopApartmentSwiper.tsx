@@ -153,7 +153,7 @@ const TopApartmentSwiper = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <p className="text-white mx-auto mt-8 bg-[#2A2A2A] p-4 text-center w-full sm:w-[80%] flex justify-center items-center">Niektoré prvky vybavenia sú ilustračné. Konkrétne vybavenie vyplýva zo štandardu uvedeného v karte vybavenia.</p>
+        <p className="text-white mx-auto mt-8 bg-[#2A2A2A] p-4 text-center w-full sm:w-[80%] flex justify-center items-center">{translate("top-apartments-info")}</p>
       </div>
     </section>
   );

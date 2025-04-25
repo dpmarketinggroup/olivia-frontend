@@ -8,13 +8,13 @@ import ParkingPointIcon from "@components/icons/ParkingPoint";
 const MapFooter = () => {
     const { t: translate } = useTranslation('home');
     return (
-        <div className="flex justify-center my-20">
+        <div className="flex justify-center my-10">
             <div className="bg-white w-full ">
                 <div className="flex flex-col xl:flex-row justify-between w-full max-w-[1200px] xl:mx-auto relative ">
                     <div className="flex flex-col items-start gap-[28px]  lg:py-[150px] px-8 w-full md:w-[400px] lg:w-[650px] z-[10] ">
                         <h2 className="text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px] text-black ">{translate("map-footer-heading-first-part")}
                             <span className="underline decoration-primary underline-offset-[2px]"> {translate("map-footer-heading-second-part")}</span> {translate("map-footer-heading-third-part")}</h2>
-                        <p className="text-[20px] sm:leading-[24px] text-[16px] sm:text-[20px] text-[#676766] w-[80%]">{translate("map-footer-description")}</p>
+                        <p className="text-[20px] sm:leading-[24px] text-[16px] sm:text-[20px] text-[#676766] w-[103%] md:w-[80%]">{translate("map-footer-description")}</p>
                         <p className="font-bold text-[18px] sm:text-[24px] leading-[32px] text-black xl:w-auto self-start">Rožňavská
                             1B, Bratislava</p>
                         <div className="block md:hidden">

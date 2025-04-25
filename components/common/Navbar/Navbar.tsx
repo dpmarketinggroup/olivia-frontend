@@ -38,7 +38,15 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
 
   useEffect(() => {
-    setIsWhite(aspath.startsWith("/apartman/") || aspath.startsWith("/en/apartman/") || aspath.startsWith("/stresne-apartmany") || aspath.startsWith("/en/stresne-apartmany") || aspath.startsWith("/podnety") || aspath.startsWith("/en/podnety"));
+    setIsWhite(
+      /^\/(en\/)?apartman(\/|$)/.test(asPath) ||
+      asPath.startsWith("/stresne-apartmany") ||
+      asPath.startsWith("/en/stresne-apartmany") ||
+      asPath.startsWith("/podnety") ||
+      asPath.startsWith("/en/podnety") ||
+      asPath.startsWith("/gdpr") ||
+      asPath.startsWith("/en/gdpr")
+    );
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -348,13 +356,13 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
           </div>
 
           <div className="flex items-center gap-[5px]">
-            <div className="hidden xl:flex flex-row">
+            <div className="hidden xl:flex flex-row gap-[20px] xl:gap-[15px]">
               <Link href="/o-projekte" className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-about")}
               </Link>
               <Link href="/kontakt" className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}
               </Link>
             </div>
-            <div className={`languages ${isWhite || isScrolled ? "black" : "white"} hidden xl:block`}>
+            <div className={`languages ${isWhite || isScrolled ? "black" : "white"} hidden ml-[10px] xl:block`}>
               <Select
                 className="w-[50px] uppercase"
                 data={languages}
@@ -372,7 +380,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               />
 
             </div>
-            <div className="hidden xl:block">
+            {/* <div className="hidden xl:block">
 
               <Link href="/stretnutie">
                 <button
@@ -393,7 +401,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 </button>
 
               </Link>
-            </div>
+            </div> */}
 
           </div>
         </div>

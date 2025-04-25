@@ -51,14 +51,14 @@ const PonukaBytov = () => {
         title={translate("filter-heading")}
         description={""}
       />
-      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-fit xl:h-4 mb-20">
+      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-fit xl:h-4 ">
 
-        <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-100px] z-[10]">
+        <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-20px] sm:top-[-50px] xl:top-[-100px] z-[10]">
 
           <div className="block">
 
 
-            <div className="bg-primary  w-[350px] md:w-[400px] h-[200px] relative flex flex-col justify-center items-start px-8">
+            <div className="bg-primary  w-[350px] md:w-[400px] md:h-[200px] h-[80px] relative flex flex-row md:flex-col justify-start md:justify-center items-center md:items-start gap-2 px-8">
 
               <div className="flex absolute top-0 right-[-4px]">
                 <OverButtonBigIcon height="200" width="200" />
@@ -71,8 +71,8 @@ const PonukaBytov = () => {
       </div>
       <div className="flex justify-center building">
         <div className="w-full xl:w-full">
-          <div className="flex justify-center mt-[70px]">
-            <div className="m xl:mx-[165px]">
+          <div className="flex justify-center ">
+            <div className=" xl:mx-[165px]">
               {/* <div className="flex flex-col gap-[30px] items-center mb-[50px]">
                 <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />
                 <h1 className="font-bold text-[32px] xl:text-[40px] leading-[40px] xl:leading-[48px] text-center xl:text-left">
@@ -229,7 +229,7 @@ const PonukaBytov = () => {
           </button>
         </Link>
       </div>
-      <div className="max-w-[1200px] mt-40 mb-[44rem] sm:mb-[47rem] md:my-40 w-full mx-auto ">
+      <div className="max-w-[1200px] mt-20 mb-[32rem] sm:mb-[47rem] md:my-40 w-full mx-auto ">
         <div className="flex flex-col md:flex-row gap-10 h-[90vh] px-4 md:px-8">
           <div className="flex flex-col ">
             <div className="w-full relative">
@@ -294,7 +294,7 @@ const PonukaBytov = () => {
               </div>
               <div className="flex flex-col gap-4">
                 <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-storage-heading")}</h2>
-                <p className="text-white text-[16px]  mt-10 ">{translate("description-storage-text")}</p>
+                <p className="text-white text-[16px] w-[98%] sm:w-auto mt-10 ">{translate("description-storage-text")}</p>
                 <Link href={`/stretnutie`}>
                   <button
 

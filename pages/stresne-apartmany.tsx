@@ -229,7 +229,7 @@ const StresneApartmany = () => {
                     </>) : (<></>)}
                     <hr className="border-[1px] border-[#00000022]" />
                     <div className="flex flex-row justify-between my-3 bg-primary p-2">
-                      <p className="text-white">Celková plocha</p>
+                      <p className="text-white">{translate("total-area-2")}</p>
                       <p className="text-white">{myArray[currentIndex].total}</p>
                     </div>
                     <hr className="border-[1px] border-[#00000022]" />

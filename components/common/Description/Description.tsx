@@ -83,7 +83,7 @@ const Description: FunctionComponent<DescriptionProps> = ({
                 muted={true}
                 loop={true}
               >
-                <source type="video/mp4" src="/videos/230405OR2602-Bez-textu-16x9.mp4" />
+                <source type="video/webm" src="/videos/230405OR2602-Bez-textu-16x9.webm" />
                 {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
                 {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
               </video>
@@ -144,8 +144,8 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
   ];
 
   return (
-    <div
-      className={`relative mt-[10rem] md:mt-[25rem] xl:mt-[200px]  flex flex-row  justify-between items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
+    <div id="vybavenie"
+      className={`relative mt-[16rem] md:mt-[18rem] xl:mt-[100px] flex flex-row justify-between items-end justify-center xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
       <div className={"relative shrink-0 mb-0 "}>
         <div className={`bg-white w-[35px] sm:w-[50px] lg:w-[80px] ${button ? "h-[880px]" : "h-[800px]"} ${button ? "md:h-[600px]" : "md:h-[560px]"}`}></div>
@@ -171,7 +171,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
               muted={true}
               loop={true}
             >
-              <source type="video/mp4" src="/videos/230405OR2602-Bez-textu-16x9.mp4" />
+              <source type="video/webm" src="/videos/230405OR2602-Bez-textu-16x9.webm" />
               {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
               {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
             </video>
@@ -182,7 +182,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
       <div className="flex flex-col w-[85%] md:w-[50%] pb-6 pt-10   px-4 md:p-6 ">
         <h3 className={`font-normal text-[42px] leading-[42px] text-${fill}  my-4`}>
           {translate('description-heading')} <br />
-          OLIVIA Residence?
+
         </h3>
         <div className="my-[25px] flex flex-col gap-2 md:gap-4">
           {bullets.map((bullet, index) => {
@@ -200,17 +200,28 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
           })}
         </div>
         <div className="flex flex-col xl:flex-row gap-[10px] leading-none my-4">
-          <p className={`text-[24px] text-${fill} opacity-70`}>
+          <p className={`flex flex-row flex-wrap gap-2 text-[24px] text-${fill} `}>
+            <span className="opacity-70">
+              <ReactMarkdown  >
+
+                {translate('description-inform-1')}
+              </ReactMarkdown>
+            </span>
             <ReactMarkdown  >
 
-              {translate('description-inform')}
+              {translate('description-inform-2')}
             </ReactMarkdown>
+            <span className="opacity-70">
+              <ReactMarkdown  >
+
+                {translate('description-inform-3')}
+              </ReactMarkdown></span>
           </p>
         </div>
         {button && (
           <Link href="/stretnutie">
             <button className="drop-shadow-md relative bg-yellow hover:bg-white hover:text-yellow hover:scale-105 transform transition-transform duration-300 ease-in-out text-black flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group">
-              <p className="text-[18px] leading-[18px]">{translate('button-meeting')}</p>
+              <p className="text-[18px] leading-[18px] ">{translate('button-meeting')}</p>
               <div className="group-hover:hidden block">
                 <ArrowLink fill="#000000" />
               </div>
@@ -250,7 +261,7 @@ export const TransportDescription: FunctionComponent<TransportDescriptionProps> 
   const { t: translate } = useTranslation("home");
   return (
     <div
-      className={`relative mt-[200px] mb-[400px] md:mb-[500px] md:mt-[300px]  flex  flex-row-reverse justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
+      className={`relative   md:mb-[500px] md:mt-[300px]  flex  flex-row-reverse justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[220px] xl:mb-[125px]`}
     >   <div className="bg-white w-[35px] sm:w-[60px] lg:w-[80px] md:h-[400px] h-[800px]"></div>
 
 
@@ -281,15 +292,15 @@ export const TransportDescription: FunctionComponent<TransportDescriptionProps> 
       </div >
 
 
-      <div className="flex flex-col w-[85%] md:w-[45%] pb-[24 0px]  pt-6 sm:pt-20 px-6 md:p-6 space-y-4">
+      <div className="flex flex-col w-[100%] md:w-[45%] pb-[24 0px]  pt-6 sm:pt-20 px-6 md:p-6 space-y-4">
         <h3
           className={
-            `font-normal text-[48px] leading-[48px] text-${fill} mt-6 mb-4`
+            `font-normal text-[36px] leading-[36px]  md:text-[48px] md:leading-[48px] text-${fill} mt-6 mb-4`
           }
         >
           {translate("description-lokalita-2-heading")}
         </h3>
-        <p className="text-white text-[18px]"> {translate("description-lokalita-2-description")}</p>
+        <p className="text-white leading-[20px]  text-[18px]"> {translate("description-lokalita-2-description")}</p>
         <div className={"my-[25px] flex flex-col gap-6"}>
           <div
             className={`flex gap-[12px] flex-row items-center text-${fill}`}>
@@ -363,7 +374,7 @@ export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
   const { t: translate } = useTranslation("home");
   return (
     <div
-      className={`px-2 relative my-[200px] flex flex-row justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} `}
+      className={`px-2 relative mb-[200px] md:mb-0  mt-[100px] flex flex-row justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} `}
     >
       <div className="bg-white w-[35px] sm:w-[60px] lg:w-[80px] h-[750px] sm:h-[400px]"></div>
 
@@ -390,7 +401,7 @@ export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
         </div >
 
       </div >
-      <div className="flex flex-col w-[85%] md:w-[45%] pt-8 md:pt-2  px-6 md:p-6 space-y-4 pb-[300px]  md:pb-6">
+      <div className="flex flex-col w-[100%] md:w-[45%] pt-8 md:pt-2  px-6 md:p-6 space-y-4 pb-[300px]  md:pb-6">
         <h3
           className={
             `font-normal text-[48px] leading-[48px] text-${fill} my-4`
@@ -398,7 +409,7 @@ export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
         >
           {translate("description-lokalita-3-heading")}
         </h3>
-        <p className="text-[#676766] text-[18px]"> {translate("description-lokalita-3-description")}</p>
+        <p className="text-[#676766] leading-[22px] text-[18px]"> {translate("description-lokalita-3-description")}</p>
         <div className={"my-[25px] flex flex-col gap-6"}>
           <div
             className={`flex gap-[12px] flex-row items-center text-${fill}`}>

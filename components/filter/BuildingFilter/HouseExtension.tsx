@@ -97,14 +97,14 @@ const HouseExtension = () => {
 
   return (
     <>
-      <g id="Retail_highlight" data-name="Retail highlight">
+      {/* <g id="Retail_highlight" data-name="Retail highlight">
         <Link href="/retail">
           <polygon
             className="cls-5"
             points="908.59 913.22 907.61 856.71 531.91 853.42 531.91 913.35 559.18 913.45 559.18 914.12 559.18 1015.17 580.39 1015.17 580.39 1041.37 908.62 1042.88 908.62 913.22 908.59 913.22"
           />
         </Link>
-      </g>
+      </g> */}
       <g id="Retail_nr" data-name="Retail nr">
         <rect className="cls-4" x="471.57" y="872.66" width="24" height="2" />
         <path

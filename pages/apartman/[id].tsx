@@ -851,7 +851,7 @@ const ApartmentDetail = () => {
               {translate("superior-equipment")}
             </span>
             <div className="flex gap-[8px] items-center">
-              <Link href={"/#vybavenie"} className="font-medium text-[20px] leading-5 text-green2">
+              <Link href={"/o-projekte#vybavenie"} className="font-medium text-[20px] leading-5 text-green2">
                 <p className="border-b-[1px] border-[#0E3F3B]">{translate("more")}</p>
               </Link>
               <ArrowLink fill="#0E3F3B" />
@@ -883,7 +883,7 @@ const ApartmentDetail = () => {
         </div>
 
       </div >
-      <div className="max-w-[1200px] mt-40 mb-[44rem] sm:mb-[47rem] md:my-40 w-full mx-auto ">
+      <div className="max-w-[1200px] mt-10 mb-[44rem] sm:mb-[47rem] md:my-10 w-full mx-auto ">
         <div className="flex flex-col md:flex-row gap-10 h-[90vh] px-4 md:px-8">
           <div className="flex flex-col ">
             <div className="w-full relative">

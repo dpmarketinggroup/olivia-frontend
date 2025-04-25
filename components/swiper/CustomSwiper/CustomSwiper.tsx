@@ -74,7 +74,7 @@ const CustomSwiper = () => {
         >
           {[
             "/img/241022OR5801-CUTSAVE-vyber_01_09_24_10.png",
-            "/img/241022OR5801-CUTSAVE-vyber_01_09_40_08.png",
+            // "/img/241022OR5801-CUTSAVE-vyber_01_09_40_08.png",
             "/img/241022OR5801-CUTSAVE-vyber_01_08_34_23.png",
             "/img/241022OR5801-CUTSAVE-vyber_01_08_24_24.png",
             "/img/240524OR4901-DJI_0020.00_00_08_11.Still002.jpg",

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const GDPR = () => {
     return (
@@ -7,9 +7,9 @@ const GDPR = () => {
             <Head>
                 <title>GDPR | Olivia Residence</title>
             </Head>
-            <div className="flex justify-center">
+            <div className="flex justify-center my-20">
                 <div className="mx-4 mb-[210px] w-full xl:max-w-[1200px]">
-                    <h1 className="text-center mb-[40px] mt-[85px] font-bold text-[40px] leading-[48px] tracking-[-0.5px]">Ochrana <br/> osobných
+                    <h1 className="text-center mb-[40px] mt-[85px] font-bold text-[40px] leading-[48px] tracking-[-0.5px]">Ochrana <br /> osobných
                         údajov</h1>
                     <h3 className="font-bold text-center">Informovanie</h3>
                     <p className="text-center font-bold">
@@ -20,22 +20,22 @@ const GDPR = () => {
                         Z. z. o ochrane osobných údajov a o zmene a doplnení niektorých zákonov
 
                     </p>
-                    <hr/>
+                    <hr />
                     <div className={'py-[15px]'}>
                         <div className={'flex flex-col xl:flex-row justify-between'}>
-                            <h4 className={'font-bold'}>Prevádzkovateľ:</h4>
+                            <h4 className={'font-bold'}>Prevádzkovateľ :</h4>
                             <span className={'w-full xl:max-w-[500px] ml-auto '}>EURO INVEST spol. s r.o.</span>
                         </div>
                         <div className={'flex flex-col xl:flex-row justify-between'}>
-                            <h4 className={'font-bold'}>Adresa prevádzkovateľa:</h4>
+                            <h4 className={'font-bold'}>Adresa prevádzkovateľa :</h4>
                             <span className={'w-full xl:max-w-[500px] ml-auto '}>Tomášikova 50/E 831 04 Bratislava</span>
                         </div>
                         <div className={'flex flex-col xl:flex-row justify-between'}>
-                            <h4 className={'font-bold'}>IČO prevádzkovateľa:</h4>
+                            <h4 className={'font-bold'}>IČO prevádzkovateľa :</h4>
                             <span className={'w-full xl:max-w-[500px] ml-auto '}>31359426</span>
                         </div>
                     </div>
-                    <hr className={'border'}/>
+                    <hr className={'border'} />
                     <div className={'flex flex-col gap-[25px] mt-[15px]'}>
                         <div className={'flex flex-col xl:flex-row justify-between'}>
                             <h4 className={'font-bold'}>Spracúvané osobné údaje:</h4>
@@ -87,13 +87,13 @@ const GDPR = () => {
     )
 }
 
-interface StaticProps{
+interface StaticProps {
     locale: string
 }
 
-export async function getStaticProps({locale}:StaticProps){
-    return{
-        props:{
+export async function getStaticProps({ locale }: StaticProps) {
+    return {
+        props: {
             ...(await serverSideTranslations(locale, ['home']))
             //Will be passed to the page component as props
         }

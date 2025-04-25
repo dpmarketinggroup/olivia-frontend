@@ -147,7 +147,7 @@ const OProjekte = () => {
               muted={true}
               loop={true}
             >
-              <source type="video/mp4" src="/videos/hero.mp4" />
+              <source type="video/webm" src="/videos/hero.webm" />
               {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
               {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
             </video>
@@ -195,53 +195,12 @@ const OProjekte = () => {
 
 
       <CommonDescription className="bg-primary " fill="white" button={true} />
-      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-10 w-full max-w-[1200px] mx-auto my-10 md:my-[200px] ">
-        <div className="absolute top-0 right-[-10px]">
-          <OverButtonBigIcon height="259" width="259" />
-        </div>
-        <div className="hidden md:flex lg:hidden absolute top-[-20%] right-10 md:right-20 z-[6]">
-          <Image
-            src="/img/laptop.png"
-            alt="alternativny text"
-            width={422.5}
-            height={312.32}
-          />
-        </div>
-        <div className="hidden lg:flex absolute top-[-20%] right-10 md:right-20 z-[6]">
-          <Image
-            src="/img/laptop.png"
-            alt="alternativny text"
-            width={650}
-            height={488}
-          />
-        </div>
-        <div className="flex md:hidden absolute top-[-10%] right-[-140px] md:right-20 z-[6]">
-          <Image
-            src="/img/laptop.png"
-            alt="alternativny text"
-            width={357.5}
-            height={268.4}
-          />
-        </div>
-        <p className="relative text-[#0E3F3B] text-[32px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
-          {translate("download-h")}
-        </p>
-        <Link href="/Karta vybavenia OLIVIA Residence.pdf">
-          <button
-            className={
-              "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"
-            }
-          >
-            {translate("download-button")}
 
-          </button>
-        </Link>
-      </div>
 
-      <div className="w-full mx-auto mt-[15rem] sm:mt-[25rem] mb-40 max-w-[1200px] ">
+      <div className="w-full mx-auto mt-[15rem] sm:mt-[25rem] mb-20 max-w-[1200px] ">
         <div className="bg-bgLight  flex flex-row relative justify-between items-end">
 
-          <div className="absolute right-0 top-[-150px] sm:top-[-300px] md:top-[-100px] z-[10]">
+          <div className="absolute right-0 top-[-70px] sm:top-[-300px] md:top-[-100px] z-[10]">
             <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] sm:w-[425px] sm:h-[425px] lg:w-[550px] lg:h-[550px]"}>
               <div className="absolute top-0 right-0 z-[10]">
                 <div className="flex flex-row">
@@ -260,15 +219,15 @@ const OProjekte = () => {
                 muted={true}
                 loop={true}
               >
-                <source type="video/mp4" src="/videos/zaluzie.mp4" />
+                <source type="video/webm" src="/videos/zaluzie.webm" />
                 {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
                 {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
               </video>
             </div>
           </div>
           <div className="w-full md:w-[45%] flex flex-col gap-8 ml-4 px-4 pt-40 md:pt-2 md:ml-10 my-4 md:my-10">
-            <h2 className="text-black text-[42px] md:text-[48px] leading-none">{translate("description-lokalita-5-heading-1")}<span className="text-primary" >{translate("description-lokalita-5-heading-2")}</span>{translate("description-lokalita-5-heading-3")}</h2>
-            <p className="text-black text-[24px] leading-[32px] w-[90%] mb-12 ">{translate("description-lokalita-5-description")}</p>
+            <h2 className="text-black text-[36px] md:text-[48px] leading-none">{translate("description-lokalita-5-heading-1")}<span className="text-primary" >{translate("description-lokalita-5-heading-2")}</span>{translate("description-lokalita-5-heading-3")}</h2>
+            <p className="text-black text-[24px] leading-[32px] mb-12 ">{translate("description-lokalita-5-description")}</p>
             <Link href="/stretnutie">
               <button
 
@@ -299,7 +258,7 @@ const OProjekte = () => {
         </div>
       </div>
 
-      <div className="max-w-[1200px] mt-20 mb-[40rem] xs:mb-[50rem] sm:mb-[54rem] h-fit md:my-20 w-full mx-auto ">
+      <div className="max-w-[1200px] mt-20 mb-[30rem] xs:mb-[50rem] sm:mb-[54rem] h-fit md:my-20 w-full mx-auto ">
         <div className="flex flex-col md:flex-row gap-10 h-[90vh] px-4 md:px-8">
           <div className="flex flex-col ">
             <div className="w-full relative">
@@ -364,7 +323,7 @@ const OProjekte = () => {
               </div>
               <div className="space-y-10">
                 <h2 className="text-white text-[36px] md:text-[42px]  leading-[38px] md:leading-[44px]">{translate("description-storage-heading")}</h2>
-                <p className="text-white text-[16px]  ">{translate("description-storage-text")}</p>
+                <p className="text-white text-[16px] w-[105%]  ">{translate("description-storage-text")}</p>
                 <Link href={`/stretnutie`}>
                   <button
 
@@ -566,15 +525,15 @@ const OProjekte = () => {
         </div>
         <div className="xl:max-w-[1200px] mx-auto pb-[27rem]   sm:pb-40 lg:pb-20 pt-10">
           <h2 className="relative text-black h-[200px] text-[48px] text-center mx-auto z-[10] ">{translate("financing")}</h2>
-          <div className="absolute bottom-[-100px] w-full left-1/2 transform -translate-x-1/2 z-[5]">
+          <div className="absolute bottom-0 w-full left-1/2 transform -translate-x-1/2 z-[5]">
             <div className="bg-yellow max-w-[1200px] relative p-6 md:p-8 mx-4 lg:mx-auto">
-              <div className="absolute top-0 right-[-10px]">
+              <div className="absolute top-0 right-[-10px] z-[10]">
                 <OverButtonBigIcon height="259" width="259" />
               </div>
               <div className="flex flex-col md:flex-row justify-between items-center">
-                <div className="md:w-2/3">
-                  <h3 className="text-[42px] text-[#0E3F3B] leading-none mb-8 w-[70%]">{translate("financial-helper")}</h3>
-                  <p className="text-[18px] text-[#0E3F3B] w-[90%]">{translate("financial-helper-text")}</p>
+                <div className="w-full md:w-2/3">
+                  <h3 className="text-[36px] md:text-[42px] text-[#0E3F3B] leading-none mb-8 w-[80%] md:w-[70%] z-[20] relative">{translate("financial-helper")}</h3>
+                  <p className="text-[18px] text-[#0E3F3B] z-[20] relative md:w-full w-[90%]">{translate("financial-helper-text")}</p>
                 </div>
                 <Link href="/kontakt">
                   <button

@@ -94,7 +94,7 @@ const Home = () => {
               muted={true}
               loop={true}
             >
-              <source type="video/mp4" src="/videos/hero.mp4" />
+              <source type="video/webm" src="/videos/hero.webm" />
               {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
               {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
             </video>
@@ -150,7 +150,7 @@ const Home = () => {
 
         </div>
       </div >
-      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-4 xl:h-4 mb-60">
+      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-4 xl:h-4 mb-40">
 
         <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-250px] z-[10]">
 
@@ -172,7 +172,7 @@ const Home = () => {
               <OverButtonBigIcon height="170" width="170" />
             </div>
             <AboutUs />
-            <p className="text-[16px] md:text-[25px] mt-4 leading-[18px] md:leading-[30px] text-center text-white  w-[90%] md:w-[55%]">{translate("hero-inform")}</p>
+            <p className="text-[16px] md:text-[25px] mt-4 leading-[18px] md:leading-[30px] text-center text-white w-[80%]">{translate("hero-inform")}</p>
           </div>
         </div>
       </div>
@@ -206,7 +206,7 @@ const Home = () => {
     </div > */}
 
       <CommonDescription fill="black" className="bg-bgLight" />
-      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-8 w-full max-w-[1200px] mx-auto my-10 md:mb-[250px] md:mt-[200px] ">
+      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-8 w-full max-w-[1200px] mx-auto my-10 md:mb-[170px] md:mt-[120px] ">
         <div className="absolute top-0 right-[-10px]">
           <OverButtonBigIcon height="259" width="259" />
         </div>
@@ -272,7 +272,7 @@ const Home = () => {
               muted={true}
               loop={true}
             >
-              <source type="video/mp4" src="/videos/250206OR6501-LOKALITA-shorter-16x9.mp4" />
+              <source type="video/webm" src="/videos/250206OR6501-LOKALITA-shorter-16x9.webm" />
 
             </video >
           </div >
@@ -289,15 +289,15 @@ const Home = () => {
               <ShopIcon />
               <p className="text-white text-[17px] leading-[20px] " ><ReactMarkdown>{translate("description-locale-description2")}</ReactMarkdown></p>
             </div>
-            <div className="flex flex-row flex-wrap gap-[6px] w-[90%] border-b-[2px] pb-6 border-[#ffffff33] border-dashed">
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-1")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-2")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-3")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-4")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-5")}</ReactMarkdown></p></div>
-              <div className="w-fit  flex flex-row justify-center items-center px-3 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[12px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-6")}</ReactMarkdown></p></div>
+            <div className="flex flex-row flex-wrap gap-[6px]  pb-6 ">
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-1")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-2")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-3")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-4")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-5")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-6")}</ReactMarkdown></p></div>
             </div>
-            <div className="flex flex-row justify-start items-center py-3 gap-2 border-b-[2px] border-[#ffffff33] border-dashed w-[90%]">
+            <div className="flex flex-row justify-start items-center py-3 gap-2 border-t-[2px] border-b-[2px] border-[#ffffff33] border-dashed w-[90%]">
               <Thermometer /><p className="text-white text-[17px] leading-[20px]"><ReactMarkdown>{translate("description-locale-bullet-1")}</ReactMarkdown></p>
             </div>
             <div className="flex flex-row justify-start items-center py-3 gap-2 border-b-[2px] border-[#ffffff33] border-dashed w-[90%]">
@@ -324,9 +324,9 @@ const Home = () => {
 
       <div className="flex justify-center mt-[10px] ">
         <div className=" relative  xl:mx-[165px]">
-          <div className="relative top-[40px] md:top-[150px] flex flex-col gap-[30px] items-center mb-[10px] ">
+          <div className="relative top-[40px] md:top-[150px] flex flex-col gap-[30px] items-center  ">
             <FloorPlan classname="w-[37px] xl:w-[42px] h-[39px] xl:h-[44px]" />
-            <h1 className=" text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px] text-center xl:text-left">
+            <h1 className=" text-[26px] xl:text-[48px] leading-[40px] xl:leading-[48px] text-center xl:text-left">
               {translate("filter-heading")}
             </h1>
           </div>
