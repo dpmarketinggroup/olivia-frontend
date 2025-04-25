@@ -72,7 +72,7 @@ const Negotiation = ({
                                 alt="hero image"
                                 layout={'fill'}
                                 src={"/img/map.png"}
-                                priority={true}
+                                loading="lazy"
                                 quality={100}
                             />
                             <div className="hidden md:block sticky z-[10] top-[250px] w-fit ml-auto mr-8 ">

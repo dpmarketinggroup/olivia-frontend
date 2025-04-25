@@ -1,23 +1,14 @@
 import Link from "next/link";
 import {
   FloorPlan,
-  ArrowDownNotFilledIcon,
-  RightArrow,
-  RectangleMediumIcon,
-  RectangleDarkIcon,
-  RectangleLightIcon,
   InfoIcon,
 } from "@components/icons/";
 import ArrowLink from "@components/icons/ArrowLink";
 import OverButtonIcon from "@components/icons/OverButton";
 import {
-  Timeline,
-  MapFooter,
+
   Negotiation,
   Subscription,
-  Info,
-  Equipment,
-
 } from "@components/common";
 import ReactMarkdown from 'react-markdown';
 import OverButtonBigIcon from "@components/icons/OverButtonBig";
@@ -25,21 +16,17 @@ import ShopIcon from "@components/icons/Shop";
 import { BuildingFilter } from "@components/filter";
 import AboutUs from "@components/icons/AboutUs";
 import {
-  ApartmentSwiper,
   CustomSwiper,
   DeveloperSwiper,
 } from "@components/swiper";
 import Head from "next/head";
 import {
-  ApartmentEquipmentDescription,
   CommonDescription,
 } from "@components/common/Description/Description";
-import { Button } from "@components/ui";
 import React, { useEffect, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import { Modal } from "@mantine/core";
 import Image from "next/image";
 import Thermometer from "@components/icons/Thermometer";
 import CheckIcon from "@components/icons/CheckIcon";
@@ -47,7 +34,15 @@ import Coins from "@components/icons/Coins";
 import Tree from "@components/icons/Tree";
 import PeoplePoints from "@components/icons/PeoplePoints";
 import ParkingFlag from "@components/icons/ParkingFlag";
-import { marked } from "marked";
+import dynamic from 'next/dynamic';
+const ApartmentSwiper = dynamic(() => import("@components/swiper/ApartmentSwiper"), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
+
+const MapFooter = dynamic(() => import("@components/common/MapFooter"), {
+  ssr: false,
+});
 
 
 const Home = () => {
@@ -55,6 +50,8 @@ const Home = () => {
   const { asPath, locale, locales, push } = useRouter();
 
   const { t: translate } = useTranslation("home");
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => setIsClient(true), []);
   function infoBanner() {
     if (locale === "sk") {
       return (
@@ -157,12 +154,12 @@ const Home = () => {
           <div className="hidden md:block">
 
             <Image
-              src={"/img/about-us.jpeg"} width={300} height={300} alt="Ukazka" />
+              src={"/img/about-us.jpeg"} width={300} height={300} alt="Ukazka" priority />
           </div>
           <div className=" flex md:hidden">
 
             <Image
-              src={"/img/about-us.jpeg"} width={170} height={170} alt="Ukazka" />
+              src={"/img/about-us.jpeg"} width={170} height={170} alt="Ukazka" priority />
           </div>
           <div className="bg-primary w-[170px] h-[170px] md:w-[280px] md:h-[300px] relative flex flex-col justify-center items-center">
             <div className="hidden md:block absolute top-0 right-[-8px]">
@@ -216,6 +213,7 @@ const Home = () => {
             alt="alternativny text"
             width={422.5}
             height={312.32}
+            loading="lazy"
           />
         </div>
         <div className="hidden lg:flex absolute top-[-30%] right-10 md:right-20 z-[6]">
@@ -224,6 +222,7 @@ const Home = () => {
             alt="alternativny text"
             width={585}
             height={439.2}
+            loading="lazy"
           />
         </div>
         <div className="flex md:hidden absolute top-[-10%] right-[-140px] md:right-20 z-[6]">
@@ -232,6 +231,7 @@ const Home = () => {
             alt="alternativny text"
             width={357.5}
             height={268.4}
+            loading="lazy"
           />
         </div>
         <p className="relative text-[#0E3F3B] text-[32px] md:text-[42px] leading-none z-[6] w-[80%] md:w-[40%]">
@@ -265,16 +265,18 @@ const Home = () => {
                 <div className="w-[40px] sm:w-[80px] h-[40px] sm:h-[80px] bg-white"></div>
               </div>
             </div>
-            <video
-              className={"w-full aspect-square object-cover"}
-              autoPlay={true}
-              playsInline={true}
-              muted={true}
-              loop={true}
-            >
-              <source type="video/webm" src="/videos/250206OR6501-LOKALITA-shorter-16x9.webm" />
+            {isClient && (
+              <video
+                className={"w-full aspect-square object-cover"}
+                autoPlay={true}
+                playsInline={true}
+                muted={true}
+                loop={true}
+              >
+                <source type="video/webm" src="/videos/250206OR6501-LOKALITA-shorter-16x9.webm" />
 
-            </video >
+              </video >
+            )}
           </div >
         </div >
         <div className="flex flex-col pb-[300px] sm:pb-[480px] lg:pb-0 lg:flex-row">

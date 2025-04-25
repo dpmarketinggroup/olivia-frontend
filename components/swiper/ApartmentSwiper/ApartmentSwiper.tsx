@@ -99,7 +99,7 @@ const ApartmentSwiper = () => {
               <div className={"relative h-[350px] "}>
                 <Image
 
-                  priority={true}
+                  loading="lazy"
                   objectPosition={"left"}
                   objectFit={"contain"}
                   alt={"Swiper image"}

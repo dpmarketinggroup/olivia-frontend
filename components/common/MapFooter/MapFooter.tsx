@@ -26,7 +26,7 @@ const MapFooter = () => {
                                 height={2980}
                                 alt="Mapa"
                                 src={"/img/small_map_mobile.png"}
-                                loading={'eager'}
+                                loading={'lazy'}
 
                             />
                         </div>
@@ -72,7 +72,7 @@ const MapFooter = () => {
                             height={2980}
                             alt="Mapa"
                             src={"/img/small_map.png"}
-                            loading={'eager'}
+                            loading={'lazy'}
                         />
                     </div>
                 </div>

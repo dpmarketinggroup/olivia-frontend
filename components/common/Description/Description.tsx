@@ -54,6 +54,7 @@ const Description: FunctionComponent<DescriptionProps> = ({
   video,
   button,
 }) => {
+
   return (
     <div
       className={`relative mt-[30rem] md:mt-[25rem] xl:mt-80  flex  ${reverse ? "flex-row-reverse" : "flex-row "
@@ -76,6 +77,7 @@ const Description: FunctionComponent<DescriptionProps> = ({
                   <div className="w-[35px] sm:w-[60px] lg:w-[95px] h-[35px] sm:h-[60px] lg:h-[95px] bg-transparent"></div>
                 </div>
               </div>
+
               <video
                 className={"w-full aspect-square object-cover"}
                 autoPlay={true}
@@ -142,6 +144,8 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
     { icon: Eco, text: translate('description-bullet-5') },
     { icon: Intercom, text: translate('description-bullet-6') },
   ];
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => setIsClient(true), []);
 
   return (
     <div id="vybavenie"
@@ -164,17 +168,20 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
                 <div className="w-[35px] sm:w-[50px] lg:w-[80px] h-[35px] sm:h-[60px] lg:h-[80px] bg-transparent"></div>
               </div>
             </div>
-            <video
-              className={"w-full aspect-square object-cover"}
-              autoPlay={true}
-              playsInline={true}
-              muted={true}
-              loop={true}
-            >
-              <source type="video/webm" src="/videos/230405OR2602-Bez-textu-16x9.webm" />
-              {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
-              {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
-            </video>
+            {isClient && (
+
+              <video
+                className={"w-full aspect-square object-cover"}
+                autoPlay={true}
+                playsInline={true}
+                muted={true}
+                loop={true}
+              >
+                <source type="video/webm" src="/videos/230405OR2602-Bez-textu-16x9.webm" />
+                {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
+                {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
+              </video>
+            )}
           </div>
         </div>
       </div >

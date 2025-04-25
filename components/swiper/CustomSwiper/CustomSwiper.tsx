@@ -121,7 +121,7 @@ const CustomSwiper = () => {
 
 
                 <Image
-                  priority={true}
+                  loading="lazy"
                   alt={"Swiper image"}
                   src={src}
                   width={648}
