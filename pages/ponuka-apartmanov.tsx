@@ -229,8 +229,8 @@ const PonukaBytov = () => {
           </button>
         </Link>
       </div>
-      <div className="max-w-[1200px] mt-20 mb-[32rem] sm:mb-[47rem] md:my-40 w-full mx-auto ">
-        <div className="flex flex-col md:flex-row gap-10 h-[90vh] px-4 md:px-8">
+      <div className="max-w-[1200px] mt-20 mb-[2rem] xs:mb-[2rem] sm:mb-[4rem] md:my-40 w-full mx-auto ">
+        <div className="flex flex-col md:flex-row gap-10  px-4 md:px-8">
           <div className="flex flex-col ">
             <div className="w-full relative">
               <div className="absolute top-0 right-0 z-[10]">
