@@ -69,7 +69,7 @@ const DeveloperSwiper = () => {
                   <div className="h-[58px] w-[58px] bg-white border-white border-[1px]"></div>
                 </div>
               </div>
-              <Image priority alt="Swiper image" quality={100} src={src} layout="fill" objectFit="cover" loading="lazy" />
+              <Image alt="Swiper image" quality={100} src={src} layout="fill" objectFit="cover" loading="lazy" />
             </div>
             <h5 className="text-black mt-[10px]">{label}</h5>
           </SwiperSlide>

@@ -3,8 +3,6 @@ import Image from "next/image";
 import { OverButtonIcon } from "@components/icons";
 import { useTranslation } from "next-i18next";
 import ArrowLink from "@components/icons/ArrowLink";
-import PointerIcon from "@components/icons/Pointer";
-import ParkingPointIcon from "@components/icons/ParkingPoint";
 const MapFooter = () => {
     const { t: translate } = useTranslation('home');
     return (

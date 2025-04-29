@@ -1,31 +1,20 @@
 import Link from "next/link";
-import {
-  FloorPlan,
-  InfoIcon,
-} from "@components/icons/";
+import FloorPlan from "@components/icons/FloorPlan";
 import ArrowLink from "@components/icons/ArrowLink";
 import OverButtonIcon from "@components/icons/OverButton";
-import {
-
-  Negotiation,
-  Subscription,
-} from "@components/common";
+import Negotiation from "@components/common/Negotiation";
+import Subscription from "@components/common/Subscription";
 import ReactMarkdown from 'react-markdown';
 import OverButtonBigIcon from "@components/icons/OverButtonBig";
 import ShopIcon from "@components/icons/Shop";
 import { BuildingFilter } from "@components/filter";
 import AboutUs from "@components/icons/AboutUs";
 import {
-  CustomSwiper,
-  DeveloperSwiper,
-} from "@components/swiper";
-import Head from "next/head";
-import {
   CommonDescription,
 } from "@components/common/Description/Description";
+import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Thermometer from "@components/icons/Thermometer";
@@ -35,6 +24,14 @@ import Tree from "@components/icons/Tree";
 import PeoplePoints from "@components/icons/PeoplePoints";
 import ParkingFlag from "@components/icons/ParkingFlag";
 import dynamic from 'next/dynamic';
+const CustomSwiper = dynamic(() => import("@components/swiper/CustomSwiper"), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
+const DeveloperSwiper = dynamic(() => import("@components/swiper/DeveloperSwiper"), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
 const ApartmentSwiper = dynamic(() => import("@components/swiper/ApartmentSwiper"), {
   ssr: false,
   loading: () => <p>Loading...</p>,
@@ -46,26 +43,10 @@ const MapFooter = dynamic(() => import("@components/common/MapFooter"), {
 
 
 const Home = () => {
-  const [isFloorDropDownCLicked, setIsFloorDropDownCLicked] = useState(false);
-  const { asPath, locale, locales, push } = useRouter();
-
   const { t: translate } = useTranslation("home");
   const [isClient, setIsClient] = useState(false);
   useEffect(() => setIsClient(true), []);
-  function infoBanner() {
-    if (locale === "sk") {
-      return (
-        <div className=" absolute 2xl:bottom-[-80px] xl:bottom-[-60px] lg:bottom-[-50px] md:bottom-[-40px] sm:bottom-[-30px] bottom-[-40px] w-full lg:h-[35px] sm:h-[20px] h-[25px] ">
-          <div className="flex justify-center items-center border-2 border-black 2xl:gap-5 gap-2 bg-[#476761] rounded-full h-full 2xl:w-[36%] w-[100%] lg:w-[50%] md:w-[75%] sm:w-[75%] mx-auto text-white text-[7pt] xl:text-[10pt] md:text-[10pt] sm:text-[8pt] px-3">
-            <div className="w-[13px] md:w-[15px] sm:w-[13px] items-center">
-              <InfoIcon />
-            </div>
-            <div className="">{translate("info-banner")}</div>
-          </div>
-        </div>
-      );
-    }
-  }
+
   return (
     <>
       <Head>

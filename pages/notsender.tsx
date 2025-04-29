@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { LeftArrow } from "@components/icons";
 import Head from "next/head";
