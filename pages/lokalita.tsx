@@ -244,7 +244,7 @@ muted={true}
 
 
 
-      <div className="max-w-[1200px] mb-20 w-full  bg-primary mx-auto pb-4 sm:pb-6 pr-4 sm:pr-6 flex flex-row gap-6 justify-between relative">
+      <div className="max-w-[1200px] mb-20 w-full  bg-primary mx-auto pb-4 sm:pb-6 pr-4 sm:pr-6 flex flex-row gap-4 md:gap-6 justify-between relative">
         <div className="bg-white h-[1150px] sm:h-[1080px] lg:h-[550px] w-[40px] sm:w-[80px] mr-2 sm:mr-6">
 
         </div>

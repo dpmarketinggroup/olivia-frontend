@@ -197,7 +197,7 @@ const OProjekte = () => {
       <CommonDescription className="bg-primary " fill="white" button={true} />
 
 
-      <div className="w-full mx-auto mt-[15rem] sm:mt-[25rem] mb-20 max-w-[1200px] ">
+      <div className="w-full mx-auto mt-[15rem] sm:mt-[15rem] mb-20 max-w-[1200px] ">
         <div className="bg-bgLight  flex flex-row relative justify-between items-end">
 
           <div className="absolute right-0 top-[-70px] sm:top-[-300px] md:top-[-100px] z-[10]">
