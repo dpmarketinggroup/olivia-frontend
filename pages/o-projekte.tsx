@@ -525,7 +525,7 @@ const OProjekte = () => {
         </div>
         <div className="xl:max-w-[1200px] mx-auto pb-[27rem]   sm:pb-40 lg:pb-20 pt-10">
           <h2 className="relative text-black h-[200px] text-[48px] text-center mx-auto z-[10] ">{translate("financing")}</h2>
-          <div className="absolute bottom-0 w-full left-1/2 transform -translate-x-1/2 z-[5]">
+          <div className="absolute bottom-[-10px] md:bottom-[-100px] w-full left-1/2 transform -translate-x-1/2 z-[5] ">
             <div className="bg-yellow max-w-[1200px] relative p-6 md:p-8 mx-4 lg:mx-auto">
               <div className="absolute top-0 right-[-10px] z-[10]">
                 <OverButtonBigIcon height="259" width="259" />
