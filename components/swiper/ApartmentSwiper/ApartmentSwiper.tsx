@@ -14,7 +14,7 @@ const ApartmentSwiper = () => {
   const { t: translate } = useTranslation("home");
   return (
     <div
-      className={`xl:relative text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col overflow-visible xl:mb-[50px] w-full xl:max-w-[1200px] xl:mx-auto`}
+      className={`xl:relative text-white pt-0 pb-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col overflow-visible xl:mb-[50px] w-full xl:max-w-[1200px] xl:mx-auto`}
     >
       <div
         className={`flex gap-6 flex-col xl:flex-row w-full justify-between xl:items-center mb-[65px]`}

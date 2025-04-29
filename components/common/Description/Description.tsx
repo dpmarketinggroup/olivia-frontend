@@ -149,7 +149,7 @@ export const CommonDescription: FunctionComponent<CommonDescriptionProps> = ({
 
   return (
     <div id="vybavenie"
-      className={`relative mt-[16rem] md:mt-[19rem] xl:mt-0  flex flex-row justify-between items-end justify-center xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
+      className={`relative mt-[10rem] md:mt-[19rem] xl:mt-0  flex flex-row justify-between items-end justify-center xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[50px] xl:mb-[125px]`}
     >
       <div className={"relative shrink-0 mb-0 "}>
         <div className={`bg-white w-[35px] sm:w-[50px] lg:w-[80px] ${button ? "h-[880px]" : "h-[800px]"} ${button ? "md:h-[600px]" : "md:h-[560px]"}`}></div>
@@ -268,7 +268,7 @@ export const TransportDescription: FunctionComponent<TransportDescriptionProps> 
   const { t: translate } = useTranslation("home");
   return (
     <div
-      className={`relative   md:mb-[500px] md:mt-[300px]  flex  flex-row-reverse justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[220px] xl:mb-[125px]`}
+      className={`relative   md:mb-[500px] md:mt-[300px]  flex  flex-row-reverse justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} mb-[150px] xl:mb-[125px]`}
     >   <div className="bg-white w-[35px] sm:w-[60px] lg:w-[80px] md:h-[400px] h-[800px]"></div>
 
 
@@ -276,7 +276,7 @@ export const TransportDescription: FunctionComponent<TransportDescriptionProps> 
 
 
 
-      <div className={`absolute z-[20] right-0 top-[700px] md:top-[-120px] lg:top-[-80px] `}>
+      <div className={`absolute z-[20] right-0 top-[600px] md:top-[-120px] lg:top-[-80px] `}>
         <div className="relative h-[280px] w-[280px] sm:h-[400px] sm:w-[400px] lg:h-[500px] lg:w-[500px]">
           <div className={`absolute bottom-0 md:top-0 right-0 z-[10]`}>
             <div className="flex flex-row">
@@ -381,12 +381,12 @@ export const SportDescription: FunctionComponent<SportDescriptionProps> = ({
   const { t: translate } = useTranslation("home");
   return (
     <div
-      className={`px-2 relative mb-[200px] md:mb-0  mt-[100px] flex flex-row justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} `}
+      className={`px-2 relative mb-[120px] md:mb-0  mt-[100px] flex flex-row justify-between items-start md:items-end justify-center  xl:px-0 w-full xl:max-w-[1200px] lg:mx-auto xl:gap-[110px] ${className} `}
     >
       <div className="bg-white w-[35px] sm:w-[60px] lg:w-[80px] h-[750px] sm:h-[400px]"></div>
 
 
-      <div className={`absolute z-[20] left-0 top-[650px] md:top-[-80px] lg:top-[-80px] `}>
+      <div className={`absolute z-[20] left-0 top-[570px] md:top-[-80px] lg:top-[-80px] `}>
         <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px]">
           <div className={`absolute bottom-0 md:top-0 left-0 z-[10]`}>
             <div className="flex flex-row">

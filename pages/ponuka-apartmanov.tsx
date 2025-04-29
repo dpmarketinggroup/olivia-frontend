@@ -187,7 +187,7 @@ const PonukaBytov = () => {
 
         </div>
       </div>
-      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-10 w-full max-w-[1200px] mx-auto my-6 md:my-[200px] ">
+      <div className="bg-yellow overflow-hidden md:overflow-visible relative p-4 md:p-10 w-full max-w-[1200px] mx-auto my-6 md:mt-[50px] md:mb-[200px]">
         <div className="absolute top-0 right-[-10px]">
           <OverButtonBigIcon height="259" width="259" />
         </div>
@@ -229,7 +229,7 @@ const PonukaBytov = () => {
           </button>
         </Link>
       </div>
-      <div className="max-w-[1200px] mt-20 mb-[2rem] xs:mb-[2rem] sm:mb-[4rem] md:my-40 w-full mx-auto ">
+      <div className="max-w-[1200px] mt-20 mb-[2rem] xs:mb-[2rem] sm:mb-[4rem] md:my-20 w-full mx-auto ">
         <div className="flex flex-col md:flex-row gap-10  px-4 md:px-8">
           <div className="flex flex-col ">
             <div className="w-full relative">

@@ -632,7 +632,7 @@ const Building = () => {
           "xl:py-[100px]"
           }`}
       > {!isExpanded && (
-        <div className="absolute bottom-0 pb-8 left-1/2 transform -translate-x-1/2 w-full z-[10] bg-gradient-to-t from-white to-transparent">
+        <div className="absolute bottom-0 pb-20 left-1/2 transform -translate-x-1/2 w-full z-[10] bg-gradient-to-t from-white to-transparent">
 
           <button
             className={

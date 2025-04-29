@@ -40,7 +40,7 @@ const Negotiation = ({
 
     return (
         <>
-            <div className='flex justify-center '>
+            <div className='flex justify-center mb-0 md:mb-20'>
                 <div className="w-full flex flex-col relative">
                     {!centerText ?
                         (
@@ -117,14 +117,14 @@ const Negotiation = ({
                     {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
                     <div className="z-[10] mt-8 ml-8"><ArrowLink fill="white" /></div>
 
-                    <p className="text-[22px] mb-8 ml-8 z-[10] font-medium leading-[18px]">Ponuka voľných apartmánov</p>
+                    <p className="text-[22px] mb-8 ml-8 z-[10] font-medium leading-[18px]">{translate("filter-heading")}</p>
 
                     <div className="absolute z-[10] top-0 right-[-10px]"><OverButtonBigIcon /></div>
 
                 </button>
                 <button className="relative bg-yellow text-[#0E3F3B] flex flex-row justify-between  items-center gap-2 px-[32px] py-[22px] w-full text-[18px] max-h-[96px] h-[96px]">
                     {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
-                    <p className="text-[22px] font-medium leading-[18px]">Rezervácia obhliadky</p><Booking />
+                    <p className="text-[22px] font-medium leading-[18px]">{translate("Rezervácia obhliadky")}</p><Booking />
                     <div className="absolute z-[10] top-0 right-0"><OverButtonIcon height="96" width="158" /></div>
                 </button>
             </div>

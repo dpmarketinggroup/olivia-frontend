@@ -63,21 +63,7 @@ const Home = () => {
               <div className="w-[30px] sm:w-[60px] h-[30px] sm:h-[60px] bg-white"></div>
               <div className="w-[30px] sm:w-[60px] h-[30px] sm:h-[60px] bg-white"></div>
             </div>
-          </div>
-          <div className="absolute inset-0 xl:w-full -z-[22] xl:overflow-hidden brightness-50">
-            <video
-              className={"h-full xl:h-auto object-cover"}
-              autoPlay={true}
-              playsInline={true}
-              muted={true}
-              loop={true}
-            >
-              <source type="video/webm" src="/videos/hero.webm" />
-              {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
-              {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
-            </video>
-          </div>
-          <div className="relative w-full px-4 md:px-8 xl:max-w-[1400px] xl:mx-auto my-auto">
+          </div><div className="relative w-full px-4 md:px-8 xl:max-w-[1400px] xl:mx-auto my-auto z-[10]">
 
             <div className="w-full sm:w-[600px] lg:w-[620px] mt-20 mb-[40px]  relative">
               <div className="relative w-fit mb-8 px-6 py-2 rounded-full bg-yellow overflow-hidden">
@@ -125,10 +111,24 @@ const Home = () => {
               </Link>
             </div>
           </div>
+          <div className="absolute inset-0 xl:w-full -z-[22] xl:overflow-hidden brightness-50">
+            <video
+              className={"h-full xl:h-auto object-cover"}
+              autoPlay={true}
+              playsInline={true}
+              muted={true}
+              loop={true}
+            >
+              <source type="video/webm" src="/videos/hero.webm" />
+              {/* <source type="video/mp4" src="/videos/vid1.mp4" /> */}
+              {/* <source src="/videos/vid2.mp4" type="video/mp4" /> */}
+            </video>
+          </div>
+
 
         </div>
       </div >
-      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-4 xl:h-4 mb-40">
+      <div className="max-w-[1200px]  xl:w-full mx-auto relative h-40 xl:h-4 mb-20">
 
         <div className="absolute right-[10px] md:right-[20px] xl:right-[-20px] transform   flex flex-row top-[-10px] sm:top-[-50px] xl:top-[-250px] z-[10]">
 
@@ -230,7 +230,7 @@ const Home = () => {
         </Link>
       </div>
 
-      <div className="max-w-[1200px] w-full mt-[100px] bg-primary mx-auto pb-4 sm:pb-6 pr-4 sm:pr-6 flex flex-row gap-6 justify-between relative">
+      <div className="max-w-[1200px] w-full mt-[50px] bg-primary mx-auto pb-4 sm:pb-6 pr-4 sm:pr-6 flex flex-row gap-6 justify-between relative">
         <div className="bg-white h-[1000px] sm:h-[1080px] lg:h-[620px] w-[40px] sm:w-[80px] mr-2 sm:mr-6">
 
         </div>

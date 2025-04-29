@@ -197,10 +197,10 @@ const OProjekte = () => {
       <CommonDescription className="bg-primary " fill="white" button={true} />
 
 
-      <div className="w-full mx-auto mt-[15rem] sm:mt-[15rem] mb-20 max-w-[1200px] ">
+      <div className="w-full mx-auto mt-[12rem] sm:mt-[15rem] mb-20 max-w-[1200px] ">
         <div className="bg-bgLight  flex flex-row relative justify-between items-end">
 
-          <div className="absolute right-0 top-[-70px] sm:top-[-300px] md:top-[-100px] z-[10]">
+          <div className="absolute right-0 top-[-100px] sm:top-[-300px] md:top-[-100px] z-[10]">
             <div className={"relative shrink-0 mb-[25px] xl:mb-0 w-[300px] h-[300px] sm:w-[425px] sm:h-[425px] lg:w-[550px] lg:h-[550px]"}>
               <div className="absolute top-0 right-0 z-[10]">
                 <div className="flex flex-row">
@@ -523,9 +523,9 @@ const OProjekte = () => {
             <div className="bg-white w-[40px] md:w-[100px] h-[40px] md:h-[100px] "></div>
           </div>
         </div>
-        <div className="xl:max-w-[1200px] mx-auto pb-[27rem]   sm:pb-40 lg:pb-20 pt-10">
+        <div className="xl:max-w-[1200px] mx-auto pb-[27rem] h-fit   sm:pb-40 lg:pb-20 pt-10">
           <h2 className="relative text-black h-[200px] text-[48px] text-center mx-auto z-[10] ">{translate("financing")}</h2>
-          <div className="absolute bottom-[-10px] md:bottom-[-100px] w-full left-1/2 transform -translate-x-1/2 z-[5] ">
+          <div className="absolute bottom-[-60px] md:bottom-[-100px] w-full left-1/2 transform -translate-x-1/2 z-[5] ">
             <div className="bg-yellow max-w-[1200px] relative p-6 md:p-8 mx-4 lg:mx-auto">
               <div className="absolute top-0 right-[-10px] z-[10]">
                 <OverButtonBigIcon height="259" width="259" />
