@@ -226,8 +226,8 @@ const OProjekte = () => {
             </div>
           </div>
           <div className="w-full md:w-[45%] flex flex-col gap-8 ml-4 px-4 pt-40 md:pt-2 md:ml-10 my-4 md:my-10">
-            <h2 className="text-black text-[36px] md:text-[48px] leading-none">{translate("description-lokalita-5-heading-1")}<span className="text-primary" >{translate("description-lokalita-5-heading-2")}</span>{translate("description-lokalita-5-heading-3")}</h2>
-            <p className="text-black text-[24px] leading-[32px] mb-12 ">{translate("description-lokalita-5-description")}</p>
+            <h2 className="text-black text-[35px] md:text-[48px] leading-none">{translate("description-lokalita-5-heading-1")}<span className="text-primary" >{translate("description-lokalita-5-heading-2")}</span>{translate("description-lokalita-5-heading-3")}</h2>
+            <p className="text-black text-[22px] md:text-[24px] leading-[32px] mb-12 ">{translate("description-lokalita-5-description")}</p>
             <Link href="/stretnutie">
               <button
 
@@ -533,7 +533,7 @@ const OProjekte = () => {
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="w-full md:w-2/3">
                   <h3 className="text-[36px] md:text-[42px] text-[#0E3F3B] leading-none mb-8 w-[80%] md:w-[70%] z-[20] relative">{translate("financial-helper")}</h3>
-                  <p className="text-[18px] text-[#0E3F3B] z-[20] relative md:w-full w-[90%]">{translate("financial-helper-text")}</p>
+                  <p className="text-[18px] text-[#0E3F3B] z-[20] relative md:w-full ">{translate("financial-helper-text")}</p>
                 </div>
                 <Link href="/kontakt">
                   <button

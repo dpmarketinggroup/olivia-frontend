@@ -112,7 +112,7 @@ const Negotiation = ({
             <div className="md:hidden block relative z-[10] w-full mx-auto mt-6 px-4">
 
 
-                <button className="relative bg-[url('/img/ponuka.jpeg')] bg-cover bg-center text-white  flex flex-col justify-between  items-start gap-2  text-[18px] w-full md:w-[395px] h-[220px] mb-4  ">
+                <Link href={"/ponuka-apartmanov"} className="relative bg-[url('/img/ponuka.jpeg')] bg-cover bg-center text-white  flex flex-col justify-between  items-start gap-2  text-[18px] w-full md:w-[395px] h-[220px] mb-4  ">
                     <div className="absolute z-[5] w-full h-full bg-black opacity-50"></div>
                     {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
                     <div className="z-[10] mt-8 ml-8"><ArrowLink fill="white" /></div>
@@ -121,12 +121,12 @@ const Negotiation = ({
 
                     <div className="absolute z-[10] top-0 right-[-10px]"><OverButtonBigIcon /></div>
 
-                </button>
-                <button className="relative bg-yellow text-[#0E3F3B] flex flex-row justify-between  items-center gap-2 px-[32px] py-[22px] w-full text-[18px] max-h-[96px] h-[96px]">
+                </Link>
+                <Link href={'/stretnutie'} className="relative bg-yellow text-[#0E3F3B] flex flex-row justify-between  items-center gap-2 px-[32px] py-[22px] w-full text-[18px] max-h-[96px] h-[96px]">
                     {/* {loading ? <Loader size={15} /> : <PaperPlaneIcon />} */}
-                    <p className="text-[22px] font-medium leading-[18px]">{translate("Rezervácia obhliadky")}</p><Booking />
+                    <p className="text-[22px] font-medium leading-[18px]">{translate("button-meeting")}</p><Booking />
                     <div className="absolute z-[10] top-0 right-0"><OverButtonIcon height="96" width="158" /></div>
-                </button>
+                </Link>
             </div>
         </>
     );

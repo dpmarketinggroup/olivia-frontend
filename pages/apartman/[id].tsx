@@ -883,8 +883,8 @@ const ApartmentDetail = () => {
         </div>
 
       </div >
-      <div className="max-w-[1200px] mt-10 mb-[44rem] sm:mb-[47rem] md:my-10 w-full mx-auto ">
-        <div className="flex flex-col md:flex-row gap-10 h-[90vh] px-4 md:px-8">
+      <div className="max-w-[1200px] mt-10 mb-[2rem] xs:mb-[2rem] sm:mb-[4rem] md:my-10 w-full mx-auto ">
+        <div className="flex flex-col md:flex-row gap-10  px-4 md:px-8">
           <div className="flex flex-col ">
             <div className="w-full relative">
               <div className="absolute top-0 right-0 z-[10]">
@@ -998,7 +998,7 @@ const ApartmentDetail = () => {
         </div>
       </div >
       <CustomSwiper />
-      <div id="vybavenie" className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-[200px] ">
+      <div id="vybavenie" className="bg-yellow overflow-hidden md:overflow-visible relative p-6 md:p-10 w-full max-w-[1200px] mx-auto my-[60px] ">
         <div className="absolute top-0 right-[-10px]">
           <OverButtonBigIcon height="259" width="259" />
         </div>
@@ -1018,7 +1018,7 @@ const ApartmentDetail = () => {
             height={488}
           />
         </div>
-        <div className="flex md:hidden absolute top-[-10%] right-[-120px] md:right-20 z-[6]">
+        <div className="flex md:hidden absolute top-0 right-[-120px] md:right-20 z-[6]">
           <Image
             src="/img/laptop.png"
             alt="alternativny text"
@@ -1029,7 +1029,7 @@ const ApartmentDetail = () => {
         <p className="relative text-[#0E3F3B] text-[36px] md:text-[48px] leading-none z-[6] w-[80%] md:w-1/2">
           {translate("download-h")}
         </p>
-        <div className="flex flex-col md:flex-row gap-2">
+        <div className="flex flex-col md:flex-row gap-0 md:gap-2">
           <Link href="/Karta vybavenia OLIVIA Residence.pdf">
             <button
               className={
