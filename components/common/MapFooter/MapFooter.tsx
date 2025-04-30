@@ -6,7 +6,7 @@ import ArrowLink from "@components/icons/ArrowLink";
 const MapFooter = () => {
     const { t: translate } = useTranslation('home');
     return (
-        <div className="flex justify-center ">
+        <div className="flex justify-center my-10">
             <div className="bg-white w-full ">
                 <div className="flex flex-col xl:flex-row justify-between w-full max-w-[1200px] xl:mx-auto relative ">
                     <div className="flex flex-col items-start gap-[28px]  lg:py-[100px] px-6 w-full md:w-[400px] lg:w-[650px] z-[10] ">
