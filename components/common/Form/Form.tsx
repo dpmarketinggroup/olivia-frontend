@@ -155,6 +155,47 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
               placeholder={translate("form-number") || ""}
             />
           </div>
+          {podnet && (
+            <div className="flex flex-col gap-[5px] xl:gap-[10px] items-start justify-start ">
+              <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-[#676766]">
+                {translate("podnety-desc-check")}*
+              </span>
+              <div className="flex flex-row gap-4">
+
+                <Checkbox
+                  checked={isClicked1}
+                  onClick={() => {
+                    if (isClicked2) setClicked2(false);
+                    setClicked1(!isClicked1);
+                  }}
+                  label={
+                    <>
+                      <span className=" text-[16px] xl:text-[18px]  text-black">
+                        {translate("podnety-check-1")}
+                      </span>
+                    </>
+                  }
+                  radius="xl"
+                />
+                <Checkbox
+
+                  checked={isClicked2}
+                  onClick={() => {
+                    if (isClicked1) setClicked1(false);
+                    setClicked2(!isClicked2);
+                  }}
+                  label={
+                    <>
+                      <span className="text-[16px] xl:text-[18px]  text-black">
+                        {translate("podnety-check-2")}
+                      </span>
+                    </>
+                  }
+                  radius="xl"
+                />
+              </div>
+            </div>
+          )}
           <Textarea
 
             value={message}

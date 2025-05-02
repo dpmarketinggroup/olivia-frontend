@@ -43,7 +43,10 @@
   "form-check-2": "Chcem aby ste mi zasielali novinky o projekte",
   "form-button": "Odoslať",
   "form-heading": "V prípade otázok nás neváhajte kontaktovať",
-  "podnety-heading": "Máte na pre nejaký podnet? Dajte nám vedieť!",
+  "podnety-heading": "Máte nejaký podnet? Dajte nám vedieť!",
+  "podnety-desc-check": "Typ podnetu",
+  "podnety-check-1": "Správa budovy",
+  "podnety-check-2": "Apartmán",
   "sales-assitant": "Sales Assistant",
 
   "info-banner": "Vo všetkých apartmánoch OLIVIA Residence je možné zriadiť trvalý pobyt.",
