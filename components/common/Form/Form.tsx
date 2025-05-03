@@ -22,6 +22,8 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
   const router = useRouter();
   const [isClicked1, setClicked1] = useState(false);
   const [isClicked2, setClicked2] = useState(false);
+  const [isClicked3, setClicked3] = useState(false);
+  const [isClicked4, setClicked4] = useState(false);
 
 
   const [name, setName] = useState("");
@@ -36,6 +38,8 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
     if (!isClicked1 && !isClicked2) return;
     if (isClicked1) return "apartmán";
     if (isClicked2) return "obchodný priestor";
+    if (isClicked3) return "Správa budovy";
+    if (isClicked4) return "Apartmán";
   }
 
   async function handleSubmit(e: SyntheticEvent) {
@@ -55,19 +59,12 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
       });
       await router.push("/dakujeme");
     } catch (e) {
-
       await router.push("/notsender");
       console.log(name + surname + email + phone + message);
     }
-
-
-
-    // Reset captcha after submission
+    // Reset captcha fter submission
     recaptchaRef.current?.reset();
     setLoading(false);
-
-
-
   }
   const { t: translate } = useTranslation("home");
   return (
@@ -163,10 +160,10 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
               <div className="flex flex-row gap-4">
 
                 <Checkbox
-                  checked={isClicked1}
+                  checked={isClicked3}
                   onClick={() => {
-                    if (isClicked2) setClicked2(false);
-                    setClicked1(!isClicked1);
+                    if (isClicked4) setClicked4(false);
+                    setClicked3(!isClicked3);
                   }}
                   label={
                     <>
@@ -179,10 +176,10 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
                 />
                 <Checkbox
 
-                  checked={isClicked2}
+                  checked={isClicked4}
                   onClick={() => {
-                    if (isClicked1) setClicked1(false);
-                    setClicked2(!isClicked2);
+                    if (isClicked3) setClicked3(false);
+                    setClicked4(!isClicked4);
                   }}
                   label={
                     <>
