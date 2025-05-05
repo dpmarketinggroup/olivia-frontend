@@ -12,7 +12,7 @@ const CustomSwiper = () => {
   const { t: translate } = useTranslation("home");
   return (
     <div
-      className={`text-white py-[55px] xl:py-[110px] px-[1rem] xl:px-0 flex flex-col xl:w-full xl:max-w-[1200px] xl:mx-auto`}
+      className={`text-white py-4 px-[1rem] xl:px-0 flex flex-col xl:w-full xl:max-w-[1200px] xl:mx-auto`}
     >
       <div
         className={`flex w-full justify-between items-center mb-[25px] xl:mb-[65px]`}
