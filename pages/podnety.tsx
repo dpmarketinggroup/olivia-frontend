@@ -33,7 +33,7 @@ const Kontakt = () => {
 
       <div className="mx-0 lg:mx-[50px] xl:mx-auto mb-40 flex flex-col mt-40 px-4 md:px-10 pb-10 xl:pb-0 pt-10 bg-bgLight max-w-[1200px] w-full relative">
 
-        <div className="absolute bottom-[-50px] left-[-50px]">
+        <div className="absolute bottom-[70px] left-[-50px]">
 
           <div className="relative hidden lg:block lg:w-[500px] lg:h-[500px]">
             <Image className={"w-full aspect-square object-cover"} src={'/img/241022OR5801-CUTSAVE-vyber_01_08_24_24.png'} width={1080} height={608} alt="podnety" />
