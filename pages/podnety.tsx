@@ -36,7 +36,7 @@ const Kontakt = () => {
         <div className="absolute bottom-[-50px] left-[-50px]">
 
           <div className="relative hidden lg:block lg:w-[500px] lg:h-[500px]">
-            <Image className={"w-full aspect-square object-cover"} src={'/img/241022OR5801-CUTSAVE-vyber_01_08_24_24.png'} width={1080} height={608} />
+            <Image className={"w-full aspect-square object-cover"} src={'/img/241022OR5801-CUTSAVE-vyber_01_08_24_24.png'} width={1080} height={608} alt="podnety" />
             <div className="absolute bottom-0 left-0 z-[10]">
               <div className="flex flex-row ">
                 <div className="bg-white h-[30px] md:h-[50px] w-[30px] md:w-[50px]"></div>
