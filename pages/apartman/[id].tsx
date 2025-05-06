@@ -1030,7 +1030,7 @@ const ApartmentDetail = () => {
           {translate("download-h")}
         </p>
         <div className="flex flex-col md:flex-row gap-0 md:gap-2">
-          <Link href="/Karta vybavenia OLIVIA Residence.pdf">
+          <Link href="/OLIVIA Residence_štandard projektu.pdf">
             <button
               className={
                 "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"
@@ -1040,7 +1040,7 @@ const ApartmentDetail = () => {
 
             </button>
           </Link>
-          <Link href="/OLIVIA Residence_štandard projektu.pdf">
+          <Link href="/Karta vybavenia OLIVIA Residence.pdf">
             <button
               className={
                 "relative text-[18px] hover:text-white hover:bg-[#0E3F3B] text-[#0E3F3B] bg-white font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10]"
