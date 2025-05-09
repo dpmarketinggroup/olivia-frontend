@@ -48,23 +48,33 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
 
     try {
       setLoading(true);
-      await axios.post(podnet ? "/api/podnety" : "/api/enquiry", {
-        type: meeting ? "stretnutie" : "kontakt",
-        name,
-        surname,
-        email,
-        phone,
-        message,
-        apartment: getApartment(),
+      await axios.post("/api/enquiry", {
+        body: JSON.stringify({
+          type: `${meeting ? "stretnutie" : "kontakt"}`,
+          name,
+          surname,
+          email,
+          phone,
+          message,
+          apartment: getApartment(),
+        }),
       });
+
       await router.push("/dakujeme");
     } catch (e) {
+
       await router.push("/notsender");
       console.log(name + surname + email + phone + message);
     }
-    // Reset captcha fter submission
+
+
+
+    // Reset captcha after submission
     recaptchaRef.current?.reset();
     setLoading(false);
+
+
+
   }
   const { t: translate } = useTranslation("home");
   return (
