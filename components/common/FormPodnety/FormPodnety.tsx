@@ -17,7 +17,7 @@ interface FormProps {
   podnet?: boolean;
 }
 
-const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
+const FormPodnety = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
   const { capchaToken, recaptchaRef, handleRecaptcha } = useRecaptcha();
   const router = useRouter();
   const [isClicked1, setClicked1] = useState(false);
@@ -278,4 +278,4 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
   );
 };
 
-export default Form;
+export default FormPodnety;

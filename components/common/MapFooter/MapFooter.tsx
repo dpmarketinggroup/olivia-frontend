@@ -13,7 +13,7 @@ const MapFooter = () => {
                         <h2 className=" text-center md:text-left text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px] text-black ">{translate("map-footer-heading-first-part")}
                             <span className="underline decoration-primary underline-offset-[2px]"> {translate("map-footer-heading-second-part")}</span> {translate("map-footer-heading-third-part")}</h2>
                         <p className="text-[20px] text-center md:text-left sm:leading-[24px] text-[16px] sm:text-[20px] text-[#676766] w-[103%] md:w-[80%]">{translate("map-footer-description")}</p>
-                        <p className="font-bold  text-center md:text-left text-[18px] sm:text-[24px] leading-[32px] text-black xl:w-auto self-center md:self-left">Rožňavská
+                        <p className="font-bold  text-center md:text-left text-[18px] sm:text-[24px] leading-[32px] text-black xl:w-auto self-left">Rožňavská
                             1B, Bratislava</p>
                         <div className="block md:hidden">
 

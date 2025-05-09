@@ -8,7 +8,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import PhoneIcon from "@components/icons/Phone";
 import React from "react";
-import Form from "@components/common/FormPodnety";
+import FormPodnety from "@components/common/FormPodnety";
 
 const Kontakt = () => {
   const { t: translate } = useTranslation("home");
@@ -57,7 +57,7 @@ const Kontakt = () => {
             <h2 className=" text-[48px] leading-[50px]  mb-[20px] ">
               {translate("podnety-heading")}
             </h2>
-            <Form podnet={true} isGreen={false} />
+            <FormPodnety podnet={true} isGreen={false} />
           </div>
         </div>
       </div>
