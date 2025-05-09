@@ -35,11 +35,12 @@ const FormPodnety = ({ meeting = false, isGreen, podnet = false }: FormProps) =>
   const [loading, setLoading] = useState(false);
 
   function getApartment() {
-    if (!isClicked1 && !isClicked2) return;
     if (isClicked1) return "apartmán";
     if (isClicked2) return "obchodný priestor";
     if (isClicked3) return "Správa budovy";
     if (isClicked4) return "Apartmán";
+
+    return; // nič sa nevybralo
   }
 
   async function handleSubmit(e: SyntheticEvent) {
@@ -63,8 +64,8 @@ const FormPodnety = ({ meeting = false, isGreen, podnet = false }: FormProps) =>
       await router.push("/dakujeme");
     } catch (e) {
 
-      await router.push("/notsender");
-      console.log(name + surname + email + phone + message);
+      // await router.push("/notsender");
+      // console.log(name + surname + email + phone + message);
     }
 
 
