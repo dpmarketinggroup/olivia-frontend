@@ -20,22 +20,25 @@ function getListId(type: string) {
       return 8;
     case "kontakt":
       return 9;
+    default:
+      return 0;
   }
-  return 0;
 }
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { email, surname, name, phone, message, apartment, type } = JSON.parse(
-    req.body.body
-  ) as Data;
-  // const modifiedNum =
-  const url = "https://api.sendinblue.com/v3/contacts";
-  if (req.method === "POST") {
-    // Process a POST request
-    let transporter = nodemailer.createTransport({
+  if (req.method !== "POST") {
+    res.setHeader("Allow", ["POST"]);
+    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
+
+  try {
+    const { email, surname, name, phone, message, apartment, type } =
+      req.body as Data;
+
+    const transporter = nodemailer.createTransport({
       port: 465,
       host: "smtp.m1.websupport.sk",
       auth: {
@@ -48,37 +51,34 @@ export default async function handler(
     await transporter.sendMail({
       from: {
         name: "Olivia Residence",
-        address: `${
+        address:
           type === "dopyt"
             ? "predaj@oliviaresidence.sk"
-            : "info@oliviaresidence.sk"
-        }`,
+            : "info@oliviaresidence.sk",
       },
       subject: "Nový dopyt z webovej stránky",
       bcc: "leads@dpmg.dev",
-      to: `${
+      to:
         type === "dopyt"
           ? "predaj@oliviaresidence.sk"
-          : "info@oliviaresidence.sk"
-      }`,
+          : "info@oliviaresidence.sk",
       html: `
-              <div>
-                  <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>
-                  <h5><span style="text-decoration: underline">Email:</span> ${email}</h5>
-                  <h5><span style="text-decoration: underline">Telefónne číslo:</span> ${phone}</h5>
-                  <h5><span style="text-decoration: underline">Správa:</span> ${message}</h5>
-                  ${
-                    apartment
-                      ? `
-                        <h5><span style="text-decoration: underline">Apartmán:</span> č. ${apartment}</h5>
-                  `
-                      : ""
-                  }
-              </div>`,
+        <div>
+          <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>
+          <h5><span style="text-decoration: underline">Email:</span> ${email}</h5>
+          <h5><span style="text-decoration: underline">Telefónne číslo:</span> ${phone}</h5>
+          <h5><span style="text-decoration: underline">Správa:</span> ${message}</h5>
+          ${
+            apartment
+              ? `<h5><span style="text-decoration: underline">Apartmán:</span> č. ${apartment}</h5>`
+              : ""
+          }
+        </div>
+      `,
     });
 
     await axios.post(
-      url,
+      "https://api.sendinblue.com/v3/contacts",
       {
         updateEnabled: true,
         email,
@@ -100,16 +100,9 @@ export default async function handler(
       }
     );
 
-    res.send({
-      status: 200,
-      body: {
-        name,
-        surname,
-        phone,
-        message,
-        email,
-        apartment,
-      },
-    });
+    res.status(200).json({ status: "ok" });
+  } catch (error) {
+    console.error("Email/sendinblue error", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 }
