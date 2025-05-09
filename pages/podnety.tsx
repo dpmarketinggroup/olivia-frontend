@@ -1,4 +1,4 @@
-import { Form, Hero, MapFooter } from "@components/common";
+import { Hero, MapFooter } from "@components/common";
 import { EmailSign, PhoneHero } from "@components/icons";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -8,6 +8,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import PhoneIcon from "@components/icons/Phone";
 import React from "react";
+import Form from "@components/common/FormPodnety";
 
 const Kontakt = () => {
   const { t: translate } = useTranslation("home");
