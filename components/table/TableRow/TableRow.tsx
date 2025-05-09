@@ -18,7 +18,7 @@ const TableRow = ({ apartmentNumber, numberOfRooms, availability, price, totalAr
     function getColor() {
         switch (availability) {
             case "voľný":
-                return 'bg-[#476761]';
+                return 'bg-primary';
             case "predaný":
                 return 'bg-[#EE4C36]';
             case "rezervovaný":

@@ -79,7 +79,7 @@ const StresneApartmany = () => {
       <NewHero
         imgName={"hero-stresne-apartmany.png"}
         icon={<MapPoint fill="#89A6A2" size={45} />}
-        title={translate("hero-lokalita-title")}
+        title={translate("hero-lokalita-title") || ""}
         description={translate("hero-lokalita-subtitle") || ""}
       />
       <section className="relative w-full desktop:max-w-[1920px] mx-auto flex flex-col justify-center items-center mt-6 mb-[6rem]">
@@ -182,7 +182,7 @@ const StresneApartmany = () => {
                   <div className="relative">
                     <div className="relative z-50 w-full sm:w-[420px] flex flex-col justify-end  p-4 h-[350px] sm:h-[205px]">
 
-                      <Link href={myArray[currentIndex].podorys}>
+                      <Link legacyBehavior href={myArray[currentIndex].podorys}>
                         <a
                           target={"_blank"}
                           className="cursor-pointer text-white bg-black rounded-2xl flex flex-row gap-2 justify-center items-center py-1 px-2 w-fit text-sm font-medium"
@@ -229,7 +229,7 @@ const StresneApartmany = () => {
                     </>) : (<></>)}
                     <hr className="border-[1px] border-[#00000022]" />
                     <div className="flex flex-row justify-between my-3 bg-primary p-2">
-                      <p className="text-white">Celková plocha</p>
+                      <p className="text-white">{translate("total-area-2")}</p>
                       <p className="text-white">{myArray[currentIndex].total}</p>
                     </div>
                     <hr className="border-[1px] border-[#00000022]" />

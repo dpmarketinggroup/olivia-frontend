@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Checkbox, RangeSlider } from "@mantine/core";
+import { useRef } from "react";
 import House from "./House";
 import { Table } from "@components/table";
 import { FilterButton } from "@components/ui/";
@@ -9,7 +10,11 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import Both from "@components/icons/Both";
-
+import OverButtonIcon from "@components/icons/OverButton";
+import OverButtonBigIcon from "@components/icons/OverButtonBig";
+import Image from "next/image";
+import ArrowLink from "@components/icons/ArrowLink";
+import MagnifierIcon from "@components/icons/Magnifier";
 export type Response = {
   id: number;
   attributes: {
@@ -69,6 +74,17 @@ const Building = () => {
   const { t: translate } = useTranslation("home");
   const [isSoldChecked, setIsSoldChecked] = useState(true);
   const [isReservatedChecked, setIsReservatedChecked] = useState(true);
+
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+
+  useEffect(() => {
+    const el = contentRef.current;
+    if (el && el.scrollHeight > 600) {
+      setIsOverflowing(true);
+    }
+  }, []);
 
   useEffect(() => {
     async function fetch() {
@@ -258,100 +274,18 @@ const Building = () => {
 
   return (
     <>
-      <div className="w-full xl:max-w-[1920px] xl3 overflow-hidden">
+      <div className="w-full xl:max-w-[1920px] mx-auto overflow-hidden">
         <House />
       </div>
-      <div className="building bg-primary-pattern w-full mb-[80px] px-[1rem] xl:px-0">
+      <div className="building bg-white w-full mb-[10px]  pb-10 px-0 md:px-[1rem] xl:px-0">
         <div
-          className={"w-full xl:max-w-[1200px] mx-auto py-[45px] xl:py-[90px]"}
+          className={"w-full max-w-[1200px] mx-auto px-8 py-[45px] xl:py-[90px] gap-8 flex flex-col md:flex-row justify-between"}
         >
-          <div className={"flex flex-col xl:grid grid-cols-3 gap-[50px]"}>
-            {/* <div className={"text-white"}>
-              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
-                {translate("price")}{" "}
-                <span className={"font-bold pl-[1rem]"}>
-                  {price[0]}k - {price[1] === 500 ? "nad " + price[1] + "k" : price[1] + "k"}
-                </span>
-              </h5>
-              <RangeSlider
-                onChange={(value) => setPrice(value)}
-                value={price}
-                min={130}
-                step={10}
-                max={500}
-                size={2}
-                sx={{
-                  ".mantine-Slider-thumb": {
-                    color: "white",
-                    border: "none",
-                    width: 20,
-                    height: 20,
-                  },
-                  ".mantine-Slider-bar": {
-                    backgroundColor: "white",
-                  },
-                }}
-              />
-            </div> */}
-            <div className={"text-white"}>
-              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
-                {translate("floor")}{" "}
-                <span className={"font-bold pl-[1rem]"}>
-                  {floor[0]}-{floor[1]}
-                </span>
-              </h5>
-              <RangeSlider
-                size={2}
-                onChange={(value) => setFloor(value)}
-                value={floor}
-                min={3}
-                minRange={2}
-                max={14}
-                sx={{
-                  ".mantine-Slider-thumb": {
-                    color: "white",
-                    border: "none",
-                    width: 20,
-                    height: 20,
-                  },
-                  ".mantine-Slider-bar": {
-                    backgroundColor: "white",
-                  },
-                }}
-              />
-            </div>
-            <div className={"text-white"}>
-              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
-                {translate("size")}{" "}
-                <span className={"font-bold pl-[1rem]"}>
-                  {area[0]} - {area[1]} m²
-                </span>
-              </h5>
-              <RangeSlider
-                onChange={(value) => setArea(value)}
-                value={area}
-                min={20}
-                step={5}
-                max={200}
-                size={2}
-                sx={{
-                  ".mantine-Slider-thumb": {
-                    color: "white",
-                    border: "none",
-                    width: 20,
-                    height: 20,
-                  },
-                  ".mantine-Slider-bar": {
-                    backgroundColor: "white",
-                  },
-                }}
-              />
-            </div>
-          </div>
-          <div className={"flex flex-col xl:flex-row justify-between"}>
-            <div className="flex xl:flex-row flex-col xl:justify-between gap-[30px] mt-[50px] w-full">
-              <div className={"flex flex-col xl:gap-[30px]"}>
-                <div className="flex justify-between xl:justify-start gap-[5px] xl:gap-[20px]">
+          <div className={"flex flex-col md:flex-row flex-wrap justify-between"}>
+            <div className="flex flex-col xl:justify-between gap-[30px]  w-full">
+              <div className={"flex flex-col "}>
+                <span className="text-black mb-2">{translate("filter-num-of-rooms")}</span>
+                <div className="flex  flex-wrap xl:justify-start gap-[10px] xl:gap-[20px]">
                   <FilterButton
                     clicked={room1Clicked}
                     onClick={() => setRoom1Clicked((prev) => !prev)}
@@ -449,10 +383,12 @@ const Building = () => {
                   />
                 </div> */}
               </div>
-              <div className={"xl:flex flex-col xl:items-end"}>
-                <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] xl:items-end">
+              <div className={"flex flex-col w-full"}>
+                <div className="flex flex-wrap flex-row gap-[10px] 
+                
+                xl:gap-[20px] items-end">
                   <div className="flex flex-col">
-                    <span className="text-white">{translate("equipment")}</span>
+                    <span className="text-black mb-2">{translate("options")}</span>
                     <FilterButton
                       clicked={withBalconyAndTerrace}
                       onClick={() => {
@@ -468,7 +404,7 @@ const Building = () => {
                         <Both
                           width="22"
                           height="22"
-                          fill={withBalconyAndTerrace ? "#0E3F3B" : "#fff"}
+                          fill={withBalconyAndTerrace ? "white" : "#087168"}
                         />
                       }
                     >
@@ -487,7 +423,7 @@ const Building = () => {
                       <TwoArrows
                         width={"22"}
                         height={"22"}
-                        fill={withTerrace ? "#0E3F3B" : "white"}
+                        fill={withTerrace ? "white" : "#087168"}
                       />
                     }
                     variant={"rectangle"}
@@ -507,7 +443,7 @@ const Building = () => {
                       <Basket
                         width={"22"}
                         height={"22"}
-                        fill={withBalcony ? "#0E3F3B" : "white"}
+                        fill={withBalcony ? "white" : "#087168"}
                       />
                     }
                     variant={"rectangle"}
@@ -523,7 +459,7 @@ const Building = () => {
                     }}
                     icon={
                       <BasketCrossed
-                        fill={withoutBalcony ? "#0E3F3B" : "white"}
+                        fill={withoutBalcony ? "white" : "#087168"}
                       />
                     }
                     variant={"rectangle"}
@@ -531,48 +467,190 @@ const Building = () => {
                     {translate("without-balcony")}
                   </FilterButton>
                 </div>
-                <div className=" flex flex-col items-end">
-                  <Link href={`${router.pathname}#results`}>
-                    <button
-                      disabled={loading}
-                      onClick={handleClick}
-                      className={
-                        "bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px]"
-                      }
-                    >
-                      {translate("search")}
-                    </button>
-                  </Link>
-                  <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
-                    <button
-                      className={
-                        "bg-[#476761] hover:bg-[#0E3F3B] h-[50px] px-[30px] text-white font-semibold mt-[30px] "
-                      }
-                    >
-                      Prejdite sa po ukážkovom apartmáne OLIVIA Residence
-                    </button>
-                  </Link>
+                <div className=" flex flex-row justify-between">
+
+
+
                 </div>
-              </div>
+              </div>  </div>
+          </div>
+
+
+          <div className={"flex flex-col w-full md:w-1/2  gap-[50px] "}>
+            {/* <div className={"text-white"}>
+              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
+                {translate("price")}{" "}
+                <span className={"font-bold pl-[1rem]"}>
+                  {price[0]}k - {price[1] === 500 ? "nad " + price[1] + "k" : price[1] + "k"}
+                </span>
+              </h5>
+              <RangeSlider
+                onChange={(value) => setPrice(value)}
+                value={price}
+                min={130}
+                step={10}
+                max={500}
+                size={2}
+                sx={{
+                  ".mantine-Slider-thumb": {
+                    color: "white",
+                    border: "none",
+                    width: 20,
+                    height: 20,
+                  },
+                  ".mantine-Slider-bar": {
+                    backgroundColor: "white",
+                  },
+                }}
+              />
+            </div> */}
+            <div className={"text-black w-full"}>
+              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
+                {translate("floor")}{" "}
+                <span className={"font-bold pl-[1rem]"}>
+                  {floor[0]}-{floor[1]}
+                </span>
+              </h5>
+              <RangeSlider
+                size={2}
+                onChange={(value) => setFloor(value)}
+                value={floor}
+                min={3}
+                minRange={2}
+                max={14}
+                sx={{
+                  ".mantine-Slider-thumb": {
+                    backgroundColor: "black",
+                    color: "white",
+                    border: "none",
+                    width: 20,
+                    height: 20,
+                  },
+                  ".mantine-Slider-bar": {
+                    backgroundColor: "#087168",
+                  },
+                }}
+              />
+            </div>
+            <div className={"text-black w-full"}>
+              <h5 className={"mb-[20px] text-[14px] leading-[20px]"}>
+                {translate("size")}{" "}
+                <span className={"font-bold pl-[1rem]"}>
+                  {area[0]} - {area[1]} m²
+                </span>
+              </h5>
+              <RangeSlider
+                onChange={(value) => setArea(value)}
+                value={area}
+                min={20}
+                step={5}
+                max={200}
+                size={2}
+                sx={{
+                  ".mantine-Slider-thumb": {
+                    backgroundColor: "black",
+                    color: "white",
+                    border: "none",
+                    width: 20,
+                    height: 20,
+                  },
+                  ".mantine-Slider-bar": {
+                    backgroundColor: "#087168",
+                  },
+                }}
+              />
             </div>
           </div>
+
+        </div>
+        <div className="flex flex-col-reverse md:flex-row justify-between max-w-[1200px] mx-auto">
+          <div className="overflow-hidden md:overflow-visible w-full md:w-2/3 lg:w-1/2">
+            <div className="bg-yellow relative my-20 md:mt-0 p-6 w-full ">
+              <div className="absolute top-0 right-[-10px]">
+                <OverButtonBigIcon />
+              </div>
+
+
+              <div className="absolute top-[-40%] right-[-140px] md:right-[-50px]">
+                <Image
+                  src="/img/iphone.png"
+                  alt="alternativny text"
+                  width={"434"}
+                  height="325"
+                />
+
+              </div>
+              <p className="text-[#0E3F3B] text-[20px] w-1/2">
+                {translate("showroom-offer")}
+              </p>
+              <Link href="https://my.matterport.com/show/?m=x1f7uttieiY">
+                <button
+                  className={
+                    "  h-[35px]  text-[#0E3F3B] font-medium mt-[30px] border-b-[1px] border-[#0E3F3B] flex flex-row justify-center items-center gap-2"
+                  }
+                >
+                  {translate("check-it")}
+                  <ArrowLink fill="#0E3F3B" />
+                </button>
+              </Link>
+            </div>
+          </div>
+          <Link href={`${router.pathname}#results`}>
+            <button
+              disabled={loading}
+              onClick={handleClick}
+              className="drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] mx-[1rem] group"
+            ><div className="group-hover:hidden block">
+
+                <MagnifierIcon fill="#ffffff" />
+              </div>
+              <div className="group-hover:block hidden ">
+                <MagnifierIcon fill="#087168" />
+              </div>
+              <p className="text-[18px] leading-[18px]">{translate("search")}</p>
+              <div className="absolute z-[10] top-0 right-0">
+                <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                  <OverButtonIcon />
+                </div>
+                <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                  <OverButtonIcon fill="#087168" />
+                </div></div>
+            </button>
+          </Link>
         </div>
       </div>
       <div
+        ref={contentRef}
         id={"results"}
-        className={`flex flex-col xl:gap-[120px] px-[1rem] xl:px-0 xl:min-h-[1px] bg-[#F5F5F5] mt-[-80px] ${(oneRooms ||
-          oneAndHalfRooms ||
-          twoRooms ||
-          threeRooms ||
-          fourAndHalfRooms) &&
+        className={`${isExpanded ? "max-h-full" : "max-h-[600px] overflow-hidden"
+          } flex flex-col xl:gap-[120px] px-[1rem] py-8 xl:px-0 xl:min-h-[1px] bg-[#F5F5F5] relative mt-[-80px] ${(oneRooms ||
+            oneAndHalfRooms ||
+            twoRooms ||
+            threeRooms ||
+            fourAndHalfRooms) &&
           "xl:py-[100px]"
           }`}
-      >
+      > {!isExpanded && (
+        <div className="absolute bottom-0 pb-20 left-1/2 transform -translate-x-1/2 w-full z-[10] bg-gradient-to-t from-white to-transparent">
+
+          <button
+            className={
+              "relative text-[18px] hover:text-white drop-shadow-md hover:bg-[#0E3F3B] text-[#0E3F3B] bg-[#F4F4F4] font-medium mt-[30px] flex flex-row justify-center items-center py-4 px-6 z-[10] mx-auto"
+            }
+
+            onClick={() => setIsExpanded((prev) => !prev)}
+          >
+            {isExpanded ? "Zobraziť menej" : translate("more")}
+          </button>
+        </div>
+      )}
+
         {oneRooms?.length ? (
           <div id={"one-apt"}>
             <h3
               className={
-                "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
+                "w-full xl:max-w-[1200px] xl:mx-auto text-[24px] font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
               {translate("filter-floor-1")}
@@ -633,7 +711,7 @@ const Building = () => {
           <div id={"oneHalf-apt"}>
             <h3
               className={
-                "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
+                "w-full xl:max-w-[1200px] xl:mx-auto font-bold text-[24px] xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
               {translate("filter-floor-1.5")}
@@ -694,7 +772,7 @@ const Building = () => {
           <div id={"two-apt"}>
             <h3
               className={
-                "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
+                "w-full xl:max-w-[1200px] xl:mx-auto font-bold text-[24px] xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
               {translate("filter-floor-2")}
@@ -756,7 +834,7 @@ const Building = () => {
           <div id={"three-apt"}>
             <h3
               className={
-                "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
+                "w-full xl:max-w-[1200px] xl:mx-auto font-bold text-[24px] xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
               {translate("filter-floor-3")}
@@ -818,7 +896,7 @@ const Building = () => {
           <div id={"fourHalf-apt"}>
             <h3
               className={
-                "w-full xl:max-w-[1200px] xl:mx-auto font-bold xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
+                "w-full xl:max-w-[1200px] xl:mx-auto font-bold text-[24px] xl:text-[32px] xl:leading-[38px] mb-[30px] xl:mb-[95px]"
               }
             >
               {translate("filter-floor-4.5")}
@@ -876,6 +954,7 @@ const Building = () => {
           ""
         )}
       </div>
+
     </>
   );
 };

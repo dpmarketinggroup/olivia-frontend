@@ -23,10 +23,9 @@ const Stretnutie = () => {
       return (
         <div className="flex gap-[20px] items-center mb-[100px] xl:mb-[20px]">
           <PhoneIcon />
-          <Link href={"tel:+421901923324"}>
-            <a className="font-bold text-[18px] leading-7 text-white">
-              +421 901 923 324
-            </a>
+          <Link href={"tel:+421901923324"} className="font-bold text-[18px] leading-7 text-white">
+            +421 901 923 324
+
           </Link>
         </div>
       );
@@ -37,11 +36,11 @@ const Stretnutie = () => {
       <Head>
         <title>Stretnutie | Olivia Residence</title>
       </Head>
-      <div className="flex justify-center bg-[#0E3F3B]">
+      <div className="flex justify-center py-20 bg-[#0E3F3B]">
         <div className="relative w-full xl:max-w-[1920px]">
           <div className="flex flex-col items-center pt-[100px] xl:pt-[140px]">
             <MapPoint2 />
-            <h1 className="font-bold text-[32px] xl:text-[40px] leading-[48px] tracking-[-0.5px] text-white xl:w-[600px] text-center mb-[55px] xl:mb-[px] mt-[40px] mx-4">
+            <h1 className="font-bold text-[32px] xl:text-[40px] leading-[48px] tracking-[-0.5px] text-white  text-center mb-[55px] xl:mb-[40px] mt-[40px] mx-4">
               {translate("hero-stretnutie-heading")}
             </h1>
           </div>
@@ -71,10 +70,9 @@ const Stretnutie = () => {
                 </div>
                 <div className="flex gap-[20px] items-center mb-[10px]">
                   <EmailSign />
-                  <Link href={"mailto:info@oliviaresidenc.sk"}>
-                    <a className="font-bold text-[18px] leading-7 text-white">
-                      info@oliviaresidence.sk
-                    </a>
+                  <Link href={"mailto:info@oliviaresidenc.sk"} className="font-bold text-[18px] leading-7 text-white">
+                    info@oliviaresidence.sk
+
                   </Link>
                 </div>
                 {telNumber()}

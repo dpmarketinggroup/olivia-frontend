@@ -175,8 +175,6 @@ const FloorDetail = () => {
       return <Severka />;
     } else if (locale === "en") {
       return <SeverkaN />;
-    } else if (locale === "de") {
-      return <SeverkaN />;
     }
   }
   function renderDetail() {
@@ -298,9 +296,8 @@ const FloorDetail = () => {
                     {translate("filter-drop-down-general")}
                   </span>
                   <div
-                    className={`${
-                      isFloorDropDownCLicked ? "dropdown-content" : "hidden"
-                    }`}
+                    className={`${isFloorDropDownCLicked ? "dropdown-content" : "hidden"
+                      }`}
                   >
                     <div className=" flex flex-col px-[30px] text-[18px] leading-7 text-[#476761] font-medium">
                       <Link href={"/podlazie/3"}>
@@ -430,13 +427,13 @@ export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
       locale: "sk",
     };
   });
-  const de = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((id) => {
-    return {
-      params: { id: id.toString() },
-      locale: "de",
-    };
-  });
-  const paths = [...de, ...en, ...sk];
+  // const de = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((id) => {
+  //   return {
+  //     params: { id: id.toString() },
+  //     locale: "de",
+  //   };
+  // });
+  const paths = [...en, ...sk];
 
   return {
     paths,

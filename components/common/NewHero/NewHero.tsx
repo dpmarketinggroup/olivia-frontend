@@ -13,7 +13,7 @@ import { useTranslation } from "next-i18next";
 interface HeroProps {
   imgName: string;
   icon?: JSX.Element;
-  title: string;
+  title?: string;
   description?: string;
   withRectangles?: boolean;
 }

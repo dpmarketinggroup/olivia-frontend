@@ -5,6 +5,7 @@ import React, {
   MouseEvent,
 } from "react";
 import Logo from "../../icons/Logo";
+import LogoWhite from "@components/icons/LogoWhite";
 import DownArrowIcon from "../../icons/DownArrow";
 import Link from "next/link";
 import { Burger, Modal, Select } from "@mantine/core";
@@ -13,8 +14,9 @@ import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
-import { FaFacebookSquare, FaInstagramSquare, FaYoutube } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
+import { OverButtonIcon } from "@components/icons";
+import ArrowLink from "@components/icons/ArrowLink";
 
 interface NavbarProps {
   mainPage?: boolean;
@@ -24,10 +26,40 @@ const USER_CONSENT_COOKIE_KEY = "cookie_consent_is_true";
 const USER_CONSENT_COOKIE_EXPIRE_DATE = 3;
 
 const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
-  const languages = ["sk", "en", "de"];
+  const languages = ["sk", "en"];
   const router = useRouter();
+  const path = router.pathname;  // napr. "/apartman/[id]"
+  const aspath = router.asPath;
   const { asPath, locale, locales, push } = useRouter();
   const { t: translate } = useTranslation("home");
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isWhite, setIsWhite] = useState(false);
+
+
+  useEffect(() => {
+    setIsWhite(
+      asPath.startsWith("/stresne-apartmany") ||
+      asPath.startsWith("/en/stresne-apartmany") ||
+      asPath.startsWith("/podnety") ||
+      asPath.startsWith("/en/podnety") ||
+      asPath.startsWith("/gdpr") ||
+      asPath.startsWith("/en/gdpr")
+    );
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  function telNumber() {
+    if (locale === "sk") {
+      return (
+        <Link href={"tel:+421901923324"} className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2"> +421 901 923 324<ArrowLink />
+        </Link>
+      );
+    }
+  }
   function modalTranslate() {
     if (locale === "sk") {
       return (
@@ -51,6 +83,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               src={"/241122OR5901-1x1.png"}
               objectFit={"contain"}
               layout={"fill"}
+              alt="Image"
             />
           </div>
         </Modal>
@@ -59,26 +92,19 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
   }
 
   function infoSlider() {
-    if (locale === "de") {
-      return (
-        <Marquee pauseOnHover speed={30} gradient={!mobileAndTablet}>
-          <p className="text-white text-center py-[5px] px-[5px]">
-            {translate("information-slider")}
-          </p>
-        </Marquee>
-      );
-    } else {
-      return (
-        <Marquee pauseOnHover speed={30} gradient={!mobileAndTablet}>
-          <p className="text-white text-center py-[5px] px-[5px]">
-            {translate("information-slider")}
-          </p>
-        </Marquee>
-      );
-    }
+
+    return (
+      // <Marquee pauseOnHover speed={30} >
+      <p className="text-white text-center py-[8px] px-[5px]">
+        {translate("information-slider")}
+      </p>
+      // </Marquee >
+    );
+
   }
 
   const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
+  const [isOpenPodnety, setIsOpenPodnety] = useState(false);
   const [cookieConsentIsTrue, setCookieConsentIsTrue] = useState(true);
   const [scrollLocked, setScrollLocked] = useScrollLock();
 
@@ -132,7 +158,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
   return (
     <>
-      {modalTranslate()}
+      {/* {modalTranslate()} */}
       {/*{*/}
 
       {/*     (mainPage && !cookieConsentIsTrue) && (*/}
@@ -159,28 +185,64 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
       {/*    )*/}
       {/*}*/}
       {/*    ${(mainPage && !cookieConsentIsTrue) && "mt-[40px]"} */}
+      {/* <nav
+        className={`bg-transparent shadow-[0_0_10px_rgba(0,0,0,0.15)] xl:h-[95px] w-full fixed top-0 z-[100]`}
+      > */}
       <nav
-        className={`bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] xl:h-[95px] w-full fixed top-0 z-[100]`}
-      >
-        <div className="bg-primary">{infoSlider()}</div>
+        className={`${(isWhite || isScrolled || isOpenMobileNav) ? "bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] " : "bg-transparent"}  w-full fixed top-0 z-[100]`}
+      ><Marquee gradient={false} className="bg-black">
+
+          <div className="bg-black">{infoSlider()}</div>
+        </Marquee>
         <div
-          className={`px-[1rem] xl:px-0 relative lg:shadow-none w-full xl:max-w-[1920px] mx-auto xl:h-[60px] flex items-center justify-between`}
+          className={`px-6 relative lg:shadow-none w-full xl:max-w-[1920px] mx-auto h-[80px] flex items-center justify-between`}
         >
+
+
           <div
-            className={`${isOpenMobileNav && "h-screen"
-              } xl:h-auto flex flex-col xl:flex-row gap-[50] items-center xl:ml-[40px] xl:mr-0 min-w-full xl:min-w-fit`}
+            className={
+              "hidden xl:flex flex-row gap-[20px] xl:gap-[15px] xl:text-[16px] xl:mt-0 "
+            }
           >
-            <div
-              className={`w-full flex justify-between ${!isOpenMobileNav ? "mb-[20px]" : "mb-[35px]"
-                } mt-[20px] xl:mb-0 xl:mt-0`}
-            >
-              <Link href="/">
-                <a>
-                  <Logo />
-                </a>
+            <Link href="/ponuka-apartmanov" className={` drop-span p-[3px] mt-1 ${isWhite || isScrolled ? "text-black " : "text-white"} uppercase`}>
+              {translate("apartment-swiper-link")}
+
+            </Link>
+            <Link href="/stresne-apartmany" className={` ${isWhite || isScrolled ? "text-black " : "text-white"}  uppercase flex justify-center items-center mt-1`}>
+              <p className="">{translate("footer-link-top-apartments")}</p>
+
+            </Link>
+            <Link href="/lokalita" className={`mt-1 p-[3px] ${isWhite || isScrolled ? "text-black " : "text-white"} text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p>
+            </Link>
+
+
+          </div>
+
+
+
+          <div
+            className={`xl:w-fit w-full flex flex-col justify-center   xl:mb-0 xl:mt-0`}
+          >
+            <div className="flex justify-between items-center">
+
+              <Link href="/" className="h-fit" >
+
+                {(isWhite || isScrolled || isOpenMobileNav) ? <><div className="sm:hidden flex">
+                  <Logo width={104} height={25} /> </div> <div className="hidden sm:block">
+                    <Logo width={208} height={50} /> </div></> : <><div className="sm:hidden flex items-center justify-center my-auto">
+                      <LogoWhite width={104} height={25} /> </div> <div className="hidden sm:block">
+                    <LogoWhite width={208} height={50} /> </div></>}
+
+
               </Link>
-              <div className="xl:hidden">
+              <div className="xl:hidden flex flex-row justify-center items-center gap-6">
+                <Link href="/ponuka-apartmanov">
+                  <button className={`${isOpenMobileNav ? "hidden" : "block"} w-fit ${isWhite || isScrolled ? "bg-[#f4f4f4]" : "bg-white"} hover:bg-primary  font-medium text-[12px] sm:text-[16px] leading-[24px] tracking-[-0.1px] w-[100px] sm:w-[210px] px-6 hover:text-white text-primary h-[32px] sm:h-[59px] `}>
+                    {translate("hero-button-white")}
+                  </button>
+                </Link>
                 <Burger
+                  color={(isWhite || isScrolled || isOpenMobileNav) ? "#087168" : "white"}
                   opened={isOpenMobileNav}
                   onClick={() => {
                     setIsOpenMobileNav((o) => !o);
@@ -189,34 +251,151 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 />
               </div>
             </div>
-            <div
-              className={` gap-[25px] items-center mb-[20px] ${!isOpenMobileNav ? "hidden" : "flex"
-                }`}
-            >
-              <Link href={"https://www.instagram.com/olivia.residence/"}>
-                <FaInstagramSquare
-                  className={"w-[30px] h-[30px] cursor-pointer"}
-                />
+
+
+            <div className={`${isOpenMobileNav ? "flex" : "hidden"} flex-col absolute  bg-white w-full top-[5rem] left-0 gap-4 py-2 z-[20] h-screen`}>
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/ponuka-apartmanov" className={` drop-span p-[3px] text-black uppercase mx-auto`}>
+                {translate("apartment-swiper-link")}
+
               </Link>
-              <Link href={"https://www.facebook.com/olivia.residence.ba"}>
-                <FaFacebookSquare
-                  className={"w-[30px] h-[30px] cursor-pointer"}
-                />
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/stresne-apartmany" className={`text-black   uppercase flex justify-center items-center mt-1`}>
+                <p className="">{translate("footer-link-top-apartments")}</p>
+
               </Link>
-              <Link href={"https://www.youtube.com/@oliviaresidence6315"}>
-                <FaYoutube className={"w-[30px] h-[30px] cursor-pointer"} />
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/lokalita" className={`mt-1 p-[3px] text-black text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p>
               </Link>
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/o-projekte" className="uppercase text-black mx-auto">{translate("footer-link-about")}
+              </Link>
+
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/kontakt" className={`mt-0 md:mt-1 p-0 md:p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-contact")}
+              </Link>
+
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/podnety" className={`mt-0 md:mt-1 p-0 md:p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-comments")}
+              </Link>
+
+              <Link href={`/stretnutie`} className="mx-auto">
+                <button
+
+                  className="drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px] max-h-[63px] w-fit group"
+                >
+                  <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+                  <div className="group-hover:hidden block">
+
+                    <ArrowLink fill="#ffffff" />
+                  </div>
+                  <div className="group-hover:block hidden ">
+                    <ArrowLink fill="#087168" />
+                  </div>
+                  <div className="absolute z-[10] top-0 right-0">
+                    <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out drop-shadow-md">
+
+                      <OverButtonIcon />
+                    </div>
+                    <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                      <OverButtonIcon fill="#087168" />
+                    </div></div>
+
+                </button>
+              </Link>
+
+              <Link href={"mailto:info@oliviaresidence.sk"} className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2 text-[16px]">
+                <>
+                  info@oliviaresidence.sk <ArrowLink />
+                </>
+              </Link>
+              {telNumber()}
+              <div className="text-black flex flex-row gap-2 mx-auto mb-4">
+
+                <button
+
+                  onClick={() => push(asPath, asPath, { locale: "sk" })}
+                  className={`uppercase text-[16px] ${locale === "sk" ? "text-black font-bold" : "text-gray-500"
+                    }`}
+                >
+                  SK
+                </button>
+                <p>|</p>
+                <button
+
+                  onClick={() => push(asPath, asPath, { locale: "en" })}
+                  className={`uppercase text-[16px] ${locale === "en" ? "text-black font-bold" : "text-gray-500"
+                    }`}
+                >
+                  EN
+                </button>
+
+              </div>
+              <div className="mx-auto">
+
+                <h5 className="text-[#676766] text-[16px] text-center mx-auto">{translate("footer-sale-place")}</h5>
+                <h5 className="font-normal text-center mx-auto text-[14px]">Rožňavská 1B</h5>
+                <h5 className="font-normal mx-auto text-center text-[14px]">831 04 Bratislava</h5>
+                <Link onClick={() => {
+                  setIsOpenMobileNav((o) => !o);
+                  setScrollLocked((c) => !c);
+                }} href={"mailto:info@oliviaresidence.sk"} className="text-[#087168] font-normal hover:opacity-70 flex flex-row justify-center items-center gap-2">
+                  <>
+                    info@oliviaresidence.sk <ArrowLink />
+                  </>
+                </Link>
+                {telNumber()}
+              </div>
             </div>
-            <div
-              className={`languages xl:hidden ${!isOpenMobileNav ? "hidden" : "block"
-                }`}
-            >
+          </div>
+
+          <div className="flex items-center gap-[5px]">
+            <div className="hidden xl:flex flex-row gap-[20px] xl:gap-[15px]">
+              <Link href="/o-projekte" className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-about")}
+              </Link>
+              {/* <Link href="/kontakt" className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}
+              </Link> */}
+              <div
+                className={
+                  "flex flex-col xl:flex-row gap-[20px] xl:gap-[15px] xl:text-[16px] xl:mt-0 "
+                }
+              >
+
+                <div className="p-[3px]  hidden xl:flex flex-row gap-[10px] justify-center items-center relative">
+                  <div onClick={() => setIsOpenPodnety(!isOpenPodnety)} className="cursor-pointer flex flex-row items-center">
+                    <p className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}</p>
+                    <div className="ml-[10px] inline-block">
+                      <DownArrowIcon fill={`${isWhite || isScrolled ? "black" : 'white'}`} />
+                    </div>
+                  </div>
+                  <div className={`${isOpenPodnety ? "block" : "hidden "} absolute px-4 py-4 left-[-15px] top-[40px] ${isWhite || isScrolled ? "bg-white" : 'bg-transparent'}`}>
+                    <Link href="/kontakt" className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}
+                    </Link>
+                    <Link href="/podnety" className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-comments")}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={`languages ${isWhite || isScrolled ? "black" : "white"} hidden ml-[10px] xl:block`}>
               <Select
-                className="w-[50px]"
+                className="w-[50px] uppercase"
                 data={languages}
                 placeholder={locale}
                 variant="unstyled"
-                rightSection={<DownArrowIcon fill={"black"} />}
+                rightSection={<DownArrowIcon fill={isWhite || isScrolled ? "black" : 'white'} />}
                 rightSectionWidth={30}
                 styles={{ rightSection: { pointerEvents: "none" } }}
                 transitionDuration={80}
@@ -226,7 +405,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                     : null
                 }
               />
+
             </div>
+<<<<<<< HEAD
             <div
               onClick={() => {
                 setIsOpenMobileNav(false);
@@ -332,72 +513,34 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                     </div>
                   </div>
                 </div>
+=======
+            {/* <div className="hidden xl:block">
+>>>>>>> redesign
 
-                {/*<Link href="/novinky">*/}
-                {/*    <a>Novinky</a>*/}
-                {/*</Link>*/}
-                <Link href="/kontakt">
-                  <a className="p-[3px] flex justify-center items-center">{translate("footer-link-contact")}</a>
-                </Link>
-
-              </div>
-              <Link href={"/stretnutie"}>
+              <Link href="/stretnutie">
                 <button
-                  className={
-                    "bg-[#476761] xl:hidden px-[10px] py-[6px] w-full text-white"
-                  }
+
+                  className="overflow-hidden drop-shadow-md relative bg-primary hover:bg-white hover:text-primary hover:scale-105 transform transition-transform duration-300 ease-in-out text-white flex flex-row justify-center items-center gap-2 px-[28px] py-[18px] text-[18px] max-h-[63px] w-fit group"
                 >
-                  {translate("button-meeting")}
+                  <p className="text-[18px] leading-[18px]">{translate("button-meeting")}</p>
+
+                  <div className="absolute z-[10] top-0 right-0">
+                    <div className="group-hover:hidden block transform transition-transform duration-300 ease-in-out ">
+
+                      <OverButtonIcon />
+                    </div>
+                    <div className="group-hover:block hidden transform transition-transform duration-300 ease-in-out">
+                      <OverButtonIcon fill="#087168" />
+                    </div></div>
+
                 </button>
+
               </Link>
-            </div>
-          </div>
-          <div className="flex gap-[27px] mr-[40px]">
-            <div className={"hidden xl:flex gap-[15px] items-center"}>
-              <Link href={"https://www.instagram.com/olivia.residence/"}>
-                <FaInstagramSquare
-                  className={"w-[20px] h-[20px] cursor-pointer"}
-                />
-              </Link>
-              <Link href={"https://www.facebook.com/olivia.residence.ba"}>
-                <FaFacebookSquare
-                  className={"w-[20px] h-[20px] cursor-pointer"}
-                />
-              </Link>
-              <Link href={"https://www.youtube.com/@oliviaresidence6315"}>
-                <FaYoutube className={"w-[20px] h-[20px] cursor-pointer"} />
-              </Link>
-            </div>
-            <div className="flex items-center gap-[5px]">
-              <div className="languages hidden xl:block">
-                <Select
-                  className="w-[50px]"
-                  data={languages}
-                  placeholder={locale}
-                  variant="unstyled"
-                  rightSection={<DownArrowIcon fill={"black"} />}
-                  rightSectionWidth={30}
-                  styles={{ rightSection: { pointerEvents: "none" } }}
-                  transitionDuration={80}
-                  onChange={(selected) =>
-                    selected !== null
-                      ? push(asPath, asPath, { locale: selected })
-                      : null
-                  }
-                />
-              </div>
-            </div>
-            <Link href="/stretnutie">
-              <button
-                className={`hidden xl:block hover:bg-[#0E3F3B] font-medium text-[16px] leading-6 text-white bg-[#476761] px-[10px] py-[6px] xl:w-[190px]`}
-                onClick={() => setIsOpenMobileNav(false)}
-              >
-                {translate("button-meeting")}
-              </button>
-            </Link>
+            </div> */}
+
           </div>
         </div>
-      </nav>
+      </nav >
     </>
   );
 };

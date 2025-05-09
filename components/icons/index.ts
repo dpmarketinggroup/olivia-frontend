@@ -84,3 +84,5 @@ export { default as BigRightArrow } from "./BigRightArrow";
 export { default as RightButton } from "./RightButton";
 export { default as LeftButton } from "./LeftButton";
 export { default as Download } from "./Download";
+export { default as OverButtonIcon } from "./OverButton";
+export { default as Facebook } from "./Facebook";
