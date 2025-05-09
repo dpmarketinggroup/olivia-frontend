@@ -55,7 +55,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
 
   return (
     <div
-      className={`${toBottom && "xl:absolute bottom-0 left-0 right-0"
+      className={`${toBottom && " bottom-0 left-0 right-0"
         } w-full green`}
     >
       <div>

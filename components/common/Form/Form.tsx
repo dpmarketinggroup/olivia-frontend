@@ -49,15 +49,15 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
     try {
       setLoading(true);
       await axios.post("/api/enquiry", {
-        body: JSON.stringify({
-          type: `${meeting ? "stretnutie" : "kontakt"}`,
-          name,
-          surname,
-          email,
-          phone,
-          message,
-          apartment: getApartment(),
-        }),
+
+        type: `${meeting ? "stretnutie" : "kontakt"}`,
+        name,
+        surname,
+        email,
+        phone,
+        message,
+        apartment: getApartment(),
+
       });
 
       await router.push("/dakujeme");
