@@ -180,21 +180,12 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
                 {/*<Link href="/novinky">*/}
                 {/*    <a>Novinky</a>*/}
                 {/*</Link>*/}
-<<<<<<< HEAD
-                {/* <Link href="/retail">
-                  <a className="opacity-60 hover:opacity-100">
-                    {translate("footer-link-retail")}
-                  </a>
-                </Link> */}
-                <Link href="/kontakt">
-=======
                 <Link legacyBehavior href="/retail">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-retail")}
                   </a>
                 </Link>
                 <Link legacyBehavior href="/kontakt">
->>>>>>> redesign
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-contact")}
                   </a>
