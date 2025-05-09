@@ -7,7 +7,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 function Dakujeme() {
     const { t: translate } = useTranslation('home');
     return (
-        <>
+        <div className="">
             <Head>
                 <title>Ďakujeme | Olivia Residence</title>
             </Head>
@@ -20,7 +20,7 @@ function Dakujeme() {
                     <a className="font-medium text-[18px] leading-7 text-[#476761]">{translate("home-page")}</a>
                 </Link>
             </div>
-        </>
+        </div>
     )
 }
 

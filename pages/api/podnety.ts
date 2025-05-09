@@ -59,7 +59,7 @@ export default async function handler(
       to: `${
         type === "dopyt"
           ? "predaj@oliviaresidence.sk"
-          : "info@oliviaresidence.sk"
+          : "podnety@oliviaresidence.sk"
       }`,
       html: `
               <div>

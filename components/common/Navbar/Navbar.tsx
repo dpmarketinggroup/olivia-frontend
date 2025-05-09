@@ -43,6 +43,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
       asPath.startsWith("/podnety") ||
       asPath.startsWith("/en/podnety") ||
       asPath.startsWith("/gdpr") ||
+      asPath.startsWith("/dakujeme") ||
+      asPath.startsWith("/en/dakujeme") ||
       asPath.startsWith("/en/gdpr")
     );
     const handleScroll = () => {
