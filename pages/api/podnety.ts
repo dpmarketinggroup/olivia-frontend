@@ -29,58 +29,54 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { email, surname, name, phone, message, apartment, type } = JSON.parse(
-    req.body
+    req.body.body
   ) as Data;
-
+  // const modifiedNum =
   const url = "https://api.sendinblue.com/v3/contacts";
-
   if (req.method === "POST") {
-    // Hlavný transporter
-    const transporter = nodemailer.createTransport({
+    // Process a POST request
+    let transporter = nodemailer.createTransport({
       port: 465,
       host: "smtp.m1.websupport.sk",
       auth: {
-        user: process.env.SEND_MAIL, // napr. info@...
+        user: process.env.SEND_MAIL,
         pass: process.env.SEND_PASSWD,
       },
       secure: true,
     });
 
-    // E-mail pre tím
     await transporter.sendMail({
       from: {
         name: "Olivia Residence",
-        address: `info@oliviaresidence.sk`,
+        address: `${
+          type === "dopyt"
+            ? "predaj@oliviaresidence.sk"
+            : "info@oliviaresidence.sk"
+        }`,
       },
       subject: "Nový podnet z webovej stránky",
-      to: `podnety@oliviaresidence.sk`,
+      bcc: "leads@dpmg.dev",
+      to: `${
+        type === "dopyt"
+          ? "predaj@oliviaresidence.sk"
+          : "podnety@oliviaresidence.sk"
+      }`,
       html: `
-        <div>
-          <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>
-          <h5><span style="text-decoration: underline">Email:</span> ${email}</h5>
-          <h5><span style="text-decoration: underline">Telefónne číslo:</span> ${phone}</h5>
-          <h5><span style="text-decoration: underline">Podnet:</span> ${message}</h5>
-        </div>`,
+              <div>
+                  <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>
+                  <h5><span style="text-decoration: underline">Email:</span> ${email}</h5>
+                  <h5><span style="text-decoration: underline">Telefónne číslo:</span> ${phone}</h5>
+                  <h5><span style="text-decoration: underline">Správa:</span> ${message}</h5>
+                  ${
+                    apartment
+                      ? `
+                        <h5><span style="text-decoration: underline">Apartmán:</span> č. ${apartment}</h5>
+                  `
+                      : ""
+                  }
+              </div>`,
     });
 
-    // // E-mail pre používateľa
-    // await transporter.sendMail({
-    //   from: {
-    //     name: "Olivia Residence",
-    //     address: `podnet@oliviaresidence.sk`,
-    //   },
-    //   to: email,
-    //   subject: "Ďakujeme za váš podnet",
-    //   html: `
-    //     <div>
-    //       <p>Dobrý deň, ${name} ${surname},</p>
-    //       <p>ďakujeme, že ste nás kontaktovali. Váš podnet sme úspešne prijali a budeme sa mu venovať čo najskôr.</p>
-    //       <p>S pozdravom,<br><strong>Olivia Residence</strong></p>
-    //     </div>
-    //   `,
-    // });
-
-    // Odoslanie kontaktu do Sendinblue
     await axios.post(
       url,
       {

@@ -48,7 +48,7 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
 
     try {
       setLoading(true);
-      await axios.post("/api/enquiry", {
+      await axios.post("/api/podnety", {
         body: JSON.stringify({
           type: `${meeting ? "stretnutie" : "kontakt"}`,
           name,
