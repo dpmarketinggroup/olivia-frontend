@@ -63,22 +63,22 @@ export default async function handler(
         </div>`,
     });
 
-    // E-mail pre používateľa
-    await transporter.sendMail({
-      from: {
-        name: "Olivia Residence",
-        address: `podnet@oliviaresidence.sk`,
-      },
-      to: email,
-      subject: "Ďakujeme za váš podnet",
-      html: `
-        <div>
-          <p>Dobrý deň, ${name} ${surname},</p>
-          <p>ďakujeme, že ste nás kontaktovali. Váš podnet sme úspešne prijali a budeme sa mu venovať čo najskôr.</p>
-          <p>S pozdravom,<br><strong>Olivia Residence</strong></p>
-        </div>
-      `,
-    });
+    // // E-mail pre používateľa
+    // await transporter.sendMail({
+    //   from: {
+    //     name: "Olivia Residence",
+    //     address: `podnet@oliviaresidence.sk`,
+    //   },
+    //   to: email,
+    //   subject: "Ďakujeme za váš podnet",
+    //   html: `
+    //     <div>
+    //       <p>Dobrý deň, ${name} ${surname},</p>
+    //       <p>ďakujeme, že ste nás kontaktovali. Váš podnet sme úspešne prijali a budeme sa mu venovať čo najskôr.</p>
+    //       <p>S pozdravom,<br><strong>Olivia Residence</strong></p>
+    //     </div>
+    //   `,
+    // });
 
     // Odoslanie kontaktu do Sendinblue
     await axios.post(

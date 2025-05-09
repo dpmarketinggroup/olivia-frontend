@@ -10,10 +10,10 @@ const MapFooter = () => {
             <div className="bg-white w-full ">
                 <div className="flex flex-col xl:flex-row justify-between w-full max-w-[1200px] xl:mx-auto relative ">
                     <div className="flex flex-col items-start gap-[28px]  lg:py-[100px] px-6 w-full md:w-[400px] lg:w-[650px] z-[10] ">
-                        <h2 className="text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px] text-black ">{translate("map-footer-heading-first-part")}
+                        <h2 className=" text-center md:text-left text-[32px] xl:text-[48px] leading-[40px] xl:leading-[48px] text-black ">{translate("map-footer-heading-first-part")}
                             <span className="underline decoration-primary underline-offset-[2px]"> {translate("map-footer-heading-second-part")}</span> {translate("map-footer-heading-third-part")}</h2>
-                        <p className="text-[20px] sm:leading-[24px] text-[16px] sm:text-[20px] text-[#676766] w-[103%] md:w-[80%]">{translate("map-footer-description")}</p>
-                        <p className="font-bold text-[18px] sm:text-[24px] leading-[32px] text-black xl:w-auto self-start">Rožňavská
+                        <p className="text-[20px] text-center md:text-left sm:leading-[24px] text-[16px] sm:text-[20px] text-[#676766] w-[103%] md:w-[80%]">{translate("map-footer-description")}</p>
+                        <p className="font-bold  text-center md:text-left text-[18px] sm:text-[24px] leading-[32px] text-black xl:w-auto self-center md:self-left">Rožňavská
                             1B, Bratislava</p>
                         <div className="block md:hidden">
 

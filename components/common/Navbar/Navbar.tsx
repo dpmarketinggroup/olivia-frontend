@@ -14,7 +14,6 @@ import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
-import { FaFacebookSquare, FaInstagramSquare, FaYoutube } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
 import { OverButtonIcon } from "@components/icons";
 import ArrowLink from "@components/icons/ArrowLink";
@@ -106,6 +105,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
   }
 
   const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
+  const [isOpenPodnety, setIsOpenPodnety] = useState(false);
   const [cookieConsentIsTrue, setCookieConsentIsTrue] = useState(true);
   const [scrollLocked, setScrollLocked] = useScrollLock();
 
@@ -279,10 +279,17 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 setScrollLocked((c) => !c);
               }} href="/o-projekte" className="uppercase text-black mx-auto">{translate("footer-link-about")}
               </Link>
+
               <Link onClick={() => {
                 setIsOpenMobileNav((o) => !o);
                 setScrollLocked((c) => !c);
               }} href="/kontakt" className={`mt-0 md:mt-1 p-0 md:p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-contact")}
+              </Link>
+
+              <Link onClick={() => {
+                setIsOpenMobileNav((o) => !o);
+                setScrollLocked((c) => !c);
+              }} href="/podnety" className={`mt-0 md:mt-1 p-0 md:p-[3px] flex justify-center text-black uppercase items-center`}>{translate("footer-link-comments")}
               </Link>
 
               <Link href={`/stretnutie`} className="mx-auto">
@@ -359,8 +366,29 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
             <div className="hidden xl:flex flex-row gap-[20px] xl:gap-[15px]">
               <Link href="/o-projekte" className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-about")}
               </Link>
-              <Link href="/kontakt" className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}
-              </Link>
+              {/* <Link href="/kontakt" className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}
+              </Link> */}
+              <div
+                className={
+                  "flex flex-col xl:flex-row gap-[20px] xl:gap-[15px] xl:text-[16px] xl:mt-0 "
+                }
+              >
+
+                <div className="p-[3px]  hidden xl:flex flex-row gap-[10px] justify-center items-center relative">
+                  <div onClick={() => setIsOpenPodnety(!isOpenPodnety)} className="cursor-pointer flex flex-row items-center">
+                    <p className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}</p>
+                    <div className="ml-[10px] inline-block">
+                      <DownArrowIcon fill={`${isWhite || isScrolled ? "black" : 'white'}`} />
+                    </div>
+                  </div>
+                  <div className={`${isOpenPodnety ? "block" : "hidden "} absolute px-4 py-4 left-[-15px] top-[40px] ${isWhite || isScrolled ? "bg-white" : 'bg-transparent'}`}>
+                    <Link href="/kontakt" className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-contact")}
+                    </Link>
+                    <Link href="/podnety" className={`mt-1 p-[3px] flex justify-center ${isWhite || isScrolled ? "text-black" : 'text-white'} uppercase items-center`}>{translate("footer-link-comments")}
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className={`languages ${isWhite || isScrolled ? "black" : "white"} hidden ml-[10px] xl:block`}>
               <Select
