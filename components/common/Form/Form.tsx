@@ -234,7 +234,8 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
             onChange={handleRecaptcha}
           />
           <button
-            disabled={loading || !capchaToken}
+            // disabled={loading || !capchaToken}
+            disabled={loading}
             className={`py-[12px] ${meeting
               ? "relative bg-yellow text-white  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]"
               : "relative bg-primary text-white  flex-row justify-center items-center gap-2 px-[32px] py-[22px] text-[18px]"
