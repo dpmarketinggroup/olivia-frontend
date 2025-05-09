@@ -38,7 +38,6 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
   useEffect(() => {
     setIsWhite(
-      /^\/(en\/)?apartman(\/|$)/.test(asPath) ||
       asPath.startsWith("/stresne-apartmany") ||
       asPath.startsWith("/en/stresne-apartmany") ||
       asPath.startsWith("/podnety") ||
