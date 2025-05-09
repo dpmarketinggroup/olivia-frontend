@@ -67,13 +67,9 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
       console.log(name + surname + email + phone + message);
     }
 
-
-
     // Reset captcha after submission
     recaptchaRef.current?.reset();
     setLoading(false);
-
-
 
   }
   const { t: translate } = useTranslation("home");
@@ -81,7 +77,7 @@ const Form = ({ meeting = false, isGreen, podnet = false }: FormProps) => {
     <form onSubmit={handleSubmit} className={isGreen ? "green" : "grey"}>
       <div className=" xl:mx-0 px-4">
         {meeting && (
-          <div className="flex flex-col xl:flex-row gap-[10px] xl:gap-[20px] items-center mb-[45px]">
+          <div className="flex  flex-col xl:flex-row gap-[10px] xl:gap-[20px] items-center mb-[45px]">
             <span className="font-medium text-[14px] xl:text-[16px] leading-6 tracking-[0.1px] text-white">
               {translate("form-interested-in")}
             </span>
