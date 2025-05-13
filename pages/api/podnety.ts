@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 import axios from "axios";
-
+import router from "next/router";
 interface Data {
   name: string;
   surname: string;
@@ -69,7 +69,7 @@ export default async function handler(
           <h5><span style="text-decoration: underline">Správa:</span> ${message}</h5>
           ${
             apartment
-              ? `<h5><span style="text-decoration: underline">Apartmán:</span> č. ${apartment}</h5>`
+              ? `<h5><span style="text-decoration: underline">Typ podnetu:</span>${apartment}</h5>`
               : ""
           }
         </div>
@@ -100,6 +100,7 @@ export default async function handler(
     );
 
     res.status(200).json({ status: "ok" });
+    await router.push("/dakujeme");
   } catch (error) {
     console.error("Email/sendinblue error", error);
     res.status(500).json({ error: "Internal Server Error" });
