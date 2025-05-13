@@ -54,14 +54,13 @@ export default async function handler(
         address:
           type === "dopyt"
             ? "predaj@oliviaresidence.sk"
-            : "info@oliviaresidence.sk",
+            : "podnety@oliviaresidence.sk",
       },
       subject: "Nový podnet z webovej stránky",
-      bcc: "leads@dpmg.dev",
       to:
         type === "dopyt"
           ? "predaj@oliviaresidence.sk"
-          : "info@oliviaresidence.sk",
+          : "podnety@oliviaresidence.sk",
       html: `
         <div>
           <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>
