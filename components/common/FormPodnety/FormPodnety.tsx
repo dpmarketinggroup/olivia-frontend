@@ -61,7 +61,7 @@ const FormPodnety = ({ meeting = false, isGreen, podnet = false }: FormProps) =>
 
       });
 
-      await router.push("/dakujeme");
+
     } catch (e) {
 
       // await router.push("/notsender");
@@ -69,7 +69,7 @@ const FormPodnety = ({ meeting = false, isGreen, podnet = false }: FormProps) =>
     }
 
 
-
+    await router.push("/dakujeme");
     // Reset captcha after submission
     recaptchaRef.current?.reset();
     setLoading(false);

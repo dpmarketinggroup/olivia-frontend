@@ -98,9 +98,7 @@ export default async function handler(
         },
       }
     );
-
     res.status(200).json({ status: "ok" });
-    await router.push("/dakujeme");
   } catch (error) {
     console.error("Email/sendinblue error", error);
     res.status(500).json({ error: "Internal Server Error" });
