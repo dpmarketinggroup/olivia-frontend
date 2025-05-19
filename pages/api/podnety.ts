@@ -84,7 +84,7 @@ export default async function handler(
         attributes: {
           FIRSTNAME: name,
           LASTNAME: surname,
-          SMS: phone ? Number(phone?.substring(1)) : null,
+          SMS: phone && !isNaN(Number(phone)) ? Number(phone) : null,
           ZAUJEM_O: apartment,
         },
         listIds: [getListId(type)],

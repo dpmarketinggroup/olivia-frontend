@@ -70,7 +70,7 @@ export default async function handler(
           <h5><span style="text-decoration: underline">Správa:</span> ${message}</h5>
           ${
             apartment
-              ? `<h5><span style="text-decoration: underline">Apartmán:</span> č. ${apartment}</h5>`
+              ? `<h5><span style="text-decoration: underline">Apartmán:</span> ${apartment}</h5>`
               : ""
           }
         </div>
@@ -85,7 +85,7 @@ export default async function handler(
         attributes: {
           FIRSTNAME: name,
           LASTNAME: surname,
-          SMS: phone ? Number(phone?.substring(1)) : null,
+          SMS: phone && !isNaN(Number(phone)) ? Number(phone) : null,
           ZAUJEM_O: apartment,
         },
         listIds: [getListId(type)],

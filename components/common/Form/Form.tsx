@@ -38,8 +38,15 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
 
   async function handleSubmit(e: SyntheticEvent) {
     e.preventDefault();
-    if (!name || !surname || !email || !capchaToken) return;
-
+    if (!name?.trim() || !surname?.trim() || !email?.trim() || !capchaToken) {
+      console.warn("Formulár nebol validne vyplnený:", {
+        name,
+        surname,
+        email,
+        capchaToken,
+      });
+      return;
+    }
     try {
       setLoading(true);
       await axios.post("/api/enquiry", {

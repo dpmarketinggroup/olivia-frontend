@@ -60,16 +60,16 @@ const FormPodnety = ({ meeting = false, isGreen, podnet = false }: FormProps) =>
         apartment: getApartment(),
 
       });
-
+      await router.push("/dakujeme");
 
     } catch (e) {
 
-      // await router.push("/notsender");
+      await router.push("/notsender");
       // console.log(name + surname + email + phone + message);
     }
 
 
-    await router.push("/dakujeme");
+
     // Reset captcha after submission
     recaptchaRef.current?.reset();
     setLoading(false);
