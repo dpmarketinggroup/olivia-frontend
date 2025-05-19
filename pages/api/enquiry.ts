@@ -37,7 +37,9 @@ export default async function handler(
   try {
     const { email, surname, name, phone, message, apartment, type } =
       req.body as Data;
-
+    if (!name || !surname || !email || !type) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
     const transporter = nodemailer.createTransport({
       port: 465,
       host: "smtp.m1.websupport.sk",
