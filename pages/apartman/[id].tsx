@@ -123,15 +123,15 @@ const ApartmentDetail = () => {
     try {
       setLoading(true);
       await axios.post("/api/enquiry", {
-        body: JSON.stringify({
-          type: "dopyt",
-          name,
-          surname,
-          email,
-          message,
-          phone,
-          apartment: `Byt č.${cislo_bytu}`,
-        }),
+
+        type: "dopyt",
+        name,
+        surname,
+        email,
+        message,
+        phone,
+        apartment: `Byt č.${cislo_bytu}`,
+
       });
     } catch (e) {
       console.error(e);
@@ -199,6 +199,7 @@ const ApartmentDetail = () => {
               onChange={(e) => setName(e.target.value)}
               name={"name"}
               placeholder={translate("form-first-name")}
+              required={true}
             />
             <CustomInput
               value={surname}
@@ -206,6 +207,7 @@ const ApartmentDetail = () => {
               onChange={(e) => setSurname(e.target.value)}
               name={"surname"}
               placeholder={translate("form-second-name")}
+              required={true}
             />
           </div>
           <CustomInput
@@ -214,6 +216,7 @@ const ApartmentDetail = () => {
             onChange={(e) => setEmail(e.target.value)}
             name={"email"}
             placeholder={translate("form-email")}
+            required={true}
           />
           <PhoneInput
             style={{
@@ -225,6 +228,7 @@ const ApartmentDetail = () => {
             defaultCountry={"SK"}
             onChange={(val) => setPhone(val)}
             placeholder={translate("form-number")}
+            required={true}
           />
           <Textarea
             value={message}
@@ -240,6 +244,7 @@ const ApartmentDetail = () => {
               },
               ".mantine-Checkbox-input": {},
             }}
+            required={true}
           />
           <Checkbox
             required={true}
@@ -274,6 +279,7 @@ const ApartmentDetail = () => {
           />
           <Checkbox
             label={translate("form-check-2")}
+            required={true}
             size={"md"}
             sx={{
               ".mantine-Checkbox-label": {
