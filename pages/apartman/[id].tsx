@@ -230,7 +230,7 @@ const ApartmentDetail = () => {
             defaultCountry={"SK"}
             onChange={(val) => setPhone(val)}
             placeholder={translate("form-number")}
-
+            required={true}
           />
           <Textarea
             value={message}
@@ -249,7 +249,7 @@ const ApartmentDetail = () => {
 
           />
           <Checkbox
-
+            required={true}
             label={`${translate("form-check-1-1")} ${translate(
               "form-check-1-2"
             )}`}
