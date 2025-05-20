@@ -29,14 +29,14 @@
 
   "hero-inform": "V OLIVIA Residence je možné zriadiť trvalý pobyt.",
 
-  "form-first-name": "Meno",
+  "form-first-name": "Meno *",
   "form-interested-in": "Mám záujem o:",
   "form-interested-in-apart-n": "Mám záujem o apartmán č.",
   "form-interested-apartment": "apartmán",
   "form-interested-commercial": "obchodný priestor",
-  "form-second-name": "Priezvisko",
-  "form-email": "Email",
-  "form-number": "Tel. č.",
+  "form-second-name": "Priezvisko *",
+  "form-email": "Email *",
+  "form-number": "Tel. č. *",
   "form-message": "Správa",
   "form-check-1-1": "Súhlasím so spracovaním",
   "form-check-1-2": "osobných údajov",

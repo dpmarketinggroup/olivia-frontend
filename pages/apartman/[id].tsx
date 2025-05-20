@@ -279,7 +279,7 @@ const ApartmentDetail = () => {
           />
           <Checkbox
             label={translate("form-check-2")}
-            required={true}
+
             size={"md"}
             sx={{
               ".mantine-Checkbox-label": {
