@@ -123,7 +123,6 @@ const ApartmentDetail = () => {
     try {
       setLoading(true);
       await axios.post("/api/enquiry", {
-
         type: "dopyt",
         name,
         surname,
@@ -131,13 +130,15 @@ const ApartmentDetail = () => {
         message,
         phone,
         apartment: `Byt č.${cislo_bytu}`,
-
       });
+
+      setLoading(false);
+      await router.push("/dakujeme");
     } catch (e) {
-      console.error(e);
+      console.error("Chyba pri odoslaní:", e);
+      setLoading(false);
+      await router.push("/notsender");
     }
-    setLoading(false);
-    await router.push("/dakujeme");
   }
 
   function getAvailabilityTextColor(

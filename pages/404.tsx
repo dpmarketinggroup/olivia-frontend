@@ -2,8 +2,13 @@ import Link from "next/link";
 import { LeftArrow } from "@components/icons";
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Router from "next/router";
+import { useEffect } from "react";
 
 function Custom404() {
+    useEffect(() => {
+        Router.push("/404"); // redirect (ale pozor: nekonečná slučka ak ostaneš na /404)
+    }, []);
     return (
         <>
             <Head>

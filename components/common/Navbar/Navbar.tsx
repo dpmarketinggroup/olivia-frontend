@@ -38,13 +38,14 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
   useEffect(() => {
     setIsWhite(
+      asPath.includes("404") ||
       asPath.includes("apartman") || // ✅ obsahuje slovo "apartman"
       asPath.startsWith("/stresne-apartmany") ||
       asPath.startsWith("/en/stresne-apartmany") ||
       asPath.startsWith("/podnety") ||
       asPath.startsWith("/en/podnety") ||
       asPath.startsWith("/gdpr") ||
-      asPath.startsWith("/dakujeme") ||
+      asPath.includes("/dakujeme") ||
       asPath.startsWith("/en/dakujeme") ||
       asPath.startsWith("/en/gdpr")
     );
