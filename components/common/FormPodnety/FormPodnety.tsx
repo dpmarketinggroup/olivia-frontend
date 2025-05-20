@@ -123,7 +123,7 @@ const FormPodnety = ({ meeting = false, isGreen, podnet = false }: FormProps) =>
             <TextInput
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder={translate("form-first-name") + "*" || ""}
+              placeholder={translate("form-first-name") || ""}
               radius="xs"
               required={true}
               withAsterisk
@@ -133,7 +133,7 @@ const FormPodnety = ({ meeting = false, isGreen, podnet = false }: FormProps) =>
             <TextInput
               value={surname}
               onChange={(e) => setSurname(e.target.value)}
-              placeholder={translate("form-second-name") + "*" || ""}
+              placeholder={translate("form-second-name") || ""}
               radius="xs"
               required={true}
               withAsterisk

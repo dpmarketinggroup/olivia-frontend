@@ -123,13 +123,7 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
               radius="xs"
               required={true}
               withAsterisk
-              label={
-                <>
-                  <span className={isGreen ? "text-white" : "text-black"}>
-                    {translate("form-first-name")}
-                  </span>
-                </>
-              }
+
             />
 
             <TextInput
@@ -139,29 +133,17 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
               radius="xs"
               required={true}
               withAsterisk
-              label={
-                <>
-                  <span className={isGreen ? "text-white" : "text-black"}>
-                    {translate("form-second-name")}
-                  </span>
-                </>
-              }
+
             />
           </div>
           <TextInput
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
+            placeholder="Email*"
             radius="xs"
             required={true}
             withAsterisk
-            label={
-              <>
-                <span className={isGreen ? "text-white" : "text-black"}>
-                  Email
-                </span>
-              </>
-            }
+
           />
           <div className={"flex flex-col"}>
             <h5 className={isGreen ? "text-white" : "text-black"}>
@@ -201,8 +183,8 @@ const Form = ({ meeting = false, isGreen }: FormProps) => {
               <>
                 <p className="text-[14px] leading-5 text-[#999999]">
                   {translate("form-check-1-1")}{" "}
-                  <Link href="/gdpr">
-                    <a className="underline">{translate("form-check-1-2")}</a>
+                  <Link href="/gdpr"
+                    className="underline">{translate("form-check-1-2")}
                   </Link>
                 </p>
               </>
