@@ -55,14 +55,14 @@ export default async function handler(
         name: "Olivia Residence",
         address:
           type === "dopyt"
-            ? "predaj@oliviaresidence.sk"
+            ? "info@oliviaresidence.sk"
             : "info@oliviaresidence.sk",
       },
       subject: "Nový dopyt z webovej stránky",
       bcc: "leads@dpmg.dev",
       to:
         type === "dopyt"
-          ? "predaj@oliviaresidence.sk"
+          ? "info@oliviaresidence.sk"
           : "info@oliviaresidence.sk",
       html: `
         <div>
