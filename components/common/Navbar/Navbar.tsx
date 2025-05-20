@@ -48,7 +48,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
       asPath.startsWith("/en/dakujeme") ||
       asPath.startsWith("/en/gdpr")
     );
-
+    setIsOpenPodnety(false)
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
