@@ -134,12 +134,12 @@ const ApartmentDetail = () => {
 
       setLoading(false);
 
+      await router.push("/dakujeme");
     } catch (e) {
       console.error("Chyba pri odoslaní:", e);
       setLoading(false);
-      // await router.push("/notsender");
+      await router.push("/notsender");
     }
-    await router.push("/dakujeme");
   }
 
   function getAvailabilityTextColor(

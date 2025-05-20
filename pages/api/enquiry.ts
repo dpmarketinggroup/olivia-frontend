@@ -34,51 +34,49 @@ export default async function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  try {
-    const { email, surname, name, phone, message, apartment, type } =
-      req.body as Data;
-    if (!name || !surname || !email || !type) {
-      return res.status(400).json({ error: "Missing required fields" });
-    }
-    const transporter = nodemailer.createTransport({
-      port: 465,
-      host: "smtp.m1.websupport.sk",
-      auth: {
-        user: process.env.SEND_MAIL,
-        pass: process.env.SEND_PASSWD,
-      },
-      secure: true,
-    });
+  const { email, surname, name, phone, message, apartment, type } =
+    req.body as Data;
+  if (!name || !surname || !email || !type) {
+    return res.status(400).json({ error: "Missing required fields" });
+  }
+  const transporter = nodemailer.createTransport({
+    port: 465,
+    host: "smtp.m1.websupport.sk",
+    auth: {
+      user: process.env.SEND_MAIL,
+      pass: process.env.SEND_PASSWD,
+    },
+    secure: true,
+  });
 
-    await transporter.sendMail({
-      from: {
-        name: "Olivia Residence",
-        address:
-          type === "dopyt"
-            ? "info@oliviaresidence.sk"
-            : "info@oliviaresidence.sk",
-      },
-      subject: "Nový dopyt z webovej stránky",
-      bcc: "leads@dpmg.dev",
-      to:
+  await transporter.sendMail({
+    from: {
+      name: "Olivia Residence",
+      address:
         type === "dopyt"
           ? "info@oliviaresidence.sk"
           : "info@oliviaresidence.sk",
-      html: `
-        <div>
-          <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>
-          <h5><span style="text-decoration: underline">Email:</span> ${email}</h5>
-          <h5><span style="text-decoration: underline">Telefónne číslo:</span> ${phone}</h5>
-          <h5><span style="text-decoration: underline">Správa:</span> ${message}</h5>
-          ${
-            apartment
-              ? `<h5><span style="text-decoration: underline">Apartmán:</span> ${apartment}</h5>`
-              : ""
-          }
-        </div>
-      `,
-    });
+    },
+    subject: "Nový dopyt z webovej stránky",
+    bcc: "leads@dpmg.dev",
+    to:
+      type === "dopyt" ? "info@oliviaresidence.sk" : "info@oliviaresidence.sk",
+    html: `
+    <div>
+    <h5><span style="text-decoration: underline">Meno:</span> ${name} ${surname}</h5>
+    <h5><span style="text-decoration: underline">Email:</span> ${email}</h5>
+    <h5><span style="text-decoration: underline">Telefónne číslo:</span> ${phone}</h5>
+    <h5><span style="text-decoration: underline">Správa:</span> ${message}</h5>
+    ${
+      apartment
+        ? `<h5><span style="text-decoration: underline">Apartmán:</span> ${apartment}</h5>`
+        : ""
+    }
+    </div>
+    `,
+  });
 
+  try {
     await axios.post(
       "https://api.sendinblue.com/v3/contacts",
       {
@@ -101,10 +99,8 @@ export default async function handler(
         },
       }
     );
-
-    res.status(200).json({ status: "ok" });
   } catch (error) {
     console.error("Email/sendinblue error", error);
-    res.status(500).json({ error: "Internal Server Error" });
   }
+  res.status(200).json({ status: "ok" });
 }
