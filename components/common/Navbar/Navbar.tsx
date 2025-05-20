@@ -38,6 +38,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
 
   useEffect(() => {
     setIsWhite(
+      asPath.includes("apartman") || // ✅ obsahuje slovo "apartman"
       asPath.startsWith("/stresne-apartmany") ||
       asPath.startsWith("/en/stresne-apartmany") ||
       asPath.startsWith("/podnety") ||
@@ -47,13 +48,14 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
       asPath.startsWith("/en/dakujeme") ||
       asPath.startsWith("/en/gdpr")
     );
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [asPath]);
   function telNumber() {
     if (locale === "sk") {
       return (
