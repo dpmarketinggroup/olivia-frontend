@@ -76,28 +76,28 @@ export default async function handler(
       `,
     });
 
-    await axios.post(
-      "https://api.sendinblue.com/v3/contacts",
-      {
-        updateEnabled: true,
-        email,
-        attributes: {
-          FIRSTNAME: name,
-          LASTNAME: surname,
-          SMS: phone && !isNaN(Number(phone)) ? Number(phone) : null,
-          ZAUJEM_O: apartment,
-        },
-        listIds: [getListId(type)],
-        emailBlacklisted: false,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          accept: "application/json",
-          "api-key": process.env.NEXT_PUBLIC_SENDIN_KEY,
-        },
-      }
-    );
+    // await axios.post(
+    //   "https://api.sendinblue.com/v3/contacts",
+    //   {
+    //     updateEnabled: true,
+    //     email,
+    //     attributes: {
+    //       FIRSTNAME: name,
+    //       LASTNAME: surname,
+    //       SMS: phone && !isNaN(Number(phone)) ? Number(phone) : null,
+    //       ZAUJEM_O: apartment,
+    //     },
+    //     listIds: [getListId(type)],
+    //     emailBlacklisted: false,
+    //   },
+    //   {
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       accept: "application/json",
+    //       "api-key": process.env.NEXT_PUBLIC_SENDIN_KEY,
+    //     },
+    //   }
+    // );
     res.status(200).json({ status: "ok" });
   } catch (error) {
     console.error("Email/sendinblue error", error);
