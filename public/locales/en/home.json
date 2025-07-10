@@ -1,5 +1,5 @@
 {
-  "information-slider": "The showroom is OPEN for you. You can find us in Fresh Market on the ground floor. Opening hours: Mon - Fri: 13:00 - 17:00 | Sat: 10:00 - 14:00",
+  "information-slider": "The showroom is OPEN for you. You can find us in Fresh Market on the ground floor. Opening hours: Mon - Fri: 13:00 - 17:00",
   "pop-up": "/img/modal-banner.jpg",
   "hero-heading": "A modern residence",
   "hero-desc": "with the highest technical and user standards, designed for both living and business purposes.",
@@ -284,7 +284,7 @@
 
   "mon-fri": "MO - FRI",
   "sat": "SA",
-  "sun-holiday": "SU and Holidays",
+  "sun-holiday": "SA, SU and Holidays",
   "closed": "Closed",
   "address": "Address",
   "ground-floor": "Ground floor",

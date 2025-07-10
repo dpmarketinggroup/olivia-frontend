@@ -1,5 +1,5 @@
 {
-  "information-slider": "Showroom je pre Vás OTVORENÝ. Nájdete nás vo Fresh Markete na prízemí. Otváracie hodiny: Po - PI: 13:00 - 17:00 | So: 10:00 - 14:00",
+  "information-slider": "Showroom je pre Vás OTVORENÝ. Nájdete nás vo Fresh Markete na prízemí. Otváracie hodiny: Po - PI: 13:00 - 17:00",
   "pop-up": "/img/modal-banner-new.jpg",
   "hero-heading": "Moderná rezidencia apartmánového typu",
   "hero-desc": "s najvyššími technickými a užívateľskými štandardmi, určená na bývanie aj na podnikanie",
@@ -286,7 +286,7 @@
 
   "mon-fri": "PO - PIA",
   "sat": "SO",
-  "sun-holiday": "NE a Sviatky",
+  "sun-holiday": "SO, NE a Sviatky",
   "closed": "Zatvorené",
   "address": "Adresa",
   "ground-floor": "Prízemie",
