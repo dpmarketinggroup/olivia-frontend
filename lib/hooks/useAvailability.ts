@@ -13,6 +13,6 @@ export function useAvailability(apartmentId: string) {
             }
         }
         fetch()
-    }, [apartmentId])
+    }, [])
     return [dostupnost]
 }

@@ -1,4 +1,4 @@
-export function displayClassname(dostupnost: string) {
+export function displayClassname(dostupnost: any) {
     if (dostupnost === 'rezervovaný' || dostupnost === 'predaný') return 'bad'
     return '';
 }

@@ -1,42 +1,8 @@
 import create from 'zustand'
 import axios from "axios";
 
-type MediaAttributes = {
-    url: string;
-    width: number;
-    height: number;
-};
-
-type MediaField = {
-    data: {
-        id: number;
-        attributes: MediaAttributes;
-    };
-};
-
-type ApartmentAttributes = {
-    dostupnost?: string;
-    cislo_bytu?: string;
-    poschodie?: number;
-    primarna_foto?: MediaField;
-    dodatocna_foto1?: MediaField;
-    dodatocna_foto2?: MediaField;
-    podorys?: MediaField;
-    [key: string]: unknown;
-};
-
-type ApartmentData = {
-    id: number;
-    attributes: ApartmentAttributes;
-};
-
-type StrapiSingleResponse = {
-    data: ApartmentData;
-    meta?: unknown;
-};
-
 export type State = {
-    selectedApartment: StrapiSingleResponse | ApartmentData[] | null;
+    selectedApartment: any | null
 }
 
 export type Actions = {

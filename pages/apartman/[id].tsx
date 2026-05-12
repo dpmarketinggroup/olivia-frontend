@@ -71,11 +71,11 @@ const ApartmentDetail = () => {
   }
 
   useEffect(() => {
-    if (apartment && !Array.isArray(apartment) && apartment.data?.attributes?.primarna_foto?.data?.attributes) {
+    if (apartment?.data?.attributes?.primarna_foto?.data?.attributes) {
       setSelectedPhoto(apartment.data.attributes.primarna_foto.data.attributes);
     }
   }, [apartment]);
-  if (!apartment || Array.isArray(apartment) || !apartment.data)
+  if (!apartment || !apartment.data)
     return <div className={"h-screen"}>No apartment found</div>;
 
   const {
