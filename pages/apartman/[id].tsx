@@ -91,6 +91,9 @@ const ApartmentDetail = () => {
     izba2_rozloha,
     izba3_rozloha,
     izba4_rozloha,
+    satnik2_rozloha,
+    satnik3_rozloha,
+    kupelna2_rozloha,
     predsien_rozloha,
     chodba_rozloha,
     chodba_rozloha2,
@@ -672,6 +675,22 @@ const ApartmentDetail = () => {
                   <span className={"font-bold"}>{izba4_rozloha} m²</span>
                 </div>
               )}
+              {satnik2_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-wardrobe")}2
+                  </p>
+                  <span className={"font-bold"}>{satnik2_rozloha} m²</span>
+                </div>
+              )}
+              {satnik3_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-wardrobe")}3
+                  </p>
+                  <span className={"font-bold"}>{satnik3_rozloha} m²</span>
+                </div>
+              )}
               {izba_rozloha && (
                 <div className="flex justify-between mb-[15px]">
                   <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
@@ -702,6 +721,14 @@ const ApartmentDetail = () => {
                     {translate("filter-bathroom")}
                   </p>
                   <span className={"font-bold"}>{kupelna_rozloha} m²</span>
+                </div>
+              )}
+              {kupelna2_rozloha && (
+                <div className="flex justify-between mb-[15px]">
+                  <p className="font-medium text-[16px] text-[#0E3F3B4D] leading-6 tracking-[0.1px]">
+                    {translate("filter-bathroom")}2
+                  </p>
+                  <span className={"font-bold"}>{kupelna2_rozloha} m²</span>
                 </div>
               )}
               {wc_rozloha && (

@@ -279,6 +279,7 @@ const Home = () => {
               <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-4")}</ReactMarkdown></p></div>
               <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-5")}</ReactMarkdown></p></div>
               <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-6")}</ReactMarkdown></p></div>
+              <div className="w-fit  flex flex-row justify-center items-center px-4 py-2 bg-yellow rounded-full text-[#0E3F3B] text-[14px] gap-1"><CheckIcon /><p ><ReactMarkdown>{translate("description-locale-properties-7")}</ReactMarkdown></p></div>
             </div>
             <div className="flex flex-row justify-start items-center py-3 gap-2 border-t-[2px] border-b-[2px] border-[#ffffff33] border-dashed w-[90%]">
               <Thermometer /><p className="text-white text-[17px] leading-[20px]"><ReactMarkdown>{translate("description-locale-bullet-1")}</ReactMarkdown></p>
