@@ -1,8 +1,25 @@
 import create from 'zustand'
 import axios from "axios";
 
+type ApartmentAttributes = {
+    dostupnost?: string;
+    cislo_bytu?: string;
+    poschodie?: number;
+    [key: string]: unknown;
+};
+
+type ApartmentData = {
+    id: number;
+    attributes: ApartmentAttributes;
+};
+
+type StrapiSingleResponse = {
+    data: ApartmentData;
+    meta?: unknown;
+};
+
 export type State = {
-    selectedApartment: any | null
+    selectedApartment: StrapiSingleResponse | ApartmentData[] | null;
 }
 
 export type Actions = {
