@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /dakujeme
+Disallow: /dakujeme-za-email
+Disallow: /notsender
+Disallow: /podnety
+Disallow: /api/
+
+Sitemap: https://www.oliviaresidence.sk/sitemap.xml
