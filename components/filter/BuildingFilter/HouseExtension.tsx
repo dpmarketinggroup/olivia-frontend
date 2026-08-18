@@ -3,6 +3,7 @@ import PopUp from "./PopUp";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useStore } from "../../../lib/store/useStore";
+import { STRAPI_PROXY } from "../../../lib/api";
 import axios from "axios";
 import { useTranslation } from "next-i18next";
 
@@ -50,7 +51,7 @@ const HouseExtension = () => {
   async function getRooms(floor: number): Promise<Floor | undefined> {
     try {
       const response = await axios.get(
-        `https://floating-scrubland-57360.herokuapp.com/api/byts?filters[poschodie][$eq]=${floor}`
+        `${STRAPI_PROXY}/byts?filters[poschodie][$eq]=${floor}`
       );
 
       return {

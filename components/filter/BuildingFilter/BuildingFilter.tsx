@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import Both from "@components/icons/Both";
+import { STRAPI_PROXY } from "../../../lib/api";
 import OverButtonIcon from "@components/icons/OverButton";
 import OverButtonBigIcon from "@components/icons/OverButtonBig";
 import Image from "next/image";
@@ -90,8 +91,8 @@ const Building = () => {
     async function fetch() {
       try {
         const res = await axios.get(
-          // `https://floating-scrubland-57360.herokuapp.com/api/byts?pagination[pageSize]=200&populate=*&filters[dostupnost][$ne]=predaný`pôvodné api
-          `https://floating-scrubland-57360.herokuapp.com/api/byts?pagination[pageSize]=200&populate=*&filters[$and][0][dostupnost][$ne]=rezervovaný&filters[$and][1][dostupnost][$ne]=predaný`
+          // `${STRAPI_PROXY}/byts?pagination[pageSize]=200&populate=*&filters[dostupnost][$ne]=predaný`pôvodné api
+          `${STRAPI_PROXY}/byts?pagination[pageSize]=200&populate=*&filters[$and][0][dostupnost][$ne]=rezervovaný&filters[$and][1][dostupnost][$ne]=predaný`
         );
 
         if (router.pathname === "/ponuka-apartmanov") {
@@ -220,10 +221,10 @@ const Building = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `https://floating-scrubland-57360.herokuapp.com/api/byts${query}`
+          `${STRAPI_PROXY}/byts${query}`
         );
         const res2 = await axios.get(
-          `https://floating-scrubland-57360.herokuapp.com/api/byts?filters[cena][$null]=true${query2}`
+          `${STRAPI_PROXY}/byts?filters[cena][$null]=true${query2}`
         );
         response = [...res.data.data, ...res2.data.data];
 

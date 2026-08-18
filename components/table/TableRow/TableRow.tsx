@@ -70,8 +70,8 @@ const TableRow = ({ apartmentNumber, numberOfRooms, availability, price, totalAr
                         borderWidth: '0 20px 15px 20px',
                         borderColor: 'transparent transparent #fff transparent'
                     }}></div>
-                    <div className={'bg-white w-full max-w-[150px] h-[120px]'}>
-                        <Image alt={apartmentNumber} objectFit={'cover'} layout={'fill'} src={img} />
+                    <div className={'relative bg-white w-full max-w-[150px] h-[120px]'}>
+                        <Image alt={apartmentNumber} fill className={'object-contain p-[6px]'} src={img} />
                     </div>
                 </div>
             </div>

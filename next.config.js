@@ -5,7 +5,11 @@ const nextConfig = {
   reactStrictMode: true,
   i18n,
   images: {
-    domains: ["res.cloudinary.com"],
+    remotePatterns: [
+      { protocol: "https", hostname: "res.cloudinary.com" },
+      // médiá zo Strapi Cloud
+      { protocol: "https", hostname: "timely-luck-3c5514b137.media.strapiapp.com" },
+    ],
   },
   env: {
     NEXT_PUBLIC_SENDIN_KEY: process.env.NEXT_PUBLIC_SENDIN_KEY,

@@ -16,6 +16,7 @@ import { CustomSwiper } from "@components/swiper";
 import { ChangeEvent, SyntheticEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useStore } from "../../lib/store/useStore";
+import { strapi } from "../../lib/strapi.server";
 import { Button } from "@components/ui";
 import { CarDescription } from "@components/common/Description/Description";
 import axios from "axios";
@@ -1130,9 +1131,7 @@ export async function getStaticProps({ locale }: StaticProps) {
 }
 
 export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
-  const { data } = await axios.get(
-    "https://floating-scrubland-57360.herokuapp.com/api/byts?pagination[pageSize]=200"
-  );
+  const { data } = await strapi.get("/byts?pagination[pageSize]=200");
 
   const sk = data.data.map((val: any) => {
     return {
