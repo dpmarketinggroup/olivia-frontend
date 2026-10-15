@@ -1,7 +1,6 @@
 import { HoverCardTarget } from "@mantine/core/lib/HoverCard/HoverCardTarget/HoverCardTarget";
 import React from "react";
 import PopUp from "./PopUp";
-import { log } from "util";
 import HouseExtension from "./HouseExtension";
 
 const House = () => {
