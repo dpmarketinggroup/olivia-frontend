@@ -41,24 +41,6 @@
   </url>
 
   <url>
-    <loc>https://www.oliviaresidence.sk/stresne-apartmany</loc>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://www.oliviaresidence.sk/stresne-apartmany"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.oliviaresidence.sk/en/stresne-apartmany"/>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.oliviaresidence.sk/en/stresne-apartmany</loc>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://www.oliviaresidence.sk/stresne-apartmany"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.oliviaresidence.sk/en/stresne-apartmany"/>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://www.oliviaresidence.sk/o-projekte</loc>
     <xhtml:link rel="alternate" hreflang="sk" href="https://www.oliviaresidence.sk/o-projekte"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.oliviaresidence.sk/en/o-projekte"/>

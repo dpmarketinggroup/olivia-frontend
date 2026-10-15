@@ -214,10 +214,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
               {translate("apartment-swiper-link")}
 
             </Link>
-            <Link href="/stresne-apartmany" className={` ${isWhite || isScrolled ? "text-black " : "text-white"}  uppercase flex justify-center items-center mt-1`}>
+            {/* <Link href="/stresne-apartmany" className={` ${isWhite || isScrolled ? "text-black " : "text-white"}  uppercase flex justify-center items-center mt-1`}>
               <p className="">{translate("footer-link-top-apartments")}</p>
 
-            </Link>
+            </Link> */}
             <Link href="/lokalita" className={`mt-1 p-[3px] ${isWhite || isScrolled ? "text-black " : "text-white"} text-[15px] uppercase flex justify-center items-center`}><p>{translate("footer-link-location")}</p>
             </Link>
 
@@ -267,13 +267,13 @@ const Navbar: FunctionComponent<NavbarProps> = ({ mainPage = false }) => {
                 {translate("apartment-swiper-link")}
 
               </Link>
-              <Link onClick={() => {
+              {/* <Link onClick={() => {
                 setIsOpenMobileNav((o) => !o);
                 setScrollLocked((c) => !c);
               }} href="/stresne-apartmany" className={`text-black   uppercase flex justify-center items-center mt-1`}>
                 <p className="">{translate("footer-link-top-apartments")}</p>
 
-              </Link>
+              </Link> */}
               <Link onClick={() => {
                 setIsOpenMobileNav((o) => !o);
                 setScrollLocked((c) => !c);

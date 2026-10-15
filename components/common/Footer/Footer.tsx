@@ -161,11 +161,11 @@ const Footer: FunctionComponent<FooterProps> = ({ toBottom = false }) => {
                     {translate("footer-link-action")}
                   </a>
                 </Link> */}
-                <Link legacyBehavior href="/stresne-apartmany">
+                {/* <Link legacyBehavior href="/stresne-apartmany">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-top-apartments")}
                   </a>
-                </Link>
+                </Link> */}
                 <Link legacyBehavior href="/o-projekte">
                   <a className="opacity-60 hover:opacity-100">
                     {translate("footer-link-about")}
