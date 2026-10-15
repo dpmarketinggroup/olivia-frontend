@@ -34,6 +34,7 @@ export const useStore = create<State & Actions>((set, _) => ({
             const res = await axios.get(`${STRAPI_PROXY}/byts/${apartmentId}?populate=*`)
             set({selectedApartment: res.data})
         } catch (e) {
+            set({selectedApartment: null})
             console.log(e)
         }
     }

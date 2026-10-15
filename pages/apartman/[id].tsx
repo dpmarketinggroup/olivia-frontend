@@ -1120,13 +1120,35 @@ export const CustomInput = (props: CustomInputProps) => {
 
 interface StaticProps {
   locale: string;
+  defaultLocale: string;
+  params: { id: string };
 }
 
-export async function getStaticProps({ locale }: StaticProps) {
+export async function getStaticProps({ locale, defaultLocale, params }: StaticProps) {
+  const exists = /^\d+$/.test(params.id) && await strapi
+    .get(`/byts/${params.id}`)
+    .then(() => true)
+    .catch((e) => {
+      // iba 404 znamená neexistujúci byt, iné chyby (Strapi nedostupný) nechaj prebublať
+      if (axios.isAxiosError(e) && e.response?.status === 404) return false;
+      throw e;
+    });
+
+  if (!exists) {
+    return {
+      redirect: {
+        destination: `${locale === defaultLocale ? "" : `/${locale}`}/ponuka-apartmanov`,
+        permanent: false,
+      },
+      revalidate: 300,
+    };
+  }
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["home"])),
     },
+    revalidate: 300,
   };
 }
 
@@ -1156,7 +1178,7 @@ export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   };
 };
 
