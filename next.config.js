@@ -4,6 +4,10 @@ const { i18n } = require("./next-i18next.config");
 const nextConfig = {
   reactStrictMode: true,
   i18n,
+  // preklady čítané za behu (ISR stránky s revalidate) musia byť pribalené k serverovej funkcii
+  outputFileTracingIncludes: {
+    "/**/*": ["./public/locales/**/*"],
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com" },
